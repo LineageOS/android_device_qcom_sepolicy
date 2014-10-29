@@ -44,3 +44,7 @@ unix_socket_connect(mediaserver, thermal, thermal-engine)
 # Allow mediaserver to search and get the widevine, playready firmwares
 allow mediaserver firmware_file:dir search;
 allow mediaserver firmware_file:file { read getattr open };
+
+# Allow mediaserver to create socket files for audio arbitration
+allow mediaserver audio_data_file:sock_file { create setattr unlink };
+allow mediaserver audio_data_file:dir remove_name;

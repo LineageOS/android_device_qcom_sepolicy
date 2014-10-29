@@ -95,3 +95,6 @@ type system_health_monitor_device, dev_type;
 
 #energy-awareness device
 type pta_device, dev_type;
+
+#Define usf device
+type usf_device, dev_type;
