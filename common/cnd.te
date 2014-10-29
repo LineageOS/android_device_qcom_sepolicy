@@ -5,6 +5,7 @@ file_type_auto_trans(cnd, socket_device, cnd_socket);
 
 # cnd is started by init, type transit from init domain to cnd domain
 init_daemon_domain(cnd)
+type_transition cnd system_data_file:{ file } cnd_data_file;
 # associate netdomain as an attribute of cnd domain
 net_domain(cnd)
 
@@ -31,7 +32,7 @@ allow cnd init:unix_stream_socket connectto;
 allow cnd kernel:system module_request;
 
 # allow cnd to access cnd_data_file
-allow cnd cnd_data_file:file create_file_perms;
+allow cnd cnd_data_file:file { create_file_perms execute };
 allow cnd cnd_data_file:sock_file { unlink create setattr };
 allow cnd cnd_data_file:dir { open read write add_name remove_name search };
 
