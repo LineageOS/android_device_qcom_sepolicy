@@ -35,3 +35,11 @@ allow system_app time_daemon:unix_stream_socket connectto;
 
 # access to color service SDK
 allow system_app color_service:service_manager add;
+
+# usf (ultrasound) apps need following permissions
+allow system_app usf:unix_stream_socket connectto;
+allow system_app usf_data_file:sock_file write;
+allow system_app usf_data_file:dir rw_dir_perms;
+allow system_app usf_data_file:file create_file_perms;
+allow system_app usf_data_file:lnk_file create_file_perms;
+allow system_app usf_prop:property_service set;
