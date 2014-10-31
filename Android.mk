@@ -99,4 +99,5 @@ SSC_TARGET_LIST += msm8994
 BOARD_SEPOLICY_UNION += sensors.te
 BOARD_SEPOLICY_UNION += sensors_test.te
 #endif
+
 endif
