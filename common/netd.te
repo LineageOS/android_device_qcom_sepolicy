@@ -7,3 +7,13 @@ dontaudit netd self:capability sys_module;
 #needed for ipt_TCPMSS and ip6t_TCPMSS
 allow netd kernel:system module_request;
 unix_socket_connect(netd, cnd, cnd)
+
+allow netd self:capability fsetid;
+allow netd hostapd:unix_dgram_socket sendto;
+
+# Allow netd to chmod dir /data/misc/dhcp
+allow netd dhcp_data_file:dir create_dir_perms;
+
+type_transition netd wifi_data_file:dir wpa_socket "sockets";
+allow netd wpa_socket:dir create_dir_perms;
+allow netd wpa_socket:sock_file create_file_perms;
