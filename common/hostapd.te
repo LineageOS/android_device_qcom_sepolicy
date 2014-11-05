@@ -3,3 +3,6 @@
 userdebug_or_eng(`
   unix_socket_send(hostapd, wpa, su)
 ')
+
+allow hostapd netd:unix_dgram_socket sendto;
+allow hostapd wpa_socket:sock_file write;
