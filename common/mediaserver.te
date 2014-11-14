@@ -34,3 +34,7 @@ unix_socket_connect(mediaserver, mpctl, perfd)
 userdebug_or_eng('
 allow mediaserver debugfs:file rw_file_perms;
 ')
+
+# for thermal sock files
+allow mediaserver thermal_socket:sock_file write;
+allow mediaserver thermal-engine:unix_stream_socket connectto;
