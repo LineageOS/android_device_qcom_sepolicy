@@ -21,3 +21,6 @@ userdebug_or_eng(`
 ')
 allow system_app cnd_data_file:dir w_dir_perms;
 allow system_app cnd_data_file:file create_file_perms;
+
+# access to time_daemon
+allow system_app time_daemon:unix_stream_socket connectto;
