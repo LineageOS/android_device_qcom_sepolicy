@@ -1,0 +1,5 @@
+# Allow hostapd_cli to work. hostapd_cli creates a socket in
+# /data/misc/wifi/sockets which hostapd communicates with.
+userdebug_or_eng(`
+  unix_socket_send(hostapd, wpa, su)
+')

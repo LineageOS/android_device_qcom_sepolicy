@@ -65,6 +65,7 @@ BOARD_SEPOLICY_UNION := \
        surfaceflinger.te \
        mm-pp-daemon.te \
        wpa.te \
+       hostapd.te \
        bootanim.te \
        zygote.te \
        mdm_helper.te \
