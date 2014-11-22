@@ -36,5 +36,5 @@ allow rfs_access firmware_file:dir { search };
 allow rfs_access firmware_file:file { open read getattr };
 
 #Prevent other domains from accessing RFS data files.
-neverallow { domain -rfs_access -kernel -recovery -init userdebug_or_eng(`-su') -init_shell } rfs_data_file:dir { write search create add_name };
-neverallow { domain -rfs_access -kernel -recovery -init userdebug_or_eng(`-su') -init_shell } rfs_data_file:file { open read write create append getattr };
+neverallow { domain -rfs_access -kernel -recovery -init -unconfineddomain userdebug_or_eng(`-su') -init_shell } rfs_data_file:dir { write search create add_name };
+neverallow { domain -rfs_access -kernel -recovery -init -unconfineddomain userdebug_or_eng(`-su') -init_shell } rfs_data_file:file { open read write create append getattr };
