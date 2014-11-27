@@ -16,6 +16,9 @@ unix_socket_connect(system_app, mpctl, perfd)
 unix_socket_connect(system_app, pps, mm-pp-daemon)
 allow system_app cne_service:service_manager add;
 
+# access from qc.timeservice to time_daemon
+allow system_app time_daemon:unix_stream_socket connectto;
+
 userdebug_or_eng(`
   allow system_app debugfs:file r_file_perms;
 ')
