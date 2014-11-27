@@ -48,3 +48,6 @@ unix_socket_connect(thermal-engine, mpctl, mpdecision)
 
 #This is to allow access to uio device
 allow thermal-engine uio_device:chr_file rw_file_perms;
+
+#Label the thermal sockets correctly
+type_transition thermal-engine socket_device:sock_file thermal_socket;
