@@ -23,3 +23,6 @@ allow thermal-engine sysfs_thermal:lnk_file read;
 qmux_socket(thermal-engine);
 allow thermal-engine sysfs_mpdecision:file rw_file_perms;
 r_dir_file(thermal-engine, sysfs_ssr);
+
+#Label the thermal sockets correctly
+type_transition thermal-engine socket_device:sock_file thermal_socket;
