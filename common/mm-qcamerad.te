@@ -21,6 +21,8 @@ userdebug_or_eng(`
 ')
 
 #Communicate with user land process through domain socket
+type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket1";
+type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket2";
 allow mm-qcamerad camera_socket:sock_file { create unlink write };
 allow mm-qcamerad camera_socket:dir w_dir_perms;
 unix_socket_connect(mm-qcamerad, sensors, sensors)
