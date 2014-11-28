@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_dcbb4a74",
+        "filename": "common/location.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8640
+      },
+      "writtenOn": "2014-11-28T17:22:06Z",
+      "side": 1,
+      "message": "Isn\u0027t this redundant? https://github.com/CyanogenMod/android_external_sepolicy/blob/cm-12.0/global_macros#L29\ncreate_file_perms grands link_file_perms which grants unlink.",
+      "revId": "e6f832b642adfcc4f21af3915624acc43fbf9c85",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
