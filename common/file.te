@@ -22,6 +22,7 @@ type sysfs_smd_open_timeout, sysfs_type, fs_type;
 
 #Define the files written during the operation of netmgrd and qmuxd
 type data_test_data_file, file_type, data_file_type;
+type modem_config_file, file_type, data_file_type;
 type sysrq_trigger_proc, fs_type, mlstrustedobject;
 # Persist file types
 type persist_file, file_type;
