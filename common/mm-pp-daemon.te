@@ -16,7 +16,8 @@ allow mm-pp-daemon persist_file:dir search;
 allow mm-pp-daemon display_config:file rw_file_perms;
 allow mm-pp-daemon system_prop:property_service set;
 #Calibration can only be done on userdebug or eng builds
-userdebug_or_eng(`
+#Enable on user builds too. This is causing mayhem for gfx
+#userdebug_or_eng(`
     # Display calibration service opens /dev/diag in order to communicate with the
     # target device
     allow mm-pp-daemon diag_device:chr_file rw_file_perms;
@@ -40,4 +41,4 @@ userdebug_or_eng(`
     # calibration
     allow mm-pp-daemon sysfs:file rw_file_perms;
     unix_socket_connect(mm-pp-daemon, property, init)
-')
+#')

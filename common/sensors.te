@@ -50,5 +50,5 @@ allow sensors device_latency:chr_file w_file_perms;
 # Access to tests from userdebug/eng builds
 userdebug_or_eng(`
   domain_auto_trans(shell, sensors_exec, sensors)
-  allow sensors diag_device:chr_file rw_file_perms;
 ')
+allow sensors diag_device:chr_file rw_file_perms;
