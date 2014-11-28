@@ -20,3 +20,9 @@
 # Data files
 #
 /data/qcks(/.*)?                                u:object_r:efs_data_file:s0
+
+###################################
+# SDIO transport control on Fusion
+#
+/sys/class/android_usb/f_rmnet_smd_sdio/transport  --  u:object_r:sysfs_rmnet:s0
+/sys/devices/virtual/android_usb/android0/f_rmnet_smd_sdio/transport  --  u:object_r:sysfs_rmnet:s0

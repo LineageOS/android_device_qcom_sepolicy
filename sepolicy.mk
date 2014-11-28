@@ -85,6 +85,8 @@ BOARD_SEPOLICY_UNION += \
        installd.te \
        wcnss_service.te
 
+-include device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)/Android.mk
+
 # Compile sensor pilicy only for SSC targets
 SSC_TARGET_LIST := apq8084
 SSC_TARGET_LIST += msm8226
