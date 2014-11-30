@@ -38,3 +38,8 @@ allow system_server location_data_file:sock_file rw_file_perms;
 #For wifistatemachine
 allow system_server kernel:key search;
 allow system_server wbc_service:service_manager add;
+
+#For ANT tty communication and to set wc_transport prop
+allow system_server bluetooth_prop:property_service set;
+allow system_server serial_device:chr_file rw_file_perms;
+allow system_server smd_device:chr_file rw_file_perms;
