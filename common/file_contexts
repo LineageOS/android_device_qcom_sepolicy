@@ -203,6 +203,7 @@
 /data/connectivity(/.*)?                                            u:object_r:cnd_data_file:s0
 /data/data_test(/.*)?                                               u:object_r:data_test_data_file:s0
 /data/diag_log(/.*)?                                                u:object_r:diag_data_file:s0
+/data/misc/modem_config(/.*)?                                       u:object_r:modem_config_file:s0
 /data/misc/sensors(/.*)?                                            u:object_r:sensors_data_file:s0
 /data/rfs.*                                                         u:object_r:rfs_data_file:s0
 /data/camera(/.*)?                                                  u:object_r:camera_socket:s0
