@@ -32,7 +32,7 @@ unix_socket_send(mediaserver, mpctl, perfd)
 unix_socket_connect(mediaserver, mpctl, perfd)
 
 #access to audio
-userdebug_or_eng('
+userdebug_or_eng(`
 allow mediaserver debugfs:file rw_file_perms;
 ')
 

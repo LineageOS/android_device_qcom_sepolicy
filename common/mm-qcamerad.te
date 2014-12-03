@@ -25,7 +25,7 @@ allow mm-qcamerad camera_data_file:sock_file { create unlink };
 allow mm-qcamerad node:tcp_socket node_bind;
 
 #Added to support EzTune
-userdebug_or_eng('
+userdebug_or_eng(`
 allow mm-qcamerad self:tcp_socket { accept listen };
 ')
 
