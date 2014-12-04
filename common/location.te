@@ -15,6 +15,7 @@ binder_use(location)
 allow location location_data_file:dir rw_dir_perms;
 allow location location_data_file:fifo_file create_file_perms;
 allow location location_data_file:file create_file_perms;
+allow location location_data_file:sock_file create_file_perms;
 allow location location_exec:file execute_no_trans;
 allow location location_socket:sock_file create_file_perms;
 allow location self:capability { setuid setgid };
