@@ -25,8 +25,12 @@ allow system_app cnd_data_file:dir w_dir_perms;
 allow system_app cnd_data_file:file create_file_perms;
 allow system_app bluetooth:unix_stream_socket ioctl;
 
+# access to tee domain
+allow system_app tee:unix_dgram_socket sendto;
+
 # access to time_daemon
 allow system_app time_daemon:unix_stream_socket connectto;
 
-# access to tee domain
-allow system_app tee:unix_dgram_socket sendto;
+# access to color service SDK
+allow system_app color_service:service_manager add;
+
