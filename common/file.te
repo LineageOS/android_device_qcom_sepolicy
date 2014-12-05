@@ -113,3 +113,6 @@ type  proc_dirty_ratio, fs_type;
 # hbtp config file
 type hbtp_cfg_file, file_type;
 type hbtp_log_file, file_type;
+
+#File types by mmi
+type mmi_socket, file_type;
