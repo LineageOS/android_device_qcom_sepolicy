@@ -88,7 +88,8 @@ BOARD_SEPOLICY_UNION += \
        wfd_app.te \
        mediaserver_test.te \
        hbtp.te \
-       vold.te
+       vold.te \
+       wfdservice.te
 
 -include device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)/Android.mk
 
