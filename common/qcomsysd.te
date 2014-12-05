@@ -11,6 +11,7 @@ allow qcomsysd smem_log_device:chr_file { open read write ioctl };
 allow qcomsysd diag_device:chr_file { open read write ioctl };
 
 #Needed to read/write cookies to the misc partition
+allow qcomsysd block_device:dir { search };
 allow qcomsysd misc_partition:blk_file { open read getattr write };
 
 #Needed to access the bootselect partition
@@ -19,3 +20,12 @@ allow qcomsysd bootselect_device:blk_file { open read getattr write };
 #Needed to get image info from socinfo
 allow qcomsysd sysfs_socinfo:dir  { open search read };
 allow qcomsysd sysfs_socinfo:file { open read write };
+
+allow qcomsysd self:capability { dac_override };
+#need to access config file in data partition
+allow qcomsysd modem_config_file:file rw_file_perms;
+
+#need to do qmi communication
+qmux_socket(qcomsysd)
+allow qcomsysd self:capability { dac_read_search dac_override };
+allow qcomsysd self:socket { read write create ioctl };

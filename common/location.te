@@ -24,3 +24,6 @@ allow location sensors_device:chr_file r_file_perms;
 allow location sensors_socket:sock_file w_file_perms;
 allow location self:netlink_socket create_socket_perms;
 allow location location_data_file:sock_file { write unlink };
+
+dontaudit location domain:dir r_dir_perms;
+r_dir_file(location, netmgrd)

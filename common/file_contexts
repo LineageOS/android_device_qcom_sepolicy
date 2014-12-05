@@ -42,8 +42,8 @@
 /dev/esoc.*                                     u:object_r:esoc_device:s0
 /dev/ks_hsic_bridge                             u:object_r:ksbridgehsic_device:s0
 /dev/efs_hsic_bridge                            u:object_r:efsbridgehsic_device:s0
-/dev/block/platform/msm_sdcc.1/by-name/misc                         u:object_r:misc_partition:s0
-/dev/block/platform/msm_sdcc.1/by-name/bootselect                   u:object_r:bootselect_device:s0
+/dev/block/bootdevice/by-name/misc              u:object_r:misc_partition:s0
+/dev/block/bootdevice/by-name/bootselect        u:object_r:bootselect_device:s0
 /dev/ipa                                        u:object_r:ipa_dev:s0
 /dev/wwan_ioctl                                 u:object_r:ipa_dev:s0
 /dev/ipaNatTable                                u:object_r:ipa_dev:s0
@@ -52,6 +52,8 @@
 /dev/dpl_ctrl                                   u:object_r:rmnet_device:s0
 /dev/wcnss_ctrl                                 u:object_r:wcnss_device:s0
 /dev/wcnss_wlan                                 u:object_r:wcnss_device:s0
+/dev/hbtp_input                                 u:object_r:hbtp_device:s0
+/dev/jdi-bu21150                                u:object_r:bu21150_device:s0
 
 ###################################
 # Dev socket nodes
@@ -119,12 +121,13 @@
 /system/rfs.*                                   u:object_r:rfs_system_file:s0
 /system/bin/time_daemon                         u:object_r:time_daemon_exec:s0
 /system/bin/rmt_storage                         u:object_r:rmt_storage_exec:s0
+/system/bin/rfs_access                          u:object_r:rfs_access_exec:s0
 /system/bin/hvdcp                               u:object_r:hvdcp_exec:s0
 /system/bin/qseecomd                            u:object_r:tee_exec:s0
 /system/bin/hostapd_cli                         u:object_r:hostapd_exec:s0
 /system/bin/adsprpcd                            u:object_r:adsprpcd_exec:s0
-/system/bin/wpa_cli                             u:object_r:wpa_exec:s0
-/system/bin/cnss-daemon                         u:object_r:wpa_exec:s0
+/system/bin/wpa_cli                             u:object_r:wcnss_service_exec:s0
+/system/bin/cnss-daemon                         u:object_r:wcnss_service_exec:s0
 /system/bin/mdm_helper                          u:object_r:mdm_helper_exec:s0
 /system/bin/mdm_helper_proxy                    u:object_r:mdm_helper_exec:s0
 /system/bin/ks                                  u:object_r:mdm_helper_exec:s0
@@ -152,6 +155,7 @@
 /system/vendor/bin/slim_ap_daemon               u:object_r:location_exec:s0
 /system/vendor/bin/qti                          u:object_r:qti_exec:s0
 /system/bin/wcnss_service                       u:object_r:wcnss_service_exec:s0
+/system/vendor/bin/hbtp_daemon                  u:object_r:hbtp_exec:s0
 
 ###################################
 # sysfs files
@@ -199,6 +203,7 @@
 /data/connectivity(/.*)?                                            u:object_r:cnd_data_file:s0
 /data/data_test(/.*)?                                               u:object_r:data_test_data_file:s0
 /data/diag_log(/.*)?                                                u:object_r:diag_data_file:s0
+/data/misc/modem_config(/.*)?                                       u:object_r:modem_config_file:s0
 /data/misc/sensors(/.*)?                                            u:object_r:sensors_data_file:s0
 /data/rfs.*                                                         u:object_r:rfs_data_file:s0
 /data/camera(/.*)?                                                  u:object_r:camera_socket:s0
