@@ -4,6 +4,7 @@ init_daemon_domain(mm-qcamerad)
 
 userdebug_or_eng(`
   allow mm-qcamerad debugfs:dir search;
+  allow mm-qcamerad debugfs:file read;
 ')
 
 #Communicate with user land process through domain socket
