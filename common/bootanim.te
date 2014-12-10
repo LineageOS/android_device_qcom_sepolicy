@@ -1,1 +1,4 @@
 allow bootanim shell_data_file:dir search;
+
+# call mediaserver domain and transfer references to it
+allow bootanim mediaserver:binder { transfer call };

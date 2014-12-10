@@ -39,3 +39,6 @@ allow mediaserver debugfs:file rw_file_perms;
 # for thermal sock files
 allow mediaserver thermal_socket:sock_file write;
 allow mediaserver thermal-engine:unix_stream_socket connectto;
+
+# call bootanim domain and transfer references to it
+allow mediaserver bootanim:binder { transfer call };
