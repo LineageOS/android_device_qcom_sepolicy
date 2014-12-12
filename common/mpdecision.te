@@ -35,3 +35,7 @@ allow mpdecision mpctl_data_file:file { create_file_perms unlink };
 #allow poll of system_server status
 allow mpdecision system_server:dir search;
 allow mpdecision system_server:file { open read };
+
+#cm extra opts
+allow mpdecision thermal-engine:unix_stream_socket connectto;
+allow mpdecision thermal_socket:sock_file write;
