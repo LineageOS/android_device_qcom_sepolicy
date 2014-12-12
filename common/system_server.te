@@ -54,3 +54,7 @@ allow system_server smd_device:chr_file rw_file_perms;
 
 allow system_server fuse:dir search;
 allow system_server persist_file:dir search;
+
+# allow tethering to access dhcp leases
+allow system_server dhcp_data_file:dir search;
+allow system_server dhcp_data_file:file { read getattr open };
