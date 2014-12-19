@@ -18,5 +18,4 @@ allow untrusted_app sysfs_battery_supply:file r_file_perms;
 # test apps needs to communicate with imscm
 # using binder call
 userdebug_or_eng(`
-  binder_call(untrusted_app, imscm)
 ')
