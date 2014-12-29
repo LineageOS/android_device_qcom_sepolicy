@@ -5,6 +5,7 @@ allow mediaserver camera_device:chr_file rw_file_perms;
 unix_socket_send(mediaserver, camera, mm-qcamerad)
 
 allow mediaserver tee_device:chr_file rw_file_perms;
+allow mediaserver qdsp_device:chr_file r_file_perms;
 
 allow mediaserver self:socket create_socket_perms;
 
@@ -19,7 +20,7 @@ userdebug_or_eng(`
 
 allow mediaserver sysfs_esoc:dir r_dir_perms;
 allow mediaserver sysfs_esoc:lnk_file read;
-
+allow mediaserver system_app_data_file:file rw_file_perms;
 # access to perflock
 allow mediaserver mpctl_socket:dir r_dir_perms;
 unix_socket_send(mediaserver, mpctl, mpdecision)

@@ -12,3 +12,6 @@ binder_use(atfwd);
 binder_call(atfwd, system_app);
 binder_call(atfwd, servicemanager);
 r_dir_file(atfwd, sysfs_ssr);
+
+allow atfwd self:udp_socket create;
+unix_socket_connect(atfwd, property, init);

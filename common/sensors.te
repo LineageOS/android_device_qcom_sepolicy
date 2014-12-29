@@ -14,7 +14,7 @@ allow sensors self:capability chown;
 dontaudit sensors self:capability fsetid;
 
 # Access /data/misc/sensors/debug and /data/system/sensors/settings
-allow sensors self:capability { dac_override dac_read_search };
+allow sensors self:capability { dac_override dac_read_search net_bind_service };
 
 # Sensors socket
 allow sensors sensors_socket:sock_file create_file_perms;
@@ -34,6 +34,9 @@ allow sensors sensors_device:chr_file rw_file_perms;
 allow sensors persist_file:dir r_dir_perms;
 allow sensors sensors_persist_file:dir create_dir_perms;
 allow sensors sensors_persist_file:file create_file_perms;
+
+# Access to execmem
+allow sensors self:process execmem;
 
 # Wake lock access
 wakelock_use(sensors)

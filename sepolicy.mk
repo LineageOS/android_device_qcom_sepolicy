@@ -59,6 +59,7 @@ BOARD_SEPOLICY_UNION += \
        mcStarter.te \
        keystore.te \
        ims.te \
+       imscm.te \
        healthd.te \
        charger_monitor.te \
        surfaceflinger.te \
@@ -83,7 +84,14 @@ BOARD_SEPOLICY_UNION += \
        seapp_contexts \
        logd.te \
        installd.te \
-       wcnss_service.te
+       wcnss_service.te \
+       mmi.te \
+       dhcp.te \
+       wfd_app.te \
+       mediaserver_test.te \
+       hbtp.te \
+       kernel.te \
+       vold.te
 
 -include device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)/Android.mk
 
