@@ -5,6 +5,10 @@ unix_socket_connect(untrusted_app, mpctl, mpdecision)
 # diag device node access is restricted to untrusted_app
 neverallow untrusted_app diag_device:chr_file rw_file_perms;
 
+# allow apps to read battery status
+allow untrusted_app sysfs_battery_supply:dir r_dir_perms;
+allow untrusted_app sysfs_battery_supply:file r_file_perms;
+
 # test apps needs to communicate with imscm
 # using binder call
 userdebug_or_eng(`
