@@ -10,6 +10,7 @@ allow location_app adbd:unix_stream_socket connectto;
 allow location_app su:unix_stream_socket connectto;
 ')
 
+allow location_app system_app_data_file:dir r_dir_perms;
 allow location_app location_app_data_file:dir create_dir_perms;
 allow location_app location_app_data_file:file create_file_perms ;
 allow location_app location_data_file:dir rw_dir_perms;
