@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_7299896e",
+        "filename": "common/system_server.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6315
+      },
+      "writtenOn": "2014-12-30T22:55:34Z",
+      "side": 1,
+      "message": "create_file_perms includes unlink already.",
+      "revId": "5f7dac33781fe81bf4d35d82690ea9b3fb2f52a1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
