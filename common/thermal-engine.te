@@ -5,7 +5,6 @@ type thermal-engine_exec, exec_type, file_type;
 # Started by init
 init_daemon_domain(thermal-engine)
 
-file_type_auto_trans(thermal-engine, socket_device, thermal_socket);
 #============= thermal-engine ==============
 #This is to access thermal query device
 allow thermal-engine thermal_device:chr_file rw_file_perms;
@@ -22,7 +21,7 @@ allow thermal-engine thermal_socket:sock_file  { create setattr open read write 
 allow thermal-engine sysfs_thermal:dir { read search open };
 allow thermal-engine sysfs_thermal:file rw_file_perms;
 allow thermal-engine sysfs_thermal:lnk_file read;
-
+allow thermal-engine sysfs:file write;
 #This is required for qmi access
 qmux_socket(thermal-engine);
 allow thermal-engine sysfs_mpdecision:file rw_file_perms;
