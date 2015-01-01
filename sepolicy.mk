@@ -12,7 +12,6 @@ BOARD_SEPOLICY_UNION += \
        property_contexts \
        te_macros \
        device.te \
-       vold.te \
        ueventd.te \
        file.te \
        property.te \
@@ -39,7 +38,6 @@ BOARD_SEPOLICY_UNION += \
        diag_test.te \
        audiod.te \
        service.te \
-       system_app.te \
        thermal-engine.te \
        vm_bms.te \
        system_app.te \
