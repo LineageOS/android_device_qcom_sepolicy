@@ -27,3 +27,6 @@ allow init_shell ctl_rildaemon_prop:property_service set;
 
 #for access to FM property
 allow init_shell fm_prop:property_service set;
+
+#for access to UICC property
+allow init_shell uicc_prop:property_service set;
