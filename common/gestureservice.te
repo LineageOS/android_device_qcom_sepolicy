@@ -1,0 +1,13 @@
+type gestureservice, domain;
+type gestureservice_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(gestureservice)
+
+#Allow IPC binding with ServiceManager & System apps
+binder_use(gestureservice);
+binder_call(gestureservice, system_app);
+binder_call(gestureservice, servicemanager);
+
+allow gestureservice input_device:chr_file rw_file_perms;
+allow gestureservice input_device:dir r_dir_perms;
