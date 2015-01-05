@@ -44,3 +44,6 @@ allow mm-qcamerad shell_data_file:dir search;
 
 # IMS use camera daemon to make VT call
 allow mm-qcamerad port:tcp_socket name_bind;
+
+# Allow use the mmi fd
+allow mm-qcamerad mmi:fd use;
