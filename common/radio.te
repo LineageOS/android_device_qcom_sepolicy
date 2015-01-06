@@ -11,3 +11,8 @@ unix_socket_connect(radio, dpmd, dpmd)
 
 # IMS needs permission to use unix domain socket
 allow radio ims:unix_stream_socket connectto;
+
+# allow radio to access video_device, smd_device for VideoCall
+allow radio video_device:dir r_dir_perms;
+allow radio video_device:chr_file rw_file_perms;
+allow radio smd_device:chr_file rw_file_perms;
