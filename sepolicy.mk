@@ -88,6 +88,7 @@ BOARD_SEPOLICY_UNION += \
        mediaserver_test.te \
        energyawareness.te \
        hbtp.te \
+       dtsconfigurator.te \
        vold.te
 
 -include device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)/Android.mk

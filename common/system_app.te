@@ -30,6 +30,10 @@ allow system_app bluetooth:unix_stream_socket ioctl;
 # access to tee domain
 allow system_app tee:unix_dgram_socket sendto;
 
+# system app to access DTS data files
+allow system_app dts_data_file:dir r_dir_perms;
+allow system_app dts_data_file:file r_file_perms;
+
 # access to time_daemon
 allow system_app time_daemon:unix_stream_socket connectto;
 
