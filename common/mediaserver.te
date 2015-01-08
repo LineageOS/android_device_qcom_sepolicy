@@ -36,6 +36,9 @@ unix_socket_connect(mediaserver, mpctl, perfd)
 # for thermal sock files
 unix_socket_connect(mediaserver, thermal, thermal-engine)
 
+#allow mediaserver to communicate with timedaemon
+allow mediaserver time_daemon:unix_stream_socket connectto;
+
 # Allow mediaserver to search and get the widevine, playready firmwares
 allow mediaserver firmware_file:dir search;
 allow mediaserver firmware_file:file { read getattr open };
