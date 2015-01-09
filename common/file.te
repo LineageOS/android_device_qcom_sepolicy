@@ -112,6 +112,9 @@ type ipacm_data_file, file_type;
 #Define the files written during the operation of mmi
 type mmi_data_file, file_type, data_file_type;
 
+#Define the files written during OMA DRM operations
+type oma_drm_data_file, file_type, data_file_type;
+
 # hbtp config file
 type hbtp_cfg_file, file_type;
 type hbtp_log_file, file_type;
