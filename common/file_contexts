@@ -237,6 +237,7 @@
 /data/misc/location(/.*)?                                           u:object_r:location_data_file:s0
 /data/FTM_AP(/.*)?                                                  u:object_r:mmi_data_file:s0
 /data/misc/hbtp(/.*)?                                               u:object_r:hbtp_log_file:s0
+/data/local/.Drm(/.*)?                                              u:object_r:oma_drm_data_file:s0
 /data/misc/qlogd(/.*)?                                              u:object_r:qlogd_data_file:s0
 /data/misc/dts(/.*)?                                                u:object_r:dts_data_file:s0
 
