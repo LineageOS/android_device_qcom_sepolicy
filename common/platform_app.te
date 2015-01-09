@@ -1,0 +1,3 @@
+#Address denial logs for oma drm files accessing by platform apps
+allow platform_app oma_drm_data_file:dir rw_dir_perms;
+allow platform_app oma_drm_data_file:file create_file_perms;
