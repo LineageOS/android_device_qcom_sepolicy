@@ -2,6 +2,10 @@
 unix_socket_send(untrusted_app, mpctl, mpdecision)
 unix_socket_connect(untrusted_app, mpctl, mpdecision)
 
+#Address denial logs for untrusted_app accessing oma drm files
+allow untrusted_app oma_drm_data_file:dir w_dir_perms;
+allow untrusted_app oma_drm_data_file:file create_file_perms;
+
 # read temp sensors
 allow untrusted_app sysfs_thermal:file r_file_perms;
 allow untrusted_app sysfs_thermal:lnk_file r_file_perms;
