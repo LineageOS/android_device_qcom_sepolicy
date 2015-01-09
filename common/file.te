@@ -121,3 +121,6 @@ type hbtp_log_file, file_type;
 
 # dts notifier files
 type dts_data_file, file_type, data_file_type;
+
+#Define the files written during OMA DRM operations
+type oma_drm_data_file, file_type, data_file_type;

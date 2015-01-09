@@ -2,6 +2,5 @@
 allow platform_app oma_drm_data_file:dir rw_dir_perms;
 allow platform_app oma_drm_data_file:file create_file_perms;
 
-
 #Allow platform apps to interact with imscm daemon
 binder_call(platform_app, imscm)
