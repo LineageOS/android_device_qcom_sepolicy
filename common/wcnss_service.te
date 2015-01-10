@@ -14,7 +14,6 @@ allow wcnss_service wifi_data_file:file create_file_perms;
 
 allow wcnss_service system_prop:property_service set;
 allow wcnss_service persist_file:dir r_dir_perms;
-qmux_socket(wcnss_service);
 
 allow wcnss_service self:socket create_socket_perms;
 allow wcnss_service smem_log_device:chr_file rw_file_perms;
