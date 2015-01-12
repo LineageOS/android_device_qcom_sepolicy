@@ -1,0 +1,28 @@
+# backup_service
+type backup_service, domain;
+type backup_service_exec, exec_type, file_type;
+
+# Make transition from init to backup service domain
+init_daemon_domain(backup_service)
+unix_socket_connect(backup_service, property, init)
+
+# backup service will read and write /data/data and /storage/sdcard0 to backup and restore app data
+# backup service will create directory and copy app data to sdcard or reverse
+allow backup_service fuse:dir create_dir_perms;
+allow backup_service fuse:{ file lnk_file } create_file_perms;
+# backup service will copy /data/data.recovery to /data/data
+allow backup_service app_data_file:dir create_dir_perms;
+allow backup_service app_data_file:{ file lnk_file } create_file_perms;
+# backup service will decompress tar file to /data/data.recovery
+allow backup_service system_data_file:dir create_dir_perms;
+allow backup_service system_data_file:{ file lnk_file } create_file_perms;
+allow backup_service apk_data_file:dir create_dir_perms;
+allow backup_service apk_data_file:file create_file_perms;
+
+# backup service need setprop "persist.sys.shflag" to notify the end of the process
+allow backup_service backup_prop:property_service set;
+
+# backup service will run /system/bin/sh, /system/vendor/bin/backupAppData.sh and /system/vendor/bin/recoverAppData.sh
+allow backup_service shell_exec:file { rx_file_perms entrypoint };
+allow backup_service system_file:file x_file_perms;
+allow backup_service self:capability { dac_override dac_read_search chown fowner fsetid setgid setuid };
