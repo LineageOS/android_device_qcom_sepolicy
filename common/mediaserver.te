@@ -40,5 +40,8 @@ allow mediaserver debugfs:file rw_file_perms;
 allow mediaserver thermal_socket:sock_file write;
 allow mediaserver thermal-engine:unix_stream_socket connectto;
 
+# for unix sockets for staproxy service
+allow mediaserver platform_app:unix_stream_socket { connectto read write setopt };
+
 # call bootanim domain and transfer references to it
 allow mediaserver bootanim:binder { transfer call };
