@@ -1,4 +1,4 @@
-###################################
+##################################
 # Dev nodes
 #
 /dev/adsprpc-smd                                u:object_r:qdsp_device:s0
@@ -244,6 +244,7 @@
 /persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
 /persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
 /persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
+/persist/display(/.*)?                                              u:object_r:persist_display_file:s0
 
 ###################################
 # oem files
