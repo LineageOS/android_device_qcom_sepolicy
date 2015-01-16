@@ -3,3 +3,4 @@ type uicc_prop, property_type;
 type qcom_ims_prop, property_type;
 type fm_prop, property_type;
 type backup_prop, property_type;
+type chgdiabled_prop, property_type;
