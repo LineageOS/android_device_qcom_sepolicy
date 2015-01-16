@@ -84,7 +84,6 @@ BOARD_SEPOLICY_UNION += \
        installd.te \
        wcnss_service.te \
        recovery.te \
-       wfd_app.te \
        mmi.te \
        dhcp.te \
        mediaserver_test.te \
