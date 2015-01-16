@@ -21,9 +21,12 @@ allow qcomsysd bootselect_device:blk_file { open read getattr write };
 allow qcomsysd sysfs_socinfo:dir  { open search read };
 allow qcomsysd sysfs_socinfo:file { open read write };
 
-allow qcomsysd self:capability { dac_override };
+allow qcomsysd self:capability { dac_override fsetid sys_boot };
 #need to access config file in data partition
 allow qcomsysd modem_config_file:file rw_file_perms;
+
+#need to write this node for reset
+allow qcomsysd proc_sysrq:file rw_file_perms;
 
 #need to do qmi communication
 qmux_socket(qcomsysd)
