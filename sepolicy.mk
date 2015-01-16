@@ -85,7 +85,6 @@ BOARD_SEPOLICY_UNION += \
        wcnss_service.te \
        mmi.te \
        dhcp.te \
-       wfd_app.te \
        mediaserver_test.te \
        hbtp.te \
        vold.te
