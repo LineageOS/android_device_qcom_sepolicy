@@ -9,6 +9,7 @@ type_transition netd wifi_data_file:dir wpa_socket "sockets";
 allow netd wpa_socket:dir create_dir_perms;
 
 dontaudit netd self:capability sys_module;
+allow netd self:capability fsetid;
 
 #needed for ipt_TCPMSS and ip6t_TCPMSS
 allow netd kernel:system module_request;
