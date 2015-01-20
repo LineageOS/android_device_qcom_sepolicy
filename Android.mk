@@ -72,6 +72,7 @@ BOARD_SEPOLICY_UNION := \
        peripheral_manager.te \
        qcomsysd.te \
        usb_uicc_daemon.te \
+       backup_service.te \
        adsprpcd.te \
        qlogd.te \
        ipacm.te \
