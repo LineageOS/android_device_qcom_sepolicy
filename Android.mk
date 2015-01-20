@@ -96,7 +96,8 @@ BOARD_SEPOLICY_UNION := \
        wfd_app.te \
        mediaserver_test.te \
        gestureservice.te \
-       hbtp.te
+       hbtp.te \
+       platform_app.te
 
 # Compile sensor pilicy only for SSC targets
 SSC_TARGET_LIST := apq8084
