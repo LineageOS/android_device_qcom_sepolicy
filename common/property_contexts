@@ -4,3 +4,4 @@ sys.ims.                   u:object_r:qcom_ims_prop:s0
 hw.fm.                     u:object_r:fm_prop:s0
 sys.audio.init             u:object_r:audio_prop:s0
 persist.sys.shflag         u:object_r:backup_prop:s0
+persist.usb.chgdisabled    u:object_r:chgdiabled_prop:s0
