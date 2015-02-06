@@ -1,0 +1,9 @@
+# SE policy for rmt_storage daemon
+
+#Access to the rpmb and ssd devices
+allow rmt_storage rpmb_device:blk_file rw_file_perms;
+allow rmt_storage ssd_device:blk_file rw_file_perms;
+
+#To set the ctl properties to stop the service
+unix_socket_connect(rmt_storage, property, init)
+allow rmt_storage ctl_default_prop:property_service set;
