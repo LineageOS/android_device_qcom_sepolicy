@@ -23,6 +23,8 @@ allow thermal-engine sysfs:file write;
 #This is required for qmi access
 qmux_socket(thermal-engine);
 allow thermal-engine sysfs_mpdecision:file rw_file_perms;
+#This is required for diag access
+diag_rw(thermal-engine);
 r_dir_file(thermal-engine, sysfs_ssr);
 
 #Label the thermal sockets correctly

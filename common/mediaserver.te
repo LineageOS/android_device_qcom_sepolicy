@@ -43,6 +43,9 @@ allow mediaserver time_daemon:unix_stream_socket connectto;
 allow mediaserver audio_data_file:sock_file { create setattr unlink };
 allow mediaserver audio_data_file:dir remove_name;
 
+#allow mediaserver to communicate with diag
+diag_rw(mediaserver);
+
 # Allow mediaserver to search and get the widevine, playready firmwares
 allow mediaserver firmware_file:dir search;
 allow mediaserver firmware_file:file { read getattr open };

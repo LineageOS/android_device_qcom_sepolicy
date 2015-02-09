@@ -20,4 +20,7 @@ allow time_daemon time_data_file:dir { write add_name search};
 allow time_daemon self:socket { write read create ioctl};
 allow time_daemon self:capability { setuid setgid };
 
+#diag read/write access
+diag_rw(time_daemon);
+
 r_dir_file(time_daemon, sysfs_esoc);

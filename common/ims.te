@@ -55,3 +55,5 @@ unix_socket_connect(ims, cnd, cnd)
 
 #Communication with voice_svc device for audio on APP
 allow ims voice_device:chr_file rw_file_perms;
+#diag read/write
+diag_rw(ims);
