@@ -89,7 +89,9 @@ BOARD_SEPOLICY_UNION += \
        mediaserver_test.te \
        energyawareness.te \
        hbtp.te \
+       platform_app.te \
        dtsconfigurator.te \
+       dtseagleservice.te \
        vold.te \
        usf.te
 

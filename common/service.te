@@ -7,3 +7,4 @@ type dun_service,               service_manager_type;
 type imscm_service,             service_manager_type;
 type color_service,             service_manager_type;
 type usf_service,               service_manager_type;
+type dtseagleservice_service,   service_manager_type;
