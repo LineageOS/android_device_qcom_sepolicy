@@ -119,3 +119,6 @@ type mmi_socket, file_type;
 
 #Define the files written during OMA DRM operations
 type oma_drm_data_file, file_type, data_file_type;
+
+# Themes
+type theme_data_file, file_type, data_file_type;

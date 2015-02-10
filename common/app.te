@@ -7,3 +7,7 @@ unix_socket_connect(appdomain, dpmwrapper, dpmd)
 unix_socket_connect(appdomain, qlogd, qlogd)
 #Allow all apps to open and send ioctl to qdsp device
 allow appdomain qdsp_device:chr_file r_file_perms;
+
+# Themed resources (i.e. composed icons)
+allow appdomain theme_data_file:dir r_dir_perms;
+allow appdomain theme_data_file:file r_file_perms;
