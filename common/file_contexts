@@ -250,3 +250,8 @@
 # cache files
 #
 /cache/FTM_AP(/.*)?                                                  u:object_r:mmi_data_file:s0
+
+#################################
+# Themes
+#
+/data/system/theme(/.*)?  u:object_r:theme_data_file:s0

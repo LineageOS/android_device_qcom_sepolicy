@@ -45,3 +45,7 @@ allow mediaserver platform_app:unix_stream_socket { connectto read write setopt 
 
 # call bootanim domain and transfer references to it
 allow mediaserver bootanim:binder { transfer call };
+
+# Themed resources (i.e. composed icons)
+allow mediaserver theme_data_file:dir r_dir_perms;
+allow mediaserver theme_data_file:file r_file_perms;
