@@ -92,9 +92,10 @@ BOARD_SEPOLICY_UNION += \
 
 -include device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)/Android.mk
 
-# Compile sensor pilicy only for SSC targets
+# Compile sensor policy only for SSC targets
 SSC_TARGET_LIST := apq8084
 SSC_TARGET_LIST += msm8226
+SSC_TARGET_LIST += msm8610
 SSC_TARGET_LIST += msm8960
 SSC_TARGET_LIST += msm8974
 SSC_TARGET_LIST += msm8994
