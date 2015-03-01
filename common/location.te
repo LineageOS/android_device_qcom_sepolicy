@@ -29,3 +29,6 @@ allow location system_server:unix_stream_socket { read write };
 
 dontaudit location domain:dir r_dir_perms;
 r_dir_file(location, netmgrd)
+
+#allow location to communicate with diag
+diag_rw(location);

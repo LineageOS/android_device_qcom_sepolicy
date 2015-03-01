@@ -1,10 +1,7 @@
 # General definitions
 type ipacm, domain;
-type ipacm-diag, domain;
 type ipacm_exec, exec_type, file_type;
-type ipacm-diag_exec, exec_type, file_type;
 init_daemon_domain(ipacm)
-init_daemon_domain(ipacm-diag)
 
 userdebug_or_eng(`
   # Allow using the logging file between ipacm and ipacm-diag

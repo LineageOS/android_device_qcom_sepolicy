@@ -72,6 +72,7 @@ BOARD_SEPOLICY_UNION += \
        adsprpcd.te \
        qlogd.te \
        ipacm.te \
+       ipacm-diag.te \
        dpmd.te \
        ssr_setup.te \
        subsystem_ramdump.te \
@@ -88,7 +89,11 @@ BOARD_SEPOLICY_UNION += \
        wfd_app.te \
        mediaserver_test.te \
        hbtp.te \
-       vold.te
+       vold.te \
+       energyawareness.te \
+       usf.te \
+       dtsconfigurator.te \
+       wfdservice.te
 
 -include device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)/Android.mk
 

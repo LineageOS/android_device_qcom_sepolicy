@@ -14,4 +14,7 @@ binder_call(atfwd, servicemanager);
 r_dir_file(atfwd, sysfs_ssr);
 
 allow atfwd self:udp_socket create;
+diag_rw(atfwd);
 unix_socket_connect(atfwd, property, init);
+
+allow atfwd radio_prop:property_service set;

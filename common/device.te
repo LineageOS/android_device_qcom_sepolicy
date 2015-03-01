@@ -41,6 +41,7 @@ type modem_efs_partition_device, dev_type;
 #Define device for partition links
 type ssd_device, dev_type;
 type rpmb_device, dev_type;
+type sg_device, dev_type;
 
 #ESOC device
 type esoc_device, dev_type;
@@ -91,3 +92,10 @@ type voice_device, dev_type;
 
 #Define system health monitor devices
 type system_health_monitor_device, dev_type;
+
+#
+#energy-awareness device
+type pta_device, dev_type;
+
+#Define usf device
+type usf_device, dev_type;

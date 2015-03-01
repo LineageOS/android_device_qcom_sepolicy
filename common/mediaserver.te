@@ -22,6 +22,11 @@ userdebug_or_eng(`
 allow mediaserver sysfs_esoc:dir r_dir_perms;
 allow mediaserver sysfs_esoc:lnk_file read;
 allow mediaserver system_app_data_file:file rw_file_perms;
+
+# allow mediaserver to write DTS files
+allow mediaserver dts_data_file:dir rw_dir_perms;
+allow mediaserver dts_data_file:file create_file_perms;
+
 # access to perflock
 allow mediaserver mpctl_socket:dir r_dir_perms;
 unix_socket_send(mediaserver, mpctl, mpdecision)
@@ -39,3 +44,13 @@ unix_socket_connect(mediaserver, thermal, thermal-engine)
 # Allow mediaserver to search and get the widevine, playready firmwares
 allow mediaserver firmware_file:dir search;
 allow mediaserver firmware_file:file { read getattr open };
+
+# Allow mediaserver to create socket files for audio arbitration
+allow mediaserver audio_data_file:sock_file { create setattr unlink };
+allow mediaserver audio_data_file:dir remove_name;
+
+# allow mediaserver to communicate with timedaemon
+allow mediaserver time_daemon:unix_stream_socket connectto;
+
+#allow mediaserver to communicate with diag
+diag_rw(mediaserver);

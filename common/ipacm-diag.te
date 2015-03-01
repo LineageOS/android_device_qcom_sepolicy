@@ -1,0 +1,6 @@
+type ipacm-diag, domain;
+type ipacm-diag_exec, exec_type, file_type;
+init_daemon_domain(ipacm-diag)
+
+#allow ipacm-diag to communicate with diag
+diag_rw(ipacm-diag);

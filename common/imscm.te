@@ -21,5 +21,8 @@ allow imscm self:capability net_raw;
 # imscm needs to communicate with test app
 # using binder call
 userdebug_or_eng(`
-  binder_call(imscm, untrusted_app)
+  binder_call(imscm, appdomain)
 ')
+
+# imscm needs read/write access to devpts
+allow imscm devpts:chr_file rw_file_perms;
