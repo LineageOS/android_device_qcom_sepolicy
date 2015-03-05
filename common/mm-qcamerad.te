@@ -42,3 +42,6 @@ allow mm-qcamerad shell_data_file:dir search;
 
 # IMS use camera daemon to make VT call
 allow mm-qcamerad port:tcp_socket name_bind;
+
+#Alow  mm-qcamera-daemon to open, read, write and send ioctl to qdsp device.
+allow mm-qcamerad qdsp_device:chr_file { open read write ioctl };
