@@ -8,6 +8,8 @@ init_daemon_domain(thermal-engine)
 #============= thermal-engine ==============
 #This is to access thermal query device
 allow thermal-engine thermal_device:chr_file rw_file_perms;
+#allow to read and write cpufreq sysfs
+allow thermal-engine sysfs_devices_system_cpu:file rw_file_perms;
 #This is required to access smem log device
 allow thermal-engine smem_log_device:chr_file rw_file_perms;
 allow thermal-engine self:capability { dac_read_search dac_override fsetid sys_boot chown };
