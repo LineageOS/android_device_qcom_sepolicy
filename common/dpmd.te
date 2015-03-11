@@ -42,3 +42,6 @@ allow dpmd socket_device:dir remove_name;
 
 #permission to communicate with cnd_socket for installing iptable rules
 unix_socket_connect(dpmd, cnd, cnd);
+
+# allow dpmd to communicate with system_server
+allow dpmd system_server:tcp_socket { write getattr shutdown getopt read bind setopt };
