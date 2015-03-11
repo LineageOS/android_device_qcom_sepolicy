@@ -99,3 +99,6 @@ type system_health_monitor_device, dev_type;
 
 #energy-awareness device
 type pta_device, dev_type;
+
+#add device for FRP
+type persistent_data_block_device, dev_type;

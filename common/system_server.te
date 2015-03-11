@@ -54,3 +54,6 @@ allow system_server smd_device:chr_file rw_file_perms;
 
 #For RTC/poweroff alarm
 allow system_server rtc_device:chr_file rw_file_perms;
+
+#For FRP
+allow system_server persistent_data_block_device:blk_file rw_file_perms;
