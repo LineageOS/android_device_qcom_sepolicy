@@ -2,6 +2,9 @@
 unix_socket_send(untrusted_app, mpctl, mpdecision)
 unix_socket_connect(untrusted_app, mpctl, mpdecision)
 
+# diag device node access is restricted to untrusted_app
+neverallow untrusted_app diag_device:chr_file rw_file_perms;
+
 # read temp sensors
 allow untrusted_app sysfs_thermal:file r_file_perms;
 allow untrusted_app sysfs_thermal:lnk_file r_file_perms;
