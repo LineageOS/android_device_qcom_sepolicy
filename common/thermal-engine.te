@@ -28,6 +28,9 @@ allow thermal-engine sysfs_mpdecision:file rw_file_perms;
 #This is required for diag access
 diag_rw(thermal-engine);
 r_dir_file(thermal-engine, sysfs_ssr);
+#This is required for battery supply access
+allow thermal-engine sysfs_battery_supply:dir r_dir_perms;
+allow thermal-engine sysfs_battery_supply:file rw_file_perms;
 
 #Label the thermal sockets correctly
 type_transition thermal-engine socket_device:sock_file thermal_socket;
