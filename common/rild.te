@@ -1,5 +1,5 @@
-#allow rild qmux_radio_socket:dir { write remove_name search add_name };
-#allow rild qmux_radio_socket:sock_file { write create unlink setattr };
+allow rild socket_device:dir { write remove_name search add_name };
+allow rild socket_device:sock_file { write create unlink setattr };
 #allow rild qmuxd:unix_stream_socket connectto;
 qmux_socket(rild);
 binder_use(rild)
