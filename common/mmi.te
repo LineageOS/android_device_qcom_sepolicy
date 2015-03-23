@@ -10,12 +10,16 @@ allow mmi self:capability { sys_nice dac_override };
 allow mmi self:capability2 block_suspend;
 
 #For various devices
+allow mmi device:dir { read open };
 allow mmi graphics_device:chr_file rw_file_perms;
+allow mmi graphics_device:dir search;
 allow mmi input_device:chr_file r_file_perms;
-allow mmi input_device:dir r_file_perms;
+allow mmi input_device:dir { r_file_perms search };
 allow mmi nfc_device:chr_file rw_file_perms;
 allow mmi shell_exec:file rx_file_perms;
 allow mmi sysfs_wake_lock:file rw_file_perms;
+allow mmi sysfs:file write;
+allow mmi system_file:file execute_no_trans;
 
 #FTM_AP folder permissions
 allow mmi mmi_data_file:dir rw_dir_perms;
