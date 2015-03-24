@@ -46,6 +46,7 @@ userdebug_or_eng(`
 # Allow mm-pp-daemon to change the brightness of the target during display
 # calibration
 allow mm-pp-daemon sysfs:file rw_file_perms;
+allow mm-pp-daemon sysfs_graphics:file r_file_perms;
 
 #')
 
