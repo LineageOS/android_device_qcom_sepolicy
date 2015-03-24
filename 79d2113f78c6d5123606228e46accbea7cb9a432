@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ac665da_b32f9aa0",
+        "filename": "common/mmi.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-03-24T11:00:58Z",
+      "side": 1,
+      "message": "r_dir_perms",
+      "revId": "79d2113f78c6d5123606228e46accbea7cb9a432",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_333baaed",
+        "filename": "common/mmi.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-03-24T11:00:58Z",
+      "side": 1,
+      "message": "r_dir_perms",
+      "revId": "79d2113f78c6d5123606228e46accbea7cb9a432",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_732522c1",
+        "filename": "common/mmi.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-03-24T11:00:58Z",
+      "side": 1,
+      "message": "w_file_perms",
+      "revId": "79d2113f78c6d5123606228e46accbea7cb9a432",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_5322a6ba",
+        "filename": "common/mmi.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-03-24T11:00:58Z",
+      "side": 1,
+      "message": "rw_file_perms",
+      "revId": "79d2113f78c6d5123606228e46accbea7cb9a432",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_932c1ead",
+        "filename": "common/rild.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-03-24T11:00:58Z",
+      "side": 1,
+      "message": "Is this the radio socket? Shouldn\u0027t that be labeled more specifically than socket_device?",
+      "revId": "79d2113f78c6d5123606228e46accbea7cb9a432",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
