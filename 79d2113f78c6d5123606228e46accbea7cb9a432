@@ -84,6 +84,24 @@
       "revId": "79d2113f78c6d5123606228e46accbea7cb9a432",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_7613505d",
+        "filename": "common/rild.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10094
+      },
+      "writtenOn": "2015-03-24T12:04:05Z",
+      "side": 1,
+      "message": "this is actually created in tmpfs, not the ones in /dev/socket",
+      "parentUuid": "5ac665da_932c1ead",
+      "revId": "79d2113f78c6d5123606228e46accbea7cb9a432",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
