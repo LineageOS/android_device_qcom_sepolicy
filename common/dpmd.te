@@ -45,3 +45,6 @@ unix_socket_connect(dpmd, cnd, cnd);
 
 #diag
 diag_rw(dpmd);
+
+# allow dpmd to communicate with system_server
+allow dpmd system_server:tcp_socket { write getattr shutdown getopt read bind setopt };
