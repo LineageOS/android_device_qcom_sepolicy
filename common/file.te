@@ -46,7 +46,7 @@ type thermal_socket, file_type;
 type sysfs_msmuart_file, sysfs_type, fs_type;
 
 # Storage RFS file types
-type rfs_data_file, file_type;
+type rfs_file, file_type;
 type rfs_system_file, file_type;
 type rfs_shared_hlos_file, file_type;
 
