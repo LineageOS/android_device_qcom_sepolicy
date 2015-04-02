@@ -78,6 +78,8 @@ BOARD_SEPOLICY_UNION += \
        subsystem_ramdump.te \
        ssr_diag.te \
        sectest.te \
+       fidodaemon.te \
+       fidotest.te \
        location.te \
        location_app.te \
        seapp_contexts \

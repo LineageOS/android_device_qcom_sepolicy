@@ -50,3 +50,5 @@ allow system_app usf_prop:property_service set;
 
 # allow system_app to interact with dtseagleservice
 binder_call(system_app, dtseagleservice)
+# allow system_app to interact with fido daemon
+binder_call(system_app, fidodaemon)
