@@ -5,6 +5,11 @@ BOARD_SEPOLICY_DIRS += \
        device/qcom/sepolicy/test \
        device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)
 
+# compile CSVT policies only if BoardConfig file specifies
+ifeq ($(TARGET_USES_CSVT),true)
+       BOARD_SEPOLICY_DIRS += device/qcom/sepolicy/common/csvt
+endif
+
 BOARD_SEPOLICY_UNION += \
        genfs_contexts \
        file_contexts \
