@@ -26,3 +26,9 @@ allow wcnss_service self:capability { setuid setgid dac_override net_admin };
 allow wcnss_service self:netlink_socket create_socket_perms;
 allow wcnss_service firmware_file:dir r_dir_perms;
 allow wcnss_service firmware_file:file r_file_perms;
+
+# Talk to init via property_socket
+unix_socket_connect(wcnss_service, property, init)
+
+#Allow wcnss_service daemons to set properties referred by qti_wlan_prop
+allow wcnss_service qti_wlan_prop:property_service set;
