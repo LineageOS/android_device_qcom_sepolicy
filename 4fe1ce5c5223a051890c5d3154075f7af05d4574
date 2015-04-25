@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da7fb54a_4a6842bb",
+        "filename": "common/vold.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6315
+      },
+      "writtenOn": "2015-04-25T08:13:28Z",
+      "side": 1,
+      "message": "r_file_perms",
+      "range": {
+        "startLine": 9,
+        "startChar": 28,
+        "endLine": 9,
+        "endChar": 55
+      },
+      "revId": "4fe1ce5c5223a051890c5d3154075f7af05d4574",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
