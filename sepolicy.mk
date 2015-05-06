@@ -87,6 +87,7 @@ BOARD_SEPOLICY_UNION += \
        dhcp.te \
        wfd_app.te \
        mediaserver_test.te \
+       energyawareness.te \
        hbtp.te \
        vold.te
 
