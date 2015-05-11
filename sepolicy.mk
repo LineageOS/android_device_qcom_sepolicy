@@ -93,8 +93,6 @@ BOARD_SEPOLICY_UNION += \
        wfdservice.te \
        usf.te
 
--include device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)/Android.mk
-
 # Compile sensor policy only for SSC targets
 SSC_TARGET_LIST := apq8084
 SSC_TARGET_LIST += msm8226
@@ -107,3 +105,5 @@ SSC_TARGET_LIST += msm8994
 BOARD_SEPOLICY_UNION += sensors.te
 BOARD_SEPOLICY_UNION += sensors_test.te
 #endif
+
+-include device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)/Android.mk

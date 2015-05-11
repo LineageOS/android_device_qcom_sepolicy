@@ -1,0 +1,14 @@
+###################################
+# System files
+#
+/system/vendor/bin/gnss\.qca1530\.(svcd|sh)                      -- u:object_r:qca1530_exec:s0
+
+###################################
+# sysfs files
+#
+/sys/kernel/qca1530(/.*)?                                           u:object_r:sysfs_qca1530:s0
+
+###################################
+# data files
+#
+/data/misc/location/qca1530(/.*)?                                   u:object_r:qca1530_data_file:s0

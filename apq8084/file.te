@@ -1,0 +1,3 @@
+# qca1530 files
+type qca1530_data_file, file_type, data_file_type;
+type sysfs_qca1530, fs_type, sysfs_type;
