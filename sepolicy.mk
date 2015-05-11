@@ -92,7 +92,8 @@ BOARD_SEPOLICY_UNION += \
        vold.te \
        wfdservice.te \
        usf.te \
-       net.te
+       net.te \
+       dnsmasq.te
 
 # Compile sensor policy only for SSC targets
 SSC_TARGET_LIST := apq8084
