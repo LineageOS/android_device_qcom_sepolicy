@@ -91,7 +91,8 @@ BOARD_SEPOLICY_UNION += \
        hbtp.te \
        vold.te \
        wfdservice.te \
-       usf.te
+       usf.te \
+       net.te
 
 # Compile sensor policy only for SSC targets
 SSC_TARGET_LIST := apq8084
