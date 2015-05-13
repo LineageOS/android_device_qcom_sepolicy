@@ -22,6 +22,29 @@
       "revId": "dc7acdd31294b89a9a644f8627eda99b132b122e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_325d31ea",
+        "filename": "common/property.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13244
+      },
+      "writtenOn": "2015-05-13T00:49:36Z",
+      "side": 1,
+      "message": "properites -\u003e properties",
+      "range": {
+        "startLine": 8,
+        "startChar": 1,
+        "endLine": 8,
+        "endChar": 11
+      },
+      "revId": "dc7acdd31294b89a9a644f8627eda99b132b122e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
