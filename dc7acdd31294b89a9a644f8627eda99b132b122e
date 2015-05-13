@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_d25de5ed",
+        "filename": "common/mm-qcamerad.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13244
+      },
+      "writtenOn": "2015-05-13T00:48:21Z",
+      "side": 1,
+      "message": "Alow -\u003e Allow?",
+      "range": {
+        "startLine": 46,
+        "startChar": 1,
+        "endLine": 46,
+        "endChar": 5
+      },
+      "revId": "dc7acdd31294b89a9a644f8627eda99b132b122e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
