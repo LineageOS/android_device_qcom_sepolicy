@@ -39,3 +39,6 @@ allow system_app time_daemon:unix_stream_socket connectto;
 
 # access to color service SDK
 allow system_app color_service:service_manager add;
+
+# allow system_app to interact with imscm daemon
+binder_call(system_app, imscm)
