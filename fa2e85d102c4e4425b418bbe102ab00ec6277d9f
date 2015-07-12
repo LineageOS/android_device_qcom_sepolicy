@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_ba499161",
+        "filename": "common/mpdecision.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-07-12T08:58:36Z",
+      "side": 0,
+      "message": "I don\u0027t think you can remove this safely.",
+      "range": {
+        "startLine": 42,
+        "startChar": 51,
+        "endLine": 42,
+        "endChar": 64
+      },
+      "revId": "fa2e85d102c4e4425b418bbe102ab00ec6277d9f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
