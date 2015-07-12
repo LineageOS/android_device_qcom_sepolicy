@@ -39,4 +39,3 @@ allow mpdecision system_server:file { open read };
 allow mpdecision thermal-engine:unix_stream_socket connectto;
 allow mpdecision thermal_socket:sock_file write;
 allow mpdecision sysfs_thermal:file rw_file_perms;
-allow mpdecision sysfs_devices_system_iosched:file rw_file_perms;
