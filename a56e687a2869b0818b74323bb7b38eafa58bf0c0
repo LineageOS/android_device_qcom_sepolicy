@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_efadfd31",
+        "filename": "common/bluetooth.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 10094
+      },
+      "writtenOn": "2015-08-19T23:54:30Z",
+      "side": 1,
+      "message": "do we want to only allow this on eng?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 18
+      },
+      "revId": "a56e687a2869b0818b74323bb7b38eafa58bf0c0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
