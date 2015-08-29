@@ -95,7 +95,8 @@ BOARD_SEPOLICY_UNION += \
        dtsconfigurator.te \
        dtseagleservice.te \
        vold.te \
-       usf.te
+       usf.te \
+       ridl.te
 
 -include device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)/Android.mk
 

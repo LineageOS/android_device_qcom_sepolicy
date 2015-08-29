@@ -52,3 +52,11 @@ allow system_app usf_prop:property_service set;
 binder_call(system_app, dtseagleservice)
 # allow system_app to interact with fido daemon
 binder_call(system_app, fidodaemon)
+
+#allow access to RIDL
+allow system_app RIDL_data_file:dir rw_dir_perms;
+allow system_app RIDL_data_file:file create_file_perms;
+allow system_app RIDL_data_file:lnk_file r_file_perms;
+allow system_app RIDL_socket:dir r_dir_perms;
+unix_socket_connect(system_app, RIDL, RIDL)
+allow system_app RIDL_socket:sock_file r_file_perms;
