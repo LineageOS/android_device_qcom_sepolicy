@@ -9,7 +9,7 @@ allow time_daemon smem_log_device:chr_file rw_file_perms;
 
 # Add rules for access permissions
 #============= IOCTL operations ==============
-allow time_daemon rtc_device:chr_file { open read ioctl };
+allow time_daemon rtc_device:chr_file { open read write ioctl };
 allow time_daemon alarm_device:chr_file { open read write ioctl };
 
 #============= File labeling ==============
@@ -18,6 +18,6 @@ type_transition time_daemon system_data_file:file time_data_file;
 allow time_daemon time_data_file:file { write create open read};
 allow time_daemon time_data_file:dir { write add_name search};
 allow time_daemon self:socket { write read create ioctl};
-allow time_daemon self:capability { setuid setgid };
+allow time_daemon self:capability { setuid setgid sys_time };
 
 r_dir_file(time_daemon, sysfs_esoc);

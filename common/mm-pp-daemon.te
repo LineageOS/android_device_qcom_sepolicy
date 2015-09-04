@@ -26,19 +26,16 @@ allow mm-pp-daemon sensors_socket:sock_file rw_file_perms;
 allow mm-pp-daemon sensors:unix_stream_socket connectto;
 
 allow mm-pp-daemon system_prop:property_service set;
-#Calibration can only be done on userdebug or eng builds
-#Enable on user builds too. This is causing mayhem for gfx
-#userdebug_or_eng(`
-    # Display calibration service opens /dev/diag in order to communicate with the
-    # target device
-    allow mm-pp-daemon diag_device:chr_file rw_file_perms;
 
-    # QDCM needs to trigger screen refreshes in some cases to reach the
-    # convergent state
-    binder_use(mm-pp-daemon)
-    binder_call(mm-pp-daemon, system_server)
-    binder_call(mm-pp-daemon, surfaceflinger)
+# Allow diag to access tempfs
+allow mm-pp-daemon diag_device:chr_file rw_file_perms;
 
+# Allow mm-pp-daemon to call binder for screen refresh
+binder_use(mm-pp-daemon)
+binder_call(mm-pp-daemon, system_server)
+binder_call(mm-pp-daemon, surfaceflinger)
+
+userdebug_or_eng(`
     # This allows pp-daemon to use shell commands to blank
     # the display - it uses input keyevent to do this
     allow mm-pp-daemon shell_exec:file rx_file_perms;
@@ -46,14 +43,18 @@ allow mm-pp-daemon system_prop:property_service set;
     allow mm-pp-daemon zygote_exec:file rx_file_perms;
     allow mm-pp-daemon self:process ptrace;
 
+    # This allows pp-daemon to set debug property
+    allow mm-pp-daemon debug_prop:property_service set;
+')
+
 # Allow mm-pp-daemon to change the brightness of the target during display
 # calibration
 allow mm-pp-daemon sysfs:file rw_file_perms;
-
-#')
+allow mm-pp-daemon sysfs_graphics:file r_file_perms;
 
 # Allow socket calls in pp-daemon
 unix_socket_connect(mm-pp-daemon, property, init)
 unix_socket_connect(mm-pp-daemon, pps, init)
 allow mm-pp-daemon init:unix_stream_socket listen;
 allow mm-pp-daemon init:unix_stream_socket accept;
+allow mm-pp-daemon system_server:unix_stream_socket { read write };
