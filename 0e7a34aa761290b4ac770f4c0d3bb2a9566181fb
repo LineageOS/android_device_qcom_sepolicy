@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_87ef7486",
+        "filename": "common/file.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 7761
+      },
+      "writtenOn": "2015-09-20T11:23:15Z",
+      "side": 1,
+      "message": "Steve, it\u0027s already defined here.",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 50
+      },
+      "revId": "0e7a34aa761290b4ac770f4c0d3bb2a9566181fb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
