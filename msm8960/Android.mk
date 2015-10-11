@@ -1,2 +1,1 @@
-BOARD_SEPOLICY_UNION += \
-     bridgemgr.te
+# BOARD_SEPOLICY_UNION += \
