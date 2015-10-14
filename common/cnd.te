@@ -70,7 +70,10 @@ allow cnd mediaserver:file { open read };
 allow cnd self:socket create_socket_perms;
 
 # allow cnd to access ipa_dev
-allow cnd ipa_dev:chr_file r_file_perms;
+allow cnd ipa_dev:chr_file rw_file_perms;
 
 # allow access to nims
 allow cnd socket_device:dir remove_name;
+
+# allow access ipa tether stats file
+r_dir_file(cnd, ipacm_data_file)

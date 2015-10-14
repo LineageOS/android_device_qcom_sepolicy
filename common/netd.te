@@ -11,3 +11,6 @@ dontaudit netd self:capability sys_module;
 #needed for ipt_TCPMSS and ip6t_TCPMSS
 allow netd kernel:system module_request;
 unix_socket_connect(netd, cnd, cnd)
+
+# allow to read /data/misc/ipa/tether_stats file
+r_dir_file(netd, ipacm_data_file)
