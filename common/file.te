@@ -129,9 +129,6 @@ type mmi_data_file, file_type, data_file_type;
 #bluetooth firmware file types
 type bt_firmware_file, fs_type, contextmount_type;
 
-#needed by vold
-type  proc_dirty_ratio, fs_type;
-
 #File types by mmi
 type mmi_socket, file_type;
 
