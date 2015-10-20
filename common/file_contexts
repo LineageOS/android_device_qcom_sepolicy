@@ -219,6 +219,7 @@
 /system/bin/usf_pairing                         u:object_r:usf_exec:s0
 /system/bin/usf_tester                          u:object_r:usf_exec:s0
 /system/vendor/bin/RIDLClient.exe               u:object_r:RIDL_exec:s0
+/system/vendor/bin/LKCore                       u:object_r:qti_logkit_exec:s0
 /system/bin/tbaseLoader                         u:object_r:tbaseLoader_exec:s0
 /system/bin/mcStarter                           u:object_r:mcStarter_exec:s0
 /system/bin/fstman                              u:object_r:fstman_exec:s0
@@ -299,12 +300,15 @@
 /data/misc/dts(/.*)?                                                u:object_r:dts_data_file:s0
 /data/misc/seemp(/.*)?                                              u:object_r:seemp_file:s0
 /data/misc/SelfHost(/.*)?                                           u:object_r:RIDL_data_file:s0
+/data/misc/qti-logkit(/.*)?                                         u:object_r:qti_logkit_priv_data_file:s0
+/data/misc/qti-logkit/logdata(/.*)?                                 u:object_r:qti_logkit_pub_data_file:s0
 /data/misc/radio(/.*)?                                              u:object_r:radio_data_file:s0
 /data/misc/port_bridge(/.*)?                                        u:object_r:port_bridge_data_file:s0
 /data/misc/fm(/.*)?                                                 u:object_r:fm_data_file:s0
 /data/misc/audio_pp(/.*)?                                           u:object_r:audio_pp_data_file:s0
 /data/ramdump(/.*)?                                                 u:object_r:ssr_ramdump_data_file:s0
 /data/misc/SelfHost/socket(/.*)?                                    u:object_r:RIDL_socket:s0
+/data/misc/qti-logkit/socket-privileged(/.*)?                       u:object_r:qti_logkit_priv_socket:s0
 
 ###################################
 # persist files
