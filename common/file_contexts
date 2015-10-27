@@ -47,6 +47,7 @@
 /dev/pta                                        u:object_r:pta_device:s0
 /dev/mdss_rotator                               u:object_r:graphics_device:s0
 /dev/hbtp_input                                 u:object_r:hbtp_device:s0
+/dev/hbtp_vm                                    u:object_r:hbtp_device:s0
 /dev/jdi-bu21150                                u:object_r:bu21150_device:s0
 /dev/voice_svc                                  u:object_r:voice_device:s0
 /dev/avtimer                                    u:object_r:avtimer_device:s0
@@ -190,6 +191,7 @@
 /system/vendor/bin/slim_daemon                  u:object_r:location_exec:s0
 /system/bin/energy-awareness                    u:object_r:energyawareness_exec:s0
 /system/vendor/bin/fidodaemon                   u:object_r:fidodaemon_exec:s0
+/system/bin/secotad                             u:object_r:secotad_exec:s0
 /system/vendor/bin/qseeproxydaemon              u:object_r:qseeproxy_exec:s0
 /system/bin/dts_configurator                    u:object_r:dtsconfigurator_exec:s0
 /system/bin/dts_eagle_service                   u:object_r:dtseagleservice_exec:s0
@@ -197,6 +199,7 @@
 /system/bin/wcnss_service                       u:object_r:wcnss_service_exec:s0
 /system/vendor/bin/hbtp_daemon                  u:object_r:hbtp_exec:s0
 /system/vendor/bin/touch_fusion                 u:object_r:touchfusion_exec:s0
+/system/vendor/bin/seemp_healthd                u:object_r:seemp_health_daemon_exec:s0
 /system/bin/seempd                              u:object_r:seempd_exec:s0
 /system/bin/sapd                                u:object_r:sapd_exec:s0
 /system/bin/btsnoop                             u:object_r:btsnoop_exec:s0
@@ -216,6 +219,7 @@
 /system/bin/tbaseLoader                         u:object_r:tbaseLoader_exec:s0
 /system/bin/mcStarter                           u:object_r:mcStarter_exec:s0
 /system/bin/fstman                              u:object_r:fstman_exec:s0
+/system/vendor/bin/mdtp_service                 u:object_r:mdtpdaemon_exec:s0
 
 ###################################
 # sysfs files

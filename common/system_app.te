@@ -64,6 +64,9 @@ binder_call(system_app, dtseagleservice)
 # allow system_app to interact with fido daemon
 binder_call(system_app, fidodaemon)
 
+# allow system_app to interact with secota daemon
+binder_call(system_app, secotad)
+
 # allow system_app to interact with imscm daemon
 binder_call(system_app, imscm)
 
@@ -79,6 +82,9 @@ binder_call(system_app, qfp-daemon)
 
 # allow system_app to interact with fido daemon
 binder_call(system_app, fidodaemon)
+
+# allow system_app to interact with seemp health daemon
+binder_call(system_app, seemp_health_daemon)
 
 #allow access to RIDL
 allow system_app RIDL_data_file:dir rw_dir_perms;
@@ -100,5 +106,12 @@ allow system_app self:netlink_kobject_uevent_socket { read bind setopt create };
 #allow access to ipa
 allow system_app ipa_dev:chr_file rw_file_perms;
 
+# allow system_app to interact with mdtp daemon
+binder_call(system_app, mdtpdaemon)
+
 # allow access to system_app for audio pp files
 r_dir_file(system_app, audio_pp_data_file);
+
+# allow access to system app for radio files
+allow system_app radio_data_file:dir rw_dir_perms;
+allow system_app radio_data_file:file create_file_perms;

@@ -25,44 +25,32 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#qfp daemon for ultrasonic fingerprint sensor
-type qfp-daemon, domain;
-type qfp-daemon_exec, exec_type, file_type;
+type mdtpdaemon, domain;
+type mdtpdaemon_exec, exec_type, file_type;
 
-net_domain(qfp-daemon)
-init_daemon_domain(qfp-daemon)
+#Allow for transition from init domain to mdtpdaemon
+init_daemon_domain(mdtpdaemon)
 
-binder_call(qfp-daemon, servicemanager)
-binder_call(qfp-daemon, system_app)
-binder_call(qfp-daemon, fingerprintd)
-binder_use(qfp-daemon)
+#Allow mdtpdaemon to use Binder IPC
+binder_use(mdtpdaemon)
 
-allow qfp-daemon qfp-daemon_data_file:dir { rw_dir_perms setattr };
-allow qfp-daemon qfp-daemon_data_file:file create_file_perms;
+#Mark mdtpdaemon as a Binder service domain
+binder_service(mdtpdaemon)
 
-# Access to tee_device
-allow qfp-daemon tee_device:chr_file rw_file_perms;
+#Allow mdtpdaemon to be registered with service manager
+allow mdtpdaemon mdtpdaemon_service:service_manager { add find };
 
-# Add IQfpService service
-allow qfp-daemon iqfp_service:service_manager add;
+#Allow apps to interact with mdtpdaemon
+binder_call(mdtpdaemon, platform_app)
 
-# Read system property
-allow qfp-daemon property_socket:sock_file write;
+#Allow access to firmware
+r_dir_file(mdtpdaemon, firmware_file)
 
-# RW to device driver
-allow qfp-daemon qbt1000_device:chr_file rw_file_perms;
+#Allow access to qsee directories
+allow mdtpdaemon data_qsee_file:dir create_dir_perms;
 
-# R dir perms for firmware dir
-r_dir_file(qfp-daemon, firmware_file)
+#Allow access to qsee fifos
+allow mdtpdaemon data_qsee_file:fifo_file create_file_perms;
 
-# Allow qfp daemon access to system server
-binder_call(qfp-daemon, system_server);
-
-# Allow read to sensor device and read/write to sensor socket
-allow qfp-daemon sensors_device:chr_file r_file_perms;
-allow qfp-daemon sensors_socket:sock_file rw_file_perms;
-allow qfp-daemon sensors:unix_stream_socket connectto;
-
-# Allow listing input devices and sending input events
-allow qfp-daemon input_device:chr_file rw_file_perms;
-allow qfp-daemon input_device:dir r_dir_perms;
+#Allow access to tee device
+allow mdtpdaemon tee_device:chr_file rw_file_perms;
