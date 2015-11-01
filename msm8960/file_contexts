@@ -9,6 +9,7 @@
 /dev/block/bootdevice/by-name/m9kefs2           u:object_r:efs_boot_dev:s0
 /dev/block/bootdevice/by-name/m9kefs3           u:object_r:efs_boot_dev:s0
 /dev/block/bootdevice/by-name/m9kefsc           u:object_r:efs_boot_dev:s0
+/dev/block/platform/msm_sdcc\.1/by-name/userdata        u:object_r:userdata_block_device:s0
 
 ###################################
 # System files
