@@ -99,3 +99,7 @@ allow mediaserver surfaceflinger:unix_stream_socket rw_socket_perms;
 # DOLBY_START
 set_prop(mediaserver, dolby_prop)
 # DOLBY_END
+
+# Allow mediaserver to search and get the widevine, playready firmwares
+allow mediaserver firmware_file:dir search;
+allow mediaserver firmware_file:file { read getattr open };

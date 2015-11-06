@@ -71,3 +71,6 @@ binder_call(mm-qcamerad, mmi);
 allow mm-qcamerad input_device:dir r_dir_perms;
 allow mm-qcamerad input_device:chr_file r_file_perms;
 allow mm-qcamerad sysfs:file rw_file_perms;
+
+# /data/fdAlbum
+allow mm-qcamerad camera_data_file:file create_file_perms;
