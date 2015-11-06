@@ -71,3 +71,7 @@ allow mediaserver system_app:unix_stream_socket { connectto read write setopt };
 #Allow mediaserver to access service manager STAProxyService
 #Allow mediaserver to access service manager wfdservice
 allow mediaserver { STAProxyService wfdservice_service }:service_manager find;
+
+# Allow mediaserver to search and get the widevine, playready firmwares
+allow mediaserver firmware_file:dir search;
+allow mediaserver firmware_file:file { read getattr open };

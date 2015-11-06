@@ -274,6 +274,7 @@
 /data/rfs.*                                                         u:object_r:rfs_file:s0
 /data/hlos_rfs(/.*)?                                                u:object_r:rfs_shared_hlos_file:s0
 /data/camera(/.*)?                                                  u:object_r:camera_socket:s0
+/data/fdAlbum                                                       u:object_r:camera_data_file:s0
 /data/misc/stargate(/.*)?                                           u:object_r:qfp-daemon_data_file:s0
 /data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
 /data/time(/.*)?                                                    u:object_r:time_data_file:s0

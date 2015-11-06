@@ -43,3 +43,8 @@ allow qtitetherservice_app qtitetherservice_app_data_file:dir create_dir_perms;
 allow qtitetherservice_app qtitetherservice_app_data_file:{ file lnk_file } create_file_perms;
 
 allow qtitetherservice_app wcnss_service_exec:file rx_file_perms;
+
+# TEMPORARY: Type transitioning via seapp_contexts from system_app isn't working
+#
+allow system_app qtitetherservice_app_data_file:dir create_dir_perms;
+allow system_app qtitetherservice_app_data_file:{ file lnk_file } create_file_perms;
