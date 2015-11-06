@@ -120,3 +120,6 @@ allow system_server iqfp_service:service_manager find;
 
 #for seemp
 unix_socket_send(system_server, seempdw, seempd)
+
+# allow tethering to access dhcp leases
+r_dir_file(system_server, dhcp_data_file)
