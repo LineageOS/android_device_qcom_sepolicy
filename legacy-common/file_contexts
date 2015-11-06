@@ -35,3 +35,6 @@
 
 # Time services
 /data/vendor/time(/.*)?               u:object_r:time_data_file:s0
+
+# Camera
+/data/fdAlbum                                                       u:object_r:camera_data_file:s0
