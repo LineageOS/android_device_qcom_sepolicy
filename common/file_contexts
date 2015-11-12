@@ -70,6 +70,9 @@
 /dev/qbt1000                                    u:object_r:qbt1000_device:s0
 /dev/at_.*                                      u:object_r:at_device:s0
 /dev/sg.*                                       u:object_r:sg_device:s0
+/dev/dri/card0                                  u:object_r:graphics_device:s0
+/dev/dri/controlD64                             u:object_r:graphics_device:s0
+/dev/dri/renderD128                             u:object_r:graphics_device:s0
 
 ###################################
 # Dev block nodes
