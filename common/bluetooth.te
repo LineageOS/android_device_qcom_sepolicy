@@ -11,6 +11,10 @@ type btsnoop, bluetoothdomain;
 type btsnoop_exec, exec_type, file_type;
 domain_auto_trans(init, btsnoop_exec, bluetooth)
 
+type btnvtool, bluetoothdomain;
+type btnvtool_exec, exec_type, file_type;
+domain_auto_trans(init, btnvtool_exec, bluetooth)
+
 type wcnss_filter, bluetoothdomain;
 type wcnss_filter_exec, exec_type, file_type;
 domain_auto_trans(init, wcnss_filter_exec, bluetooth)
@@ -36,8 +40,12 @@ allow bluetooth {
 }:chr_file rw_file_perms;
 
 #Access to persist_file
+allow bluetooth persist_bluetooth_file:dir rw_dir_perms;
+allow bluetooth persist_bluetooth_file:file create_file_perms;
 r_dir_file(bluetooth, persist_file)
 allow bluetooth persist_file:file w_file_perms;
+
+allow bluetooth self:socket { create ioctl write getopt read };
 
 #For bluetooth firmware
 r_dir_file(bluetooth, bt_firmware_file)
