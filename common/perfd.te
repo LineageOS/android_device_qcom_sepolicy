@@ -36,3 +36,7 @@ unix_socket_connect(perfd, thermal, thermal-engine);
 
 # Access device nodes inside /dev/cpuctl
 allow perfd cpuctl_device:chr_file rw_file_perms;
+
+#cm extra opts
+allow perfd thermal-engine:unix_stream_socket connectto;
+allow perfd thermal_socket:sock_file write;
