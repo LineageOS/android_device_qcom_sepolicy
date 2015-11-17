@@ -16,7 +16,7 @@ userdebug_or_eng(`
   allow mm-qcamerad camera_data_file:file create_file_perms;
 
   # mm-qcamerad needs to set persist.camera. property
-  allow mm-qcamerad camera_prop:property_service set;
+  set_prop(mm-qcamerad, camera_prop)
 
 ')
 
