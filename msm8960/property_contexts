@@ -30,3 +30,6 @@ ctl.thermal-engine             u:object_r:ctl_thermal-engine_prop:s0
 persist.nativehmi.exit         u:object_r:ctl_bootanim_prop:s0
 nativehmi.appname              u:object_r:ctl_bootanim_prop:s0
 sys.mediaserver.ready          u:object_r:audio_prop:s0
+early.audionative.id           u:object_r:audio_prop:s0
+early.audio.start              u:object_r:audio_prop:s0
+early.audioapp.id              u:object_r:audio_prop:s0

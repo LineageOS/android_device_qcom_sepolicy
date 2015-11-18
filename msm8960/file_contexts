@@ -43,9 +43,10 @@
 /system/bin/efks                                u:object_r:mdm_helper_exec:s0
 /system/bin/DR_AP_Service                       u:object_r:location_exec:s0
 /system/bin/boot                                u:object_r:bootanim_exec:s0
-
+/system/bin/earlyaudio                          u:object_r:earlyaudio_exec:s0
 ###################################
 # Data files
 #
 /data/qcks(/.*)?                                u:object_r:efs_data_file:s0
 /sys/bootkpi/marker_entry                       u:object_r:sys_bootkpi:s0
+/data/misc/earlyaudio(/.*)?                     u:object_r:earlyaudio_data_file:s0
