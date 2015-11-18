@@ -3,7 +3,7 @@ type perfd_exec, exec_type, file_type;
 
 init_daemon_domain(perfd)
 
-allow perfd self:capability { net_admin chown dac_override fsetid };
+allow perfd self:capability { net_admin chown dac_override fsetid kill };
 allow perfd {
     sysfs_devices_system_cpu
     sysfs_cpu_online

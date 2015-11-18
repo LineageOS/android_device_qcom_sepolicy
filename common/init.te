@@ -19,3 +19,6 @@ allow init tmpfs:lnk_file create_file_perms;
 #allow it for most domain. Do not honor LD_PRELOAD
 #for lmkd
 allow init { domain -lmkd }:process noatsecure;
+
+# allow setting proc_dirt_ratio fron init.rc scripts
+allow init proc_dirty_ratio:file rw_file_perms;
