@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_29cb09a6",
+        "filename": "common/thermal-engine.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 10094
+      },
+      "writtenOn": "2015-11-19T01:29:17Z",
+      "side": 1,
+      "message": "This was fixed: http://review.cyanogenmod.org/#/c/120285/",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 68
+      },
+      "revId": "cc6a839fb1c54d177282d04c3bda3001a0288926",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
