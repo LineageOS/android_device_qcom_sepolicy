@@ -120,3 +120,7 @@ allow system_server iqfp_service:service_manager find;
 
 #for seemp
 unix_socket_send(system_server, seempdw, seempd)
+
+#allow reading of usb sysfs to query hvdcp state
+allow system_server sysfs_usb_supply:dir { search };
+allow system_server sysfs_usb_supply:file r_file_perms;
