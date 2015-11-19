@@ -16,6 +16,24 @@
       "revId": "8819655a203444fa657802bd755d5831afb0df06",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f515b1d_0904cd7a",
+        "filename": "common/init.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 10094
+      },
+      "writtenOn": "2015-11-19T02:33:15Z",
+      "side": 1,
+      "message": "This comes from upstream CAF: https://www.codeaurora.org/cgit/quic/la/platform/vendor/qcom/plutonium/commit/?h\u003dLA.BF64.1.2.1_rb2.10\u0026id\u003d5ad3d587308660f6b0d31a0e3a8eda86f5b7cfaa",
+      "parentUuid": "7f515b1d_49e1a5d0",
+      "revId": "8819655a203444fa657802bd755d5831afb0df06",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
