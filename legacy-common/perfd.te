@@ -47,6 +47,9 @@ allow perfd mpctl_data_file:file create_file_perms;
 # Thermal lib access
 unix_socket_connect(perfd, thermal, thermal-engine)
 
+# Allow perfd to check for existence of other processes
+allow perfd domain:process signull;
+
 # Allow perfd to set properties
 set_prop(perfd, freq_prop)
 
