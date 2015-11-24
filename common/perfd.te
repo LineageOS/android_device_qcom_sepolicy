@@ -24,6 +24,9 @@ allow perfd mpctl_data_file:file create_file_perms;
 # Allow poll of system_server status
 r_dir_file(perfd, system_server)
 
+# Allow perfd to check for existence of other processes
+allow perfd self:process signull;
+
 # Allow access to thermal sysfs entry
 r_dir_file(perfd, sysfs_thermal)
 allow perfd sysfs_thermal:file write;
