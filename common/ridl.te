@@ -93,6 +93,9 @@ userdebug_or_eng(`
 	# tcpdump
 	allow RIDL self:packet_socket create_socket_perms;
 	allow RIDL self:capability net_raw;
+
+        # allow location
+        allow RIDL app_api_service:service_manager find;
 ')
 
 # drop root caps
@@ -107,3 +110,6 @@ allow RIDL storage_file:dir r_dir_perms;
 
 # allow logcat access
 read_logd( RIDL );
+
+# allow netstats
+allow RIDL system_api_service:service_manager find;
