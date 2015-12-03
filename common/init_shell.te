@@ -84,6 +84,7 @@ allow qti_init_shell {
     ctl_hbtp_prop
     #Needed for starting vm_bms executable post-boot
     vm_bms_prop
+    radio_noril_prop
 }:property_service set;
 
 allow qti_init_shell efs_boot_dev:blk_file r_file_perms;
