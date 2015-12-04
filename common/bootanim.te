@@ -1,0 +1,1 @@
+allow bootanim mediaserver_service:service_manager find;
