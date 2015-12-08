@@ -55,6 +55,10 @@ allow qfp-daemon qbt1000_device:chr_file rw_file_perms;
 # R dir perms for firmware dir
 r_dir_file(qfp-daemon, firmware_file)
 
+# R dir perms for persist qc_senseid dir
+r_dir_file(qfp-daemon, persist_file)
+r_dir_file(qfp-daemon, persist_qc_senseid_file)
+
 # Allow qfp daemon access to system server
 binder_call(qfp-daemon, system_server);
 
