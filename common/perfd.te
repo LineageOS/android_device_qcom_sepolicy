@@ -28,6 +28,10 @@ r_dir_file(perfd, system_server)
 # Allow perfd to check for existence of other processes
 allow perfd domain:process signull;
 
+# Allow access to /proc/PID
+allow perfd appdomain:dir r_dir_perms;
+allow perfd appdomain:file rw_file_perms;
+
 # Allow access to thermal sysfs entry
 r_dir_file(perfd, sysfs_thermal)
 allow perfd sysfs_thermal:file write;
