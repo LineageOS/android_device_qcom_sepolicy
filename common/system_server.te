@@ -120,3 +120,9 @@ allow system_server iqfp_service:service_manager find;
 
 #for seemp
 unix_socket_send(system_server, seempdw, seempd)
+
+# For shutdown animation
+allow system_server ctl_bootanim_prop:property_service set;
+
+# allow tethering to access dhcp leases
+r_dir_file(system_server, dhcp_data_file)
