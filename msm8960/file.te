@@ -28,3 +28,5 @@
 #efs file types
 type efs_data_file, file_type, data_file_type;
 type mpdecision_socket, file_type;
+type qtimusic_app_data_file, file_type, data_file_type;
+type earlyaudio_data_file, file_type, data_file_type;
