@@ -42,6 +42,8 @@ allow touchfusion self:netlink_socket create_socket_perms;
 
 allow touchfusion graphics_device:chr_file rw_file_perms;
 
+allow touchfusion self:capability { setgid setuid };
+
 userdebug_or_eng(`
 allow touchfusion self:capability { sys_nice net_admin dac_override dac_read_search };
 ')
