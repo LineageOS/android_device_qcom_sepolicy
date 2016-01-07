@@ -24,6 +24,11 @@ allow perfd mpctl_data_file:file create_file_perms;
 # Allow poll of system_server status
 r_dir_file(perfd, system_server)
 
+
+# Allow access to /proc/PID
+allow perfd appdomain:dir r_dir_perms;
+allow perfd appdomain:file rw_file_perms;
+
 # Allow access to thermal sysfs entry
 r_dir_file(perfd, sysfs_thermal)
 allow perfd sysfs_thermal:file write;
