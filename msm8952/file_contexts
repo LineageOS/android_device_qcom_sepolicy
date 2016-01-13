@@ -42,6 +42,9 @@
 /dev/block/mmcblk0                                                    u:object_r:root_block_device:s0
 /dev/block/mmcblk0rpmb                                                u:object_r:rpmb_device:s0
 /dev/block/platform/soc.0/7824900.sdhci/by-name/config                u:object_r:frp_block_device:s0
+/dev/block/platform/soc.0/7824900.sdhci/by-name/boot                  u:object_r:boot_block_device:s0
+/dev/block/platform/soc.0/7824900.sdhci/by-name/recovery              u:object_r:recovery_block_device:s0
+/dev/block/platform/soc.0/7824900.sdhci/by-name/cache                 u:object_r:cache_block_device:s0
 
 #Using soc instead of soc.0 to make it compatable with 3.18 kernel
 
@@ -56,3 +59,7 @@
 /dev/block/platform/soc/7824900.sdhci/by-name/dip                   u:object_r:dip_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/mdtp                  u:object_r:mdtp_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/frp                   u:object_r:frp_block_device:s0
+/dev/block/platform/soc/7824900.sdhci/by-name/config                u:object_r:frp_block_device:s0
+/dev/block/platform/soc/7824900.sdhci/by-name/boot                  u:object_r:boot_block_device:s0
+/dev/block/platform/soc/7824900.sdhci/by-name/recovery              u:object_r:recovery_block_device:s0
+/dev/block/platform/soc/7824900.sdhci/by-name/cache                 u:object_r:cache_block_device:s0
