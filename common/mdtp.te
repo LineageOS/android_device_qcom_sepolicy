@@ -28,6 +28,17 @@
 type mdtpdaemon, domain;
 type mdtpdaemon_exec, exec_type, file_type;
 
+allow mdtpdaemon self:capability {
+    setuid
+    setgid
+};
+
+userdebug_or_eng(`
+    #Needed for kill(pid, 0) existance test
+    allow mdtpdaemon su:process signull;
+    allow mdtpdaemon self:capability kill;
+')
+
 #Allow for transition from init domain to mdtpdaemon
 init_daemon_domain(mdtpdaemon)
 
@@ -48,9 +59,30 @@ r_dir_file(mdtpdaemon, firmware_file)
 
 #Allow access to qsee directories
 allow mdtpdaemon data_qsee_file:dir create_dir_perms;
+allow mdtpdaemon data_qsee_file:file create_file_perms;
 
 #Allow access to qsee fifos
 allow mdtpdaemon data_qsee_file:fifo_file create_file_perms;
 
 #Allow access to tee device
 allow mdtpdaemon tee_device:chr_file rw_file_perms;
+
+# Provide access to block devices
+allow mdtpdaemon block_device:dir r_dir_perms;
+allow mdtpdaemon mdtp_device:blk_file rw_file_perms;
+allow mdtpdaemon dip_device:blk_file rw_file_perms;
+allow mdtpdaemon system_block_device:blk_file r_file_perms;
+
+# Provide access to QTI Crypto driver for MDTP
+# allow mdtpdaemon qce_device:chr_file rw_file_perms;
+
+# Provide read access to all /system files for MDTP file-to-block-mapping
+r_dir_file(mdtpdaemon, exec_type)
+r_dir_file(mdtpdaemon, system_file)
+
+# Provide mdtpd ability to access QMUXD/IPCRouter for QMI
+qmux_socket(mdtpdaemon);
+allow mdtpdaemon self:socket create_socket_perms;
+
+# Provide tee ability to run executables in rootfs for MDTP
+allow mdtpdaemon rootfs:file x_file_perms;
