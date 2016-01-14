@@ -80,6 +80,7 @@ allow qti_init_shell {
     qemu_hw_mainkeys_prop
     alarm_boot_prop
     boot_animation_prop
+    debug_gralloc_prop
     # Needed for starting console in userdebug mode
     userdebug_or_eng(`ctl_console_prop coresight_prop')
     rmnet_mux_prop
