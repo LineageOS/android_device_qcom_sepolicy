@@ -67,6 +67,9 @@ binder_call(mediaserver, wfdservice)
 #allow mediaserver to access adsprpcd
 r_dir_file(mediaserver, adsprpcd_file);
 
+# allow mediaserver to communicate with bootanim
+binder_call(mediaserver, bootanim);
+
 #Allow mediaserver to access service manager wfdservice
 allow mediaserver wfdservice_service:service_manager find;
 allow mediaserver surfaceflinger:unix_stream_socket rw_socket_perms;
