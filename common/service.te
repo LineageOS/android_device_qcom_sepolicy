@@ -8,7 +8,6 @@ type seemp_health_daemon_service, service_manager_type;
 type secotad_service,             service_manager_type;
 type qseeproxy_service,           service_manager_type;
 type wbc_service,                 service_manager_type;
-type STAProxyService,             service_manager_type;
 type dun_service,                 service_manager_type;
 type imscm_service,               system_api_service, service_manager_type;
 type color_service,               service_manager_type;

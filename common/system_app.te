@@ -15,7 +15,6 @@ allow system_app {
     cne_service
     # access to color service SDK
     color_service
-    STAProxyService
 }:service_manager add;
 
 # access to perflock
