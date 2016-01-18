@@ -172,6 +172,7 @@
 /system/vendor/bin/pd-api-test                  u:object_r:pd_mapper_exec:s0
 /system/bin/usb_uicc_client                     u:object_r:usb_uicc_daemon_exec:s0
 /system/bin/qcom-system-daemon                  u:object_r:qcomsysd_exec:s0
+/system/bin/poweroffhandler                     u:object_r:poweroffhandler_exec:s0
 /system/xbin/qlogd                              u:object_r:qlogd_exec:s0
 /system/bin/ipacm                               u:object_r:ipacm_exec:s0
 /system/bin/ipacm-diag                          u:object_r:ipacm-diag_exec:s0
