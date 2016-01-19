@@ -42,3 +42,4 @@
 
 /dev/block/platform/soc.0/7824900.sdhci/by-name/frp                   u:object_r:frp_block_device:s0
 /dev/block/platform/soc.0/7824900.sdhci/by-name/cache                 u:object_r:cache_block_device:s0
+/dev/block/platform/soc.0/7824900.sdhci/by-name/config                u:object_r:frp_block_device:s0

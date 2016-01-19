@@ -10,6 +10,7 @@ type usf_prop, property_type;
 
 type freq_prop, property_type;
 type perfd_prop, property_type;
+type vm_bms_prop, property_type; #To start vm_bms
 type qti_prop, property_type;
 type ipacm_prop, property_type;
 type ipacm-diag_prop, property_type;
@@ -37,3 +38,8 @@ type qemu_hw_mainkeys_prop, property_type;
 type coresight_prop, property_type;
 
 type ctl_hbtp_prop, property_type;
+type alarm_boot_prop, property_type;
+type boot_animation_prop, property_type;
+
+#properties set from script read from apps
+type radio_noril_prop, property_type;

@@ -76,3 +76,6 @@ allow mediaserver { STAProxyService wfdservice_service }:service_manager find;
 allow mediaserver firmware_file:dir search;
 allow mediaserver firmware_file:file { read getattr open };
 allow mediaserver surfaceflinger:unix_stream_socket rw_socket_perms;
+
+# Rule for RILD to talk to peripheral manager
+use_per_mgr(mediaserver);

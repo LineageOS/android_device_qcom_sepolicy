@@ -25,26 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type dpmservice_app, domain;
-app_domain(dpmservice_app)
-
-#allow db create, write, read and access
-allow dpmservice_app dpmd_app_data_file:dir create_dir_perms;
-allow dpmservice_app dpmd_socket:sock_file write;
-allow dpmservice_app dpmd_app_data_file:file create_file_perms;
-allow dpmservice_app dpmservice:service_manager  { add find };
-
-allow dpmservice_app dpmd_data_file:dir rw_dir_perms;
-allow dpmservice_app dpmd_data_file:file create_file_perms;
-allow dpmservice_app app_api_service:service_manager find;
-allow dpmservice_app system_api_service:service_manager find;
-
-#allow dpmservice to search mediaserver and radio service.
-allow dpmservice_app mediaserver_service:service_manager find;
-allow dpmservice_app radio_service:service_manager find;
-
-#don't audit /proc/<pid>/stat denials
-dontaudit dpmservice_app domain:dir r_dir_perms;
-
-#allow dpmservice to get running time for apps
-r_dir_file(dpmservice_app, appdomain)
+# media_codecs_eld_prop - to choose target specific media_codecs.xml
+# media_settings_xml_prop - to choose target specific media_profiles.xml
+allow qti_init_shell {
+    media_msm8939hw_prop
+}:property_service set;
