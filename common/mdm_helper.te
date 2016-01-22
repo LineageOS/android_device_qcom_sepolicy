@@ -52,3 +52,10 @@ allow mdm_helper tombstone_data_file:file create_file_perms;
 #Needed to allow boot over PCIe
 allow mdm_helper bhi_device:chr_file rw_file_perms;
 allow mdm_helper mhi_device:chr_file rw_file_perms;
+
+userdebug_or_eng(`
+#Needed in order for mdm_helper to read the debug configuration
+r_dir_file(mdm_helper, persist_file);
+#Needed in order to enable the pcie debug mode
+allow mdm_helper sysfs_pcie_debug:file rw_file_perms;
+')
