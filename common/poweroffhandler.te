@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,27 +25,21 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#adding mlstrustedsubject to domain to allow access to /proc/<pid>/stat
-type dpmservice_app, domain, mlstrustedsubject;
-app_domain(dpmservice_app)
+# poweroffhandler oneshot service
+type poweroffhandler, domain;
+type poweroffhandler_exec, exec_type, file_type;
 
-#allow db create, write, read and access
-allow dpmservice_app dpmd_app_data_file:dir create_dir_perms;
-allow dpmservice_app dpmd_socket:sock_file write;
-allow dpmservice_app dpmd_app_data_file:file create_file_perms;
-allow dpmservice_app dpmservice:service_manager  { add find };
+init_daemon_domain(poweroffhandler)
+binder_use(poweroffhandler)
+binder_call(poweroffhandler, surfaceflinger)
+allow poweroffhandler gpu_device:chr_file rw_file_perms;
+# /oem access
+allow poweroffhandler oemfs:dir r_dir_perms;
+allow poweroffhandler oemfs:file r_file_perms;
 
-allow dpmservice_app dpmd_data_file:dir rw_dir_perms;
-allow dpmservice_app dpmd_data_file:file create_file_perms;
-allow dpmservice_app app_api_service:service_manager find;
-allow dpmservice_app system_api_service:service_manager find;
+allow poweroffhandler audio_device:dir r_dir_perms;
+allow poweroffhandler audio_device:chr_file rw_file_perms;
 
-#allow dpmservice to search mediaserver and radio service.
-allow dpmservice_app mediaserver_service:service_manager find;
-allow dpmservice_app radio_service:service_manager find;
+allow poweroffhandler {surfaceflinger_service mediaserver_service}:service_manager find;
 
-#don't audit /proc/<pid>/stat denials
-dontaudit dpmservice_app domain:dir r_dir_perms;
-
-#allow dpmservice to get running time for apps
-r_dir_file(dpmservice_app, appdomain)
+binder_call(poweroffhandler, mediaserver);
