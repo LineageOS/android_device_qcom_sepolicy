@@ -95,6 +95,9 @@ allow system_app RIDL_socket:sock_file r_file_perms;
 # allow gba auth service to add itself as system service
 allow system_app gba_auth_service:service_manager add;
 
+# allow gba auth service to find itself
+allow system_app gba_auth_service:service_manager find;
+
 # allow access to system_app for wbc_service
 allow system_app wbc_service:service_manager add;
 allow system_app self:netlink_kobject_uevent_socket { read bind setopt create };

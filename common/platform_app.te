@@ -24,3 +24,6 @@ binder_call(platform_app, hbtp);
 
 # Allow cneservice to be found
 allow platform_app cne_service:service_manager find;
+
+# Allow gba_auth_service to be found
+allow platform_app gba_auth_service:service_manager find;
