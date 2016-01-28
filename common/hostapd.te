@@ -42,3 +42,4 @@ allow hostapd cnd:{
 allow hostapd cnd:fifo_file r_file_perms;
 allow hostapd smem_log_device:chr_file rw_file_perms;
 allow hostapd fstman:unix_dgram_socket sendto;
+unix_socket_send(hostapd, wpa, netd)

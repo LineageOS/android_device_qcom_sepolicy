@@ -11,6 +11,8 @@ allow qti_init_shell rootfs:file entrypoint;
 # this is needed for dynamic_fps and bw_mode_bitmap
 allow qti_init_shell sysfs_graphics:file {rw_file_perms setattr};
 allow qti_init_shell sysfs:file setattr;
+#For chown on scaling_min/scaling_max nodes.
+allow qti_init_shell sysfs_devices_system_cpu:file setattr;
 
 allow qti_init_shell persist_file:dir w_dir_perms;
 allow qti_init_shell persist_file:file create_file_perms;
@@ -24,6 +26,9 @@ allow qti_init_shell fm_radio_device:chr_file r_file_perms;
 
 #give permission to read/write fm dir for calibration file
 allow qti_init_shell fm_data_file: dir rw_dir_perms;
+
+#allow shell to access /dev/vm_bms
+allow qti_init_shell vm_bms_device:chr_file getattr;
 
 # create/open, read/write permission for fm calibration file.
 allow qti_init_shell fm_data_file: file create_file_perms;
@@ -73,10 +78,15 @@ allow qti_init_shell {
     fm_prop
     usf_prop
     qemu_hw_mainkeys_prop
+    alarm_boot_prop
+    boot_animation_prop
     # Needed for starting console in userdebug mode
     userdebug_or_eng(`ctl_console_prop coresight_prop')
     rmnet_mux_prop
     ctl_hbtp_prop
+    #Needed for starting vm_bms executable post-boot
+    vm_bms_prop
+    radio_noril_prop
 }:property_service set;
 
 allow qti_init_shell efs_boot_dev:blk_file r_file_perms;
