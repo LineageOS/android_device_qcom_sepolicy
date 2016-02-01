@@ -27,3 +27,4 @@
 
 # allow bootanim to binder mediaserver
 binder_call(bootanim, mediaserver);
+allow bootanim mediaserver_service:service_manager find;
