@@ -59,6 +59,7 @@ allow qti_init_shell {
     system_prop
     freq_prop
     perfd_prop
+    gamed_prop
     mpdecision_prop
     bluetooth_prop
     config_prop
