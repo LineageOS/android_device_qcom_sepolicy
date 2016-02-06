@@ -19,6 +19,9 @@ allow system_server mpctl_socket:dir r_dir_perms;
 unix_socket_send(system_server, mpctl, mpdecision)
 unix_socket_connect(system_server, mpctl, mpdecision)
 
+#access to gamed
+unix_socket_connect(system_server, gamed, gamed)
+
 allow system_server {
     # For wifistatemachine
     wbc_service
