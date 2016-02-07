@@ -25,26 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# poweroffhandler oneshot service
-type poweroffhandler, domain;
-type poweroffhandler_exec, exec_type, file_type;
-
-init_daemon_domain(poweroffhandler)
-binder_use(poweroffhandler)
-binder_call(poweroffhandler, surfaceflinger)
-allow poweroffhandler gpu_device:chr_file rw_file_perms;
-# /oem access
-allow poweroffhandler oemfs:dir r_dir_perms;
-allow poweroffhandler oemfs:file r_file_perms;
-
-allow poweroffhandler audio_device:dir r_dir_perms;
-allow poweroffhandler audio_device:chr_file rw_file_perms;
-
 # For regionalization
-allow poweroffhandler persist_file:dir r_dir_perms;
-allow poweroffhandler regionalization_file:dir r_dir_perms;
-allow poweroffhandler regionalization_file:file r_file_perms;
-
-allow poweroffhandler {surfaceflinger_service mediaserver_service}:service_manager find;
-
-binder_call(poweroffhandler, mediaserver);
+allow bootanim persist_file:dir r_dir_perms;
+allow bootanim regionalization_file:dir r_dir_perms;
+allow bootanim regionalization_file:file r_file_perms;

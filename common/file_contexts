@@ -320,6 +320,7 @@
 /persist/hlos_rfs(/.*)?                                             u:object_r:rfs_shared_hlos_file:s0
 /persist/display(/.*)?                                              u:object_r:persist_display_file:s0
 /persist/rfs.*                                                      u:object_r:rfs_file:s0
+/persist/speccfg(/.*)?                                              u:object_r:regionalization_file:s0
 
 ###################################
 # etc files

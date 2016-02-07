@@ -95,6 +95,9 @@ allow system_app RIDL_socket:sock_file r_file_perms;
 # allow gba auth service to add itself as system service
 allow system_app gba_auth_service:service_manager add;
 
+# allow gba auth service to find itself
+allow system_app gba_auth_service:service_manager find;
+
 # allow access to system_app for wbc_service
 allow system_app wbc_service:service_manager add;
 allow system_app self:netlink_kobject_uevent_socket { read bind setopt create };
@@ -111,3 +114,6 @@ allow system_app radio_data_file:file create_file_perms;
 # DOLBY_START
 set_prop(system_app, dolby_prop)
 # DOLBY_END
+
+# allow system_app to access netd
+unix_socket_connect(system_app, netd, netd)
