@@ -5,6 +5,7 @@ init_daemon_domain(mm-qcamerad)
 #added to support EZTune for camera
 userdebug_or_eng(`
   allow mm-qcamerad debugfs:dir r_dir_perms;
+  allow mm-qcamerad debugfs:file read;
   allow mm-qcamerad camera_data_file:file create_file_perms;
   allow mm-qcamerad self:tcp_socket create_stream_socket_perms;
   allow mm-qcamerad node:tcp_socket node_bind;
