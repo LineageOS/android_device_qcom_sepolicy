@@ -164,6 +164,7 @@ type RIDL_socket, file_type;
 type qti_logkit_priv_data_file, file_type, data_file_type;
 type qti_logkit_pub_data_file, file_type, data_file_type;
 type qti_logkit_priv_socket, file_type;
+type qti_logkit_pub_socket, file_type, mlstrustedobject;
 
 # used for /dsp files
 type adsprpcd_file, file_type, mlstrustedobject;

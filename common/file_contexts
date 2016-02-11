@@ -301,6 +301,7 @@
 /data/misc/seemp(/.*)?                                              u:object_r:seemp_file:s0
 /data/misc/SelfHost(/.*)?                                           u:object_r:RIDL_data_file:s0
 /data/misc/qti-logkit(/.*)?                                         u:object_r:qti_logkit_priv_data_file:s0
+/data/misc/qti-logkit/shared-public(/.*)?                           u:object_r:qti_logkit_pub_data_file:s0
 /data/misc/qti-logkit/logdata(/.*)?                                 u:object_r:qti_logkit_pub_data_file:s0
 /data/misc/radio(/.*)?                                              u:object_r:radio_data_file:s0
 /data/misc/port_bridge(/.*)?                                        u:object_r:port_bridge_data_file:s0
@@ -309,6 +310,7 @@
 /data/ramdump(/.*)?                                                 u:object_r:ssr_ramdump_data_file:s0
 /data/misc/SelfHost/socket(/.*)?                                    u:object_r:RIDL_socket:s0
 /data/misc/qti-logkit/socket-privileged(/.*)?                       u:object_r:qti_logkit_priv_socket:s0
+/data/misc/qti-logkit/socket-public(/.*)?                           u:object_r:qti_logkit_pub_socket:s0
 
 ###################################
 # persist files

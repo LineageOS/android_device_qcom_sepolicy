@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # qti_logkit
-type qti_logkit, domain;
+type qti_logkit, domain, mlstrustedsubject;
 init_daemon_domain(qti_logkit)
 type qti_logkit_exec, exec_type, file_type;
 
@@ -38,6 +38,8 @@ allow qti_logkit qti_logkit_pub_data_file:file create_file_perms;
 
 # self socket access
 allow qti_logkit qti_logkit_priv_socket:sock_file create_file_perms;
+allow qti_logkit qti_logkit_pub_socket:sock_file create_file_perms;
+allow qti_logkit qti_logkit_pub_socket:dir create_dir_perms;
 allow qti_logkit qti_logkit_priv_socket:dir create_dir_perms;
 
 # allow socket connections to us
@@ -55,6 +57,9 @@ qmux_socket(qti_logkit)
 userdebug_or_eng(`
   # ramdumps
   allow qti_logkit ramdump_device:chr_file rw_file_perms;
+
+  # drop root privs
+  allow qti_logkit self:capability { setuid setgid };
 ')
 
 binder_use(qti_logkit)
