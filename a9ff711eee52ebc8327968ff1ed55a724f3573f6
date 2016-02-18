@@ -16,6 +16,24 @@
       "revId": "a9ff711eee52ebc8327968ff1ed55a724f3573f6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_6e7d4e6d",
+        "filename": "common/healthd.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 10346
+      },
+      "writtenOn": "2016-02-18T04:56:03Z",
+      "side": 1,
+      "message": "The healthd code requires RW when it opens the rtc and alarm. Do you suggest to change to read only?",
+      "parentUuid": "ffb9cba7_2e12f659",
+      "revId": "a9ff711eee52ebc8327968ff1ed55a724f3573f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
