@@ -307,6 +307,7 @@
 /data/misc/audio_pp(/.*)?                                           u:object_r:audio_pp_data_file:s0
 /data/ramdump(/.*)?                                                 u:object_r:ssr_ramdump_data_file:s0
 /data/misc/SelfHost/socket(/.*)?                                    u:object_r:RIDL_socket:s0
+/data/system/swap(/.*)?                                             u:object_r:swap_data_file:s0
 
 ###################################
 # persist files
