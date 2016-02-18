@@ -311,6 +311,7 @@
 /data/misc/SelfHost/socket(/.*)?                                    u:object_r:RIDL_socket:s0
 /data/misc/qti-logkit/socket-privileged(/.*)?                       u:object_r:qti_logkit_priv_socket:s0
 /data/misc/qti-logkit/socket-public(/.*)?                           u:object_r:qti_logkit_pub_socket:s0
+/data/system/swap(/.*)?                                             u:object_r:swap_data_file:s0
 
 ###################################
 # persist files
