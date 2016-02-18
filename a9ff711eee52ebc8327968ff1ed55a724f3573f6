@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_2e12f659",
+        "filename": "common/healthd.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-02-18T04:07:14Z",
+      "side": 1,
+      "message": "Actually these don\u0027t appear to require the write permission.",
+      "revId": "a9ff711eee52ebc8327968ff1ed55a724f3573f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
