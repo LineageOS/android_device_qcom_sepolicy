@@ -108,6 +108,10 @@ netmgr_socket(system_server);
 allow system_server RIDL:fd use;
 allow system_server RIDL:fifo_file write;
 
+# So init can manage our process
+allow system_server qti_logkit:fd use;
+allow system_server qti_logkit:fifo_file write;
+
 #Rules for system server to talk to peripheral manager
 use_per_mgr(system_server);
 

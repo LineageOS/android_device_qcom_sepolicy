@@ -25,12 +25,48 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow shell persist_file:dir r_dir_perms;
-allow shell persist_file:file r_file_perms;
+# qti_logkit
+type qti_logkit, domain, mlstrustedsubject;
+init_daemon_domain(qti_logkit)
+type qti_logkit_exec, exec_type, file_type;
 
-# allow read access for shell
-r_dir_file(shell, RIDL_data_file)
+# self file access
+allow qti_logkit qti_logkit_priv_data_file:dir create_dir_perms;
+allow qti_logkit qti_logkit_priv_data_file:file create_file_perms;
+allow qti_logkit qti_logkit_pub_data_file:dir create_dir_perms;
+allow qti_logkit qti_logkit_pub_data_file:file create_file_perms;
 
-# allow read access for shell
-r_dir_file(shell, qti_logkit_priv_data_file)
-r_dir_file(shell, qti_logkit_pub_data_file)
+# self socket access
+allow qti_logkit qti_logkit_priv_socket:sock_file create_file_perms;
+allow qti_logkit qti_logkit_pub_socket:sock_file create_file_perms;
+allow qti_logkit qti_logkit_pub_socket:dir create_dir_perms;
+allow qti_logkit qti_logkit_priv_socket:dir create_dir_perms;
+
+# allow socket connections to us
+net_domain(qti_logkit)
+
+# ver_info.txt
+r_dir_file(qti_logkit, firmware_file)
+
+# dmesg
+allow qti_logkit kernel:system syslog_read;
+
+# QMUX
+qmux_socket(qti_logkit)
+
+userdebug_or_eng(`
+  # ramdumps
+  allow qti_logkit ramdump_device:chr_file rw_file_perms;
+
+  # drop root privs
+  allow qti_logkit self:capability { setuid setgid };
+')
+
+binder_use(qti_logkit)
+allow qti_logkit shell_exec:file { rx_file_perms };
+allow qti_logkit sysfs:file write;
+allow qti_logkit system_file:file x_file_perms;
+binder_call(qti_logkit, system_server)
+
+# allow logcat access
+read_logd( qti_logkit );

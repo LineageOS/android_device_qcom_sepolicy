@@ -1,4 +1,4 @@
-# Copyright (c) 2015-2016, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,12 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow shell persist_file:dir r_dir_perms;
-allow shell persist_file:file r_file_perms;
-
-# allow read access for shell
-r_dir_file(shell, RIDL_data_file)
-
-# allow read access for shell
-r_dir_file(shell, qti_logkit_priv_data_file)
-r_dir_file(shell, qti_logkit_pub_data_file)
+# Allow uncrypting of RIDL
+allow uncrypt RIDL_data_file:file r_file_perms;
+allow uncrypt RIDL_data_file:dir r_dir_perms;
