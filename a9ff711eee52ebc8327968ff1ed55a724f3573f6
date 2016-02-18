@@ -34,6 +34,24 @@
       "revId": "a9ff711eee52ebc8327968ff1ed55a724f3573f6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_4e940a8c",
+        "filename": "common/healthd.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-02-18T04:59:19Z",
+      "side": 1,
+      "message": "As far as I can see, the code does open and ioctl, both of which are allowed by r_file_perms. If you set r_file_perms, do SELinux denials show up?",
+      "parentUuid": "ffb9cba7_6e7d4e6d",
+      "revId": "a9ff711eee52ebc8327968ff1ed55a724f3573f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
