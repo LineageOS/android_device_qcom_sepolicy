@@ -40,6 +40,7 @@ sys.audio.init             u:object_r:audio_prop:s0
 alarm_boot                 u:object_r:alarm_boot_prop:s0
 debug.sf.nobootanimation   u:object_r:boot_animation_prop:s0
 debug.gralloc.             u:object_r:debug_gralloc_prop:s0
+persist.net.doxlat         u:object_r:xlat_prop:s0
 # DOLBY_START
 dolby.                     u:object_r:dolby_prop:s0
 # DOLBY_END
