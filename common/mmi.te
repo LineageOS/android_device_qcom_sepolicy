@@ -54,6 +54,7 @@ allow mmi audio_device:chr_file rw_file_perms;
 allow mmi fm_radio_device:chr_file r_file_perms;
 allow mmi fm_data_file:file r_file_perms;
 allow mmi fm_prop:property_service set;
+allow mmi ctl_default_prop:property_service set;
 
 #bluetooth case
 allow mmi bluetooth_data_file:dir rw_dir_perms;
