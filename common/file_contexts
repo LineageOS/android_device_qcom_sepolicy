@@ -95,7 +95,7 @@
 /dev/socket/ims_qmid                            u:object_r:ims_socket:s0
 /dev/socket/ims_datad                           u:object_r:ims_socket:s0
 /dev/socket/ims_rtpd                            u:object_r:ims_socket:s0
-/dev/socket/perfd(/.*)?                         u:object_r:mpctl_socket:s0
+/dev/socket/perfd                               u:object_r:mpctl_socket:s0
 /dev/socket/qlogd                               u:object_r:qlogd_socket:s0
 /dev/socket/ipacm_log_file                      u:object_r:ipacm_socket:s0
 /dev/socket/dpmd                                u:object_r:dpmd_socket:s0
@@ -283,7 +283,6 @@
 /data/time(/.*)?                                                    u:object_r:time_data_file:s0
 /data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
 /data/system/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
-/data/misc/perfd(/.*)?                                              u:object_r:mpctl_socket:s0
 /data/misc/iop(/.*)?                                                u:object_r:iop_data_file:s0
 /data/misc/iop/iop                                                  u:object_r:iop_socket:s0
 /data/misc/display(/.*)?                                            u:object_r:display_misc_file:s0
