@@ -124,3 +124,5 @@ allow system_app persist_misc_file:dir rw_dir_perms;
 allow system_app persist_misc_file:file create_file_perms;
 allow system_app persist_misc_file:file rw_file_perms;
 
+# allow access to ims helper
+unix_socket_connect(system_app, ims, ims)
