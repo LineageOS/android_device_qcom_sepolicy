@@ -9,6 +9,9 @@ allow init {
 }:dir mounton;
 allow init kmsg_device:chr_file write;
 
+#Allow triggering IPA FWs loading
+allow init ipa_dev:chr_file write;
+
 #For insmod to search module key for signature verification
 allow init kernel:key search;
 
