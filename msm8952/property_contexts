@@ -27,3 +27,4 @@
 
 media.msm8956hw            u:object_r:media_msm8956hw_prop:s0
 media.settings.xml         u:object_r:media_settings_xml_prop:s0
+media.msm8956.version      u:object_r:media_msm8956_version_prop:s0
