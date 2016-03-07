@@ -18,7 +18,7 @@ userdebug_or_eng(`
 
   allow diag {
       cgroup
-      sdcard_internal
+      fuse
       persist_drm_file
   }:dir create_dir_perms;
 

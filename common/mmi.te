@@ -78,7 +78,6 @@ allow mmi block_device:blk_file getattr;
 allow mmi block_device:dir r_dir_perms;
 
 #camera
-allow mmi camera_device:chr_file rw_file_perms;
 allow mmi video_device:chr_file rw_file_perms;
 allow mmi camera_data_file:sock_file write;
 allow mmi camera_data_file:dir r_dir_perms;

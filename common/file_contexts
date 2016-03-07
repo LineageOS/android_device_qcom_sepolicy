@@ -25,9 +25,9 @@
 /dev/ttyHS[0-9]*                                u:object_r:serial_device:s0
 /dev/ttyGS0                                     u:object_r:gadget_serial_device:s0
 /dev/usb_ext_chg                                u:object_r:hvdcp_device:s0
-/dev/media([0-9])+                              u:object_r:camera_device:s0
-/dev/jpeg[0-9]*                                 u:object_r:camera_device:s0
-/dev/v4l-subdev.*                               u:object_r:camera_device:s0
+/dev/media([0-9])+                              u:object_r:video_device:s0
+/dev/jpeg[0-9]*                                 u:object_r:video_device:s0
+/dev/v4l-subdev.*                               u:object_r:video_device:s0
 /dev/vm_bms                                     u:object_r:vm_bms_device:s0
 /dev/battery_data                               u:object_r:battery_data_device:s0
 /dev/block/mmcblk1                              u:object_r:sd_device:s0

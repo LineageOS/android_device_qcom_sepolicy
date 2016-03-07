@@ -4,8 +4,8 @@ init_daemon_domain(mm-qcamerad)
 
 #added to support EZTune for camera
 userdebug_or_eng(`
-  allow mm-qcamerad debugfs:dir r_dir_perms;
-  allow mm-qcamerad debugfs:file read;
+  #allow mm-qcamerad debugfs:dir r_dir_perms;
+  #allow mm-qcamerad debugfs:file read;
   allow mm-qcamerad camera_data_file:file create_file_perms;
   allow mm-qcamerad self:tcp_socket create_stream_socket_perms;
   allow mm-qcamerad node:tcp_socket node_bind;
@@ -33,8 +33,8 @@ binder_use(mm-qcamerad);
 allow mm-qcamerad self:process execmem;
 
 # Interact with other media devices
-allow mm-qcamerad camera_device:dir r_dir_perms;
-allow mm-qcamerad { gpu_device video_device camera_device sensors_device }:chr_file rw_file_perms;
+allow mm-qcamerad video_device:dir r_dir_perms;
+allow mm-qcamerad { gpu_device video_device sensors_device }:chr_file rw_file_perms;
 
 allow mm-qcamerad { surfaceflinger mediaserver }:fd use;
 
@@ -58,4 +58,4 @@ allow mm-qcamerad graphics_device:chr_file rw_file_perms;
 unix_socket_connect(mm-qcamerad, property, init)
 
 #Allow camera work normally in FFBM
-binder_call(mm-qcamerad, mmi)；
+binder_call(mm-qcamerad, mmi);

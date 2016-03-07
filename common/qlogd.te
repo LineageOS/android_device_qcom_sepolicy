@@ -45,7 +45,8 @@ allow qlogd kernel:system syslog_mod;
 
 # need for qdss log and odl from UI
 userdebug_or_eng(`
-  allow qlogd { debugfs qdss_device }:file r_file_perms;
+  #allow qlogd { debugfs qdss_device }:file r_file_perms;
+  allow qlogd { qdss_device }:file r_file_perms;
   allow qlogd sysfs:file w_file_perms;
   r_dir_file(qlogd, storage_file)
   r_dir_file(qlogd, mnt_user_file)

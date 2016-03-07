@@ -60,8 +60,8 @@ allow tee system_prop:property_service set;
 
 userdebug_or_eng(`
   allow tee su:unix_dgram_socket sendto;
-  allow tee shell_data_file:file rw_file_perms;
-  allow tee shell_data_file:dir search;
+  #allow tee shell_data_file:file rw_file_perms;
+  #allow tee shell_data_file:dir search;
 ')
 
 # allow qseecom access to set system property
