@@ -98,6 +98,7 @@
 /dev/socket/perfd(/.*)?                         u:object_r:mpctl_socket:s0
 /dev/socket/perfd                               u:object_r:mpctl_socket:s0
 /dev/socket/gamed                               u:object_r:gamed_socket:s0
+/dev/socket/iop                                 u:object_r:iop_socket:s0
 /dev/socket/qlogd                               u:object_r:qlogd_socket:s0
 /dev/socket/ipacm_log_file                      u:object_r:ipacm_socket:s0
 /dev/socket/dpmd                                u:object_r:dpmd_socket:s0
