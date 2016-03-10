@@ -8,6 +8,7 @@ qmux_socket(location_app)
 userdebug_or_eng(`
   net_domain(location_app)
   allow location_app { adbd su }:unix_stream_socket connectto;
+  allow location_app mediaserver_service:service_manager find;
 ')
 
 allow location_app surfaceflinger_service:service_manager find;
