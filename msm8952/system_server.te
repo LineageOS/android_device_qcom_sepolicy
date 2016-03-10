@@ -25,6 +25,11 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Allow access to /proc/PID
+allow system_server appdomain:dir r_dir_perms;
+allow system_server appdomain:file rw_file_perms;
+
+
 # For Regionalization service
 allow system_server regionalization_service:service_manager { add find };
 allow system_server regionalization_file:file rw_file_perms;
