@@ -187,3 +187,6 @@ type regionalization_file, file_type;
 
 # /data/system/swap/swapfile - swapfile
 type swap_data_file, file_type, data_file_type;
+
+# dynamic nv files
+type dynamic_nv_data_file, file_type, data_file_type;
