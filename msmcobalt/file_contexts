@@ -65,3 +65,8 @@
 ##################################
 # FBE
 /system/bin/init.qcom.qseecomd.sh						u:object_r:init-qcom-fbe-sh_exec:s0
+
+###################################
+# sysfs files
+#
+/sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input[0-9]/secure_touch_enable u:object_r:sysfs_securetouch:s0
