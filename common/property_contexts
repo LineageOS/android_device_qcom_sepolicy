@@ -45,3 +45,4 @@ persist.net.doxlat         u:object_r:xlat_prop:s0
 # DOLBY_START
 dolby.                     u:object_r:dolby_prop:s0
 # DOLBY_END
+wifi.ftmd.                 u:object_r:wififtmd_prop:s0

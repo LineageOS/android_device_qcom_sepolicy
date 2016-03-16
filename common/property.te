@@ -50,3 +50,5 @@ type boot_animation_prop, property_type;
 # DOLBY_START
 type dolby_prop, property_type;
 # DOLBY_END
+
+type wififtmd_prop, property_type;
