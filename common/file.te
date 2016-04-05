@@ -34,6 +34,7 @@ type persist_data_file, file_type;
 type persist_drm_file, file_type;
 type data_qsee_file, file_type;
 type seemp_file, file_type;
+type persist_misc_file, file_type;
 
 type diag_data_file, file_type, data_file_type;
 
@@ -78,6 +79,9 @@ type sysfs_rqstats, fs_type, sysfs_type;
 type sysfs_cpu_online, fs_type, sysfs_type;
 type mpctl_socket, file_type, mlstrustedobject;
 type mpctl_data_file, file_type, data_file_type;
+
+#define the files writer during the operation of app state changes
+type gamed_socket, file_type;
 
 #define the files writter during the operatio of iop
 type iop_socket, file_type;
@@ -183,3 +187,12 @@ type qtitetherservice_app_data_file, file_type, data_file_type;
 
 # Regionalization files
 type regionalization_file, file_type;
+
+# /data/system/swap/swapfile - swapfile
+type swap_data_file, file_type, data_file_type;
+
+# dynamic nv files
+type dynamic_nv_data_file, file_type, data_file_type;
+
+# wififtmd socket file
+type wififtmd_socket, file_type;
