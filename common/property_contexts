@@ -44,3 +44,5 @@ persist.net.doxlat         u:object_r:xlat_prop:s0
 dolby.                     u:object_r:dolby_prop:s0
 # DOLBY_END
 wifi.fccutild.             u:object_r:wififccutild_prop:s0
+# WIGIG
+persist.fst.               u:object_r:fst_prop:s0

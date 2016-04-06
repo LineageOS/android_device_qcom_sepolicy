@@ -10,3 +10,5 @@ allow wpa proc_net:file write;
 allow wpa { cnd ims }:unix_dgram_socket sendto;
 
 allow wpa fstman:unix_dgram_socket sendto;
+
+type_transition wpa wifi_data_file:dir wpa_socket "wigig_sockets";
