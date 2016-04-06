@@ -133,3 +133,6 @@ allow system_server ctl_bootanim_prop:property_service set;
 
 # allow tethering to access dhcp leases
 r_dir_file(system_server, dhcp_data_file)
+
+# Allow system server to set fst system properties
+allow system_server fst_prop:property_service set;

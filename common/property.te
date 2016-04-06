@@ -78,3 +78,6 @@ type dolby_prop, property_type, core_property_type;
 # DOLBY_END
 
 type wififtmd_prop, property_type, core_property_type;
+
+# WIGIG
+type fst_prop, property_type;

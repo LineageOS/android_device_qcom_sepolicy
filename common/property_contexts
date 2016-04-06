@@ -73,3 +73,5 @@ dolby.                     u:object_r:dolby_prop:s0
 # DOLBY_END
 wifi.ftmd.                 u:object_r:wififtmd_prop:s0
 ro.bluetooth.              u:object_r:bluetooth_prop:s0
+# WIGIG
+persist.fst.               u:object_r:fst_prop:s0
