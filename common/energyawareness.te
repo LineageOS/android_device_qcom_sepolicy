@@ -1,4 +1,4 @@
-type energyawareness, domain;
+type energyawareness, domain, domain_deprecated;
 type energyawareness_exec, exec_type, file_type;
 
 #started by init

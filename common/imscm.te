@@ -1,5 +1,5 @@
 #integrated sensor process
-type imscm, domain;
+type imscm, domain, domain_deprecated;
 type imscm_exec, exec_type, file_type;
 
 # Started by init

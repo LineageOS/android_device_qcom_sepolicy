@@ -1,4 +1,4 @@
-type diag, domain;
+type diag, domain, domain_deprecated;
 type diag_exec, exec_type, file_type;
 userdebug_or_eng(`
   domain_auto_trans(shell, diag_exec, diag)

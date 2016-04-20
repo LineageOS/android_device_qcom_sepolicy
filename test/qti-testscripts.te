@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 userdebug_or_eng(`
-  type qti-testscripts, domain, mlstrustedsubject;
+  type qti-testscripts, domain, domain_deprecated, mlstrustedsubject;
   permissive qti-testscripts;
   domain_trans(init, shell_exec, qti-testscripts)
 

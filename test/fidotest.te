@@ -1,4 +1,4 @@
-type fidotest, domain;
+type fidotest, domain, domain_deprecated;
 type fidotest_exec, exec_type, file_type;
 init_daemon_domain(fidotest)
 userdebug_or_eng(`

@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #adding mlstrustedsubject to domain to allow access to /proc/<pid>/stat
-type dpmservice_app, domain, mlstrustedsubject;
+type dpmservice_app, domain, domain_deprecated, mlstrustedsubject;
 app_domain(dpmservice_app)
 
 #allow db create, write, read and access

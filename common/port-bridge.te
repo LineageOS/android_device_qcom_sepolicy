@@ -1,4 +1,4 @@
-type port-bridge, domain;
+type port-bridge, domain, domain_deprecated;
 type port-bridge_exec, exec_type, file_type;
 init_daemon_domain(port-bridge)
 

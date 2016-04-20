@@ -1,5 +1,5 @@
 # HVDVP quickcharge
-type hvdcp, domain;
+type hvdcp, domain, domain_deprecated;
 type hvdcp_exec, exec_type, file_type;
 
 # Make transition to its own HVDCP domain from init

@@ -1,4 +1,4 @@
-type mm-qcamerad, domain;
+type mm-qcamerad, domain, domain_deprecated;
 type mm-qcamerad_exec, exec_type, file_type;
 init_daemon_domain(mm-qcamerad)
 
@@ -36,7 +36,7 @@ allow mm-qcamerad self:process execmem;
 allow mm-qcamerad video_device:dir r_dir_perms;
 allow mm-qcamerad { gpu_device video_device sensors_device }:chr_file rw_file_perms;
 
-allow mm-qcamerad { surfaceflinger mediaserver }:fd use;
+allow mm-qcamerad { surfaceflinger mediaserver cameraserver }:fd use;
 
 allow mm-qcamerad camera_data_file:dir w_dir_perms;
 allow mm-qcamerad camera_data_file:sock_file { create unlink };

@@ -1,4 +1,4 @@
-type dtseagleservice, domain;
+type dtseagleservice, domain, domain_deprecated;
 type dtseagleservice_exec, exec_type, file_type;
 
 #Allow for transition from init domain to dtseagleservice

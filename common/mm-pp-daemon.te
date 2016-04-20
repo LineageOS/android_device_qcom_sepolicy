@@ -1,4 +1,4 @@
-type mm-pp-daemon, domain;
+type mm-pp-daemon, domain, domain_deprecated;
 type mm-pp-daemon_exec, exec_type, file_type;
 
 init_daemon_domain(mm-pp-daemon)

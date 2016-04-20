@@ -1,5 +1,5 @@
 # qlogd
-type qlogd, domain;
+type qlogd, domain, domain_deprecated;
 type qlogd_exec, exec_type, file_type;
 
 # make transition from init to its domain

@@ -1,5 +1,5 @@
 #integrated process
-type mmi, domain;
+type mmi, domain, domain_deprecated;
 type mmi_exec, exec_type, file_type;
 
 #started by init

@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type mdtpservice_app, domain;
+type mdtpservice_app, domain, domain_deprecated;
 app_domain(mdtpservice_app)
 binder_use(mdtpservice_app)
 

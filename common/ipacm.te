@@ -1,6 +1,6 @@
 # General definitions
-type ipacm, domain;
-type ipacm-diag, domain;
+type ipacm, domain, domain_deprecated;
+type ipacm-diag, domain, domain_deprecated;
 type ipacm_exec, exec_type, file_type;
 type ipacm-diag_exec, exec_type, file_type;
 init_daemon_domain(ipacm)

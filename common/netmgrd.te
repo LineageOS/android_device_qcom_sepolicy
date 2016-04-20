@@ -1,4 +1,4 @@
-type netmgrd, domain;
+type netmgrd, domain, domain_deprecated;
 type netmgrd_exec, exec_type, file_type;
 net_domain(netmgrd)
 init_daemon_domain(netmgrd)
@@ -68,7 +68,7 @@ allow netmgrd sysfs:file w_file_perms;
 allow netmgrd netmgrd_socket:dir create_dir_perms;
 allow netmgrd netmgrd_socket:sock_file create_file_perms;
 
-allow netmgrd { wcnss_service_exec wpa_exec shell_exec }:file rx_file_perms;
+allow netmgrd { wcnss_service_exec wpa_exec shell_exec toolbox_exec }:file rx_file_perms;
 
 #Allow netmgrd to use wakelock
 wakelock_use(netmgrd)

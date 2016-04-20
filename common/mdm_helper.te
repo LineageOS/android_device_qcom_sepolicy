@@ -1,6 +1,6 @@
 #Policy for mdm_helper
 #mdm_helper - mdm_helper domain
-type mdm_helper, domain;
+type mdm_helper, domain, domain_deprecated;
 type mdm_helper_exec, exec_type, file_type;
 init_daemon_domain(mdm_helper);
 

@@ -1,5 +1,5 @@
 # adsprpcd daemon
-type adsprpcd, domain;
+type adsprpcd, domain, domain_deprecated;
 type adsprpcd_exec, exec_type, file_type;
 
 # Started by init

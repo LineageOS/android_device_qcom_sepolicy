@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #qfp daemon for ultrasonic fingerprint sensor
-type qfp-daemon, domain;
+type qfp-daemon, domain, domain_deprecated;
 type qfp-daemon_exec, exec_type, file_type;
 
 net_domain(qfp-daemon)

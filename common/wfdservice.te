@@ -1,4 +1,4 @@
-type wfdservice, domain;
+type wfdservice, domain, domain_deprecated;
 type wfdservice_exec, exec_type, file_type;
 
 #Allow for transition from init domain to wfdservice

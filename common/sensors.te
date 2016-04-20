@@ -1,5 +1,5 @@
 # Policy for sensor daemon
-type sensors, domain;
+type sensors, domain, domain_deprecated;
 type sensors_exec, exec_type, file_type;
 
 # Started by init

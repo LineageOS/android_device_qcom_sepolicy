@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # tbase loader
-type tbaseLoader, domain;
+type tbaseLoader, domain, domain_deprecated;
 type tbaseLoader_exec, exec_type, file_type;
 init_daemon_domain(tbaseLoader)
 

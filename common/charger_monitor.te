@@ -1,5 +1,5 @@
 #integrated process
-type charger_monitor, domain;
+type charger_monitor, domain, domain_deprecated;
 type charger_monitor_exec, exec_type, file_type;
 
 #started by init

@@ -1,5 +1,5 @@
 # location - Location daemon
-type location, domain;
+type location, domain, domain_deprecated;
 type location_exec, exec_type, file_type;
 
 init_daemon_domain(location)
@@ -32,7 +32,8 @@ allow location shell_exec:file rx_file_perms;
 allow location system_server:unix_stream_socket { read write connectto};
 
 # For interfacing with the device sensorservice
-allow location sensorservice_service:service_manager find;
+# permission check for slim daemon
+allow location { sensorservice_service permission_service }:service_manager find;
 
 #wifi
 allow location wifi_data_file:dir r_dir_perms;

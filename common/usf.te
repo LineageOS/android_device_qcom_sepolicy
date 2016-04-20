@@ -1,5 +1,5 @@
 # Policy for usf daemons
-type usf, domain;
+type usf, domain, domain_deprecated;
 type usf_exec, exec_type, file_type;
 
 # Started by init

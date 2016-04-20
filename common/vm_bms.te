@@ -1,5 +1,5 @@
 #integrated process
-type vm_bms, domain;
+type vm_bms, domain, domain_deprecated;
 type vm_bms_exec, exec_type, file_type;
 
 #started by init

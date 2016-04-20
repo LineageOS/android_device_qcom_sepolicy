@@ -1,4 +1,4 @@
-type dtsconfigurator, domain;
+type dtsconfigurator, domain, domain_deprecated;
 type dtsconfigurator_exec, exec_type, file_type;
 
 #started by init

@@ -1,5 +1,5 @@
 # add domain for qfintverify,
-type qfips, domain;
+type qfips, domain, domain_deprecated;
 
 domain_trans(init, rootfs, qfips)
 

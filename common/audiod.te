@@ -1,5 +1,5 @@
 # audio deamon
-type audiod, domain;
+type audiod, domain, domain_deprecated;
 type audiod_exec, exec_type, file_type;
 init_daemon_domain(audiod)
 allow audiod proc_audiod:file r_file_perms;

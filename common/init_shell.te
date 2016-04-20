@@ -1,7 +1,7 @@
 # Restricted domain for shell processes spawned by init.
 # Normally these are shell commands or scripts invoked via sh
 # from an init*.rc file.  No service should ever run in this domain.
-type qti_init_shell, domain;
+type qti_init_shell, domain, domain_deprecated;
 domain_auto_trans(init, shell_exec, qti_init_shell)
 
 # For executing init shell scripts (init.qcom.early_boot.sh)
@@ -162,3 +162,6 @@ allow qti_init_shell swap_block_device:blk_file rw_file_perms;
 # /data/system/swap/swapfile
 allow qti_init_shell swap_data_file:dir rw_dir_perms;
 allow qti_init_shell swap_data_file:file create_file_perms;
+
+#execute init scripts
+allow qti_init_shell toolbox_exec:file rx_file_perms;

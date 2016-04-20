@@ -1,5 +1,5 @@
 # Policies for hbtp (host based touch processing)
-type hbtp, domain;
+type hbtp, domain, domain_deprecated;
 type hbtp_exec, exec_type, file_type;
 
 init_daemon_domain(hbtp)

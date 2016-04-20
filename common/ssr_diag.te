@@ -1,4 +1,4 @@
-type ssr_diag, domain;
+type ssr_diag, domain, domain_deprecated;
 type ssr_diag_exec, exec_type, file_type;
 init_daemon_domain(ssr_diag);
 

@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type qsee_svc_app, domain;
+type qsee_svc_app, domain, domain_deprecated;
 app_domain(qsee_svc_app)
 binder_use(qsee_svc_app)
 

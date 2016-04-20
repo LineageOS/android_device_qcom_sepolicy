@@ -1,6 +1,6 @@
 #Policy file for qcom-system-daemon
 #qcomsysd = qcom-system-daemon domain
-type qcomsysd, domain;
+type qcomsysd, domain, domain_deprecated;
 type qcomsysd_exec, exec_type, file_type;
 init_daemon_domain(qcomsysd);
 

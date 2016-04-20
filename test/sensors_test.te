@@ -2,7 +2,7 @@
 type sensors_test_exec, exec_type, file_type;
 
 userdebug_or_eng(`
-  type sensors_test, domain;
+  type sensors_test, domain, domain_deprecated;
 
   domain_auto_trans(shell, sensors_test_exec, sensors_test)
   domain_auto_trans(adbd, sensors_test_exec, sensors_test)

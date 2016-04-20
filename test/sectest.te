@@ -1,4 +1,4 @@
-type sectest, domain;
+type sectest, domain, domain_deprecated;
 type sectest_exec, exec_type, file_type;
 userdebug_or_eng(`
   init_daemon_domain(sectest)

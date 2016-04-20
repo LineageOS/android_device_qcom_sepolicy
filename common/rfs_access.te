@@ -1,5 +1,5 @@
 # rfs_access - rfs_access daemon
-type rfs_access, domain;
+type rfs_access, domain, domain_deprecated;
 type rfs_access_exec, exec_type, file_type;
 init_daemon_domain(rfs_access)
 

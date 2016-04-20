@@ -1,4 +1,4 @@
-type location_app, domain;
+type location_app, domain, domain_deprecated;
 app_domain(location_app)
 binder_use(location_app)
 
