@@ -21,7 +21,7 @@ binder_call(wfdservice, system_app)
 binder_call(system_app, wfdservice)
 
 #Allow access to Audio Flinger APIs
-binder_call(wfdservice, mediaserver)
+binder_call(wfdservice, audioserver)
 
 #Allow access to Permission Controller in System Server
 binder_call(wfdservice, system_server)
@@ -88,7 +88,7 @@ allow wfdservice input_device:chr_file r_file_perms;
 
 # Allow access to mediaserver, surfaceflinger and permissionmanager
 # for interaction of wfdservice
-allow wfdservice {mediaserver_service permission_service surfaceflinger_service wfdservice_service}: service_manager find;
+allow wfdservice {audioserver_service permission_service surfaceflinger_service wfdservice_service}: service_manager find;
 
 #Allow setting of net_admin capability so that libnl API's can be used
 allow wfdservice self:capability net_admin;
