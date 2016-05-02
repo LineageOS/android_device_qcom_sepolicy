@@ -42,3 +42,10 @@ allow wcnss_filter {
 #wakelock policy
 wakelock_use(wcnss_filter);
 set_prop(wcnss_filter, bluetooth_prop);
+
+#For bluetooth firmware
+r_dir_file(wcnss_filter, bt_firmware_file)
+
+# Data file accesses.
+allow wcnss_filter bluetooth_data_file:dir create_dir_perms;
+allow wcnss_filter bluetooth_data_file:notdevfile_class_set create_file_perms;
