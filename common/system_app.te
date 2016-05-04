@@ -111,6 +111,9 @@ binder_call(system_app, qfp-daemon)
 # allow system_app to interact with fido daemon
 binder_call(system_app, fidodaemon)
 
+# allow system_app to interact with esepmdaemon
+binder_call(system_app, esepmdaemon)
+
 # allow system_app to interact with seemp health daemon
 binder_call(system_app, seemp_health_daemon)
 
