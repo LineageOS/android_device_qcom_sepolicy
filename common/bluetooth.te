@@ -19,6 +19,10 @@ type wcnss_filter, bluetoothdomain, domain_deprecated;
 type wcnss_filter_exec, exec_type, file_type;
 domain_auto_trans(init, wcnss_filter_exec, bluetooth)
 
+type fmhal_service, bluetoothdomain,  domain_deprecated;
+type fmhal_service_exec, exec_type, file_type;
+domain_auto_trans(init, fmhal_service_exec, bluetooth)
+
 allow bluetooth bluetooth_prop:property_service set;
 allow bluetooth sysfs:file w_file_perms;
 
