@@ -25,6 +25,8 @@
 # fm_radio app needes  open read write on fm_radio_device
 allow system_app fm_radio_device:chr_file r_file_perms;
 r_dir_file(system_app, fm_data_file);
+r_dir_file(system_app, bluetooth_data_file);
+r_dir_file(system_app, bt_firmware_file);
 
 allow system_app {
     ctl_default_prop
@@ -157,3 +159,9 @@ allow system_app persist_file:dir rw_dir_perms;
 allow system_app persist_misc_file:dir rw_dir_perms;
 allow system_app persist_misc_file:file create_file_perms;
 
+# required for FM App to connectto wcnss_filter sockets
+# serial device ttyHS0 (transport layer for FM)
+allow system_app serial_device:chr_file rw_file_perms;
+set_prop(system_app, bluetooth_prop)
+# access unix sockets for fm application
+unix_socket_connect(system_app,bluetooth, bluetooth)
