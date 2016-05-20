@@ -96,6 +96,7 @@
 /dev/socket/ims_datad                           u:object_r:ims_socket:s0
 /dev/socket/ims_rtpd                            u:object_r:ims_socket:s0
 /dev/socket/perfd(/.*)?                         u:object_r:mpctl_socket:s0
+/dev/socket/perfd                               u:object_r:mpctl_socket:s0
 /dev/socket/qlogd                               u:object_r:qlogd_socket:s0
 /dev/socket/ipacm_log_file                      u:object_r:ipacm_socket:s0
 /dev/socket/dpmd                                u:object_r:dpmd_socket:s0
@@ -136,6 +137,7 @@
 /system/bin/mmi                                 u:object_r:mmi_exec:s0
 /system/bin/mpdecision                          u:object_r:mpdecision_exec:s0
 /system/vendor/bin/perfd                        u:object_r:perfd_exec:s0
+/data/misc/perfd(/.*)?                          u:object_r:mpctl_socket:s0
 /system/bin/iop                                 u:object_r:dumpstate_exec:s0
 /system/bin/msm_irqbalance                      u:object_r:msm_irqbalanced_exec:s0
 /system/bin/imsdatadaemon                       u:object_r:ims_exec:s0
@@ -281,7 +283,6 @@
 /data/time(/.*)?                                                    u:object_r:time_data_file:s0
 /data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
 /data/system/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
-/data/misc/perfd(/.*)?                                              u:object_r:mpctl_socket:s0
 /data/misc/iop(/.*)?                                                u:object_r:iop_data_file:s0
 /data/misc/iop/iop                                                  u:object_r:iop_socket:s0
 /data/misc/display(/.*)?                                            u:object_r:display_misc_file:s0
@@ -315,6 +316,7 @@
 /persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
 /persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
 /persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
+/persist/qc_senseid(/.*)?                                           u:object_r:persist_qc_senseid_file:s0
 /persist/usf(/.*)?                                                  u:object_r:persist_usf_file:s0
 /persist/hlos_rfs(/.*)?                                             u:object_r:rfs_shared_hlos_file:s0
 /persist/display(/.*)?                                              u:object_r:persist_display_file:s0
