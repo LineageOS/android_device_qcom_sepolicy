@@ -97,6 +97,7 @@
 /dev/socket/ims_rtpd                            u:object_r:ims_socket:s0
 /dev/socket/perfd                               u:object_r:mpctl_socket:s0
 /dev/socket/gamed                               u:object_r:gamed_socket:s0
+/dev/socket/iop                                 u:object_r:iop_socket:s0
 /dev/socket/qlogd                               u:object_r:qlogd_socket:s0
 /dev/socket/ipacm_log_file                      u:object_r:ipacm_socket:s0
 /dev/socket/dpmd                                u:object_r:dpmd_socket:s0
@@ -111,6 +112,7 @@
 /dev/socket/msm_irqbalance                      u:object_r:msm_irqbalance_socket:s0
 /dev/socket/seempdw                             u:object_r:seempdw_socket:s0
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
+/dev/socket/wpa_wigig[0-9]                      u:object_r:wpa_socket:s0
 
 ###################################
 # System files
@@ -212,6 +214,7 @@
 /system/bin/dun-server                          u:object_r:dun-server_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /system/bin/wcnss_filter                        u:object_r:wcnss_filter_exec:s0
+/system/bin/fmhal_service                       u:object_r:fmhal_service_exec:s0
 /system/bin/usf_epos                            u:object_r:usf_exec:s0
 /system/bin/usf_gesture                         u:object_r:usf_exec:s0
 /system/bin/usf_hovering                        u:object_r:usf_exec:s0
@@ -288,7 +291,6 @@
 /data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
 /data/system/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
 /data/misc/iop(/.*)?                                                u:object_r:iop_data_file:s0
-/data/misc/iop/iop                                                  u:object_r:iop_socket:s0
 /data/misc/display(/.*)?                                            u:object_r:display_misc_file:s0
 /data/misc/ipa(/.*)?                                                u:object_r:ipacm_data_file:s0
 /data/dpm(/.*)?                                                     u:object_r:dpmd_data_file:s0
@@ -316,6 +318,8 @@
 /data/misc/qti-logkit/socket-public(/.*)?                           u:object_r:qti_logkit_pub_socket:s0
 /data/system/swap(/.*)?                                             u:object_r:swap_data_file:s0
 /data/misc/wifi/nvbin(/.*)?                                         u:object_r:dynamic_nv_data_file:s0
+/data/misc/wifi/wigig_sockets(/.*)?                                 u:object_r:wpa_socket:s0
+/data/misc/wifi/wigig_sockets/wpa_ctrl.*                            u:object_r:system_wpa_socket:s0
 
 ###################################
 # persist files

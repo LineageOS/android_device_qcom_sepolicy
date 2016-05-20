@@ -20,6 +20,7 @@ DigitalPen                                     u:object_r:usf_service:s0
 dts_eagle_service                              u:object_r:dtseagleservice_service:s0
 wfd.native.mm.service                          u:object_r:wfdservice_service:s0
 extphone                                       u:object_r:radio_service:s0
+qti.ims.ext                                    u:object_r:radio_service:s0
 com.qualcomm.location.izat.IzatService         u:object_r:izat_service:s0
 com.qualcomm.qti.secota.service.SecotaNService u:object_r:secotad_service:s0
 qti.security.seemp                             u:object_r:seemp_service:s0
@@ -28,3 +29,5 @@ mdtp                                           u:object_r:mdtpdaemon_service:s0
 qtitetherservice                               u:object_r:qtitetherservices_service:s0
 com.qualcomm.qti.seemp.health                  u:object_r:seemp_health_daemon_service:s0
 uce                                            u:object_r:uce_service:s0
+wigigp2p                                       u:object_r:wigigp2p_service:s0
+wigig                                          u:object_r:wigig_service:s0
