@@ -34,7 +34,7 @@ allow system_server {
     dpmservice
 }:service_manager add;
 
-allow system_server qtitetherservices_service:service_manager{add find};
+allow system_server qtitetherservice_service:service_manager find;
 
 #For ANT tty communication and to set wc_transport prop
 allow system_server { bluetooth_prop usf_prop }:property_service set;
@@ -60,8 +60,8 @@ type_transition system_server location_data_file:sock_file location_socket "alar
 allow system_server location:unix_stream_socket connectto;
 allow system_server location_data_file:{ file fifo_file } create_file_perms;
 allow system_server location_data_file:dir create_dir_perms;
-allow system_server { dpmd_app_data_file location_app_data_file mdtp_svc_app_data_file qtitetherservice_app_data_file } :file rw_file_perms;
-allow system_server { dpmd_app_data_file location_app_data_file mdtp_svc_app_data_file qtitetherservice_app_data_file } :dir r_dir_perms;
+allow system_server { location_app_data_file mdtp_svc_app_data_file } :file rw_file_perms;
+allow system_server { location_app_data_file mdtp_svc_app_data_file } :dir r_dir_perms;
 allow system_server location_socket:sock_file create_file_perms;
 allow system_server location_prop:property_service set;
 
