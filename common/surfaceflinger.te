@@ -13,9 +13,6 @@ allow surfaceflinger sysfs:file write;
 # Use open file provided by poweroffhandler
 binder_call(surfaceflinger, poweroffhandler);
 
-# Allows pp-daemon to refresh the screen in calibration mode
-r_dir_file(surfaceflinger, mm-pp-daemon)
-
 binder_call(surfaceflinger, location)
 binder_call(surfaceflinger, tee)
 
