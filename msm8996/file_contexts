@@ -86,3 +86,8 @@
 #
 /data/misc/qvop(/.*)?      u:object_r:qvop_data_file:s0
 /data/misc/tloc(/.*)?      u:object_r:tlocd_data_file:s0
+
+###################################
+# Dev socket nodes
+#
+/dev/socket/iop                                 u:object_r:iop_socket:s0
