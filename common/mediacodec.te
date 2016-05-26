@@ -1,4 +1,4 @@
-# Copyright (c) 2016, The Linux Foundation. All rights reserved.
+#copyright (c) 2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,13 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow cameraserver camera_data_file:sock_file write;
-allow cameraserver gpu_device:chr_file rw_file_perms;
-allow cameraserver mm-qcamerad:unix_dgram_socket sendto;
+#mediacodec need intraction with audio device nodes
+allow mediacodec audio_device:chr_file rw_file_perms;
 
-#interaction with mptcl and thermal sockets
-unix_socket_connect(cameraserver, mpctl, perfd)
-unix_socket_connect(cameraserver, thermal, thermal-engine)
-
-#Allow surfaceflinger access for camera preview
-allow cameraserver surfaceflinger:unix_stream_socket { read write };
+#interaction with mptcl sockets
+unix_socket_connect(mediacodec, mpctl, perfd)
