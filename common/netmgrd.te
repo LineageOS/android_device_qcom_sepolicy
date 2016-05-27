@@ -13,7 +13,6 @@ file_type_auto_trans(netmgrd, system_data_file, data_test_data_file)
 
 #Allow netmgrd operations
 allow netmgrd netmgrd:capability {
-    dac_override
     net_raw
     net_admin
     sys_module

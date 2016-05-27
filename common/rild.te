@@ -9,6 +9,8 @@ r_dir_file(rild, sysfs_esoc)
 allow rild sysfs_esoc:file w_file_perms;
 
 binder_call(rild, mediaserver)
+binder_call(rild, audioserver)
+binder_call(audioserver, rild)
 
 #Rule for RILD to talk to peripheral manager
 use_per_mgr(rild);
@@ -24,7 +26,7 @@ r_dir_file(rild, netmgrd)
 #Allow access to netmgrd socket
 netmgr_socket(rild);
 
-allow rild mediaserver_service:service_manager find;
+allow rild { mediaserver_service audioserver_service }:service_manager find;
 
 # Rule for RILD to talk to peripheral manager
 use_per_mgr(rild);
