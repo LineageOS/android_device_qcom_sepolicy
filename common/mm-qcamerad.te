@@ -30,6 +30,10 @@ allow mm-qcamerad system_server:unix_stream_socket rw_socket_perms;
 binder_call(mm-qcamerad, system_server);
 binder_use(mm-qcamerad);
 
+allow mm-qcamerad self:socket create_socket_perms;
+allow mm-qcamerad sensors_persist_file:dir r_dir_perms;
+allow mm-qcamerad sensors_persist_file:file r_file_perms;
+
 allow mm-qcamerad self:process execmem;
 
 # Interact with other media devices
