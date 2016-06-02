@@ -169,3 +169,6 @@ allow qti_init_shell swap_data_file:file create_file_perms;
 
 #execute init scripts
 allow qti_init_shell toolbox_exec:file rx_file_perms;
+
+#For configfs permission
+allow qti_init_shell configfs:dir r_dir_perms;
