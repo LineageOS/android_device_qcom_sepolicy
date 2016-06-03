@@ -172,7 +172,9 @@
 /system/bin/mdm_helper_proxy                    u:object_r:mdm_helper_exec:s0
 /system/bin/ks                                  u:object_r:mdm_helper_exec:s0
 /system/bin/pm-service                          u:object_r:per_mgr_exec:s0
+/system/vendor/bin/pm-service                   u:object_r:per_mgr_exec:s0
 /system/bin/pm-proxy                            u:object_r:per_mgr_exec:s0
+/system/vendor/bin/pm-proxy                     u:object_r:per_mgr_exec:s0
 /system/vendor/bin/pd-mapper                    u:object_r:pd_mapper_exec:s0
 /system/vendor/bin/pd-api-test                  u:object_r:pd_mapper_exec:s0
 /system/bin/usb_uicc_client                     u:object_r:usb_uicc_daemon_exec:s0
