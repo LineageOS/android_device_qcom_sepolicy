@@ -30,3 +30,8 @@ allow mediacodec audio_device:chr_file rw_file_perms;
 
 #interaction with mptcl sockets
 unix_socket_connect(mediacodec, mpctl, perfd)
+
+#allow mediacodec to access adsprpcd
+r_dir_file(mediacodec, adsprpcd_file);
+allow mediacodec system_file:dir r_dir_perms;
+allow mediacodec qdsp_device:chr_file r_file_perms;
