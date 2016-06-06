@@ -43,6 +43,9 @@ allow qfp-daemon qfp-daemon_data_file:file create_file_perms;
 # Access to tee_device
 allow qfp-daemon tee_device:chr_file rw_file_perms;
 
+# Access QFP Android Proxy
+allow qfp-daemon qfp_proxy_service:service_manager find;
+
 # Add IQfpService service
 allow qfp-daemon iqfp_service:service_manager add;
 

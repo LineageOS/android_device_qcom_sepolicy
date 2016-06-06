@@ -23,6 +23,7 @@
 # BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ###################################
 # Dev block nodes
@@ -76,13 +77,25 @@
 /dev/block/platform/soc/7464900.sdhci/by-name/mdm1m9kefsc                       u:object_r:efs_boot_dev:s0
 
 ###################################
+# Dev socket nodes
+#
+/dev/socket/qvrservice                                                          u:object_r:qvrd_socket:s0
+
+###################################
 # System files
 #
 /system/bin/qvop-daemon u:object_r:qvop_exec:s0
 /system/bin/tloc_daemon u:object_r:tlocd_exec:s0
+/system/vendor/bin/qvrservice u:object_r:qvrd_exec:s0
+
+###################################
+# sysfs files
+#
+/sys/devices/virtual/graphics/fb([0-2])+/lineptr_value                          u:object_r:sysfs_graphics:s0
 
 ###################################
 # data files
 #
 /data/misc/qvop(/.*)?      u:object_r:qvop_data_file:s0
 /data/misc/tloc(/.*)?      u:object_r:tlocd_data_file:s0
+/data/misc/qvr(/.*)?       u:object_r:qvrd_data_file:s0

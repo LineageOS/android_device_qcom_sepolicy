@@ -16,6 +16,7 @@ allow system_app {
     # access to color service SDK
     color_service
     STAProxyService
+    qfp_proxy_service
 }:service_manager add;
 
 # access to perflock
