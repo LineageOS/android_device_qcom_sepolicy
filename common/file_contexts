@@ -343,6 +343,7 @@
 /persist/rfs.*                                                      u:object_r:rfs_file:s0
 /persist/speccfg(/.*)?                                              u:object_r:regionalization_file:s0
 /persist/misc(/.*)?                                                 u:object_r:persist_misc_file:s0
+/persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
 
 ###################################
 # etc files
