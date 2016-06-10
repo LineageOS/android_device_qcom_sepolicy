@@ -51,7 +51,7 @@ type sensors_data_file, file_type, data_file_type;
 type sensors_persist_file, file_type;
 
 #type for thermal-engine
-type sysfs_thermal, sysfs_type, fs_type, mlstrustedobject;
+#type sysfs_thermal, sysfs_type, fs_type, mlstrustedobject;
 type thermal_socket, file_type;
 #type for uart
 type sysfs_msmuart_file, sysfs_type, fs_type;
