@@ -11,3 +11,5 @@ unix_socket_connect(radio, ims, ims)
 allow radio avtimer_device:chr_file r_file_perms;
 
 allow radio uce_service:service_manager { add find };
+
+allow radio cameraserver_service:service_manager find;
