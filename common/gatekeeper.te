@@ -25,32 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type esepmdaemon, domain;
-type esepmdaemon_exec, exec_type, file_type;
 
-#Allow for transition from init domain to esepmdaemon
-init_daemon_domain(esepmdaemon)
+# Allow interacting with esepmdaemon
+allow gatekeeperd esepmdaemon_service:service_manager find;
 
-#Allow esepmdaemon to use Binder IPC
-binder_use(esepmdaemon)
-
-#Allow apps to interact with esepmdaemon
-binder_call(esepmdaemon, system_app)
-
-#Mark esepmdaemon as a Binder service domain
-binder_service(esepmdaemon)
-
-#Allow esepmdaemon to be registered with service manager
-allow esepmdaemon esepmdaemon_service:service_manager add;
-
-#Allow access to nfc device
-allow esepmdaemon nfc_device:chr_file rw_file_perms;
-
-# Allow esepmdaemon to load firmware images
-r_dir_file(esepmdaemon, firmware_file);
-
-# Allow esepmdaemon to interract with ion_device
-allow esepmdaemon ion_device:chr_file r_file_perms;
-
-# Allow esepmdaemon to interract with qseecom
-allow esepmdaemon tee_device:chr_file rw_file_perms;
+# Allow gatekeeper to bind to esepmdaemon
+binder_call(gatekeeperd, esepmdaemon)
