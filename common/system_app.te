@@ -168,3 +168,5 @@ allow system_app serial_device:chr_file rw_file_perms;
 set_prop(system_app, bluetooth_prop)
 # access unix sockets for fm application
 unix_socket_connect(system_app,bluetooth, bluetooth)
+# access  wcnss_filter from fm app
+allow system_app wcnss_filter:unix_stream_socket connectto;

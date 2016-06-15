@@ -35,3 +35,8 @@ unix_socket_connect(cameraserver, thermal, thermal-engine)
 
 #Allow surfaceflinger access for camera preview
 allow cameraserver surfaceflinger:unix_stream_socket { read write };
+
+# allow cameraserver to communicate with sensors
+allow cameraserver sensors_device:chr_file rw_file_perms;
+unix_socket_connect(cameraserver, sensors, sensors);
+allow cameraserver system_server:unix_stream_socket { read write };
