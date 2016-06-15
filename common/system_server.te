@@ -139,3 +139,7 @@ r_dir_file(system_server, dhcp_data_file)
 
 # Allow system server to set fst system properties
 allow system_server fst_prop:property_service set;
+
+#allow access to fingerprintd data file
+allow system_server fingerprintd_data_file:file { r_file_perms unlink };
+allow system_server fingerprintd_data_file:dir { rw_dir_perms rmdir };
