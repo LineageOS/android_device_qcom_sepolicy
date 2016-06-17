@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,16 +25,20 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-###################################
-# Primary storage device nodes
-#
-/dev/block/platform/soc.0/7824900.sdhci/by-name/fsg                   u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/fsc                   u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/modemst1              u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/modemst2              u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/ssd                   u:object_r:ssd_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/misc                  u:object_r:misc_block_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/userdata              u:object_r:userdata_block_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/logdump               u:object_r:logdump_partition:s0
-/dev/block/mmcblk0                                                    u:object_r:root_block_device:s0
-/dev/block/mmcblk0rpmb                                                u:object_r:rpmb_device:s0
+type logdumpd, domain;
+type logdumpd_exec, exec_type, file_type;
+
+init_daemon_domain(logdumpd)
+
+# To set ctl property
+unix_socket_connect(logdumpd, property, init)
+allow logdumpd ctl_default_prop:property_service set;
+
+userdebug_or_eng(`
+#logcat
+allow logdumpd logcat_exec:file entrypoint;
+read_logd( logdumpd );
+#logdump partition access
+allow logdumpd block_device:dir r_dir_perms;
+allow logdumpd logdump_partition:blk_file rw_file_perms;
+')
