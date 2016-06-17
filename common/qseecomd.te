@@ -70,6 +70,8 @@ allow tee system_prop:property_service set;
 #allow access to qfp-daemon
 allow tee qfp-daemon_data_file:dir create_dir_perms;
 allow tee qfp-daemon_data_file:file create_file_perms;
+allow tee persist_qc_senseid_file:dir create_dir_perms;
+allow tee persist_qc_senseid_file:file create_file_perms;
 
 #allow access to fingerprintd data file
 allow tee fingerprintd_data_file:dir create_dir_perms;

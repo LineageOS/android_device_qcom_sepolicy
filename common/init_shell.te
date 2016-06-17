@@ -45,6 +45,7 @@ allow qti_init_shell self:capability {
     fsetid
     dac_override
     dac_read_search
+    sys_admin
 };
 
 # For  property starting with hw
@@ -59,6 +60,7 @@ allow qti_init_shell {
     system_prop
     freq_prop
     perfd_prop
+    gamed_prop
     mpdecision_prop
     bluetooth_prop
     config_prop
@@ -80,6 +82,7 @@ allow qti_init_shell {
     qemu_hw_mainkeys_prop
     alarm_boot_prop
     boot_animation_prop
+    debug_gralloc_prop
     # Needed for starting console in userdebug mode
     userdebug_or_eng(`ctl_console_prop coresight_prop')
     rmnet_mux_prop
@@ -153,3 +156,11 @@ allow qti_init_shell cgroup:dir add_name;
 
 # To allow copy for mbn files
 r_dir_file(qti_init_shell, firmware_file)
+
+# /dev/block/zram0
+allow qti_init_shell block_device:dir r_dir_perms;
+allow qti_init_shell swap_block_device:blk_file rw_file_perms;
+
+# /data/system/swap/swapfile
+allow qti_init_shell swap_data_file:dir rw_dir_perms;
+allow qti_init_shell swap_data_file:file create_file_perms;

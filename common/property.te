@@ -21,12 +21,18 @@ type sf_lcd_density_prop, property_type;
 type opengles_prop, property_type;
 type mdm_helper_prop, property_type;
 type mpdecision_prop, property_type;
+type gamed_prop, property_type;
+
+#Needed for  ubwc support
+type debug_gralloc_prop, property_type;
 
 type fm_prop, property_type;
 type chgdiabled_prop, property_type;
 
 #properites for netd
 type netd_prop, property_type;
+
+type xlat_prop, property_type;
 
 # property for location
 type location_prop, property_type;

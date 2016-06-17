@@ -13,6 +13,7 @@ ctl.port-bridge            u:object_r:ctl_port-bridge_prop:s0
 min_freq_0                 u:object_r:freq_prop:s0
 min_freq_4                 u:object_r:freq_prop:s0
 ctl.perfd                  u:object_r:perfd_prop:s0
+ctl.gamed                  u:object_r:gamed_prop:s0
 ctl.iop                    u:object_r:perfd_prop:s0
 ctl.vm_bms                 u:object_r:vm_bms_prop:s0
 qualcomm.bluetooth.        u:object_r:bluetooth_prop:s0
@@ -41,3 +42,5 @@ sys.audio.init             u:object_r:audio_prop:s0
 alarm_boot                 u:object_r:alarm_boot_prop:s0
 debug.sf.nobootanimation   u:object_r:boot_animation_prop:s0
 radio.noril                u:object_r:radio_noril_prop:s0
+debug.gralloc.             u:object_r:debug_gralloc_prop:s0
+persist.net.doxlat         u:object_r:xlat_prop:s0

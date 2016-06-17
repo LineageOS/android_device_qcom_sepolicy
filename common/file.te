@@ -79,6 +79,9 @@ type sysfs_cpu_online, fs_type, sysfs_type;
 type mpctl_socket, file_type, mlstrustedobject;
 type mpctl_data_file, file_type, data_file_type;
 
+#define the files writer during the operation of app state changes
+type gamed_socket, file_type;
+
 #define the files writter during the operatio of iop
 type iop_socket, file_type;
 type iop_data_file, file_type, data_file_type;
@@ -143,6 +146,7 @@ type persist_usf_file, file_type;
 
 #qfp-daemon
 type qfp-daemon_data_file, file_type, data_file_type;
+type persist_qc_senseid_file, file_type;
 
 # dts notifier files
 type dts_data_file, file_type, data_file_type;
@@ -174,3 +178,6 @@ type qtitetherservice_app_data_file, file_type, data_file_type;
 
 # Boot KPI Marker files
 type sys_bootkpi, sysfs_type, file_type;
+
+# /data/system/swap/swapfile - swapfile
+type swap_data_file, file_type, data_file_type;
