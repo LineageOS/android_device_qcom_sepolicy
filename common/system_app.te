@@ -37,8 +37,6 @@ allow system_app {
 allow system_app {
     atfwd_service
     dun_service
-    dpmservice
-    cne_service
     # access to color service SDK
     color_service
 }:service_manager add;
