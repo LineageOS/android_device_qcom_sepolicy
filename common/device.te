@@ -26,6 +26,7 @@ type battery_data_device, dev_type;
 
 #Add qdsp_device type
 type qdsp_device, dev_type, mlstrustedobject;
+type dsp_device, dev_type;
 #Define hvdcp/quickcharge device
 type hvdcp_device, dev_type;
 
