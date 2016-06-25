@@ -60,6 +60,10 @@ userdebug_or_eng(`
 
   # drop root privs
   allow qti_logkit self:capability { setuid setgid };
+
+  # tcpdump
+  allow qti_logkit self:packet_socket create_socket_perms;
+  allow qti_logkit self:capability net_raw;
 ')
 
 binder_use(qti_logkit)
