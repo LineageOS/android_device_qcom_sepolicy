@@ -15,10 +15,6 @@ type btnvtool, bluetoothdomain, domain_deprecated;
 type btnvtool_exec, exec_type, file_type;
 domain_auto_trans(init, btnvtool_exec, bluetooth)
 
-type wcnss_filter, bluetoothdomain, domain_deprecated;
-type wcnss_filter_exec, exec_type, file_type;
-domain_auto_trans(init, wcnss_filter_exec, bluetooth)
-
 type fmhal_service, bluetoothdomain,  domain_deprecated;
 type fmhal_service_exec, exec_type, file_type;
 domain_auto_trans(init, fmhal_service_exec, bluetooth)
@@ -68,3 +64,5 @@ allow bluetooth wbc_service:service_manager find;
 
 # for fastmmi test bluetooth
 allow bluetooth mmi:unix_stream_socket connectto;
+#connect to wcnss_filter
+allow bluetooth wcnss_filter:unix_stream_socket connectto;

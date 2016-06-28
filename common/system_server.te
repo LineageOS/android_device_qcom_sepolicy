@@ -88,6 +88,9 @@ r_dir_file(system_server, bt_firmware_file)
 #For BT firmware
 r_dir_file(system_server, firmware_file)
 
+#connect to wcnss_filter
+allow system_server wcnss_filter:unix_stream_socket connectto;
+
 # Allow system server access to usf resources
 allow system_server usf:process signal;
 allow system_server usf:unix_stream_socket connectto;
@@ -143,3 +146,6 @@ allow system_server fst_prop:property_service set;
 #allow access to fingerprintd data file
 allow system_server fingerprintd_data_file:file { r_file_perms unlink };
 allow system_server fingerprintd_data_file:dir { rw_dir_perms rmdir };
+
+#for Wifi module this is needed
+allow system_server system_file:system module_load;

@@ -25,21 +25,69 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-###################################
-# Primary storage device nodes
-#
-/dev/block/mmcblk0                                                  u:object_r:root_block_device:s0
-/dev/block/mmcblk0rpmb                                              u:object_r:rpmb_device:s0
+type qvrd, domain, mlstrustedsubject;
+type qvrd_exec, exec_type, file_type;
 
-#Using soc instead of soc.0 for 3.18 kernel
-/dev/block/platform/soc/7824900.sdhci/by-name/fsg                   u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/fsc                   u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/modemst1              u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/modemst2              u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/ssd                   u:object_r:ssd_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/misc                  u:object_r:misc_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/system                u:object_r:system_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/userdata              u:object_r:userdata_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/dip                   u:object_r:dip_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/mdtp                  u:object_r:mdtp_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/config                u:object_r:frp_block_device:s0
+init_daemon_domain(qvrd)
+
+#
+# General
+#
+
+# Allow interracting with qvrd directory
+allow qvrd qvrd_data_file:dir create_dir_perms;
+allow qvrd qvrd_data_file:file create_file_perms;
+
+# Allow access to our socket
+allow qvrd qvrd_socket:sock_file rw_file_perms;
+
+#
+# Sensors
+#
+
+# Allow access to ADSP & SLPI
+allow qvrd { ion_device qdsp_device dsp_device }:chr_file r_file_perms;
+
+# Allow access to adsprpcd
+r_dir_file(qvrd, adsprpcd_file);
+allow qvrd system_file:dir read;
+
+#
+# Display
+#
+
+# Allow access to /sys/devices/virtual/graphics/fb* for lineptr interrupts
+allow qvrd sysfs_graphics:file rw_file_perms;
+
+# Allow access to /dev/graphics/fb0 for configuring vsync interrupts
+allow qvrd graphics_device:dir r_dir_perms;
+allow qvrd graphics_device:chr_file rw_file_perms;
+
+#
+# Scheduler
+#
+
+allow qvrd self:capability { sys_nice };
+userdebug_or_eng(`
+  allow qvrd su:process setsched;
+')
+allow qvrd appdomain:process setsched;
+
+#
+# Camera
+#
+
+# Allow access to camera HAL
+allow qvrd { gpu_device video_device camera_device sensors_device }:chr_file rw_file_perms;
+allow qvrd camera_data_file:dir rw_dir_perms;
+allow qvrd camera_data_file:sock_file w_file_perms;
+allow qvrd mm-qcamerad:unix_dgram_socket sendto;
+binder_use(qvrd)
+binder_call(qvrd, surfaceflinger);
+allow qvrd surfaceflinger_service:service_manager find;
+allow qvrd sysfs:file r_file_perms;
+
+# Allow access to /dev/video/* devices
+allow qvrd video_device:dir r_dir_perms;
+
+unix_socket_connect(qvrd, mpctl, perfd)

@@ -30,3 +30,7 @@ type qvop_data_file, file_type, data_file_type;
 
 #TLOC Files
 type tlocd_data_file, file_type, data_file_type;
+
+# Data type for qvrd
+type qvrd_data_file, file_type, data_file_type;
+type qvrd_socket, file_type, mlstrustedobject;
