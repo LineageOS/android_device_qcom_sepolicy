@@ -31,6 +31,7 @@ binder_call(mm-qcamerad, system_server);
 binder_use(mm-qcamerad);
 
 allow mm-qcamerad self:socket create_socket_perms;
+allow mm-qcamerad persist_file:dir r_dir_perms;
 allow mm-qcamerad sensors_persist_file:dir r_dir_perms;
 allow mm-qcamerad sensors_persist_file:file r_file_perms;
 
