@@ -26,6 +26,7 @@ allow ipacm ipacm:{
     netlink_socket
     # Allow querying the network stack via IOCTLs
     udp_socket
+    netlink_generic_socket
 } create_socket_perms;
 
 # Allow creating and modifying the PID file

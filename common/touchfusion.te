@@ -38,7 +38,7 @@ allow touchfusion kmsg_device:chr_file rw_file_perms;
 
 allow touchfusion graphics_device:dir r_dir_perms;
 
-allow touchfusion self:netlink_socket create_socket_perms;
+allow touchfusion self: { netlink_socket netlink_generic_socket } create_socket_perms;
 
 allow touchfusion graphics_device:chr_file rw_file_perms;
 
