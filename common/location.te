@@ -22,6 +22,7 @@ allow location self:capability { setuid setgid net_admin net_raw };
 allow location self:{
     socket
     netlink_socket
+    netlink_generic_socket
 } create_socket_perms;
 
 unix_socket_connect(location, sensors, sensors)

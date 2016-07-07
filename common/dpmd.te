@@ -55,7 +55,7 @@ unix_socket_connect(dpmd, cnd, cnd);
 
 #allow dpmd to create socket
 allow dpmd self:socket create_socket_perms;
-allow dpmd self:netlink_socket create_socket_perms;
+allow dpmd self:{ netlink_socket netlink_generic_socket } create_socket_perms;
 
 #allow dpmd to write to /proc/net/sys
 allow dpmd proc_net:file write;
