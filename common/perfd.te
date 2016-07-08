@@ -50,4 +50,5 @@ allow perfd {
     thermal-engine
     surfaceflinger
     appdomain
+    audioserver
 }:process signull;
