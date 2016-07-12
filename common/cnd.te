@@ -30,6 +30,7 @@ allow cnd self:{
     netlink_tcpdiag_socket
     netlink_route_socket
     netlink_socket
+    netlink_generic_socket
     # allow cnd to perform socket operation on itself
     socket
 } create_socket_perms;

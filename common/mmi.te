@@ -7,7 +7,7 @@ init_daemon_domain(mmi)
 
 #self capability
 allow mmi self:socket create_socket_perms;
-allow mmi self:netlink_socket create_socket_perms;
+allow mmi self:{ netlink_socket netlink_generic_socket } create_socket_perms;
 allow mmi self:udp_socket create_socket_perms;
 allow mmi self:capability { sys_nice dac_override setuid setgid fowner chown fsetid kill net_admin sys_module net_raw};
 

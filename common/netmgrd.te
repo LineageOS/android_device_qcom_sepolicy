@@ -32,6 +32,7 @@ allow netmgrd netmgrd:netlink_socket { write read create bind };
 allow netmgrd netmgrd:socket { create ioctl };
 allow netmgrd netmgrd:netlink_route_socket { setopt getattr write nlmsg_write };
 unix_socket_connect(netmgrd, property, init)
+allow netmgrd self:netlink_generic_socket create_socket_perms;
 
 unix_socket_connect(netmgrd, cnd, cnd);
 
