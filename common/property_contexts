@@ -75,3 +75,5 @@ wifi.ftmd.                 u:object_r:wififtmd_prop:s0
 ro.bluetooth.              u:object_r:bluetooth_prop:s0
 # WIGIG
 persist.fst.               u:object_r:fst_prop:s0
+ro.alarm_handled           u:object_r:alarm_handled_prop:s0
+ro.alarm_instance          u:object_r:alarm_instance_prop:s0

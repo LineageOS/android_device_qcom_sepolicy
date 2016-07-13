@@ -175,3 +175,6 @@ allow qti_init_shell configfs:dir r_dir_perms;
 
 #Allow read permissions to read adj
 allow qti_init_shell sysfs_lowmemorykiller:file read;
+
+allow qti_init_shell persist_alarm_file:dir r_dir_perms;
+allow qti_init_shell persist_alarm_file:file r_file_perms;
