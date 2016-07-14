@@ -145,6 +145,7 @@ type mmi_socket, file_type;
 # hbtp config file
 type hbtp_cfg_file, file_type;
 type hbtp_log_file, file_type;
+type hbtp_kernel_sysfs, file_type, sysfs_type;
 
 #Define the files written during the operation of usf
 type usf_data_file, file_type, data_file_type;

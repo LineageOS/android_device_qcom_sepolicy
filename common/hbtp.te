@@ -13,6 +13,8 @@ allow hbtp hbtp_log_file:file create_file_perms;
 allow hbtp sysfs_usb_supply:dir search;
 allow hbtp sysfs_usb_supply:file rw_file_perms;
 
+allow hbtp hbtp_kernel_sysfs:file rw_file_perms;
+
 allow hbtp sysfs:file write;
 
 allow hbtp self:netlink_kobject_uevent_socket { create read setopt bind };
