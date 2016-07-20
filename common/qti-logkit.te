@@ -64,6 +64,7 @@ userdebug_or_eng(`
   # tcpdump
   allow qti_logkit self:packet_socket create_socket_perms;
   allow qti_logkit self:capability net_raw;
+  diag_use(qti_logkit)
 ')
 
 binder_use(qti_logkit)

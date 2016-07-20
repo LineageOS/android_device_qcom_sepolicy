@@ -23,3 +23,8 @@ allow qcomsysd self:capability { dac_override sys_boot };
 use_per_mgr(qcomsysd);
 #allow qcomsysd access boot mode switch
 allow qcomsysd boot_mode_prop:property_service set;
+
+#diag
+userdebug_or_eng(`
+    diag_use(qcomsysd)
+')

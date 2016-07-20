@@ -63,3 +63,8 @@ netmgr_socket(ims);
 
 # Inherit and use open files from radio.
 allow ims radio:fd use;
+
+#diag
+userdebug_or_eng(`
+    diag_use(ims)
+')

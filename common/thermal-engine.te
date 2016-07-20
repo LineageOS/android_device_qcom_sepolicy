@@ -48,3 +48,7 @@ unix_socket_connect(thermal-engine, mpctl, mpdecision)
 
 #This is to allow access to uio device
 allow thermal-engine uio_device:chr_file rw_file_perms;
+
+userdebug_or_eng(`
+  diag_use(thermal-engine)
+')

@@ -116,3 +116,7 @@ net_domain(mmi);
 
 #allow mmi access boot mode switch
 allow mmi boot_mode_prop:property_service set;
+#diag
+userdebug_or_eng(`
+    diag_use(mmi)
+')

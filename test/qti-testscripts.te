@@ -78,5 +78,5 @@ userdebug_or_eng(`
   binder_call({ domain -init -netd }, qti-testscripts)
   allow domain qti-testscripts:fifo_file { write getattr };
   allow domain qti-testscripts:process sigchld;
-
+  diag_use(radio)
 ')
