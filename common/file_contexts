@@ -280,6 +280,9 @@
 /sys/bus/msm_subsys/devices/subsys3/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/bus/msm_subsys/devices/subsys4/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/devices/soc0/.*                                                u:object_r:sysfs_socinfo:s0
+/sys/devices/soc/soc:hbtp/secure_touch                              u:object_r:hbtp_kernel_sysfs:s0
+/sys/devices/soc/soc:hbtp/secure_touch_enable                       u:object_r:hbtp_kernel_sysfs:s0
+/sys/devices/soc/soc:hbtp/secure_touch_userspace                    u:object_r:hbtp_kernel_sysfs:s0
 
 ###################################
 # data files
@@ -334,6 +337,7 @@
 /persist/bluetooth(/.*)?                                            u:object_r:persist_bluetooth_file:s0
 /persist/drm(/.*)?                                                  u:object_r:persist_drm_file:s0
 /persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0
+/persist/alarm(/.*)?                                                u:object_r:persist_alarm_file:s0
 /persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
 /persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
 /persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0

@@ -37,7 +37,12 @@ allow system_server {
 allow system_server qtitetherservice_service:service_manager find;
 
 #For ANT tty communication and to set wc_transport prop
-allow system_server { bluetooth_prop usf_prop }:property_service set;
+allow system_server {
+    bluetooth_prop
+    usf_prop
+    alarm_handled_prop
+    alarm_instance_prop
+}:property_service set;
 
 # required for ANT App to connectto wcnss_filter sockets
 allow system_server bluetooth:unix_stream_socket connectto;
@@ -149,3 +154,6 @@ allow system_server fingerprintd_data_file:dir { rw_dir_perms rmdir };
 
 #for Wifi module this is needed
 allow system_server system_file:system module_load;
+
+allow system_server persist_alarm_file:dir rw_dir_perms;
+allow system_server persist_alarm_file:file { rw_file_perms create };

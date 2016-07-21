@@ -52,3 +52,6 @@ allow perfd {
     appdomain
     audioserver
 }:process signull;
+
+#Allow perfd to set properties
+set_prop(perfd, freq_prop)
