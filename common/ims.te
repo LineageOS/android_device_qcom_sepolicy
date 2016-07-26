@@ -12,7 +12,7 @@ qmux_socket(ims)
 # To make VT call
 binder_use(ims)
 
-allow ims self:capability { net_admin net_raw };
+allow ims self:capability net_bind_service;
 
 # Use generic netlink socket
 allow ims self:{

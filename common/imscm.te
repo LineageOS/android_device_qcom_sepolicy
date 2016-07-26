@@ -13,7 +13,6 @@ binder_use(imscm)
 allow imscm imscm_service:service_manager add;
 
 unix_socket_connect(imscm, ims, ims)
-allow imscm self:capability net_raw;
 
 # imscm needs to communicate with test app
 # using binder call
