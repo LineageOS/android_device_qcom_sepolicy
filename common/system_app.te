@@ -160,6 +160,7 @@ r_dir_file(system_app, audio_pp_data_file);
 # allow access to system app for radio files
 allow system_app radio_data_file:dir rw_dir_perms;
 allow system_app radio_data_file:file create_file_perms;
+
 # DOLBY_START
 set_prop(system_app, dolby_prop)
 # DOLBY_END
@@ -188,3 +189,6 @@ allow system_app system_data_file:dir read;
 
 # allow access to ims helper
 unix_socket_connect(system_app, ims, ims)
+
+# access to qseeproxy domain
+allow system_app qseeproxy:unix_dgram_socket sendto;
