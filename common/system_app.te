@@ -160,6 +160,7 @@ r_dir_file(system_app, audio_pp_data_file);
 # allow access to system app for radio files
 allow system_app radio_data_file:dir rw_dir_perms;
 allow system_app radio_data_file:file create_file_perms;
+
 # DOLBY_START
 set_prop(system_app, dolby_prop)
 # DOLBY_END
@@ -171,6 +172,15 @@ allow system_app persist_file:dir rw_dir_perms;
 allow system_app persist_misc_file:dir rw_dir_perms;
 allow system_app persist_misc_file:file create_file_perms;
 
+# required for FM App to connectto wcnss_filter sockets
+# serial device ttyHS0 (transport layer for FM)
+allow system_app serial_device:chr_file rw_file_perms;
+set_prop(system_app, bluetooth_prop)
+# access unix sockets for fm application
+unix_socket_connect(system_app,bluetooth, bluetooth)
+# access  wcnss_filter from fm app
+allow system_app wcnss_filter:unix_stream_socket connectto;
+
 # ANR
 allow system_app anr_data_file:dir r_dir_perms;
 allow system_app anr_data_file:file r_file_perms;
@@ -179,3 +189,6 @@ allow system_app system_data_file:dir read;
 
 # allow access to ims helper
 unix_socket_connect(system_app, ims, ims)
+
+# access to qseeproxy domain
+allow system_app qseeproxy:unix_dgram_socket sendto;

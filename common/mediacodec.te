@@ -33,5 +33,12 @@ unix_socket_connect(mediacodec, mpctl, perfd)
 
 #allow mediacodec to access adsprpcd
 r_dir_file(mediacodec, adsprpcd_file);
+
+#Allow mediacodec to access proc_net files
+allow mediacodec proc_net:file r_file_perms;
+
 allow mediacodec system_file:dir r_dir_perms;
 allow mediacodec qdsp_device:chr_file r_file_perms;
+
+#Allow mediacodec to access service manager wfdservice
+allow mediacodec wfdservice_service:service_manager find;
