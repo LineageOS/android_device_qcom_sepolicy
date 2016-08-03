@@ -21,6 +21,7 @@ allow cnd self:capability {
     fsetid
     net_admin
     sys_module
+    net_bind_service
 };
 
 allow cnd self:capability2 block_suspend;
