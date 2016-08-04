@@ -91,6 +91,8 @@ allow qti_init_shell {
     vm_bms_prop
     sys_usb_controller_prop
     sys_usb_configfs_prop
+    #Needed for setting hwui properties in post_boot
+    hwui_prop
 }:property_service set;
 
 allow qti_init_shell efs_boot_dev:blk_file r_file_perms;
