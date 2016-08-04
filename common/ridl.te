@@ -113,3 +113,6 @@ read_logd( RIDL );
 
 # allow netstats
 allow RIDL system_api_service:service_manager find;
+
+# allow toybox execution for getprop on OS 24 and later
+allow RIDL toolbox_exec:file rx_file_perms;

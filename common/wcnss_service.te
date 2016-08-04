@@ -23,10 +23,8 @@ allow wcnss_service proc_net:file w_file_perms;
 # allow wpa_supplicant to send back wifi information to cnd
 allow wcnss_service cnd:unix_dgram_socket sendto;
 allow wcnss_service self:capability {
-    setuid
-    setgid
-    dac_override
     net_admin
+    net_bind_service
 };
 
 allow wcnss_service self:netlink_socket create_socket_perms;

@@ -72,6 +72,9 @@ type mba_debug_dev, dev_type;
 #Misc partition
 type misc_partition, dev_type;
 
+#logdump partition
+type logdump_partition, dev_type;
+
 #Bootselect partition
 type bootselect_device, dev_type;
 

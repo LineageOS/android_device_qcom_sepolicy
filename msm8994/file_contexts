@@ -43,6 +43,8 @@
 /dev/block/platform/soc.0/fc594000.ufshc/by-name/recovery                           u:object_r:recovery_block_device:s0
 /dev/block/platform/soc.0/fc594000.ufshc/by-name/cache                              u:object_r:cache_block_device:s0
 /dev/block/platform/soc.0/fc594000.ufshc/by-name/frp                                u:object_r:frp_block_device:s0
+/dev/block/platform/soc.0/fc594000.ufshc/by-name/logdump                            u:object_r:logdump_partition:s0
+
 
 # eMMC devices
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/fsc                                u:object_r:modem_efs_partition_device:s0
@@ -56,3 +58,4 @@
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/recovery                           u:object_r:recovery_block_device:s0
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/cache                              u:object_r:cache_block_device:s0
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/frp                                u:object_r:frp_block_device:s0
+/dev/block/platform/soc.0/f9824900.sdhci/by-name/logdump                            u:object_r:logdump_partition:s0
