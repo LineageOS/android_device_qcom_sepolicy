@@ -39,6 +39,7 @@ allow system_server { bluetooth_prop usf_prop }:property_service set;
 allow system_server bluetooth:unix_stream_socket connectto;
 # access to iop
 allow system_server iop_socket:dir r_dir_perms;
+allow system_server iop_data_file:dir r_dir_perms;
 unix_socket_send(system_server, iop, dumpstate)
 unix_socket_connect(system_server, iop, dumpstate)
 
