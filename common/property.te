@@ -84,3 +84,6 @@ type fst_prop, property_type, core_property_type;
 
 type alarm_handled_prop, property_type, core_property_type;
 type alarm_instance_prop, property_type, core_property_type;
+
+#HWUI property
+type hwui_prop, property_type, core_property_type;
