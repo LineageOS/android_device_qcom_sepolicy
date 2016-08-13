@@ -13,7 +13,7 @@ allow per_mgr self:socket create_socket_perms;
 allow per_mgr per_mgr_service:service_manager { add find };
 
 # Needed by ipc_router
-allow per_mgr self:capability net_raw;
+allow per_mgr self:capability net_bind_service;
 
 # Needed to power on the peripheral
 allow per_mgr ssr_device:chr_file r_file_perms;
