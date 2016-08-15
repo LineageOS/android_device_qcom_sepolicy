@@ -45,6 +45,8 @@ allow mmi wpa_exec:file rx_file_perms;
 allow mmi wcnss_service_exec:file rx_file_perms;
 allow mmi kernel:key search;
 allow mmi kernel:system module_request;
+allow mmi toolbox_exec:file rx_file_perms;
+allow mmi system_file:system module_load;
 
 #audio case
 allow mmi audio_device:dir r_dir_perms;
