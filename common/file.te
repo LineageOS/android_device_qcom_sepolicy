@@ -201,3 +201,5 @@ type dynamic_nv_data_file, file_type, data_file_type;
 type wififtmd_socket, file_type;
 
 type persist_alarm_file, file_type;
+
+type persist_time_file, file_type;
