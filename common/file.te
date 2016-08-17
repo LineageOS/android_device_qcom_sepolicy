@@ -89,6 +89,9 @@ type gamed_socket, file_type;
 type iop_socket, file_type;
 type iop_data_file, file_type, data_file_type;
 
+# SPSS Apps images location
+type spss_data_file, file_type, data_file_type;
+
 #mm-qcamera-daemon socket
 type camera_socket, file_type;
 
