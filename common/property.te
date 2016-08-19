@@ -88,3 +88,5 @@ type alarm_instance_prop, property_type, core_property_type;
 
 #HWUI property
 type hwui_prop, property_type, core_property_type;
+
+type graphics_vulkan_prop, property_type, core_property_type;
