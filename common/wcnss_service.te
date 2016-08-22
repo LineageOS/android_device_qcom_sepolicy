@@ -49,3 +49,6 @@ allow wcnss_service dynamic_nv_data_file:dir r_dir_perms;
 r_dir_file(wcnss_service, storage_file)
 r_dir_file(wcnss_service, mnt_user_file)
 ')
+
+binder_use(wcnss_service)
+use_per_mgr(wcnss_service)
