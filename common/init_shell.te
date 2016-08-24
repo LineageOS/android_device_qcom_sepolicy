@@ -31,6 +31,8 @@ allow qti_init_shell vm_bms_device:chr_file getattr;
 # create/open, read/write permission for fm calibration file.
 allow qti_init_shell fm_data_file: file create_file_perms;
 
+allow qti_init_shell gpu_device:chr_file getattr;
+
 # for insmod of iris ko, this is needed.
 # dac_read/override is needed for scripts to do chown/mkdir which is
 # needed by most of the services
@@ -74,6 +76,7 @@ allow qti_init_shell {
     ctl_qmuxd_prop
     ctl_netmgrd_prop
     ctl_port-bridge_prop
+    sdm_idle_time_prop
     sf_lcd_density_prop
     opengles_prop
     mdm_helper_prop
