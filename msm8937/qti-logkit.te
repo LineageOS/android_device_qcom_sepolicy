@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,15 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Data type for QVOP
-type qvop_data_file, file_type, data_file_type;
+# allow qti_logkit for rawdump partition
+allow qti_logkit block_device:dir r_dir_perms;
+allow qti_logkit rawdump_block_device:blk_file rw_file_perms;
 
-#TLOC Files
-type tlocd_data_file, file_type, data_file_type;
-
-# Data type for qvrd
-type qvrd_data_file, file_type, data_file_type;
-type qvrd_socket, file_type, mlstrustedobject;
-
-#sysfs emmc dload type
-type sysfs_emmc_dload, sysfs_type, fs_type;
+# allow qti_logkit for sysfs emmc dload node
+allow qti_logkit sysfs_emmc_dload:file rw_file_perms;
