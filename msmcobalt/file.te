@@ -27,3 +27,6 @@
 
 #sysfs emmc dload type
 type sysfs_emmc_dload, sysfs_type, fs_type;
+
+# Data type for QVOP
+type qvop_data_file, file_type, data_file_type;
