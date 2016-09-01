@@ -35,7 +35,6 @@
 /system/bin/thermal-engine                      u:object_r:thermal-engine_exec:s0
 /system/bin/qcks                                u:object_r:mdm_helper_exec:s0
 /system/bin/efks                                u:object_r:mdm_helper_exec:s0
-/system/bin/DR_AP_Service                       u:object_r:location_exec:s0
 
 ###################################
 # Data files
