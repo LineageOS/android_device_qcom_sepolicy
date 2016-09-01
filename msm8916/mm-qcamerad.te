@@ -1,2 +1,0 @@
-# The current BSP's faceproc library still needs this
-allow mm-qcamerad system_file:file execmod;
