@@ -46,3 +46,12 @@
 #rawdump partition
 /dev/block/platform/soc/1da4000.ufshc/by-name/rawdump                            u:object_r:rawdump_block_device:s0
 /sys/kernel/dload/emmc_dload                                                     u:object_r:sysfs_emmc_dload:s0
+
+###################################
+# System files
+#
+/system/bin/qvop-daemon u:object_r:qvop_exec:s0
+###################################
+# data files
+#
+/data/misc/qvop(/.*)?      u:object_r:qvop_data_file:s0
