@@ -26,4 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Domain type used for debugfs access
-attribute qti_debugfs_domain;
+# (moved to system/sepolicy)
+# attribute qti_debugfs_domain;
