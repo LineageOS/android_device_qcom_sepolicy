@@ -90,3 +90,5 @@ type alarm_instance_prop, property_type, core_property_type;
 type hwui_prop, property_type, core_property_type;
 
 type graphics_vulkan_prop, property_type, core_property_type;
+#boot mode property
+type boot_mode_prop, property_type;
