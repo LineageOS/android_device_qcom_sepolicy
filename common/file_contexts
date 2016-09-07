@@ -20,6 +20,7 @@
 /dev/sp_kernel                                  u:object_r:skp_device:s0
 /dev/sp_ssr                                     u:object_r:sp_ssr_device:s0
 /dev/sp_keymaster                               u:object_r:sp_keymaster_device:s0
+/dev/cryptoapp                                  u:object_r:cryptoapp_device:s0
 /dev/seemplog                                   u:object_r:seemplog_device:s0
 /dev/radio0                                     u:object_r:fm_radio_device:s0
 /dev/rtc0                                       u:object_r:rtc_device:s0
