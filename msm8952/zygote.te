@@ -29,3 +29,4 @@
 allow zygote persist_file:dir r_dir_perms;
 allow zygote regionalization_file:dir r_dir_perms;
 allow zygote regionalization_file:file r_file_perms;
+allow zygote media_settings_xml_prop:file r_file_perms;
