@@ -113,3 +113,6 @@ unix_socket_connect(mmi, cnd, cnd);
 unix_socket_connect(mmi, dpmwrapper, dpmd);
 unix_socket_connect(mmi, netmgrd, netmgrd);
 net_domain(mmi);
+
+#allow mmi access boot mode switch
+allow mmi boot_mode_prop:property_service set;
