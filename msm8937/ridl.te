@@ -25,8 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# For regionalization
-allow zygote persist_file:dir r_dir_perms;
-allow zygote regionalization_file:dir r_dir_perms;
-allow zygote regionalization_file:file r_file_perms;
-allow zygote media_settings_xml_prop:file r_file_perms;
+# allow RIDL for rawdump partition
+allow RIDL block_device:dir r_dir_perms;
+allow RIDL rawdump_block_device:blk_file rw_file_perms;
+
+# allow RIDL for enable sysfs node
+allow RIDL sysfs_emmc_dload:file rw_file_perms;

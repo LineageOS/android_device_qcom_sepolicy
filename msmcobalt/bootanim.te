@@ -26,7 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # For regionalization
-allow zygote persist_file:dir r_dir_perms;
-allow zygote regionalization_file:dir r_dir_perms;
-allow zygote regionalization_file:file r_file_perms;
-allow zygote media_settings_xml_prop:file r_file_perms;
+allow bootanim persist_file:dir r_dir_perms;
+allow bootanim regionalization_file:dir r_dir_perms;
+allow bootanim regionalization_file:file r_file_perms;

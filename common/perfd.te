@@ -55,3 +55,6 @@ allow perfd {
 
 #Allow perfd to set properties
 set_prop(perfd, freq_prop)
+
+#Allow writes to /dev/cpu_dma_latency
+allow perfd device_latency:chr_file w_file_perms;
