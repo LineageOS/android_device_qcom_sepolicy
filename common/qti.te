@@ -28,3 +28,8 @@ allow qti self:{
 } create_socket_perms;
 
 allow qti { shell_exec system_file }:file rx_file_perms;
+
+#diag
+userdebug_or_eng(`
+    diag_use(qti)
+')
