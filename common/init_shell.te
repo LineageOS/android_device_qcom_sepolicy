@@ -188,3 +188,6 @@ allow qti_init_shell persist_alarm_file:file r_file_perms;
 #Allow /sys access to write zram disksize
 allow qti_init_shell sysfs_zram:dir r_dir_perms;
 allow qti_init_shell sysfs_zram:file w_file_perms;
+
+# To get GPU frequencies
+allow qti_init_shell sysfs_kgsl:file r_file_perms;
