@@ -6,6 +6,7 @@ init_daemon_domain(netmgrd)
 userdebug_or_eng(`
   domain_auto_trans(shell, netmgrd_exec, netmgrd)
   domain_auto_trans(adbd, netmgrd_exec, netmgrd)
+  diag_use(netmgrd)
 ')
 
 #Allow files to be written during the operation of netmgrd
@@ -33,6 +34,7 @@ allow netmgrd netmgrd:socket { create ioctl };
 allow netmgrd netmgrd:netlink_route_socket { setopt getattr write nlmsg_write };
 unix_socket_connect(netmgrd, property, init)
 allow netmgrd self:netlink_generic_socket create_socket_perms;
+allow netmgrd self:netlink_tcpdiag_socket { create_socket_perms nlmsg_read nlmsg_write };
 
 unix_socket_connect(netmgrd, cnd, cnd);
 

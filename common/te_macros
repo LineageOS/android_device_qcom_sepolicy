@@ -53,3 +53,9 @@ allow dpmd $1:file r_file_perms;
 allow dpmd $1:fd use;
 allow dpmd $1:tcp_socket rw_socket_perms;
 ')
+#####################################
+# diag_use(clientdomain)
+# allow clientdomain to read/write to diag
+define(`diag_use', `
+allow $1 diag_device:chr_file rw_file_perms;
+')

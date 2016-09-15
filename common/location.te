@@ -59,3 +59,8 @@ netmgr_socket(location);
 
 #Allow access to properties
 set_prop(location, location_prop);
+
+#diag
+userdebug_or_eng(`
+    diag_use(location)
+')

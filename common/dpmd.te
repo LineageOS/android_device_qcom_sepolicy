@@ -71,3 +71,8 @@ dpmd_socket_perm(netd)
 
 #explicitly allow udp socket permissions for appdomain
 allow dpmd appdomain:udp_socket rw_socket_perms;
+
+#diag
+userdebug_or_eng(`
+    diag_use(dpmd)
+')

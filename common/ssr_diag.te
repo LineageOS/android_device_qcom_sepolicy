@@ -4,4 +4,5 @@ init_daemon_domain(ssr_diag);
 
 userdebug_or_eng(`
   allow ssr_diag sysfs:file w_file_perms;
+  diag_use(ssr_diag)
 ')

@@ -26,3 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 binder_call(system_app, qvop)
+#for oemfs
+allow system_app oemfs:lnk_file { read getattr };

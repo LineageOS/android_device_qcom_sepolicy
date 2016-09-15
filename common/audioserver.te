@@ -47,3 +47,6 @@ allow audioserver audio_data_file:dir remove_name;
 
 # Allow audioserver to access sysfs nodes
 allow audioserver sysfs:file rw_file_perms;
+userdebug_or_eng(`
+  diag_use(audioserver)
+')
