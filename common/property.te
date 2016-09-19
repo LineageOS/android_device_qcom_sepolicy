@@ -97,3 +97,5 @@ type hwui_prop, property_type, core_property_type;
 type graphics_vulkan_prop, property_type, core_property_type;
 #boot mode property
 type boot_mode_prop, property_type;
+#properties for nfc
+type nfc_nq_prop, property_type, core_property_type;
