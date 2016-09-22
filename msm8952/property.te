@@ -27,5 +27,5 @@
 
 #properites for init.qcom.sh script
 type media_msm8956hw_prop, property_type;
-type media_settings_xml_prop, property_type;
+type media_settings_xml_prop, property_type, core_property_type;
 type media_msm8956_version_prop, property_type;
