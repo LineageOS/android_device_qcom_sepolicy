@@ -52,3 +52,7 @@ allow cameraserver sensors_persist_file:dir r_dir_perms;
 allow cameraserver sensors_persist_file:file r_file_perms;
 allow cameraserver graphics_device:dir r_dir_perms;
 allow cameraserver sensorservice_service:service_manager find;
+allow cameraserver system_file:dir r_dir_perms;
+
+#Allows camera to call ADSP QDSP6 functionality
+allow cameraserver qdsp_device:chr_file r_file_perms;

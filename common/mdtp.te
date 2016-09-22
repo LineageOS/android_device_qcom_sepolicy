@@ -37,6 +37,7 @@ userdebug_or_eng(`
     #Needed for kill(pid, 0) existance test
     allow mdtpdaemon su:process signull;
     allow mdtpdaemon self:capability kill;
+    diag_use(mdtpdaemon)
 ')
 
 #Allow for transition from init domain to mdtpdaemon

@@ -49,3 +49,8 @@ r_dir_file(wcnss_filter, bt_firmware_file)
 # Data file accesses.
 allow wcnss_filter bluetooth_data_file:dir create_dir_perms;
 allow wcnss_filter bluetooth_data_file:notdevfile_class_set create_file_perms;
+
+#diag
+userdebug_or_eng(`
+    diag_use(wcnss_filter)
+')
