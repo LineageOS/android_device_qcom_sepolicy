@@ -84,3 +84,5 @@ ro.hwui.texture_cache_size u:object_r:hwui_prop:s0
 persist.graphics.vulkan.disable     u:object_r:graphics_vulkan_prop:s0
 #boot mode property
 sys.boot_mode              u:object_r:boot_mode_prop:s0
+# GPU
+ro.gpu.available_frequencies u:object_r:freq_prop:s0
