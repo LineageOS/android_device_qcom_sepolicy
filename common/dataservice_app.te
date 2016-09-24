@@ -34,6 +34,8 @@ net_domain(dataservice_app)
 allow dataservice_app { qtitetherservice_service dpmservice cne_service } :service_manager { add find } ;
 allow dataservice_app { app_api_service system_api_service audioserver_service radio_service } :service_manager find;
 
+set_prop(dataservice_app, sys_usb_tethering_prop)
+
 allow dataservice_app self:socket create_socket_perms;
 unix_socket_connect(dataservice_app, netd, netd);
 qmux_socket(dataservice_app);
