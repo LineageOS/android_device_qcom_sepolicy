@@ -116,7 +116,8 @@ allow qti_init_shell {
 
 r_dir_file(qti_init_shell, sysfs_thermal)
 allow qti_init_shell sysfs_socinfo:file write;
-
+allow qti_init_shell sysfs:{ dir file lnk_file } relabelfrom;
+allow qti_init_shell sysfs_devices_system_cpu: { dir file lnk_file } relabelto;
 # Check if /dev/sensors or /dev/msm_dsps present
 allow qti_init_shell sensors_data_file:dir r_dir_perms;
 allow qti_init_shell sensors_device:chr_file r_file_perms;
