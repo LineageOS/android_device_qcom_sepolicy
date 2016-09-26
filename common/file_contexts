@@ -351,6 +351,7 @@
 /persist/drm(/.*)?                                                  u:object_r:persist_drm_file:s0
 /persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0
 /persist/alarm(/.*)?                                                u:object_r:persist_alarm_file:s0
+/persist/time(/.*)?                                                 u:object_r:persist_time_file:s0
 /persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
 /persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
 /persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
