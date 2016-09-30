@@ -10,7 +10,6 @@ allow qcomsysd smem_log_device:chr_file rw_file_perms;
 #Needed to read/write cookies to the misc partition
 allow qcomsysd block_device:dir r_dir_perms;
 allow qcomsysd {
-    misc_partition
     #Needed to access the bootselect partition
     bootselect_device
 }:blk_file rw_file_perms;
