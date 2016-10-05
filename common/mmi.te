@@ -36,9 +36,6 @@ allow mmi persist_file:dir r_dir_perms;
 allow mmi sensors_persist_file:dir create_dir_perms;
 allow mmi sensors_persist_file:file create_file_perms;
 
-#allow mmi operation on MISC partition
-allow mmi misc_partition:blk_file w_file_perms;
-
 #wifi case
 allow mmi system_file:file x_file_perms;
 allow mmi wpa_exec:file rx_file_perms;

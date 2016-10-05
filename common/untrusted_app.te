@@ -9,6 +9,7 @@ neverallow untrusted_app diag_device:chr_file rw_file_perms;
 # using binder call
 userdebug_or_eng(`
   binder_call(untrusted_app, imscm)
+  allow untrusted_app imscm_service:service_manager find;
 ')
 
 # for finding wbc_service
