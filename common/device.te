@@ -45,7 +45,6 @@ type rpmb_device, dev_type;
 type sg_device, dev_type;
 type dip_device, dev_type;
 type mdtp_device, dev_type;
-
 type sd_device, dev_type;
 
 #ESOC device
