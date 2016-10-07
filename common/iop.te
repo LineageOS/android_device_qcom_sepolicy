@@ -28,7 +28,7 @@
 
 allow dumpstate self:capability { chown dac_override } ;
 allow dumpstate self:socket create_socket_perms;
-r_dir_file( dumpstate, system_app_data_file );
+#r_dir_file( dumpstate, system_app_data_file );
 allow dumpstate app_data_file:dir r_dir_perms;
 allow dumpstate app_data_file:file r_file_perms ;
 allow dumpstate bluetooth_data_file:dir r_dir_perms;

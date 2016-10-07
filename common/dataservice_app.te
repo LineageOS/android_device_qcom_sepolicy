@@ -45,8 +45,8 @@ allow dataservice_app dpmd_socket:sock_file write;
 allow dataservice_app dpmd_data_file:dir rw_dir_perms;
 allow dataservice_app dpmd_data_file:file create_file_perms;
 allow dataservice_app ipa_dev:chr_file rw_file_perms;
-allow dataservice_app system_app_data_file:dir create_dir_perms;
-allow dataservice_app system_app_data_file:{ file lnk_file } create_file_perms;
+#allow dataservice_app system_app_data_file:dir create_dir_perms;
+#allow dataservice_app system_app_data_file:{ file lnk_file } create_file_perms;
 
 allow dataservice_app wcnss_service_exec:file rx_file_perms;
 

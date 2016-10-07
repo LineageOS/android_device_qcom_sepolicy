@@ -14,4 +14,4 @@ allow ueventd {
     sysfs_socinfo
 }:file w_file_perms;
 
-allow ueventd mba_debug_dev:blk_file r_file_perms;
+#allow ueventd mba_debug_dev:blk_file r_file_perms;

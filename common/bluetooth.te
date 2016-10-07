@@ -37,7 +37,7 @@ userdebug_or_eng(`
 
 allow bluetooth {
     uhid_device
-    input_device
+    #input_device
     serial_device
     #BT needes read and write on smd device node
     smd_device

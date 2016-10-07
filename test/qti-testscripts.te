@@ -28,7 +28,7 @@
 userdebug_or_eng(`
   type qti-testscripts, domain, domain_deprecated, mlstrustedsubject;
   permissive qti-testscripts;
-  domain_trans(init, shell_exec, qti-testscripts)
+  #domain_trans(init, shell_exec, qti-testscripts)
 
   #super_user - start
   # Add qti-testscripts to various domains
@@ -71,7 +71,7 @@ userdebug_or_eng(`
   r_dir_file(domain, qti-testscripts)
   r_dir_file(qti-testscripts, domain)
 
-  allow adbd qti-testscripts:process dyntransition;
+  #allow adbd qti-testscripts:process dyntransition;
   allow { domain -mediaextractor -mediacodec } qti-testscripts:unix_stream_socket connectto;
   allow domain qti-testscripts:fd use;
   allow { domain -mediaextractor -mediacodec } qti-testscripts:unix_stream_socket { getattr getopt read write shutdown };

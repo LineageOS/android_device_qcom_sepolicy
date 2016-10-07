@@ -5,7 +5,7 @@ userdebug_or_eng(`
   type sensors_test, domain, domain_deprecated;
 
   domain_auto_trans(shell, sensors_test_exec, sensors_test)
-  domain_auto_trans(adbd, sensors_test_exec, sensors_test)
+  #domain_auto_trans(adbd, sensors_test_exec, sensors_test)
 
   allow sensors_test devpts:chr_file rw_file_perms;
   allow sensors_test sensors:unix_stream_socket connectto;
