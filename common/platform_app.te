@@ -10,7 +10,7 @@ binder_call(platform_app, secotad)
 
 # Allow platform apps to interact with imscm daemon
 binder_call(platform_app, imscm)
-
+allow platform_app imscm_service:service_manager find;
 allow platform_app color_service:service_manager find;
 
 # Allow NFC service to be found

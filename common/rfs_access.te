@@ -53,6 +53,7 @@ allow rfs_access self:capability {
     setuid
     setgid
     setpcap
+    net_bind_service
     net_raw
 };
 
@@ -61,6 +62,9 @@ allow rfs_access self:capability {
 # to the new values in the OEM range.
 
 allow rfs_access self:capability { dac_read_search chown dac_override };
+
+#For access to the kmsg device
+allow rfs_access kmsg_device:chr_file w_file_perms;
 
 #Prevent other domains from accessing RFS data files.
 neverallow { domain -rfs_access -kernel -recovery -init userdebug_or_eng(`-su') -qti_init_shell } rfs_file:dir create_dir_perms;
