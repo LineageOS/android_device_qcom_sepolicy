@@ -46,6 +46,9 @@ userdebug_or_eng(`
 
   # This allows pp-daemon to set debug property
   allow mm-pp-daemon debug_prop:property_service set;
+
+  # This allow pp-daemon access to diag
+  diag_use(mm-pp-daemon)
 ')
 
 # Allow mm-pp-daemon to change the brightness of the target during display
