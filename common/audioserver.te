@@ -45,6 +45,10 @@ allow audioserver debugfs:file rw_file_perms;
 allow audioserver audio_data_file:sock_file { create setattr unlink };
 allow audioserver audio_data_file:dir remove_name;
 
+# Allow audioserver to read sysfs dir and sysfs_thermal files for speaker protection
+allow audioserver sysfs:dir r_dir_perms;
+allow audioserver sysfs_thermal:file r_file_perms;
+
 # Allow audioserver to access sysfs nodes
 allow audioserver sysfs:file rw_file_perms;
 userdebug_or_eng(`
