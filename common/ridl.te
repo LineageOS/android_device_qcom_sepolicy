@@ -93,6 +93,7 @@ userdebug_or_eng(`
 	# tcpdump
 	allow RIDL self:packet_socket create_socket_perms;
 	allow RIDL self:capability net_raw;
+        diag_use( RIDL )
 
         # allow location
         allow RIDL app_api_service:service_manager find;

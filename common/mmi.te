@@ -10,6 +10,7 @@ allow mmi self:socket create_socket_perms;
 allow mmi self:{ netlink_socket netlink_generic_socket } create_socket_perms;
 allow mmi self:udp_socket create_socket_perms;
 allow mmi self:capability { sys_nice dac_override setuid setgid fowner chown fsetid kill net_admin sys_module net_raw};
+allow mmi self:capability2 wake_alarm;
 
 #For various devices
 allow mmi sysfs:file w_file_perms;
@@ -106,6 +107,9 @@ allow mmi sensors_device:chr_file r_file_perms;
 
 #logcat
 domain_auto_trans(mmi, logcat_exec, logd);
+
+#access kmsg device for logging
+allow mmi kmsg_device:chr_file rw_file_perms;
 
 #mmi test
 unix_socket_connect(mmi, cnd, cnd);
