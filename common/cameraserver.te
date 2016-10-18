@@ -43,3 +43,16 @@ allow cameraserver system_server:unix_stream_socket { read write };
 
 #Allow read access to soc/msm-cam/video4linux/video0/name sysfs
 allow cameraserver sysfs:file r_file_perms;
+
+allow cameraserver persist_file:dir r_dir_perms;
+allow cameraserver camera_prop:property_service set;
+unix_socket_connect(cameraserver,property,init);
+allow cameraserver self:socket create_socket_perms;
+allow cameraserver sensors_persist_file:dir r_dir_perms;
+allow cameraserver sensors_persist_file:file r_file_perms;
+allow cameraserver graphics_device:dir r_dir_perms;
+allow cameraserver sensorservice_service:service_manager find;
+allow cameraserver system_file:dir r_dir_perms;
+
+#Allows camera to call ADSP QDSP6 functionality
+allow cameraserver qdsp_device:chr_file r_file_perms;

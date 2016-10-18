@@ -30,3 +30,8 @@ allow rild { mediaserver_service audioserver_service }:service_manager find;
 
 # Rule for RILD to talk to peripheral manager
 use_per_mgr(rild);
+
+#diag
+userdebug_or_eng(`
+    diag_use(rild)
+')

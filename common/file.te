@@ -89,6 +89,9 @@ type gamed_socket, file_type;
 type iop_socket, file_type;
 type iop_data_file, file_type, data_file_type;
 
+# SPSS Apps images location
+type spss_data_file, file_type, data_file_type;
+
 #mm-qcamera-daemon socket
 type camera_socket, file_type;
 
@@ -198,3 +201,8 @@ type dynamic_nv_data_file, file_type, data_file_type;
 type wififtmd_socket, file_type;
 
 type persist_alarm_file, file_type;
+
+type persist_time_file, file_type;
+
+# kgsl file type for sysfs access
+type sysfs_kgsl, sysfs_type, fs_type;

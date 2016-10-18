@@ -63,6 +63,7 @@ userdebug_or_eng(`
   # Access to tombstone segfaults
   allow system_app tombstone_data_file:dir r_dir_perms;
   allow system_app tombstone_data_file:file r_file_perms;
+  diag_use(system_app)
 ')
 
 allow system_app cnd_data_file:dir w_dir_perms;
@@ -99,6 +100,7 @@ binder_call(system_app, secotad)
 
 # allow system_app to interact with imscm daemon
 binder_call(system_app, imscm)
+allow system_app imscm_service:service_manager find;
 
 # access to seemp folder
 allow system_app seemp_file:dir r_dir_perms;

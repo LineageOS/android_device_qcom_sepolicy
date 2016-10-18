@@ -10,7 +10,6 @@ allow qcomsysd smem_log_device:chr_file rw_file_perms;
 #Needed to read/write cookies to the misc partition
 allow qcomsysd block_device:dir r_dir_perms;
 allow qcomsysd {
-    misc_partition
     #Needed to access the bootselect partition
     bootselect_device
 }:blk_file rw_file_perms;
@@ -21,3 +20,10 @@ allow qcomsysd sysfs_socinfo:file w_file_perms;
 
 allow qcomsysd self:capability { dac_override sys_boot };
 use_per_mgr(qcomsysd);
+#allow qcomsysd access boot mode switch
+allow qcomsysd boot_mode_prop:property_service set;
+
+#diag
+userdebug_or_eng(`
+    diag_use(qcomsysd)
+')

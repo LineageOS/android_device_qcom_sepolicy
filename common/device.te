@@ -69,9 +69,6 @@ type efs_boot_dev, dev_type;
 #MBA debug image partition
 type mba_debug_dev, dev_type;
 
-#Misc partition
-type misc_partition, dev_type;
-
 #logdump partition
 type logdump_partition, dev_type;
 
@@ -85,6 +82,24 @@ type usb_uicc_device, dev_type;
 type ipa_dev, dev_type;
 
 type wcnss_device, dev_type;
+
+# Define spcom device
+type spcom_device, dev_type;
+
+# Define skp device
+type skp_device, dev_type;
+
+# Define sp_ssr device
+type sp_ssr_device, dev_type;
+
+# Define sp_keymaster device
+type sp_keymaster_device, dev_type;
+
+# Define cryptoapp device
+type cryptoapp_device, dev_type;
+
+# Define qsee_ipc_irq_spss device
+type qsee_ipc_irq_spss_device, dev_type;
 
 # Define QDSS devices
 type qdss_device, dev_type;

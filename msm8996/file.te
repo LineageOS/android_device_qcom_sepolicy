@@ -34,3 +34,6 @@ type tlocd_data_file, file_type, data_file_type;
 # Data type for qvrd
 type qvrd_data_file, file_type, data_file_type;
 type qvrd_socket, file_type, mlstrustedobject;
+
+#sysfs emmc dload type
+type sysfs_emmc_dload, sysfs_type, fs_type;

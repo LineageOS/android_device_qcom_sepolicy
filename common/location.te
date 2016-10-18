@@ -41,7 +41,11 @@ allow location sensors_persist_file:dir r_dir_perms;
 allow location sensors_persist_file:file r_file_perms;
 
 #wifi
-allow location wifi_data_file:dir r_dir_perms;
+userdebug_or_eng(`
+allow location wifi_data_file:dir create_dir_perms;
+allow location wifi_data_file:sock_file create_file_perms;
+allow location su:unix_dgram_socket sendto;
+')
 unix_socket_send(wpa, location, location)
 allow location wpa:unix_dgram_socket sendto;
 allow location wpa_socket:dir rw_dir_perms;
@@ -59,3 +63,8 @@ netmgr_socket(location);
 
 #Allow access to properties
 set_prop(location, location_prop);
+
+#diag
+userdebug_or_eng(`
+    diag_use(location)
+')

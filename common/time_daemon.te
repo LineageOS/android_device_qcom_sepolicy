@@ -16,4 +16,13 @@ allow time_daemon time_data_file:dir w_dir_perms;
 allow time_daemon self:socket create_socket_perms;
 allow time_daemon self:capability { setuid setgid sys_time };
 
+allow time_daemon persist_time_file:file create_file_perms;
+allow time_daemon persist_time_file:dir w_dir_perms;
+
+allow time_daemon persist_file:dir search;
+
 r_dir_file(time_daemon, sysfs_esoc);
+
+userdebug_or_eng(`
+  diag_use(time_daemon)
+')

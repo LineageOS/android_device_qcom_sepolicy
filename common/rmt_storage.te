@@ -18,6 +18,7 @@ allow rmt_storage self:capability {
     setgid
     sys_admin
     dac_override
+    net_bind_service
     net_raw
     setpcap
 };
@@ -31,3 +32,13 @@ wakelock_use(rmt_storage)
 
 allow rmt_storage self:socket create_socket_perms;
 allow rmt_storage uio_device:chr_file rw_file_perms;
+
+#For access to the kmsg device
+allow rmt_storage kmsg_device:chr_file w_file_perms;
+
+#debugfs access
+userdebug_or_eng(`
+typeattribute rmt_storage qti_debugfs_domain;
+allow rmt_storage debugfs:dir r_dir_perms;
+allow rmt_storage debugfs:file rw_file_perms;
+')

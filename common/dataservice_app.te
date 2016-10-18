@@ -52,3 +52,7 @@ dontaudit dataservice_app domain:dir r_dir_perms;
 
 #allow dpmservice to get running time for apps
 r_dir_file(dataservice_app, appdomain)
+
+userdebug_or_eng(`
+  diag_use(dataservice_app)
+')

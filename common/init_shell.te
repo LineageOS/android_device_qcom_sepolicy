@@ -31,6 +31,8 @@ allow qti_init_shell vm_bms_device:chr_file getattr;
 # create/open, read/write permission for fm calibration file.
 allow qti_init_shell fm_data_file: file create_file_perms;
 
+allow qti_init_shell gpu_device:chr_file getattr;
+
 # for insmod of iris ko, this is needed.
 # dac_read/override is needed for scripts to do chown/mkdir which is
 # needed by most of the services
@@ -74,6 +76,7 @@ allow qti_init_shell {
     ctl_qmuxd_prop
     ctl_netmgrd_prop
     ctl_port-bridge_prop
+    sdm_idle_time_prop
     sf_lcd_density_prop
     opengles_prop
     mdm_helper_prop
@@ -93,6 +96,7 @@ allow qti_init_shell {
     sys_usb_configfs_prop
     #Needed for setting hwui properties in post_boot
     hwui_prop
+    graphics_vulkan_prop
 }:property_service set;
 
 allow qti_init_shell efs_boot_dev:blk_file r_file_perms;
@@ -112,7 +116,8 @@ allow qti_init_shell {
 
 r_dir_file(qti_init_shell, sysfs_thermal)
 allow qti_init_shell sysfs_socinfo:file write;
-
+allow qti_init_shell sysfs:{ dir file lnk_file } relabelfrom;
+allow qti_init_shell sysfs_devices_system_cpu: { dir file lnk_file } relabelto;
 # Check if /dev/sensors or /dev/msm_dsps present
 allow qti_init_shell sensors_data_file:dir r_dir_perms;
 allow qti_init_shell sensors_device:chr_file r_file_perms;
@@ -184,3 +189,6 @@ allow qti_init_shell persist_alarm_file:file r_file_perms;
 #Allow /sys access to write zram disksize
 allow qti_init_shell sysfs_zram:dir r_dir_perms;
 allow qti_init_shell sysfs_zram:file w_file_perms;
+
+# To get GPU frequencies
+allow qti_init_shell sysfs_kgsl:file r_file_perms;

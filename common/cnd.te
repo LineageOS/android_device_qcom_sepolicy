@@ -87,3 +87,8 @@ domain_auto_trans(cnd, hostapd_exec, hostapd)
 # only allow getopt for appdomain
 allow appdomain zygote:unix_dgram_socket getopt;
 dontaudit { domain -appdomain } zygote:unix_dgram_socket getopt;
+
+#diag
+userdebug_or_eng(`
+    diag_use(cnd)
+')

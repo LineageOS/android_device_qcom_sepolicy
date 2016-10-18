@@ -33,6 +33,9 @@ allow wcnss_service firmware_file:file r_file_perms;
 allow wcnss_service sysfs:file w_file_perms;
 allow wcnss_service storage_file:dir search;
 
+# allow access to netd
+unix_socket_connect(wcnss_service, netd, netd)
+
 userdebug_or_eng(`
 allow wcnss_service fuse:dir create_dir_perms;
 allow wcnss_service fuse:file create_file_perms;
@@ -45,4 +48,8 @@ allow wcnss_service dynamic_nv_data_file:dir r_dir_perms;
 # This is needed for ptt_socket app to write logs file collected to sdcard
 r_dir_file(wcnss_service, storage_file)
 r_dir_file(wcnss_service, mnt_user_file)
+diag_use(wcnss_service)
 ')
+
+binder_use(wcnss_service)
+use_per_mgr(wcnss_service)

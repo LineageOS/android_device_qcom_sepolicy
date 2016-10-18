@@ -46,8 +46,11 @@ ctl.ipacm-diag             u:object_r:ipacm-diag_prop:s0
 ctl.qti                    u:object_r:qti_prop:s0
 ctl.sensors                u:object_r:sensors_prop:s0
 ctl.msm_irqbalance         u:object_r:msm_irqbalance_prop:s0
+ctl.msm_irqbal_lb          u:object_r:msm_irqbalance_prop:s0
 camera.                    u:object_r:camera_prop:s0
 persist.camera.            u:object_r:camera_prop:s0
+spcomlib.                    u:object_r:spcomlib_prop:s0
+sdm.idle_time              u:object_r:sdm_idle_time_prop:s0
 ro.sf.lcd_density             u:object_r:sf_lcd_density_prop:s0
 ro.opengles.version           u:object_r:opengles_prop:s0
 ro.qualcomm.bt.hci_transport  u:object_r:bluetooth_prop:s0
@@ -79,3 +82,8 @@ ro.alarm_handled           u:object_r:alarm_handled_prop:s0
 ro.alarm_instance          u:object_r:alarm_instance_prop:s0
 #HWUI Property
 ro.hwui.texture_cache_size u:object_r:hwui_prop:s0
+persist.graphics.vulkan.disable     u:object_r:graphics_vulkan_prop:s0
+#boot mode property
+sys.boot_mode              u:object_r:boot_mode_prop:s0
+# GPU
+ro.gpu.available_frequencies u:object_r:freq_prop:s0
