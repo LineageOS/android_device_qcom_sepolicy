@@ -54,3 +54,6 @@ allow audioserver sysfs:file rw_file_perms;
 userdebug_or_eng(`
   diag_use(audioserver)
 ')
+
+#Rules for audioserver to talk to peripheral manager
+use_per_mgr(audioserver);
