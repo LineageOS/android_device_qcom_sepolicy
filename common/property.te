@@ -69,7 +69,9 @@ type qemu_hw_mainkeys_prop, property_type, core_property_type;
 type sys_usb_controller_prop, property_type;
 type sys_usb_configfs_prop, property_type;
 
-type coresight_prop, property_type;
+type sys_usb_tethering_prop, property_type;
+
+type coresight_prop, property_type, core_property_type;
 
 type ctl_hbtp_prop, property_type;
 type alarm_boot_prop, property_type, core_property_type;
