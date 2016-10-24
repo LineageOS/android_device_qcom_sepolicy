@@ -26,4 +26,5 @@ allow qcomsysd boot_mode_prop:property_service set;
 #diag
 userdebug_or_eng(`
     diag_use(qcomsysd)
+    allow qcomsysd sysfs:file w_file_perms;
 ')
