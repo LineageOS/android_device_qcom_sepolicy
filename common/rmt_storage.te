@@ -17,9 +17,7 @@ allow rmt_storage self:capability {
     setuid
     setgid
     sys_admin
-    dac_override
     net_bind_service
-    net_raw
     setpcap
 };
 
