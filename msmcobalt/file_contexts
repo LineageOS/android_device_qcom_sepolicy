@@ -51,13 +51,20 @@
 /sys/kernel/dload/emmc_dload                                                     u:object_r:sysfs_emmc_dload:s0
 
 ###################################
+# Dev socket nodes
+#
+/dev/socket/qvrservice                                                          u:object_r:qvrd_socket:s0
+
+###################################
 # System files
 #
 /system/bin/qvop-daemon u:object_r:qvop_exec:s0
+
 ###################################
 # data files
 #
 /data/misc/qvop(/.*)?      u:object_r:qvop_data_file:s0
+/data/misc/qvr(/.*)?       u:object_r:qvrd_data_file:s0
 
 ##################################
 # non-hlos mount points
@@ -72,3 +79,4 @@
 # sysfs files
 #
 /sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input[0-9]/secure_touch_enable u:object_r:sysfs_securetouch:s0
+/sys/devices/virtual/graphics/fb([0-3])+/lineptr_value                          u:object_r:sysfs_graphics:s0
