@@ -96,6 +96,13 @@ type alarm_instance_prop, property_type;
 type hwui_prop, property_type;
 
 type graphics_vulkan_prop, property_type;
+
+#Bservice property
+type bservice_prop, property_type;
+
+#Delayed Service Reschedule property
+type reschedule_service_prop, property_type;
+
 #boot mode property
 type boot_mode_prop, property_type;
 #properties for nfc

@@ -107,7 +107,10 @@ set_prop(qti_init_shell, sys_usb_configfs_prop)
 #Needed for setting hwui properties in post_boot
 set_prop(qti_init_shell, hwui_prop)
 set_prop(qti_init_shell, graphics_vulkan_prop)
-
+#Needed for setting bservice properties from post_boot
+set_prop(qti_init_shell, bservice_prop)
+#Needed for setting DSR properties from post_boot
+set_prop(qti_init_shell, reschedule_service_prop)
 
 allow qti_init_shell efs_boot_dev:blk_file r_file_perms;
 
