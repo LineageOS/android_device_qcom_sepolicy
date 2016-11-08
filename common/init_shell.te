@@ -96,6 +96,10 @@ allow qti_init_shell {
     sys_usb_configfs_prop
     #Needed for setting hwui properties in post_boot
     hwui_prop
+    #Needed for setting bservice in post_boot
+    bservice_prop
+    #Needed for setting Delayed Service Reschedule in post_boot
+    reschedule_service_prop
     graphics_vulkan_prop
 }:property_service set;
 
