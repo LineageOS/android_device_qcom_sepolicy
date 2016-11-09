@@ -43,6 +43,8 @@
 /dev/block/platform/soc/1da4000.ufshc/by-name/recovery                           u:object_r:recovery_block_device:s0
 /dev/block/platform/soc/1da4000.ufshc/by-name/cache                              u:object_r:cache_block_device:s0
 /dev/block/platform/soc/1da4000.ufshc/by-name/frp                                u:object_r:frp_block_device:s0
+/dev/block/platform/soc/1da4000.ufshc/by-name/mdtp                               u:object_r:mdtp_device:s0
+/dev/block/platform/soc/1da4000.ufshc/by-name/dip                                u:object_r:dip_device:s0
 
 #rawdump partition
 /dev/block/platform/soc/1da4000.ufshc/by-name/rawdump                            u:object_r:rawdump_block_device:s0
@@ -65,3 +67,8 @@
 ##################################
 # FBE
 /system/bin/init.qcom.qseecomd.sh						u:object_r:init-qcom-fbe-sh_exec:s0
+
+###################################
+# sysfs files
+#
+/sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input[0-9]/secure_touch_enable u:object_r:sysfs_securetouch:s0
