@@ -1,4 +1,4 @@
-# Copyright (c) 2015-2016, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,37 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
-#adding mlstrustedsubject to domain to allow access to /proc/<pid>/stat
-type dataservice_app, domain, domain_deprecated, mlstrustedsubject;
-app_domain(dataservice_app)
-net_domain(dataservice_app)
-
-allow dataservice_app { qtitetherservice_service dpmservice cne_service } :service_manager { add find } ;
-allow dataservice_app { app_api_service system_api_service audioserver_service radio_service } :service_manager find;
-set_prop(dataservice_app, persist_dpm_prop)
-
-set_prop(dataservice_app, sys_usb_tethering_prop)
-
-allow dataservice_app self:socket create_socket_perms;
-unix_socket_connect(dataservice_app, netd, netd);
-qmux_socket(dataservice_app);
-
-allow dataservice_app dpmd_socket:sock_file write;
-allow dataservice_app dpmd_data_file:dir rw_dir_perms;
-allow dataservice_app dpmd_data_file:file create_file_perms;
-allow dataservice_app ipa_dev:chr_file rw_file_perms;
-allow dataservice_app system_app_data_file:dir create_dir_perms;
-allow dataservice_app system_app_data_file:{ file lnk_file } create_file_perms;
-
-allow dataservice_app wcnss_service_exec:file rx_file_perms;
-
-#don't audit /proc/<pid>/stat denials
-dontaudit dataservice_app domain:dir r_dir_perms;
-
-#allow dpmservice to get running time for apps
-r_dir_file(dataservice_app, appdomain)
-
-userdebug_or_eng(`
-  diag_use(dataservice_app)
-')
+# Allow all apps to connect to VR service
+allow appdomain qvrd:fd use;
+unix_socket_connect(appdomain, qvrd, qvrd)

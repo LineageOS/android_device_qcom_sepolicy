@@ -9,6 +9,7 @@
 /dev/mhi_pipe_.*                                u:object_r:mhi_device:s0
 /dev/bhi                                        u:object_r:bhi_device:s0
 /dev/msm_.*                                     u:object_r:audio_device:s0
+/dev/wcd_dsp0_control                           u:object_r:audio_device:s0
 /dev/wcd-dsp-glink                              u:object_r:audio_device:s0
 /dev/usf1                                       u:object_r:usf_device:s0
 /dev/msm_dsps                                   u:object_r:sensors_device:s0
@@ -230,6 +231,7 @@
 /system/bin/sapd                                u:object_r:sapd_exec:s0
 /system/bin/btnvtool                            u:object_r:btnvtool_exec:s0
 /system/bin/btsnoop                             u:object_r:btsnoop_exec:s0
+/system/bin/bt_logger                           u:object_r:bt_logger_exec:s0
 /system/bin/dun-server                          u:object_r:dun-server_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /system/bin/wcnss_filter                        u:object_r:wcnss_filter_exec:s0
