@@ -59,6 +59,7 @@
 # System files
 #
 /system/bin/qvop-daemon u:object_r:qvop_exec:s0
+/system/vendor/bin/qvrservice u:object_r:qvrd_exec:s0
 
 ###################################
 # data files
