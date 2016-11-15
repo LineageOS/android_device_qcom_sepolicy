@@ -4,6 +4,7 @@ unix_socket_send(audioserver, mpctl, mpdecision)
 unix_socket_connect(audioserver, mpctl, mpdecision)
 unix_socket_send(audioserver, mpctl, perfd)
 unix_socket_connect(audioserver, mpctl, perfd)
+unix_socket_connect(audioserver, thermal, thermal-engine)
 
 # Allow communication with peripheral manager
 use_per_mgr(audioserver)
