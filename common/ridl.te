@@ -71,6 +71,8 @@ binder_call(RIDL, system_server)
 # recovery
 allow RIDL cache_file:dir create_dir_perms;
 allow RIDL cache_file:file create_file_perms;
+allow RIDL cache_recovery_file:dir rw_dir_perms;
+allow RIDL cache_recovery_file:file create_file_perms;
 
 # reboot recovery
 allow RIDL powerctl_prop:property_service set;
