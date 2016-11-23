@@ -86,3 +86,6 @@ use_per_mgr(audioserver);
 allow audioserver activity_service:service_manager find;
 set_prop(audioserver, dolby_prop)
 # DOLBY_END
+
+# for thermal sock files
+unix_socket_connect(audioserver, thermal, thermal-engine)
