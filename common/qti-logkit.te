@@ -75,3 +75,7 @@ binder_call(qti_logkit, system_server)
 
 # allow logcat access
 read_logd( qti_logkit );
+
+# allow access to recovery directory
+allow qti_logkit cache_recovery_file:dir rw_dir_perms;
+allow qti_logkit cache_recovery_file:file create_file_perms;
