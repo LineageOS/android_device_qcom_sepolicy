@@ -41,10 +41,5 @@
 /dev/block/mmcblk0                                            u:object_r:root_block_device:s0
 /dev/block/mmcblk0rpmb                                        u:object_r:rpmb_device:s0
 
-# Bluetooth
-/dev/smd3                                                     u:object_r:hci_attach_dev:s0
-/persist/.bt_nv.bin                                           u:object_r:bluetooth_data_file:s0
-/system/etc/init.qcom.bt.sh                                   u:object_r:bluetooth_loader_exec:s0
-
 # mpdecision
 /data/misc/perfd(/.*)?                                        u:object_r:mpctl_socket:s0
