@@ -31,36 +31,36 @@
 ###################################
 # Primary storage device nodes
 #
-/dev/block/platform/soc.0/7824900.sdhci/by-name/fsg                   u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/fsc                   u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/modemst1              u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/modemst2              u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/ssd                   u:object_r:ssd_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/misc                  u:object_r:misc_block_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/userdata              u:object_r:userdata_block_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/logdump               u:object_r:logdump_partition:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/config                u:object_r:frp_block_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/recovery              u:object_r:recovery_block_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/cache                 u:object_r:cache_block_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/boot                  u:object_r:boot_block_device:s0
-/dev/block/platform/soc.0/7824900.sdhci/by-name/system                u:object_r:system_block_device:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/fsg                 u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/fsc                 u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/modemst1            u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/modemst2            u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/ssd                 u:object_r:ssd_device:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/misc                u:object_r:misc_block_device:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/userdata            u:object_r:userdata_block_device:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/logdump             u:object_r:logdump_partition:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/config              u:object_r:frp_block_device:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/recovery            u:object_r:recovery_block_device:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/cache               u:object_r:cache_block_device:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/boot                u:object_r:boot_block_device:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/system              u:object_r:system_block_device:s0
 /dev/block/mmcblk0                                                    u:object_r:root_block_device:s0
 /dev/block/mmcblk0rpmb                                                u:object_r:rpmb_device:s0
 
 # for wear we are still using soc not soc.0
-/dev/block/platform/soc/7824900.sdhci/by-name/fsg                   u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/fsc                   u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/modemst1              u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/modemst2              u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/ssd                   u:object_r:ssd_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/misc                  u:object_r:misc_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/userdata              u:object_r:userdata_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/logdump               u:object_r:logdump_partition:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/recovery              u:object_r:recovery_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/cache                 u:object_r:cache_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/boot                  u:object_r:boot_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/system                u:object_r:system_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/config                u:object_r:frp_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/fsg                  u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/fsc                  u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/modemst1             u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/modemst2             u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/ssd                  u:object_r:ssd_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/misc                 u:object_r:misc_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/userdata             u:object_r:userdata_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/logdump              u:object_r:logdump_partition:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/recovery             u:object_r:recovery_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/cache                u:object_r:cache_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/boot                 u:object_r:boot_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/system               u:object_r:system_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/config               u:object_r:frp_block_device:s0
 
 #For adreno libs
 /(vendor|system/vendor)/lib(64)?/libsc-a3xx\.so                                     u:object_r:same_process_hal_file:s0
@@ -77,16 +77,16 @@
 ###################################
 # sysfs files
 #
-/sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/MPU6050-accel(/.*)?            u:object_r:sysfs_sensors:s0
-/sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/MPU6050-gyro(/.*)?             u:object_r:sysfs_sensors:s0
-/sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/apds9930-light(/.*)?           u:object_r:sysfs_sensors:s0
-/sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/apds9930-proximity(/.*)?       u:object_r:sysfs_sensors:s0
-/sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/compass(/.*)?                  u:object_r:sysfs_sensors:s0
-/sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/bma2x2-accel(/.*)?             u:object_r:sysfs_sensors:s0
-/sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/ltr553-light(/.*)?             u:object_r:sysfs_sensors:s0
-/sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/ltr553-proximity(/.*)?         u:object_r:sysfs_sensors:s0
-/sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/ap3426-light(/.*)?             u:object_r:sysfs_sensors:s0
-/sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/ap3426-proximity(/.*)?         u:object_r:sysfs_sensors:s0
+/sys/devices/soc/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/MPU6050-accel(/.*)?           u:object_r:sysfs_sensors:s0
+/sys/devices/soc/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/MPU6050-gyro(/.*)?            u:object_r:sysfs_sensors:s0
+/sys/devices/soc/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/apds9930-light(/.*)?          u:object_r:sysfs_sensors:s0
+/sys/devices/soc/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/apds9930-proximity(/.*)?      u:object_r:sysfs_sensors:s0
+/sys/devices/soc/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/compass(/.*)?                 u:object_r:sysfs_sensors:s0
+/sys/devices/soc/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/bma2x2-accel(/.*)?            u:object_r:sysfs_sensors:s0
+/sys/devices/soc/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/ltr553-light(/.*)?            u:object_r:sysfs_sensors:s0
+/sys/devices/soc/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/ltr553-proximity(/.*)?        u:object_r:sysfs_sensors:s0
+/sys/devices/soc/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/ap3426-light(/.*)?            u:object_r:sysfs_sensors:s0
+/sys/devices/soc/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/ap3426-proximity(/.*)?        u:object_r:sysfs_sensors:s0
 /sys/devices/virtual/input/input[0-9]/akm8963-mag(/.*)?                                                  u:object_r:sysfs_sensors:s0
 /sys/kernel/boot_adsp/boot                                                                               u:object_r:sysfs_boot:s0
 ###############################################

@@ -37,50 +37,50 @@
 /dev/block/mmcblk0                                                              u:object_r:root_block_device:s0
 
 # UFS devices
-/dev/block/platform/soc/624000.ufshc/by-name/fsc                                u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/fsg                                u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/modemst1                           u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/modemst2                           u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/ssd                                u:object_r:ssd_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/misc                               u:object_r:misc_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/rpm                                u:object_r:rpmb_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/system                             u:object_r:system_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/userdata                           u:object_r:userdata_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/msadp                              u:object_r:mba_debug_dev:s0
-/dev/block/platform/soc/624000.ufshc/by-name/dip                                u:object_r:dip_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/mdtp                               u:object_r:mdtp_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/boot                               u:object_r:boot_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/recovery                           u:object_r:recovery_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/cache                              u:object_r:cache_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/frp                                u:object_r:frp_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/mdm1m9kefs1                        u:object_r:efs_boot_dev:s0
-/dev/block/platform/soc/624000.ufshc/by-name/mdm1m9kefs2                        u:object_r:efs_boot_dev:s0
-/dev/block/platform/soc/624000.ufshc/by-name/mdm1m9kefs3                        u:object_r:efs_boot_dev:s0
-/dev/block/platform/soc/624000.ufshc/by-name/mdm1m9kefsc                        u:object_r:efs_boot_dev:s0
-/dev/block/platform/soc/624000.ufshc/by-name/logdump                            u:object_r:logdump_partition:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/fsc                               u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/fsg                               u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/modemst1                          u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/modemst2                          u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/ssd                               u:object_r:ssd_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/misc                              u:object_r:misc_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/rpm                               u:object_r:rpmb_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/system                            u:object_r:system_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/userdata                          u:object_r:userdata_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/msadp                             u:object_r:mba_debug_dev:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/dip                               u:object_r:dip_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/mdtp                              u:object_r:mdtp_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/boot                              u:object_r:boot_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/recovery                          u:object_r:recovery_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/cache                             u:object_r:cache_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/frp                               u:object_r:frp_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/mdm1m9kefs1                       u:object_r:efs_boot_dev:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/mdm1m9kefs2                       u:object_r:efs_boot_dev:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/mdm1m9kefs3                       u:object_r:efs_boot_dev:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/mdm1m9kefsc                       u:object_r:efs_boot_dev:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/logdump                           u:object_r:logdump_partition:s0
 
 # eMMC devices
-/dev/block/platform/soc/7464900.sdhci/by-name/fsc                               u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/fsg                               u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/modemst1                          u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/modemst2                          u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/ssd                               u:object_r:ssd_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/misc                              u:object_r:misc_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/rpm                               u:object_r:rpmb_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/system                            u:object_r:system_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/userdata                          u:object_r:userdata_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/msadp                             u:object_r:mba_debug_dev:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/dip                               u:object_r:dip_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/mdtp                              u:object_r:mdtp_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/boot                              u:object_r:boot_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/recovery                          u:object_r:recovery_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/cache                             u:object_r:cache_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/frp                               u:object_r:frp_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/mdm1m9kefs1                       u:object_r:efs_boot_dev:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/mdm1m9kefs2                       u:object_r:efs_boot_dev:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/mdm1m9kefs3                       u:object_r:efs_boot_dev:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/mdm1m9kefsc                       u:object_r:efs_boot_dev:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/logdump                           u:object_r:logdump_partition:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/fsc                              u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/fsg                              u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/modemst1                         u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/modemst2                         u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/ssd                              u:object_r:ssd_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/misc                             u:object_r:misc_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/rpm                              u:object_r:rpmb_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/system                           u:object_r:system_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/userdata                         u:object_r:userdata_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/msadp                            u:object_r:mba_debug_dev:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/dip                              u:object_r:dip_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/mdtp                             u:object_r:mdtp_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/boot                             u:object_r:boot_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/recovery                         u:object_r:recovery_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/cache                            u:object_r:cache_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/frp                              u:object_r:frp_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/mdm1m9kefs1                      u:object_r:efs_boot_dev:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/mdm1m9kefs2                      u:object_r:efs_boot_dev:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/mdm1m9kefs3                      u:object_r:efs_boot_dev:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/mdm1m9kefsc                      u:object_r:efs_boot_dev:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/logdump                          u:object_r:logdump_partition:s0
 
 ###################################
 # Dev socket nodes
@@ -91,17 +91,17 @@
 #
 /(vendor|system/vendor)/bin/amfsservice                                         u:object_r:amfsservice_exec:s0
 /(vendor|system/vendor)/bin/seccamd                                             u:object_r:seccamd_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.automotive\.vehicle@1\.0-service     u:object_r:hal_automotive_vehicle_qti_exec:s0
 
 ###################################
 # sysfs files
 #
 /sys/devices/virtual/graphics/fb([0-2])+/lineptr_value                          u:object_r:sysfs_graphics:s0
 
-/sys/devices/soc/b00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_available_frequencies   u:object_r:sysfs_kgsl:s0
+/sys/devices/soc/b00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_available_frequencies  u:object_r:sysfs_kgsl:s0
 
 #rawdump partition
-/dev/block/platform/soc/7464900.sdhci/by-name/rawdump                           u:object_r:rawdump_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/rawdump                          u:object_r:rawdump_block_device:s0
 
 ############################################################################################
 #Same hal process libs
@@ -117,47 +117,47 @@
 ##################################
 # A/B partitions.
 #EMMC
-/dev/block/platform/soc/7464900.sdhci/by-name/aboot_[ab]            u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/boot_[ab]             u:object_r:boot_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/cmnlib_[ab]           u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/cmnlib64_[ab]         u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/devcfg_[ab]           u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/mdtp_[ab]             u:object_r:mdtp_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/hyp_[ab]              u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/keymaster_[ab]        u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/modem_[ab]            u:object_r:modem_block_device:s0
-/dev/block/platform/soc/7464900.ufshc/by-name/bluetooth_[ab]        u:object_r:modem_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/dsp_[ab]              u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/pmic_[ab]             u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/rpm_[ab]              u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/system_[ab]           u:object_r:system_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/tz_[ab]               u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/ImageFv_[ab]          u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/vendor_[ab]           u:object_r:system_block_device:s0
-/dev/block/platform/soc/7464900.sdhci/by-name/xbl_[ab]              u:object_r:xbl_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/aboot_[ab]           u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/boot_[ab]            u:object_r:boot_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/cmnlib_[ab]          u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/cmnlib64_[ab]        u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/devcfg_[ab]          u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/mdtp_[ab]            u:object_r:mdtp_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/hyp_[ab]             u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/keymaster_[ab]       u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/modem_[ab]           u:object_r:modem_block_device:s0
+/dev/block/platform/soc/7464900\.ufshc/by-name/bluetooth_[ab]       u:object_r:modem_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/dsp_[ab]             u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/pmic_[ab]            u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/rpm_[ab]             u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/system_[ab]          u:object_r:system_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/tz_[ab]              u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/ImageFv_[ab]         u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/vendor_[ab]          u:object_r:system_block_device:s0
+/dev/block/platform/soc/7464900\.sdhci/by-name/xbl_[ab]             u:object_r:xbl_block_device:s0
 
 #UFS
-/dev/block/platform/soc/624000.ufshc/by-name/aboot_[ab]        u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/boot_[ab]         u:object_r:boot_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/cmnlib_[ab]       u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/cmnlib64_[ab]     u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/devcfg_[ab]       u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/mdtp_[ab]         u:object_r:mdtp_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/hyp_[ab]          u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/keymaster_[ab]    u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/modem_[ab]        u:object_r:modem_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/bluetooth_[ab]    u:object_r:modem_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/dsp_[ab]          u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/pmic_[ab]         u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/rpm_[ab]          u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/system_[ab]       u:object_r:system_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/tz_[ab]           u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/ImageFv_[ab]      u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/vendor_[ab]       u:object_r:system_block_device:s0
-/dev/block/platform/soc/624000.ufshc/by-name/xbl_[ab]          u:object_r:xbl_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/aboot_[ab]       u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/boot_[ab]        u:object_r:boot_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/cmnlib_[ab]      u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/cmnlib64_[ab]    u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/devcfg_[ab]      u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/mdtp_[ab]        u:object_r:mdtp_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/hyp_[ab]         u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/keymaster_[ab]   u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/modem_[ab]       u:object_r:modem_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/bluetooth_[ab]   u:object_r:modem_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/dsp_[ab]         u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/pmic_[ab]        u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/rpm_[ab]         u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/system_[ab]      u:object_r:system_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/tz_[ab]          u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/ImageFv_[ab]     u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/vendor_[ab]      u:object_r:system_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/xbl_[ab]         u:object_r:xbl_block_device:s0
 
 # Block device holding the GPT, where the A/B attributes are stored.
-/dev/block/platform/soc/624000.ufshc/sd[ade]                   u:object_r:gpt_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/sd[ade]                  u:object_r:gpt_block_device:s0
 
 # Block devices for the drive that holds the xbl_a and xbl_b partitions.
-/dev/block/platform/soc/624000.ufshc/sd[bc]                 u:object_r:xbl_block_device:s0
+/dev/block/platform/soc/624000\.ufshc/sd[bc]                u:object_r:xbl_block_device:s0
