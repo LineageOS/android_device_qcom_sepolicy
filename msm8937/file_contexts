@@ -32,24 +32,24 @@
 /dev/block/mmcblk0rpmb                                              u:object_r:rpmb_device:s0
 
 #Using soc instead of soc.0 for 3.18 kernel
-/dev/block/platform/soc/7824900.sdhci/by-name/fsg                   u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/fsc                   u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/modemst1              u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/modemst2              u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/ssd                   u:object_r:ssd_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/misc                  u:object_r:misc_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/system                u:object_r:system_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/userdata              u:object_r:userdata_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/dip                   u:object_r:dip_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/mdtp                  u:object_r:mdtp_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/config                u:object_r:frp_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/boot                  u:object_r:boot_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/recovery              u:object_r:recovery_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/cache                 u:object_r:cache_block_device:s0
-/dev/block/platform/soc/7824900.sdhci/by-name/logdump               u:object_r:logdump_partition:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/fsg                  u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/fsc                  u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/modemst1             u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/modemst2             u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/ssd                  u:object_r:ssd_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/misc                 u:object_r:misc_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/system               u:object_r:system_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/userdata             u:object_r:userdata_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/dip                  u:object_r:dip_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/mdtp                 u:object_r:mdtp_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/config               u:object_r:frp_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/boot                 u:object_r:boot_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/recovery             u:object_r:recovery_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/cache                u:object_r:cache_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/logdump              u:object_r:logdump_partition:s0
 
 
 
 #rawdump partition
-/dev/block/platform/soc/7824900.sdhci/by-name/rawdump               u:object_r:rawdump_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/rawdump              u:object_r:rawdump_block_device:s0
 /sys/kernel/dload/emmc_dload                                        u:object_r:sysfs_emmc_dload:s0
