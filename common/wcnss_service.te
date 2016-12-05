@@ -13,7 +13,7 @@ allow wcnss_service wifi_data_file:dir w_dir_perms;
 allow wcnss_service wifi_data_file:file create_file_perms;
 
 allow wcnss_service system_prop:property_service set;
-allow wcnss_service persist_file:dir r_dir_perms;
+allow wcnss_service persist_file:dir create_dir_perms;
 
 allow wcnss_service self:socket create_socket_perms;
 allow wcnss_service smem_log_device:chr_file rw_file_perms;
@@ -53,3 +53,5 @@ diag_use(wcnss_service)
 
 binder_use(wcnss_service)
 use_per_mgr(wcnss_service)
+
+type_transition wcnss_service persist_file:file wifi_data_file ".genmac";
