@@ -206,3 +206,6 @@ type persist_time_file, file_type;
 
 # kgsl file type for sysfs access
 type sysfs_kgsl, sysfs_type, fs_type;
+
+# secure touch files
+type sysfs_securetouch, fs_type, sysfs_type;
