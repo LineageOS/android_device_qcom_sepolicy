@@ -22,6 +22,30 @@
       "revId": "3c129c675dd375a21481e4426544264247e2d327",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f681702_4c8896c5",
+        "filename": "common/wcnss_service.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-12-06T09:37:23Z",
+      "side": 1,
+      "message": "It needs \u0027create\u0027 perms at least from what I\u0027ve seen in oppo 8974/8939 \u0026 asus 8916",
+      "parentUuid": "5f681702_4ca2569c",
+      "range": {
+        "startLine": 16,
+        "startChar": 37,
+        "endLine": 16,
+        "endChar": 53
+      },
+      "revId": "3c129c675dd375a21481e4426544264247e2d327",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
