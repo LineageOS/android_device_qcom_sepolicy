@@ -23,6 +23,10 @@ set_prop(bluetooth_loader, bluetooth_prop)
 allow bluetooth_loader system_file:file execute_no_trans;
 allow bluetooth_loader toolbox_exec:file rx_file_perms;
 
+# Allow hci_qcomm_init /persist/.bt_nv.bin access
+r_dir_file(bluetooth_loader, persist_file);
+allow bluetooth_loader bluetooth_data_file:file r_file_perms;
+
 # Access the smd device
 allow bluetooth_loader hci_attach_dev:chr_file rw_file_perms;
 
