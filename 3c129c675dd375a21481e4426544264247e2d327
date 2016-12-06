@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f681702_4ca2569c",
+        "filename": "common/wcnss_service.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-12-06T02:58:22Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be rw_dir_perms? create_dir implies you can make the directory itself.",
+      "range": {
+        "startLine": 16,
+        "startChar": 37,
+        "endLine": 16,
+        "endChar": 53
+      },
+      "revId": "3c129c675dd375a21481e4426544264247e2d327",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
