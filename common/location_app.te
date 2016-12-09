@@ -11,6 +11,7 @@ net_domain(location_app)
 userdebug_or_eng(`
   allow location_app { adbd su }:unix_stream_socket connectto;
   allow location_app mediaserver_service:service_manager find;
+  allow location_app audioserver_service:service_manager find;
   diag_use(location_app)
 ')
 
