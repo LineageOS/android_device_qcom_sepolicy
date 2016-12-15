@@ -61,6 +61,8 @@ allow mmi bluetooth_data_file:dir rw_dir_perms;
 allow mmi bluetooth_data_file:file create_file_perms;
 allow mmi bluetooth_prop:property_service set;
 allow mmi smd_device:chr_file rw_file_perms;
+allow mmi persist_bluetooth_file:file r_file_perms;
+allow mmi wcnss_filter:unix_stream_socket connectto;
 
 #GPS case
 allow mmi location_data_file:fifo_file create_file_perms;

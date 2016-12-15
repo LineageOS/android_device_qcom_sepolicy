@@ -54,7 +54,6 @@ allow rfs_access self:capability {
     setgid
     setpcap
     net_bind_service
-    net_raw
 };
 
 # RFS UID and GIDs were changed and moved from old values to new ones OEM range.

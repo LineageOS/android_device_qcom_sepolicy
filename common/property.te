@@ -72,6 +72,8 @@ type sys_usb_configfs_prop, property_type;
 type sys_usb_tethering_prop, property_type;
 
 type coresight_prop, property_type, core_property_type;
+type persist_dpm_prop, property_type, core_property_type;
+
 
 type ctl_hbtp_prop, property_type;
 type alarm_boot_prop, property_type, core_property_type;
@@ -95,3 +97,5 @@ type hwui_prop, property_type, core_property_type;
 type graphics_vulkan_prop, property_type, core_property_type;
 #boot mode property
 type boot_mode_prop, property_type;
+#properties for nfc
+type nfc_nq_prop, property_type, core_property_type;

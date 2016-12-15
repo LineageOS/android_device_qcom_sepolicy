@@ -68,6 +68,7 @@ qemu.hw.mainkeys           u:object_r:qemu_hw_mainkeys_prop:s0
 ro.dbg.coresight.cfg_file     u:object_r:coresight_prop:s0
 ctl.hbtp                   u:object_r:ctl_hbtp_prop:s0
 sys.audio.init             u:object_r:audio_prop:s0
+persist.dpm.feature        u:object_r:persist_dpm_prop:s0
 ro.alarm_boot                 u:object_r:alarm_boot_prop:s0
 debug.sf.nobootanimation   u:object_r:boot_animation_prop:s0
 debug.gralloc.             u:object_r:debug_gralloc_prop:s0
@@ -88,3 +89,5 @@ persist.graphics.vulkan.disable     u:object_r:graphics_vulkan_prop:s0
 sys.boot_mode              u:object_r:boot_mode_prop:s0
 # GPU
 ro.gpu.available_frequencies u:object_r:freq_prop:s0
+# NFC
+sys.nfc.nq.                u:object_r:nfc_nq_prop:s0
