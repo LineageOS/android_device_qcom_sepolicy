@@ -26,6 +26,7 @@
 
 type qca1530, domain, domain_deprecated;
 type qca1530_exec, exec_type, file_type;
+type qca1530_prop, property_type;
 net_domain(qca1530)
 init_daemon_domain(qca1530)
 
