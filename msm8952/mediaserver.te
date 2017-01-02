@@ -30,3 +30,4 @@ allow mediaserver media_msm8956hw_prop:file r_file_perms;
 allow mediaserver media_settings_xml_prop:file r_file_perms;
 allow mediaserver seempd:unix_dgram_socket sendto;
 allow mediaserver seempdw_socket:sock_file write;
+allow mediaserver media_msm8956_version_prop:file r_file_perms;

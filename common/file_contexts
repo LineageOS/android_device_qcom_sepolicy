@@ -10,6 +10,7 @@
 /dev/bhi                                        u:object_r:bhi_device:s0
 /dev/msm_.*                                     u:object_r:audio_device:s0
 /dev/i2c-6                                      u:object_r:audio_device:s0
+/dev/wcd_dsp0_control                           u:object_r:audio_device:s0
 /dev/wcd-dsp-glink                              u:object_r:audio_device:s0
 /dev/usf1                                       u:object_r:usf_device:s0
 /dev/msm_dsps                                   u:object_r:sensors_device:s0
@@ -25,6 +26,7 @@
 /dev/qsee_ipc_irq_spss                          u:object_r:qsee_ipc_irq_spss_device:s0
 /dev/seemplog                                   u:object_r:seemplog_device:s0
 /dev/radio0                                     u:object_r:fm_radio_device:s0
+/dev/btpower                                    u:object_r:bt_device:s0
 /dev/rtc0                                       u:object_r:rtc_device:s0
 /dev/sdsprpc-smd                                u:object_r:dsp_device:s0
 /dev/sensors                                    u:object_r:sensors_device:s0
@@ -135,6 +137,7 @@
 /system/bin/ATFWD-daemon                        u:object_r:atfwd_exec:s0
 /system/bin/PktRspTest                          u:object_r:diag_exec:s0
 /system/bin/audiod                              u:object_r:audiod_exec:s0
+/system/vendor/bin/nqnfcinfo                    u:object_r:nqnfcinfo_exec:s0
 /system/bin/charger_monitor                     u:object_r:charger_monitor_exec:s0
 /system/bin/hvdcp_opti                          u:object_r:hvdcp_exec:s0
 /system/bin/cnd                                 u:object_r:cnd_exec:s0
@@ -231,6 +234,7 @@
 /system/bin/sapd                                u:object_r:sapd_exec:s0
 /system/bin/btnvtool                            u:object_r:btnvtool_exec:s0
 /system/bin/btsnoop                             u:object_r:btsnoop_exec:s0
+/system/bin/bt_logger                           u:object_r:bt_logger_exec:s0
 /system/bin/dun-server                          u:object_r:dun-server_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /system/bin/wcnss_filter                        u:object_r:wcnss_filter_exec:s0
