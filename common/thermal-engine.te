@@ -52,3 +52,6 @@ allow thermal-engine uio_device:chr_file rw_file_perms;
 userdebug_or_eng(`
   diag_use(thermal-engine)
 ')
+
+# To get GPU frequencies
+allow thermal-engine sysfs_kgsl:file r_file_perms;
