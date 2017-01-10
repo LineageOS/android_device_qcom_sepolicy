@@ -8,3 +8,7 @@ userdebug_or_eng(`
 
 # Access firmware_file
 r_dir_file(kernel, firmware_file)
+
+# Allow kernel to schedule process to different cpuset
+# when the current cpu is hotplugged out
+allow kernel domain:process setsched;
