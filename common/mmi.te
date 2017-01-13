@@ -108,7 +108,7 @@ unix_socket_connect(mmi, sensors, sensors);
 allow mmi sensors_device:chr_file r_file_perms;
 
 #logcat
-domain_auto_trans(mmi, logcat_exec, logd);
+#domain_auto_trans(mmi, logcat_exec, logd);
 
 #access kmsg device for logging
 allow mmi kmsg_device:chr_file rw_file_perms;

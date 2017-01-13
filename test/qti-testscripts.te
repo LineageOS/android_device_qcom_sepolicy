@@ -27,7 +27,7 @@
 
 userdebug_or_eng(`
   type qti-testscripts, domain, domain_deprecated, mlstrustedsubject;
-  permissive qti-testscripts;
+ # permissive qti-testscripts;
   #domain_trans(init, shell_exec, qti-testscripts)
 
   #super_user - start
@@ -75,7 +75,7 @@ userdebug_or_eng(`
   allow { domain -mediaextractor -mediacodec } qti-testscripts:unix_stream_socket connectto;
   allow domain qti-testscripts:fd use;
   allow { domain -mediaextractor -mediacodec } qti-testscripts:unix_stream_socket { getattr getopt read write shutdown };
-  binder_call({ domain -init -netd }, qti-testscripts)
+#  binder_call({ domain -init -netd }, qti-testscripts)
   allow domain qti-testscripts:fifo_file { write getattr };
   allow domain qti-testscripts:process sigchld;
   diag_use(radio)
