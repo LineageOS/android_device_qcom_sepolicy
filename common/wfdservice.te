@@ -40,7 +40,7 @@ allow wfdservice audio_device:dir r_dir_perms;
 allow wfdservice graphics_device:chr_file rw_file_perms;
 
 #Allow communication with init over property server
-unix_socket_connect(wfdservice, property, init);
+unix_socket_connect(wfdservice, <property name>);
 
 #Allow access to /dev/video/* devices for encoding/decoding
 allow wfdservice video_device:chr_file rw_file_perms;

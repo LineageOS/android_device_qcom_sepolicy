@@ -18,7 +18,7 @@ userdebug_or_eng(`
   allow fidotest fidotest_service:service_manager add;
 
   # Allow communication with init over property server
-  unix_socket_connect(fidotest, property, init);
+  unix_socket_connect(fidotest, <property name>);
 
   # Allow access to tee device
   allow fidotest tee_device:chr_file rw_file_perms;

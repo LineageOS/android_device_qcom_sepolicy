@@ -41,7 +41,7 @@ allow cnd self:netlink_tcpdiag_socket nlmsg_read;
 
 # allow cnd to set system property
 allow cnd system_prop:property_service set;
-unix_socket_connect(cnd, property, init)
+unix_socket_connect(cnd, <property name>)
 
 # allow cnd to access cnd_data_file
 allow cnd cnd_data_file:file create_file_perms;

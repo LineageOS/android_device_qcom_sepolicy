@@ -28,7 +28,7 @@ allow mmi mmi_data_file:dir rw_dir_perms;
 allow mmi mmi_data_file:file create_file_perms;
 
 #socket
-unix_socket_connect(mmi, property, init)
+unix_socket_connect(mmi, <property name>)
 allow mmi socket_device:dir w_dir_perms;
 
 #allow mmi set system prop,sensor need write persist

@@ -18,7 +18,7 @@ binder_service(fidodaemon)
 allow fidodaemon fidodaemon_service:service_manager add;
 
 #Allow communication with init over property server
-unix_socket_connect(fidodaemon, property, init);
+unix_socket_connect(fidodaemon, <property name>);
 
 #Allow access to tee device
 allow fidodaemon tee_device:chr_file rw_file_perms;

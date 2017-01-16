@@ -46,7 +46,7 @@ userdebug_or_eng(`
   binder_call(qseeproxysample, system_server)
 
   # Allow communication with init over property server
-  unix_socket_connect(qseeproxysample, property, init);
+  unix_socket_connect(qseeproxysample, <property name>);
 
   # Allow access to tee device
   allow qseeproxysample tee_device:chr_file rw_file_perms;

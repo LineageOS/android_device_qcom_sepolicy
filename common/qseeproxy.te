@@ -47,7 +47,7 @@ allow qseeproxy qseeproxy_service:service_manager add;
 binder_call(qseeproxy, system_server)
 
 #Allow communication with init over property server
-unix_socket_connect(qseeproxy, property, init);
+unix_socket_connect(qseeproxy, <property name>);
 
 #Allow access to tee device
 allow qseeproxy tee_device:chr_file rw_file_perms;

@@ -105,7 +105,7 @@ allow qti_init_shell efs_boot_dev:blk_file r_file_perms;
 allow qti_init_shell { serial_device userdebug_or_eng(`qdss_device') }:chr_file rw_file_perms;
 
 # Allow property changes
-unix_socket_connect(qti_init_shell, property, init)
+unix_socket_connect(qti_init_shell, <property name>)
 
 allow qti_init_shell {
     sysfs

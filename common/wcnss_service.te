@@ -4,7 +4,7 @@ type wcnss_service_exec, exec_type, file_type;
 init_daemon_domain(wcnss_service)
 net_domain(wcnss_service)
 
-unix_socket_connect(wcnss_service, property, init)
+unix_socket_connect(wcnss_service, <property name>)
 allow wcnss_service wcnss_device:chr_file rw_file_perms;
 
 qmux_socket(wcnss_service);

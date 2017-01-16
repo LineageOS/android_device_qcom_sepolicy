@@ -28,4 +28,4 @@ r_dir_file(usf, persist_usf_file)
 allow usf { ctl_default_prop usf_prop }:property_service set;
 
 # Sockets
-unix_socket_connect(usf, property, init);
+unix_socket_connect(usf, <property name>);

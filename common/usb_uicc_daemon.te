@@ -11,4 +11,4 @@ allow usb_uicc_daemon uicc_prop:property_service set;
 allow usb_uicc_daemon sysfs_usb_uicc:file rw_file_perms;
 allow usb_uicc_daemon sysfs_usb_uicc:dir rw_dir_perms;
 
-unix_socket_connect(usb_uicc_daemon, property, init)
+unix_socket_connect(usb_uicc_daemon, <property name>)

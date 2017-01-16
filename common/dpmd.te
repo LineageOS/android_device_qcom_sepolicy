@@ -36,7 +36,7 @@ allow dpmd self:capability {
 
 #socket, self
 allow dpmd smem_log_device:chr_file rw_file_perms;
-unix_socket_connect(dpmd, property, init)
+unix_socket_connect(dpmd, <property name>)
 wakelock_use(dpmd)
 
 allow dpmd {
