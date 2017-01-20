@@ -21,7 +21,7 @@ allow init tmpfs:lnk_file create_file_perms;
 #Certain domains needs LD_PRELOAD passed from init
 #allow it for most domain. Do not honor LD_PRELOAD
 #for lmkd
-allow init { domain -lmkd }:process noatsecure;
+#allow init { domain -lmkd }:process noatsecure;
 
 #For configfs file permission
 allow init configfs:dir r_dir_perms;

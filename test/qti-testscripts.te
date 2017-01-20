@@ -59,7 +59,7 @@ userdebug_or_eng(`
   dontaudit qti-testscripts property_type:property_service *;
   dontaudit qti-testscripts service_manager_type:service_manager *;
   dontaudit qti-testscripts keystore:keystore_key *;
-  dontaudit qti-testscripts domain:debuggerd *;
+ # dontaudit qti-testscripts domain:debuggerd *;
   dontaudit qti-testscripts domain:drmservice *;
   dontaudit qti-testscripts unlabeled:filesystem *;
   #super_user - end
