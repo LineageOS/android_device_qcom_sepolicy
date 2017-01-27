@@ -62,7 +62,7 @@ type rfs_system_file, file_type;
 type rfs_shared_hlos_file, file_type, data_file_type;
 
 #mm-pp-daemon file type for sysfs access
-type sysfs_leds, fs_type, sysfs_type;
+#type sysfs_leds, fs_type, sysfs_type;
 
 #Define the files written during the operation of mm-pp-daemon
 type data_ad_calib_cfg, file_type, data_file_type;
