@@ -41,7 +41,10 @@ net_domain(RIDL)
 allow RIDL RIDL_data_file:dir create_dir_perms;
 allow RIDL RIDL_data_file:file create_file_perms;
 allow RIDL RIDL_data_file:lnk_file { create read unlink };
-#allow RIDL debugfs:file read;
+userdebug_or_eng(`
+typeattribute RIDL qti_debugfs_domain;
+allow RIDL debugfs:file read;
+')
 
 # ver_info.txt
 r_dir_file(RIDL, firmware_file)
