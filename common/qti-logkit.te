@@ -62,7 +62,7 @@ userdebug_or_eng(`
   allow qti_logkit self:capability { setuid setgid };
 
   # tcpdump
-  allow qti_logkit self:packet_socket create_socket_perms;
+  allow qti_logkit self:packet_socket create_socket_perms_no_ioctl;
   allow qti_logkit self:capability net_raw;
   diag_use(qti_logkit)
 ')

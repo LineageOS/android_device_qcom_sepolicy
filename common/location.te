@@ -24,7 +24,7 @@ allow location self:{
     socket
     netlink_socket
     netlink_generic_socket
-} create_socket_perms;
+} create_socket_perms_no_ioctl;
 
 unix_socket_connect(location, sensors, sensors)
 allow location sensors_device:chr_file r_file_perms;

@@ -25,7 +25,7 @@ allow qti self:{
     netlink_socket
     socket
     udp_socket
-} create_socket_perms;
+} create_socket_perms_no_ioctl;
 
 allow qti { shell_exec system_file }:file rx_file_perms;
 

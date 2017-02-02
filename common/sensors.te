@@ -48,7 +48,7 @@ wakelock_use(sensors)
 
 allow sensors cgroup:dir { create add_name };
 
-allow sensors self:socket *;
+allow sensors self:socket create_socket_perms_no_ioctl;
 
 # Access to other devices
 allow sensors smd_device:chr_file rw_file_perms;

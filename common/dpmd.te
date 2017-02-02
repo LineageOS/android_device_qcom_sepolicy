@@ -18,12 +18,6 @@ qmux_socket(dpmd);
 
 allow dpmd sysfs_wake_lock:file rw_file_perms;
 
-#self capability
-allow dpmd self:{
-    socket
-    netlink_socket
-} rw_socket_perms;
-
 allow dpmd self:capability {
     setuid
     setgid
@@ -54,8 +48,8 @@ allow dpmd socket_device:dir remove_name;
 unix_socket_connect(dpmd, cnd, cnd);
 
 #allow dpmd to create socket
-allow dpmd self:socket create_socket_perms;
-allow dpmd self:{ netlink_socket netlink_generic_socket } create_socket_perms;
+allow dpmd self:socket create_socket_perms_no_ioctl;
+allow dpmd self:{ netlink_socket netlink_generic_socket } create_socket_perms_no_ioctl;
 
 #allow dpmd to write to /proc/net/sys
 allow dpmd proc_net:file write;

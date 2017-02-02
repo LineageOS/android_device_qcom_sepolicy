@@ -12,7 +12,7 @@ userdebug_or_eng(`
   #enable accessing the path where qmuxds named sockets are present
   #to interface with qmuxd through unix sockets
   #to use socket interface to ipc router
-  allow qmi_ping qmi_ping:socket {create bind read write ioctl setopt};
+  allow qmi_ping qmi_ping:socket {create bind read write setopt};
   #enable running test as root user => privileged process
   #enable privileged processes to bypass permission checks
   allow qmi_ping qmi_ping:capability {dac_override dac_read_search setgid setuid fsetid};

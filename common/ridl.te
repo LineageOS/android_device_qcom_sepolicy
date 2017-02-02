@@ -96,7 +96,7 @@ userdebug_or_eng(`
 	allow RIDL anr_data_file:file { unlink rw_file_perms };
 
 	# tcpdump
-	allow RIDL self:packet_socket create_socket_perms;
+	allow RIDL self:packet_socket create_socket_perms_no_ioctl;
 	allow RIDL self:capability net_raw;
         diag_use( RIDL )
 

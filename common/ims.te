@@ -19,7 +19,7 @@ allow ims self:{
     netlink_socket
     socket
     netlink_generic_socket
-} create_socket_perms;
+} create_socket_perms_no_ioctl;
 
 # To run NDC command
 allow ims {

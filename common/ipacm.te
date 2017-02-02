@@ -16,7 +16,7 @@ userdebug_or_eng(`
 ')
 
 # Allow capabilities to create netfilter_socket
-allow ipacm self:netlink_netfilter_socket create_socket_perms;
+allow ipacm self:netlink_netfilter_socket create_socket_perms_no_ioctl;
 
 # Allow capabilities to perform network operations and interactions with network interfaces
 allow ipacm ipacm:capability net_admin;
@@ -31,7 +31,7 @@ allow ipacm ipacm:{
     # Allow querying the network stack via IOCTLs
     udp_socket
     netlink_generic_socket
-} create_socket_perms;
+} create_socket_perms_no_ioctl;
 
 # Allow creating and modifying the PID file
 allow ipacm ipacm_data_file:dir w_dir_perms;

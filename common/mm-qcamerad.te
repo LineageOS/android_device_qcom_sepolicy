@@ -8,7 +8,7 @@ userdebug_or_eng(`
   allow mm-qcamerad debugfs:dir r_dir_perms;
   allow mm-qcamerad debugfs:file read;
   allow mm-qcamerad camera_data_file:file create_file_perms;
-  allow mm-qcamerad self:tcp_socket create_stream_socket_perms;
+  #allow mm-qcamerad self:tcp_socket create_stream_socket_perms;
   allow mm-qcamerad node:tcp_socket node_bind;
 
   # IMS use camera daemon to make VT call
@@ -31,7 +31,7 @@ allow mm-qcamerad system_server:unix_stream_socket rw_socket_perms;
 binder_call(mm-qcamerad, system_server);
 binder_use(mm-qcamerad);
 
-allow mm-qcamerad self:socket create_socket_perms;
+allow mm-qcamerad self:socket create_socket_perms_no_ioctl;
 allow mm-qcamerad persist_file:dir r_dir_perms;
 allow mm-qcamerad sensors_persist_file:dir r_dir_perms;
 allow mm-qcamerad sensors_persist_file:file r_file_perms;

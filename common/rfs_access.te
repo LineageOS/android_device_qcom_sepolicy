@@ -19,7 +19,7 @@ allow rfs_access {
 }:chr_file rw_file_perms;
 
 #For QMI sockets and IPCR Sockets
-allow rfs_access self:socket create_socket_perms;
+allow rfs_access self:socket create_socket_perms_no_ioctl;
 
 #For Wakelocks
 wakelock_use(rfs_access)

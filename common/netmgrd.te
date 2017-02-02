@@ -28,13 +28,13 @@ allow netmgrd smem_log_device:chr_file rw_file_perms;
 
 #Allow operations on different types of sockets
 allow netmgrd netmgrd:rawip_socket { create getopt setopt write };
-allow netmgrd netmgrd:netlink_xfrm_socket { create_socket_perms nlmsg_write nlmsg_read };
+allow netmgrd netmgrd:netlink_xfrm_socket { create_socket_perms_no_ioctl nlmsg_write nlmsg_read };
 allow netmgrd netmgrd:netlink_socket { write read create bind };
-allow netmgrd netmgrd:socket { create ioctl };
+allow netmgrd netmgrd:socket { create };
 allow netmgrd netmgrd:netlink_route_socket { setopt getattr write nlmsg_write };
 unix_socket_connect(netmgrd, property, init)
-allow netmgrd self:netlink_generic_socket create_socket_perms;
-allow netmgrd self:netlink_tcpdiag_socket { create_socket_perms nlmsg_read nlmsg_write };
+allow netmgrd self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow netmgrd self:netlink_tcpdiag_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
 
 unix_socket_connect(netmgrd, cnd, cnd);
 
@@ -52,7 +52,7 @@ allow netmgrd xlat_prop:property_service set;
 #Allow execution of commands in shell
 allow netmgrd system_file:file x_file_perms;
 
-allow netmgrd self:socket create_socket_perms;
+allow netmgrd self:socket create_socket_perms_no_ioctl;
 allow netmgrd sysfs_esoc:dir r_dir_perms;
 
 #Allow communication with netd

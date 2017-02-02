@@ -51,7 +51,7 @@ allow bluetooth persist_bluetooth_file:file create_file_perms;
 r_dir_file(bluetooth, persist_file)
 allow bluetooth persist_file:file w_file_perms;
 
-allow bluetooth self:socket { create ioctl write getopt read };
+allow bluetooth self:socket { create write getopt read };
 
 #For bluetooth firmware
 r_dir_file(bluetooth, bt_firmware_file)

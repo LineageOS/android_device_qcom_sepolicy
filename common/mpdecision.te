@@ -16,7 +16,7 @@ allow mpdecision kernel:process setsched;
 allow mpdecision self: {
     netlink_kobject_uevent_socket
     socket
-} create_socket_perms;
+} create_socket_perms_no_ioctl;
 
 allow mpdecision device_latency:chr_file w_file_perms;
 

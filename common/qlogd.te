@@ -23,7 +23,7 @@ allow qlogd self:capability {
     sys_module
 };
 allow qlogd self:capability2 syslog;
-allow qlogd self:packet_socket { create ioctl bind getopt setopt };
+allow qlogd self:packet_socket { create bind getopt setopt };
 
 # need to access system_data partitions for configration files
 allow qlogd qlogd_data_file:dir rw_dir_perms;
