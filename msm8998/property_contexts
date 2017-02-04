@@ -25,6 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
-# for oemfs
-allow untrusted_app oemfs:lnk_file { read getattr };
+ctl.qvrd                   u:object_r:ctl_qvrd_prop:s0

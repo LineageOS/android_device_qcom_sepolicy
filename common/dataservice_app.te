@@ -33,6 +33,7 @@ net_domain(dataservice_app)
 
 allow dataservice_app { qtitetherservice_service dpmservice cne_service } :service_manager { add find } ;
 allow dataservice_app { app_api_service system_api_service audioserver_service radio_service } :service_manager find;
+set_prop(dataservice_app, persist_dpm_prop)
 
 set_prop(dataservice_app, sys_usb_tethering_prop)
 

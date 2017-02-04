@@ -26,7 +26,8 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # For regionalization
-allow zygote persist_file:dir r_dir_perms;
-allow zygote regionalization_file:dir r_dir_perms;
-allow zygote regionalization_file:file r_file_perms;
-r_dir_file(zygote,oemfs);
+allow qti_init_shell regionalization_file:dir r_dir_perms;
+allow qti_init_shell regionalization_file:file create_file_perms;
+
+# For VR
+allow qti_init_shell ctl_qvrd_prop:property_service set;

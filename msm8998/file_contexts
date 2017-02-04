@@ -42,21 +42,42 @@
 /dev/block/platform/soc/1da4000\.ufshc/by-name/msadp                             u:object_r:mba_debug_dev:s0
 /dev/block/platform/soc/1da4000\.ufshc/by-name/recovery                          u:object_r:recovery_block_device:s0
 /dev/block/platform/soc/1da4000\.ufshc/by-name/cache                             u:object_r:cache_block_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/by-name/frp                               u:object_r:frp_block_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/by-name/mdtp                              u:object_r:mdtp_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/by-name/dip                               u:object_r:dip_device:s0
 
 #rawdump partition
 /dev/block/platform/soc/1da4000\.ufshc/by-name/rawdump                           u:object_r:rawdump_block_device:s0
 /sys/kernel/dload/emmc_dload                                                     u:object_r:sysfs_emmc_dload:s0
 
 ###################################
+# Dev socket nodes
+#
+/dev/socket/qvrservice                                                          u:object_r:qvrd_socket:s0
+
+###################################
 # System files
 #
 /system/bin/qvop-daemon u:object_r:qvop_exec:s0
+/system/vendor/bin/qvrservice u:object_r:qvrd_exec:s0
+
 ###################################
 # data files
 #
 /data/misc/qvop(/.*)?      u:object_r:qvop_data_file:s0
+/data/misc/qvr(/.*)?       u:object_r:qvrd_data_file:s0
 
 ##################################
 # non-hlos mount points
 /firmware                  u:object_r:firmware_file:s0
 /bt_firmware               u:object_r:bt_firmware_file:s0
+
+##################################
+# FBE
+/system/bin/init.qcom.qseecomd.sh						u:object_r:init-qcom-fbe-sh_exec:s0
+
+###################################
+# sysfs files
+#
+/sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input[0-9]/secure_touch_enable u:object_r:sysfs_securetouch:s0
+/sys/devices/virtual/graphics/fb([0-3])+/lineptr_value                          u:object_r:sysfs_graphics:s0
