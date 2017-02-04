@@ -11,6 +11,10 @@ type btsnoop, bluetoothdomain, domain_deprecated;
 type btsnoop_exec, exec_type, file_type;
 domain_auto_trans(init, btsnoop_exec, bluetooth)
 
+type bt_logger, bluetoothdomain;
+type bt_logger_exec, exec_type, file_type;
+domain_auto_trans(init, bt_logger_exec, bluetooth)
+
 type btnvtool, bluetoothdomain, domain_deprecated;
 type btnvtool_exec, exec_type, file_type;
 domain_auto_trans(init, btnvtool_exec, bluetooth)
@@ -37,6 +41,7 @@ allow bluetooth {
     serial_device
     #BT needes read and write on smd device node
     smd_device
+    bt_device
 }:chr_file rw_file_perms;
 
 #Access to persist_file

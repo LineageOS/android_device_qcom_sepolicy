@@ -31,3 +31,6 @@ allow init configfs:lnk_file create_file_perms;
 #Allow init to mount non-hlos partitions in A/B builds
 allow init firmware_file:dir { mounton };
 allow init bt_firmware_file:dir { mounton };
+
+#dontaudit non configfs usb denials
+dontaudit init sysfs:dir write;
