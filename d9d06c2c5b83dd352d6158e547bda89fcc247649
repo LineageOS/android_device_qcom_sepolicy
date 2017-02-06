@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a288981_5841720a",
+        "filename": "common/rfs_access.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6938
+      },
+      "writtenOn": "2017-02-06T18:46:53Z",
+      "side": 0,
+      "message": "Getting a denial for this now, just wondering if qcom messed up or there is another reason / needs to be added to an fs_config header or something. :) just inquiring. :)",
+      "revId": "d9d06c2c5b83dd352d6158e547bda89fcc247649",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
