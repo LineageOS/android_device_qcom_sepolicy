@@ -16,6 +16,40 @@
       "revId": "d9d06c2c5b83dd352d6158e547bda89fcc247649",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_f847fe1b",
+        "filename": "common/rmt_storage.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6938
+      },
+      "writtenOn": "2017-02-06T18:52:25Z",
+      "side": 0,
+      "message": "Same",
+      "revId": "d9d06c2c5b83dd352d6158e547bda89fcc247649",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_d85442cc",
+        "filename": "common/rmt_storage.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6938
+      },
+      "writtenOn": "2017-02-06T18:52:25Z",
+      "side": 0,
+      "message": "Same",
+      "revId": "d9d06c2c5b83dd352d6158e547bda89fcc247649",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
