@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a288981_18952a40",
+        "filename": "common/rfs_access.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2017-02-06T19:32:04Z",
+      "side": 0,
+      "message": "You can remove rfs_access completely https://source.codeaurora.org/quic/la/device/qcom/common/commit/rootdir/etc/init.qcom.rc?h\u003dLA.BR.1.2.9_rb1.11\u0026id\u003d179092b14740ba7a919ebeb85073dd88882a035e",
+      "parentUuid": "7a288981_5841720a",
+      "revId": "d9d06c2c5b83dd352d6158e547bda89fcc247649",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a288981_f847fe1b",
         "filename": "common/rmt_storage.te",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2017-02-06T18:52:25Z",
       "side": 0,
       "message": "Same",
+      "revId": "d9d06c2c5b83dd352d6158e547bda89fcc247649",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_f8ca5e6d",
+        "filename": "common/rmt_storage.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2017-02-06T19:32:04Z",
+      "side": 0,
+      "message": "https://source.codeaurora.org/quic/la/device/qcom/sepolicy/commit?h\u003dLA.BR.1.2.9_rb1.11\u0026id\u003d4969f0cba6f21c7045ad83f4e3fff612736e53d6",
+      "parentUuid": "7a288981_d85442cc",
       "revId": "d9d06c2c5b83dd352d6158e547bda89fcc247649",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
