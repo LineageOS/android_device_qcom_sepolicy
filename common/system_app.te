@@ -1,4 +1,4 @@
-# Copyright (c) 2015-2016 Dolby Laboratories, Inc. All rights reserved.
+# Copyright (c) 2015-2017 Dolby Laboratories, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -39,6 +39,7 @@ allow system_app {
     dun_service
     # access to color service SDK
     color_service
+    qfp_proxy_service
 }:service_manager add;
 
 # access to perflock
