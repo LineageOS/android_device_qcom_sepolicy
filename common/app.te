@@ -20,8 +20,8 @@ unix_socket_send(appdomain, mpctl, mpdecision)
 unix_socket_connect(appdomain, mpctl, mpdecision)
 
 # Allow access to qti_logkit
-allow { appdomain -untrusted_app } qti_logkit_pub_data_file:dir create_dir_perms;
-allow { appdomain -untrusted_app } qti_logkit_pub_data_file:file create_file_perms;
+#allow { appdomain -untrusted_app } qti_logkit_pub_data_file:dir create_dir_perms;
+#allow { appdomain -untrusted_app } qti_logkit_pub_data_file:file create_file_perms;
 allow appdomain qti_logkit_pub_socket:dir r_dir_perms;
 unix_socket_connect(appdomain, qti_logkit_pub, qti_logkit)
 allow appdomain qti_logkit_pub_socket:sock_file r_file_perms;
