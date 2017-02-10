@@ -76,6 +76,7 @@
 /dev/dri/card0                                  u:object_r:graphics_device:s0
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
+/dev/wlan                                       u:object_r:wlan_device:s0
 
 ###################################
 # Dev block nodes
