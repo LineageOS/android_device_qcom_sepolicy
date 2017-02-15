@@ -93,7 +93,7 @@ allow qvrd video_device:dir r_dir_perms;
 unix_socket_connect(qvrd, mpctl, perfd)
 
 # Allow access to sensor1 API
-allow qvrd self:socket create_socket_perms;
+allow qvrd self:socket create_socket_perms_no_ioctl;
 allow qvrd persist_file:dir r_dir_perms;
 allow qvrd sensors_persist_file:dir r_dir_perms;
 allow qvrd sensors_persist_file:file r_file_perms;
