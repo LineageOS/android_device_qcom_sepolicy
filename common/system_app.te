@@ -211,3 +211,6 @@ allow system_app cache_file:dir create_dir_perms;
 allow system_app cache_file:file create_file_perms;
 allow system_app cache_recovery_file:dir rw_dir_perms;
 allow system_app cache_recovery_file:file create_file_perms;
+
+# update engine
+binder_call( system_app, update_engine )
