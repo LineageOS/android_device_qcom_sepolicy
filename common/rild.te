@@ -27,6 +27,7 @@ r_dir_file(rild, netmgrd)
 netmgr_socket(rild);
 
 #allow rild { mediaserver_service audioserver_service }:service_manager find;
+allow rild toolbox_exec:file rx_file_perms;
 
 # Rule for RILD to talk to peripheral manager
 use_per_mgr(rild);
