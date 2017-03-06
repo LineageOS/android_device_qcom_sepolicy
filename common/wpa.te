@@ -1,14 +1,18 @@
-allow wpa persist_file:dir search;
-qmux_socket(wpa);
 
-allow wpa self:socket create_socket_perms_no_ioctl;
-allow wpa smem_log_device:chr_file rw_file_perms;
-allow wpa proc_net:file write;
+# AOSP replaced wpa with new definition. this file to be
+# deleted once we have new definition and existing rules are modified
+
+#allow wpa persist_file:dir search;
+#qmux_socket(wpa);
+
+#allow wpa self:socket create_socket_perms_no_ioctl;
+#allow wpa smem_log_device:chr_file rw_file_perms;
+#allow wpa proc_net:file write;
 
 # Permission for wpa socket which IMS use to communicate
 # Allow wpa_supplicant to send back wifi information to cnd
-allow wpa { cnd ims }:unix_dgram_socket sendto;
+#allow wpa { cnd ims }:unix_dgram_socket sendto;
 
-allow wpa fstman:unix_dgram_socket sendto;
+#allow wpa fstman:unix_dgram_socket sendto;
 
-type_transition wpa wifi_data_file:dir wpa_socket "wigig_sockets";
+#type_transition wpa wifi_data_file:dir wpa_socket "wigig_sockets";

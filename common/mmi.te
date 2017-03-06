@@ -39,7 +39,7 @@ allow mmi sensors_persist_file:file create_file_perms;
 
 #wifi case
 allow mmi system_file:file x_file_perms;
-allow mmi wpa_exec:file rx_file_perms;
+#allow mmi wpa_exec:file rx_file_perms;
 allow mmi wcnss_service_exec:file rx_file_perms;
 allow mmi kernel:key search;
 allow mmi kernel:system module_request;

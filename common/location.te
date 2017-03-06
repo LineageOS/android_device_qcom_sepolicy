@@ -46,8 +46,9 @@ allow location wifi_data_file:dir create_dir_perms;
 allow location wifi_data_file:sock_file create_file_perms;
 allow location su:unix_dgram_socket sendto;
 ')
-unix_socket_send(wpa, location, location)
-allow location wpa:unix_dgram_socket sendto;
+# comment to remove compilation issue
+#unix_socket_send(wpa, location, location)
+#allow location wpa:unix_dgram_socket sendto;
 allow location wpa_socket:dir rw_dir_perms;
 allow location wpa_socket:sock_file create_file_perms;
 

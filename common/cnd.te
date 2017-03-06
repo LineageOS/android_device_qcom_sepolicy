@@ -52,7 +52,8 @@ allow cnd cnd_data_file:dir rw_dir_perms;
 qmux_socket(cnd)
 
 # allow cnd to access wpa_socket
-unix_socket_send(cnd, wpa, wpa)
+# comment this out for now to resolve compilation
+#unix_socket_send(cnd, wpa, wpa)
 allow cnd wpa_socket:dir rw_dir_perms;
 allow cnd wpa_socket:sock_file { create unlink setattr };
 allow cnd wifi_data_file:dir r_dir_perms;
