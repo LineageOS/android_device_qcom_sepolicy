@@ -27,6 +27,8 @@ allow qti self:{
     udp_socket
 } create_socket_perms_no_ioctl;
 
+allow qti self:socket ioctl;
+allowxperm qti self:socket ioctl msm_sock_ipc_ioctls;
 allow qti { shell_exec system_file }:file rx_file_perms;
 
 #diag

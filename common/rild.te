@@ -35,3 +35,5 @@ use_per_mgr(rild);
 userdebug_or_eng(`
     diag_use(rild)
 ')
+allow rild self:socket ioctl;
+allowxperm rild self:socket ioctl msm_sock_ipc_ioctls;
