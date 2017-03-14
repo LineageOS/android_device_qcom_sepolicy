@@ -28,7 +28,8 @@ allow rmt_storage ctl_default_prop:property_service set;
 #For Wakelocks
 wakelock_use(rmt_storage)
 
-allow rmt_storage self:socket create_socket_perms_no_ioctl;
+allow rmt_storage self:socket create_socket_perms;
+allowxperm rmt_storage self:socket ioctl msm_sock_ipc_ioctls;
 allow rmt_storage uio_device:chr_file rw_file_perms;
 
 #For access to the kmsg device

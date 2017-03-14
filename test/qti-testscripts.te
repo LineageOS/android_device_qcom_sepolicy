@@ -27,8 +27,10 @@
 
 userdebug_or_eng(`
   type qti-testscripts, domain, domain_deprecated, mlstrustedsubject;
+
+  typeattribute qti-testscripts qti_testscripts_domain;
   #permissive qti-testscripts;
-  #domain_trans(init, shell_exec, qti-testscripts)
+  domain_trans(init, shell_exec, qti-testscripts)
 
   #super_user - start
   # Add qti-testscripts to various domains
