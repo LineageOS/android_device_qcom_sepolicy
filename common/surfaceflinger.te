@@ -41,3 +41,9 @@ allow surfaceflinger cameraserver_service:service_manager find;
 userdebug_or_eng(`
     diag_use(surfaceflinger)
 ')
+
+allow surfaceflinger {
+    debug_gralloc_prop
+    sdm_idle_time_prop
+    sf_lcd_density_prop
+}:file r_file_perms;

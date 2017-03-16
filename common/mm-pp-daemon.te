@@ -63,3 +63,6 @@ allow mm-pp-daemon init:unix_stream_socket { listen accept };
 
 # Allow connections between sensor manager and mm-pp-daemon
 allow mm-pp-daemon system_server:unix_stream_socket rw_socket_perms;
+
+# access lcd-backlight
+r_dir_file(mm-pp-daemon, sysfs_leds)

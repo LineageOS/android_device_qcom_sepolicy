@@ -18,3 +18,8 @@ unix_socket_connect(atfwd, property, init);
 
 allow atfwd radio_prop:property_service set;
 allow atfwd atfwd_service:service_manager find;
+allow atfwd sysfs:file r_file_perms;
+#diag
+userdebug_or_eng(`
+    diag_use(atfwd)
+')

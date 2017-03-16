@@ -27,3 +27,5 @@
 
 # allow zygote to access seempdw socket
 unix_socket_send(zygote, seempdw, seempd)
+allow zygote debug_gralloc_prop:file r_file_perms;
+allow zygote sf_lcd_density_prop:file r_file_perms;

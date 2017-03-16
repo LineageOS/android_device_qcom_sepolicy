@@ -34,3 +34,6 @@ allow init bt_firmware_file:dir { mounton };
 
 #dontaudit non configfs usb denials
 dontaudit init sysfs:dir write;
+
+#load /system/lib/modules/qca_cld3/qca_cld3_wlan.ko
+allow init system_file:system module_load;

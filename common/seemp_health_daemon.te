@@ -50,3 +50,6 @@ allow seemp_health_daemon tee_device:chr_file rw_file_perms;
 #Allow access to firmware
 allow seemp_health_daemon firmware_file:dir r_dir_perms;
 allow seemp_health_daemon firmware_file:file r_file_perms;
+
+allow seemp_health_daemon ion_device:chr_file r_file_perms;
+allow seemp_health_daemon proc:file r_file_perms;
