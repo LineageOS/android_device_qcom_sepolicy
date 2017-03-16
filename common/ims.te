@@ -70,3 +70,8 @@ allowxperm ims self:socket ioctl msm_sock_ipc_ioctls;
 allowxperm ims self:udp_socket ioctl priv_sock_ioctls;
 allow ims sysfs:file r_file_perms;
 allow ims sysfs_data:file r_file_perms;
+hwbinder_use(ims)
+get_prop(ims, hwservicemanager_prop)
+get_prop(ims, qcom_ims_prop)
+allow ims hal_cne_hwservice:hwservice_manager find;
+binder_call(ims, cnd)

@@ -51,3 +51,7 @@ vendor.qti.hardware.radio.uim_remote_server::IUimRemoteServiceServer    u:object
 vendor.qti.hardware.alarm::IAlarm                            u:object_r:hal_alarm_qti_hwservice:s0
 android.hardware.tetheroffload.config::IOffloadConfig        u:object_r:hal_ipacm_hwservice:s0
 android.hardware.tetheroffload.control::IOffloadControl      u:object_r:hal_ipacm_hwservice:s0
+com.qualcomm.qti.uceservice::IUceService                     u:object_r:hal_imsrcsd_hwservice:s0
+com.qualcomm.qti.imscmservice::IImsCmService                 u:object_r:hal_imsrcsd_hwservice:s0
+com.quicinc.cne.api::IApiService                             u:object_r:hal_cne_hwservice:s0
+com.quicinc.cne.server::IServer                              u:object_r:hal_cne_hwservice:s0
