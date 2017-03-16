@@ -27,7 +27,7 @@
 
 # GAMED
 
-type gamed, domain, domain_deprecated;
+type gamed, domain;
 type gamed_exec, exec_type, file_type;
 
 init_daemon_domain(gamed)

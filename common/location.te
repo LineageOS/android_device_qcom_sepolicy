@@ -1,5 +1,5 @@
 # location - Location daemon
-type location, domain, domain_deprecated;
+type location, domain;
 type location_exec, exec_type, file_type;
 
 init_daemon_domain(location)

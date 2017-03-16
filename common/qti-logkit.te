@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # qti_logkit
-type qti_logkit, domain, domain_deprecated, mlstrustedsubject;
+type qti_logkit, domain, mlstrustedsubject;
 init_daemon_domain(qti_logkit)
 type qti_logkit_exec, exec_type, file_type;
 

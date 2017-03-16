@@ -1,13 +1,13 @@
 #Adding all bt related service to bt domains
-type sapd, bluetoothdomain, domain_deprecated;
+type sapd, bluetoothdomain;
 type sapd_exec, exec_type, file_type;
 domain_auto_trans(init, sapd_exec, bluetooth)
 
-type dun-server, bluetoothdomain, domain_deprecated;
+type dun-server, bluetoothdomain;
 type dun-server_exec, exec_type, file_type;
 domain_auto_trans(init, dun-server_exec, bluetooth)
 
-type btsnoop, bluetoothdomain, domain_deprecated;
+type btsnoop, bluetoothdomain;
 type btsnoop_exec, exec_type, file_type;
 domain_auto_trans(init, btsnoop_exec, bluetooth)
 
@@ -15,11 +15,11 @@ type bt_logger, bluetoothdomain;
 type bt_logger_exec, exec_type, file_type;
 domain_auto_trans(init, bt_logger_exec, bluetooth)
 
-type btnvtool, bluetoothdomain, domain_deprecated;
+type btnvtool, bluetoothdomain;
 type btnvtool_exec, exec_type, file_type;
 domain_auto_trans(init, btnvtool_exec, bluetooth)
 
-type fmhal_service, bluetoothdomain,  domain_deprecated;
+type fmhal_service, bluetoothdomain;
 type fmhal_service_exec, exec_type, file_type;
 domain_auto_trans(init, fmhal_service_exec, bluetooth)
 
