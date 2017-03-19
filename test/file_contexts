@@ -39,8 +39,8 @@
 /system/bin/InstallKeybox                       u:object_r:sectest_exec:s0
 
 #Authentication and FIDO
-/system/vendor/bin/sampleauthdaemon             u:object_r:fidotest_exec:s0
-/system/vendor/bin/qseeproxysampledaemon        u:object_r:qseeproxysample_exec:s0
+/(vendor|system/vendor)/bin/sampleauthdaemon    u:object_r:fidotest_exec:s0
+/(vendor|system/vendor)/bin/qseeproxysampledaemon u:object_r:qseeproxysample_exec:s0
 
 #Context for location features
 /system/bin/sdp_test                            u:object_r:location_exec:s0
