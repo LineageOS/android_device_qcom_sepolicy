@@ -1,4 +1,4 @@
-type mm-qcamerad, domain, domain_deprecated;
+type mm-qcamerad, domain;
 type mm-qcamerad_exec, exec_type, file_type;
 init_daemon_domain(mm-qcamerad)
 

@@ -27,7 +27,7 @@
 
 
 #adding mlstrustedsubject to domain to allow access to /proc/<pid>/stat
-type dataservice_app, domain, domain_deprecated, mlstrustedsubject;
+type dataservice_app, domain, mlstrustedsubject;
 app_domain(dataservice_app)
 net_domain(dataservice_app)
 
