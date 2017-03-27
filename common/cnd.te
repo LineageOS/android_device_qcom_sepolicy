@@ -93,3 +93,8 @@ dontaudit { domain -appdomain } zygote:unix_dgram_socket getopt;
 userdebug_or_eng(`
     diag_use(cnd)
 ')
+
+allow cnd proc_meminfo:file r_file_perms;
+allow cnd self:socket ioctl;
+allowxperm cnd self:socket ioctl msm_sock_ipc_ioctls;
+allow cnd sysfs:file r_file_perms;

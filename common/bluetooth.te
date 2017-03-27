@@ -72,3 +72,7 @@ allow bluetooth wbc_service:service_manager find;
 allow bluetooth mmi:unix_stream_socket connectto;
 #connect to wcnss_filter
 allow bluetooth wcnss_filter:unix_stream_socket connectto;
+
+# ioctlcmd=c302
+allow bluetooth self:socket ioctl;
+allowxperm bluetooth self:socket ioctl msm_sock_ipc_ioctls;

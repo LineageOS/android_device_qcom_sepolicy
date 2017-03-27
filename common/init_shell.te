@@ -115,6 +115,7 @@ allow qti_init_shell {
 }:file w_file_perms;
 
 r_dir_file(qti_init_shell, sysfs_thermal)
+r_dir_file(qti_init_shell, sysfs)
 allow qti_init_shell sysfs_socinfo:file write;
 allow qti_init_shell sysfs:{ dir file lnk_file } relabelfrom;
 allow qti_init_shell sysfs_devices_system_cpu: { dir file lnk_file } relabelto;
@@ -143,7 +144,8 @@ allow qti_init_shell msm_irqbalanced_exec:file getattr;
 allow qti_init_shell mpctl_data_file:dir w_dir_perms;
 allow qti_init_shell mpctl_data_file:file { write getattr unlink };
 
-allow qti_init_shell { proc proc_net }:file write;
+allow qti_init_shell { proc proc_net}:file write;
+allow qti_init_shell proc_net:file r_file_perms;
 
 allow qti_init_shell radio_data_file:dir create_dir_perms;
 allow qti_init_shell radio_data_file:file create_file_perms;
@@ -195,3 +197,9 @@ allow qti_init_shell sysfs_zram:file w_file_perms;
 
 # To get GPU frequencies
 allow qti_init_shell sysfs_kgsl:file r_file_perms;
+
+allow qti_init_shell proc:file r_file_perms;
+allow qti_init_shell rootfs:file r_file_perms;
+allow qti_init_shell sysfs:file r_file_perms;
+
+allow qti_init_shell rmnet_mux_prop:file r_file_perms;

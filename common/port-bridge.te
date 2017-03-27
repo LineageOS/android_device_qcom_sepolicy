@@ -26,3 +26,6 @@ allow port-bridge {
 # Allow write permissions for log file
 allow port-bridge port_bridge_data_file:file create_file_perms;
 allow port-bridge port_bridge_data_file:dir w_dir_perms;
+
+#access ipa sysfs node
+allow port-bridge sysfs:file r_file_perms;

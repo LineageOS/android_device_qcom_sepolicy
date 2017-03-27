@@ -48,7 +48,9 @@ wakelock_use(sensors)
 
 allow sensors cgroup:dir { create add_name };
 
-allow sensors self:socket create_socket_perms_no_ioctl;
+allow sensors self:socket create_socket_perms;
+# ioctlcmd=c304
+allowxperm sensors self:socket ioctl msm_sock_ipc_ioctls;
 
 # Access to other devices
 allow sensors smd_device:chr_file rw_file_perms;
@@ -65,7 +67,9 @@ binder_use(sensors)
 binder_call(sensors, servicemanager)
 binder_call(sensors, per_mgr)
 
-allow sensors sysfs:file w_file_perms;
+allow sensors sysfs:dir r_dir_perms;
+allow sensors sysfs:file rw_file_perms;
 
 #Rules for sensors to talk to peripheral manager
 use_per_mgr(sensors);
+allow sensors system_file:dir r_dir_perms;

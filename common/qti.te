@@ -34,4 +34,5 @@ allow qti { shell_exec system_file }:file rx_file_perms;
 #diag
 userdebug_or_eng(`
     diag_use(qti)
+    allow qti sysfs:file r_file_perms;
 ')
