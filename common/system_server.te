@@ -163,3 +163,7 @@ allow system_server persist_alarm_file:file { rw_file_perms create };
 userdebug_or_eng(`
   diag_use(system_server)
 ')
+# timerslack_ns
+allow system_server { location_app system_app } :file write;
+allow system_server opengles_prop:file r_file_perms;
+allow system_server qemu_hw_mainkeys_prop:file r_file_perms;
