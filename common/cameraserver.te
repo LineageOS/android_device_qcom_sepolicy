@@ -57,3 +57,8 @@ allow cameraserver system_file:dir r_dir_perms;
 #Allows camera to call ADSP QDSP6 functionality
 allow cameraserver qdsp_device:chr_file r_file_perms;
 allow cameraserver camera_prop:file r_file_perms;
+
+# added now for camcorder functionality. need to use HIDL
+userdebug_or_eng(`
+binder_call(cameraserver, hal_graphics_composer)
+')
