@@ -100,7 +100,7 @@
 
 ##################################
 # FBE
-/system/bin/init.qcom.qseecomd.sh						u:object_r:init-qcom-fbe-sh_exec:s0
+/(vendor|system/vendor)/bin/init.qti.qseecomd.sh				u:object_r:init-qti-fbe-sh_exec:s0
 
 ###################################
 # sysfs files
