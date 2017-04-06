@@ -258,6 +258,8 @@
 /(vendor|system/vendor)/bin/mdtpd               u:object_r:mdtpdaemon_exec:s0
 /system/bin/wifi_ftmd                           u:object_r:wifi_ftmd_exec:s0
 /(vendor|system/vendor)/bin/fingerprint.qcom    u:object_r:fps_hal_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service-qti u:object_r:hal_keymaster_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service-qti u:object_r:hal_gatekeeper_qti_exec:s0
 
 ###################################
 # sysfs files
