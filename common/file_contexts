@@ -200,8 +200,8 @@
 /system/bin/usb_uicc_client                     u:object_r:usb_uicc_daemon_exec:s0
 /(vendor|system/vendor)/bin/qcom-system-daemon  u:object_r:qcomsysd_exec:s0
 /system/xbin/qlogd                              u:object_r:qlogd_exec:s0
-/system/bin/ipacm                               u:object_r:ipacm_exec:s0
-/system/bin/ipacm-diag                          u:object_r:ipacm-diag_exec:s0
+/(vendor|system/vendor)/bin/ipacm               u:object_r:ipacm_exec:s0
+/(vendor|system/vendor)/bin/ipacm-diag          u:object_r:ipacm-diag_exec:s0
 /(vendor|system/vendor)/bin/dpmQmiMgr           u:object_r:hal_dpmQmiMgr_exec:s0
 /system/bin/dpmd                                u:object_r:dpmd_exec:s0
 /(vendor|system/vendor)/bin/ssr_setup           u:object_r:ssr_setup_exec:s0
