@@ -205,6 +205,7 @@
 /system/bin/subsystem_ramdump                   u:object_r:subsystem_ramdump_exec:s0
 /system/bin/ssr_diag                            u:object_r:ssr_diag_exec:s0
 /system/bin/loc_launcher                        u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti  u:object_r:hal_bluetooth_qti_exec:s0
 /system/bin/quipc_main                          u:object_r:location_exec:s0
 /system/bin/ipepb                               u:object_r:location_exec:s0
 /system/bin/quipc_igsn                          u:object_r:location_exec:s0
@@ -235,7 +236,7 @@
 /system/bin/bt_logger                           u:object_r:bt_logger_exec:s0
 /system/bin/dun-server                          u:object_r:dun-server_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
-/system/bin/wcnss_filter                        u:object_r:wcnss_filter_exec:s0
+/(vendor|system/vendor)/bin/wcnss_filter        u:object_r:wcnss_filter_exec:s0
 /system/bin/fmhal_service                       u:object_r:fmhal_service_exec:s0
 /system/bin/usf_epos                            u:object_r:usf_exec:s0
 /system/bin/usf_gesture                         u:object_r:usf_exec:s0
