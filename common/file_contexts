@@ -172,7 +172,7 @@
 /(vendor|system/vendor)/bin/thermal-engine      u:object_r:thermal-engine_exec:s0
 /system/bin/vm_bms                              u:object_r:vm_bms_exec:s0
 /system/bin/mm-qcamera-daemon                   u:object_r:mm-qcamerad_exec:s0
-/system/bin/qfp-daemon                          u:object_r:qfp-daemon_exec:s0
+/(vendor|system/vendor)/bin/qfp-daemon          u:object_r:qfp-daemon_exec:s0
 /system/rfs.*                                   u:object_r:rfs_system_file:s0
 /system/bin/time_daemon                         u:object_r:time_daemon_exec:s0
 /system/bin/rmt_storage                         u:object_r:rmt_storage_exec:s0
@@ -256,7 +256,7 @@
 /system/bin/fstman                              u:object_r:fstman_exec:s0
 /(vendor|system/vendor)/bin/mdtpd               u:object_r:mdtpdaemon_exec:s0
 /system/bin/wifi_ftmd                           u:object_r:wifi_ftmd_exec:s0
-/system/vendor/bin/fingerprint.qcom             u:object_r:fps_hal_exec:s0
+/(vendor|system/vendor)/bin/fingerprint.qcom    u:object_r:fps_hal_exec:s0
 
 ###################################
 # sysfs files
@@ -317,7 +317,7 @@
 /data/rfs.*                                                         u:object_r:rfs_file:s0
 /data/hlos_rfs(/.*)?                                                u:object_r:rfs_shared_hlos_file:s0
 /data/camera(/.*)?                                                  u:object_r:camera_socket:s0
-/data/misc/stargate(/.*)?                                           u:object_r:qfp-daemon_data_file:s0
+/data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
 /data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
 /data/time(/.*)?                                                    u:object_r:time_data_file:s0
 /data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
