@@ -6,12 +6,12 @@ type per_mgr_exec, exec_type, file_type;
 init_daemon_domain(per_mgr);
 
 # Needed for binder transactions
-binder_use(per_mgr);
-binder_service(per_mgr);
+use_per_mgr(per_mgr)
+allow per_mgr per_mgr_service:vndservice_manager { add };
 
 allow per_mgr self:socket create_socket_perms;
 allowxperm per_mgr self:socket ioctl msm_sock_ipc_ioctls;
-allow per_mgr per_mgr_service:service_manager { add find };
+
 
 # Needed by ipc_router
 allow per_mgr self:capability net_bind_service;
@@ -24,10 +24,5 @@ r_dir_file(per_mgr, sysfs_esoc)
 
 # Needed by libmdmdetect to get subsystem info and to check their states
 r_dir_file(per_mgr, sysfs_ssr)
-
 r_dir_file(per_mgr, firmware_file)
-# Needed by pm-proxy to talk to peripheral manager
-binder_call(per_mgr, per_mgr);
-binder_call(per_mgr, sensors);
-
 r_dir_file(per_mgr, sysfs)

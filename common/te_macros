@@ -27,9 +27,10 @@ allow $1 netmgrd_socket:sock_file { read getattr write };
 # Allow clients to interact with peripheral
 # manager
 define(`use_per_mgr', `
+vndbinder_use($1);
 binder_call(per_mgr, $1);
 binder_call($1, per_mgr);
-allow $1 per_mgr_service:service_manager find;
+allow $1 per_mgr_service:vndservice_manager find;
 ')
 
 #####################################
