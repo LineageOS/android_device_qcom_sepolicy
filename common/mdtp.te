@@ -71,7 +71,6 @@ allow mdtpdaemon tee_device:chr_file rw_file_perms;
 # Provide access to block devices
 allow mdtpdaemon block_device:dir r_dir_perms;
 allow mdtpdaemon mdtp_device:blk_file rw_file_perms;
-allow mdtpdaemon dip_device:blk_file rw_file_perms;
 allow mdtpdaemon system_block_device:blk_file r_file_perms;
 
 # Provide access to QTI Crypto driver for MDTP
