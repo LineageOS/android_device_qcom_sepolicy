@@ -28,3 +28,4 @@
 vendor.qti.qcril.am::IQcRilAudio                             u:object_r:hal_telephony_hwservice:s0
 com.qualcomm.qti.qcril.qcrilhook::IQtiOemHook                u:object_r:hal_telephony_hwservice:s0
 com.qualcomm.qti.ims.radio::IImsRadio                        u:object_r:hal_telephony_hwservice:s0
+vendor.display.color::IDisplayColor                          u:object_r:hal_display_color_hwservice:s0

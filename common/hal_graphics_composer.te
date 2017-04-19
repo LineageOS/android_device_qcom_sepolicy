@@ -29,15 +29,40 @@
 userdebug_or_eng(`
 binder_use(hal_graphics_composer)
 ')
-allow hal_graphics_composer qdisplay_service:service_manager { add find };
 allow hal_graphics_composer sysfs:file r_file_perms;
 userdebug_or_eng(`
     diag_use(hal_graphics_composer)
 ')
-allow hal_graphics_composer persist_file:dir r_dir_perms;
 allow hal_graphics_composer sdm_idle_time_prop:file r_file_perms;
 allow hal_graphics_composer_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 allow hal_graphics_composer sysfs_graphics:file rw_file_perms;
-r_dir_file(hal_graphics_composer, sysfs_leds)
+
+# Rules for brightness change during display calibration
+allow hal_graphics_composer sysfs_leds:dir r_dir_perms;
+allow hal_graphics_composer sysfs_leds:file rw_file_perms;
+allow hal_graphics_composer sysfs_leds:lnk_file read;
+
+# Rules for vdnbinder
+allow hal_graphics_composer qdisplay_service:service_manager { add find };
 binder_service(hal_graphics_composer_default);
 vndbinder_use(hal_graphics_composer);
+
+# Allow reading/writing to '/data/vendor/display/*'
+allow hal_graphics_composer display_misc_file:dir rw_dir_perms;
+allow hal_graphics_composer display_misc_file:file create_file_perms;
+
+# Allow reading/writing to 'persist/display/*'
+allow hal_graphics_composer persist_display_file:dir rw_dir_perms;
+allow hal_graphics_composer persist_display_file:file create_file_perms;
+
+# Allow only directory search to '/persist'
+allow hal_graphics_composer persist_file:dir r_dir_perms;
+
+# Allow dir search in '/oem'
+allow hal_graphics_composer oemfs:dir r_dir_perms;
+
+# Allow pps socket access
+unix_socket_connect(hal_graphics_composer, pps, mm-pp-daemon)
+
+# TBD: remove when dependency on libpowermanager is removed
+allow hal_graphics_composer power_service:service_manager find;
