@@ -11,3 +11,6 @@ userdebug_or_eng(`
 
 binder_call(radio, hal_imsrtp)
 allow radio hal_imsrtp_hwservice:hwservice_manager find;
+# qcril needs permission to load mbn file from regional carrier
+allow radio regionalization_file:file r_file_perms;
+allow radio regionalization_file:dir r_dir_perms;
