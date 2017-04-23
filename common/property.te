@@ -99,3 +99,8 @@ type graphics_vulkan_prop, property_type, core_property_type;
 type boot_mode_prop, property_type;
 #properties for nfc
 type nfc_nq_prop, property_type, core_property_type;
+
+#encrypt
+type timekeep_prop, property_type;
+type tee_prop, property_type;
+type ta_prop, property_type;
