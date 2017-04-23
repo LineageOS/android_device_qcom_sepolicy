@@ -205,6 +205,7 @@
 /system/bin/subsystem_ramdump                   u:object_r:subsystem_ramdump_exec:s0
 /system/bin/ssr_diag                            u:object_r:ssr_diag_exec:s0
 /system/bin/loc_launcher                        u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service-qti u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti  u:object_r:hal_bluetooth_qti_exec:s0
 /system/bin/quipc_main                          u:object_r:location_exec:s0
 /system/bin/ipepb                               u:object_r:location_exec:s0
