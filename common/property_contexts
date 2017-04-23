@@ -91,3 +91,9 @@ sys.boot_mode              u:object_r:boot_mode_prop:s0
 ro.gpu.available_frequencies u:object_r:freq_prop:s0
 # NFC
 sys.nfc.nq.                u:object_r:nfc_nq_prop:s0
+#encrpt
+sys.keymaster.loaded			u:object_r:tee_prop:s0
+sys.listeners.registered		u:object_r:tee_prop:s0
+persist.sys.timeadjust			u:object_r:timekeep_prop:s0
+persist.service.bdroid.bdaddr	u:object_r:bluetooth_prop:s0
+persist.tareset.notfirstboot	u:object_r:ta_prop:s0
