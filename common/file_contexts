@@ -210,7 +210,8 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service-qti u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.0-service u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti  u:object_r:hal_bluetooth_qti_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.display\.color@1\.0-service u:object_r:hal_display_color_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.display\.color@1\.0-service            u:object_r:hal_display_color_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@1\.0-service       u:object_r:hal_perf_default_exec:s0
 /(vendor|system/vendor)/bin/loc_launcher        u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/lowi-server         u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/xtwifi-inet-agent   u:object_r:location_exec:s0
@@ -315,6 +316,13 @@
 /sys/module/diagchar(/.*)?                                          u:object_r:sysfs_diag:s0
 /sys/devices/virtual/xt_hardidletimer/timers(/.*)?                  u:object_r:sysfs_data:s0
 /sys/devices/virtual/xt_idletimer/timers(/.*)?                      u:object_r:sysfs_data:s0
+/sys/class/devfreq(/.*)?                                            u:object_r:sysfs_devfreq:s0
+/sys/class/mmc_host(/.*)?                                           u:object_r:sysfs_mmc_host:s0
+/sys/class/scsi_host(/.*)?                                          u:object_r:sysfs_scsi_host:s0
+/sys/class/kgsl(/.*)?                                               u:object_r:sysfs_kgsl:s0
+/sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
+/sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
+/sys/kernel/mm/ksm(/.*)?                                            u:object_r:sysfs_memory:s0
 ###################################
 # data files
 #
@@ -329,7 +337,7 @@
 /data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
 /data/time(/.*)?                                                    u:object_r:time_data_file:s0
 /data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
-/data/system/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
+/data/vendor/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
 /data/misc/iop(/.*)?                                                u:object_r:iop_data_file:s0
 /data/vendor/display(/.*)?                                          u:object_r:display_misc_file:s0
 /data/misc/ipa(/.*)?                                                u:object_r:ipacm_data_file:s0
