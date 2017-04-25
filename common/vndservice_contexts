@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 vendor.qcom.PeripheralManager                  u:object_r:per_mgr_service:s0
+display.qservice                               u:object_r:qdisplay_service:s0
