@@ -1,4 +1,4 @@
-# Copyright (c) 2016, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,9 +25,32 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# allow zygote to access seempdw socket
-unix_socket_send(zygote, seempdw, seempd)
-allow zygote debug_gralloc_prop:file r_file_perms;
-allow zygote sf_lcd_density_prop:file r_file_perms;
-# persist.service.bdroid.bdaddr hw.cabl.level
-allow zygote { bluetooth_prop ppd_prop system_prop } :property_service set;
+# hal_gnss_qti - binerized gnss hal
+type hal_gnss_qti, domain;
+type hal_gnss_qti_exec, exec_type, file_type;
+init_daemon_domain(hal_gnss_qti)
+
+# For XTRA download. Remove once XTRA client is moved to separate deamon
+net_domain(hal_gnss_qti)
+
+hal_server_domain(hal_gnss_qti, hal_gnss)
+
+# For XTRA file access. Remove once XTRA client is moved to separate daemon
+allow hal_gnss location_data_file:dir create_dir_perms;
+allow hal_gnss location_data_file:{ file fifo_file } create_file_perms;
+allow hal_gnss location_data_file:sock_file write;
+allow hal_gnss self:netlink_generic_socket { bind create };
+
+allow hal_gnss self:socket rw_socket_perms;
+allow hal_gnss sysfs:file r_file_perms;
+allow hal_gnss sysfs:dir r_dir_perms;
+
+allow hal_gnss self:udp_socket ioctl;
+allow hal_gnss self:socket { create ioctl };
+allowxperm hal_gnss self:socket ioctl msm_sock_ipc_ioctls;
+allowxperm hal_gnss self:udp_socket ioctl SIOCDEVPRIVATE_D;
+
+userdebug_or_eng(`
+  diag_use(hal_gnss);
+')
+

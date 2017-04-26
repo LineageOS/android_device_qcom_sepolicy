@@ -69,3 +69,9 @@ allow ims radio:fd use;
 userdebug_or_eng(`
     diag_use(ims)
 ')
+allow ims self:{ socket udp_socket } ioctl;
+# ioctlcmd=c302
+allowxperm ims self:socket ioctl msm_sock_ipc_ioctls;
+# ioctlcmd=89fd
+allowxperm ims self:udp_socket ioctl priv_sock_ioctls;
+allow ims sysfs:file r_file_perms;
