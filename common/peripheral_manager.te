@@ -7,7 +7,7 @@ init_daemon_domain(per_mgr);
 
 # Needed for binder transactions
 use_per_mgr(per_mgr)
-allow per_mgr per_mgr_service:vndservice_manager { add };
+allow per_mgr per_mgr_service:service_manager { add };
 
 allow per_mgr self:socket create_socket_perms;
 allowxperm per_mgr self:socket ioctl msm_sock_ipc_ioctls;

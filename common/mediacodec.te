@@ -65,9 +65,9 @@ allow mediacodec system_file:dir r_dir_perms;
 allow mediacodec qdsp_device:chr_file r_file_perms;
 
 #Allow mediacodec to access service manager wfdservice
-allow mediacodec wfdservice_service:vndservice_manager find;
+allow mediacodec wfdservice_service:service_manager find;
 # DOLBY_START
-allow mediacodec audioserver_service:vndservice_manager find;
+allow mediacodec audioserver_service:service_manager find;
 set_prop(mediacodec, dolby_prop)
 # DOLBY_END
 allow mediacodec debug_gralloc_prop:file r_file_perms;
