@@ -34,3 +34,4 @@ vendor.display.postproc::IDisplayPostproc                    u:object_r:hal_disp
 vendor.qti.gnss::IGnssVendor                                 u:object_r:hal_gnss_hwservice:s0
 com.qualcomm.qti.dpm.api::IdpmQmi                            u:object_r:hal_dpmqmi_hwservice:s0
 com.qualcomm.qti.imsrtpservice::IRTPService                  u:object_r:hal_imsrtp_hwservice:s0
+com.qualcomm.qti.bluetooth_audio::IBluetoothAudio            u:object_r:hal_audio_hwservice:s0

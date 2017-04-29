@@ -76,3 +76,7 @@ allow bluetooth wcnss_filter:unix_stream_socket connectto;
 # ioctlcmd=c302
 allow bluetooth self:socket ioctl;
 allowxperm bluetooth self:socket ioctl msm_sock_ipc_ioctls;
+
+#SplitA2dp bluetooth requires binding with audio hal
+binder_call(bluetooth, hal_audio);
+allow bluetooth hal_audio_hwservice:hwservice_manager find;
