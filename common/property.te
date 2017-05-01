@@ -100,3 +100,4 @@ type boot_mode_prop, property_type;
 #properties for nfc
 type nfc_nq_prop, property_type;
 type ppd_prop, property_type;
+type qemu_gles_prop, property_type;
