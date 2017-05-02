@@ -132,7 +132,7 @@
 ###################################
 # System files
 #
-/system/bin/ATFWD-daemon                        u:object_r:atfwd_exec:s0
+/(vendor|system/vendor)/bin/ATFWD-daemon        u:object_r:atfwd_exec:s0
 /system/bin/PktRspTest                          u:object_r:diag_exec:s0
 /system/bin/audiod                              u:object_r:audiod_exec:s0
 /(vendor|system/vendor)/bin/nqnfcinfo           u:object_r:nqnfcinfo_exec:s0
