@@ -15,7 +15,9 @@ allow hbtp sysfs_usb_supply:file rw_file_perms;
 
 allow hbtp hbtp_kernel_sysfs:file rw_file_perms;
 
-allow hbtp sysfs:file write;
+allow hbtp sysfs:file r_file_perms;
+
+allow hbtp ion_device:chr_file r_file_perms;
 
 allow hbtp self:netlink_kobject_uevent_socket { create read setopt bind };
 
