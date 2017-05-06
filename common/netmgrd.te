@@ -66,6 +66,10 @@ r_dir_file(netmgrd, sysfs_ssr);
 
 allow netmgrd sysfs:file w_file_perms;
 
+#Acquire lock on /system/etc/xtables.lock
+#Required till netutils wrappers are available
+allow netmgrd system_file:file lock;
+
 #Allow netmgrd to create netmgrd socket
 allow netmgrd netmgrd_socket:dir create_dir_perms;
 allow netmgrd netmgrd_socket:sock_file create_file_perms;
