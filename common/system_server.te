@@ -168,4 +168,6 @@ userdebug_or_eng(`
 allow system_server { location_app system_app } :file write;
 allow system_server opengles_prop:file r_file_perms;
 allow system_server qemu_hw_mainkeys_prop:file r_file_perms;
+
 allow system_server hwui_prop:file r_file_perms;
+allow system_server appdomain:file w_file_perms;
