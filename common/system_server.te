@@ -73,6 +73,7 @@ allow system_server location_prop:property_service set;
 
 #For wifistatemachine
 allow system_server kernel:key search;
+allow system_server wlan_device:chr_file rw_file_perms;
 
 #For ssr
 allow system_server ssr_device:chr_file r_file_perms;
