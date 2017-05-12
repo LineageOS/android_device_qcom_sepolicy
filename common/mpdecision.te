@@ -41,5 +41,4 @@ allow mpdecision mpctl_data_file:file create_file_perms;
 r_dir_file(mpdecision, system_server)
 
 #mpdecision set properties
-unix_socket_connect(mpdecision, property, init)
-allow mpdecision mpdecision_prop:property_service set;
+set_prop(mpdecision, mpdecision_prop)

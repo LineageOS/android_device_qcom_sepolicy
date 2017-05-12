@@ -32,7 +32,6 @@ allow netmgrd netmgrd:netlink_xfrm_socket { create_socket_perms_no_ioctl nlmsg_w
 allow netmgrd netmgrd:netlink_socket { write read create bind };
 allow netmgrd netmgrd:socket { create };
 allow netmgrd netmgrd:netlink_route_socket { setopt getattr write nlmsg_write };
-unix_socket_connect(netmgrd, property, init)
 allow netmgrd self:netlink_generic_socket create_socket_perms_no_ioctl;
 allow netmgrd self:netlink_tcpdiag_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
 
@@ -45,9 +44,9 @@ allow netmgrd { proc_net sysfs }:file rw_file_perms;
 
 #Allow address configuration
 #Allow setting of DNS and GW Android properties
-allow netmgrd { system_prop net_radio_prop }:property_service set;
-
-allow netmgrd xlat_prop:property_service set;
+set_prop(netmgrd, system_prop)
+set_prop(netmgrd, net_radio_prop)
+set_prop(netmgrd, xlat_prop)
 
 #Allow execution of commands in shell
 allow netmgrd system_file:file x_file_perms;
@@ -68,7 +67,7 @@ allow netmgrd sysfs:file w_file_perms;
 
 #Acquire lock on /system/etc/xtables.lock
 #Required till netutils wrappers are available
-allow netmgrd system_file:file lock;
+not_full_treble(`allow netmgrd system_file:file lock;')
 
 #Allow netmgrd to create netmgrd socket
 allow netmgrd netmgrd_socket:dir create_dir_perms;
