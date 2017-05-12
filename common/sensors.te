@@ -5,8 +5,6 @@ type sensors_exec, exec_type, file_type;
 # Started by init
 init_daemon_domain(sensors)
 
-type_transition sensors system_data_file:{ dir file } sensors_data_file;
-
 allow sensors self:capability {
     # Change own perms to (nobody,nobody)
     setuid
@@ -28,9 +26,6 @@ allow sensors socket_device:dir rw_dir_perms;
 
 # Create directories and files under /data/misc/sensors
 # and /data/system/sensors. Allow generic r/w file access.
-allow sensors system_data_file:dir create_dir_perms;
-allow sensors sensors_data_file:dir create_dir_perms;
-allow sensors sensors_data_file:file create_file_perms;
 
 # Access sensor nodes (/dev/msm_dsps, /dev/sensors)
 allow sensors sensors_device:chr_file rw_file_perms;
@@ -63,13 +58,9 @@ userdebug_or_eng(`
   diag_use(sensors)
 ')
 
-binder_use(sensors)
-binder_call(sensors, servicemanager)
-binder_call(sensors, per_mgr)
 
 allow sensors sysfs:dir r_dir_perms;
 allow sensors sysfs:file rw_file_perms;
 
 #Rules for sensors to talk to peripheral manager
-use_per_mgr(sensors);
 allow sensors system_file:dir r_dir_perms;
