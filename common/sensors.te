@@ -65,3 +65,8 @@ allow sensors sysfs_data:file r_file_perms;
 
 #Rules for sensors to talk to peripheral manager
 allow sensors system_file:dir r_dir_perms;
+
+allow sensors dsp_device:chr_file r_file_perms;
+
+# For reading dir/files on /dsp
+r_dir_file(sensors, adsprpcd_file)
