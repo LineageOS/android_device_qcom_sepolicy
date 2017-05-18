@@ -371,6 +371,8 @@
 /data/misc/wifi/nvbin(/.*)?                                         u:object_r:dynamic_nv_data_file:s0
 /data/misc/wifi/wigig_sockets(/.*)?                                 u:object_r:wpa_socket:s0
 /data/misc/wifi/wigig_sockets/wpa_ctrl.*                            u:object_r:system_wpa_socket:s0
+/data/vendor/ramdump/bluetooth(/.*)?                                u:object_r:bluetooth_data_file:s0
+/data/vendor/ramdump/bluetooth/logs(/.*)?                           u:object_r:bluetooth_logs_data_file:s0
 
 ###################################
 # persist files
