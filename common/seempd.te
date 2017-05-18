@@ -24,3 +24,13 @@ binder_call(seempd, appdomain)
 allow seempd seemp_service:service_manager { find add };
 allow seempd self:binder call;
 allow seempd ion_device:chr_file r_file_perms;
+
+#for package verifier
+allow seempd { apk_tmp_file apk_private_tmp_file }:dir r_dir_perms;
+allow seempd { apk_tmp_file apk_private_tmp_file }:file r_file_perms;
+allow seempd storage_file:dir r_dir_perms;
+allow seempd storage_file:lnk_file r_file_perms;
+allow seempd mnt_user_file:dir r_dir_perms;
+allow seempd mnt_user_file:lnk_file r_file_perms;
+allow seempd fuse:dir r_dir_perms;
+allow seempd fuse:file r_file_perms;
