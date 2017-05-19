@@ -123,6 +123,9 @@ binder_call(system_app, esepmdaemon)
 # allow system_app to interact with seemp health daemon
 binder_call(system_app, seemp_health_daemon)
 
+# allow system_app to interact with display color hal
+hal_client_domain(system_app, hal_display_color)
+
 #allow access to RIDL
 allow system_app RIDL_data_file:dir rw_dir_perms;
 allow system_app RIDL_data_file:file create_file_perms;

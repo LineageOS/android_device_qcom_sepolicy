@@ -25,16 +25,12 @@ allow mm-pp-daemon sensors_socket:sock_file rw_file_perms;
 allow mm-pp-daemon sensors:unix_stream_socket connectto;
 
 
-# Allow service manager to find surface flinger service,
-# sensorservice service, permission_service, and power service (for
-# acquire wakelock)
-allow mm-pp-daemon { surfaceflinger_service sensorservice_service
-    permission_service power_service }:service_manager find;
-
-# Allow mm-pp-daemon to call binder for screen refresh
-binder_use(mm-pp-daemon)
+# Rule for IPC communication
+allow mm-pp-daemon qdisplay_service:service_manager find;
+vndbinder_use(mm-pp-daemon)
+hal_client_domain(mm-pp-daemon, hal_graphics_composer)
+allow mm-pp-daemon fwk_sensor_hwservice:hwservice_manager find;
 binder_call(mm-pp-daemon, system_server)
-binder_call(mm-pp-daemon, surfaceflinger)
 
 userdebug_or_eng(`
   # This allows pp-daemon to use shell commands to blank
@@ -48,11 +44,12 @@ userdebug_or_eng(`
   diag_use(mm-pp-daemon)
 ')
 
-# Allow mm-pp-daemon to change the brightness of the target during display
-# calibration
-allow mm-pp-daemon sysfs:file rw_file_perms;
+# Allow mm-pp-daemon to change the brightness
+allow mm-pp-daemon sysfs_leds:dir r_dir_perms;
+allow mm-pp-daemon sysfs_leds:file rw_file_perms;
+allow mm-pp-daemon sysfs_leds:lnk_file read;
+allow mm-pp-daemon sysfs_graphics:file rw_file_perms;
 
-set_prop(mm-pp-daemon, system_prop)
 userdebug_or_eng(`
 set_prop(mm-pp-daemon, debug_prop)
 ')

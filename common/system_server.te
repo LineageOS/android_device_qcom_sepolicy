@@ -176,3 +176,6 @@ allow system_server qemu_hw_mainkeys_prop:file r_file_perms;
 
 allow system_server hwui_prop:file r_file_perms;
 allow system_server appdomain:file w_file_perms;
+
+# IPC call for sensor feed
+binder_call(system_server, mm-pp-daemon)

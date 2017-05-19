@@ -208,6 +208,7 @@
 /system/bin/loc_launcher                        u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service-qti u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti  u:object_r:hal_bluetooth_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.display\.color@1\.0-service u:object_r:hal_display_color_default_exec:s0
 /system/bin/quipc_main                          u:object_r:location_exec:s0
 /system/bin/ipepb                               u:object_r:location_exec:s0
 /system/bin/quipc_igsn                          u:object_r:location_exec:s0
@@ -324,7 +325,7 @@
 /data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
 /data/system/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
 /data/misc/iop(/.*)?                                                u:object_r:iop_data_file:s0
-/data/misc/display(/.*)?                                            u:object_r:display_misc_file:s0
+/data/vendor/display(/.*)?                                          u:object_r:display_misc_file:s0
 /data/misc/ipa(/.*)?                                                u:object_r:ipacm_data_file:s0
 /data/dpm(/.*)?                                                     u:object_r:dpmd_data_file:s0
 /data/misc/qsee(/.*)?                                               u:object_r:data_qsee_file:s0
