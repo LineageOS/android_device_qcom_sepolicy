@@ -26,5 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type hal_display_color_hwservice, hwservice_manager_type;
+type hal_display_config_hwservice, hwservice_manager_type;
 type hal_display_postproc_hwservice, hwservice_manager_type;
 type hal_dpmqmi_hwservice, hwservice_manager_type;
