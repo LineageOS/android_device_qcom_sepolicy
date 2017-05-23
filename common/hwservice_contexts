@@ -30,4 +30,5 @@ com.qualcomm.qti.qcril.qcrilhook::IQtiOemHook                u:object_r:hal_tele
 com.qualcomm.qti.ims.radio::IImsRadio                        u:object_r:hal_telephony_hwservice:s0
 vendor.display.color::IDisplayColor                          u:object_r:hal_display_color_hwservice:s0
 vendor.display.postproc::IDisplayPostproc                    u:object_r:hal_display_postproc_hwservice:s0
+vendor.qti.gnss::IGnssVendor                                 u:object_r:hal_gnss_hwservice:s0
 com.qualcomm.qti.dpm.api::IdpmQmi                            u:object_r:hal_dpmqmi_hwservice:s0
