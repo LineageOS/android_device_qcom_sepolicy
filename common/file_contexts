@@ -61,7 +61,6 @@
 /dev/hbtp_input                                 u:object_r:hbtp_device:s0
 /dev/hbtp_vm                                    u:object_r:hbtp_device:s0
 /dev/jdi-bu21150                                u:object_r:bu21150_device:s0
-/dev/voice_svc                                  u:object_r:voice_device:s0
 /dev/avtimer                                    u:object_r:avtimer_device:s0
 /dev/coresight-stm                              u:object_r:qdss_device:s0
 /dev/coresight-tmc-etf                          u:object_r:qdss_device:s0
@@ -76,6 +75,7 @@
 /dev/dri/card0                                  u:object_r:graphics_device:s0
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
+/dev/wlan                                       u:object_r:wlan_device:s0
 
 ###################################
 # Dev block nodes
@@ -107,6 +107,7 @@
 /dev/socket/thermal-send-client                 u:object_r:thermal_socket:s0
 /dev/socket/thermal-recv-client                 u:object_r:thermal_socket:s0
 /dev/socket/thermal-recv-passive-client         u:object_r:thermal_socket:s0
+/dev/socket/thermal-send-rule                   u:object_r:thermal_socket:s0
 /dev/socket/ims_qmid                            u:object_r:ims_socket:s0
 /dev/socket/ims_datad                           u:object_r:ims_socket:s0
 /dev/socket/ims_rtpd                            u:object_r:ims_socket:s0
@@ -132,7 +133,7 @@
 ###################################
 # System files
 #
-/system/bin/ATFWD-daemon                        u:object_r:atfwd_exec:s0
+/(vendor|system/vendor)/bin/ATFWD-daemon        u:object_r:atfwd_exec:s0
 /system/bin/PktRspTest                          u:object_r:diag_exec:s0
 /system/bin/audiod                              u:object_r:audiod_exec:s0
 /(vendor|system/vendor)/bin/nqnfcinfo           u:object_r:nqnfcinfo_exec:s0
@@ -172,7 +173,7 @@
 /(vendor|system/vendor)/bin/thermal-engine      u:object_r:thermal-engine_exec:s0
 /system/bin/vm_bms                              u:object_r:vm_bms_exec:s0
 /system/bin/mm-qcamera-daemon                   u:object_r:mm-qcamerad_exec:s0
-/system/bin/qfp-daemon                          u:object_r:qfp-daemon_exec:s0
+/(vendor|system/vendor)/bin/qfp-daemon          u:object_r:qfp-daemon_exec:s0
 /system/rfs.*                                   u:object_r:rfs_system_file:s0
 /system/bin/time_daemon                         u:object_r:time_daemon_exec:s0
 /system/bin/rmt_storage                         u:object_r:rmt_storage_exec:s0
@@ -195,18 +196,19 @@
 /(vendor|system/vendor)/bin/pd-mapper           u:object_r:pd_mapper_exec:s0
 /(vendor|system/vendor)/bin/pd-api-test         u:object_r:pd_mapper_exec:s0
 /system/bin/usb_uicc_client                     u:object_r:usb_uicc_daemon_exec:s0
-/system/bin/qcom-system-daemon                  u:object_r:qcomsysd_exec:s0
+/(vendor|system/vendor)/bin/qcom-system-daemon  u:object_r:qcomsysd_exec:s0
 /system/bin/poweroffhandler                     u:object_r:poweroffhandler_exec:s0
 /system/xbin/qlogd                              u:object_r:qlogd_exec:s0
 /system/bin/ipacm                               u:object_r:ipacm_exec:s0
 /system/bin/ipacm-diag                          u:object_r:ipacm-diag_exec:s0
 /system/bin/dpmd                                u:object_r:dpmd_exec:s0
-/system/bin/ssr_setup                           u:object_r:ssr_setup_exec:s0
-/system/bin/subsystem_ramdump                   u:object_r:subsystem_ramdump_exec:s0
-/system/bin/ssr_diag                            u:object_r:ssr_diag_exec:s0
+/(vendor|system/vendor)/bin/ssr_setup           u:object_r:ssr_setup_exec:s0
+/(vendor|system/vendor)/bin/subsystem_ramdump   u:object_r:subsystem_ramdump_exec:s0
+/(vendor|system/vendor)/bin/ssr_diag            u:object_r:ssr_diag_exec:s0
 /system/bin/loc_launcher                        u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service-qti u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti  u:object_r:hal_bluetooth_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.display\.color@1\.0-service u:object_r:hal_display_color_default_exec:s0
 /system/bin/quipc_main                          u:object_r:location_exec:s0
 /system/bin/ipepb                               u:object_r:location_exec:s0
 /system/bin/quipc_igsn                          u:object_r:location_exec:s0
@@ -218,6 +220,7 @@
 /system/bin/DR_AP_Service                       u:object_r:location_exec:s0
 /system/bin/gpsone_daemon                       u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/slim_daemon         u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/xtra-daemon         u:object_r:location_exec:s0
 /system/bin/energy-awareness                    u:object_r:energyawareness_exec:s0
 /(vendor|system/vendor)/bin/fidodaemon          u:object_r:fidodaemon_exec:s0
 /(vendor|system/vendor)/bin/esepmdaemon         u:object_r:esepmdaemon_exec:s0
@@ -255,7 +258,7 @@
 /system/bin/fstman                              u:object_r:fstman_exec:s0
 /(vendor|system/vendor)/bin/mdtpd               u:object_r:mdtpdaemon_exec:s0
 /system/bin/wifi_ftmd                           u:object_r:wifi_ftmd_exec:s0
-/system/vendor/bin/fingerprint.qcom             u:object_r:fps_hal_exec:s0
+/(vendor|system/vendor)/bin/fingerprint.qcom    u:object_r:fps_hal_exec:s0
 
 ###################################
 # sysfs files
@@ -288,6 +291,7 @@
 /sys/devices/virtual/graphics/fb([0-3])+/s3d_mode                   u:object_r:sysfs_graphics:s0
 /sys/class/graphics/fb([0-2])+/mdp/caps                             u:object_r:sysfs_graphics:s0
 /sys/class/graphics/fb([0-2])+/ad                                   u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:sysfs_graphics:s0
 /sys/bus/platform/drivers/xhci_msm_hsic(/.*)?                       u:object_r:sysfs_hsic:s0
 /sys/devices/msm_hsic_host/host_ready                               u:object_r:sysfs_hsic_host_rdy:s0
 /sys/bus/esoc(/.*)?                                                 u:object_r:sysfs_esoc:s0
@@ -315,13 +319,13 @@
 /data/rfs.*                                                         u:object_r:rfs_file:s0
 /data/hlos_rfs(/.*)?                                                u:object_r:rfs_shared_hlos_file:s0
 /data/camera(/.*)?                                                  u:object_r:camera_socket:s0
-/data/misc/stargate(/.*)?                                           u:object_r:qfp-daemon_data_file:s0
+/data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
 /data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
 /data/time(/.*)?                                                    u:object_r:time_data_file:s0
 /data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
 /data/system/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
 /data/misc/iop(/.*)?                                                u:object_r:iop_data_file:s0
-/data/misc/display(/.*)?                                            u:object_r:display_misc_file:s0
+/data/vendor/display(/.*)?                                          u:object_r:display_misc_file:s0
 /data/misc/ipa(/.*)?                                                u:object_r:ipacm_data_file:s0
 /data/dpm(/.*)?                                                     u:object_r:dpmd_data_file:s0
 /data/misc/qsee(/.*)?                                               u:object_r:data_qsee_file:s0
@@ -391,3 +395,10 @@
 ###################################
 # vendor files
 #
+
+###################################
+# firmware images
+#
+/vendor/firmware(/.*)?                                              u:object_r:firmware_file:s0
+/system/etc/firmware(/.*)?                                          u:object_r:firmware_file:s0
+/system/vendor/firmware(/.*)?                                       u:object_r:firmware_file:s0

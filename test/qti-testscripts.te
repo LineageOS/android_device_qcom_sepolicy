@@ -29,7 +29,7 @@ userdebug_or_eng(`
   type qti-testscripts, domain, mlstrustedsubject;
 
   typeattribute qti-testscripts qti_testscripts_domain;
-  #permissive qti-testscripts;
+  permissive qti-testscripts;
   domain_trans(init, shell_exec, qti-testscripts)
 
   #super_user - start

@@ -1,4 +1,4 @@
-# Copyright (c) 2016, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,3 +24,39 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# These are the permissions required to use the boot_control HAL implemented
+# here: hardware/qcom/bootctrl/boot_control.c
+
+# Getting and setting GPT attributes for the bootloader iterates over all the
+# partition names in the block_device directory /dev/block/.../by-name
+allow hal_bootctl block_device:dir { open read search };
+
+# Allow boot_control_hal to get attributes on all the A/B partitions.
+allow hal_bootctl {
+  custom_ab_block_device
+  xbl_block_device
+  boot_block_device
+  ssd_device
+  modem_block_device
+  system_block_device
+  mdtp_device
+}:blk_file { getattr };
+
+# Allow the boot_control_hal to edit the attributes stored in the GPT.
+allow hal_bootctl gpt_block_device:blk_file rw_file_perms;
+allow hal_bootctl root_block_device:blk_file rw_file_perms;
+
+# Allow boot_control_hal to access /dev/sgN devices (generic SCSI) to write the
+# A/B slot selection for the XBL partition. Allow also to issue a
+# UFS_IOCTL_QUERY ioctl.
+allow hal_bootctl sg_device:chr_file rw_file_perms;
+allow hal_bootctl sysfs:dir r_dir_perms;
+
+# The sys_rawio denial message is benign, and shows up due to a capability()
+# call made by the scsi driver to check for CAP_SYS_RAWIO. Not having this
+# does not result in a error
+dontaudit hal_bootctl self:capability sys_rawio;
+
+# Allow boot_control_hal to write to the XBL devices.
+allow hal_bootctl xbl_block_device:blk_file rw_file_perms;

@@ -18,38 +18,26 @@
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
 # BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# # CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
 # SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
 # BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# These are the permissions required to use the boot_control HAL implemented
-# here: hardware/qcom/bootctrl/boot_control.c
+# Qualcomm telephony apps, such as AtFwd and FastDormancy
+type qtelephony, domain, coredomain;
 
-# Getting and setting GPT attributes for the bootloader iterates over all the
-# partition names in the block_device directory /dev/block/.../by-name
-allow hal_bootctl block_device:dir { open read search };
+app_domain(qtelephony)
 
-# Allow boot_control_hal to get attributes on all the A/B partitions.
-allow hal_bootctl {
-  custom_ab_block_device
-  xbl_block_device
-  boot_block_device
-  ssd_device
-  modem_block_device
-  system_block_device
-}:blk_file { getattr };
+allow qtelephony { app_api_service }:service_manager find;
 
-# Allow the boot_control_hal to edit the attributes stored in the GPT.
-allow hal_bootctl gpt_block_device:blk_file rw_file_perms;
-allow hal_bootctl root_block_device:blk_file rw_file_perms;
+# Read and write /data/data subdirectory.
+allow qtelephony system_app_data_file:dir create_dir_perms;
+allow qtelephony system_app_data_file:{ file lnk_file } create_file_perms;
 
-# Allow boot_control_hal to access /dev/sgN devices (generic SCSI) to write the
-# A/B slot selection for the XBL partition. Allow also to issue a
-# UFS_IOCTL_QUERY ioctl.
-allow hal_bootctl sg_device:chr_file rw_file_perms;
+set_prop(qtelephony, ctl_default_prop);
 
-# Allow boot_control_hal to write to the XBL devices.
-allow hal_bootctl xbl_block_device:blk_file rw_file_perms;
+hwbinder_use(qtelephony);
+allow qtelephony system_file:dir r_dir_perms;
+get_prop(qtelephony, hwservicemanager_prop);

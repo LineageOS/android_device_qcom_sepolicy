@@ -47,3 +47,6 @@ allow surfaceflinger {
     sdm_idle_time_prop
     sf_lcd_density_prop
 }:file r_file_perms;
+
+#set qemu.gles prop
+set_prop(surfaceflinger, qemu_gles_prop)

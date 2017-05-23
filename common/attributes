@@ -25,3 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# HALs
+attribute hal_display_color;
+attribute hal_display_color_client;
+attribute hal_display_color_server;

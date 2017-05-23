@@ -73,6 +73,7 @@ allow system_server location_prop:property_service set;
 
 #For wifistatemachine
 allow system_server kernel:key search;
+allow system_server wlan_device:chr_file rw_file_perms;
 
 #For ssr
 allow system_server ssr_device:chr_file r_file_perms;
@@ -164,8 +165,17 @@ allow system_server persist_alarm_file:file { rw_file_perms create };
 userdebug_or_eng(`
   diag_use(system_server)
 ')
+
+# allow access to low persistence mode sysfs node
+allow system_server sysfs_graphics:file rw_file_perms;
+
 # timerslack_ns
 allow system_server { location_app system_app } :file write;
 allow system_server opengles_prop:file r_file_perms;
 allow system_server qemu_hw_mainkeys_prop:file r_file_perms;
+
 allow system_server hwui_prop:file r_file_perms;
+allow system_server appdomain:file w_file_perms;
+
+# IPC call for sensor feed
+binder_call(system_server, mm-pp-daemon)

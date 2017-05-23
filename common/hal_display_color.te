@@ -25,15 +25,23 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow hal_camera qdisplay_service:service_manager find;
-# added now for camera functionality. This should be using HIDL
-userdebug_or_eng(`
-binder_use(hal_camera)
-')
-unix_socket_connect(hal_camera, mpctl, perfd)
-unix_socket_send(hal_camera, mpctl, perfd)
-binder_call(hal_camera, surfaceflinger)
-set_prop(hal_camera, camera_prop)
-allow hal_camera gpu_device:chr_file rw_file_perms;
-allow hal_camera sysfs:file r_file_perms;
-vndbinder_use(hal_camera);
+# Define domain
+type hal_display_color_default, domain;
+hal_server_domain(hal_display_color_default, hal_display_color)
+type hal_display_color_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_display_color_default)
+
+# Allow hwbinder call from hal client to server
+binder_call(hal_display_color_client, hal_display_color_server)
+
+# Add hwservice related rules
+add_hwservice(hal_display_color_server, hal_display_color_hwservice)
+allow hal_display_color_client hal_display_color_hwservice:hwservice_manager find;
+
+# Rule for vndbinder usage
+allow hal_display_color qdisplay_service:service_manager find;
+vndbinder_use(hal_display_color);
+binder_call(hal_display_color, hal_graphics_composer)
+
+# Rule for pps socket usage
+unix_socket_connect(hal_display_color, pps, mm-pp-daemon)

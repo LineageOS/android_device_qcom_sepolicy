@@ -117,9 +117,6 @@ type hbtp_device, dev_type;
 type qce_device, dev_type;
 type rng_device, dev_type;
 
-#added for voice device
-type voice_device, dev_type;
-
 #Define system health monitor devices
 type system_health_monitor_device, dev_type;
 
@@ -140,3 +137,15 @@ type at_device, dev_type;
 
 #define Bluetooth device
 type bt_device, dev_type;
+
+#define Wlan device
+type wlan_device, dev_type;
+
+#Define rawdump block device
+type rawdump_block_device, dev_type;
+
+#Block device for A/B partitions
+type custom_ab_block_device, dev_type;
+type xbl_block_device, dev_type;
+type gpt_block_device, dev_type;
+type modem_block_device, dev_type;
