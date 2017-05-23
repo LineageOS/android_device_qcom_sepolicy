@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2015,2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -31,14 +31,38 @@ type fstman_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(fstman)
 net_domain(fstman)
 
+# fstman requires special network privileges.
+# access traffic control (TC) for marking packets to identify from
+# which slave interface they arrive, drop multicast packets and
+# duplicate packets. This requires the net_raw capability.
+# network admin operations mainly on the bonding driver:
+# interface up/down, add/remove slave interfaces, set queue parameters
+# This requires the net_admin capability.
 allow fstman self:capability { net_admin net_raw };
+
+# netlink socket is used to access traffic control (TC)
 allow fstman self:netlink_route_socket nlmsg_write;
-allow fstman sysfs:file write;
-r_dir_file(fstman, wifi_data_file)
-allow fstman wifi_data_file:dir rw_dir_perms;
-allow fstman wifi_data_file:file create_file_perms;
-# remove wpa to resolve compilation
-allow fstman { hostapd }:unix_dgram_socket sendto;
+
+# allow privileged socket operations: interface up/down, bond interface management
+allowxperm fstman self:udp_socket ioctl { SIOCGIFFLAGS SIOCSIFFLAGS SIOCSIFTXQLEN SIOCBONDENSLAVE SIOCBONDRELEASE SIOCETHTOOL};
+
+# need access to bond0 sysfs in order to manage attached interfaces
+allow fstman sysfs_bond0:file rw_file_perms;
+
+# need access to wigig sysfs in order to control fst_link_loss
+allow fstman sysfs_wigig:file rw_file_perms;
+
+# create/read fstman configuration file (/data/vendor/wifi/fstman.ini)
+r_dir_file(fstman, wifi_vendor_data_file)
+allow fstman wifi_vendor_data_file:dir rw_dir_perms;
+allow fstman wifi_vendor_data_file:file create_file_perms;
+
+# fstman needs to communicate with wpa_supplicant and hostapd using socket
+# for managing FST state
+allow fstman { hal_wifi_supplicant hostapd }:unix_dgram_socket sendto;
+# supplicant interface sockets
+allow fstman wifi_vendor_wpa_socket:dir rw_dir_perms;
+allow fstman wifi_vendor_wpa_socket:sock_file create_file_perms;
+# supplicant global socket
 allow fstman wpa_socket:dir rw_dir_perms;
 allow fstman wpa_socket:sock_file create_file_perms;
-r_dir_file(fstman, firmware_file)
