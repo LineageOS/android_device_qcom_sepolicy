@@ -180,7 +180,7 @@
 /system/bin/rfs_access                          u:object_r:rfs_access_exec:s0
 /system/bin/tftp_server                         u:object_r:rfs_access_exec:s0
 /system/bin/hvdcp                               u:object_r:hvdcp_exec:s0
-/system/bin/qseecomd                            u:object_r:tee_exec:s0
+/(vendor|system/vendor)/bin/qseecomd            u:object_r:tee_exec:s0
 /system/bin/spdaemon                            u:object_r:spdaemon_exec:s0
 /system/bin/hostapd_cli                         u:object_r:hostapd_exec:s0
 /system/bin/adsprpcd                            u:object_r:adsprpcd_exec:s0
