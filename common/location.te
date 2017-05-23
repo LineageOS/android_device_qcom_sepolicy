@@ -70,6 +70,7 @@ userdebug_or_eng(`
     diag_use(location)
 ')
 allow location sysfs:file r_file_perms;
+allow location sysfs_data:file r_file_perms;
 allow location self:socket ioctl;
 # ioctlcmd=c304
 allowxperm location self:socket ioctl msm_sock_ipc_ioctls;

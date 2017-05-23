@@ -26,3 +26,4 @@ r_dir_file(per_mgr, sysfs_esoc)
 r_dir_file(per_mgr, sysfs_ssr)
 r_dir_file(per_mgr, firmware_file)
 r_dir_file(per_mgr, sysfs)
+allow per_mgr sysfs_data:file r_file_perms;

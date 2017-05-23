@@ -209,3 +209,9 @@ type sysfs_kgsl, sysfs_type, fs_type;
 
 # secure touch files
 type sysfs_securetouch, fs_type, sysfs_type;
+
+#data sysfs  files
+type sysfs_data, fs_type, sysfs_type;
+
+#diag sysfs files
+type sysfs_diag, fs_type, sysfs_type;

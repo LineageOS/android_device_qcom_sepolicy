@@ -110,7 +110,6 @@
 /dev/socket/thermal-send-rule                   u:object_r:thermal_socket:s0
 /dev/socket/ims_qmid                            u:object_r:ims_socket:s0
 /dev/socket/ims_datad                           u:object_r:ims_socket:s0
-/dev/socket/ims_rtpd                            u:object_r:ims_socket:s0
 /dev/socket/perfd                               u:object_r:mpctl_socket:s0
 /dev/socket/gamed                               u:object_r:gamed_socket:s0
 /dev/socket/iop                                 u:object_r:iop_socket:s0
@@ -162,7 +161,7 @@
 /system/bin/msm_irqbalance                      u:object_r:msm_irqbalanced_exec:s0
 /(vendor|system/vendor)/bin/imsdatadaemon       u:object_r:ims_exec:s0
 /(vendor|system/vendor)/bin/imsqmidaemon        u:object_r:ims_exec:s0
-/(vendor|system/vendor)/bin/ims_rtp_daemon      u:object_r:ims_exec:s0
+/(vendor|system/vendor)/bin/ims_rtp_daemon      u:object_r:hal_imsrtp_exec:s0
 /(vendor|system/vendor)/bin/imscmservice        u:object_r:imscm_exec:s0
 /(vendor|system/vendor)/bin/netmgrd             u:object_r:netmgrd_exec:s0
 /(vendor|system/vendor)/bin/qmuxd               u:object_r:qmuxd_exec:s0
@@ -306,12 +305,14 @@
 /sys/bus/msm_subsys/devices/subsys3/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/bus/msm_subsys/devices/subsys4/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/devices/soc0/.*                                                u:object_r:sysfs_socinfo:s0
+/sys/devices/soc/soc:qcom,ipa_fws@[a-f0-9]+/subsys0/name            u:object_r:sysfs_data:s0
 /sys/devices/soc/soc:hbtp/secure_touch                              u:object_r:hbtp_kernel_sysfs:s0
 /sys/devices/soc/soc:hbtp/secure_touch_enable                       u:object_r:hbtp_kernel_sysfs:s0
 /sys/devices/soc/soc:hbtp/secure_touch_userspace                    u:object_r:hbtp_kernel_sysfs:s0
 /sys/firmware/devicetree/base/cpus(/.*)?                            u:object_r:sysfs_devices_system_cpu:s0
 /sys/devices/vendor/vendor:bt_wcn3990/extldo                        u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/vendor/vendor:bt_wcn3990/rfkill/rfkill0/state          u:object_r:sysfs_bluetooth_writable:s0
+/sys/module/diagchar(/.*)?                                          u:object_r:sysfs_diag:s0
 ###################################
 # data files
 #

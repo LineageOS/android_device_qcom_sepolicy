@@ -19,3 +19,6 @@ allow radio { cameraserver_service mediaextractor_service mediacodec_service }:s
 userdebug_or_eng(`
     diag_use(radio)
 ')
+
+binder_call(radio, hal_imsrtp)
+allow radio hal_imsrtp_hwservice:hwservice_manager find;

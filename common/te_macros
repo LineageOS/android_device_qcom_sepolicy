@@ -58,5 +58,6 @@ allow dpmd $1:tcp_socket rw_socket_perms;
 # diag_use(clientdomain)
 # allow clientdomain to read/write to diag
 define(`diag_use', `
+r_dir_file($1, sysfs_diag)
 allow $1 diag_device:chr_file rw_file_perms;
 ')

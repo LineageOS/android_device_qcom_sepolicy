@@ -31,3 +31,4 @@ com.qualcomm.qti.ims.radio::IImsRadio                        u:object_r:hal_tele
 vendor.display.color::IDisplayColor                          u:object_r:hal_display_color_hwservice:s0
 vendor.display.postproc::IDisplayPostproc                    u:object_r:hal_display_postproc_hwservice:s0
 com.qualcomm.qti.dpm.api::IdpmQmi                            u:object_r:hal_dpmqmi_hwservice:s0
+com.qualcomm.qti.imsrtpservice::IRTPService                  u:object_r:hal_imsrtp_hwservice:s0
