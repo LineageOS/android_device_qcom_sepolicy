@@ -18,15 +18,19 @@
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
 # BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# # CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
 # SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
 # BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# call into gatekeeperd process (callbacks)
 
-vendor.qti.qcril.am::IQcRilAudio                             u:object_r:hal_telephony_hwservice:s0
-com.qualcomm.qti.qcril.qcrilhook::IQtiOemHook                u:object_r:hal_telephony_hwservice:s0
-com.qualcomm.qti.ims.radio::IImsRadio                        u:object_r:hal_telephony_hwservice:s0
-vendor.display.color::IDisplayColor                          u:object_r:hal_display_color_hwservice:s0
-vendor.display.postproc::IDisplayPostproc                    u:object_r:hal_display_postproc_hwservice:s0
+type hal_gatekeeper_qti, domain;
+hal_server_domain(hal_gatekeeper_qti, hal_gatekeeper)
+
+type hal_gatekeeper_qti_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(hal_gatekeeper_qti)
+
+# allow tee to load firmware images
+r_dir_file(hal_gatekeeper, firmware_file)

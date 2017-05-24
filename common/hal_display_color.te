@@ -45,3 +45,7 @@ binder_call(hal_display_color, hal_graphics_composer)
 
 # Rule for pps socket usage
 unix_socket_connect(hal_display_color, pps, mm-pp-daemon)
+
+#Add rules for postproc hal
+add_hwservice(hal_display_color_server, hal_display_postproc_hwservice)
+allow hal_display_postproc_client hal_display_postproc_hwservice:hwservice_manager find;

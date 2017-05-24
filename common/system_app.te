@@ -1,4 +1,4 @@
-# Copyright (c) 2015-2016 Dolby Laboratories, Inc. All rights reserved.
+# Copyright (c) 2015-2017 Dolby Laboratories, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -125,6 +125,9 @@ binder_call(system_app, seemp_health_daemon)
 
 # allow system_app to interact with display color hal
 hal_client_domain(system_app, hal_display_color)
+
+# allow system_app to interact with display postproc hal
+hal_client_domain(system_app, hal_display_postproc)
 
 #allow access to RIDL
 allow system_app RIDL_data_file:dir rw_dir_perms;
