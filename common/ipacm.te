@@ -30,3 +30,9 @@ allow ipacm ipacm:{
 # Allow creating and modifying the PID file
 allow ipacm ipacm_data_file:dir w_dir_perms;
 allow ipacm ipacm_data_file:file create_file_perms;
+
+# To register ipacm to hwbinder
+add_hwservice(ipacm, hal_ipacm_hwservice)
+hwbinder_use(ipacm)
+get_prop(ipacm, hwservicemanager_prop)
+binder_call(ipacm, system_server)
