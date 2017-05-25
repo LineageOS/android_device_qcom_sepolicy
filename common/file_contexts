@@ -201,6 +201,7 @@
 /system/xbin/qlogd                              u:object_r:qlogd_exec:s0
 /system/bin/ipacm                               u:object_r:ipacm_exec:s0
 /system/bin/ipacm-diag                          u:object_r:ipacm-diag_exec:s0
+/(vendor|system/vendor)/bin/dpmQmiMgr           u:object_r:hal_dpmQmiMgr_exec:s0
 /system/bin/dpmd                                u:object_r:dpmd_exec:s0
 /(vendor|system/vendor)/bin/ssr_setup           u:object_r:ssr_setup_exec:s0
 /(vendor|system/vendor)/bin/subsystem_ramdump   u:object_r:subsystem_ramdump_exec:s0

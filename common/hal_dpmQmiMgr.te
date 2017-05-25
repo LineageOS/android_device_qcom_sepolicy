@@ -18,13 +18,28 @@
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
 # BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# # CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
 # SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
 # BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_display_color_hwservice, hwservice_manager_type;
-type hal_display_postproc_hwservice, hwservice_manager_type;
-type hal_dpmqmi_hwservice, hwservice_manager_type;
+#dpmQmiMgr as domain
+type hal_dpmQmiMgr, domain;
+
+hal_server_domain(hal_dpmQmiMgr,hal_dpm_qmi)
+
+type hal_dpmQmiMgr_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(hal_dpmQmiMgr)
+
+binder_call(hal_dpm_qmi_client,hal_dpm_qmi_server)
+
+add_hwservice(hal_dpmQmiMgr, hal_dpmqmi_hwservice)
+allow hal_dpm_qmi_client hal_dpmqmi_hwservice:hwservice_manager find;
+
+#diag
+userdebug_or_eng(`
+    diag_use(hal_dpmQmiMgr)
+')
