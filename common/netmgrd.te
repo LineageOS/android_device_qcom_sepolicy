@@ -25,6 +25,8 @@ allow netmgrd netmgrd:capability {
 
 #Allow logging
 allow netmgrd smem_log_device:chr_file rw_file_perms;
+allow netmgrd netmgrd_data_file:file create_file_perms;
+allow netmgrd netmgrd_data_file:dir w_dir_perms;
 
 #Allow netutils usage
 use_netutils(netmgrd);
