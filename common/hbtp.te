@@ -10,6 +10,9 @@ allow hbtp { hbtp_device qdsp_device dsp_device bu21150_device }:chr_file rw_fil
 allow hbtp hbtp_log_file:dir rw_dir_perms;
 allow hbtp hbtp_log_file:file create_file_perms;
 
+allow hbtp hbtp_cfg_file:dir r_dir_perms;
+allow hbtp hbtp_cfg_file:file r_file_perms;
+
 allow hbtp firmware_file:dir r_dir_perms;
 allow hbtp firmware_file:file r_file_perms;
 
