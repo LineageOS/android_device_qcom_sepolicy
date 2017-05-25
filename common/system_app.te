@@ -202,3 +202,6 @@ unix_socket_connect(system_app, ims, ims)
 
 # access to qseeproxy domain
 allow system_app qseeproxy:unix_dgram_socket sendto;
+
+#allow system_app access boot mode switch
+set_prop(system_app, boot_mode_prop);
