@@ -27,5 +27,3 @@
 
 # Regionalization service
 regionalization                                       u:object_r:regionalization_service:s0
-
-android.apps.IQvopService                             u:object_r:iqvop_service:s0
