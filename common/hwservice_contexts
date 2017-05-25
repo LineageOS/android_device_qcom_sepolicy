@@ -48,3 +48,4 @@ vendor.qti.hardware.perf::IPerf                              u:object_r:hal_perf
 vendor.qti.hardware.radio.lpa::IUimLpa                                  u:object_r:hal_telephony_hwservice:s0
 vendor.qti.hardware.radio.uim_remote_client::IUimRemoteServiceClient    u:object_r:hal_telephony_hwservice:s0
 vendor.qti.hardware.radio.uim_remote_server::IUimRemoteServiceServer    u:object_r:hal_telephony_hwservice:s0
+vendor.qti.hardware.alarm::IAlarm                            u:object_r:hal_alarm_qti_hwservice:s0
