@@ -42,10 +42,8 @@ allow hal_gnss self:socket rw_socket_perms;
 allow hal_gnss sysfs:file r_file_perms;
 allow hal_gnss sysfs:dir r_dir_perms;
 
-allow hal_gnss self:udp_socket ioctl;
 allow hal_gnss self:socket { create ioctl };
 allowxperm hal_gnss self:socket ioctl msm_sock_ipc_ioctls;
-allowxperm hal_gnss self:udp_socket ioctl SIOCDEVPRIVATE_D;
 
 userdebug_or_eng(`
   diag_use(hal_gnss);
