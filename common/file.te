@@ -226,3 +226,6 @@ type sysfs_data, fs_type, sysfs_type;
 
 #diag sysfs files
 type sysfs_diag, fs_type, sysfs_type;
+
+# vendor radio files
+type vendor_radio_data_file, file_type, data_file_type;
