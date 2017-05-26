@@ -232,3 +232,6 @@ type qdma_app_data_file, file_type, data_file_type;
 # path to debugfs use this whic should be only used
 # in debug builds
 type qti_debugfs, fs_type, debugfs_type;
+
+# vendor radio files
+type vendor_radio_data_file, file_type, data_file_type;
