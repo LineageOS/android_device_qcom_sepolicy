@@ -33,7 +33,7 @@ init_daemon_domain(hal_gnss_qti)
 hal_server_domain(hal_gnss_qti, hal_gnss)
 
 allow hal_gnss_qti location_data_file:dir r_dir_perms;
-unix_socket_connect(hal_gnss_qti, location, location)
+unix_socket_connect(hal_gnss, location, location)
 
 netmgr_socket(hal_gnss)
 allow hal_gnss self:netlink_generic_socket create_socket_perms_no_ioctl;
