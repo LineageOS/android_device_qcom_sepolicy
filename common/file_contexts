@@ -206,6 +206,7 @@
 /(vendor|system/vendor)/bin/subsystem_ramdump   u:object_r:subsystem_ramdump_exec:s0
 /(vendor|system/vendor)/bin/ssr_diag            u:object_r:ssr_diag_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service-qti u:object_r:hal_gnss_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.0-service u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti  u:object_r:hal_bluetooth_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.display\.color@1\.0-service u:object_r:hal_display_color_default_exec:s0
 /(vendor|system/vendor)/bin/loc_launcher        u:object_r:location_exec:s0
