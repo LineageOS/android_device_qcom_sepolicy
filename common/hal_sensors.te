@@ -36,3 +36,4 @@ allow hal_sensors sysfs:file r_file_perms;
 
 allow hal_sensors sensors_persist_file:dir create_dir_perms;
 allow hal_sensors sensors_persist_file:file create_file_perms;
+allow hal_sensors sysfs_data:file r_file_perms;

@@ -26,3 +26,4 @@ allow location_app { app_api_service system_api_service }:service_manager find;
 # ioctlcmd=c302
 allowxperm location_app self:socket ioctl msm_sock_ipc_ioctls;
 allow location_app sysfs:file r_file_perms;
+allow location_app sysfs_data:file r_file_perms;

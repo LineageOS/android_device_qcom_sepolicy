@@ -89,3 +89,4 @@ allowxperm mdtpdaemon self:socket ioctl msm_sock_ipc_ioctls;
 allow mdtpdaemon rootfs:file x_file_perms;
 allow mdtpdaemon ion_device:chr_file r_file_perms;
 allow mdtpdaemon sysfs:file r_file_perms;
+allow mdtpdaemon sysfs_data:file r_file_perms;

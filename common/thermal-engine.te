@@ -59,6 +59,7 @@ userdebug_or_eng(`
 
 # To get GPU frequencies
 allow thermal-engine sysfs_kgsl:file r_file_perms;
+allow thermal-engine sysfs_data:file r_file_perms;
 
 # netlink access
 allow thermal-engine self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;

@@ -1,5 +1,5 @@
-# Copyright (c) 2016, The Linux Foundation. All rights reserved.
-#
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
@@ -12,7 +12,7 @@
 #     * Neither the name of The Linux Foundation nor the names of its
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
-#
+
 # THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -25,49 +25,36 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# spdaemon service
-type spdaemon, domain;
+#ims rtp service
+type hal_imsrtp, domain;
+type hal_imsrtp_exec, exec_type, vendor_file_type, file_type;
 
-type spdaemon_exec, exec_type, file_type;
+# Started by init
+init_daemon_domain(hal_imsrtp)
+net_domain(hal_imsrtp)
 
-init_daemon_domain(spdaemon)
+hwbinder_use(hal_imsrtp)
+get_prop(hal_imsrtp, hwservicemanager_prop)
+add_hwservice(hal_imsrtp, hal_imsrtp_hwservice)
 
-# Allow access to spcom device
-allow spdaemon spcom_device:chr_file rw_file_perms;
+#diag
+userdebug_or_eng(`
+  diag_use(hal_imsrtp)
+')
 
-# Allow access to skp device
-allow spdaemon skp_device:chr_file rw_file_perms;
+allow hal_imsrtp self:socket create_socket_perms;
 
-# Allow access to sp_ssr device
-allow spdaemon sp_ssr_device:chr_file rw_file_perms;
+unix_socket_connect(hal_imsrtp, ims, ims)
 
-# Allow access to sp_keymaster device
-allow spdaemon sp_keymaster_device:chr_file rw_file_perms;
+# ioctlcmd=c302
+allowxperm hal_imsrtp self:socket ioctl msm_sock_ipc_ioctls;
 
-# Allow access to cryptoapp device
-allow spdaemon cryptoapp_device:chr_file rw_file_perms;
+allow hal_imsrtp self:capability net_bind_service;
 
-# Allow access to ion device
-allow spdaemon ion_device:chr_file rw_file_perms;
+allow hal_imsrtp ion_device:chr_file r_file_perms;
 
-# Allow to load SPSS firmware images
-r_dir_file(spdaemon, firmware_file);
+allow hal_imsrtp sysfs_data:file r_file_perms;
 
-# Allow to load SPSS Apps images
-allow spdaemon spss_data_file:dir r_dir_perms;
-allow spdaemon spss_data_file:file r_file_perms;
+get_prop(hal_imsrtp, qcom_ims_prop)
 
-# Allow check SPSS Apps images stat()
-allow spdaemon spss_data_file:file getattr;
-
-# Allow get system info
-r_dir_file(spdaemon, sysfs)
-
-# Allow SPSS-PIL via Peripheral Manager
-binder_use(spdaemon)
-use_per_mgr(spdaemon)
-
-# Allow set/get prop to set/check if app is loaded
-set_prop(spdaemon, spcomlib_prop)
-
-allow spdaemon sysfs_data:file r_file_perms;
+binder_call(hal_imsrtp, radio)
