@@ -65,6 +65,9 @@ userdebug_or_eng(`
   allow qti_logkit self:packet_socket create_socket_perms;
   allow qti_logkit self:capability net_raw;
   diag_use(qti_logkit)
+
+  # QDSS support
+  allow qti_logkit qdss_device:chr_file r_file_perms;
 ')
 
 binder_use(qti_logkit)
