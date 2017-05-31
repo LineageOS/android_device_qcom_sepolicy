@@ -79,3 +79,6 @@ add_hwservice(hal_graphics_composer_server, hal_display_config_hwservice);
 
 # Allow hwbinder call from hal client to server
 binder_call(hal_display_config_client, hal_display_config_server)
+
+# Allow composer access to perfd through mpctl socket
+unix_socket_connect(hal_graphics_composer, mpctl, perfd)
