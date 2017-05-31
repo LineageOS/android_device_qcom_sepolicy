@@ -28,18 +28,39 @@
 #dpmQmiMgr as domain
 type hal_dpmQmiMgr, domain;
 
-hal_server_domain(hal_dpmQmiMgr,hal_dpm_qmi)
-
 type hal_dpmQmiMgr_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(hal_dpmQmiMgr)
 
-binder_call(hal_dpm_qmi_client,hal_dpm_qmi_server)
+net_domain(hal_dpmQmiMgr)
 
+#Add hal_dpmQMiMgr as hwservice
 add_hwservice(hal_dpmQmiMgr, hal_dpmqmi_hwservice)
-allow hal_dpm_qmi_client hal_dpmqmi_hwservice:hwservice_manager find;
 
-#diag
+#Allow hwbinder usage
+hwbinder_use(hal_dpmQmiMgr)
+
+#Allow to get hwservice_prop
+get_prop(hal_dpmQmiMgr, hwservicemanager_prop)
+
+#Allow binder call from dpmd
+binder_call(hal_dpmQmiMgr,dpmd)
+
+#sysfs_data file permissions
+allow hal_dpmQmiMgr sysfs_data:file r_file_perms;
+
+#Allow reading proc/net entries
+r_dir_file(hal_dpmQmiMgr,proc_net)
+
+#Allow creating socket and IOCTLs
+allow hal_dpmQmiMgr self:socket create_socket_perms;
+
+#Rules below are needed to communicate with IPC_ROUTER for QMI
+allowxperm hal_dpmQmiMgr self:socket ioctl msm_sock_ipc_ioctls;
+allow hal_dpmQmiMgr self:capability net_bind_service;
+allow hal_dpmQmiMgr self:udp_socket create_socket_perms;
+allowxperm hal_dpmQmiMgr self:udp_socket ioctl priv_sock_ioctls;
+
 userdebug_or_eng(`
     diag_use(hal_dpmQmiMgr)
 ')
