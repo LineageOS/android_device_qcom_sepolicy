@@ -25,6 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+vendor.qti.hardware.fingerprint::IQtiExtendedFingerprint     u:object_r:hal_fingerprint_hwservice:s0
 vendor.qti.hardware.radio.am::IQcRilAudio                    u:object_r:hal_telephony_hwservice:s0
 vendor.qti.hardware.radio.config::IConfig                    u:object_r:hal_telephony_hwservice:s0
 vendor.qti.hardware.radio.ims::IImsRadio                     u:object_r:hal_telephony_hwservice:s0

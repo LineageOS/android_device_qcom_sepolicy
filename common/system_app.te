@@ -116,7 +116,7 @@ binder_call(system_app, seempd)
 allow system_app qfp-daemon_data_file:dir create_dir_perms;
 allow system_app qfp-daemon_data_file:file create_file_perms;
 binder_call(system_app, qfp-daemon)
-
+hal_client_domain(system_app, hal_fingerprint)
 # allow system_app to interact with fido daemon
 binder_call(system_app, fidodaemon)
 
