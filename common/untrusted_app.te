@@ -15,11 +15,5 @@ userdebug_or_eng(`
 # for finding wbc_service
 allow untrusted_app wbc_service:service_manager find;
 
-# using binder call
-userdebug_or_eng(`
-  allow untrusted_app improve_touch_service:service_manager find;
-  binder_call(untrusted_app, hbtp);
-')
-
 # for finding gba_auth_service
 allow untrusted_app gba_auth_service:service_manager find;
