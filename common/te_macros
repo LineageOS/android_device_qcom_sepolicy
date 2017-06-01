@@ -61,3 +61,17 @@ define(`diag_use', `
 r_dir_file($1, sysfs_diag)
 allow $1 diag_device:chr_file rw_file_perms;
 ')
+
+#####################################
+# use_netutils(clientdomain)
+# allow access to netutils from vendor
+define(`use_netutils', `
+domain_auto_trans($1, netutils_wrapper_exec, netutils_wrapper)
+allow netutils_wrapper $1:fd use;
+allow netutils_wrapper $1:fifo_file { read write };
+allow netutils_wrapper $1:netlink_route_socket { read write };
+allow netutils_wrapper $1:unix_stream_socket { read write };
+allow netutils_wrapper $1:netlink_generic_socket { read write };
+allow netutils_wrapper $1:netlink_xfrm_socket { read write };
+allow netutils_wrapper $1:udp_socket { read write };
+')
