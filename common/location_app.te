@@ -1,6 +1,7 @@
 type location_app, domain;
 app_domain(location_app)
 binder_use(location_app)
+hal_client_domain(location_app, hal_gnss)
 
 qmux_socket(location_app)
 
