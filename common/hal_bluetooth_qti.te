@@ -32,8 +32,8 @@ type hal_bluetooth_qti_exec, exec_type, file_type;
 init_daemon_domain(hal_bluetooth_qti)
 
 # Logging for backward compatibility
-allow hal_bluetooth bluetooth_data_file:dir ra_dir_perms;
-allow hal_bluetooth bluetooth_data_file:file create_file_perms;
+allow hal_bluetooth_qti bluetooth_data_file:dir ra_dir_perms;
+allow hal_bluetooth_qti bluetooth_data_file:file create_file_perms;
 
 allow hal_bluetooth {
     serial_device
