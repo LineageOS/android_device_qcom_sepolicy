@@ -205,3 +205,9 @@ allow system_app qseeproxy:unix_dgram_socket sendto;
 
 #allow system_app access boot mode switch
 set_prop(system_app, boot_mode_prop);
+
+# allow access to cache recovery for LK3
+allow system_app cache_file:dir create_dir_perms;
+allow system_app cache_file:file create_file_perms;
+allow system_app cache_recovery_file:dir rw_dir_perms;
+allow system_app cache_recovery_file:file create_file_perms;
