@@ -69,3 +69,5 @@ use_per_mgr(spdaemon)
 
 # Allow set/get prop to set/check if app is loaded
 set_prop(spdaemon, spcomlib_prop)
+
+allow spdaemon sysfs_data:file r_file_perms;

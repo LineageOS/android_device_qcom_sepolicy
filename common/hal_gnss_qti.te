@@ -33,19 +33,18 @@ init_daemon_domain(hal_gnss_qti)
 hal_server_domain(hal_gnss_qti, hal_gnss)
 
 allow hal_gnss_qti location_data_file:dir r_dir_perms;
-unix_socket_connect(hal_gnss_qti, location, location)
+unix_socket_connect(hal_gnss, location, location)
 
 netmgr_socket(hal_gnss)
 allow hal_gnss self:netlink_generic_socket create_socket_perms_no_ioctl;
 
 allow hal_gnss self:socket rw_socket_perms;
 allow hal_gnss sysfs:file r_file_perms;
+allow hal_gnss sysfs_data:file r_file_perms;
 allow hal_gnss sysfs:dir r_dir_perms;
 
-allow hal_gnss self:udp_socket ioctl;
 allow hal_gnss self:socket { create ioctl };
 allowxperm hal_gnss self:socket ioctl msm_sock_ipc_ioctls;
-allowxperm hal_gnss self:udp_socket ioctl SIOCDEVPRIVATE_D;
 
 userdebug_or_eng(`
   diag_use(hal_gnss);

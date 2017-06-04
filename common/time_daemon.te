@@ -26,3 +26,5 @@ r_dir_file(time_daemon, sysfs_esoc);
 userdebug_or_eng(`
   diag_use(time_daemon)
 ')
+
+allow time_daemon sysfs_data:file r_file_perms;

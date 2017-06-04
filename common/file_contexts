@@ -110,7 +110,6 @@
 /dev/socket/thermal-send-rule                   u:object_r:thermal_socket:s0
 /dev/socket/ims_qmid                            u:object_r:ims_socket:s0
 /dev/socket/ims_datad                           u:object_r:ims_socket:s0
-/dev/socket/ims_rtpd                            u:object_r:ims_socket:s0
 /dev/socket/perfd                               u:object_r:mpctl_socket:s0
 /dev/socket/gamed                               u:object_r:gamed_socket:s0
 /dev/socket/iop                                 u:object_r:iop_socket:s0
@@ -162,7 +161,7 @@
 /system/bin/msm_irqbalance                      u:object_r:msm_irqbalanced_exec:s0
 /(vendor|system/vendor)/bin/imsdatadaemon       u:object_r:ims_exec:s0
 /(vendor|system/vendor)/bin/imsqmidaemon        u:object_r:ims_exec:s0
-/(vendor|system/vendor)/bin/ims_rtp_daemon      u:object_r:ims_exec:s0
+/(vendor|system/vendor)/bin/ims_rtp_daemon      u:object_r:hal_imsrtp_exec:s0
 /(vendor|system/vendor)/bin/imscmservice        u:object_r:imscm_exec:s0
 /(vendor|system/vendor)/bin/netmgrd             u:object_r:netmgrd_exec:s0
 /(vendor|system/vendor)/bin/qmuxd               u:object_r:qmuxd_exec:s0
@@ -206,20 +205,16 @@
 /(vendor|system/vendor)/bin/ssr_setup           u:object_r:ssr_setup_exec:s0
 /(vendor|system/vendor)/bin/subsystem_ramdump   u:object_r:subsystem_ramdump_exec:s0
 /(vendor|system/vendor)/bin/ssr_diag            u:object_r:ssr_diag_exec:s0
-/system/bin/loc_launcher                        u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service-qti u:object_r:hal_gnss_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.0-service u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti  u:object_r:hal_bluetooth_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.display\.color@1\.0-service u:object_r:hal_display_color_default_exec:s0
-/system/bin/quipc_main                          u:object_r:location_exec:s0
-/system/bin/ipepb                               u:object_r:location_exec:s0
-/system/bin/quipc_igsn                          u:object_r:location_exec:s0
-/system/bin/lowi-server                         u:object_r:location_exec:s0
-/system/bin/location-mq                         u:object_r:location_exec:s0
-/system/bin/xtwifi-inet-agent                   u:object_r:location_exec:s0
-/system/bin/xtwifi-client                       u:object_r:location_exec:s0
-/system/bin/garden_app                          u:object_r:location_exec:s0
-/system/bin/DR_AP_Service                       u:object_r:location_exec:s0
-/system/bin/gpsone_daemon                       u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/loc_launcher        u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/lowi-server         u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/xtwifi-inet-agent   u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/xtwifi-client       u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/garden_app          u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/DR_AP_Service       u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/slim_daemon         u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/xtra-daemon         u:object_r:location_exec:s0
 /system/bin/energy-awareness                    u:object_r:energyawareness_exec:s0
@@ -306,12 +301,14 @@
 /sys/bus/msm_subsys/devices/subsys3/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/bus/msm_subsys/devices/subsys4/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/devices/soc0/.*                                                u:object_r:sysfs_socinfo:s0
+/sys/devices/soc/soc:qcom,ipa_fws@[a-f0-9]+/subsys0/name            u:object_r:sysfs_data:s0
 /sys/devices/soc/soc:hbtp/secure_touch                              u:object_r:hbtp_kernel_sysfs:s0
 /sys/devices/soc/soc:hbtp/secure_touch_enable                       u:object_r:hbtp_kernel_sysfs:s0
 /sys/devices/soc/soc:hbtp/secure_touch_userspace                    u:object_r:hbtp_kernel_sysfs:s0
 /sys/firmware/devicetree/base/cpus(/.*)?                            u:object_r:sysfs_devices_system_cpu:s0
 /sys/devices/vendor/vendor:bt_wcn3990/extldo                        u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/vendor/vendor:bt_wcn3990/rfkill/rfkill0/state          u:object_r:sysfs_bluetooth_writable:s0
+/sys/module/diagchar(/.*)?                                          u:object_r:sysfs_diag:s0
 ###################################
 # data files
 #
@@ -333,11 +330,11 @@
 /data/dpm(/.*)?                                                     u:object_r:dpmd_data_file:s0
 /data/misc/qsee(/.*)?                                               u:object_r:data_qsee_file:s0
 /data/misc/spss(/.*)?                                               u:object_r:spss_data_file:s0
-/data/misc/location(/.*)?                                           u:object_r:location_data_file:s0
-/data/misc/location/mq/location-mq-s                                u:object_r:location_socket:s0
-/data/misc/location/mq/alarm_svc                                    u:object_r:location_socket:s0
+/data/vendor/location(/.*)?                                         u:object_r:location_data_file:s0
+/data/vendor/location/mq/location-mq-s                              u:object_r:location_socket:s0
+/data/vendor/location/mq/alarm_svc                                  u:object_r:location_socket:s0
 /data/FTM_AP(/.*)?                                                  u:object_r:mmi_data_file:s0
-/data/misc/hbtp(/.*)?                                               u:object_r:hbtp_log_file:s0
+/data/(misc|vendor)/hbtp(/.*)?                                      u:object_r:hbtp_log_file:s0
 /data/misc/qlogd(/.*)?                                              u:object_r:qlogd_data_file:s0
 /data/usf(/.*)?                                                     u:object_r:usf_data_file:s0
 /data/misc/dts(/.*)?                                                u:object_r:dts_data_file:s0
@@ -383,7 +380,7 @@
 ###################################
 # etc files
 #
-/etc/firmware/hbtp/*                                                u:object_r:hbtp_cfg_file:s0
+/vendor/etc/hbtp/*                                                  u:object_r:hbtp_cfg_file:s0
 
 ###################################
 # adsp files
