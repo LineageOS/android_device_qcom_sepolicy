@@ -1,5 +1,5 @@
 type wfdservice, domain;
-type wfdservice_exec, exec_type, file_type;
+type wfdservice_exec, exec_type, vendor_file_type, file_type;
 
 #Allow for transition from init domain to wfdservice
 init_daemon_domain(wfdservice)

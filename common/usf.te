@@ -1,6 +1,6 @@
 # Policy for usf daemons
 type usf, domain;
-type usf_exec, exec_type, file_type;
+type usf_exec, exec_type, vendor_file_type, file_type;
 
 # Started by init
 init_daemon_domain(usf)

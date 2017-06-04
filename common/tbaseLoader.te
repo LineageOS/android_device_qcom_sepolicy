@@ -27,7 +27,7 @@
 
 # tbase loader
 type tbaseLoader, domain;
-type tbaseLoader_exec, exec_type, file_type;
+type tbaseLoader_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(tbaseLoader)
 
 # Allow tbaseLoader to use qseecom services for loading the app

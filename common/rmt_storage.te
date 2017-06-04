@@ -1,6 +1,6 @@
 # rmt_storage - rmt_storage daemon
 type rmt_storage, domain;
-type rmt_storage_exec, exec_type, file_type;
+type rmt_storage_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(rmt_storage)
 
 allow rmt_storage {

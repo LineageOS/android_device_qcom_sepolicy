@@ -28,7 +28,7 @@
 type hal_bluetooth_qti, domain;
 hal_server_domain(hal_bluetooth_qti, hal_bluetooth)
 
-type hal_bluetooth_qti_exec, exec_type, file_type;
+type hal_bluetooth_qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_bluetooth_qti)
 
 # Logging for backward compatibility
