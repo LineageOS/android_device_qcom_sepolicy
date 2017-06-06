@@ -396,6 +396,7 @@
 ###################################
 # vendor files
 #
+/data/vendor/misc/audio(/.*)?   u:object_r:audio_data_file:s0
 
 ###################################
 # firmware images
