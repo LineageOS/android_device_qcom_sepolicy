@@ -28,9 +28,6 @@ r_dir_file(mediaserver, sysfs_esoc)
 allow mediaserver dts_data_file:dir rw_dir_perms;
 allow mediaserver dts_data_file:file create_file_perms;
 
-# allow poweroffhandler to binder mediaserver
-binder_call(mediaserver, poweroffhandler);
-
 # access to perflock
 allow mediaserver mpctl_socket:dir r_dir_perms;
 unix_socket_send(mediaserver, mpctl, mpdecision)

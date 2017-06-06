@@ -10,9 +10,6 @@ allow surfaceflinger persist_file:dir search;
 
 allow surfaceflinger sysfs:file write;
 
-# Use open file provided by poweroffhandler
-binder_call(surfaceflinger, poweroffhandler);
-
 binder_call(surfaceflinger, location)
 binder_call(surfaceflinger, tee)
 
