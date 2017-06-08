@@ -129,6 +129,9 @@ hal_client_domain(system_app, hal_display_color)
 # allow system_app to interact with display postproc hal
 hal_client_domain(system_app, hal_display_postproc)
 
+# allow system_app to interact with light hal
+hal_client_domain(system_app, hal_light);
+
 #allow access to RIDL
 allow system_app RIDL_data_file:dir rw_dir_perms;
 allow system_app RIDL_data_file:file create_file_perms;
