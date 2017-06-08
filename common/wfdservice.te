@@ -10,6 +10,10 @@ net_domain(wfdservice)
 #Allow wfdservice to use Binder IPC
 binder_use(wfdservice)
 
+#Allow hardware binder use
+hwbinder_use(wfdservice)
+get_prop(wfdservice, hwservicemanager_prop)
+
 #Allow for interaction with Display HAL
 binder_call(wfdservice, surfaceflinger)
 binder_call(surfaceflinger, wfdservice)
@@ -104,3 +108,18 @@ allow wfdservice self:netlink_socket create_socket_perms_no_ioctl;
 
 #Allow ion device access
 allow wfdservice ion_device:chr_file r_file_perms;
+
+#Allow hal graphics mapper permissions
+hal_client_domain(wfdservice, hal_graphics_composer);
+
+#Allow hal graphics allocator permissions
+hal_client_domain(wfdservice, hal_graphics_allocator);
+
+#Allow udp socket ioctl
+allow wfdservice self:udp_socket ioctl;
+
+# ioctlcmd=8bff
+allowxperm wfdservice self:udp_socket ioctl priv_sock_ioctls;
+
+#Allow access to proc/net/arp
+allow wfdservice proc_net:file r_file_perms;
