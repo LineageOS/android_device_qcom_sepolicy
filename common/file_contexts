@@ -201,10 +201,12 @@
 /system/bin/mm-qcamera-daemon                   u:object_r:mm-qcamerad_exec:s0
 /(vendor|system/vendor)/bin/qfp-daemon          u:object_r:qfp-daemon_exec:s0
 /system/rfs.*                                   u:object_r:rfs_system_file:s0
-/system/bin/time_daemon                         u:object_r:time_daemon_exec:s0
-/system/bin/rmt_storage                         u:object_r:rmt_storage_exec:s0
+/(vendor|system/vendor)/bin/time_daemon                         u:object_r:time_daemon_exec:s0
+/(vendor|system/vendor)/bin/rmt_storage                         u:object_r:rmt_storage_exec:s0
 /system/bin/rfs_access                          u:object_r:rfs_access_exec:s0
+/(vendor|system/vendor)/bin/rfs_access          u:object_r:rfs_access_exec:s0
 /system/bin/tftp_server                         u:object_r:rfs_access_exec:s0
+/(vendor|system/vendor)/bin/tftp_server         u:object_r:rfs_access_exec:s0
 /system/bin/hvdcp                               u:object_r:hvdcp_exec:s0
 /(vendor|system/vendor)/bin/qseecomd            u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/bg_daemon           u:object_r:bg_daemon_exec:s0
@@ -224,7 +226,7 @@
 /(vendor|system/vendor)/bin/pd-api-test         u:object_r:pd_mapper_exec:s0
 /system/bin/usb_uicc_client                     u:object_r:usb_uicc_daemon_exec:s0
 /(vendor|system/vendor)/bin/qcom-system-daemon  u:object_r:qcomsysd_exec:s0
-/system/bin/poweroffhandler                     u:object_r:poweroffhandler_exec:s0
+/(vendor|system/vendor)/bin/poweroffhandler                     u:object_r:poweroffhandler_exec:s0
 /system/xbin/qlogd                              u:object_r:qlogd_exec:s0
 /system/bin/ipacm                               u:object_r:ipacm_exec:s0
 /system/bin/ipacm-diag                          u:object_r:ipacm-diag_exec:s0
