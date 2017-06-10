@@ -138,7 +138,7 @@
 /system/bin/audiod                              u:object_r:audiod_exec:s0
 /(vendor|system/vendor)/bin/nqnfcinfo           u:object_r:nqnfcinfo_exec:s0
 /system/bin/charger_monitor                     u:object_r:charger_monitor_exec:s0
-/system/bin/hvdcp_opti                          u:object_r:hvdcp_exec:s0
+/(vendor|system/vendor)/bin/hvdcp_opti          u:object_r:hvdcp_exec:s0
 /(vendor|system/vendor)/bin/cnd                 u:object_r:cnd_exec:s0
 /(vendor|system/vendor)/bin/diag_callback_client                u:object_r:diag_exec:s0
 /(vendor|system/vendor)/bin/diag_dci_sample                     u:object_r:diag_exec:s0
