@@ -4,12 +4,12 @@
 
 /system/bin/diag_dci_client      u:object_r:diagdciclient_exec:s0
 
-/system/bin/ptt_socket_app                      u:object_r:wcnss_service_exec:s0
+/(vendor|system/vendor)/bin/ptt_socket_app      u:object_r:wcnss_service_exec:s0
 /system/bin/athdiag                             u:object_r:wcnss_service_exec:s0
 /system/bin/cld-fwlog-netlink                   u:object_r:wcnss_service_exec:s0
 /system/bin/cld-fwlog-record                    u:object_r:wcnss_service_exec:s0
 /system/bin/cld-fwlog-parser                    u:object_r:wcnss_service_exec:s0
-/system/bin/cnss_diag                           u:object_r:wcnss_service_exec:s0
+/(vendor|system/vendor)/bin/cnss_diag           u:object_r:wcnss_service_exec:s0
 /system/bin/iwpriv                              u:object_r:wcnss_service_exec:s0
 /system/bin/iwconfig                            u:object_r:wcnss_service_exec:s0
 /system/bin/iw                                  u:object_r:wcnss_service_exec:s0
