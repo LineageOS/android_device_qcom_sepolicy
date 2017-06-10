@@ -31,3 +31,8 @@ type init_qcom_usb_exec, exec_type, vendor_file_type, file_type;
 r_dir_file(init_qcom_usb, sysfs_socinfo)
 
 init_daemon_domain(init_qcom_usb)
+
+set_prop(init_qcom_usb, sys_usb_configfs_prop)
+set_prop(init_qcom_usb, sys_usb_controller_prop)
+set_prop(init_qcom_usb, system_prop)
+
