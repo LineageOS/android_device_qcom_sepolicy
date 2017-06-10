@@ -26,6 +26,7 @@ type sysfs_hsic_modem_wait, sysfs_type, fs_type;
 type sysfs_smd_open_timeout, sysfs_type, fs_type;
 
 #Define the files written during the operation of netmgrd and qmuxd
+type netmgrd_data_file, file_type, data_file_type;
 type data_test_data_file, file_type, data_file_type;
 type sysrq_trigger_proc, fs_type, mlstrustedobject;
 # Persist file types
