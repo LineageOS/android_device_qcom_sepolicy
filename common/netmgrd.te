@@ -7,6 +7,7 @@ userdebug_or_eng(`
   domain_auto_trans(shell, netmgrd_exec, netmgrd)
   #domain_auto_trans(adbd, netmgrd_exec, netmgrd)
   diag_use(netmgrd)
+  diag_use(netutils_wrapper)
 ')
 
 #Allow files to be written during the operation of netmgrd
@@ -29,7 +30,9 @@ allow netmgrd netmgrd_data_file:file create_file_perms;
 allow netmgrd netmgrd_data_file:dir w_dir_perms;
 
 #Allow netutils usage
-use_netutils(netmgrd);
+use_netutils(netmgrd)
+allow netutils_wrapper netmgrd_data_file:file rw_file_perms;
+allow netutils_wrapper wcnss_service_exec:file rx_file_perms;
 
 #Allow operations on different types of sockets
 allow netmgrd netmgrd:rawip_socket { create getopt setopt write };
