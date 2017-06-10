@@ -5,7 +5,7 @@
 /system/bin/diag_dci_client      u:object_r:diagdciclient_exec:s0
 
 /(vendor|system/vendor)/bin/ptt_socket_app      u:object_r:wcnss_service_exec:s0
-/system/bin/athdiag                             u:object_r:wcnss_service_exec:s0
+/(vendor|system/vendor)/bin/athdiag             u:object_r:wcnss_service_exec:s0
 /system/bin/cld-fwlog-netlink                   u:object_r:wcnss_service_exec:s0
 /system/bin/cld-fwlog-record                    u:object_r:wcnss_service_exec:s0
 /system/bin/cld-fwlog-parser                    u:object_r:wcnss_service_exec:s0
@@ -20,7 +20,7 @@
 /system/bin/mboxping                            u:object_r:wcnss_service_exec:s0
 /system/bin/sigma_dut                           u:object_r:wcnss_service_exec:s0
 /system/bin/pktlog                              u:object_r:wcnss_service_exec:s0
-/system/bin/hal_proxy_daemon                    u:object_r:wcnss_service_exec:s0
+/(vendor|system/vendor)/bin/hal_proxy_daemon    u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/Wifilogger_app      u:object_r:wcnss_service_exec:s0
 /system/bin/hs20-osu-client                     u:object_r:wcnss_service_exec:s0
 /system/bin/ndc                                 u:object_r:wcnss_service_exec:s0
@@ -50,7 +50,7 @@
 /system/bin/ipead_test                          u:object_r:location_exec:s0
 /system/bin/quipc_iwmm_test                     u:object_r:location_exec:s0
 /system/bin/slimcw_test                         u:object_r:location_exec:s0
-/system/bin/lowi_test                           u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/lowi_test           u:object_r:location_exec:s0
 /system/bin/test-lowi-client                    u:object_r:location_exec:s0
 /system/bin/quipc_os_api_test_1                 u:object_r:location_exec:s0
 /system/bin/quipc_os_api_test_2                 u:object_r:location_exec:s0
