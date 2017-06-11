@@ -49,6 +49,7 @@ r_dir_file(hal_bluetooth, persist_file)
 
 #bt power node access
 allow hal_bluetooth {
+    smd_device
     bt_device
 }:chr_file rw_file_perms;
 
