@@ -1,7 +1,7 @@
 # Policy for ssr_setup
 # ssr_setup - ssr_setup domain
 type ssr_setup, domain;
-type ssr_setup_exec, exec_type, vendor_file_type, file_type;
+type ssr_setup_exec, exec_type, file_type;
 init_daemon_domain(ssr_setup);
 
 # Required to discover esoc's

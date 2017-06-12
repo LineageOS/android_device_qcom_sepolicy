@@ -1,6 +1,6 @@
 #integrated process
 type mmi, domain;
-type mmi_exec, exec_type, vendor_file_type, file_type;
+type mmi_exec, exec_type, file_type;
 
 #started by init
 init_daemon_domain(mmi)

@@ -27,7 +27,7 @@
 
 # RIDL
 type RIDL, domain;
-type RIDL_exec, exec_type, vendor_file_type, file_type;
+type RIDL_exec, exec_type, file_type;
 
 allow RIDL RIDL_socket:sock_file create_file_perms;
 allow RIDL RIDL_socket:dir create_dir_perms;

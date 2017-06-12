@@ -1,5 +1,5 @@
 type energyawareness, domain;
-type energyawareness_exec, exec_type, vendor_file_type, file_type;
+type energyawareness_exec, exec_type, file_type;
 
 #started by init
 init_daemon_domain(energyawareness)

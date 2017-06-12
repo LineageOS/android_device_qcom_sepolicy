@@ -1,7 +1,7 @@
 #Policy file for qcom-system-daemon
 #qcomsysd = qcom-system-daemon domain
 type qcomsysd, domain;
-type qcomsysd_exec, exec_type, vendor_file_type, file_type;
+type qcomsysd_exec, exec_type, file_type;
 init_daemon_domain(qcomsysd);
 
 #Needed for logging

@@ -1,6 +1,6 @@
 # adsprpcd daemon
 type adsprpcd, domain;
-type adsprpcd_exec, exec_type, vendor_file_type, file_type;
+type adsprpcd_exec, exec_type, file_type;
 
 # Started by init
 init_daemon_domain(adsprpcd)

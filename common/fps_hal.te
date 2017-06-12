@@ -27,7 +27,7 @@
 
 #==========================fps_hal================================
 type fps_hal, domain;
-type fps_hal_exec, exec_type, vendor_file_type, file_type;
+type fps_hal_exec, exec_type, file_type;
 
 init_daemon_domain(fps_hal)
 
