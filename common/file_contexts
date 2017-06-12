@@ -314,6 +314,7 @@
 /sys/devices/soc/soc:hbtp/secure_touch                              u:object_r:hbtp_kernel_sysfs:s0
 /sys/devices/soc/soc:hbtp/secure_touch_enable                       u:object_r:hbtp_kernel_sysfs:s0
 /sys/devices/soc/soc:hbtp/secure_touch_userspace                    u:object_r:hbtp_kernel_sysfs:s0
+/sys/kernel/hbtp/display_pwr                                        u:object_r:hbtp_kernel_sysfs:s0
 /sys/firmware/devicetree/base/cpus(/.*)?                            u:object_r:sysfs_devices_system_cpu:s0
 /sys/devices/vendor/vendor:bt_wcn3990/extldo                        u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/vendor/vendor:bt_wcn3990/rfkill/rfkill0/state          u:object_r:sysfs_bluetooth_writable:s0
