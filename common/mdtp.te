@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type mdtpdaemon, domain;
-type mdtpdaemon_exec, exec_type, file_type;
+type mdtpdaemon_exec, exec_type, vendor_file_type, file_type;
 
 allow mdtpdaemon self:capability {
     setuid
@@ -44,13 +44,13 @@ userdebug_or_eng(`
 init_daemon_domain(mdtpdaemon)
 
 #Allow mdtpdaemon to use Binder IPC
-binder_use(mdtpdaemon)
+#binder_use(mdtpdaemon)
 
 #Mark mdtpdaemon as a Binder service domain
-binder_service(mdtpdaemon)
+#binder_service(mdtpdaemon)
 
 #Allow mdtpdaemon to be registered with service manager
-allow mdtpdaemon mdtpdaemon_service:service_manager { add find };
+#allow mdtpdaemon mdtpdaemon_service:service_manager { add find };
 
 #Allow apps to interact with mdtpdaemon
 binder_call(mdtpdaemon, platform_app)

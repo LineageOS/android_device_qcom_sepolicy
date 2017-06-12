@@ -28,7 +28,7 @@
 type hal_bluetooth_qti, domain;
 hal_server_domain(hal_bluetooth_qti, hal_bluetooth)
 
-type hal_bluetooth_qti_exec, exec_type, file_type;
+type hal_bluetooth_qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_bluetooth_qti)
 
 # Logging for backward compatibility
@@ -37,6 +37,7 @@ allow hal_bluetooth_qti bluetooth_data_file:file create_file_perms;
 
 allow hal_bluetooth {
     serial_device
+    smd_device
 }:chr_file rw_file_perms;
 
 #For bluetooth firmware

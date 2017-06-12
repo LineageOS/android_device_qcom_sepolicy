@@ -27,15 +27,15 @@
 
 #qfp daemon for ultrasonic fingerprint sensor
 type qfp-daemon, domain;
-type qfp-daemon_exec, exec_type, file_type;
+type qfp-daemon_exec, exec_type, vendor_file_type, file_type;
 
 net_domain(qfp-daemon)
 init_daemon_domain(qfp-daemon)
 
-binder_call(qfp-daemon, servicemanager)
+#binder_call(qfp-daemon, servicemanager)
 binder_call(qfp-daemon, system_app)
 binder_call(qfp-daemon, fps_hal)
-binder_use(qfp-daemon)
+#binder_use(qfp-daemon)
 
 allow qfp-daemon qfp-daemon_data_file:dir { rw_dir_perms setattr };
 allow qfp-daemon qfp-daemon_data_file:file create_file_perms;
@@ -44,7 +44,7 @@ allow qfp-daemon qfp-daemon_data_file:file create_file_perms;
 allow qfp-daemon tee_device:chr_file rw_file_perms;
 
 # Access QFP Android Proxy
-allow qfp-daemon qfp_proxy_service:service_manager find;
+#allow qfp-daemon qfp_proxy_service:service_manager find;
 
 # Add IQfpService service
 allow qfp-daemon iqfp_service:service_manager add;

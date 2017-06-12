@@ -43,14 +43,14 @@ allow system_app {
 }:service_manager add;
 
 # access to perflock
-allow system_app mpctl_socket:dir r_dir_perms;
-unix_socket_send(system_app, mpctl, mpdecision)
-unix_socket_connect(system_app, mpctl, mpdecision)
-unix_socket_send(system_app, mpctl, perfd)
-unix_socket_connect(system_app, mpctl, perfd)
+#allow system_app mpctl_socket:dir r_dir_perms;
+#unix_socket_send(system_app, mpctl, mpdecision)
+#unix_socket_connect(system_app, mpctl, mpdecision)
+#unix_socket_send(system_app, mpctl, perfd)
+#unix_socket_connect(system_app, mpctl, perfd)
 
 # access to mm-pp-daemon
-unix_socket_connect(system_app, pps, mm-pp-daemon)
+#unix_socket_connect(system_app, pps, mm-pp-daemon)
 
 userdebug_or_eng(`
   typeattribute system_app qti_debugfs_domain;
@@ -73,23 +73,23 @@ allow system_app cnd_data_file:file create_file_perms;
 allow system_app bluetooth:unix_stream_socket ioctl;
 
 # access to tee domain
-allow system_app tee:unix_dgram_socket sendto;
+#allow system_app tee:unix_dgram_socket sendto;
 
 # system app to access DTS data files
 r_dir_file(system_app, dts_data_file)
 
 # access to time_daemon
-allow system_app time_daemon:unix_stream_socket connectto;
+#allow system_app time_daemon:unix_stream_socket connectto;
 
 # usf (ultrasound) apps need following permissions
-allow system_app usf:unix_stream_socket connectto;
+#allow system_app usf:unix_stream_socket connectto;
 allow system_app usf_data_file:sock_file write;
 allow system_app usf_data_file:dir rw_dir_perms;
 allow system_app usf_data_file:{ file lnk_file } create_file_perms;
 
 #access to wifi_ftmd
 allow system_app wififtmd_prop:property_service set;
-unix_socket_send(system_app, wififtmd, wifi_ftmd)
+#unix_socket_send(system_app, wififtmd, wifi_ftmd)
 
 # allow system_app to interact with dtseagleservice
 binder_call(system_app, dtseagleservice)
@@ -137,15 +137,15 @@ allow system_app RIDL_data_file:dir rw_dir_perms;
 allow system_app RIDL_data_file:file create_file_perms;
 allow system_app RIDL_data_file:lnk_file r_file_perms;
 allow system_app RIDL_socket:dir r_dir_perms;
-unix_socket_connect(system_app, RIDL, RIDL)
-allow system_app RIDL_socket:sock_file r_file_perms;
+#unix_socket_connect(system_app, RIDL, RIDL)
+#allow system_app RIDL_socket:sock_file r_file_perms;
 
 # Allow access to qti_logkit
 allow system_app qti_logkit_priv_data_file:dir create_dir_perms;
 allow system_app qti_logkit_priv_data_file:file create_file_perms;
 allow system_app qti_logkit_priv_socket:dir r_dir_perms;
-unix_socket_connect(system_app, qti_logkit_priv, qti_logkit)
-allow system_app qti_logkit_priv_socket:sock_file r_file_perms;
+#unix_socket_connect(system_app, qti_logkit_priv, qti_logkit)
+#allow system_app qti_logkit_priv_socket:sock_file r_file_perms;
 
 # iwconfig
 allow system_app wcnss_service_exec:file rx_file_perms;
@@ -192,7 +192,7 @@ set_prop(system_app, bluetooth_prop)
 # access unix sockets for fm application
 unix_socket_connect(system_app,bluetooth, bluetooth)
 # access  wcnss_filter from fm app
-allow system_app wcnss_filter:unix_stream_socket connectto;
+#allow system_app wcnss_filter:unix_stream_socket connectto;
 
 # ANR
 allow system_app anr_data_file:dir r_dir_perms;
@@ -201,10 +201,9 @@ allow system_app anr_data_file:file r_file_perms;
 allow system_app system_data_file:dir read;
 
 # allow access to ims helper
-unix_socket_connect(system_app, ims, ims)
+#unix_socket_connect(system_app, ims, ims)
 
 # access to qseeproxy domain
-allow system_app qseeproxy:unix_dgram_socket sendto;
 
 #allow system_app access boot mode switch
 set_prop(system_app, boot_mode_prop);
@@ -217,3 +216,4 @@ allow system_app cache_recovery_file:file create_file_perms;
 
 # update engine
 binder_call( system_app, update_engine )
+#allow system_app qseeproxy:unix_dgram_socket sendto;

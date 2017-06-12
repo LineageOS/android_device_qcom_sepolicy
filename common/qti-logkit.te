@@ -28,7 +28,7 @@
 # qti_logkit
 type qti_logkit, domain, mlstrustedsubject;
 init_daemon_domain(qti_logkit)
-type qti_logkit_exec, exec_type, file_type;
+type qti_logkit_exec, exec_type, vendor_file_type, file_type;
 
 # self file access
 allow qti_logkit qti_logkit_priv_data_file:dir create_dir_perms;
@@ -67,14 +67,14 @@ userdebug_or_eng(`
   diag_use(qti_logkit)
 ')
 
-binder_use(qti_logkit)
-allow qti_logkit shell_exec:file { rx_file_perms };
+#binder_use(qti_logkit)
+allow qti_logkit vendor_shell_exec:file { rx_file_perms };
 allow qti_logkit sysfs:file write;
 allow qti_logkit system_file:file x_file_perms;
 binder_call(qti_logkit, system_server)
 
 # allow logcat access
-read_logd( qti_logkit );
+#read_logd( qti_logkit );
 
 # allow access to recovery directory
 allow qti_logkit cache_recovery_file:dir rw_dir_perms;

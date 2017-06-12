@@ -26,19 +26,19 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type qvop, domain;
-type qvop_exec, exec_type, file_type;
+type qvop_exec, exec_type, vendor_file_type,file_type;
 
 init_daemon_domain(qvop)
 
 allow qvop qvop_data_file:dir create_dir_perms;
 allow qvop qvop_data_file:file create_file_perms;
 
-binder_call(qvop, system_app)
+#binder_call(qvop, system_app)
 
 # Add IQvopService service
-allow qvop iqvop_service:service_manager add;
+#allow qvop iqvop_service:service_manager add;
 
-binder_use(qvop)
+#binder_use(qvop)
 
 allow qvop tee_device:chr_file rw_file_perms;
 r_dir_file(qvop, firmware_file)

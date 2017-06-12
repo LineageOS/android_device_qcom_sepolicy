@@ -26,18 +26,18 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type qseeproxysample, domain;
-type qseeproxysample_exec, exec_type, file_type;
+type qseeproxysample_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(qseeproxysample)
 userdebug_or_eng(`
   #Allow test daemons to use Binder IPC
-  binder_use(qseeproxysample)
+  #binder_use(qseeproxysample)
 
   #Allow services to interact with test daemon
   binder_call(qseeproxysample, qsee_svc_app)
   binder_call(qsee_svc_app, qseeproxysample)
 
   # Mark test daemon as a Binder service domain
-  binder_service(qseeproxysample)
+  #binder_service(qseeproxysample)
 
   #Allow test daemon to be registered with service manager
   allow qseeproxysample qseeproxysample_service:service_manager add;
@@ -56,5 +56,5 @@ userdebug_or_eng(`
   allow qseeproxysample firmware_file:file r_file_perms;
 
   #Allow service manager to find
-  allow qsee_svc_app qseeproxysample_service:service_manager find;
+  #allow qsee_svc_app qseeproxysample_service:service_manager find;
 ')

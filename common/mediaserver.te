@@ -1,7 +1,7 @@
 # allow mediaserver to communicate with cnd
-unix_socket_connect(mediaserver, cnd, cnd)
+#unix_socket_connect(mediaserver, cnd, cnd)
 
-unix_socket_send(mediaserver, camera, mm-qcamerad)
+#unix_socket_send(mediaserver, camera, mm-qcamerad)
 
 allow mediaserver tee_device:chr_file rw_file_perms;
 allow mediaserver qdsp_device:chr_file r_file_perms;
@@ -10,7 +10,7 @@ allow mediaserver self:socket create_socket_perms_no_ioctl;
 
 binder_call(mediaserver, rild)
 
-qmux_socket(mediaserver)
+#qmux_socket(mediaserver)
 allow mediaserver camera_data_file:sock_file w_file_perms;
 
 userdebug_or_eng(`
@@ -32,23 +32,23 @@ allow mediaserver dts_data_file:file create_file_perms;
 binder_call(mediaserver, poweroffhandler);
 
 # access to perflock
-allow mediaserver mpctl_socket:dir r_dir_perms;
-unix_socket_send(mediaserver, mpctl, mpdecision)
-unix_socket_connect(mediaserver, mpctl, mpdecision)
+#allow mediaserver mpctl_socket:dir r_dir_perms;
+#unix_socket_send(mediaserver, mpctl, mpdecision)
+#unix_socket_connect(mediaserver, mpctl, mpdecision)
 
 # access to perflock
-allow mediaserver mpctl_socket:dir r_dir_perms;
-unix_socket_send(mediaserver, mpctl, perfd)
-unix_socket_connect(mediaserver, mpctl, perfd)
+#allow mediaserver mpctl_socket:dir r_dir_perms;
+#unix_socket_send(mediaserver, mpctl, perfd)
+#unix_socket_connect(mediaserver, mpctl, perfd)
 
 # for thermal sock files
-unix_socket_connect(mediaserver, thermal, thermal-engine)
+#unix_socket_connect(mediaserver, thermal, thermal-engine)
 
 #This is required for thermal sysfs access
 r_dir_file(mediaserver, sysfs_thermal);
 
 #allow mediaserver to communicate with timedaemon
-allow mediaserver time_daemon:unix_stream_socket connectto;
+#allow mediaserver time_daemon:unix_stream_socket connectto;
 
 # Allow mediaserver to create socket files for audio arbitration
 allow mediaserver audio_data_file:sock_file { create setattr unlink };

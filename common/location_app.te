@@ -22,7 +22,7 @@ allow location_app self:socket create_socket_perms;
 #allow location_app system_app_data_file:dir r_dir_perms;
 allow location_app anr_data_file:dir rw_dir_perms;
 allow location_app anr_data_file:file rw_file_perms;
-allow location_app { app_api_service system_api_service }:service_manager find;
+#allow location_app { app_api_service system_api_service }:service_manager find;
 # ioctlcmd=c302
 allowxperm location_app self:socket ioctl msm_sock_ipc_ioctls;
 allow location_app sysfs:file r_file_perms;

@@ -30,3 +30,5 @@ allow platform_app gba_auth_service:service_manager find;
 
 # Allow dpmservice to be found
 allow platform_app dpmservice:service_manager find;
+#get_prop(platform_app, bluetooth_prop)
+get_prop(platform_app, debug_gralloc_prop)

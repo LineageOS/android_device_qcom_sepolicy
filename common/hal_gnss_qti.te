@@ -27,7 +27,7 @@
 
 # hal_gnss_qti - binerized gnss hal
 type hal_gnss_qti, domain;
-type hal_gnss_qti_exec, exec_type, file_type;
+type hal_gnss_qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_gnss_qti)
 
 hal_server_domain(hal_gnss_qti, hal_gnss)
