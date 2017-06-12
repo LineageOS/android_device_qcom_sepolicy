@@ -29,6 +29,3 @@ type init_qcom_bt, domain;
 type init_qcom_bt_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(init_qcom_bt)
-
-set_prop(init_qcom_bt, bluetooth_prop)
-

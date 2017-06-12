@@ -29,12 +29,3 @@ type init_class_main, domain;
 type init_class_main_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(init_class_main)
-
-set_prop(init_class_main, ctl_netmgrd_prop)
-set_prop(init_class_main, ctl_port-bridge_prop)
-set_prop(init_class_main, ctl_qmuxd_prop)
-set_prop(init_class_main, ctl_rildaemon_prop)
-set_prop(init_class_main, ipacm-diag_prop)
-set_prop(init_class_main, ipacm_prop)
-set_prop(init_class_main, qti_prop)
-

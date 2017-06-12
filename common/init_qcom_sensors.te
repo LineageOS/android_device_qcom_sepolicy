@@ -29,6 +29,3 @@ type init_qcom_sensors, domain;
 type init_qcom_sensors_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(init_qcom_sensors)
-
-set_prop(init_qcom_sensors, sensors_prop)
-
