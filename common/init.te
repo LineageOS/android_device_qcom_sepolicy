@@ -49,7 +49,3 @@ allow init {
     modem_block_device
     mdtp_device
 }:{ blk_file lnk_file } relabelto;
-
-# to be able to run early boot script with seclabel provided
-# in the .rc fragment
-allow init qti_init_shell_exec:file { open read getattr execute };
