@@ -64,3 +64,9 @@ allow hal_bluetooth proc_sysrq:file w_file_perms;
 typeattribute hal_bluetooth_qti qti_debugfs_domain;
 allow hal_bluetooth_qti debugfs:file r_file_perms;
 ')
+
+allow system_app hal_bluetooth_hwservice :hwservice_manager find;
+
+#FM IPC with BT/FM hal daemon
+binder_call(system_app, hal_bluetooth);
+binder_call(hal_bluetooth, system_app);
