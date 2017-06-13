@@ -264,6 +264,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.0-service     u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service      u:object_r:hal_alarm_qti_default_exec:s0
 /(vendor|system/vendor)/bin/imsrcsd             u:object_r:hal_rcsservice_exec:s0
+/(vendor|system/vendor)/bin/vppservice          u:object_r:vppservice_exec:s0
 
 ###################################
 # sysfs files
@@ -402,6 +403,7 @@
 /data/misc/wifi/wigig_sockets/wpa_ctrl.*                            u:object_r:system_wpa_socket:s0
 /data/vendor/ramdump/bluetooth(/.*)?                                u:object_r:bluetooth_data_file:s0
 /data/vendor/ramdump/bluetooth/logs(/.*)?                           u:object_r:bluetooth_logs_data_file:s0
+/data/vendor/vpp(/.*)?                                              u:object_r:vpp_data_file:s0
 
 ###################################
 # persist files
@@ -423,6 +425,7 @@
 /persist/speccfg(/.*)?                                              u:object_r:regionalization_file:s0
 /persist/misc(/.*)?                                                 u:object_r:persist_misc_file:s0
 /persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
+/persist/vpp(/.*)?                                                  u:object_r:persist_vpp_file:s0
 
 ###################################
 # etc files
