@@ -1,0 +1,9 @@
+# Most HALs are not allowed to use network sockets. Qcom library
+# libqdi is used across multiple processes which are clients of
+# netmgrd including the GNSS HAL. libqdi first attempts to get the network
+# interface using an IOCTL on a UDP INET socket, which isn't allowed here.
+# If that fails, it falls back to using libc's if_nameindex() which requires
+# a netlink route socket, which HALs may use. Due to the initial
+# attempt to use a UDP socket, we still see a selinux denial,
+# but it is safe to ignore.
+dontaudit hal_gnss_default self:udp_socket create;
