@@ -1,18 +1,7 @@
-# Talks to qmuxd via the qmux_radio socket.
-qmux_socket(radio);
-
-#Need permission to execute dpmd talk to radio layer
-unix_socket_connect(radio, dpmd, dpmd)
-
-# Radio apps needs to communicate with IMS using ims_socket
-unix_socket_connect(radio, ims, ims)
-
 # IMS needs permission to use avtimer
 allow radio avtimer_device:chr_file r_file_perms;
 
 allow radio uce_service:service_manager { add find };
-
-allow radio self:socket create_socket_perms_no_ioctl;
 
 allow radio { cameraserver_service mediaextractor_service mediacodec_service }:service_manager find;
 #diag
