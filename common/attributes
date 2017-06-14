@@ -38,3 +38,6 @@ attribute hal_display_postproc;
 attribute hal_display_postproc_client;
 attribute hal_display_postproc_server;
 
+attribute hal_perf;
+attribute hal_perf_client;
+attribute hal_perf_server;
