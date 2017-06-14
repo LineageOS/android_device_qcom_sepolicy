@@ -13,10 +13,15 @@ allow dpmd {
 allow dpmd dpmd_data_file:file create_file_perms;
 allow dpmd dpmd_data_file:dir create_dir_perms;
 
-#allow dpmd to access qmux radio socket
-qmux_socket(dpmd);
+allow dpmd persist_dpm_prop:file r_file_perms;
 
 allow dpmd sysfs_wake_lock:file rw_file_perms;
+
+allow dpmd sysfs_data:dir r_dir_perms;
+
+allow dpmd sysfs_data:file r_file_perms;
+
+r_dir_file(dpmd,proc_net)
 
 allow dpmd self:capability {
     setuid
@@ -62,7 +67,14 @@ dpmd_socket_perm(netd)
 #explicitly allow udp socket permissions for appdomain
 allow dpmd appdomain:udp_socket rw_socket_perms;
 
-hal_client_domain(dpmd,hal_dpm_qmi);
+#Allow dpmd to acquire lock for iptables
+allow dpmd system_file:file lock;
+
+#Allow dpmd to connect to hal_dpmQMiMgr
+allow dpmd hal_dpmqmi_hwservice:hwservice_manager find;
+get_prop(dpmd, hwservicemanager_prop)
+binder_call(dpmd,hal_dpmQmiMgr)
+hwbinder_use(dpmd)
 
 #diag
 userdebug_or_eng(`

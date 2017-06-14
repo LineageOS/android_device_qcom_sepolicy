@@ -25,12 +25,18 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-vendor.qti.qcril.am::IQcRilAudio                             u:object_r:hal_telephony_hwservice:s0
-com.qualcomm.qti.qcril.qcrilhook::IQtiOemHook                u:object_r:hal_telephony_hwservice:s0
-com.qualcomm.qti.ims.radio::IImsRadio                        u:object_r:hal_telephony_hwservice:s0
+vendor.qti.hardware.radio.am::IQcRilAudio                    u:object_r:hal_telephony_hwservice:s0
+vendor.qti.hardware.radio.config::IConfig                    u:object_r:hal_telephony_hwservice:s0
+vendor.qti.hardware.radio.ims::IImsRadio                     u:object_r:hal_telephony_hwservice:s0
+vendor.qti.hardware.radio.qcrilhook::IQtiOemHook             u:object_r:hal_telephony_hwservice:s0
+vendor.qti.hardware.radio.qtiradio::IQtiRadio                u:object_r:hal_telephony_hwservice:s0
 vendor.display.color::IDisplayColor                          u:object_r:hal_display_color_hwservice:s0
 vendor.display.config::IDisplayConfig                        u:object_r:hal_display_config_hwservice:s0
 vendor.display.postproc::IDisplayPostproc                    u:object_r:hal_display_postproc_hwservice:s0
-vendor.qti.gnss::IGnssVendor                                 u:object_r:hal_gnss_hwservice:s0
+vendor.qti.gnss::ILocHidlGnss                                u:object_r:hal_gnss_hwservice:s0
+vendor.nxp.hardware.nfc::INqNfc                              u:object_r:hal_nfc_hwservice:s0
 com.qualcomm.qti.dpm.api::IdpmQmi                            u:object_r:hal_dpmqmi_hwservice:s0
 com.qualcomm.qti.imsrtpservice::IRTPService                  u:object_r:hal_imsrtp_hwservice:s0
+com.qualcomm.qti.bluetooth_audio::IBluetoothAudio            u:object_r:hal_audio_hwservice:s0
+com.qualcomm.qti.ant::IAntHci                                u:object_r:hal_bluetooth_hwservice:s0
+vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_bluetooth_hwservice:s0

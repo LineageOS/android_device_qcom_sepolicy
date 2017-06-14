@@ -32,8 +32,8 @@ type hal_bluetooth_qti_exec, exec_type, file_type;
 init_daemon_domain(hal_bluetooth_qti)
 
 # Logging for backward compatibility
-allow hal_bluetooth bluetooth_data_file:dir ra_dir_perms;
-allow hal_bluetooth bluetooth_data_file:file create_file_perms;
+allow hal_bluetooth_qti bluetooth_data_file:dir ra_dir_perms;
+allow hal_bluetooth_qti bluetooth_data_file:file create_file_perms;
 
 allow hal_bluetooth {
     serial_device
@@ -49,10 +49,17 @@ r_dir_file(hal_bluetooth, persist_file)
 
 #bt power node access
 allow hal_bluetooth {
+    smd_device
     bt_device
 }:chr_file rw_file_perms;
 
 #diag access
 userdebug_or_eng(`
     diag_use(hal_bluetooth)
+')
+
+userdebug_or_eng(`
+allow hal_bluetooth proc_sysrq:file w_file_perms;
+typeattribute hal_bluetooth_qti qti_debugfs_domain;
+allow hal_bluetooth_qti debugfs:file r_file_perms;
 ')

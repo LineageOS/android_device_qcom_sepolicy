@@ -1,4 +1,4 @@
-# Copyright (c) 2016, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016-2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,7 +24,8 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+###################################
 
-# Provide access to Q VoicePrint
-allow tee qvop_data_file:dir create_dir_perms;
-allow tee qvop_data_file:file create_file_perms;
+# non-hlos mount points
+/firmware                  u:object_r:firmware_file:s0
+/bt_firmware               u:object_r:bt_firmware_file:s0

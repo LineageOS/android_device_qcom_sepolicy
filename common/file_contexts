@@ -76,6 +76,7 @@
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/wlan                                       u:object_r:wlan_device:s0
+/dev/bg_com_dev                                 u:object_r:bg_daemon_device:s0
 
 ###################################
 # Dev block nodes
@@ -180,6 +181,7 @@
 /system/bin/tftp_server                         u:object_r:rfs_access_exec:s0
 /system/bin/hvdcp                               u:object_r:hvdcp_exec:s0
 /(vendor|system/vendor)/bin/qseecomd            u:object_r:tee_exec:s0
+/(vendor|system/vendor)/bin/bg_daemon           u:object_r:bg_daemon_exec:s0
 /system/bin/spdaemon                            u:object_r:spdaemon_exec:s0
 /system/bin/hostapd_cli                         u:object_r:hostapd_exec:s0
 /system/bin/adsprpcd                            u:object_r:adsprpcd_exec:s0
@@ -217,7 +219,7 @@
 /(vendor|system/vendor)/bin/DR_AP_Service       u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/slim_daemon         u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/xtra-daemon         u:object_r:location_exec:s0
-/system/bin/energy-awareness                    u:object_r:energyawareness_exec:s0
+/(vendor|system/vendor)/bin/energy-awareness    u:object_r:energyawareness_exec:s0
 /(vendor|system/vendor)/bin/fidodaemon          u:object_r:fidodaemon_exec:s0
 /(vendor|system/vendor)/bin/esepmdaemon         u:object_r:esepmdaemon_exec:s0
 /system/bin/secotad                             u:object_r:secotad_exec:s0
@@ -257,6 +259,7 @@
 /(vendor|system/vendor)/bin/fingerprint.qcom    u:object_r:fps_hal_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service-qti u:object_r:hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service-qti u:object_r:hal_gatekeeper_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.0-service     u:object_r:hal_nfc_default_exec:s0
 
 ###################################
 # sysfs files
@@ -290,6 +293,7 @@
 /sys/class/graphics/fb([0-2])+/mdp/caps                             u:object_r:sysfs_graphics:s0
 /sys/class/graphics/fb([0-2])+/ad                                   u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:sysfs_graphics:s0
+/sys/devices/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/bus/platform/drivers/xhci_msm_hsic(/.*)?                       u:object_r:sysfs_hsic:s0
 /sys/devices/msm_hsic_host/host_ready                               u:object_r:sysfs_hsic_host_rdy:s0
 /sys/bus/esoc(/.*)?                                                 u:object_r:sysfs_esoc:s0
@@ -309,6 +313,8 @@
 /sys/devices/vendor/vendor:bt_wcn3990/extldo                        u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/vendor/vendor:bt_wcn3990/rfkill/rfkill0/state          u:object_r:sysfs_bluetooth_writable:s0
 /sys/module/diagchar(/.*)?                                          u:object_r:sysfs_diag:s0
+/sys/devices/virtual/xt_hardidletimer/timers(/.*)?                  u:object_r:sysfs_data:s0
+/sys/devices/virtual/xt_idletimer/timers(/.*)?                      u:object_r:sysfs_data:s0
 ###################################
 # data files
 #
@@ -340,11 +346,13 @@
 /data/misc/dts(/.*)?                                                u:object_r:dts_data_file:s0
 /data/misc/seemp(/.*)?                                              u:object_r:seemp_file:s0
 /data/misc/SelfHost(/.*)?                                           u:object_r:RIDL_data_file:s0
+/data/misc/OTA(/.*)?                                                u:object_r:RIDL_data_file:s0
 /data/misc/qti-logkit(/.*)?                                         u:object_r:qti_logkit_priv_data_file:s0
 /data/misc/qti-logkit/shared-public(/.*)?                           u:object_r:qti_logkit_pub_data_file:s0
 /data/misc/qti-logkit/logdata(/.*)?                                 u:object_r:qti_logkit_pub_data_file:s0
 /data/misc/radio(/.*)?                                              u:object_r:radio_data_file:s0
-/data/misc/port_bridge(/.*)?                                        u:object_r:port_bridge_data_file:s0
+/data/vendor/netmgr(/.*)?                                           u:object_r:netmgrd_data_file:s0
+/data/vendor/port_bridge(/.*)?                                      u:object_r:port_bridge_data_file:s0
 /data/misc/fm(/.*)?                                                 u:object_r:fm_data_file:s0
 /data/misc/audio_pp(/.*)?                                           u:object_r:audio_pp_data_file:s0
 /data/ramdump(/.*)?                                                 u:object_r:ssr_ramdump_data_file:s0
@@ -395,6 +403,7 @@
 ###################################
 # vendor files
 #
+/data/vendor/misc/audio(/.*)?   u:object_r:audio_data_file:s0
 
 ###################################
 # firmware images

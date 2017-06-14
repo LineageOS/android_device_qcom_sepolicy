@@ -66,6 +66,9 @@ userdebug_or_eng(`
   allow system_app tombstone_data_file:dir r_dir_perms;
   allow system_app tombstone_data_file:file r_file_perms;
   diag_use(system_app)
+
+  # allow to read ssr ramdump
+  allow system_app ssr_ramdump_data_file:dir r_dir_perms;
 ')
 
 allow system_app cnd_data_file:dir w_dir_perms;
@@ -128,6 +131,9 @@ hal_client_domain(system_app, hal_display_color)
 
 # allow system_app to interact with display postproc hal
 hal_client_domain(system_app, hal_display_postproc)
+
+# allow system_app to interact with light hal
+hal_client_domain(system_app, hal_light);
 
 #allow access to RIDL
 allow system_app RIDL_data_file:dir rw_dir_perms;
@@ -205,3 +211,12 @@ allow system_app qseeproxy:unix_dgram_socket sendto;
 
 #allow system_app access boot mode switch
 set_prop(system_app, boot_mode_prop);
+
+# allow access to cache recovery for LK3
+allow system_app cache_file:dir create_dir_perms;
+allow system_app cache_file:file create_file_perms;
+allow system_app cache_recovery_file:dir rw_dir_perms;
+allow system_app cache_recovery_file:file create_file_perms;
+
+# update engine
+binder_call( system_app, update_engine )

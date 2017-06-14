@@ -37,6 +37,11 @@ allow location system_server:unix_stream_socket { read write connectto};
 # permission check for slim daemon
 allow location { sensorservice_service permission_service }:service_manager find;
 
+hwbinder_use(location)
+get_prop(location, hwservicemanager_prop)
+
+allow location fwk_sensor_hwservice:hwservice_manager find;
+
 allow location sensors_persist_file:dir r_dir_perms;
 allow location sensors_persist_file:file r_file_perms;
 
