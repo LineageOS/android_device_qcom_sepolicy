@@ -27,7 +27,7 @@
 
 
 # Allow interacting with esepmdaemon
-allow gatekeeperd esepmdaemon_service:service_manager find;
+#allow gatekeeperd esepmdaemon_service:service_manager find;
 
 # Allow gatekeeper to bind to esepmdaemon
-binder_call(gatekeeperd, esepmdaemon)
+#binder_call(gatekeeperd, esepmdaemon)
