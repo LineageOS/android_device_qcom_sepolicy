@@ -27,7 +27,7 @@
 
 type qsee_svc_app, domain;
 app_domain(qsee_svc_app)
-binder_use(qsee_svc_app)
+vndbinder_use(qsee_svc_app)
 
 # allow qsee_svc_app to interact with proxy daemon
 binder_call(qsee_svc_app, qseeproxy)
