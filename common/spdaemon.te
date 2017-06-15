@@ -28,7 +28,7 @@
 # spdaemon service
 type spdaemon, domain;
 
-type spdaemon_exec, exec_type, file_type;
+type spdaemon_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(spdaemon)
 
@@ -64,7 +64,7 @@ allow spdaemon spss_data_file:file getattr;
 r_dir_file(spdaemon, sysfs)
 
 # Allow SPSS-PIL via Peripheral Manager
-binder_use(spdaemon)
+#binder_use(spdaemon)
 use_per_mgr(spdaemon)
 
 # Allow set/get prop to set/check if app is loaded

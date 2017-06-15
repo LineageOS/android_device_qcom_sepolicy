@@ -41,7 +41,7 @@ r_dir_file( dumpstate, appdomain );
 r_dir_file( dumpstate, apk_data_file );
 
 #Create a socket for receiving info from IOP
-allow dumpstate iop_socket:sock_file rw_file_perms;
+#allow dumpstate iop_socket:sock_file rw_file_perms;
 
 #default_values file
 allow dumpstate iop_data_file:dir rw_dir_perms;

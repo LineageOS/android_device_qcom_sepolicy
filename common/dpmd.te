@@ -1,6 +1,6 @@
 #dpmd as domain
 type dpmd, domain, mlstrustedsubject;
-type dpmd_exec, exec_type, file_type;
+type dpmd_exec, exec_type, vendor_file_type, file_type;
 file_type_auto_trans(dpmd, socket_device, dpmwrapper_socket);
 init_daemon_domain(dpmd)
 net_domain(dpmd)
@@ -40,7 +40,7 @@ wakelock_use(dpmd)
 set_prop(dpmd, system_prop)
 set_prop(dpmd, ctl_default_prop)
 #misc.
-allow dpmd shell_exec:file rx_file_perms;
+allow dpmd vendor_shell_exec:file rx_file_perms;
 
 #permission to unlink dpmwrapper socket
 allow dpmd socket_device:dir remove_name;
@@ -56,16 +56,16 @@ allow dpmd self:{ netlink_socket netlink_generic_socket } create_socket_perms_no
 allow dpmd proc_net:file write;
 
 #allow dpmd get appname and use inet socket.
-dpmd_socket_perm(appdomain)
-dpmd_socket_perm(system_server)
-dpmd_socket_perm(mediaserver)
-dpmd_socket_perm(mtp)
-dpmd_socket_perm(wfdservice)
-dpmd_socket_perm(drmserver)
-dpmd_socket_perm(netd)
+#dpmd_socket_perm(appdomain)
+#dpmd_socket_perm(system_server)
+#dpmd_socket_perm(mediaserver)
+#dpmd_socket_perm(mtp)
+#dpmd_socket_perm(wfdservice)
+#dpmd_socket_perm(drmserver)
+#dpmd_socket_perm(netd)
 
 #explicitly allow udp socket permissions for appdomain
-allow dpmd appdomain:udp_socket rw_socket_perms;
+#allow dpmd appdomain:udp_socket rw_socket_perms;
 
 #Allow dpmd to acquire lock for iptables
 allow dpmd system_file:file lock;

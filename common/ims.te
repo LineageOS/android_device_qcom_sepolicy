@@ -1,6 +1,6 @@
 #integrated sensor process
 type ims, domain;
-type ims_exec, exec_type, file_type;
+type ims_exec, exec_type, vendor_file_type, file_type;
 
 # Started by init
 init_daemon_domain(ims)
@@ -10,7 +10,7 @@ net_domain(ims)
 qmux_socket(ims)
 
 # To make VT call
-binder_use(ims)
+#binder_use(ims)
 
 allow ims self:capability net_bind_service;
 
@@ -23,7 +23,7 @@ allow ims self:{
 
 # To run NDC command
 allow ims {
-    shell_exec
+    vendor_shell_exec
     system_file
     # IMS route installation
     wcnss_service_exec

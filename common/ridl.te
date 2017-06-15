@@ -27,7 +27,7 @@
 
 # RIDL
 type RIDL, domain;
-type RIDL_exec, exec_type, file_type;
+type RIDL_exec, exec_type, vendor_file_type, file_type;
 
 allow RIDL RIDL_socket:sock_file create_file_perms;
 allow RIDL RIDL_socket:dir create_dir_perms;
@@ -65,8 +65,8 @@ allow RIDL ramdump_device:chr_file rw_file_perms;
 # logcat
 unix_socket_connect(RIDL, logdr, logd)
 
-binder_use(RIDL)
-allow RIDL shell_exec:file { rx_file_perms };
+#binder_use(RIDL)
+allow RIDL vendor_shell_exec:file { rx_file_perms };
 allow RIDL sysfs:file write;
 allow RIDL system_file:file x_file_perms;
 binder_call(RIDL, system_server)
@@ -100,7 +100,7 @@ userdebug_or_eng(`
         diag_use( RIDL )
 
         # allow location
-        allow RIDL app_api_service:service_manager find;
+        #allow RIDL app_api_service:service_manager find;
 ')
 
 # drop root caps
@@ -114,10 +114,10 @@ allow RIDL kernel:system syslog_mod;
 allow RIDL storage_file:dir r_dir_perms;
 
 # allow logcat access
-read_logd( RIDL );
+#read_logd( RIDL );
 
 # allow netstats
-allow RIDL system_api_service:service_manager find;
+#allow RIDL system_api_service:service_manager find;
 
 # allow toybox execution for getprop on OS 24 and later
-allow RIDL toolbox_exec:file rx_file_perms;
+allow RIDL vendor_toolbox_exec:file rx_file_perms;

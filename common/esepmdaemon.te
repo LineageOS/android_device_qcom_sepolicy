@@ -26,19 +26,19 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type esepmdaemon, domain;
-type esepmdaemon_exec, exec_type, file_type;
+type esepmdaemon_exec, exec_type, vendor_file_type, file_type;
 
 #Allow for transition from init domain to esepmdaemon
 init_daemon_domain(esepmdaemon)
 
 #Allow esepmdaemon to use Binder IPC
-binder_use(esepmdaemon)
+#binder_use(esepmdaemon)
 
 #Allow apps to interact with esepmdaemon
 binder_call(esepmdaemon, system_app)
 
 #Mark esepmdaemon as a Binder service domain
-binder_service(esepmdaemon)
+#binder_service(esepmdaemon)
 
 #Allow esepmdaemon to be registered with service manager
 allow esepmdaemon esepmdaemon_service:service_manager add;

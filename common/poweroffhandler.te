@@ -27,10 +27,10 @@
 
 # poweroffhandler oneshot service
 type poweroffhandler, domain;
-type poweroffhandler_exec, exec_type, file_type;
+type poweroffhandler_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(poweroffhandler)
-binder_use(poweroffhandler)
+#binder_use(poweroffhandler)
 binder_call(poweroffhandler, surfaceflinger)
 allow poweroffhandler gpu_device:chr_file rw_file_perms;
 # /oem access
@@ -45,6 +45,6 @@ allow poweroffhandler persist_file:dir r_dir_perms;
 allow poweroffhandler regionalization_file:dir r_dir_perms;
 allow poweroffhandler regionalization_file:file r_file_perms;
 
-allow poweroffhandler {surfaceflinger_service mediaserver_service}:service_manager find;
+#allow poweroffhandler {surfaceflinger_service mediaserver_service}:service_manager find;
 
 binder_call(poweroffhandler, mediaserver);

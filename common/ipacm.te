@@ -1,8 +1,8 @@
 # General definitions
 type ipacm, domain;
 type ipacm-diag, domain;
-type ipacm_exec, exec_type, file_type;
-type ipacm-diag_exec, exec_type, file_type;
+type ipacm_exec, exec_type, vendor_file_type, file_type;
+type ipacm-diag_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(ipacm)
 init_daemon_domain(ipacm-diag)
 

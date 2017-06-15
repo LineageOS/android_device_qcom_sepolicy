@@ -1,6 +1,6 @@
 # qlogd
 type qlogd, domain;
-type qlogd_exec, exec_type, file_type;
+type qlogd_exec, exec_type, vendor_file_type, file_type;
 
 # make transition from init to its domain
 init_daemon_domain(qlogd)
@@ -34,7 +34,7 @@ allow qlogd system_file:file x_file_perms;
 allow qlogd qlogd_socket:sock_file create_file_perms;
 
 # need to start shell execute files
-allow qlogd shell_exec:file rx_file_perms;
+allow qlogd vendor_shell_exec:file rx_file_perms;
 
 # need to create and write files in fuse partition
 allow qlogd fuse:dir create_dir_perms;

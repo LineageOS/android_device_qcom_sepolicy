@@ -1,6 +1,6 @@
 # Policy for sensor daemon
 type sensors, domain;
-type sensors_exec, exec_type, file_type;
+type sensors_exec, exec_type, vendor_file_type, file_type;
 
 # Started by init
 init_daemon_domain(sensors)
@@ -58,6 +58,9 @@ userdebug_or_eng(`
   diag_use(sensors)
 ')
 
+#binder_use(sensors)
+#binder_call(sensors, servicemanager)
+binder_call(sensors, per_mgr)
 
 allow sensors sysfs:dir r_dir_perms;
 allow sensors sysfs:file rw_file_perms;

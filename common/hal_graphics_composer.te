@@ -26,9 +26,10 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # This should be using hw binder. Added now for smoother UI
-userdebug_or_eng(`
-binder_use(hal_graphics_composer)
-')
+#userdebug_or_eng(`
+#binder_use(hal_graphics_composer)
+#')
+
 allow hal_graphics_composer sysfs:file r_file_perms;
 userdebug_or_eng(`
     diag_use(hal_graphics_composer)
@@ -44,9 +45,9 @@ allow hal_graphics_composer sysfs_leds:file rw_file_perms;
 allow hal_graphics_composer sysfs_leds:lnk_file read;
 
 # Rules for vdnbinder
-allow hal_graphics_composer qdisplay_service:service_manager { add find };
-binder_service(hal_graphics_composer_default);
-vndbinder_use(hal_graphics_composer);
+allow hal_graphics_composer_default qdisplay_service:service_manager { add find };
+#binder_service(hal_graphics_composer_default);
+vndbinder_use(hal_graphics_composer_default);
 
 # Allow video node access
 allow hal_graphics_composer video_device:chr_file rw_file_perms;
@@ -67,10 +68,10 @@ allow hal_graphics_composer persist_file:dir r_dir_perms;
 allow hal_graphics_composer oemfs:dir r_dir_perms;
 
 # Allow pps socket access
-unix_socket_connect(hal_graphics_composer, pps, mm-pp-daemon)
+#unix_socket_connect(hal_graphics_composer, pps, mm-pp-daemon)
 
 # TBD: remove when dependency on libpowermanager is removed
-allow hal_graphics_composer power_service:service_manager find;
+#allow hal_graphics_composer power_service:service_manager find;
 
 # allow composer client to find display config service.
 allow hal_display_config_client hal_display_config_hwservice:hwservice_manager find;
@@ -82,4 +83,4 @@ add_hwservice(hal_graphics_composer_server, hal_display_config_hwservice);
 binder_call(hal_display_config_client, hal_display_config_server)
 
 # Allow composer access to perfd through mpctl socket
-unix_socket_connect(hal_graphics_composer, mpctl, perfd)
+#unix_socket_connect(hal_graphics_composer, mpctl, perfd)

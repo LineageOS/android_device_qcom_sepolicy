@@ -1,5 +1,5 @@
 type netmgrd, domain;
-type netmgrd_exec, exec_type, file_type;
+type netmgrd_exec, exec_type, vendor_file_type, file_type;
 net_domain(netmgrd)
 init_daemon_domain(netmgrd)
 
@@ -63,8 +63,8 @@ allow netmgrd self:socket create_socket_perms;
 allow netmgrd sysfs_esoc:dir r_dir_perms;
 
 #Allow communication with netd
-allow netmgrd netd_socket:sock_file w_file_perms;
-r_dir_file(netmgrd, net_data_file)
+#allow netmgrd netd_socket:sock_file w_file_perms;
+#r_dir_file(netmgrd, net_data_file)
 
 #Allow nemtgrd to use esoc api's to determine target
 allow netmgrd sysfs_esoc:lnk_file r_file_perms;
@@ -82,7 +82,7 @@ not_full_treble(`allow netmgrd system_file:file lock;')
 allow netmgrd netmgrd_socket:dir create_dir_perms;
 allow netmgrd netmgrd_socket:sock_file create_file_perms;
 
-allow netmgrd { wcnss_service_exec shell_exec toolbox_exec }:file rx_file_perms;
+allow netmgrd { wcnss_service_exec vendor_shell_exec vendor_toolbox_exec }:file rx_file_perms;
 
 #Allow netmgrd to use wakelock
 wakelock_use(netmgrd)

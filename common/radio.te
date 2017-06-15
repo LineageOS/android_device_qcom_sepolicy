@@ -1,11 +1,11 @@
 # Talks to qmuxd via the qmux_radio socket.
-qmux_socket(radio);
+#qmux_socket(radio);
 
 #Need permission to execute dpmd talk to radio layer
-unix_socket_connect(radio, dpmd, dpmd)
+#unix_socket_connect(radio, dpmd, dpmd)
 
 # Radio apps needs to communicate with IMS using ims_socket
-unix_socket_connect(radio, ims, ims)
+#unix_socket_connect(radio, ims, ims)
 
 # IMS needs permission to use avtimer
 allow radio avtimer_device:chr_file r_file_perms;

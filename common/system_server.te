@@ -1,18 +1,18 @@
 allow system_server self:capability sys_module;
 
 # allow system_server to communicate with cnd process over cnd_socket
-unix_socket_connect(system_server, cnd, cnd)
+#unix_socket_connect(system_server, cnd, cnd)
 
 # allow  system/framework applications to update the cnd configuration files
 allow system_server cnd_data_file:dir rw_dir_perms;
 allow system_server cnd_data_file:file create_file_perms;
 
 # Access to sensors socket
-unix_socket_connect(system_server, sensors, sensors)
-unix_socket_send(system_server, sensors, sensors)
-allow system_server sensors:unix_stream_socket sendto;
-allow system_server sensors_socket:sock_file r_file_perms;
-qmux_socket(system_server);
+#unix_socket_connect(system_server, sensors, sensors)
+#unix_socket_send(system_server, sensors, sensors)
+#allow system_server sensors:unix_stream_socket sendto;
+#allow system_server sensors_socket:sock_file r_file_perms;
+#qmux_socket(system_server);
 
 allow system_server self:socket create_socket_perms;
 allowxperm system_server self:socket ioctl msm_sock_ipc_ioctls;
@@ -20,12 +20,12 @@ allow system_server sensors_persist_file:dir r_dir_perms;
 allow system_server sensors_persist_file:file r_file_perms;
 
 # access to perflock
-allow system_server mpctl_socket:dir r_dir_perms;
-unix_socket_send(system_server, mpctl, mpdecision)
-unix_socket_connect(system_server, mpctl, mpdecision)
+#allow system_server mpctl_socket:dir r_dir_perms;
+#unix_socket_send(system_server, mpctl, mpdecision)
+#unix_socket_connect(system_server, mpctl, mpdecision)
 
 #access to gamed
-unix_socket_connect(system_server, gamed, gamed)
+#unix_socket_connect(system_server, gamed, gamed)
 
 allow system_server {
     # For wifistatemachine
@@ -52,23 +52,23 @@ unix_socket_send(system_server, iop, dumpstate)
 unix_socket_connect(system_server, iop, dumpstate)
 
 # allow  system/framework applications to update the dpmd configuration files
-unix_socket_connect(system_server, dpmd, dpmd);
-allow system_server { dpmd_socket socket_device }:sock_file w_file_perms;
+#unix_socket_connect(system_server, dpmd, dpmd);
+#allow system_server { dpmd_socket socket_device }:sock_file w_file_perms;
 allow system_server dpmd_data_file:dir create_dir_perms;
 allow system_server dpmd_data_file:file create_file_perms;
 
-unix_socket_send(system_server, mpctl, perfd)
-unix_socket_connect(system_server, mpctl, perfd)
+#unix_socket_send(system_server, mpctl, perfd)
+#unix_socket_connect(system_server, mpctl, perfd)
 
 # For location
 type_transition system_server location_data_file:sock_file location_socket "location-mq-s";
 type_transition system_server location_data_file:sock_file location_socket "alarm_svc";
-allow system_server location:unix_stream_socket connectto;
+#allow system_server location:unix_stream_socket connectto;
 allow system_server location_data_file:{ file fifo_file } create_file_perms;
 allow system_server location_data_file:dir create_dir_perms;
 allow system_server { location_app_data_file mdtp_svc_app_data_file } :file rw_file_perms;
 allow system_server { location_app_data_file mdtp_svc_app_data_file } :dir r_dir_perms;
-allow system_server location_socket:sock_file create_file_perms;
+#allow system_server location_socket:sock_file create_file_perms;
 allow system_server location_prop:property_service set;
 
 #For wifistatemachine
@@ -98,11 +98,11 @@ r_dir_file(system_server, bt_firmware_file)
 r_dir_file(system_server, firmware_file)
 
 #connect to wcnss_filter
-allow system_server wcnss_filter:unix_stream_socket connectto;
+#allow system_server wcnss_filter:unix_stream_socket connectto;
 
 # Allow system server access to usf resources
 allow system_server usf:process signal;
-allow system_server usf:unix_stream_socket connectto;
+#allow system_server usf:unix_stream_socket connectto;
 allow system_server usf_data_file:sock_file write;
 allow system_server usf_data_file:dir rw_dir_perms;
 allow system_server usf_data_file:file r_file_perms;
@@ -119,6 +119,8 @@ allow system_server izat_service:service_manager add;
 allow system_server qsee_svc_app_data_file:file rw_file_perms;
 allow system_server qsee_svc_app_data_file:dir r_dir_perms;
 
+#Allow access to netmgrd socket
+#netmgr_socket(system_server);
 # So init can manage our process
 allow system_server RIDL:fd use;
 allow system_server RIDL:fifo_file write;
@@ -128,7 +130,7 @@ allow system_server qti_logkit:fd use;
 allow system_server qti_logkit:fifo_file write;
 
 #Rules for system server to talk to peripheral manager
-use_per_mgr(system_server);
+#use_per_mgr(system_server);
 
 #allow binder calls
 binder_call(system_server, seempd)
@@ -139,7 +141,7 @@ binder_call(system_server, fps_hal)
 allow system_server iqfp_service:service_manager find;
 
 #for seemp
-unix_socket_send(system_server, seempdw, seempd)
+#unix_socket_send(system_server, seempdw, seempd)
 
 # For shutdown animation
 allow system_server ctl_bootanim_prop:property_service set;

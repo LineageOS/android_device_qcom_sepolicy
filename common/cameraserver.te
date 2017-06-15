@@ -27,18 +27,18 @@
 
 allow cameraserver camera_data_file:sock_file write;
 allow cameraserver gpu_device:chr_file rw_file_perms;
-allow cameraserver mm-qcamerad:unix_dgram_socket sendto;
+#allow cameraserver mm-qcamerad:unix_dgram_socket sendto;
 
 #interaction with mptcl and thermal sockets
-unix_socket_connect(cameraserver, mpctl, perfd)
-unix_socket_connect(cameraserver, thermal, thermal-engine)
+#unix_socket_connect(cameraserver, mpctl, perfd)
+#unix_socket_connect(cameraserver, thermal, thermal-engine)
 
 #Allow surfaceflinger access for camera preview
 allow cameraserver surfaceflinger:unix_stream_socket { read write };
 
 # allow cameraserver to communicate with sensors
 allow cameraserver sensors_device:chr_file rw_file_perms;
-unix_socket_connect(cameraserver, sensors, sensors);
+#unix_socket_connect(cameraserver, sensors, sensors);
 allow cameraserver system_server:unix_stream_socket { read write };
 
 #Allow read access to soc/msm-cam/video4linux/video0/name sysfs

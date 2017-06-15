@@ -1,6 +1,6 @@
 #permissive cnd;
 type cnd, domain, mlstrustedsubject;
-type cnd_exec, exec_type, file_type;
+type cnd_exec, exec_type, vendor_file_type, file_type;
 file_type_auto_trans(cnd, socket_device, cnd_socket);
 
 # cnd is started by init, type transit from init domain to cnd domain
@@ -61,12 +61,12 @@ allow cnd wifi_data_file:dir r_dir_perms;
 wakelock_use(cnd)
 
 # allow cnd to get appname and use inet socket
-cnd_nims_socket_perm(appdomain)
-cnd_nims_socket_perm(system_server)
-cnd_nims_socket_perm(mediaserver)
-cnd_nims_socket_perm(mtp)
-cnd_nims_socket_perm(wfdservice)
-cnd_nims_socket_perm(drmserver)
+#cnd_nims_socket_perm(appdomain)
+#cnd_nims_socket_perm(system_server)
+#cnd_nims_socket_perm(mediaserver)
+#cnd_nims_socket_perm(mtp)
+#cnd_nims_socket_perm(wfdservice)
+#cnd_nims_socket_perm(drmserver)
 
 # allow cnd to access ipa_dev
 allow cnd ipa_dev:chr_file rw_file_perms;
@@ -78,10 +78,10 @@ allow cnd ipacm_data_file:dir r_dir_perms;
 allow cnd ipacm_data_file:file r_file_perms;
 
 # explicitly allow udp socket permissions for appdomain
-allow cnd appdomain:udp_socket rw_socket_perms;
+#allow cnd appdomain:udp_socket rw_socket_perms;
 
 #allow cnd daemon to invoke hostapd_cli
-allow cnd shell_exec:file rx_file_perms;
+allow cnd vendor_shell_exec:file rx_file_perms;
 domain_auto_trans(cnd, hostapd_exec, hostapd)
 
 # only allow getopt for appdomain
