@@ -26,20 +26,20 @@
 #IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type secotad, domain;
-type secotad_exec, exec_type, file_type;
+type secotad_exec, exec_type, vendor_file_type, file_type;
 
 #Allow for transition from init domain to secota daemon
 init_daemon_domain(secotad)
 
 #Allow secotad to use Binder IPC
-binder_use(secotad)
+#binder_use(secotad)
 
 #Allow apps to interact with secotad
 binder_call(secotad, platform_app)
 binder_call(secotad, system_app)
 
 #Mark secotad as a Binder service domain
-binder_service(secotad)
+#binder_service(secotad)
 
 #Allow secotad to be registered with service manager
 allow secotad secotad_service:service_manager add;

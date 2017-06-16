@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type logdumpd, domain;
-type logdumpd_exec, exec_type, file_type;
+type logdumpd_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(logdumpd)
 
@@ -35,8 +35,8 @@ set_prop(logdumpd, ctl_default_prop)
 
 userdebug_or_eng(`
 #logcat
-allow logdumpd logcat_exec:file entrypoint;
-read_logd( logdumpd );
+#allow logdumpd logcat_exec:file entrypoint;
+#read_logd( logdumpd );
 #logdump partition access
 allow logdumpd block_device:dir r_dir_perms;
 allow logdumpd logdump_partition:blk_file rw_file_perms;

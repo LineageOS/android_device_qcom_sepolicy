@@ -26,8 +26,8 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #access to perflock
-unix_socket_send(hal_audio, mpctl, perfd)
-unix_socket_connect(hal_audio, mpctl, perfd)
+#unix_socket_send(hal_audio, mpctl, perfd)
+#unix_socket_connect(hal_audio, mpctl, perfd)
 
 
 # Allow hal_audio to read soundcard state under /proc/asound

@@ -1,6 +1,6 @@
 # mobicore daemon
 type mcStarter, domain;
-type mcStarter_exec, exec_type, file_type;
+type mcStarter_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(mcStarter)
 
 # Allow Mobicore to use qseecom services for loading the app

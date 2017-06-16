@@ -1,7 +1,7 @@
 #Policy for mdm_helper
 #mdm_helper - mdm_helper domain
 type mdm_helper, domain;
-type mdm_helper_exec, exec_type, file_type;
+type mdm_helper_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(mdm_helper);
 
 #block_suspend capability is needed by kickstart(ks)
@@ -32,7 +32,7 @@ r_dir_file(mdm_helper, sysfs_ssr)
 
 #Needed in order to run kickstart
 allow mdm_helper shell:fd use;
-allow mdm_helper shell_exec:file rx_file_perms;
+allow mdm_helper vendor_shell_exec:file rx_file_perms;
 allow mdm_helper { system_file mdm_helper_exec }:file x_file_perms;
 
 #Needed by ks in order to access the efs sync partitions.

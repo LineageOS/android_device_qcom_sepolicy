@@ -1,5 +1,5 @@
 type dtsconfigurator, domain;
-type dtsconfigurator_exec, exec_type, file_type;
+type dtsconfigurator_exec, exec_type, vendor_file_type, file_type;
 
 #started by init
 init_daemon_domain(dtsconfigurator)

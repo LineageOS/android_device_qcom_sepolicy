@@ -1,6 +1,6 @@
 #integrated process
 type mmi, domain;
-type mmi_exec, exec_type, file_type;
+type mmi_exec, exec_type, vendor_file_type, file_type;
 
 #started by init
 init_daemon_domain(mmi)
@@ -19,7 +19,7 @@ allow mmi graphics_device:chr_file rw_file_perms;
 allow mmi input_device:chr_file r_file_perms;
 allow mmi input_device:dir r_dir_perms;
 allow mmi nfc_device:chr_file rw_file_perms;
-allow mmi shell_exec:file rx_file_perms;
+allow mmi vendor_shell_exec:file rx_file_perms;
 wakelock_use(mmi)
 
 #FTM_AP folder permissions
@@ -42,7 +42,7 @@ allow mmi system_file:file x_file_perms;
 allow mmi wcnss_service_exec:file rx_file_perms;
 allow mmi kernel:key search;
 allow mmi kernel:system module_request;
-allow mmi toolbox_exec:file rx_file_perms;
+allow mmi vendor_toolbox_exec:file rx_file_perms;
 allow mmi system_file:system module_load;
 
 #audio case
@@ -94,10 +94,10 @@ qmux_socket(mmi);
 set_prop(mmi, chgdiabled_prop)
 #Allow mmi operate on surfaceflinger
 allow mmi surfaceflinger:fd use;
-allow mmi surfaceflinger_service:service_manager find;
+#allow mmi surfaceflinger_service:service_manager find;
 
 #Allow mmi to use IPC
-binder_use(mmi)
+#binder_use(mmi)
 binder_call(mmi,surfaceflinger)
 
 #sensor cases

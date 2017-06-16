@@ -1,5 +1,5 @@
 type diag, domain;
-type diag_exec, exec_type, file_type;
+type diag_exec, exec_type, vendor_file_type, file_type;
 userdebug_or_eng(`
   domain_auto_trans(shell, diag_exec, diag)
   #domain_auto_trans(adbd, diag_exec, diag)

@@ -1,4 +1,4 @@
-# Copyright (c) 2016, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016,2017 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -26,12 +26,13 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type init-qti-fbe-sh, domain;
-type init-qti-fbe-sh_exec, exec_type, file_type;
+type init-qti-fbe-sh_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(init-qti-fbe-sh)
 
-allow init-qti-fbe-sh shell_exec:file rx_file_perms;
+not_full_treble(`allow init-qti-fbe-sh shell_exec:file rx_file_perms;')
+full_treble_only(`allow init-qti-fbe-sh vendor_shell_exec:file rx_file_perms;')
 
 # execute toybox/toolbox
-allow init-qti-fbe-sh toolbox_exec:file rx_file_perms;
-allow init-qti-fbe-sh rootfs:lnk_file getattr;
+not_full_treble(`allow init-qti-fbe-sh toolbox_exec:file rx_file_perms;')
+full_treble_only(`allow init-qti-fbe-sh vendor_toolbox_exec:file rx_file_perms;')

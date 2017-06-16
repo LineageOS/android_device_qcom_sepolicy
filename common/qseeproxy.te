@@ -26,19 +26,19 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type qseeproxy, domain;
-type qseeproxy_exec, exec_type, file_type;
+type qseeproxy_exec, exec_type, vendor_file_type, file_type;
 
 #Allow for transition from init domain to qseeproxy
 init_daemon_domain(qseeproxy)
 
 #Allow qseeproxy to use Binder IPC
-binder_use(qseeproxy)
+#binder_use(qseeproxy)
 
 #Allow apps to interact with qseeproxy
 binder_call(qseeproxy, qsee_svc_app)
 
 #Mark qseeproxy as a Binder service domain
-binder_service(qseeproxy)
+#binder_service(qseeproxy)
 
 #Allow qseeproxy to be registered with service manager
 allow qseeproxy qseeproxy_service:service_manager add;
@@ -61,7 +61,7 @@ allow qseeproxy data_qsee_file:dir create_dir_perms;
 allow qseeproxy data_qsee_file:file create_file_perms ;
 
 #Allow access to system_app domain
-allow qseeproxy system_app:unix_dgram_socket sendto;
+#allow qseeproxy system_app:unix_dgram_socket sendto;
 
 #Allow access to sysfs files
 allow qseeproxy sysfs:file w_file_perms;

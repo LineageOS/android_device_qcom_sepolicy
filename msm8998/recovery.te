@@ -26,5 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 recovery_only(`
-    allow recovery shell_exec:file x_file_perms;
+    allow recovery vendor_shell_exec:file x_file_perms;
 ')

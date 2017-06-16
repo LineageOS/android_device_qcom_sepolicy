@@ -1,6 +1,6 @@
 # Policy for usf daemons
 type usf, domain;
-type usf_exec, exec_type, file_type;
+type usf_exec, exec_type, vendor_file_type, file_type;
 
 # Started by init
 init_daemon_domain(usf)
@@ -11,7 +11,7 @@ allow usf usf_device:chr_file rw_file_perms;
 
 # Audio
 allow usf audio_data_file:sock_file write;
-allow usf mediaserver:unix_stream_socket connectto;
+#allow usf mediaserver:unix_stream_socket connectto;
 allow usf audio_data_file:dir r_dir_perms;
 allow usf audio_device:chr_file rw_file_perms;
 allow usf proc_audiod:file r_file_perms;

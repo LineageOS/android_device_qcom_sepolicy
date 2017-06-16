@@ -26,15 +26,20 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow hal_camera qdisplay_service:service_manager find;
+#allow hal_camera surfaceflinger_service:service_manager find;
 # added now for camera functionality. This should be using HIDL
-userdebug_or_eng(`
-binder_use(hal_camera)
-')
-unix_socket_connect(hal_camera, mpctl, perfd)
-unix_socket_send(hal_camera, mpctl, perfd)
+#userdebug_or_eng(`
+#binder_use(hal_camera)
+#')
+#unix_socket_connect(hal_camera, mpctl, perfd)
+#unix_socket_send(hal_camera, mpctl, perfd)
 binder_call(hal_camera, surfaceflinger)
 set_prop(hal_camera, camera_prop)
 allow hal_camera gpu_device:chr_file rw_file_perms;
 allow hal_camera sysfs:file r_file_perms;
 vndbinder_use(hal_camera);
 hal_client_domain(hal_camera_default, hal_perf)
+
+#needed for full_treble
+binder_call(hal_camera, hal_graphics_composer_default)
+allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager find;

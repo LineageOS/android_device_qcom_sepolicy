@@ -1,6 +1,6 @@
 # Policies for hbtp (host based touch processing)
 type hbtp, domain;
-type hbtp_exec, exec_type, file_type;
+type hbtp_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(hbtp)
 
@@ -27,7 +27,7 @@ allow hbtp ion_device:chr_file r_file_perms;
 
 allow hbtp self:netlink_kobject_uevent_socket { create read setopt bind };
 
-binder_use(hbtp);
+#binder_use(hbtp);
 
 allow hbtp improve_touch_service:service_manager add;
 
