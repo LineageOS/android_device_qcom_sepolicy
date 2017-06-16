@@ -1,4 +1,4 @@
-# Copyright (c) 2016, The Linux Foundation. All rights reserved.
+# Copyright (c) 2015, 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow zygote debug_gralloc_prop:file r_file_perms;
-allow zygote sf_lcd_density_prop:file r_file_perms;
-# persist.service.bdroid.bdaddr hw.cabl.level
-allow zygote { bluetooth_prop ppd_prop system_prop } :property_service set;
-set_prop(zygote, qemu_gles_prop)
+userdebug_or_eng(`
+  r_dir_file(untrusted_app, seemp_data_file)
+  allow untrusted_app seemp_data_file: file w_file_perms;
+')
+

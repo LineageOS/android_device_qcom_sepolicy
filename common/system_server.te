@@ -132,16 +132,10 @@ allow system_server qti_logkit:fifo_file write;
 #Rules for system server to talk to peripheral manager
 #use_per_mgr(system_server);
 
-#allow binder calls
-binder_call(system_server, seempd)
-
 # Allow system server access to qfp daemon
 binder_call(system_server, qfp-daemon);
 binder_call(system_server, fps_hal)
 allow system_server iqfp_service:service_manager find;
-
-#for seemp
-#unix_socket_send(system_server, seempdw, seempd)
 
 # For shutdown animation
 allow system_server ctl_bootanim_prop:property_service set;

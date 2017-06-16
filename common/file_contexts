@@ -23,7 +23,6 @@
 /dev/sp_keymaster                               u:object_r:sp_keymaster_device:s0
 /dev/cryptoapp                                  u:object_r:cryptoapp_device:s0
 /dev/qsee_ipc_irq_spss                          u:object_r:qsee_ipc_irq_spss_device:s0
-/dev/seemplog                                   u:object_r:seemplog_device:s0
 /dev/radio0                                     u:object_r:fm_radio_device:s0
 /dev/btpower                                    u:object_r:bt_device:s0
 /dev/rtc0                                       u:object_r:rtc_device:s0
@@ -126,7 +125,6 @@
 /dev/socket/rild3-debug                         u:object_r:rild_debug_socket:s0
 /dev/socket/rild-debug3                         u:object_r:rild_debug_socket:s0
 /dev/socket/msm_irqbalance                      u:object_r:msm_irqbalance_socket:s0
-/dev/socket/seempdw                             u:object_r:seempdw_socket:s0
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
 /dev/socket/wpa_wigig[0-9]                      u:object_r:wpa_socket:s0
 
@@ -137,7 +135,7 @@
 /(vendor|system/vendor)/bin/PktRspTest          u:object_r:diag_exec:s0
 /(vendor|system/vendor)/bin/audiod              u:object_r:audiod_exec:s0
 /(vendor|system/vendor)/bin/nqnfcinfo           u:object_r:nqnfcinfo_exec:s0
-/system/bin/charger_monitor                     u:object_r:charger_monitor_exec:s0
+/(vendor|system/vendor)/bin/charger_monitor                     u:object_r:charger_monitor_exec:s0
 /(vendor|system/vendor)/bin/hvdcp_opti          u:object_r:hvdcp_exec:s0
 /(vendor|system/vendor)/bin/cnd                 u:object_r:cnd_exec:s0
 /(vendor|system/vendor)/bin/diag_callback_client                u:object_r:diag_exec:s0
@@ -182,7 +180,6 @@
 /(vendor|system/vendor)/bin/mpdecision          u:object_r:mpdecision_exec:s0
 /(vendor|system/vendor)/bin/perfd               u:object_r:perfd_exec:s0
 /(vendor|system/vendor)/bin/gamed               u:object_r:gamed_exec:s0
-/(vendor|system/vendor)/bin/iop                 u:object_r:dumpstate_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance      u:object_r:msm_irqbalanced_exec:s0
 /(vendor|system/vendor)/bin/imsdatadaemon       u:object_r:ims_exec:s0
 /(vendor|system/vendor)/bin/imsqmidaemon        u:object_r:ims_exec:s0
@@ -195,7 +192,7 @@
 /(vendor|system/vendor)/bin/sns.*               u:object_r:sensors_test_exec:s0
 /(vendor|system/vendor)/bin/test_diag           u:object_r:diag_exec:s0
 /(vendor|system/vendor)/bin/thermal-engine      u:object_r:thermal-engine_exec:s0
-/system/bin/vm_bms                              u:object_r:vm_bms_exec:s0
+/(vendor|system/vendor)/bin/vm_bms                              u:object_r:vm_bms_exec:s0
 /(vendor|system/vendor)/bin/mm-qcamera-daemon   u:object_r:mm-qcamerad_exec:s0
 /(vendor|system/vendor)/bin/qfp-daemon          u:object_r:qfp-daemon_exec:s0
 /system/rfs.*                                   u:object_r:rfs_system_file:s0
@@ -203,7 +200,7 @@
 /(vendor|system/vendor)/bin/rmt_storage                         u:object_r:rmt_storage_exec:s0
 /(vendor|system/vendor)/bin/rfs_access          u:object_r:rfs_access_exec:s0
 /(vendor|system/vendor)/bin/tftp_server         u:object_r:rfs_access_exec:s0
-/system/bin/hvdcp                               u:object_r:hvdcp_exec:s0
+/(vendor|system/vendor)/bin/hvdcp                               u:object_r:hvdcp_exec:s0
 /(vendor|system/vendor)/bin/qseecomd            u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/bg_daemon           u:object_r:bg_daemon_exec:s0
 /(vendor|system/vendor)/bin/spdaemon            u:object_r:spdaemon_exec:s0
@@ -213,20 +210,18 @@
 /(vendor|system/vendor)/bin/wpa_cli             u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper          u:object_r:mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper_proxy    u:object_r:mdm_helper_exec:s0
-/system/bin/pm-service                          u:object_r:per_mgr_exec:s0
 /(vendor|system/vendor)/bin/pm-service          u:object_r:per_mgr_exec:s0
-/system/bin/pm-proxy                            u:object_r:per_mgr_exec:s0
 /(vendor|system/vendor)/bin/pm-proxy            u:object_r:per_mgr_exec:s0
 /(vendor|system/vendor)/bin/pd-mapper           u:object_r:pd_mapper_exec:s0
 /(vendor|system/vendor)/bin/pd-api-test         u:object_r:pd_mapper_exec:s0
-/system/bin/usb_uicc_client                     u:object_r:usb_uicc_daemon_exec:s0
+/(vendor|system/vendor)/bin/usb_uicc_client                     u:object_r:usb_uicc_daemon_exec:s0
 /(vendor|system/vendor)/bin/qcom-system-daemon  u:object_r:qcomsysd_exec:s0
 /(vendor|system/vendor)/bin/poweroffhandler                     u:object_r:poweroffhandler_exec:s0
-/system/xbin/qlogd                              u:object_r:qlogd_exec:s0
-/system/bin/ipacm                               u:object_r:ipacm_exec:s0
+/(vendor|system/vendor)/xbin/qlogd                              u:object_r:qlogd_exec:s0
+/(vendor|system/vendor)/bin/ipacm                               u:object_r:ipacm_exec:s0
 /(vendor|system/vendor)/bin/ipacm-diag          u:object_r:ipacm-diag_exec:s0
 /(vendor|system/vendor)/bin/dpmQmiMgr           u:object_r:hal_dpmQmiMgr_exec:s0
-/system/bin/dpmd                                u:object_r:dpmd_exec:s0
+/(vendor|system/vendor)/bin/dpmd                                u:object_r:dpmd_exec:s0
 /(vendor|system/vendor)/bin/ssr_setup           u:object_r:ssr_setup_exec:s0
 /(vendor|system/vendor)/bin/subsystem_ramdump   u:object_r:subsystem_ramdump_exec:s0
 /(vendor|system/vendor)/bin/ssr_diag            u:object_r:ssr_diag_exec:s0
@@ -255,15 +250,14 @@
 /(vendor|system/vendor)/bin/hbtp_daemon         u:object_r:hbtp_exec:s0
 /(vendor|system/vendor)/bin/touch_fusion        u:object_r:touchfusion_exec:s0
 /(vendor|system/vendor)/bin/seemp_healthd       u:object_r:seemp_health_daemon_exec:s0
-/(vendor|system/vendor)/bin/seempd              u:object_r:seempd_exec:s0
-/system/bin/sapd                                u:object_r:sapd_exec:s0
+/(vendor|system/vendor)/bin/sapd                                u:object_r:sapd_exec:s0
 /(vendor|system/vendor)/bin/btnvtool            u:object_r:btnvtool_exec:s0
-/system/bin/btsnoop                             u:object_r:btsnoop_exec:s0
-/system/bin/bt_logger                           u:object_r:bt_logger_exec:s0
-/system/bin/dun-server                          u:object_r:dun-server_exec:s0
-/system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
+/(vendor|system/vendor)/bin/btsnoop                             u:object_r:btsnoop_exec:s0
+/(vendor|system/vendor)/bin/bt_logger                           u:object_r:bt_logger_exec:s0
+/(vendor|system/vendor)/bin/dun-server                          u:object_r:dun-server_exec:s0
+/(vendor|system/vendor)/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /(vendor|system/vendor)/bin/wcnss_filter        u:object_r:wcnss_filter_exec:s0
-/system/bin/fmhal_service                       u:object_r:fmhal_service_exec:s0
+/(vendor|system/vendor)/bin/fmhal_service                       u:object_r:fmhal_service_exec:s0
 /(vendor|system/vendor)/bin/usf_epos            u:object_r:usf_exec:s0
 /(vendor|system/vendor)/bin/usf_gesture         u:object_r:usf_exec:s0
 /(vendor|system/vendor)/bin/usf_hovering        u:object_r:usf_exec:s0
@@ -279,7 +273,6 @@
 /(vendor|system/vendor)/bin/mcStarter           u:object_r:mcStarter_exec:s0
 /(vendor|system/vendor)/bin/fstman              u:object_r:fstman_exec:s0
 /(vendor|system/vendor)/bin/mdtpd               u:object_r:mdtpdaemon_exec:s0
-/system/bin/wifi_ftmd                           u:object_r:wifi_ftmd_exec:s0
 /(vendor|system/vendor)/bin/wifi_ftmd           u:object_r:wifi_ftmd_exec:s0
 /(vendor|system/vendor)/bin/fingerprint.qcom    u:object_r:fps_hal_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service-qti u:object_r:hal_keymaster_qti_exec:s0
@@ -378,7 +371,6 @@
 /data/misc/qlogd(/.*)?                                              u:object_r:qlogd_data_file:s0
 /data/usf(/.*)?                                                     u:object_r:usf_data_file:s0
 /data/misc/dts(/.*)?                                                u:object_r:dts_data_file:s0
-/data/misc/seemp(/.*)?                                              u:object_r:seemp_file:s0
 /data/misc/SelfHost(/.*)?                                           u:object_r:RIDL_data_file:s0
 /data/misc/OTA(/.*)?                                                u:object_r:RIDL_data_file:s0
 /data/misc/qti-logkit(/.*)?                                         u:object_r:qti_logkit_priv_data_file:s0
