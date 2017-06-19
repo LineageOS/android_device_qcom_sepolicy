@@ -47,9 +47,6 @@ extphone                                       u:object_r:radio_service:s0
 qti.ims.ext                                    u:object_r:radio_service:s0
 com.qualcomm.location.izat.IzatService         u:object_r:izat_service:s0
 com.qualcomm.qti.secota.service.SecotaNService u:object_r:secotad_service:s0
-qti.security.seemp                             u:object_r:seemp_service:s0
-seempservice                                   u:object_r:seemp_service:s0
-qti.security.seempspa                          u:object_r:seemp_service:s0
 mdtp                                           u:object_r:mdtpdaemon_service:s0
 qtitetherservice                               u:object_r:qtitetherservice_service:s0
 com.qualcomm.qti.seemp.health                  u:object_r:seemp_health_daemon_service:s0
