@@ -79,7 +79,7 @@
 
 ##################################
 # FBE
-/system/bin/init.qti.qseecomd.sh						u:object_r:init-qti-fbe-sh_exec:s0
+/(vendor|system/vendor)/bin/init.qti.qseecomd.sh				u:object_r:init-qti-fbe-sh_exec:s0
 
 ##################################
 # non-hlos mount points
