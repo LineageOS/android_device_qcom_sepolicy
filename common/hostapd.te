@@ -28,7 +28,7 @@
 # Allow hostapd_cli to work. hostapd_cli creates a socket in
 # /data/misc/wifi/sockets which hostapd communicates with.
 userdebug_or_eng(`
-  unix_socket_send(hostapd, wpa, su)
+  unix_socket_send(hostapd, wifi_vendor_wpa, su)
 ')
 
 binder_call(hostapd, cnd)
@@ -42,4 +42,10 @@ allow hostapd cnd:{
 allow hostapd cnd:fifo_file r_file_perms;
 allow hostapd smem_log_device:chr_file rw_file_perms;
 allow hostapd fstman:unix_dgram_socket sendto;
-unix_socket_send(hostapd, wpa, netd)
+allow hostapd wifi_vendor_data_file:dir create_dir_perms;
+allow hostapd wifi_vendor_data_file:dir w_dir_perms;
+allow hostapd wifi_vendor_data_file:file create_file_perms;
+allow hostapd wifi_vendor_hostapd_socket:dir w_dir_perms;
+allow hostapd wifi_vendor_hostapd_socket:dir create_dir_perms;
+allow hostapd wifi_vendor_hostapd_socket:sock_file create_file_perms;
+unix_socket_send(hostapd, wifi_vendor_wpa, netd)
