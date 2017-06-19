@@ -1,9 +1,8 @@
 # Policies for hbtp (host based touch processing)
 type hbtp, domain;
-type hbtp_exec, exec_type, file_type;
-
+type hbtp_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hbtp)
-
+hal_server_domain(hbtp, hal_hbtp)
 # Allow access for /dev/hbtp_input and /dev/jdi-bu21150
 allow hbtp { hbtp_device qdsp_device dsp_device bu21150_device }:chr_file rw_file_perms;
 
@@ -27,18 +26,6 @@ allow hbtp ion_device:chr_file r_file_perms;
 
 allow hbtp self:netlink_kobject_uevent_socket { create read setopt bind };
 
-binder_use(hbtp);
-
-allow hbtp improve_touch_service:service_manager add;
-
-userdebug_or_eng(`
-  binder_call(hbtp, untrusted_app);
-')
-
-binder_call(hbtp, platform_app);
-
-binder_call(hbtp, surfaceflinger);
-
 # Allow the service to access wakelock sysfs
 allow hbtp sysfs_wake_lock:file r_file_perms;
 
@@ -50,3 +37,12 @@ r_dir_file(hbtp, adsprpcd_file)
 
 # Allow the service to access wakelock capability
 wakelock_use(hbtp)
+
+# Allow hwbinder call from hal client to server and vice-versa
+binder_call(hal_hbtp_client, hal_hbtp_server)
+binder_call(hal_hbtp_server, hal_hbtp_client)
+
+# Allow hwservice related rules
+add_hwservice(hal_hbtp_server, hal_hbtp_hwservice)
+allow hal_hbtp_client hal_hbtp_hwservice:hwservice_manager find;
+hal_client_domain(hbtp, hal_allocator);
