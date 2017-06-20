@@ -45,3 +45,6 @@ com.qualcomm.qti.bluetooth_audio::IBluetoothAudio            u:object_r:hal_audi
 com.qualcomm.qti.ant::IAntHci                                u:object_r:hal_bluetooth_hwservice:s0
 vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_bluetooth_hwservice:s0
 vendor.qti.hardware.perf::IPerf                              u:object_r:hal_perf_hwservice:s0
+vendor.qti.hardware.radio.lpa::IUimLpa                                  u:object_r:hal_telephony_hwservice:s0
+vendor.qti.hardware.radio.uim_remote_client::IUimRemoteServiceClient    u:object_r:hal_telephony_hwservice:s0
+vendor.qti.hardware.radio.uim_remote_server::IUimRemoteServiceServer    u:object_r:hal_telephony_hwservice:s0
