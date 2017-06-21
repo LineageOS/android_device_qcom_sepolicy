@@ -339,6 +339,7 @@
 /sys/class/mmc_host(/.*)?                                           u:object_r:sysfs_mmc_host:s0
 /sys/class/scsi_host(/.*)?                                          u:object_r:sysfs_scsi_host:s0
 /sys/class/kgsl(/.*)?                                               u:object_r:sysfs_kgsl:s0
+/sys/devices(/platform)?/soc/[0-9a-f]+.qcom,kgsl-3d0/kgsl(/.*)?     u:object_r:sysfs_kgsl:s0
 /sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
 /sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
 /sys/kernel/mm/ksm(/.*)?                                            u:object_r:sysfs_memory:s0
