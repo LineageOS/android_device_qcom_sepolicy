@@ -112,7 +112,7 @@ allow mmi kmsg_device:chr_file rw_file_perms;
 
 #mmi test
 unix_socket_connect(mmi, cnd, cnd);
-unix_socket_connect(mmi, dpmwrapper, dpmd);
+#unix_socket_connect(mmi, dpmwrapper, dpmd);
 unix_socket_connect(mmi, netmgrd, netmgrd);
 net_domain(mmi);
 

@@ -13,12 +13,6 @@ allow cnd smem_log_device:chr_file rw_file_perms;
 
 # allow cnd the following capability
 allow cnd self:capability {
-    setuid
-    setgid
-    dac_override
-    net_raw
-    chown
-    fsetid
     net_admin
     sys_module
     net_bind_service
@@ -51,11 +45,12 @@ allow cnd cnd_data_file:dir rw_dir_perms;
 qmux_socket(cnd)
 
 # allow cnd to access wpa_socket
-# comment this out for now to resolve compilation
-#unix_socket_send(cnd, wpa, wpa)
+unix_socket_send(cnd, wpa, hal_wifi_supplicant)
 allow cnd wpa_socket:dir rw_dir_perms;
 allow cnd wpa_socket:sock_file { create unlink setattr };
 allow cnd wifi_data_file:dir r_dir_perms;
+
+allow cnd wifi_vendor_data_file:dir r_dir_perms;
 
 # allow cnd to obtain wakelock
 wakelock_use(cnd)
@@ -98,3 +93,9 @@ allow cnd self:socket ioctl;
 allowxperm cnd self:socket ioctl msm_sock_ipc_ioctls;
 allow cnd sysfs:file r_file_perms;
 allow cnd sysfs_data:file r_file_perms;
+
+add_hwservice(cnd, hal_cne_hwservice)
+hwbinder_use(cnd)
+get_prop(cnd, hwservicemanager_prop)
+binder_call(cnd, dataservice_app)
+binder_call(cnd, ims)

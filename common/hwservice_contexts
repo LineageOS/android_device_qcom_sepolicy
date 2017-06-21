@@ -45,3 +45,7 @@ com.qualcomm.qti.ant::IAntHci                                u:object_r:hal_blue
 vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_bluetooth_hwservice:s0
 vendor.qti.hardware.perf::IPerf                              u:object_r:hal_perf_hwservice:s0
 vendor.qti.hardware.alarm::IAlarm                            u:object_r:hal_alarm_qti_hwservice:s0
+com.qualcomm.qti.uceservice::IUceService                     u:object_r:hal_imsrcsd_hwservice:s0
+com.qualcomm.qti.imscmservice::IImsCmService                 u:object_r:hal_imsrcsd_hwservice:s0
+com.quicinc.cne.api::IApiService                             u:object_r:hal_cne_hwservice:s0
+com.quicinc.cne.server::IServer                              u:object_r:hal_cne_hwservice:s0

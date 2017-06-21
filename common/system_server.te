@@ -32,7 +32,7 @@ allow system_server {
     wbc_service
     # Allow system_server to add digital pen system service
     usf_service
-    dpmservice
+    #dpmservice
 }:service_manager add;
 
 allow system_server qtitetherservice_service:service_manager find;
@@ -54,8 +54,8 @@ unix_socket_connect(system_server, iop, dumpstate)
 # allow  system/framework applications to update the dpmd configuration files
 #unix_socket_connect(system_server, dpmd, dpmd);
 #allow system_server { dpmd_socket socket_device }:sock_file w_file_perms;
-allow system_server dpmd_data_file:dir create_dir_perms;
-allow system_server dpmd_data_file:file create_file_perms;
+#allow system_server dpmd_data_file:dir create_dir_perms;
+#allow system_server dpmd_data_file:file create_file_perms;
 
 #unix_socket_send(system_server, mpctl, perfd)
 #unix_socket_connect(system_server, mpctl, perfd)

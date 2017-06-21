@@ -27,3 +27,7 @@
 
 type seemp_data_file, core_data_file_type, file_type;
 type seempdw_socket, file_type, mlstrustedobject;
+type dpmwrapper_socket, file_type, mlstrustedobject;
+
+type dpmd_socket, file_type;
+type dpmd_data_file, file_type, data_file_type;

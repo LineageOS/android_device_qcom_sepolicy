@@ -25,9 +25,7 @@
 android.apps.IQfpService                       u:object_r:iqfp_service:s0
 android.apps.IQfpAndroidService                u:object_r:qfp_proxy_service:s0
 AtCmdFwd                                       u:object_r:atfwd_service:s0
-dpmservice                                     u:object_r:dpmservice:s0
 listen.service                                 u:object_r:mediaserver_service:s0
-cneservice                                     u:object_r:cne_service:s0
 gbahttpauth                                    u:object_r:gba_auth_service:s0
 com.qualcomm.qti.auth.fidocryptodaemon         u:object_r:fidodaemon_service:s0
 wbc_service                                    u:object_r:wbc_service:s0
@@ -49,7 +47,7 @@ com.qualcomm.qti.secota.service.SecotaNService u:object_r:secotad_service:s0
 mdtp                                           u:object_r:mdtpdaemon_service:s0
 qtitetherservice                               u:object_r:qtitetherservice_service:s0
 com.qualcomm.qti.seemp.health                  u:object_r:seemp_health_daemon_service:s0
-uce                                            u:object_r:uce_service:s0
+com.qualcomm.qti.uceservice                    u:object_r:imsuce_service:s0
 wigigp2p                                       u:object_r:wigigp2p_service:s0
 wigig                                          u:object_r:wigig_service:s0
 # DOLBY_START

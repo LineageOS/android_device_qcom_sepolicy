@@ -11,6 +11,8 @@ binder_call(platform_app, secotad)
 # Allow platform apps to interact with imscm daemon
 binder_call(platform_app, imscm)
 allow platform_app imscm_service:service_manager find;
+
+allow platform_app imsuce_service:service_manager find;
 allow platform_app color_service:service_manager find;
 
 # Allow NFC service to be found
@@ -19,9 +21,6 @@ allow platform_app nfc_service:service_manager find;
 #Allow platform apps to interact with seemp health daemon
 binder_call(platform_app, seemp_health_daemon)
 
-# Allow cneservice to be found
-allow platform_app cne_service:service_manager find;
-
 # Allow gba_auth_service to be found
 allow platform_app gba_auth_service:service_manager find;
 
@@ -29,6 +28,5 @@ allow platform_app gba_auth_service:service_manager find;
 hal_client_domain(platform_app, hal_hbtp)
 
 # Allow dpmservice to be found
-allow platform_app dpmservice:service_manager find;
 #get_prop(platform_app, bluetooth_prop)
 get_prop(platform_app, debug_gralloc_prop)

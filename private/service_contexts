@@ -28,3 +28,6 @@
 qti.security.seemp                             u:object_r:seemp_service:s0
 seempservice                                   u:object_r:seemp_service:s0
 qti.security.seempspa                          u:object_r:seemp_service:s0
+cneservice                                     u:object_r:cne_service:s0
+dpmservice                                     u:object_r:dpmservice:s0
+uce                                            u:object_r:uce_service:s0

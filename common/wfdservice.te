@@ -83,7 +83,7 @@ allow wfdservice self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl
 
 # Allow it to use perflock
 allow wfdservice mpctl_socket:dir r_dir_perms;
-allow wfdservice dpmservice:service_manager add;
+#allow wfdservice dpmservice:service_manager add;
 unix_socket_send(wfdservice, mpctl, perfd)
 unix_socket_connect(wfdservice, mpctl, perfd)
 unix_socket_send(wfdservice, mpctl, mpdecision)
