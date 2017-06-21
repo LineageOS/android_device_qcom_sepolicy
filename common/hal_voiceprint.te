@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,6 +25,20 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Provide access to Q VoicePrint
-allow tee qvop_data_file:dir create_dir_perms;
-allow tee qvop_data_file:file create_file_perms;
+# IPC
+binder_call(hal_voiceprint_client, hal_voiceprint_server)
+binder_call(hal_voiceprint_server, hal_voiceprint_client)
+
+add_hwservice(hal_voiceprint_server, hal_voiceprint_hwservice)
+allow hal_voiceprint_client hal_voiceprint_hwservice:hwservice_manager find;
+
+# read dir
+allow hal_voiceprint qvop-daemon_data_file: file create_file_perms;
+
+# r/w/u contents
+allow hal_voiceprint qvop-daemon_data_file: dir rw_dir_perms;
+
+# memory alloc
+allow hal_voiceprint ion_device:chr_file r_file_perms;
+
+r_dir_file(hal_voiceprint, cgroup)

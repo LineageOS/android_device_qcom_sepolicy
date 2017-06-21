@@ -74,6 +74,10 @@ allow tee qfp-daemon_data_file:file create_file_perms;
 allow tee persist_qti_fp_file:dir create_dir_perms;
 allow tee persist_qti_fp_file:file create_file_perms;
 
+# Provide access to Q VoicePrint
+allow tee qvop-daemon_data_file:dir create_dir_perms;
+allow tee qvop-daemon_data_file:file create_file_perms;
+
 # Allow access to qsee_ipc_irq_spss device
 allow tee qsee_ipc_irq_spss_device:chr_file rw_file_perms;
 

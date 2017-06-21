@@ -64,3 +64,4 @@ vendor.qti.hardware.wigig.supptunnel::ISuppTunnelProvider    u:object_r:hal_wigi
 vendor.qti.hardware.qteeconnector::IAppConnector             u:object_r:hal_qteeconnector_hwservice:s0
 vendor.qti.hardware.qteeconnector::IGPAppConnector           u:object_r:hal_qteeconnector_hwservice:s0
 vendor.qti.esepowermanager::IEsePowerManager                 u:object_r:hal_esepowermanager_hwservice:s0
+vendor.qti.voiceprint::IQtiVoicePrintService                 u:object_r:hal_voiceprint_hwservice:s0
