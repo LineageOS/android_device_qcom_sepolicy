@@ -222,3 +222,4 @@ allow system_app cache_recovery_file:file create_file_perms;
 binder_call( system_app, update_engine )
 
 hal_client_domain(system_app, hal_perf)
+hal_client_domain(system_app, hal_alarm_qti);
