@@ -217,3 +217,7 @@ binder_call( system_app, update_engine )
 
 hal_client_domain(system_app, hal_perf)
 #allow system_app qseeproxy:unix_dgram_socket sendto;
+
+#allow system_app access ioctl
+allowxperm system_app self:socket ioctl msm_sock_ipc_ioctls;
+allow system_app self:socket ioctl;
