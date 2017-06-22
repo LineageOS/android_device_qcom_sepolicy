@@ -41,3 +41,4 @@ set_prop(qtelephony, ctl_default_prop);
 hwbinder_use(qtelephony);
 allow qtelephony system_file:dir r_dir_perms;
 get_prop(qtelephony, hwservicemanager_prop);
+add_hwservice(qtelephony, hal_atfwd_hwservice);

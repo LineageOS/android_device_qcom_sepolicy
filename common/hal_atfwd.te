@@ -27,3 +27,4 @@
 
 
 binder_call(atfwd, qtelephony);
+allow atfwd hal_atfwd_hwservice:hwservice_manager find;
