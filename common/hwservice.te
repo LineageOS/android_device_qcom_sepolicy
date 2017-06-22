@@ -35,3 +35,4 @@ type hal_perf_hwservice, hwservice_manager_type;
 type hal_alarm_qti_hwservice, hwservice_manager_type;
 type hal_cne_hwservice, hwservice_manager_type;
 type hal_imsrcsd_hwservice, hwservice_manager_type;
+type hal_atfwd_hwservice, hwservice_manager_type;

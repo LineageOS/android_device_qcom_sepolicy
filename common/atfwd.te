@@ -6,19 +6,15 @@ init_daemon_domain(atfwd)
 allow atfwd self:socket create_socket_perms;
 allowxperm atfwd self:socket ioctl msm_sock_ipc_ioctls;
 
-r_dir_file(atfwd, sysfs_type)
-#Allow IPC binding with ServiceManager & System apps
-#binder_use(atfwd);
 binder_call(atfwd, system_app);
-#binder_call(atfwd, servicemanager);
 r_dir_file(atfwd, sysfs_ssr);
+r_dir_file(atfwd, sysfs_esoc);
+r_dir_file(atfwd, sysfs_data);
 
 set_prop(atfwd, radio_prop)
 
 hwbinder_use(atfwd)
 get_prop(atfwd, hwservicemanager_prop)
-#allow atfwd atfwd_service:service_manager find;
-allow atfwd sysfs:file r_file_perms;
 #diag
 userdebug_or_eng(`
     diag_use(atfwd)
