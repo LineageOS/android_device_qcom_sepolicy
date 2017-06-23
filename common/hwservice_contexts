@@ -40,7 +40,7 @@ vendor.qti.hardware.improvetouch.touchcompanion::ITouchCompanion       u:object_
 vendor.qti.hardware.improvetouch.gesturemanager::IGestureManager       u:object_r:hal_hbtp_hwservice:s0
 vendor.qti.hardware.improvetouch.blobmanager::IBlobManager             u:object_r:hal_hbtp_hwservice:s0
 com.qualcomm.qti.dpm.api::IdpmQmi                            u:object_r:hal_dpmqmi_hwservice:s0
-com.qualcomm.qti.imsrtpservice::IRTPService                  u:object_r:hal_imsrtp_hwservice:s0
+vendor.qti.imsrtpservice::IRTPService                        u:object_r:hal_imsrtp_hwservice:s0
 com.qualcomm.qti.bluetooth_audio::IBluetoothAudio            u:object_r:hal_audio_hwservice:s0
 com.qualcomm.qti.ant::IAntHci                                u:object_r:hal_bluetooth_hwservice:s0
 vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_bluetooth_hwservice:s0
