@@ -32,7 +32,7 @@ type qseeproxy_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(qseeproxy)
 
 #Allow qseeproxy to use Binder IPC
-#binder_use(qseeproxy)
+vndbinder_use(qseeproxy)
 
 #Allow apps to interact with qseeproxy
 binder_call(qseeproxy, qsee_svc_app)

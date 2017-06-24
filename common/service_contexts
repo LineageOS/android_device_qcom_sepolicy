@@ -30,7 +30,6 @@ listen.service                                 u:object_r:mediaserver_service:s0
 cneservice                                     u:object_r:cne_service:s0
 gbahttpauth                                    u:object_r:gba_auth_service:s0
 com.qualcomm.qti.auth.fidocryptodaemon         u:object_r:fidodaemon_service:s0
-com.qualcomm.qti.qseeproxy                     u:object_r:qseeproxy_service:s0
 wbc_service                                    u:object_r:wbc_service:s0
 dun                                            u:object_r:dun_service:s0
 qti.ims.connectionmanagerservice               u:object_r:imscm_service:s0
@@ -51,7 +50,6 @@ mdtp                                           u:object_r:mdtpdaemon_service:s0
 qtitetherservice                               u:object_r:qtitetherservice_service:s0
 com.qualcomm.qti.seemp.health                  u:object_r:seemp_health_daemon_service:s0
 uce                                            u:object_r:uce_service:s0
-eSEPowerManagerService                         u:object_r:esepmdaemon_service:s0
 wigigp2p                                       u:object_r:wigigp2p_service:s0
 wigig                                          u:object_r:wigig_service:s0
 # DOLBY_START
