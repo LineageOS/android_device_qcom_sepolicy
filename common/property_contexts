@@ -108,3 +108,8 @@ ctl.vendor.LKCore-rel      u:object_r:ctl_LKCore_prop:s0
 vendor.rild.libpath        u:object_r:vendor_rild_libpath_prop:s0
 # Peripheral Manager
 vendor.peripheral.         u:object_r:per_mgr_state_prop:s0
+
+persist.vendor.radio       u:object_r:radio_prop:s0
+vendor.radio               u:object_r:radio_prop:s0
+ro.vendor.ril.             u:object_r:radio_prop:s0
+persist.vendor.sys.        u:object_r:vendor_system_prop:s0
