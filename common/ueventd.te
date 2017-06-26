@@ -13,6 +13,7 @@ allow ueventd {
     sysfs_usb_supply
     sysfs_socinfo
     sysfs_data
+    sysfs_kgsl
 }:file w_file_perms;
 
 #allow ueventd mba_debug_dev:blk_file r_file_perms;
