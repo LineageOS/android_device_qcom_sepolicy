@@ -183,7 +183,7 @@
 /system/bin/hvdcp                               u:object_r:hvdcp_exec:s0
 /(vendor|system/vendor)/bin/qseecomd            u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/bg_daemon           u:object_r:bg_daemon_exec:s0
-/system/bin/spdaemon                            u:object_r:spdaemon_exec:s0
+/(vendor|system/vendor)/bin/spdaemon            u:object_r:spdaemon_exec:s0
 /system/bin/hostapd_cli                         u:object_r:hostapd_exec:s0
 /(system|system/vendor)/bin/adsprpcd            u:object_r:adsprpcd_exec:s0
 /system/bin/wpa_cli                             u:object_r:wcnss_service_exec:s0
