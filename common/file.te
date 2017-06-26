@@ -226,3 +226,7 @@ type sysfs_diag, fs_type, sysfs_type;
 # QDMA data files
 type qdma_data_file, file_type, data_file_type;
 type qdma_app_data_file, file_type, data_file_type;
+
+# path to debugfs use this whic should be only used
+# in debug builds
+type qti_debugfs, fs_type, debugfs_type;

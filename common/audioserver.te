@@ -61,9 +61,8 @@
 
 #debugfs access to audio
 userdebug_or_eng(`
-typeattribute audioserver qti_debugfs_domain;
-allow audioserver debugfs:dir r_dir_perms;
-allow audioserver debugfs:file rw_file_perms;
+allow audioserver qti_debugfs:dir r_dir_perms;
+allow audioserver qti_debugfs:file rw_file_perms;
 ')
 # Allow audioserver to create socket files for audio arbitration
 allow audioserver audio_data_file:sock_file { create setattr unlink };
