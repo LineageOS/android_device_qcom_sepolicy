@@ -177,3 +177,7 @@ binder_call(system_server, mm-pp-daemon)
 hal_client_domain(system_server,hal_bluetooth);
 
 hal_client_domain(system_server, hal_perf)
+
+# allow access to QDMA
+allow system_server { qdma_app_data_file } :file rw_file_perms;
+allow system_server { qdma_app_data_file } :dir r_dir_perms;
