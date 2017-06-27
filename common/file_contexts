@@ -279,6 +279,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service-qti u:object_r:hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service-qti u:object_r:hal_gatekeeper_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.0-service     u:object_r:hal_nfc_default_exec:s0
+/(vendor|system/vendor)/bin/qdmastatsd          u:object_r:qdmastatsd_exec:s0
 
 ###################################
 # sysfs files
@@ -348,6 +349,7 @@
 /sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
 /sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
 /sys/kernel/mm/ksm(/.*)?                                            u:object_r:sysfs_memory:s0
+
 ###################################
 # data files
 #
@@ -396,6 +398,7 @@
 /data/misc/wifi/nvbin(/.*)?                                         u:object_r:dynamic_nv_data_file:s0
 /data/misc/wifi/wigig_sockets(/.*)?                                 u:object_r:wpa_socket:s0
 /data/misc/wifi/wigig_sockets/wpa_ctrl.*                            u:object_r:system_wpa_socket:s0
+/data/vendor/qdmastats(/.*)?                                        u:object_r:qdma_data_file:s0
 
 /data/vendor/qdma(/.*)?                                             u:object_r:qdma_data_file:s0
 
