@@ -81,9 +81,6 @@ allow system_app tee:unix_dgram_socket sendto;
 # system app to access DTS data files
 r_dir_file(system_app, dts_data_file)
 
-# access to time_daemon
-allow system_app time_daemon:unix_stream_socket connectto;
-
 # usf (ultrasound) apps need following permissions
 allow system_app usf:unix_stream_socket connectto;
 allow system_app usf_data_file:sock_file write;
