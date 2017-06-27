@@ -302,6 +302,8 @@
 /sys/devices/virtual/graphics/fb([0-2])+/product_description        u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-2])+/vendor_name                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-2])+/hdcp/tp                    u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-9])+/msm_fb_panel_status        u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-9])+/msm_fb_panel_info          u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/hsicctl/hsicctl1[0-9]/modem_wait               u:object_r:sysfs_hsic_modem_wait:s0
 /sys/devices/virtual/hsicctl/hsicctl[0-9]/modem_wait                u:object_r:sysfs_hsic_modem_wait:s0
 /sys/devices/virtual/smdpkt/smdcntl1[0-9]/open_timeout              u:object_r:sysfs_smd_open_timeout:s0
@@ -319,6 +321,7 @@
 /sys/class/graphics/fb([0-2])+/ad                                   u:object_r:sysfs_graphics:s0
 /sys/devices/soc/[0-9a-z]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-z]+.qcom,spmi:qcom,pmi[0-9]+@[0-9]+:qcom,leds@[a-z0-9]+(/.*)? u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/switch/hdmi(/.*)?                              u:object_r:sysfs_graphics:s0
 /sys/devices/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/bus/platform/drivers/xhci_msm_hsic(/.*)?                       u:object_r:sysfs_hsic:s0
 /sys/devices/msm_hsic_host/host_ready                               u:object_r:sysfs_hsic_host_rdy:s0
