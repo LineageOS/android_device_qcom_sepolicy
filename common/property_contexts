@@ -1,3 +1,4 @@
+# Copyright (c) 2014 - 2016, The Linux Foundation. All rights reserved.
 # Copyright (c) 2015-2016 Dolby Laboratories, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -24,7 +25,6 @@
 
 wc_transport.              u:object_r:bluetooth_prop:s0
 sys.usb_uicc.              u:object_r:uicc_prop:s0
-dolby.audio.               u:object_r:audio_prop:s0
 persist.bluetooth.         u:object_r:bluetooth_prop:s0
 sys.ims.                   u:object_r:qcom_ims_prop:s0
 hw.fm.                     u:object_r:fm_prop:s0
@@ -84,6 +84,10 @@ ro.alarm_handled           u:object_r:alarm_handled_prop:s0
 ro.alarm_instance          u:object_r:alarm_instance_prop:s0
 #HWUI Property
 ro.hwui.texture_cache_size u:object_r:hwui_prop:s0
+#Bservice Property
+ro.sys.fw.bservice_ u:object_r:bservice_prop:s0
+#Delayed Service Restart Property
+ro.am.reschedule_service u:object_r:reschedule_service_prop:s0
 persist.graphics.vulkan.disable     u:object_r:graphics_vulkan_prop:s0
 #boot mode property
 sys.boot_mode              u:object_r:boot_mode_prop:s0
