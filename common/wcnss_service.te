@@ -22,6 +22,7 @@ qmux_socket(wcnss_service);
 allow wcnss_service self:socket create_socket_perms;
 # ioctlcmd=c304
 allowxperm wcnss_service self:socket ioctl msm_sock_ipc_ioctls;
+allowxperm wcnss_service self:udp_socket ioctl SIOCIWFIRSTPRIV_05;
 allow wcnss_service smem_log_device:chr_file rw_file_perms;
 allow wcnss_service proc_net:file rw_file_perms;
 
