@@ -361,7 +361,7 @@
 /data/vendor/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
 /data/misc/iop(/.*)?                                                u:object_r:iop_data_file:s0
 /data/vendor/display(/.*)?                                          u:object_r:display_misc_file:s0
-/data/misc/ipa(/.*)?                                                u:object_r:ipacm_data_file:s0
+/data/vendor/ipa(/.*)?                                              u:object_r:ipacm_data_file:s0
 /data/dpm(/.*)?                                                     u:object_r:dpmd_data_file:s0
 /data/misc/qsee(/.*)?                                               u:object_r:data_qsee_file:s0
 /data/misc/spss(/.*)?                                               u:object_r:spss_data_file:s0

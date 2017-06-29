@@ -33,3 +33,4 @@ type hal_dpmqmi_hwservice, hwservice_manager_type;
 type hal_imsrtp_hwservice, hwservice_manager_type;
 type hal_perf_hwservice, hwservice_manager_type;
 type hal_alarm_qti_hwservice, hwservice_manager_type;
+type hal_ipacm_hwservice, hwservice_manager_type;
