@@ -232,6 +232,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.display\.color@1\.0-service            u:object_r:hal_display_color_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@1\.0-service       u:object_r:hal_perf_default_exec:s0
 /(vendor|system/vendor)/bin/ssgqmigd            u:object_r:ssgqmigd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.iop@1\.0-service        u:object_r:hal_iop_default_exec:s0
 /(vendor|system/vendor)/bin/mlid                u:object_r:mlid_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service u:object_r:hal_esepowermanager_qti_exec:s0
 /(vendor|system/vendor)/bin/loc_launcher        u:object_r:location_exec:s0
@@ -409,7 +410,7 @@
 /data/vendor/time(/.*)?                                             u:object_r:time_data_file:s0
 /data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
 /data/vendor/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
-/data/misc/iop(/.*)?                                                u:object_r:iop_data_file:s0
+/data/vendor/iop(/.*)?                                                u:object_r:iop_data_file:s0
 /data/vendor/display(/.*)?                                          u:object_r:display_misc_file:s0
 /data/vendor/ipa(/.*)?                                              u:object_r:ipacm_data_file:s0
 /data/misc/qsee(/.*)?                                               u:object_r:data_qsee_file:s0

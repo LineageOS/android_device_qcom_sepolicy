@@ -188,3 +188,6 @@ allow system_server { qdma_app_data_file } :dir r_dir_perms;
 
 # allow WIGIG framework hosted in system_server to access wigig_hal
 hal_client_domain(system_server, hal_wigig)
+
+# allow system_server to access IOP HAL service
+hal_client_domain(system_server, hal_iop)
