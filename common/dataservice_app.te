@@ -72,3 +72,4 @@ allow dataservice_app hal_imsrcsd_hwservice:hwservice_manager find;
 binder_call(dataservice_app, hal_rcsservice)
 
 allow dataservice_app cnd_data_file:file r_file_perms;
+allow dataservice_app cnd_data_file:dir search;
