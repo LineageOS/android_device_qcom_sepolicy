@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2015-2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -23,6 +23,10 @@
 # BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+
+# Dev nodes
+/dev/glink_pkt_bg_display_ctrl                  u:object_r:glink_display_ctrl_device:s0
+/dev/glink_pkt_bg_display_data                  u:object_r:glink_display_data_device:s0
 
 ###################################
 # Primary storage device nodes
@@ -51,3 +55,6 @@
 
 #For adreno libs
 /vendor/lib(64)?/libsc-a3xx\.so                                     u:object_r:same_process_hal_file:s0
+
+# System files
+/(vendor|system/vendor)/bin/hw/vendor\.google_clockwork\.sidekickgraphics@1\.0-service      u:object_r:hal_sidekickgraphics_default_exec:s0
