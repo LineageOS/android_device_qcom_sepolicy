@@ -61,8 +61,7 @@ userdebug_or_eng(`
 
 userdebug_or_eng(`
 allow hal_bluetooth proc_sysrq:file w_file_perms;
-typeattribute hal_bluetooth_qti qti_debugfs_domain;
-allow hal_bluetooth_qti debugfs:file r_file_perms;
+allow hal_bluetooth_qti qti_debugfs:file r_file_perms;
 ')
 
 allow system_app hal_bluetooth_hwservice :hwservice_manager find;

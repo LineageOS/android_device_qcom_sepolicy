@@ -28,13 +28,13 @@
 userdebug_or_eng(`
   type qti-testscripts, domain, mlstrustedsubject;
   permissive qti-testscripts;
-  typeattribute qti-testscripts qti_testscripts_domain;
+  #typeattribute qti-testscripts qti_testscripts_domain;
   domain_trans(init, vendor_shell_exec, qti-testscripts)
 
   #super_user - start
   # Add qti-testscripts to various domains
   net_domain(qti-testscripts)
-  app_domain(qti-testscripts)
+  #app_domain(qti-testscripts)
 
   dontaudit qti-testscripts self:capability_class_set *;
   dontaudit qti-testscripts kernel:security *;

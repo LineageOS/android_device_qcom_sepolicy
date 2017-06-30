@@ -42,8 +42,7 @@ allow RIDL RIDL_data_file:dir create_dir_perms;
 allow RIDL RIDL_data_file:file create_file_perms;
 allow RIDL RIDL_data_file:lnk_file { create read unlink };
 userdebug_or_eng(`
-typeattribute RIDL qti_debugfs_domain;
-allow RIDL debugfs:file read;
+allow RIDL qti_debugfs:file read;
 ')
 
 # ver_info.txt

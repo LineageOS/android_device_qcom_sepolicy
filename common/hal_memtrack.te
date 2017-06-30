@@ -27,7 +27,6 @@
 
 #debugfs access to audio
 userdebug_or_eng(`
-typeattribute hal_memtrack_default qti_debugfs_domain;
-allow hal_memtrack_default debugfs:dir r_dir_perms;
-allow hal_memtrack_default debugfs:file rw_file_perms;
+allow hal_memtrack_default qti_debugfs:dir r_dir_perms;
+allow hal_memtrack_default qti_debugfs:file rw_file_perms;
 ')
