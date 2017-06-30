@@ -393,6 +393,8 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/queues/rx-0/rps_cpus  u:object_r:sysfs_wigig:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/gro_flush_timeout     u:object_r:sysfs_wigig:s0
 /sys/module/msm_core(/.*)?                                          u:object_r:sysfs_ea:s0
+/sys/module/lpm_stats(/.*)?                                         u:object_r:sysfs_msm_stats:s0
+/sys/module/lpm_level(/.*)?                                         u:object_r:sysfs_msm_power:s0
 
 ###################################
 # data files
