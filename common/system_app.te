@@ -87,6 +87,9 @@ allow system_app usf_data_file:sock_file write;
 allow system_app usf_data_file:dir rw_dir_perms;
 allow system_app usf_data_file:{ file lnk_file } create_file_perms;
 
+# Allow hbtp hal Service to be found
+hal_client_domain(system_app, hal_hbtp)
+
 #access to wifi_ftmd
 allow system_app wififtmd_prop:property_service set;
 unix_socket_send(system_app, wififtmd, wifi_ftmd)
