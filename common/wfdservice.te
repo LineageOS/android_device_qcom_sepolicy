@@ -1,5 +1,4 @@
-type wfdservice, domain;
-type wfdservice_exec, exec_type, vendor_file_type, file_type;
+type wfdservice_exec, exec_type, file_type;
 
 #Allow for transition from init domain to wfdservice
 init_daemon_domain(wfdservice)
@@ -8,7 +7,7 @@ init_daemon_domain(wfdservice)
 net_domain(wfdservice)
 
 #Allow wfdservice to use Binder IPC
-#binder_use(wfdservice)
+binder_use(wfdservice)
 
 #Allow hardware binder use
 hwbinder_use(wfdservice)
@@ -31,7 +30,7 @@ binder_call(wfdservice, audioserver)
 binder_call(wfdservice, system_server)
 
 # Mark wfdservice as a Binder service domain
-#binder_service(wfdservice)
+binder_service(wfdservice)
 
 #Allow wfdservice to be registered with service manager
 allow wfdservice wfdservice_service:service_manager add;
@@ -74,8 +73,8 @@ userdebug_or_eng(`
 r_dir_file(wfdservice, firmware_file)
 
 #Allow access to /data/media for dumping
-#allow wfdservice media_rw_data_file:dir create_dir_perms;
-#allow wfdservice media_rw_data_file:file create_file_perms;
+allow wfdservice media_rw_data_file:dir create_dir_perms;
+allow wfdservice media_rw_data_file:file create_file_perms;
 
 #allow access to sysfs to know HDMI repeater state
 allow wfdservice sysfs_graphics:file rw_file_perms;
@@ -83,11 +82,6 @@ allow wfdservice self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl
 
 # Allow it to use perflock
 allow wfdservice mpctl_socket:dir r_dir_perms;
-#allow wfdservice dpmservice:service_manager add;
-unix_socket_send(wfdservice, mpctl, perfd)
-unix_socket_connect(wfdservice, mpctl, perfd)
-unix_socket_send(wfdservice, mpctl, mpdecision)
-unix_socket_connect(wfdservice, mpctl, mpdecision)
 
 # Allow access to input_device for touch input detection
 allow wfdservice input_device:dir r_dir_perms;
@@ -95,7 +89,7 @@ allow wfdservice input_device:chr_file r_file_perms;
 
 # Allow access to mediaserver, surfaceflinger and permissionmanager
 # for interaction of wfdservice
-#allow wfdservice {audioserver_service permission_service surfaceflinger_service wfdservice_service}: service_manager find;
+allow wfdservice {audioserver_service permission_service surfaceflinger_service wfdservice_service}: service_manager find;
 
 #Allow setting of net_admin capability so that libnl API's can be used
 allow wfdservice self:capability net_admin;
@@ -123,3 +117,12 @@ allowxperm wfdservice self:udp_socket ioctl priv_sock_ioctls;
 
 #Allow access to proc/net/arp
 allow wfdservice proc_net:file r_file_perms;
+
+hal_client_domain(wfdservice, wifidisplayhalservice);
+
+#Denial seen - SELinux : avc:  denied  { find } for interface=com.qualcomm.qti.wifidisplayhal::IHDCPSession
+#pid=3530 scontext=u:r:wfdservice:s0 tcontext=u:object_r:wifidisplayhalservice_hwservice:s0 tclass=hwservice_manager
+allow wfdservice wifidisplayhalservice_hwservice:hwservice_manager find;
+
+allow wfdservice sysfs_graphics:file r_file_perms;
+allow wfdservice sysfs_graphics:dir r_dir_perms;
