@@ -94,3 +94,4 @@ ro.gpu.available_frequencies u:object_r:freq_prop:s0
 sys.nfc.nq.                u:object_r:nfc_nq_prop:s0
 ctl.ppd                    u:object_r:ppd_prop:s0
 qemu.gles                  u:object_r:qemu_gles_prop:s0
+vendor.rild.libpath        u:object_r:vendor_rild_libpath_prop:s0
