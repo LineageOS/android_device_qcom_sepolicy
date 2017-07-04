@@ -53,4 +53,4 @@ allowxperm hal_gnss self:socket ioctl msm_sock_ipc_ioctls;
 userdebug_or_eng(`
   diag_use(hal_gnss);
 ')
-
+use_per_mgr(hal_gnss)
