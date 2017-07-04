@@ -366,6 +366,7 @@
 # data files
 #
 /data/connectivity(/.*)?                                            u:object_r:cnd_data_file:s0
+/data/vendor/connectivity(/.*)?                                     u:object_r:cnd_data_file:s0
 /data/data_test(/.*)?                                               u:object_r:data_test_data_file:s0
 /data/diag_log(/.*)?                                                u:object_r:diag_data_file:s0
 /data/misc/sensors(/.*)?                                            u:object_r:sensors_data_file:s0
