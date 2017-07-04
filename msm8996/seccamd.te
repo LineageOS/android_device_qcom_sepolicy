@@ -26,17 +26,17 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type seccamd, domain;
-type seccamd_exec, exec_type, file_type;
+type seccamd_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(seccamd)
 
 # Allow finding the media related services
-allow seccamd { mediaserver_service surfaceflinger_service }:service_manager find;
+#allow seccamd { mediaserver_service surfaceflinger_service }:service_manager find;
 
 # Allow interacting with camera related service, including callbacks
-binder_use(seccamd)
-binder_call(seccamd, surfaceflinger)
-binder_call(seccamd, mediaserver)
+#binder_use(seccamd)
+#binder_call(seccamd, surfaceflinger)
+#binder_call(seccamd, mediaserver)
 
 # Allow interacting with qseecom
 allow seccamd tee_device:chr_file rw_file_perms;
