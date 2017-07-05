@@ -271,7 +271,6 @@
 /(vendor|system/vendor)/bin/usf_sw_calib        u:object_r:usf_exec:s0
 /(vendor|system/vendor)/bin/usf_pairing         u:object_r:usf_exec:s0
 /(vendor|system/vendor)/bin/usf_tester          u:object_r:usf_exec:s0
-/(vendor|system/vendor)/bin/RIDLClient.exe      u:object_r:RIDL_exec:s0
 /(vendor|system/vendor)/bin/LKCore              u:object_r:qti_logkit_exec:s0
 /(vendor|system/vendor)/bin/tbaseLoader         u:object_r:tbaseLoader_exec:s0
 /(vendor|system/vendor)/bin/mcStarter           u:object_r:mcStarter_exec:s0
@@ -410,11 +409,11 @@
 /data/misc/qlogd(/.*)?                                              u:object_r:qlogd_data_file:s0
 /data/usf(/.*)?                                                     u:object_r:usf_data_file:s0
 /data/misc/dts(/.*)?                                                u:object_r:dts_data_file:s0
-/data/misc/SelfHost(/.*)?                                           u:object_r:RIDL_data_file:s0
-/data/misc/OTA(/.*)?                                                u:object_r:RIDL_data_file:s0
-/data/misc/qti-logkit(/.*)?                                         u:object_r:qti_logkit_priv_data_file:s0
-/data/misc/qti-logkit/shared-public(/.*)?                           u:object_r:qti_logkit_pub_data_file:s0
-/data/misc/qti-logkit/logdata(/.*)?                                 u:object_r:qti_logkit_pub_data_file:s0
+/data/vendor/qti-logkit(/.*)?                                       u:object_r:qti_logkit_priv_data_file:s0
+/data/vendor/qti-logkit/shared-public(/.*)?                         u:object_r:qti_logkit_pub_data_file:s0
+/data/vendor/qti-logkit/logdata(/.*)?                               u:object_r:qti_logkit_pub_data_file:s0
+/data/vendor/qti-logkit/socket-privileged(/.*)?                     u:object_r:qti_logkit_priv_socket:s0
+/data/vendor/qti-logkit/socket-public(/.*)?                         u:object_r:qti_logkit_pub_socket:s0
 /data/misc/radio(/.*)?                                              u:object_r:radio_data_file:s0
 /data/vendor/radio(/.*)?                                            u:object_r:vendor_radio_data_file:s0
 /data/vendor/netmgr(/.*)?                                           u:object_r:netmgrd_data_file:s0
@@ -422,9 +421,6 @@
 /data/misc/fm(/.*)?                                                 u:object_r:fm_data_file:s0
 /data/misc/audio_pp(/.*)?                                           u:object_r:audio_pp_data_file:s0
 /data/ramdump(/.*)?                                                 u:object_r:ssr_ramdump_data_file:s0
-/data/misc/SelfHost/socket(/.*)?                                    u:object_r:RIDL_socket:s0
-/data/misc/qti-logkit/socket-privileged(/.*)?                       u:object_r:qti_logkit_priv_socket:s0
-/data/misc/qti-logkit/socket-public(/.*)?                           u:object_r:qti_logkit_pub_socket:s0
 /data/system/swap(/.*)?                                             u:object_r:swap_data_file:s0
 /data/vendor/wifi(/.*)?                                             u:object_r:wifi_vendor_data_file:s0
 /data/vendor/wifi/sockets(/.*)?                                     u:object_r:wifi_vendor_wpa_socket:s0
