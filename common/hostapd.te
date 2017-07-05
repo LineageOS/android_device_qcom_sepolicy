@@ -48,4 +48,5 @@ allow hostapd wifi_vendor_data_file:file create_file_perms;
 allow hostapd wifi_vendor_hostapd_socket:dir w_dir_perms;
 allow hostapd wifi_vendor_hostapd_socket:dir create_dir_perms;
 allow hostapd wifi_vendor_hostapd_socket:sock_file create_file_perms;
+allow hostapd wifi_vendor_data_file:sock_file { write create unlink setattr };
 unix_socket_send(hostapd, wifi_vendor_wpa, netd)
