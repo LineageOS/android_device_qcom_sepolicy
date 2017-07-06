@@ -32,7 +32,7 @@ type esepmdaemon_exec, exec_type, file_type;
 init_daemon_domain(esepmdaemon)
 
 #Allow esepmdaemon to use Binder IPC
-binder_use(esepmdaemon)
+vndbinder_use(esepmdaemon)
 
 #Allow apps to interact with esepmdaemon
 binder_call(esepmdaemon, system_app)
