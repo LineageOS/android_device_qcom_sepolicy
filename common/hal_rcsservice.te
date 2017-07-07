@@ -47,3 +47,4 @@ userdebug_or_eng(`
 ')
 
 allow hal_rcsservice sysfs_data:file r_file_perms;
+binder_call(hal_rcsservice, dataservice_app)
