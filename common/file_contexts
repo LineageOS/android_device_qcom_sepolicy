@@ -418,6 +418,8 @@
 /data/vendor/qdmastats(/.*)?                                        u:object_r:qdma_data_file:s0
 
 /data/vendor/qdma(/.*)?                                             u:object_r:qdma_data_file:s0
+/data/vendor/ramdump/bluetooth(/.*)?                                u:object_r:bluetooth_data_file:s0
+/data/vendor/ramdump/bluetooth/logs(/.*)?                           u:object_r:bluetooth_logs_data_file:s0
 
 ###################################
 # persist files
