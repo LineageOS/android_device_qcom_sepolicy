@@ -19,3 +19,4 @@ not_full_treble(`allow domain vendor_file:dir r_dir_perms;')
 userdebug_or_eng(`
 allow domain hal_graphics_composer:fd use;
 ')
+dontaudit domain persist_dpm_prop:file r_file_perms;
