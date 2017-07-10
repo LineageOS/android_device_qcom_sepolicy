@@ -48,6 +48,8 @@ allow qdmastatsd sysfs_kgsl:{file lnk_file} r_file_perms;
 allow qdmastatsd sysfs_kgsl:dir r_dir_perms;
 
 # /sys/class/leds/lcd-backlight/brightness
+allow qdmastatsd sysfs_leds:{file lnk_file} r_file_perms;
+allow qdmastatsd sysfs_leds:dir r_dir_perms;
 allow qdmastatsd sysfs_graphics:{file lnk_file} r_file_perms;
 allow qdmastatsd sysfs_graphics:dir r_dir_perms;
 
