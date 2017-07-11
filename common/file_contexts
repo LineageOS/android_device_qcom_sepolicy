@@ -429,6 +429,7 @@
 /data/vendor/ramdump/bluetooth(/.*)?                                u:object_r:bluetooth_data_file:s0
 /data/vendor/ramdump/bluetooth/logs(/.*)?                           u:object_r:bluetooth_logs_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vpp_data_file:s0
+/data/vendor/camera(/.*)?                                           u:object_r:vendor_camera_data_file:s0
 
 ###################################
 # persist files

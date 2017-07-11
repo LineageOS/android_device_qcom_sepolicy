@@ -246,3 +246,5 @@ type sysfs_irqbalance , sysfs_type, fs_type;
 # vpp files
 type vpp_data_file, file_type, data_file_type;
 type persist_vpp_file, file_type;
+# vendor camera files
+type vendor_camera_data_file, file_type, data_file_type;

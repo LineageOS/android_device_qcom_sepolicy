@@ -40,10 +40,13 @@ allow mm-qcamerad self:process execmem;
 allow mm-qcamerad video_device:dir r_dir_perms;
 allow mm-qcamerad { gpu_device video_device sensors_device }:chr_file rw_file_perms;
 
-allow mm-qcamerad { surfaceflinger mediaserver cameraserver }:fd use;
+allow mm-qcamerad { surfaceflinger mediaserver cameraserver hal_camera }:fd use;
 
 allow mm-qcamerad camera_data_file:dir w_dir_perms;
 #allow mm-qcamerad camera_data_file:sock_file { create unlink };
+
+allow mm-qcamerad vendor_camera_data_file:dir w_dir_perms;
+allow mm-qcamerad vendor_camera_data_file:sock_file { create unlink };
 
 #Allows camera to call ADSP QDSP6 functionality
 allow mm-qcamerad qdsp_device:chr_file rw_file_perms;
@@ -67,3 +70,6 @@ binder_call(mm-qcamerad, mmi);
 allow mm-qcamerad input_device:dir r_dir_perms;
 allow mm-qcamerad input_device:chr_file r_file_perms;
 allow mm-qcamerad sysfs:file rw_file_perms;
+
+hal_client_domain(mm-qcamerad, hal_graphics_allocator)
+allow mm-qcamerad ion_device:chr_file rw_file_perms;
