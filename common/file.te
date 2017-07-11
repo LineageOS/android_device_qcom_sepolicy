@@ -235,3 +235,6 @@ type qti_debugfs, fs_type, debugfs_type;
 
 # vendor radio files
 type vendor_radio_data_file, file_type, data_file_type;
+
+# vendor camera files
+type vendor_camera_data_file, file_type, data_file_type;
