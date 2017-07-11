@@ -69,3 +69,7 @@ attribute hal_wigig_server;
 attribute hal_qteeconnector;
 attribute hal_qteeconnector_client;
 attribute hal_qteeconnector_server;
+
+attribute hal_esepowermanager;
+attribute hal_esepowermanager_client;
+attribute hal_esepowermanager_server;
