@@ -39,7 +39,7 @@ add_hwservice(hal_perf_server, hal_perf_hwservice)
 allow hal_perf_client hal_perf_hwservice:hwservice_manager find;
 
 allow hal_perf cgroup:file r_file_perms;
-#allow hal_perf proc:file rw_file_perms;
+allow hal_perf_default proc:file rw_file_perms;
 allow hal_perf device_latency:chr_file rw_file_perms;
 allow hal_perf freq_prop:file r_file_perms;
 allow hal_perf mpctl_data_file:dir rw_dir_perms;
