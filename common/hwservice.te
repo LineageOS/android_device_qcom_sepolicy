@@ -37,3 +37,4 @@ type hal_ipacm_hwservice, hwservice_manager_type;
 type hal_imsrcsd_hwservice, hwservice_manager_type;
 type hal_cne_hwservice, hwservice_manager_type;
 type hal_atfwd_hwservice, hwservice_manager_type;
+type hal_vpp_hwservice, hwservice_manager_type;
