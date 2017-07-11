@@ -57,6 +57,7 @@ unix_socket_connect(mediacodec, mpctl, perfd)
 
 #allow mediacodec to access adsprpcd
 r_dir_file(mediacodec, adsprpcd_file);
+r_dir_file(mediacodec, firmware_file);
 
 #Allow mediacodec to access proc_net files
 allow mediacodec proc_net:file r_file_perms;
