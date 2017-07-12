@@ -41,6 +41,7 @@ allow hal_gnss self:{
     netlink_socket
     netlink_generic_socket
 } create_socket_perms_no_ioctl;
+allow hal_gnss self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
 
 allow hal_gnss self:socket rw_socket_perms;
 allow hal_gnss sysfs:file r_file_perms;
