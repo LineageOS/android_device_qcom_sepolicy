@@ -49,7 +49,7 @@ ctl.msm_irqbalance         u:object_r:msm_irqbalance_prop:s0
 ctl.msm_irqbal_lb          u:object_r:msm_irqbalance_prop:s0
 camera.                    u:object_r:camera_prop:s0
 persist.camera.            u:object_r:camera_prop:s0
-spcomlib.                    u:object_r:spcomlib_prop:s0
+vendor.spcom.              u:object_r:spcomlib_prop:s0
 sdm.idle_time              u:object_r:sdm_idle_time_prop:s0
 ro.sf.lcd_density             u:object_r:sf_lcd_density_prop:s0
 ro.vendor.scr_enabled         u:object_r:scr_enabled_prop:s0

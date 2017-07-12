@@ -94,6 +94,7 @@ allowxperm cnd self:socket ioctl msm_sock_ipc_ioctls;
 allow cnd sysfs:file r_file_perms;
 allow cnd sysfs_data:file r_file_perms;
 
+# To register cnd to hwbinder
 add_hwservice(cnd, hal_cne_hwservice)
 hwbinder_use(cnd)
 get_prop(cnd, hwservicemanager_prop)

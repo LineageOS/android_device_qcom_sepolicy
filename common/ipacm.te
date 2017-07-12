@@ -15,12 +15,6 @@ userdebug_or_eng(`
   diag_use(ipacm-diag)
 ')
 
-# Allow capabilities to create netfilter_socket
-allow ipacm self:netlink_netfilter_socket create_socket_perms_no_ioctl;
-
-# Allow capabilities to perform network operations and interactions with network interfaces
-allow ipacm ipacm:capability net_admin;
-
 # Allow operations with /dev/ipa, /dev/wwan_ioctl and /dev/ipaNatTable
 allow ipacm ipa_dev:chr_file rw_file_perms;
 
@@ -36,3 +30,9 @@ allow ipacm ipacm:{
 # Allow creating and modifying the PID file
 allow ipacm ipacm_data_file:dir w_dir_perms;
 allow ipacm ipacm_data_file:file create_file_perms;
+
+# To register ipacm to hwbinder
+add_hwservice(ipacm, hal_ipacm_hwservice)
+hwbinder_use(ipacm)
+get_prop(ipacm, hwservicemanager_prop)
+binder_call(ipacm, system_server)

@@ -106,6 +106,16 @@ get_prop(mmi, hwservicemanager_prop);
 #Allow mmi operate ion_device
 allow mmi ion_device:chr_file r_file_perms;
 
+#Allow mmi operate on graphics
+hal_client_domain(mmi, hal_graphics_allocator);
+
+#Allow mmi operate on hwservicemanager
+hwbinder_use(hwservicemanager);
+get_prop(mmi, hwservicemanager_prop);
+
+#Allow mmi operate ion_device
+allow mmi ion_device:chr_file r_file_perms;
+
 #Allow mmi to use IPC
 #binder_use(mmi)
 binder_call(mmi,surfaceflinger)

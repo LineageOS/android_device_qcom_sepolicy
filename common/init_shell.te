@@ -116,14 +116,14 @@ allow qti_init_shell { serial_device userdebug_or_eng(`qdss_device') }:chr_file 
 
 
 allow qti_init_shell {
-    sysfs
+    { sysfs_type - usermodehelper }
     sysfs_devices_system_cpu
     sysfs_thermal
     sysfs_lowmemorykiller
 }:file w_file_perms;
 
 r_dir_file(qti_init_shell, sysfs_thermal)
-r_dir_file(qti_init_shell, sysfs)
+r_dir_file(qti_init_shell, sysfs_type)
 allow qti_init_shell sysfs_socinfo:file write;
 allow qti_init_shell sysfs:{ dir file lnk_file } relabelfrom;
 allow qti_init_shell sysfs_devices_system_cpu: { dir file lnk_file } relabelto;

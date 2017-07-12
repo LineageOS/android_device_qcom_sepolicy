@@ -110,7 +110,7 @@ allow system_app imscm_service:service_manager find;
 allow system_app qfp-daemon_data_file:dir create_dir_perms;
 allow system_app qfp-daemon_data_file:file create_file_perms;
 binder_call(system_app, qfp-daemon)
-
+hal_client_domain(system_app, hal_fingerprint)
 # allow system_app to interact with fido daemon
 binder_call(system_app, fidodaemon)
 
@@ -215,7 +215,6 @@ allow system_app cache_recovery_file:file create_file_perms;
 binder_call( system_app, update_engine )
 
 hal_client_domain(system_app, hal_perf)
-#allow system_app qseeproxy:unix_dgram_socket sendto;
 
 #allow system_app access ioctl
 allowxperm system_app self:socket ioctl msm_sock_ipc_ioctls;
