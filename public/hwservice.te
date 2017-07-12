@@ -25,20 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_display_color_hwservice, hwservice_manager_type;
-type hal_display_config_hwservice, hwservice_manager_type;
-type hal_display_postproc_hwservice, hwservice_manager_type;
-type hal_hbtp_hwservice, hwservice_manager_type;
-type hal_dpmqmi_hwservice, hwservice_manager_type;
-type hal_imsrtp_hwservice, hwservice_manager_type;
-type hal_perf_hwservice, hwservice_manager_type, untrusted_app_visible_hwservice;
-type wifidisplayhalservice_hwservice, hwservice_manager_type;
-type hal_iop_hwservice, hwservice_manager_type;
-type hal_alarm_qti_hwservice, hwservice_manager_type;
-type hal_cne_hwservice, hwservice_manager_type;
-type hal_imsrcsd_hwservice, hwservice_manager_type;
-type hal_ipacm_hwservice, hwservice_manager_type;
-type hal_vpp_hwservice, hwservice_manager_type;
-type hal_wigig_hwservice, hwservice_manager_type;
-type hal_qteeconnector_hwservice, hwservice_manager_type;
-type hal_esepowermanager_hwservice, hwservice_manager_type;
+type hal_atfwd_hwservice, coredomain_hwservice, hwservice_manager_type;
