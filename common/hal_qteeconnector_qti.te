@@ -1,4 +1,4 @@
-# Copyright (c) 2016-2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,47 +25,40 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# HALs
-attribute hal_display_color;
-attribute hal_display_color_client;
-attribute hal_display_color_server;
+#define the type
+type hal_qteeconnector_qti, domain;
 
-attribute hal_display_config;
-attribute hal_display_config_client;
-attribute hal_display_config_server;
+#mark the type as hal_server_domain
+hal_server_domain(hal_qteeconnector_qti, hal_qteeconnector)
 
-attribute hal_display_postproc;
-attribute hal_display_postproc_client;
-attribute hal_display_postproc_server;
+#allow the service to be started by init
+type hal_qteeconnector_qti_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(hal_qteeconnector_qti)
 
-attribute hal_hbtp;
-attribute hal_hbtp_client;
-attribute hal_hbtp_server;
+#allow the service to be added to hwservice list
+add_hwservice(hal_qteeconnector_qti, hal_qteeconnector_hwservice)
 
-attribute hal_perf;
-attribute hal_perf_client;
-attribute hal_perf_server;
+#allow access to hal_allocator
+hal_client_domain(hal_qteeconnector_qti, hal_allocator)
 
-attribute wifidisplayhalservice;
-attribute wifidisplayhalservice_client;
-attribute wifidisplayhalservice_server;
+#allow access to ion device
+allow hal_qteeconnector ion_device:chr_file rw_file_perms;
 
-attribute hal_alarm_qti;
-attribute hal_alarm_qti_client;
-attribute hal_alarm_qti_server;
+#Allow access to tee device
+allow hal_qteeconnector_qti tee_device:chr_file rw_file_perms;
 
-attribute hal_vehicle;
-attribute hal_vehicle_client;
-attribute hal_vehicle_server;
+#Allow access to firmware
+allow hal_qteeconnector firmware_file:dir r_dir_perms;
+allow hal_qteeconnector firmware_file:file r_file_perms;
 
-attribute hal_vpp;
-attribute hal_vpp_client;
-attribute hal_vpp_server;
+#Allow access to session files
+allow hal_qteeconnector data_qtee_file:dir create_dir_perms;
+allow hal_qteeconnector data_qtee_file:file create_file_perms;
 
-attribute hal_wigig;
-attribute hal_wigig_client;
-attribute hal_wigig_server;
+#Allow access to qp_reqcancel socket
+allow hal_qteeconnector tee:unix_dgram_socket sendto;
 
-attribute hal_qteeconnector;
-attribute hal_qteeconnector_client;
-attribute hal_qteeconnector_server;
+#Allow hal_qteeconnector client domain apps to find hwservice
+binder_call(hal_qteeconnector_client, hal_qteeconnector_server)
+binder_call(hal_qteeconnector_server, hal_qteeconnector_client)
+allow hal_qteeconnector_client hal_qteeconnector_hwservice:hwservice_manager find;
