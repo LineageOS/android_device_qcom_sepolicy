@@ -27,4 +27,4 @@
 
 # Allow all apps to connect to VR service
 allow appdomain qvrd:fd use;
-unix_socket_connect(appdomain, qvrd, qvrd)
+#unix_socket_connect(appdomain, qvrd, qvrd)

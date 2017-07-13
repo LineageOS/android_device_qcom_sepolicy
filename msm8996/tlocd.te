@@ -26,9 +26,9 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type tlocd, domain;
-type tlocd_exec, exec_type, file_type;
+type tlocd_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(tlocd)
+#init_daemon_domain(tlocd)
 
 # Allow interracting with tlocd directory
 allow tlocd tlocd_data_file:dir create_dir_perms;
