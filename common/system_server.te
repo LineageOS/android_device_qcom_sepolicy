@@ -133,7 +133,7 @@ allow system_server qti_logkit:fd use;
 allow system_server qti_logkit:fifo_file write;
 
 #Rules for system server to talk to peripheral manager
-#use_per_mgr(system_server);
+get_prop(system_server, per_mgr_state_prop);
 
 # Allow system server access to qfp daemon
 binder_call(system_server, qfp-daemon);
