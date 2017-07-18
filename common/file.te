@@ -105,6 +105,9 @@ type camera_socket, file_type;
 #Socket node needed by ims_data daemon
 type ims_socket, file_type;
 
+#mink-lowi-interface-daemon (mlid) socket
+type mlid_socket, file_type, mlstrustedobject;
+
 #location file types
 type location_data_file, file_type, data_file_type;
 type location_socket, file_type;
@@ -236,3 +239,10 @@ type qti_debugfs, fs_type, debugfs_type;
 
 # vendor radio files
 type vendor_radio_data_file, file_type, data_file_type;
+
+#irq balance sysfs type
+type sysfs_irqbalance , sysfs_type, fs_type;
+
+# vpp files
+type vpp_data_file, file_type, data_file_type;
+type persist_vpp_file, file_type;
