@@ -49,6 +49,7 @@ binder_call(hal_dpmQmiMgr,dpmd)
 
 #sysfs_data file permissions
 allow hal_dpmQmiMgr sysfs_data:file r_file_perms;
+allow hal_dpmQmiMgr sysfs_ssr:file r_file_perms;
 
 #Allow reading proc/net entries
 r_dir_file(hal_dpmQmiMgr,proc_net)

@@ -1,4 +1,4 @@
-# Copyright (c) 2015, 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,11 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-binder_call(system_server, seempd)
-unix_socket_send(system_server, seempdw, seempd)
-
-unix_socket_connect(system_server, dpmd, dpmd);
-allow system_server { dpmd_socket dpmtcm_socket dpmwrapper_socket }:sock_file w_file_perms;
-
-allow system_server dpmd_data_file:dir create_dir_perms;
-allow system_server dpmd_data_file:file create_file_perms;
+unix_socket_connect(untrusted_app_25,dpmtcm, dpmd);
+allow untrusted_app_25 dpmtcm_socket:sock_file w_file_perms;
+allow untrusted_app_25 dpmwrapper_socket:sock_file w_file_perms;
+allow untrusted_app_25 dpmd:unix_stream_socket connectto;

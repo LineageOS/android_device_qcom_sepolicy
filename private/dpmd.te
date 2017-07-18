@@ -25,15 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#dpmd as domain
-#type dpmd, domain,mlstrustedsubject;
 
 typeattribute dpmd coredomain;
+typeattribute dpmd mlstrustedsubject;
+type dpmd_exec, exec_type, file_type;
 
-#type dpmd_exec, exec_type, file_type, file_type;
-#file_type_auto_trans(dpmd, socket_device, dpmwrapper_socket);
-#init_daemon_domain(dpmd)
-domain_auto_trans(init, dpmd_exec, dpmd)
+init_daemon_domain(dpmd)
+
 net_domain(dpmd)
 
 allow dpmd {
@@ -41,44 +39,20 @@ allow dpmd {
     system_file
 }:file x_file_perms;
 
-#allow dpmd to access dpm_data_file
 allow dpmd dpmd_data_file:file create_file_perms;
 allow dpmd dpmd_data_file:dir create_dir_perms;
-
-#allow dpmd persist_dpm_prop:file r_file_perms;
-
-#allow dpmd sysfs_wake_lock:file rw_file_perms;
-
-#allow dpmd sysfs_data:dir r_dir_perms;
-
-#allow dpmd sysfs_data:file r_file_perms;
-
 r_dir_file(dpmd,proc_net)
 
 allow dpmd self:capability {
     setuid
-    setgid
-    dac_override
-    net_raw chown
-    fsetid
+    net_raw
     net_admin
-    sys_module
 };
 
-#socket, self
-#allow dpmd smem_log_device:chr_file rw_file_perms;
-#wakelock_use(dpmd)
+wakelock_use(dpmd)
 
-#set_prop(dpmd, system_prop)
-#set_prop(dpmd, ctl_default_prop)
-#misc.
 allow dpmd shell_exec:file rx_file_perms;
-
-#permission to unlink dpmwrapper socket
-allow dpmd socket_device:dir remove_name;
-
-#permission to communicate with cnd_socket for installing iptable rules
-#unix_socket_connect(dpmd, cnd, cnd);
+dontaudit dpmd self:capability sys_module;
 
 #allow dpmd to create socket
 allow dpmd self:socket create_socket_perms_no_ioctl;
@@ -86,29 +60,3 @@ allow dpmd self:{ netlink_socket netlink_generic_socket } create_socket_perms_no
 
 #allow dpmd to write to /proc/net/sys
 allow dpmd proc_net:file write;
-
-#allow dpmd get appname and use inet socket.
-#dpmd_socket_perm(appdomain)
-#dpmd_socket_perm(system_server)
-#dpmd_socket_perm(mediaserver)
-#dpmd_socket_perm(mtp)
-#dpmd_socket_perm(wfdservice)
-#dpmd_socket_perm(drmserver)
-#dpmd_socket_perm(netd)
-
-#explicitly allow udp socket permissions for appdomain
-#allow dpmd appdomain:udp_socket rw_socket_perms;
-
-#Allow dpmd to acquire lock for iptables
-#allow dpmd system_file:file lock;
-
-#Allow dpmd to connect to hal_dpmQMiMgr
-#allow dpmd hal_dpmqmi_hwservice:hwservice_manager find;
-#get_prop(dpmd, hwservicemanager_prop)
-#binder_call(dpmd,hal_dpmQmiMgr)
-#hwbinder_use(dpmd)
-
-#diag
-#userdebug_or_eng(`
-#    diag_use(dpmd)
-#')
