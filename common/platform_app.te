@@ -8,11 +8,7 @@ binder_call(platform_app, fidodaemon)
 allow platform_app secotad_service:service_manager find;
 binder_call(platform_app, secotad)
 
-# Allow platform apps to interact with imscm daemon
-binder_call(platform_app, imscm)
-allow platform_app imscm_service:service_manager find;
-
-allow platform_app imsuce_service:service_manager find;
+allow platform_app imsrcs_service:service_manager find;
 allow platform_app color_service:service_manager find;
 
 # Allow NFC service to be found
@@ -27,6 +23,5 @@ allow platform_app gba_auth_service:service_manager find;
 # Allow hbtp hal Service to be found
 hal_client_domain(platform_app, hal_hbtp)
 
-# Allow dpmservice to be found
 #get_prop(platform_app, bluetooth_prop)
 get_prop(platform_app, debug_gralloc_prop)

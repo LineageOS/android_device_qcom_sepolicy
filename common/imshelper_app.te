@@ -24,12 +24,12 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+type imshelper_app, domain;
+app_domain(imshelper_app);
+unix_socket_connect(imshelper_app, ims, ims)
+allow imshelper_app app_api_service:service_manager find;
 
-# permissions for PresenceTestApp
-userdebug_or_eng(`
-  allow radio uce_service:service_manager find;
-')
+allow qsee_svc_app imshelper_app_data_file:dir create_dir_perms;
+allow qsee_svc_app imshelper_app_data_file:file create_file_perms;
 
-userdebug_or_eng(`
-  unix_socket_send(radio,seempdw, seempd)
-')
+allow imshelper_app system_app_data_file:dir { getattr search };

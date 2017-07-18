@@ -48,8 +48,6 @@ qmux_socket(cnd)
 unix_socket_send(cnd, wpa, hal_wifi_supplicant)
 allow cnd wpa_socket:dir rw_dir_perms;
 allow cnd wpa_socket:sock_file { create unlink setattr };
-allow cnd wifi_data_file:dir r_dir_perms;
-
 allow cnd wifi_vendor_data_file:dir r_dir_perms;
 
 # allow cnd to obtain wakelock
@@ -94,7 +92,6 @@ allowxperm cnd self:socket ioctl msm_sock_ipc_ioctls;
 allow cnd sysfs:file r_file_perms;
 allow cnd sysfs_data:file r_file_perms;
 
-# To register cnd to hwbinder
 add_hwservice(cnd, hal_cne_hwservice)
 hwbinder_use(cnd)
 get_prop(cnd, hwservicemanager_prop)

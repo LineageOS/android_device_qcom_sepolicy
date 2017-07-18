@@ -5,13 +5,6 @@
 # diag device node access is restricted to untrusted_app
 neverallow untrusted_app diag_device:chr_file rw_file_perms;
 
-# test apps needs to communicate with imscm
-# using binder call
-userdebug_or_eng(`
-  binder_call(untrusted_app, imscm)
-  allow untrusted_app imscm_service:service_manager find;
-')
-
 # for finding wbc_service
 allow untrusted_app wbc_service:service_manager find;
 
