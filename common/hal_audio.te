@@ -29,6 +29,9 @@
 # Allow hal_audio to read soundcard state under /proc/asound
 allow hal_audio proc_audiod:file r_file_perms;
 
+# Allow audioserver to access sysfs nodes
+allow hal_audio sysfs:file rw_file_perms;
+
 allow hal_audio_default audio_data_file:dir rw_dir_perms;
 allow hal_audio_default audio_data_file:file create_file_perms;
 
