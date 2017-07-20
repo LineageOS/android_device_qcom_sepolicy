@@ -169,7 +169,7 @@
 /(vendor|system/vendor)/bin/init\.qcom\.debug-sdm660\.sh    u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.debug\.sh           u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.efs\.sync\.sh       u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.fm\.sh              u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.fm\.sh               u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sdio\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.uicc\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.wifi\.sh            u:object_r:qti_init_shell_exec:s0
@@ -288,6 +288,7 @@
 /(vendor|system/vendor)/bin/imsrcsd             u:object_r:hal_rcsservice_exec:s0
 /(vendor|system/vendor)/bin/vppservice          u:object_r:vppservice_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service u:object_r:hal_qteeconnector_qti_exec:s0
+/(vendor|system/vendor)/bin/fm_qsoc_patches     u:object_r:fm_qsoc_patches_exec:s0
 
 ###################################
 # sysfs files
