@@ -211,6 +211,10 @@ allow system_app cache_file:file create_file_perms;
 allow system_app cache_recovery_file:dir rw_dir_perms;
 allow system_app cache_recovery_file:file create_file_perms;
 
+#Allow system app access mmi_data_file
+allow system_app mmi_data_file:dir create_dir_perms;
+allow system_app mmi_data_file:file create_file_perms;
+
 # update engine
 binder_call( system_app, update_engine )
 

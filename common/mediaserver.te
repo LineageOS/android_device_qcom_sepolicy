@@ -60,6 +60,9 @@ allow mediaserver audio_pp_data_file:file create_file_perms;
 #Allow mediaserver to set camera  properties
 allow mediaserver camera_prop:property_service set;
 
+#Allow mediaserver access mmi_data_file
+allow mediaserver mmi_data_file:file r_file_perms;
+
 #allow mediaserver to access wfdservice
 binder_call(mediaserver, wfdservice)
 
