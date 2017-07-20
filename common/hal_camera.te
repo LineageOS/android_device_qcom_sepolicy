@@ -37,6 +37,11 @@ binder_call(hal_camera, surfaceflinger)
 set_prop(hal_camera, camera_prop)
 allow hal_camera gpu_device:chr_file rw_file_perms;
 allow hal_camera sysfs:file r_file_perms;
+
+#changes to access laser device
+r_dir_file(hal_camera_default, input_device);
+r_dir_file(hal_camera_default, sysfs_laser);
+
 vndbinder_use(hal_camera);
 hal_client_domain(hal_camera_default, hal_perf)
 
@@ -46,6 +51,10 @@ allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager find;
 
 allow hal_camera persist_file:dir r_dir_perms;
 r_dir_file(hal_camera, sensors_persist_file);
+
+#allow hal_camera to access Isensormanager
+allow hal_camera fwk_sensor_hwservice:hwservice_manager find;
+binder_call(hal_camera, system_server)
 
 # from sensors team
 
