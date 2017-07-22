@@ -364,11 +364,19 @@
 /sys/module/diagchar(/.*)?                                          u:object_r:sysfs_diag:s0
 /sys/devices/virtual/xt_hardidletimer/timers(/.*)?                  u:object_r:sysfs_data:s0
 /sys/devices/virtual/xt_idletimer/timers(/.*)?                      u:object_r:sysfs_data:s0
-/sys/class/devfreq(/.*)?                                            u:object_r:sysfs_devfreq:s0
-/sys/class/mmc_host(/.*)?                                           u:object_r:sysfs_mmc_host:s0
-/sys/class/scsi_host(/.*)?                                          u:object_r:sysfs_scsi_host:s0
-/sys/class/kgsl(/.*)?                                               u:object_r:sysfs_kgsl:s0
-/sys/devices(/platform)?/soc/[0-9a-f]+.qcom,kgsl-3d0/kgsl(/.*)?     u:object_r:sysfs_kgsl:s0
+
+/sys/devices(/platform)?/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw(/.*)? u:object_r:sysfs_devfreq:s0
+/sys/devices(/platform)?/soc/soc:qcom,gpubw/devfreq/soc:qcom,gpubw(/.*)? u:object_r:sysfs_devfreq:s0
+
+/sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/clkscale_enable        u:object_r:sysfs_scsi_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+/host0/scsi_host/host0(/.*)?  u:object_r:sysfs_scsi_host:s0
+
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
+
+/sys/devices/virtual/graphics/fb([0-9])+/modes                      u:object_r:sysfs_graphics:s0
+
+/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:sysfs_mmc_host:s0
 /sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
 /sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
 /sys/kernel/mm/ksm(/.*)?                                            u:object_r:sysfs_memory:s0

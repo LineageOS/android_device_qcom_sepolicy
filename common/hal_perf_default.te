@@ -56,6 +56,8 @@ allow hal_perf {
     sysfs_cpu_boost
     sysfs_msm_perf
     sysfs_memory
+    sysfs_graphics
+    sysfs
 }:dir r_dir_perms;
 
 allow hal_perf {
@@ -66,10 +68,15 @@ allow hal_perf {
     sysfs_cpu_boost
     sysfs_msm_perf
     sysfs_memory
+    sysfs_graphics
+    sysfs_scsi_host
+    sysfs_devfreq
+    sysfs_mmc_host
 }:file rw_file_perms;
 
 allow hal_perf {
     sysfs_devfreq
     sysfs_mmc_host
     sysfs_scsi_host
+    sysfs_kgsl
 }:lnk_file r_file_perms;
