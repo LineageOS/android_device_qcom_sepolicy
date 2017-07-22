@@ -38,6 +38,8 @@ hwbinder_use(hal_rcsservice)
 add_hwservice(hal_rcsservice, hal_imsrcsd_hwservice)
 get_prop(hal_rcsservice, hwservicemanager_prop)
 
+# allow read datad property
+get_prop(hal_rcsservice, qcom_ims_prop)
 # allow imsrcsd to connect to imsdatad over socket
 unix_socket_connect(hal_rcsservice, ims, ims)
 
@@ -48,3 +50,4 @@ userdebug_or_eng(`
 
 allow hal_rcsservice sysfs_data:file r_file_perms;
 binder_call(hal_rcsservice, dataservice_app)
+get_prop(hal_rcsservice, persist_dpm_prop)
