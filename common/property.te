@@ -110,3 +110,6 @@ type ppd_prop, property_type;
 type qemu_gles_prop, property_type;
 
 type vendor_rild_libpath_prop, property_type;
+
+#Peripheral manager
+type per_mgr_state_prop, property_type;
