@@ -151,7 +151,7 @@ allow qti_init_shell usf_data_file:{ file lnk_file } create_file_perms;
 # To check if /system/bin/msm_irqbalance is persent in the device
 allow qti_init_shell msm_irqbalanced_exec:file getattr;
 
-# To write to /data/system/perfd
+# To write to /data/vendor/perfd
 allow qti_init_shell mpctl_data_file:dir w_dir_perms;
 allow qti_init_shell mpctl_data_file:file { write getattr unlink };
 

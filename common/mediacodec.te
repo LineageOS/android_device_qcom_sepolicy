@@ -52,9 +52,6 @@
 #mediacodec need intraction with audio device nodes
 allow mediacodec audio_device:chr_file rw_file_perms;
 
-#interaction with mptcl sockets
-unix_socket_connect(mediacodec, mpctl, perfd)
-
 #allow mediacodec to access adsprpcd
 r_dir_file(mediacodec, adsprpcd_file);
 r_dir_file(mediacodec, firmware_file);

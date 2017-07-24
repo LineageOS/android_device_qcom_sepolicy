@@ -42,13 +42,6 @@ allow system_app {
     qfp_proxy_service
 }:service_manager add;
 
-# access to perflock
-#allow system_app mpctl_socket:dir r_dir_perms;
-#unix_socket_send(system_app, mpctl, mpdecision)
-#unix_socket_connect(system_app, mpctl, mpdecision)
-#unix_socket_send(system_app, mpctl, perfd)
-#unix_socket_connect(system_app, mpctl, perfd)
-
 # access to mm-pp-daemon
 #unix_socket_connect(system_app, pps, mm-pp-daemon)
 

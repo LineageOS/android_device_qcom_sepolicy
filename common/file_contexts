@@ -110,7 +110,6 @@
 /dev/socket/thermal-send-rule                   u:object_r:thermal_socket:s0
 /dev/socket/ims_qmid                            u:object_r:ims_socket:s0
 /dev/socket/ims_datad                           u:object_r:ims_socket:s0
-/dev/socket/perfd                               u:object_r:mpctl_socket:s0
 /dev/socket/gamed                               u:object_r:gamed_socket:s0
 /dev/socket/iop                                 u:object_r:iop_socket:s0
 /dev/socket/qlogd                               u:object_r:qlogd_socket:s0
@@ -180,7 +179,6 @@
 /(vendor|system/vendor)/bin/mm-pp-dpps          u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mmi                 u:object_r:mmi_exec:s0
 /(vendor|system/vendor)/bin/mpdecision          u:object_r:mpdecision_exec:s0
-/(vendor|system/vendor)/bin/perfd               u:object_r:perfd_exec:s0
 /(vendor|system/vendor)/bin/gamed               u:object_r:gamed_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance	u:object_r:msm_irqbalanced_exec:s0
 /(vendor|system/vendor)/bin/imsdatadaemon       u:object_r:ims_exec:s0
