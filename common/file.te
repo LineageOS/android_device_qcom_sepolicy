@@ -265,3 +265,6 @@ type wigig_hostapd_socket, file_type;
 
 # ea sysfs files
 type sysfs_ea, fs_type, sysfs_type;
+
+#audio sysfs files
+type sysfs_audio, fs_type, sysfs_type;
