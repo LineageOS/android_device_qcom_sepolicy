@@ -76,3 +76,21 @@ allow netutils_wrapper $1:netlink_xfrm_socket { read write };
 allow netutils_wrapper $1:udp_socket { read write };
 allow netutils_wrapper $1:tcp_socket { read write };
 ')
+
+#####################################
+## hal_server_domain_bypass(domain, hal_type)
+## Allow a base set of permissions required for a domain to offer a
+## HAL implementation of the specified type over HwBinder without
+## halserverdomain attribute
+##
+## For example, default implementation of Foo HAL:
+##   type hal_foo_default, domain;
+##   hal_server_domain_bypass(hal_foo_default, hal_foo)
+##
+define(`hal_server_domain_bypass', `
+hwbinder_use($1)
+allow $1 system_file:dir r_dir_perms;
+get_prop($1, hwservicemanager_prop)
+typeattribute $1 $2_server;
+typeattribute $1 $2;
+')
