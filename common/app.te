@@ -29,3 +29,4 @@ allow appdomain qti_logkit_pub_socket:dir r_dir_perms;
 allow appdomain hwui_prop:file r_file_perms;
 allow appdomain bservice_prop:file r_file_perms;
 allow appdomain reschedule_service_prop:file r_file_perms;
+allow appdomain debug_gralloc_prop:file r_file_perms;
