@@ -20,6 +20,7 @@ allow hvdcp {
 }:file rw_file_perms;
 
 allow hvdcp self:capability { setgid setuid };
+allow hvdcp self:capability2 wake_alarm;
 allow hvdcp kmsg_device:chr_file rw_file_perms;
 allow hvdcp cgroup:dir { create add_name };
 allow hvdcp self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
