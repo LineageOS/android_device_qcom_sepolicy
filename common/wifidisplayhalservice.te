@@ -28,22 +28,29 @@
 #Define Domain
 type wifidisplayhalservice_qti, domain;
 type wifidisplayhalservice_qti_exec, exec_type, vendor_file_type, file_type;
-hal_server_domain(wifidisplayhalservice_qti,wifidisplayhalservice)
+net_domain(wifidisplayhalservice_qti)
+
+hal_server_domain_bypass(wifidisplayhalservice_qti,wifidisplayhalservice)
 
 #Allow for transition from init domain to wifidisplayhalservice
 init_daemon_domain(wifidisplayhalservice_qti)
 
 #Allow wifidisplayhalservice to use Vendor Binder IPC
-allow wifidisplayhalservice_client wfdservice_service:service_manager find;
 vndbinder_use(wifidisplayhalservice)
-binder_call(wfdservice,wifidisplayhalservice);
-
-#Allow hardware binder use
-hwbinder_use(wifidisplayhalservice_client)
-get_prop(wifidisplayhalservice, hwservicemanager_prop)
 
 # Allow hwbinder call from hal client to server
 binder_call(wifidisplayhalservice_client, wifidisplayhalservice_server)
+binder_call(wifidisplayhalservice_server, wifidisplayhalservice_client)
 
 # Add hwservice related rules
 add_hwservice(wifidisplayhalservice_server, wifidisplayhalservice_hwservice)
+
+#Direct streaming native service
+add_service(wifidisplayhalservice, wfdnativemm_service)
+
+#Allow access to firmware files for HDCP session
+r_dir_file(wifidisplayhalservice, firmware_file)
+
+#Allow access to tee/ion device and tcp socket for HDCP sessions
+allow wifidisplayhalservice tee_device:chr_file rw_file_perms;
+allow wifidisplayhalservice ion_device:chr_file r_file_perms;
