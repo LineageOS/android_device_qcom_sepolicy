@@ -33,3 +33,5 @@ allow system_server { dpmd_socket dpmtcm_socket dpmwrapper_socket }:sock_file w_
 
 allow system_server dpmd_data_file:dir create_dir_perms;
 allow system_server dpmd_data_file:file create_file_perms;
+#Allow system_server to add and find regionalization service
+add_service(system_server, regionalization_service);
