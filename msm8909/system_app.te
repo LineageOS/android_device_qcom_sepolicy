@@ -26,3 +26,11 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 hal_client_domain(system_app, hal_sidekickgraphics);
+
+#for oemfs
+allow system_app oemfs:lnk_file { read getattr };
+#for regionalization
+allow system_app regionalization_file:file r_file_perms;
+allow system_app regionalization_file:dir r_dir_perms;
+allow system_app vendor_radio_data_file:dir rw_dir_perms;
+allow system_app vendor_radio_data_file:file create_file_perms;
