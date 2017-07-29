@@ -30,7 +30,6 @@
 #binder_use(hal_graphics_composer)
 #')
 
-allow hal_graphics_composer sysfs:file r_file_perms;
 userdebug_or_eng(`
     diag_use(hal_graphics_composer)
 ')
