@@ -381,6 +381,7 @@
 /sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
 /sys/kernel/mm/ksm(/.*)?                                            u:object_r:sysfs_memory:s0
 /sys/devices/virtual/input/input5/enable_ps_sensor                  u:object_r:sysfs_laser:s0
+/sys/devices/virtual/input/input5/do_flush                          u:object_r:sysfs_laser:s0
 
 ###################################
 # data files
