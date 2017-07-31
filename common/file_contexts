@@ -313,6 +313,8 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qpnp,fg/power_supply/bms(/.*)?               u:object_r:sysfs_battery_supply:s0
 /sys/class/qcom-battery(/.*)?              u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc/qpnp-linear-charger-[a-z0-9]+/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/kernel/irq_helper/irq_blacklist_on                             u:object_r:sysfs_irqbalance:s0
 /sys/devices/virtual/graphics/fb([0-2])+/idle_time                  u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-2])+/dynamic_fps                u:object_r:sysfs_graphics:s0
