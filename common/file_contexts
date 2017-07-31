@@ -159,7 +159,6 @@
 /(vendor|system/vendor)/bin/init\.qcom\.usb\.sh         u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.mdm\.sh                   u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.mdm\.crashdata\.sh        u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.testscripts\.sh     u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.syspart_fixup\.sh   u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/hcidump.sh                      u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/hsic\.control\.bt\.sh           u:object_r:qti_init_shell_exec:s0
