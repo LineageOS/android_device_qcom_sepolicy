@@ -40,8 +40,7 @@ allow qti_logkit_app surfaceflinger_service:service_manager find;
 net_domain(qti_logkit_app)
 
 userdebug_or_eng(`
-  typeattribute qti_logkit_app qti_debugfs_domain;
-  allow qti_logkit_app debugfs:file r_file_perms;
+# allow qti_logkit_app debugfs:file r_file_perms;
   allow qti_logkit_app su:unix_dgram_socket sendto;
   allow qti_logkit_app persist_file:dir r_dir_perms;
   allow qti_logkit_app sensors_persist_file:dir r_dir_perms;
