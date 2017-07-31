@@ -9,6 +9,7 @@ r_dir_file(ueventd, wifi_data_file)
 
 allow ueventd {
     sysfs_battery_supply
+    sysfs_dc_supply
     sysfs_thermal
     sysfs_usb_supply
     sysfs_socinfo

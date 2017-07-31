@@ -74,6 +74,7 @@ type sysfs_graphics, sysfs_type, fs_type;
 # USB/battery power supply type for hvdcp/quickcharge
 type sysfs_usb_supply, sysfs_type, fs_type;
 type sysfs_battery_supply, sysfs_type, fs_type;
+type sysfs_dc_supply, sysfs_type, fs_type;
 
 #Define the files written during the operation of mpdecision
 type sysfs_mpdecision, fs_type, sysfs_type;
