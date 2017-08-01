@@ -34,7 +34,6 @@ init_daemon_domain(hal_dpmQmiMgr)
 
 net_domain(hal_dpmQmiMgr)
 
-allow hal_dpmQmiMgr self:capability { setuid setgid };
 #Add hal_dpmQMiMgr as hwservice
 add_hwservice(hal_dpmQmiMgr, hal_dpmqmi_hwservice)
 
