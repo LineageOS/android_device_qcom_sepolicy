@@ -19,11 +19,6 @@ allowxperm system_server self:socket ioctl msm_sock_ipc_ioctls;
 allow system_server sensors_persist_file:dir r_dir_perms;
 allow system_server sensors_persist_file:file r_file_perms;
 
-# access to perflock
-#allow system_server mpctl_socket:dir r_dir_perms;
-#unix_socket_send(system_server, mpctl, mpdecision)
-#unix_socket_connect(system_server, mpctl, mpdecision)
-
 #access to gamed
 #unix_socket_connect(system_server, gamed, gamed)
 
@@ -56,9 +51,6 @@ unix_socket_connect(system_server, iop, dumpstate)
 #allow system_server { dpmd_socket socket_device }:sock_file w_file_perms;
 #allow system_server dpmd_data_file:dir create_dir_perms;
 #allow system_server dpmd_data_file:file create_file_perms;
-
-#unix_socket_send(system_server, mpctl, perfd)
-#unix_socket_connect(system_server, mpctl, perfd)
 
 # For location
 binder_call(system_server, location);

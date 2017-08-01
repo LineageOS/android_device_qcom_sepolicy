@@ -42,14 +42,6 @@ r_dir_file(thermal-engine, sysfs_leds)
 # This is required for wake alarm access
 allow thermal-engine self:capability2 wake_alarm;
 
-# This is required for thermal perfd access
-allow thermal-engine mpctl_socket:dir search;
-allow thermal-engine mpctl_socket:sock_file write;
-unix_socket_send(thermal-engine, mpctl, perfd)
-unix_socket_connect(thermal-engine, mpctl, perfd)
-unix_socket_send(thermal-engine, mpctl, mpdecision)
-unix_socket_connect(thermal-engine, mpctl, mpdecision)
-
 #This is to allow access to uio device
 allow thermal-engine uio_device:chr_file rw_file_perms;
 

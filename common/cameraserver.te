@@ -31,8 +31,7 @@ allow cameraserver gpu_device:chr_file rw_file_perms;
 #changes to access laser device
 r_dir_file(cameraserver, input_device);
 
-#interaction with mptcl and thermal sockets
-#unix_socket_connect(cameraserver, mpctl, perfd)
+#interaction with thermal sockets
 #unix_socket_connect(cameraserver, thermal, thermal-engine)
 
 #Allow surfaceflinger access for camera preview
