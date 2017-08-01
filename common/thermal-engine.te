@@ -57,9 +57,22 @@ userdebug_or_eng(`
   diag_use(thermal-engine)
 ')
 
-# To get GPU frequencies
-allow thermal-engine sysfs_kgsl:file r_file_perms;
+# To search, read and write kgsl sysfs
+allow thermal-engine sysfs_kgsl:dir r_dir_perms;
+allow thermal-engine sysfs_kgsl:file rw_file_perms;
+allow thermal-engine sysfs_kgsl:lnk_file r_file_perms;
+
 allow thermal-engine sysfs_data:file r_file_perms;
 
 # netlink access
 allow thermal-engine self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+# This is required read and write battery power supply sysfs
+allow thermal-engine sysfs_battery_supply:dir r_dir_perms;
+allow thermal-engine sysfs_battery_supply:file rw_file_perms;
+allow thermal-engine sysfs_battery_supply:lnk_file r_file_perms;
+
+# This is required to read and write lcd-backlight sysfs
+allow thermal-engine sysfs_graphics:dir r_dir_perms;
+allow thermal-engine sysfs_graphics:file rw_file_perms;
+allow thermal-engine sysfs_graphics:lnk_file r_file_perms;
