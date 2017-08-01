@@ -1,4 +1,4 @@
-# Copyright (c) 2015,2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,32 +25,38 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow hostapd_cli to work. hostapd_cli creates a socket in
-# /data/misc/wifi/sockets which hostapd communicates with.
-userdebug_or_eng(`
-  unix_socket_send(hostapd, wifi_vendor_wpa, su)
-')
+type wigighalsvc, domain;
+type wigighalsvc_exec, exec_type, vendor_file_type, file_type;
 
-binder_call(hostapd, cnd)
-unix_socket_connect(hostapd, cnd, cnd)
-unix_socket_send(hostapd, cnd, cnd)
-allow hostapd cnd:{
-          fifo_file
-          netlink_route_socket
-          netlink_tcpdiag_socket
-          unix_stream_socket} { read write };
-allow hostapd cnd:fifo_file r_file_perms;
-allow hostapd smem_log_device:chr_file rw_file_perms;
-allow hostapd fstman:unix_dgram_socket sendto;
-allow hostapd wifi_vendor_data_file:dir w_dir_perms;
-allow hostapd wifi_vendor_data_file:file create_file_perms;
-allow hostapd wifi_vendor_hostapd_socket:dir w_dir_perms;
-allow hostapd wifi_vendor_hostapd_socket:sock_file create_file_perms;
-# wigig_hostapd has its own directory for sockets,
-# in order to prevent conflicts with wifi hostapd
-# allow wigig_hostapd to create the directory holding its control socket
-allow hostapd wigig_hostapd_socket:dir create_dir_perms;
-# wigig_hostapd needs to create, bind to, read and write its control socket
-allow hostapd wigig_hostapd_socket:sock_file create_file_perms;
-# allow wigig_hostapd to send replies to wigighalsvc
-allow hostapd wigighalsvc:unix_dgram_socket sendto;
+init_daemon_domain(wigighalsvc)
+hal_server_domain(wigighalsvc, hal_wigig)
+
+#allows calls between client and server and vice-versa
+binder_call(hal_wigig_client, hal_wigig_server)
+binder_call(hal_wigig_server, hal_wigig_client)
+
+#allow hal clients to find the service
+allow hal_wigig_client hal_wigig_hwservice:hwservice_manager find;
+
+#register hal service
+add_hwservice(hal_wigig, hal_wigig_hwservice)
+
+# allow start/stop services via ctl.start and ctl.stop
+set_prop(hal_wigig, ctl_vendor_wigigsvc_prop)
+
+# read wigig properties
+get_prop(hal_wigig, wigig_prop);
+
+# access wifi vendor data files
+r_dir_file(hal_wigig, wifi_vendor_data_file)
+allow hal_wigig wifi_vendor_data_file:dir rw_dir_perms;
+allow hal_wigig wifi_vendor_data_file:file create_file_perms;
+
+# connect to supplicant by socket
+allow hal_wigig { hal_wifi_supplicant hostapd }:unix_dgram_socket sendto;
+allow hal_wigig wpa_socket:dir rw_dir_perms;
+allow hal_wigig wpa_socket:sock_file create_file_perms;
+
+# connect to wigig_hostapd by socket
+allow hal_wigig wigig_hostapd_socket:dir rw_dir_perms;
+allow hal_wigig wigig_hostapd_socket:sock_file create_file_perms;

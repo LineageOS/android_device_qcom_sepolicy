@@ -79,7 +79,12 @@ dolby.                     u:object_r:dolby_prop:s0
 wifi.ftmd.                 u:object_r:wififtmd_prop:s0
 ro.bluetooth.              u:object_r:bluetooth_prop:s0
 # WIGIG
-persist.fst.               u:object_r:fst_prop:s0
+persist.vendor.wigig.       u:object_r:wigig_prop:s0
+vendor.wigig.               u:object_r:wigig_prop:s0
+ctl.vendor.wigig_supplicant u:object_r:ctl_vendor_wigigsvc_prop:s0
+ctl.vendor.wigig_hostapd    u:object_r:ctl_vendor_wigigsvc_prop:s0
+
+persist.vendor.fst.         u:object_r:fst_prop:s0
 ro.alarm_handled           u:object_r:alarm_handled_prop:s0
 ro.alarm_instance          u:object_r:alarm_instance_prop:s0
 #HWUI Property

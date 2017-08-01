@@ -275,6 +275,7 @@
 /(vendor|system/vendor)/bin/tbaseLoader         u:object_r:tbaseLoader_exec:s0
 /(vendor|system/vendor)/bin/mcStarter           u:object_r:mcStarter_exec:s0
 /(vendor|system/vendor)/bin/fstman              u:object_r:fstman_exec:s0
+/(vendor|system/vendor)/bin/wigighalsvc         u:object_r:wigighalsvc_exec:s0
 /(vendor|system/vendor)/bin/mdtpd               u:object_r:mdtpdaemon_exec:s0
 /(vendor|system/vendor)/bin/wifi_ftmd           u:object_r:wifi_ftmd_exec:s0
 /(vendor|system/vendor)/bin/fingerprint.qcom    u:object_r:fps_hal_exec:s0
@@ -313,6 +314,8 @@
 /sys/devices/virtual/graphics/fb([0-9])+/msm_fb_panel_info          u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/hsicctl/hsicctl1[0-9]/modem_wait               u:object_r:sysfs_hsic_modem_wait:s0
 /sys/devices/virtual/hsicctl/hsicctl[0-9]/modem_wait                u:object_r:sysfs_hsic_modem_wait:s0
+/sys/devices/virtual/net/bond0/bonding/queue_id                     u:object_r:sysfs_bond0:s0
+/sys/devices/virtual/net/bond0/queues/rx-0/rps_cpus                 u:object_r:sysfs_bond0:s0
 /sys/devices/virtual/smdpkt/smdcntl1[0-9]/open_timeout              u:object_r:sysfs_smd_open_timeout:s0
 /sys/devices/virtual/smdpkt/smdcntl[0-9]/open_timeout               u:object_r:sysfs_smd_open_timeout:s0
 /sys/devices/virtual/thermal(/.*)?                                  u:object_r:sysfs_thermal:s0
@@ -382,6 +385,10 @@
 /sys/kernel/mm/ksm(/.*)?                                            u:object_r:sysfs_memory:s0
 /sys/devices/virtual/input/input5/enable_ps_sensor                  u:object_r:sysfs_laser:s0
 /sys/devices/virtual/input/input5/do_flush                          u:object_r:sysfs_laser:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/fst_link_loss            u:object_r:sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/thermal_throttling       u:object_r:sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/queues/rx-0/rps_cpus  u:object_r:sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/gro_flush_timeout     u:object_r:sysfs_wigig:s0
 
 ###################################
 # data files
@@ -429,14 +436,15 @@
 /data/vendor/wifi/sockets(/.*)?                                     u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/hostapd/ctrl(/.*)?                                u:object_r:wifi_vendor_hostapd_socket:s0
 /data/misc/wifi/nvbin(/.*)?                                         u:object_r:dynamic_nv_data_file:s0
-/data/misc/wifi/wigig_sockets(/.*)?                                 u:object_r:wpa_socket:s0
-/data/misc/wifi/wigig_sockets/wpa_ctrl.*                            u:object_r:system_wpa_socket:s0
+/data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wpa_socket:s0
+/data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/qdmastats(/.*)?                                        u:object_r:qdma_data_file:s0
 /data/vendor/qdma(/.*)?                                             u:object_r:qdma_data_file:s0
 /data/vendor/ramdump/bluetooth(/.*)?                                u:object_r:bluetooth_data_file:s0
 /data/vendor/ramdump/bluetooth/logs(/.*)?                           u:object_r:bluetooth_logs_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vpp_data_file:s0
 /data/vendor/camera(/.*)?                                           u:object_r:vendor_camera_data_file:s0
+/data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
 
 ###################################
 # persist files

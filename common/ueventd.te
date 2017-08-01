@@ -21,3 +21,6 @@ allow ueventd {
 }:file w_file_perms;
 
 #allow ueventd mba_debug_dev:blk_file r_file_perms;
+
+# For setting up various WIGIG files
+allow ueventd sysfs_bond0:file rw_file_perms;
