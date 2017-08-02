@@ -262,3 +262,6 @@ type sysfs_wigig, fs_type, sysfs_type;
 
 # wigig_hostapd
 type wigig_hostapd_socket, file_type;
+
+# ea sysfs files
+type sysfs_ea, fs_type, sysfs_type;
