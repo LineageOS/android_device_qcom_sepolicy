@@ -189,7 +189,8 @@ allow system_app system_data_file:dir read;
 # allow access to ims helper
 #unix_socket_connect(system_app, ims, ims)
 
-# access to qseeproxy domain
+# allow system app to interact with hal_qteeconnector
+hal_client_domain(system_app, hal_qteeconnector);
 
 #allow system_app access boot mode switch
 set_prop(system_app, boot_mode_prop);

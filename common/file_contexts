@@ -284,6 +284,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service      u:object_r:hal_alarm_qti_default_exec:s0
 /(vendor|system/vendor)/bin/imsrcsd             u:object_r:hal_rcsservice_exec:s0
 /(vendor|system/vendor)/bin/vppservice          u:object_r:vppservice_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service u:object_r:hal_qteeconnector_qti_exec:s0
 
 ###################################
 # sysfs files
@@ -408,6 +409,7 @@
 /data/vendor/display(/.*)?                                          u:object_r:display_misc_file:s0
 /data/vendor/ipa(/.*)?                                              u:object_r:ipacm_data_file:s0
 /data/misc/qsee(/.*)?                                               u:object_r:data_qsee_file:s0
+/data/vendor/qtee(/.*)?                                             u:object_r:data_qtee_file:s0
 /data/misc/spss(/.*)?                                               u:object_r:spss_data_file:s0
 /data/vendor/location(/.*)?                                         u:object_r:location_data_file:s0
 /data/vendor/location/mq/location-mq-s                              u:object_r:location_socket:s0

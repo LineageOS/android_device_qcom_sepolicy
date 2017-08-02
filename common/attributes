@@ -65,3 +65,7 @@ attribute hal_vpp_server;
 attribute hal_wigig;
 attribute hal_wigig_client;
 attribute hal_wigig_server;
+
+attribute hal_qteeconnector;
+attribute hal_qteeconnector_client;
+attribute hal_qteeconnector_server;

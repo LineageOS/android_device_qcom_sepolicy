@@ -18,26 +18,47 @@
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
 # BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# # CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
 # SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
 # BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_display_color_hwservice, hwservice_manager_type;
-type hal_display_config_hwservice, hwservice_manager_type;
-type hal_display_postproc_hwservice, hwservice_manager_type;
-type hal_hbtp_hwservice, hwservice_manager_type;
-type hal_dpmqmi_hwservice, hwservice_manager_type;
-type hal_imsrtp_hwservice, hwservice_manager_type;
-type hal_perf_hwservice, hwservice_manager_type, untrusted_app_visible_hwservice;
-type wifidisplayhalservice_hwservice, hwservice_manager_type;
-type hal_alarm_qti_hwservice, hwservice_manager_type;
-type hal_cne_hwservice, hwservice_manager_type;
-type hal_imsrcsd_hwservice, hwservice_manager_type;
-type hal_atfwd_hwservice, hwservice_manager_type;
-type hal_ipacm_hwservice, hwservice_manager_type;
-type hal_vpp_hwservice, hwservice_manager_type;
-type hal_wigig_hwservice, hwservice_manager_type;
-type hal_qteeconnector_hwservice, hwservice_manager_type;
+#define the type
+type hal_qteeconnector_qti, domain;
+
+#mark the type as hal_server_domain
+hal_server_domain(hal_qteeconnector_qti, hal_qteeconnector)
+
+#allow the service to be started by init
+type hal_qteeconnector_qti_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(hal_qteeconnector_qti)
+
+#allow the service to be added to hwservice list
+add_hwservice(hal_qteeconnector_qti, hal_qteeconnector_hwservice)
+
+#allow access to hal_allocator
+hal_client_domain(hal_qteeconnector_qti, hal_allocator)
+
+#allow access to ion device
+allow hal_qteeconnector ion_device:chr_file rw_file_perms;
+
+#Allow access to tee device
+allow hal_qteeconnector_qti tee_device:chr_file rw_file_perms;
+
+#Allow access to firmware
+allow hal_qteeconnector firmware_file:dir r_dir_perms;
+allow hal_qteeconnector firmware_file:file r_file_perms;
+
+#Allow access to session files
+allow hal_qteeconnector data_qtee_file:dir create_dir_perms;
+allow hal_qteeconnector data_qtee_file:file create_file_perms;
+
+#Allow access to qp_reqcancel socket
+allow hal_qteeconnector tee:unix_dgram_socket sendto;
+
+#Allow hal_qteeconnector client domain apps to find hwservice
+binder_call(hal_qteeconnector_client, hal_qteeconnector_server)
+binder_call(hal_qteeconnector_server, hal_qteeconnector_client)
+allow hal_qteeconnector_client hal_qteeconnector_hwservice:hwservice_manager find;
