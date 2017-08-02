@@ -381,8 +381,8 @@
 /sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
 /sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
 /sys/kernel/mm/ksm(/.*)?                                            u:object_r:sysfs_memory:s0
-/sys/devices/virtual/input/input5/enable_ps_sensor                  u:object_r:sysfs_laser:s0
-/sys/devices/virtual/input/input5/do_flush                          u:object_r:sysfs_laser:s0
+/sys/devices/virtual/input/input[0-9]+/do_flush                   u:object_r:sysfs_laser:s0
+/sys/devices/virtual/input/input[0-9]+/enable_ps_sensor           u:object_r:sysfs_laser:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/fst_link_loss            u:object_r:sysfs_wigig:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/thermal_throttling       u:object_r:sysfs_wigig:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/queues/rx-0/rps_cpus  u:object_r:sysfs_wigig:s0
