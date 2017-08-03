@@ -231,6 +231,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.display\.color@1\.0-service            u:object_r:hal_display_color_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@1\.0-service       u:object_r:hal_perf_default_exec:s0
 /(vendor|system/vendor)/bin/mlid                u:object_r:mlid_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service u:object_r:hal_esepowermanager_qti_exec:s0
 /(vendor|system/vendor)/bin/loc_launcher        u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/lowi-server         u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/xtwifi-inet-agent   u:object_r:location_exec:s0
