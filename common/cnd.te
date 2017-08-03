@@ -49,6 +49,7 @@ unix_socket_send(cnd, wpa, hal_wifi_supplicant)
 allow cnd wpa_socket:dir rw_dir_perms;
 allow cnd wpa_socket:sock_file { create unlink setattr };
 allow cnd wifi_vendor_data_file:dir r_dir_perms;
+allow cnd wifi_vendor_wpa_socket:sock_file write;
 
 # allow cnd to obtain wakelock
 wakelock_use(cnd)
