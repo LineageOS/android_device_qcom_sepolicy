@@ -26,3 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow appdomain persist_dpm_prop:file r_file_perms;
+
+unix_socket_send(appdomain, seempdw, seempd)
