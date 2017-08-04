@@ -278,6 +278,7 @@ type tlocd_data_file, file_type, data_file_type;
 # wigig, fstman
 type sysfs_bond0, fs_type, sysfs_type;
 type sysfs_wigig, fs_type, sysfs_type;
+type wigignpt_socket, file_type, data_file_type;
 
 # wigig_hostapd
 type wigig_hostapd_socket, file_type;

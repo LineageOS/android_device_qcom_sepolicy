@@ -63,6 +63,7 @@ com.quicinc.cne.api::IApiService                             u:object_r:hal_cne_
 com.quicinc.cne.server::IServer                              u:object_r:hal_cne_hwservice:s0
 vendor.qti.hardware.vpp::IHidlVppService                     u:object_r:hal_vpp_hwservice:s0
 vendor.qti.hardware.wigig.supptunnel::ISuppTunnelProvider    u:object_r:hal_wigig_hwservice:s0
+vendor.qti.hardware.wigig.netperftuner::INetPerfTuner        u:object_r:hal_wigig_npt_hwservice:s0
 vendor.qti.hardware.qteeconnector::IAppConnector             u:object_r:hal_qteeconnector_hwservice:s0
 vendor.qti.hardware.qteeconnector::IGPAppConnector           u:object_r:hal_qteeconnector_hwservice:s0
 vendor.qti.esepowermanager::IEsePowerManager                 u:object_r:hal_esepowermanager_hwservice:s0
