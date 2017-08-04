@@ -135,6 +135,7 @@
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
 /dev/socket/wpa_wigig[0-9]                      u:object_r:wpa_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:location_socket:s0
+/dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
 
 ###################################
 # System files
@@ -286,6 +287,7 @@
 /(vendor|system/vendor)/bin/mcStarter           u:object_r:mcStarter_exec:s0
 /(vendor|system/vendor)/bin/fstman              u:object_r:fstman_exec:s0
 /(vendor|system/vendor)/bin/wigighalsvc         u:object_r:wigighalsvc_exec:s0
+/(vendor|system/vendor)/bin/wigignpt            u:object_r:wigignpt_exec:s0
 /(vendor|system/vendor)/bin/mdtpd               u:object_r:mdtpdaemon_exec:s0
 /(vendor|system/vendor)/bin/wifi_ftmd           u:object_r:wifi_ftmd_exec:s0
 /(vendor|system/vendor)/bin/fingerprint.qcom    u:object_r:fps_hal_exec:s0
