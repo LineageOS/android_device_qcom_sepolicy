@@ -81,14 +81,12 @@
 ###################################
 # Dev socket nodes
 #
-/dev/socket/qvrservice                                                          u:object_r:qvrd_socket:s0
 
 ###################################
 # System files
 #
 /system/bin/tloc_daemon u:object_r:tlocd_exec:s0
 /(vendor|system/vendor)/bin/seccamd u:object_r:seccamd_exec:s0
-/(vendor|system/vendor)/bin/qvrservice u:object_r:qvrd_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.automotive\.vehicle@2\.0-hal-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
 
 ###################################
@@ -102,7 +100,6 @@
 # data files
 #
 /data/misc/tloc(/.*)?      u:object_r:tlocd_data_file:s0
-/data/misc/qvr(/.*)?       u:object_r:qvrd_data_file:s0
 
 #rawdump partition
 /dev/block/platform/soc/7464900.sdhci/by-name/rawdump                           u:object_r:rawdump_block_device:s0

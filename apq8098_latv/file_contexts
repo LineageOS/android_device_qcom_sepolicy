@@ -81,17 +81,14 @@
 ###################################
 # Dev socket nodes
 #
-/dev/socket/qvrservice                                                          u:object_r:qvrd_socket:s0
 
 ###################################
 # System files
 #
-/(vendor|system/vendor)/bin/qvrservice u:object_r:qvrd_exec:s0
 
 ###################################
 # data files
 #
-/data/misc/qvr(/.*)?       u:object_r:qvrd_data_file:s0
 
 ##################################
 # non-hlos mount points

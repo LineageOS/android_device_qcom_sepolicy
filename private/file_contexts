@@ -35,6 +35,7 @@
 /dev/socket/dpmd                                u:object_r:dpmd_socket:s0
 /dev/socket/dpmwrapper                          u:object_r:dpmwrapper_socket:s0
 /dev/socket/tcm                                 u:object_r:dpmtcm_socket:s0
+/dev/socket/qvrservice                          u:object_r:qvrd_socket:s0
 
 ####### system file ###############
 /system/bin/seempd                              u:object_r:seempd_exec:s0
@@ -42,7 +43,9 @@
 /system/bin/dun-server                          u:object_r:dun-server_exec:s0
 /system/etc/init\.qcom\.testscripts\.sh         u:object_r:qti-testscripts_exec:s0
 /system/bin/smcinvoked                          u:object_r:smcinvoke_daemon_exec:s0
+/system/bin/qvrservice                          u:object_r:qvrd_exec:s0
 
 ####### data files ################
 /data/misc/seemp(/.*)?                          u:object_r:seemp_data_file:s0
 /data/dpm(/.*)?                                 u:object_r:dpmd_data_file:s0
+/data/misc/qvr(/.*)?                            u:object_r:qvrd_data_file:s0

@@ -25,9 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type qvrd, domain, mlstrustedsubject;
-type qvrd_exec, exec_type, vendor_file_type, file_type;
-
+typeattribute qvrd coredomain;
+typeattribute qvrd mlstrustedsubject;
+type qvrd_exec, exec_type, file_type;
 init_daemon_domain(qvrd)
 
 #
@@ -38,6 +38,10 @@ init_daemon_domain(qvrd)
 allow qvrd qvrd_data_file:dir create_dir_perms;
 allow qvrd qvrd_data_file:file create_file_perms;
 
+#Allow hardware binder use
+hwbinder_use(qvrd)
+get_prop(qvrd, hwservicemanager_prop)
+
 # Allow access to our socket
 allow qvrd qvrd_socket:sock_file rw_file_perms;
 
@@ -45,23 +49,29 @@ allow qvrd qvrd_socket:sock_file rw_file_perms;
 # Sensors
 #
 
-# Allow access to ADSP & SLPI
-allow qvrd { ion_device qdsp_device dsp_device }:chr_file r_file_perms;
-
 # Allow access to adsprpcd
-r_dir_file(qvrd, adsprpcd_file);
 allow qvrd system_file:dir read;
+
+# Allow access to sensor1 API
+allow qvrd self:socket create_socket_perms_no_ioctl;
 
 #
 # Display
 #
 
-# Allow access to /sys/devices/virtual/graphics/fb* for lineptr interrupts
-allow qvrd sysfs_graphics:file rw_file_perms;
-
 # Allow access to /dev/graphics/fb0 for configuring vsync interrupts
 allow qvrd graphics_device:dir r_dir_perms;
 allow qvrd graphics_device:chr_file rw_file_perms;
+
+#
+# Graphics
+#
+
+#Allow hal graphics mapper permissions
+hal_client_domain(qvrd, hal_graphics_composer);
+
+#Allow hal graphics allocator permissions
+hal_client_domain(qvrd, hal_graphics_allocator);
 
 #
 # Scheduler
@@ -73,27 +83,6 @@ userdebug_or_eng(`
 ')
 allow qvrd appdomain:process setsched;
 
-#
-# Camera
-#
-
-# Allow access to camera HAL
-allow qvrd { gpu_device video_device camera_device sensors_device }:chr_file rw_file_perms;
-allow qvrd camera_data_file:dir rw_dir_perms;
-#allow qvrd camera_data_file:sock_file w_file_perms;
-allow qvrd mm-qcamerad:unix_dgram_socket sendto;
-#binder_use(qvrd)
-binder_call(qvrd, surfaceflinger);
-#allow qvrd surfaceflinger_service:service_manager find;
-allow qvrd sysfs:file r_file_perms;
-
-# Allow access to /dev/video/* devices
-allow qvrd video_device:dir r_dir_perms;
-
-unix_socket_connect(qvrd, mpctl, perfd)
-
-# Allow access to sensor1 API
-allow qvrd self:socket create_socket_perms_no_ioctl;
-allow qvrd persist_file:dir r_dir_perms;
-allow qvrd sensors_persist_file:dir r_dir_perms;
-allow qvrd sensors_persist_file:file r_file_perms;
+# whitelisting ioctlcmd c302
+allowxperm qvrd self:socket ioctl msm_sock_ipc_ioctls_system;
+allow qvrd self:socket ioctl;

@@ -31,3 +31,5 @@ type seempdw_socket, file_type, mlstrustedobject, coredomain_socket;
 type dpmd_socket, file_type, coredomain_socket;
 type dpmd_data_file, file_type, data_file_type, core_data_file_type;
 type dpmwrapper_socket, file_type, coredomain_socket, mlstrustedobject;
+type qvrd_data_file, file_type, data_file_type, core_data_file_type;
+type qvrd_socket, file_type, mlstrustedobject, coredomain_socket;
