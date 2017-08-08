@@ -45,9 +45,6 @@ userdebug_or_eng(`
   #Allow test daemon to use system_server via binder to check caller identity
   binder_call(qseeproxysample, system_server)
 
-  # Allow communication with init over property server
-  unix_socket_connect(qseeproxysample, property, init);
-
   # Allow access to tee device
   allow qseeproxysample tee_device:chr_file rw_file_perms;
 
