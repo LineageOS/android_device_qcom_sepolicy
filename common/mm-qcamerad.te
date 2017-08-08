@@ -17,7 +17,6 @@ userdebug_or_eng(`
 
   # mm-qcamerad needs to set persist.camera. property
   set_prop(mm-qcamerad, camera_prop)
-
 ')
 
 #Communicate with user land process through domain socket
@@ -62,7 +61,6 @@ allow mm-qcamerad graphics_device:dir r_dir_perms;
 
 #Allow access to /dev/graphics/fb* for screen capture
 allow mm-qcamerad graphics_device:chr_file rw_file_perms;
-unix_socket_connect(mm-qcamerad, property, init)
 
 #Allow camera work normally in FFBM
 binder_call(mm-qcamerad, mmi);

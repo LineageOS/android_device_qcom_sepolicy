@@ -31,8 +31,7 @@ type logdumpd_exec, exec_type, file_type;
 init_daemon_domain(logdumpd)
 
 # To set ctl property
-unix_socket_connect(logdumpd, property, init)
-allow logdumpd ctl_default_prop:property_service set;
+set_prop(logdumpd, ctl_default_prop)
 
 userdebug_or_eng(`
 #logcat

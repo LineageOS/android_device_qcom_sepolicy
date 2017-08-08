@@ -36,13 +36,10 @@ allow dpmd self:capability {
 
 #socket, self
 allow dpmd smem_log_device:chr_file rw_file_perms;
-unix_socket_connect(dpmd, property, init)
 wakelock_use(dpmd)
 
-allow dpmd {
-    system_prop
-    ctl_default_prop
-}:property_service set;
+set_prop(dpmd, system_prop)
+set_prop(dpmd, ctl_default_prop)
 
 #misc.
 allow dpmd shell_exec:file rx_file_perms;

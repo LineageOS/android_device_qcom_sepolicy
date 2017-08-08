@@ -25,7 +25,5 @@ r_dir_file(usf, persist_file)
 r_dir_file(usf, persist_usf_file)
 
 # Properties
-allow usf { ctl_default_prop usf_prop }:property_service set;
-
-# Sockets
-unix_socket_connect(usf, property, init);
+set_prop(usf, ctl_default_prop)
+set_prop(usf, usf_prop)

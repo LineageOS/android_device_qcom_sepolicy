@@ -28,11 +28,10 @@ allow mmi mmi_data_file:dir rw_dir_perms;
 allow mmi mmi_data_file:file create_file_perms;
 
 #socket
-unix_socket_connect(mmi, property, init)
 allow mmi socket_device:dir w_dir_perms;
 
 #allow mmi set system prop,sensor need write persist
-allow mmi powerctl_prop:property_service set;
+set_prop(mmi, powerctl_prop)
 allow mmi persist_file:dir r_dir_perms;
 allow mmi sensors_persist_file:dir create_dir_perms;
 allow mmi sensors_persist_file:file create_file_perms;
@@ -53,13 +52,13 @@ allow mmi audio_device:chr_file rw_file_perms;
 #FM case
 allow mmi fm_radio_device:chr_file r_file_perms;
 allow mmi fm_data_file:file r_file_perms;
-allow mmi fm_prop:property_service set;
-allow mmi ctl_default_prop:property_service set;
+set_prop(mmi, fm_prop)
+set_prop(mmi, ctl_default_prop)
 
 #bluetooth case
 allow mmi bluetooth_data_file:dir rw_dir_perms;
 allow mmi bluetooth_data_file:file create_file_perms;
-allow mmi bluetooth_prop:property_service set;
+set_prop(mmi, bluetooth_prop)
 allow mmi smd_device:chr_file rw_file_perms;
 allow mmi persist_bluetooth_file:file r_file_perms;
 allow mmi wcnss_filter:unix_stream_socket connectto;
@@ -93,7 +92,7 @@ allow mmi nfc_data_file:file create_file_perms;
 qmux_socket(mmi);
 
 #allow mmi access chgdiabled prop
-allow mmi chgdiabled_prop:property_service set;
+set_prop(mmi, chgdiabled_prop)
 
 #Allow mmi operate on surfaceflinger
 allow mmi surfaceflinger:fd use;
@@ -120,7 +119,7 @@ unix_socket_connect(mmi, netmgrd, netmgrd);
 net_domain(mmi);
 
 #allow mmi access boot mode switch
-allow mmi boot_mode_prop:property_service set;
+set_prop(mmi, boot_mode_prop)
 #diag
 userdebug_or_eng(`
     diag_use(mmi)

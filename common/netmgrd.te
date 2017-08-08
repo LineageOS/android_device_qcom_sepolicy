@@ -32,7 +32,6 @@ allow netmgrd netmgrd:netlink_xfrm_socket { create_socket_perms nlmsg_write nlms
 allow netmgrd netmgrd:netlink_socket { write read create bind };
 allow netmgrd netmgrd:socket { create ioctl };
 allow netmgrd netmgrd:netlink_route_socket { setopt getattr write nlmsg_write };
-unix_socket_connect(netmgrd, property, init)
 allow netmgrd self:netlink_generic_socket create_socket_perms;
 allow netmgrd self:netlink_tcpdiag_socket { create_socket_perms nlmsg_read nlmsg_write };
 
@@ -45,9 +44,10 @@ allow netmgrd { proc_net sysfs }:file w_file_perms;
 
 #Allow address configuration
 #Allow setting of DNS and GW Android properties
-allow netmgrd { system_prop net_radio_prop }:property_service set;
+set_prop(netmgrd, system_prop)
+set_prop(netmgrd, net_radio_prop)
 
-allow netmgrd xlat_prop:property_service set;
+set_prop(netmgrd, xlat_prop)
 
 #Allow execution of commands in shell
 allow netmgrd system_file:file x_file_perms;
