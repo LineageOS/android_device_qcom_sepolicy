@@ -26,6 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # media_sdm670_version_prop - to choose target version specific media_codecs.xml
-allow qti_init_shell {
-    media_sdm670_version_prop
-}:property_service set;
+set_prop(qti_init_shell, media_sdm670_version_prop)
