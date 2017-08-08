@@ -109,7 +109,7 @@ allow system_app qti_logkit_priv_socket:dir r_dir_perms;
 #allow system_app qti_logkit_priv_socket:sock_file r_file_perms;
 
 # bugreport
-#allow system_app ctl_dumpstate_prop:property_service set;
+#set_prop(system_app, ctl_dumpstate_prop)
 unix_socket_connect(system_app, dumpstate, dumpstate)
 
 # allow gba auth service to add itself as system service
