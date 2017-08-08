@@ -135,6 +135,13 @@ unix_socket_connect(mmi, cnd, cnd);
 unix_socket_connect(mmi, netmgrd, netmgrd);
 net_domain(mmi);
 
+#mmi to start:mmid/ftmdaemon/mm-audio-ftm application
+allow mmi mmi_exec:file execute_no_trans;
+allow mmi proc:file r_file_perms;
+allow mmi sysfs_battery_supply:dir search;
+allow mmi sysfs_battery_supply:file rw_file_perms;
+allow mmi sysfs_pon_dev:file rw_file_perms;
+
 #read sysfs to operate LEDs
 allow mmi sysfs_leds:dir r_dir_perms;
 allow mmi sysfs_leds:lnk_file r_file_perms;
