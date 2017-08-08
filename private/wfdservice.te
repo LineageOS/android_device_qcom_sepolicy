@@ -68,9 +68,6 @@ allow wfdservice graphics_device:chr_file rw_file_perms;
 #Allow access to encoder for YUV statistics
 allow wfdservice gpu_device:chr_file rw_file_perms;
 
-#Allow communication with init over property server
-unix_socket_connect(wfdservice, property, init);
-
 #Allow access to /dev/video/* devices for encoding/decoding
 allow wfdservice video_device:chr_file rw_file_perms;
 allow wfdservice video_device:dir r_dir_perms;

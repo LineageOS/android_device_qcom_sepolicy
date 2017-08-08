@@ -105,4 +105,4 @@ userdebug_or_eng(`
 #read_logd(qdmastatsd);
 
 # allow qdma_prop
-set_prop(qdmastatsd, vendor_qdma_prop);
+set_prop(qdmastatsd, vendor_qdma_prop)

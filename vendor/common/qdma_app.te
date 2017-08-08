@@ -70,4 +70,4 @@ allow qdma_app system_app_data_file:dir create_dir_perms;
 allow qdma_app system_app_data_file:file create_file_perms;
 
 # allow qdma_prop
-set_prop(qdma_app, vendor_qdma_prop);
+set_prop(qdma_app, vendor_qdma_prop)

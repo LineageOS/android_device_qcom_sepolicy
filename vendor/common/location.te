@@ -64,7 +64,7 @@ allow location hal_gnss_qti:unix_dgram_socket sendto;
 netmgr_socket(location);
 
 #Allow access to properties
-set_prop(location, location_prop);
+set_prop(location, location_prop)
 
 #diag
 userdebug_or_eng(`
@@ -102,4 +102,4 @@ get_prop(location, vendor_wifi_prop)
 allow location self:capability2 wake_alarm;
 
 #allow qdma prop
-get_prop(location, vendor_qdma_prop);
+get_prop(location, vendor_qdma_prop)
