@@ -28,10 +28,8 @@
 # media_codecs_eld_prop - to choose target specific media_codecs.xml
 # media_settings_xml_prop - to choose target specific media_profiles.xml
 # media_msm8956_version_prop - to choose target version specific media_codecs.xml
-allow qti_init_shell {
-    media_settings_xml_prop
-    media_msm8953_version_prop
-}:property_service set;
+set_prop(qti_init_shell, media_settings_xml_prop)
+set_prop(qti_init_shell, media_msm8953_version_prop)
 
 # For regionalization
 allow qti_init_shell regionalization_file:dir r_dir_perms;

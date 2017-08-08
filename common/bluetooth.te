@@ -14,7 +14,7 @@ type btnvtool_exec, exec_type, vendor_file_type, file_type;
 type fmhal_service, bluetoothdomain;
 type fmhal_service_exec, exec_type, vendor_file_type, file_type;
 
-allow bluetooth bluetooth_prop:property_service set;
+set_prop(bluetooth, bluetooth_prop)
 allow bluetooth sysfs_bluetooth_writable:file w_file_perms;
 
 #Access to /data/media
