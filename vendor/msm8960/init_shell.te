@@ -27,6 +27,4 @@
 
 #For property starting with hw
 #ctl_thermal-engine_prop - for access the thermal-engine
-allow qti_init_shell {
-   ctl_thermal-engine_prop
-}:property_service set;
+set_prop(qti_init_shell, ctl_thermal-engine_prop)
