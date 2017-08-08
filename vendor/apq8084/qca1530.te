@@ -36,7 +36,6 @@ userdebug_or_eng(`
 
 qmux_socket(qca1530)
 wakelock_use(qca1530)
-unix_socket_connect(qca1530, property, init)
 
 # need to access sharemem log device for smem logs
 allow qca1530 smem_log_device:chr_file rw_file_perms;
