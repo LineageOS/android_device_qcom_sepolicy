@@ -33,7 +33,7 @@ init_daemon_domain(nqnfcinfo)
 
 r_dir_file(nqnfcinfo, sysfs_socinfo);
 
-set_prop(nqnfcinfo, nfc_nq_prop);
+set_prop(nqnfcinfo, nfc_nq_prop)
 
 # Access device nodes inside /dev/nq-nci
 allow nqnfcinfo nfc_device:chr_file rw_file_perms;

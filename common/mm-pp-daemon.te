@@ -24,7 +24,7 @@ allow mm-pp-daemon sensors_device:chr_file r_file_perms;
 allow mm-pp-daemon sensors_socket:sock_file rw_file_perms;
 allow mm-pp-daemon sensors:unix_stream_socket connectto;
 
-allow mm-pp-daemon system_prop:property_service set;
+set_prop(mm-pp-daemon, system_prop)
 
 # Allow service manager to find surface flinger service,
 # sensorservice service, permission_service, and power service (for
@@ -45,7 +45,7 @@ userdebug_or_eng(`
   allow mm-pp-daemon self:process ptrace;
 
   # This allows pp-daemon to set debug property
-  allow mm-pp-daemon debug_prop:property_service set;
+  set_prop(mm-pp-daemon, debug_prop)
 
   # This allow pp-daemon access to diag
   diag_use(mm-pp-daemon)
@@ -56,7 +56,6 @@ userdebug_or_eng(`
 allow mm-pp-daemon sysfs:file rw_file_perms;
 
 # Allow socket calls in pp-daemon
-unix_socket_connect(mm-pp-daemon, property, init)
 unix_socket_connect(mm-pp-daemon, pps, init)
 
 allow mm-pp-daemon init:unix_stream_socket { listen accept };

@@ -21,7 +21,7 @@ allow qcomsysd sysfs_socinfo:file w_file_perms;
 allow qcomsysd self:capability { dac_override sys_boot };
 use_per_mgr(qcomsysd);
 #allow qcomsysd access boot mode switch
-set_prop(qcomsysd, boot_mode_prop);
+set_prop(qcomsysd, boot_mode_prop)
 
 #diag
 userdebug_or_eng(`
