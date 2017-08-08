@@ -28,4 +28,4 @@ r_dir_file(vendor_per_mgr, sysfs)
 allow vendor_per_mgr sysfs_data:file r_file_perms;
 
 # Set the peripheral state property
-set_prop(vendor_per_mgr, vendor_per_mgr_state_prop);
+set_prop(vendor_per_mgr, vendor_per_mgr_state_prop)

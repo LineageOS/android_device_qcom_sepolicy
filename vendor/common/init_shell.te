@@ -196,7 +196,7 @@ allow qti_init_shell sysfs_cpu_boost:file w_file_perms;
 allow qti_init_shell vendor_mbn_data_file:dir create_dir_perms;
 allow qti_init_shell vendor_mbn_data_file:file create_file_perms;
 
-set_prop(qti_init_shell, vendor_rild_libpath_prop);
+set_prop(qti_init_shell, vendor_rild_libpath_prop)
 set_prop(qti_init_shell, ctl_vendor_hbtp_prop)
 set_prop(qti_init_shell, vendor_radio_prop)
 

@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Allow read access to mirrorlink specific property type.
-get_prop(mirrorlink, vendor_mirrorlink_prop);
+get_prop(mirrorlink, vendor_mirrorlink_prop)
 
 # Allow read access to udc connection state
 allow mirrorlink sysfs_usb_controller:dir r_dir_perms;

@@ -45,6 +45,6 @@ allow poweroffalarm_app surfaceflinger_service:service_manager find;
 allow poweroffalarm_app audioserver_service:service_manager find;
 allow poweroffalarm_app mediaserver_service:service_manager find;
 
-get_prop(poweroffalarm_app, vendor_alarm_boot_prop);
+get_prop(poweroffalarm_app, vendor_alarm_boot_prop)
 
 get_prop(poweroffalarm_app, vendor_iop_prop)

@@ -30,7 +30,7 @@ userdebug_or_eng(`
     diag_use(hal_sensors)
     allow hal_sensors debugfs_tracing:file { open write };
 ')
-set_prop(hal_sensors, slpi_prop);
+set_prop(hal_sensors, slpi_prop)
 allow hal_sensors self:{ socket qipcrtr_socket } create_socket_perms;
 allowxperm hal_sensors self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 allow hal_sensors sysfs_socinfo:file r_file_perms;
