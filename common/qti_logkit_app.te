@@ -74,7 +74,7 @@ allow qti_logkit_app qti_logkit_pub_data_file:file create_file_perms;
 allow qti_logkit_app wcnss_service_exec:file rx_file_perms;
 
 # bugreport
-allow qti_logkit_app ctl_dumpstate_prop:property_service set;
+set_prop(qti_logkit_app, ctl_dumpstate_prop)
 unix_socket_connect(qti_logkit_app, dumpstate, dumpstate)
 
 # ANR
