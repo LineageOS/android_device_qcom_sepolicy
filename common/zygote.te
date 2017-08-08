@@ -28,5 +28,7 @@
 allow zygote debug_gralloc_prop:file r_file_perms;
 allow zygote sf_lcd_density_prop:file r_file_perms;
 # persist.service.bdroid.bdaddr hw.cabl.level
-allow zygote { bluetooth_prop ppd_prop system_prop } :property_service set;
+#set_prop(zygote, bluetooth_prop)
+set_prop(zygote, ppd_prop)
+set_prop(zygote, system_prop)
 set_prop(zygote, qemu_gles_prop)
