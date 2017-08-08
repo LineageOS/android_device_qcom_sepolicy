@@ -43,9 +43,6 @@ allow qseeproxy qseeproxy_service:service_manager add;
 #Allow qseeproxy to use system_server via binder to check caller identity
 binder_call(qseeproxy, system_server)
 
-#Allow communication with init over property server
-unix_socket_connect(qseeproxy, property, init);
-
 #Allow access to tee device
 allow qseeproxy tee_device:chr_file rw_file_perms;
 
