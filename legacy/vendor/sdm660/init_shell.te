@@ -32,5 +32,5 @@ allow qti_init_shell regionalization_file:file create_file_perms;
 #Needed for starting cdsprpcd service post-boot
 set_prop(qti_init_shell, vendor_cdsprpcd_prop)
 #Needed for ctl property denials
-allow qti_init_shell ctl_start_prop:property_service set;
-allow qti_init_shell ctl_stop_prop:property_service set;
+set_prop(qti_init_shell, ctl_start_prop)
+set_prop(qti_init_shell, ctl_stop_prop)
