@@ -28,11 +28,9 @@ r_dir_file(system_app, fm_data_file);
 r_dir_file(system_app, bluetooth_data_file);
 r_dir_file(system_app, bt_firmware_file);
 
-allow system_app {
-    ctl_default_prop
-    fm_prop
-    usf_prop
-}:property_service set;
+set_prop(system_app, ctl_default_prop)
+set_prop(system_app, fm_prop)
+set_prop(system_app, usf_prop)
 
 allow system_app {
     atfwd_service
@@ -83,7 +81,7 @@ allow system_app usf_data_file:{ file lnk_file } create_file_perms;
 hal_client_domain(system_app, hal_hbtp)
 
 #access to wifi_ftmd
-allow system_app wififtmd_prop:property_service set;
+set_prop(system_app, wififtmd_prop)
 #unix_socket_send(system_app, wififtmd, wifi_ftmd)
 
 # allow system_app to interact with dtseagleservice
@@ -141,7 +139,7 @@ allow system_app qti_logkit_priv_socket:dir r_dir_perms;
 allow system_app wcnss_service_exec:file rx_file_perms;
 
 # bugreport
-allow system_app ctl_dumpstate_prop:property_service set;
+set_prop(system_app, ctl_dumpstate_prop)
 unix_socket_connect(system_app, dumpstate, dumpstate)
 
 # allow gba auth service to add itself as system service
@@ -222,7 +220,6 @@ hal_client_domain(system_app, hal_alarm_qti);
 
 #allow system app to interact with the esepowermanager
 hal_client_domain(system_app, hal_esepowermanager)
-allow system_app fm_prop:file r_file_perms;
 
 allow system_app vendor_radio_data_file:dir rw_dir_perms;
 allow system_app vendor_radio_data_file:file create_file_perms;

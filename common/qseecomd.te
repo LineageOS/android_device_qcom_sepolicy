@@ -55,9 +55,6 @@ allow tee sysfs_securetouch:file rw_file_perms;
 binder_call(tee, surfaceflinger)
 #binder_use(tee)
 
-#allow tee system_app:unix_dgram_socket sendto;
-unix_socket_connect(tee, property, init)
-
 set_prop(tee, system_prop);
 
 

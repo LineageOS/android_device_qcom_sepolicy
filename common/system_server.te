@@ -33,12 +33,10 @@ allow system_server {
 allow system_server qtitetherservice_service:service_manager find;
 
 #For ANT tty communication and to set wc_transport prop
-allow system_server {
-    bluetooth_prop
-    usf_prop
-    alarm_handled_prop
-    alarm_instance_prop
-}:property_service set;
+set_prop(system_server, bluetooth_prop)
+set_prop(system_server, usf_prop)
+set_prop(system_server, alarm_handled_prop)
+set_prop(system_server, alarm_instance_prop)
 
 # required for ANT App to connectto wcnss_filter sockets
 allow system_server bluetooth:unix_stream_socket connectto;
@@ -62,7 +60,7 @@ allow system_server location_data_file:dir create_dir_perms;
 allow system_server { location_app_data_file mdtp_svc_app_data_file } :file rw_file_perms;
 allow system_server { location_app_data_file mdtp_svc_app_data_file } :dir r_dir_perms;
 #allow system_server location_socket:sock_file create_file_perms;
-allow system_server location_prop:property_service set;
+set_prop(system_server, location_prop)
 
 #For wifistatemachine
 allow system_server kernel:key search;
@@ -137,13 +135,13 @@ binder_call(system_server, fps_hal)
 allow system_server iqfp_service:service_manager find;
 
 # For shutdown animation
-allow system_server ctl_bootanim_prop:property_service set;
+set_prop(system_server, ctl_bootanim_prop)
 
 # allow tethering to access dhcp leases
 r_dir_file(system_server, dhcp_data_file)
 
 # Allow system server to access fst,wigig system properties
-allow system_server fst_prop:property_service set;
+set_prop(system_server, fst_prop)
 get_prop(system_server, fst_prop);
 set_prop(system_server, wigig_prop);
 

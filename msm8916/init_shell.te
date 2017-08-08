@@ -27,6 +27,4 @@
 
 # media_codecs_eld_prop - to choose target specific media_codecs.xml
 # media_settings_xml_prop - to choose target specific media_profiles.xml
-allow qti_init_shell {
-    media_msm8939hw_prop
-}:property_service set;
+set_prop(qti_init_shell, media_msm8939hw_prop)
