@@ -344,6 +344,8 @@
 /sys/devices/virtual/switch/hdmi(/.*)?                              u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/caps                       u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/video4linux/video[0-63]/name  u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/caps       u:object_r:sysfs_graphics:s0
 /sys/bus/platform/drivers/xhci_msm_hsic(/.*)?                       u:object_r:sysfs_hsic:s0
 /sys/devices/msm_hsic_host/host_ready                               u:object_r:sysfs_hsic_host_rdy:s0
 /sys/bus/esoc(/.*)?                                                 u:object_r:sysfs_esoc:s0
