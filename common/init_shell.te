@@ -58,54 +58,52 @@ allow qti_init_shell self:capability {
 # rmnet_mux_prop - Needed to set persist.rmnet.mux property
 # sys_usb_controller_prop - Needed to set sys.usb.controller property
 # sys_usb_configfs_prop - Needed to set sys.usb.configfs property
-allow qti_init_shell {
-    system_prop
-    freq_prop
-    perfd_prop
-    gamed_prop
-    mpdecision_prop
-    bluetooth_prop
-    config_prop
-    sensors_prop
-    msm_irqbalance_prop
-    ipacm_prop
-    ipacm-diag_prop
-    qti_prop
-    ctl_rildaemon_prop
-    uicc_prop
-    ctl_qmuxd_prop
-    ctl_netmgrd_prop
-    ctl_port-bridge_prop
-    sdm_idle_time_prop
-    sf_lcd_density_prop
-    opengles_prop
-    mdm_helper_prop
-    fm_prop
-    usf_prop
-    qemu_hw_mainkeys_prop
-    alarm_boot_prop
-    boot_animation_prop
-    debug_gralloc_prop
-    # Needed for starting console in userdebug mode
-    userdebug_or_eng(`ctl_console_prop coresight_prop')
-    rmnet_mux_prop
-    ctl_hbtp_prop
-    #Needed for starting vm_bms executable post-boot
-    vm_bms_prop
-    sys_usb_controller_prop
-    sys_usb_configfs_prop
-    #Needed for setting hwui properties in post_boot
-    hwui_prop
-    graphics_vulkan_prop
-}:property_service set;
+set_prop(qti_init_shell, system_prop)
+set_prop(qti_init_shell, freq_prop)
+set_prop(qti_init_shell, perfd_prop)
+set_prop(qti_init_shell, gamed_prop)
+set_prop(qti_init_shell, mpdecision_prop)
+set_prop(qti_init_shell, bluetooth_prop)
+set_prop(qti_init_shell, config_prop)
+set_prop(qti_init_shell, sensors_prop)
+set_prop(qti_init_shell, msm_irqbalance_prop)
+set_prop(qti_init_shell, ipacm_prop)
+set_prop(qti_init_shell, ipacm-diag_prop)
+set_prop(qti_init_shell, qti_prop)
+set_prop(qti_init_shell, ctl_rildaemon_prop)
+set_prop(qti_init_shell, uicc_prop)
+set_prop(qti_init_shell, ctl_qmuxd_prop)
+set_prop(qti_init_shell, ctl_netmgrd_prop)
+set_prop(qti_init_shell, ctl_port-bridge_prop)
+set_prop(qti_init_shell, sdm_idle_time_prop)
+set_prop(qti_init_shell, sf_lcd_density_prop)
+set_prop(qti_init_shell, opengles_prop)
+set_prop(qti_init_shell, mdm_helper_prop)
+set_prop(qti_init_shell, fm_prop)
+set_prop(qti_init_shell, usf_prop)
+set_prop(qti_init_shell, qemu_hw_mainkeys_prop)
+set_prop(qti_init_shell, alarm_boot_prop)
+set_prop(qti_init_shell, boot_animation_prop)
+set_prop(qti_init_shell, debug_gralloc_prop)
+# Needed for starting console in userdebug mode
+userdebug_or_eng(`
+set_prop(qti_init_shell, ctl_console_prop)
+set_prop(qti_init_shell, coresight_prop)
+')
+set_prop(qti_init_shell, rmnet_mux_prop)
+set_prop(qti_init_shell, ctl_hbtp_prop)
+#Needed for starting vm_bms executable post-boot
+set_prop(qti_init_shell, vm_bms_prop)
+set_prop(qti_init_shell, sys_usb_controller_prop)
+set_prop(qti_init_shell, sys_usb_configfs_prop)
+#Needed for setting hwui properties in post_boot
+set_prop(qti_init_shell, hwui_prop)
+set_prop(qti_init_shell, graphics_vulkan_prop)
 
 allow qti_init_shell efs_boot_dev:blk_file r_file_perms;
 
 # For hci_comm_init
 allow qti_init_shell { serial_device userdebug_or_eng(`qdss_device') }:chr_file rw_file_perms;
-
-# Allow property changes
-unix_socket_connect(qti_init_shell, property, init)
 
 allow qti_init_shell {
     sysfs

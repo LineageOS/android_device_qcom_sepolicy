@@ -23,7 +23,7 @@ type fmhal_service, bluetoothdomain,  domain_deprecated;
 type fmhal_service_exec, exec_type, file_type;
 domain_auto_trans(init, fmhal_service_exec, bluetooth)
 
-allow bluetooth bluetooth_prop:property_service set;
+set_prop(bluetooth, bluetooth_prop)
 allow bluetooth sysfs:file w_file_perms;
 
 #Access to /data/media

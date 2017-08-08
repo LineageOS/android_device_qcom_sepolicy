@@ -22,8 +22,7 @@ allow rmt_storage self:capability {
 };
 
 #For set the ctl properties
-unix_socket_connect(rmt_storage, property, init)
-allow rmt_storage ctl_default_prop:property_service set;
+set_prop(rmt_storage, ctl_default_prop)
 
 #For Wakelocks
 wakelock_use(rmt_storage)
