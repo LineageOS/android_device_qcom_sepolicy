@@ -25,9 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow qti_init_shell {
-    vendor_media_msm8953_version_prop
-}:property_service set;
+# media_msm8953_version_prop - to choose target version specific media_codecs.xml
+set_prop(qti_init_shell, vendor_media_msm8953_version_prop)
 
 # For regionalization
 allow qti_init_shell regionalization_file:dir r_dir_perms;

@@ -41,7 +41,7 @@ allow wcnss_filter {
 
 #wakelock policy
 wakelock_use(wcnss_filter);
-set_prop(wcnss_filter, vendor_bluetooth_prop);
+set_prop(wcnss_filter, vendor_bluetooth_prop)
 
 #For bluetooth firmware
 r_dir_file(wcnss_filter, bt_firmware_file)

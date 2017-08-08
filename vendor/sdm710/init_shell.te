@@ -26,9 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # media_sdm710_version_prop - to choose target version specific media_codecs.xml
-allow qti_init_shell {
-    vendor_media_sdm710_version_prop
-}:property_service set;
+set_prop(qti_init_shell, vendor_media_sdm710_version_prop)
 
 # For regionalization
 allow qti_init_shell regionalization_file:dir r_dir_perms;

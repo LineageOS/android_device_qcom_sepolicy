@@ -31,6 +31,6 @@ init_daemon_domain(wifi_ftmd)
 
 net_domain(wifi_ftmd)
 
-set_prop(wifi_ftmd,vendor_wifi_ftmd_prop);
+set_prop(wifi_ftmd,vendor_wifi_ftmd_prop)
 allow wifi_ftmd self:capability net_admin;
-allow wifi_ftmd vendor_wifi_ftmd_prop:property_service set;
+set_prop(wifi_ftmd, vendor_wifi_ftmd_prop)
