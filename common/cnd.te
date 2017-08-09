@@ -48,6 +48,7 @@ qmux_socket(cnd)
 unix_socket_send(cnd, wpa, hal_wifi_supplicant)
 allow cnd wpa_socket:dir rw_dir_perms;
 allow cnd wpa_socket:sock_file { create unlink setattr };
+allow cnd wifi_data_file:dir r_dir_perms;
 allow cnd wifi_vendor_data_file:dir r_dir_perms;
 allow cnd wifi_vendor_wpa_socket:sock_file write;
 
@@ -77,6 +78,8 @@ allow cnd ipacm_data_file:file r_file_perms;
 #allow cnd daemon to invoke hostapd_cli
 allow cnd vendor_shell_exec:file rx_file_perms;
 domain_auto_trans(cnd, hostapd_exec, hostapd)
+allow cnd hostapd_socket:dir r_dir_perms;
+unix_socket_send(cnd, hostapd, hostapd)
 
 # only allow getopt for appdomain
 allow appdomain zygote:unix_dgram_socket getopt;
