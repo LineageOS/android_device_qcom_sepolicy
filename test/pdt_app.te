@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,12 +25,16 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-user=_app seinfo=platform name=com.qualcomm.location.qvtester domain=location_app type=location_app_data_file
-user=_app seinfo=platform name=com.qualcomm.qct.dlt domain=location_app type=location_app_data_file
+# This domain is for pdt apps and should always be in
+# userdebug_or_eng macro
 
-#Add new domain for QSEE sample services
-user=system seinfo=platform name=com.qualcomm.qti.auth.securesampleauthservice domain=qsee_svc_app type=qsee_svc_app_data_file
-user=system seinfo=platform name=com.qualcomm.qti.auth.secureextauthservice domain=qsee_svc_app type=qsee_svc_app_data_file
-
-#Add new domain for pdt apps
-user=system seinfo=platform name=.pdtapps domain=pdt_app type=system_app_data_file
+userdebug_or_eng(`
+type pdt_app, domain;
+app_domain(pdt_app);
+net_domain(pdt_app)
+permissive pdt_app;
+r_dir_file(pdt_app, domain)
+dontaudit pdt_app service_manager_type:service_manager *;
+dontaudit pdt_app hwservice_manager_type:hwservice_manager *;
+dontaudit pdt_app file_type:dir_file_class_set *;
+')
