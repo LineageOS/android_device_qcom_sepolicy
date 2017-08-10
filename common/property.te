@@ -49,6 +49,7 @@ type spcomlib_prop, property_type;
 type sdm_idle_time_prop, property_type;
 type sf_lcd_density_prop, property_type;
 type scr_enabled_prop, property_type;
+type bg_daemon_prop, property_type;
 type opengles_prop, property_type;
 type mdm_helper_prop, property_type;
 type mpdecision_prop, property_type;
