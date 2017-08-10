@@ -165,7 +165,6 @@
 /(vendor|system/vendor)/bin/hsic\.control\.bt\.sh           u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.ath3k\.bt\.sh             u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.crda\.sh                  u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.audio\.sh           u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.coex\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.debug-sdm660\.sh    u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.debug\.sh           u:object_r:qti_init_shell_exec:s0
