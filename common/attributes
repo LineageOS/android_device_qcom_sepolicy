@@ -53,3 +53,27 @@ attribute wifidisplayhalservice_server;
 attribute hal_alarm_qti;
 attribute hal_alarm_qti_client;
 attribute hal_alarm_qti_server;
+
+attribute hal_vehicle;
+attribute hal_vehicle_client;
+attribute hal_vehicle_server;
+
+attribute hal_vpp;
+attribute hal_vpp_client;
+attribute hal_vpp_server;
+
+attribute hal_wigig;
+attribute hal_wigig_client;
+attribute hal_wigig_server;
+
+attribute hal_qteeconnector;
+attribute hal_qteeconnector_client;
+attribute hal_qteeconnector_server;
+
+attribute hal_esepowermanager;
+attribute hal_esepowermanager_client;
+attribute hal_esepowermanager_server;
+
+attribute hal_iop;
+attribute hal_iop_client;
+attribute hal_iop_server;

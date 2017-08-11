@@ -49,7 +49,7 @@ ctl.msm_irqbalance         u:object_r:msm_irqbalance_prop:s0
 ctl.msm_irqbal_lb          u:object_r:msm_irqbalance_prop:s0
 camera.                    u:object_r:camera_prop:s0
 persist.camera.            u:object_r:camera_prop:s0
-spcomlib.                    u:object_r:spcomlib_prop:s0
+vendor.spcom.              u:object_r:spcomlib_prop:s0
 sdm.idle_time              u:object_r:sdm_idle_time_prop:s0
 ro.sf.lcd_density             u:object_r:sf_lcd_density_prop:s0
 ro.vendor.scr_enabled         u:object_r:scr_enabled_prop:s0
@@ -69,7 +69,6 @@ qemu.hw.mainkeys           u:object_r:qemu_hw_mainkeys_prop:s0
 ro.dbg.coresight.cfg_file     u:object_r:coresight_prop:s0
 ctl.hbtp                   u:object_r:ctl_hbtp_prop:s0
 vendor.audio.sys.init             u:object_r:audio_prop:s0
-persist.dpm.feature        u:object_r:persist_dpm_prop:s0
 ro.alarm_boot                 u:object_r:alarm_boot_prop:s0
 debug.sf.nobootanimation   u:object_r:boot_animation_prop:s0
 debug.gralloc.             u:object_r:debug_gralloc_prop:s0
@@ -80,11 +79,20 @@ dolby.                     u:object_r:dolby_prop:s0
 wifi.ftmd.                 u:object_r:wififtmd_prop:s0
 ro.bluetooth.              u:object_r:bluetooth_prop:s0
 # WIGIG
-persist.fst.               u:object_r:fst_prop:s0
+persist.vendor.wigig.       u:object_r:wigig_prop:s0
+vendor.wigig.               u:object_r:wigig_prop:s0
+ctl.vendor.wigig_supplicant u:object_r:ctl_vendor_wigigsvc_prop:s0
+ctl.vendor.wigig_hostapd    u:object_r:ctl_vendor_wigigsvc_prop:s0
+
+persist.vendor.fst.         u:object_r:fst_prop:s0
 ro.alarm_handled           u:object_r:alarm_handled_prop:s0
 ro.alarm_instance          u:object_r:alarm_instance_prop:s0
 #HWUI Property
 ro.hwui.texture_cache_size u:object_r:hwui_prop:s0
+#Bservice Property
+ro.vendor.qti.sys.fw.bservice_ u:object_r:bservice_prop:s0
+#Delayed Service Restart Property
+ro.vendor.qti.am.reschedule_service u:object_r:reschedule_service_prop:s0
 persist.graphics.vulkan.disable     u:object_r:graphics_vulkan_prop:s0
 #boot mode property
 sys.boot_mode              u:object_r:boot_mode_prop:s0
@@ -94,3 +102,9 @@ ro.gpu.available_frequencies u:object_r:freq_prop:s0
 sys.nfc.nq.                u:object_r:nfc_nq_prop:s0
 ctl.ppd                    u:object_r:ppd_prop:s0
 qemu.gles                  u:object_r:qemu_gles_prop:s0
+# LKCore start
+ctl.vendor.LKCore-dbg      u:object_r:ctl_LKCore_prop:s0
+ctl.vendor.LKCore-rel      u:object_r:ctl_LKCore_prop:s0
+vendor.rild.libpath        u:object_r:vendor_rild_libpath_prop:s0
+# Peripheral Manager
+vendor.peripheral.         u:object_r:per_mgr_state_prop:s0

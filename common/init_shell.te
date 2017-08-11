@@ -107,7 +107,10 @@ set_prop(qti_init_shell, sys_usb_configfs_prop)
 #Needed for setting hwui properties in post_boot
 set_prop(qti_init_shell, hwui_prop)
 set_prop(qti_init_shell, graphics_vulkan_prop)
-
+#Needed for setting bservice properties from post_boot
+set_prop(qti_init_shell, bservice_prop)
+#Needed for setting DSR properties from post_boot
+set_prop(qti_init_shell, reschedule_service_prop)
 
 allow qti_init_shell efs_boot_dev:blk_file r_file_perms;
 
@@ -116,14 +119,14 @@ allow qti_init_shell { serial_device userdebug_or_eng(`qdss_device') }:chr_file 
 
 
 allow qti_init_shell {
-    sysfs
+    { sysfs_type - usermodehelper }
     sysfs_devices_system_cpu
     sysfs_thermal
     sysfs_lowmemorykiller
 }:file w_file_perms;
 
 r_dir_file(qti_init_shell, sysfs_thermal)
-r_dir_file(qti_init_shell, sysfs)
+r_dir_file(qti_init_shell, sysfs_type)
 allow qti_init_shell sysfs_socinfo:file write;
 allow qti_init_shell sysfs:{ dir file lnk_file } relabelfrom;
 allow qti_init_shell sysfs_devices_system_cpu: { dir file lnk_file } relabelto;
@@ -148,7 +151,7 @@ allow qti_init_shell usf_data_file:{ file lnk_file } create_file_perms;
 # To check if /system/bin/msm_irqbalance is persent in the device
 allow qti_init_shell msm_irqbalanced_exec:file getattr;
 
-# To write to /data/system/perfd
+# To write to /data/vendor/perfd
 allow qti_init_shell mpctl_data_file:dir w_dir_perms;
 allow qti_init_shell mpctl_data_file:file { write getattr unlink };
 
@@ -215,3 +218,6 @@ allow qti_init_shell sysfs_devfreq:file w_file_perms;
 
 allow qti_init_shell vendor_radio_data_file:dir create_dir_perms;
 allow qti_init_shell vendor_radio_data_file:file create_file_perms;
+
+set_prop(qti_init_shell, vendor_rild_libpath_prop);
+set_prop(qti_init_shell, system_radio_prop)

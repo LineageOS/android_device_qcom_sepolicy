@@ -16,7 +16,6 @@ allow rmt_storage { smem_log_device uio_device }:chr_file rw_file_perms;
 allow rmt_storage self:capability {
     setuid
     setgid
-    sys_admin
     net_bind_service
     setpcap
 };

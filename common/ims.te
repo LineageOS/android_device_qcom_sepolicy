@@ -9,9 +9,6 @@ net_domain(ims)
 # Talk to qmuxd
 qmux_socket(ims)
 
-# To make VT call
-#binder_use(ims)
-
 allow ims self:capability net_bind_service;
 
 # Use generic netlink socket
@@ -36,10 +33,6 @@ unix_socket_connect(ims, netd, netd)
 
 # Talk to qumuxd via ims_socket
 unix_socket_connect(ims, ims, qmuxd)
-
-
-#Add connectionmanager service
-allow ims imscm_service:service_manager add;
 
 set_prop(ims, qcom_ims_prop)
 
@@ -70,7 +63,6 @@ allowxperm ims self:socket ioctl msm_sock_ipc_ioctls;
 allowxperm ims self:udp_socket ioctl priv_sock_ioctls;
 allow ims sysfs:file r_file_perms;
 allow ims sysfs_data:file r_file_perms;
-
 hwbinder_use(ims)
 get_prop(ims, hwservicemanager_prop)
 get_prop(ims, qcom_ims_prop)

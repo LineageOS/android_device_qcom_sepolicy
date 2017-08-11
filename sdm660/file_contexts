@@ -99,6 +99,7 @@
 /dev/block/platform/soc/c0c4000.sdhci/by-name/mdtpsecapp_[ab]   u:object_r:mdtp_device:s0
 /dev/block/platform/soc/c0c4000.sdhci/by-name/hyp_[ab]          u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/c0c4000.sdhci/by-name/keymaster_[ab]    u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/c0c4000.sdhci/by-name/dsp_[ab]          u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/c0c4000.sdhci/by-name/modem_[ab]        u:object_r:modem_block_device:s0
 /dev/block/platform/soc/c0c4000.sdhci/by-name/bluetooth_[ab]    u:object_r:modem_block_device:s0
 /dev/block/platform/soc/c0c4000.sdhci/by-name/msadp_[ab]        u:object_r:custom_ab_block_device:s0
@@ -120,6 +121,7 @@
 /dev/block/platform/soc/1da4000.ufshc/by-name/mdtpsecapp_[ab]   u:object_r:mdtp_device:s0
 /dev/block/platform/soc/1da4000.ufshc/by-name/hyp_[ab]          u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/1da4000.ufshc/by-name/keymaster_[ab]    u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/1da4000.ufshc/by-name/dsp_[ab]          u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/1da4000.ufshc/by-name/modem_[ab]        u:object_r:modem_block_device:s0
 /dev/block/platform/soc/1da4000.ufshc/by-name/bluetooth_[ab]    u:object_r:modem_block_device:s0
 /dev/block/platform/soc/1da4000.ufshc/by-name/msadp_[ab]        u:object_r:custom_ab_block_device:s0
@@ -141,3 +143,15 @@
 #
 /vendor/lib(64)?/hw/gralloc\.sdm660\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/vulkan\.sdm660\.so    u:object_r:same_process_hal_file:s0
+
+###############################################################################
+# sysfs
+#
+
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_cam/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,vidc/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,cci/[a-z0-9]+.qcom,cci:qcom,camera@[0-2]/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices/soc/[a-z0-9]+.qcom,mdss_mdp/bw_mode_bitmap  u:object_r:sysfs_graphics:s0
+/sys/devices/soc/[a-z0-9]+.qcom,jpeg/video4linux/video[0-33]/name  u:object_r:sysfs_graphics:s0
+#/sys/devices/soc/[a-z0-9]+.qcom,mdss_rotator/caps(/.*)?  u:object_r:sysfs_type:s0

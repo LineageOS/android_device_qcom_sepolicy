@@ -26,6 +26,3 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type dpmd,domain;
-type dpmd_exec, exec_type, file_type;
-#init_daemon_domain(dpmd)
-#net_domain(dpmd)

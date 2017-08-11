@@ -16,13 +16,6 @@ binder_call(surfaceflinger, poweroffhandler);
 binder_call(surfaceflinger, location)
 binder_call(surfaceflinger, tee)
 
-# access to perflock
-#allow surfaceflinger mpctl_socket:dir r_dir_perms;
-#unix_socket_send(surfaceflinger, mpctl, perfd)
-#unix_socket_connect(surfaceflinger, mpctl, perfd)
-#unix_socket_send(surfaceflinger, mpctl, mpdecision)
-#unix_socket_connect(surfaceflinger, mpctl, mpdecision)
-
 # access to /data/misc/display for dumping input frames
 allow surfaceflinger display_misc_file:dir create_dir_perms;
 allow surfaceflinger display_misc_file:file create_file_perms;

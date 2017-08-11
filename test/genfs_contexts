@@ -1,0 +1,1 @@
+genfscon debugfs /regmap u:object_r:qti_debugfs:s0

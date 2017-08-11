@@ -35,6 +35,7 @@ type persist_bluetooth_file, file_type;
 type persist_data_file, file_type;
 type persist_drm_file, file_type;
 type data_qsee_file, file_type;
+type data_qtee_file, file_type, data_file_type;
 type persist_misc_file, file_type;
 type persist_bms_file, file_type;
 
@@ -73,6 +74,7 @@ type sysfs_graphics, sysfs_type, fs_type;
 # USB/battery power supply type for hvdcp/quickcharge
 type sysfs_usb_supply, sysfs_type, fs_type;
 type sysfs_battery_supply, sysfs_type, fs_type;
+type sysfs_usbpd_device, sysfs_type, fs_type;
 
 #Define the files written during the operation of mpdecision
 type sysfs_mpdecision, fs_type, sysfs_type;
@@ -82,6 +84,7 @@ type mpctl_socket, file_type, mlstrustedobject;
 type mpctl_data_file, file_type, data_file_type;
 
 type sysfs_devfreq, fs_type, sysfs_type;
+type sysfs_lpm, fs_type, sysfs_type;
 type sysfs_mmc_host, fs_type, sysfs_type;
 type sysfs_scsi_host, fs_type, sysfs_type;
 type sysfs_cpu_boost, fs_type, sysfs_type;
@@ -103,6 +106,12 @@ type camera_socket, file_type;
 
 #Socket node needed by ims_data daemon
 type ims_socket, file_type;
+
+#mink-lowi-interface-daemon (mlid) socket
+type mlid_socket, file_type, mlstrustedobject;
+
+#ssg qmi gateway daemon socket
+type ssgqmig_socket, file_type, mlstrustedobject;
 
 #location file types
 type location_data_file, file_type, data_file_type;
@@ -170,6 +179,9 @@ type dts_data_file, file_type, data_file_type;
 #qsee_svc_app file types
 type qsee_svc_app_data_file, file_type, data_file_type;
 
+# imshelper_app file types
+type imshelper_app_data_file, file_type, data_file_type;
+
 # RIDL data files
 type RIDL_data_file, file_type, data_file_type;
 type RIDL_socket, file_type;
@@ -225,6 +237,9 @@ type sysfs_data, fs_type, sysfs_type;
 #diag sysfs files
 type sysfs_diag, fs_type, sysfs_type;
 
+#laser sysfs files
+type sysfs_laser, fs_type, sysfs_type;
+
 # QDMA data files
 type qdma_data_file, file_type, data_file_type;
 type qdma_app_data_file, file_type, data_file_type;
@@ -236,5 +251,24 @@ type qti_debugfs, fs_type, debugfs_type;
 # vendor radio files
 type vendor_radio_data_file, file_type, data_file_type;
 
+#irq balance sysfs type
+type sysfs_irqbalance , sysfs_type, fs_type;
+
+# vpp files
+type vpp_data_file, file_type, data_file_type;
+type persist_vpp_file, file_type;
 # vendor camera files
 type vendor_camera_data_file, file_type, data_file_type;
+
+# wigig, fstman
+type sysfs_bond0, fs_type, sysfs_type;
+type sysfs_wigig, fs_type, sysfs_type;
+
+# wigig_hostapd
+type wigig_hostapd_socket, file_type;
+
+# ea sysfs files
+type sysfs_ea, fs_type, sysfs_type;
+
+#audio sysfs files
+type sysfs_audio, fs_type, sysfs_type;

@@ -29,7 +29,7 @@
 type qfp-daemon, domain;
 type qfp-daemon_exec, exec_type, vendor_file_type, file_type;
 
-net_domain(qfp-daemon)
+hal_server_domain(qfp-daemon, hal_fingerprint)
 init_daemon_domain(qfp-daemon)
 
 #binder_call(qfp-daemon, servicemanager)
@@ -46,9 +46,6 @@ allow qfp-daemon tee_device:chr_file rw_file_perms;
 # Access QFP Android Proxy
 #allow qfp-daemon qfp_proxy_service:service_manager find;
 
-# Add IQfpService service
-allow qfp-daemon iqfp_service:service_manager add;
-
 # Read system property
 allow qfp-daemon property_socket:sock_file write;
 
@@ -61,14 +58,6 @@ r_dir_file(qfp-daemon, firmware_file)
 # R dir perms for persist qc_senseid dir
 r_dir_file(qfp-daemon, persist_file)
 r_dir_file(qfp-daemon, persist_qti_fp_file)
-
-# Allow qfp daemon access to system server
-binder_call(qfp-daemon, system_server);
-
-# Allow read to sensor device and read/write to sensor socket
-allow qfp-daemon sensors_device:chr_file r_file_perms;
-allow qfp-daemon sensors_socket:sock_file rw_file_perms;
-allow qfp-daemon sensors:unix_stream_socket connectto;
 
 # Allow listing input devices and sending input events
 allow qfp-daemon input_device:chr_file rw_file_perms;

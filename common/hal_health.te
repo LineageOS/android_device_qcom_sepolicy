@@ -26,6 +26,15 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 r_dir_file(hal_health, persist_file);
+r_dir_file(hal_health, sysfs_battery_supply);
+r_dir_file(hal_health, sysfs_usb_supply);
 
 allow hal_health persist_bms_file:dir rw_dir_perms;
 allow hal_health persist_bms_file:file create_file_perms;
+
+allow hal_health hal_health_default:dir search;
+
+allow hal_health {
+    sysfs_battery_supply
+    sysfs_usb_supply
+}:file rw_file_perms;

@@ -2,9 +2,6 @@
 type sapd, bluetoothdomain;
 type sapd_exec, exec_type, vendor_file_type, file_type;
 
-type dun-server, bluetoothdomain;
-type dun-server_exec, exec_type, vendor_file_type, file_type;
-
 type btsnoop, bluetoothdomain;
 type btsnoop_exec, exec_type, vendor_file_type, file_type;
 

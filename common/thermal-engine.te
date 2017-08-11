@@ -42,14 +42,6 @@ r_dir_file(thermal-engine, sysfs_leds)
 # This is required for wake alarm access
 allow thermal-engine self:capability2 wake_alarm;
 
-# This is required for thermal perfd access
-allow thermal-engine mpctl_socket:dir search;
-allow thermal-engine mpctl_socket:sock_file write;
-unix_socket_send(thermal-engine, mpctl, perfd)
-unix_socket_connect(thermal-engine, mpctl, perfd)
-unix_socket_send(thermal-engine, mpctl, mpdecision)
-unix_socket_connect(thermal-engine, mpctl, mpdecision)
-
 #This is to allow access to uio device
 allow thermal-engine uio_device:chr_file rw_file_perms;
 
@@ -57,9 +49,22 @@ userdebug_or_eng(`
   diag_use(thermal-engine)
 ')
 
-# To get GPU frequencies
-allow thermal-engine sysfs_kgsl:file r_file_perms;
+# To search, read and write kgsl sysfs
+allow thermal-engine sysfs_kgsl:dir r_dir_perms;
+allow thermal-engine sysfs_kgsl:file rw_file_perms;
+allow thermal-engine sysfs_kgsl:lnk_file r_file_perms;
+
 allow thermal-engine sysfs_data:file r_file_perms;
 
 # netlink access
 allow thermal-engine self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+# This is required read and write battery power supply sysfs
+allow thermal-engine sysfs_battery_supply:dir r_dir_perms;
+allow thermal-engine sysfs_battery_supply:file rw_file_perms;
+allow thermal-engine sysfs_battery_supply:lnk_file r_file_perms;
+
+# This is required to read and write lcd-backlight sysfs
+allow thermal-engine sysfs_graphics:dir r_dir_perms;
+allow thermal-engine sysfs_graphics:file rw_file_perms;
+allow thermal-engine sysfs_graphics:lnk_file r_file_perms;

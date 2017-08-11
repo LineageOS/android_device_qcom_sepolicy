@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type wfdservice, domain;
+type wfdservice_exec, exec_type, file_type;

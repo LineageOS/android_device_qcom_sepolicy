@@ -49,16 +49,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#access to perflock
-#allow audioserver mpctl_socket:dir r_dir_perms;
-#unix_socket_send(audioserver, mpctl, mpdecision)
-#unix_socket_connect(audioserver, mpctl, mpdecision)
-
-# access to perflock
-#allow audioserver mpctl_socket:dir r_dir_perms;
-#unix_socket_send(audioserver, mpctl, perfd)
-#unix_socket_connect(audioserver, mpctl, perfd)
-
 #debugfs access to audio
 userdebug_or_eng(`
 allow audioserver qti_debugfs:dir r_dir_perms;

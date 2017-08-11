@@ -30,15 +30,6 @@ allow mediaserver dts_data_file:file create_file_perms;
 # allow poweroffhandler to binder mediaserver
 binder_call(mediaserver, poweroffhandler);
 
-# access to perflock
-#allow mediaserver mpctl_socket:dir r_dir_perms;
-#unix_socket_send(mediaserver, mpctl, mpdecision)
-#unix_socket_connect(mediaserver, mpctl, mpdecision)
-
-# access to perflock
-#allow mediaserver mpctl_socket:dir r_dir_perms;
-#unix_socket_send(mediaserver, mpctl, perfd)
-#unix_socket_connect(mediaserver, mpctl, perfd)
 
 # for thermal sock files
 #unix_socket_connect(mediaserver, thermal, thermal-engine)
@@ -59,6 +50,9 @@ allow mediaserver audio_pp_data_file:file create_file_perms;
 
 #Allow mediaserver to set camera  properties
 allow mediaserver camera_prop:property_service set;
+
+#Allow mediaserver access mmi_data_file
+allow mediaserver mmi_data_file:file r_file_perms;
 
 #allow mediaserver to access wfdservice
 binder_call(mediaserver, wfdservice)
