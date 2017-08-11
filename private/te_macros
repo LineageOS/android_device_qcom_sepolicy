@@ -25,44 +25,11 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
-typeattribute dpmd coredomain;
-typeattribute dpmd mlstrustedsubject;
-type dpmd_exec, exec_type, file_type;
-
-init_daemon_domain(dpmd)
-
-net_domain(dpmd)
-
-allow dpmd {
-    dpmd_exec
-    system_file
-}:file x_file_perms;
-
-allow dpmd dpmd_data_file:file create_file_perms;
-allow dpmd dpmd_data_file:dir create_dir_perms;
-r_dir_file(dpmd,proc_net)
-
-allow dpmd self:capability {
-    setuid
-    net_raw
-    net_admin
-};
-allow dpmd appdomain:dir r_dir_perms;
-allow dpmd appdomain:file r_file_perms;
-wakelock_use(dpmd)
-allow dpmd shell_exec:file rx_file_perms;
-dontaudit dpmd self:capability sys_module;
-set_prop(dpmd, persist_dpm_prop)
-get_prop(dpmd, persist_dpm_prop)
-#allow dpmd to create socket
-allow dpmd self:socket create_socket_perms_no_ioctl;
-allow dpmd self:{ netlink_socket netlink_generic_socket } create_socket_perms_no_ioctl;
-dpmd_socket_perm(priv_app)
-dpmd_socket_perm(system_server)
-dpmd_socket_perm(system_app)
-dpmd_socket_perm(untrusted_app)
-dpmd_socket_perm(untrusted_app_25)
-dpmd_socket_perm(platform_app)
-#allow dpmd to write to /proc/net/sys
-allow dpmd proc_net:file write;
+#####################################
+# dpmd_socket_perm(clientdomain)
+# allow dpmd to use inet socket created by app.
+define(`dpmd_socket_perm', `
+allow dpmd $1:fd use;
+allow dpmd $1:tcp_socket rw_socket_perms;
+')
+#####################################
