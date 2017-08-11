@@ -218,3 +218,4 @@ hal_client_domain(system_app, hal_alarm_qti);
 
 #allow system app to interact with the esepowermanager
 hal_client_domain(system_app, hal_esepowermanager)
+allow system_app fm_prop:file r_file_perms;
