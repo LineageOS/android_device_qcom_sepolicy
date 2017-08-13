@@ -6,8 +6,12 @@ BOARD_SEPOLICY_DIRS := \
        $(LOCAL_PATH) \
        $(LOCAL_PATH)/common \
        $(LOCAL_PATH)/ssg \
-       $(LOCAL_PATH)/test \
        $(LOCAL_PATH)/$(TARGET_BOARD_PLATFORM)
+
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+BOARD_SEPOLICY_DIRS += \
+       $(LOCAL_PATH)/test
+endif
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
     $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
