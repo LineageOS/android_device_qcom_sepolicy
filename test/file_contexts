@@ -68,3 +68,7 @@
 
 #Context for mediaserver
 /data/display-tests/media(/.*)?                 u:object_r:display_test_media_file:s0
+
+#Context for GPU applications
+/data/vendor/gpu(/.*)?				u:object_r:coredump_file:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/snapshot(/.*)? u:object_r:sysfs_kgsl_snapshot:s0
