@@ -89,3 +89,6 @@ allowxperm location self:udp_socket ioctl priv_sock_ioctls;
 
 #Allow access to wake alarm
 allow location self:capability2 wake_alarm;
+
+#access to qdma socket
+qdma_file_socket(location);
