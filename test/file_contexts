@@ -62,5 +62,6 @@
 /(vendor|system/vendor)/bin/loc_api_app                         u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/test_loc_api_client                 u:object_r:location_exec:s0
 
+/(vendor|system/vendor)/bin/sns.*               u:object_r:sensors_test_exec:s0
 #Context for mediaserver
 /data/display-tests/media(/.*)?                 u:object_r:display_test_media_file:s0
