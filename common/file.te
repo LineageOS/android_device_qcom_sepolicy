@@ -276,3 +276,6 @@ type sysfs_audio, fs_type, sysfs_type;
 # lpm sysfs files
 type sysfs_msm_stats, fs_type, sysfs_type;
 type sysfs_msm_power, fs_type, sysfs_type;
+
+# Data type for QVOP
+type qvop-daemon_data_file, file_type, data_file_type;

@@ -194,6 +194,7 @@
 /(vendor|system/vendor)/bin/vm_bms                              u:object_r:vm_bms_exec:s0
 /(vendor|system/vendor)/bin/mm-qcamera-daemon   u:object_r:mm-qcamerad_exec:s0
 /(vendor|system/vendor)/bin/qfp-daemon          u:object_r:qfp-daemon_exec:s0
+/(vendor|system/vendor)/bin/qvop-daemon         u:object_r:qvop-daemon_exec:s0
 /system/rfs.*                                   u:object_r:rfs_system_file:s0
 /(vendor|system/vendor)/bin/time_daemon         u:object_r:time_daemon_exec:s0
 /(vendor|system/vendor)/bin/rmt_storage         u:object_r:rmt_storage_exec:s0
@@ -410,6 +411,7 @@
 /data/hlos_rfs(/.*)?                                                u:object_r:rfs_shared_hlos_file:s0
 /data/camera(/.*)?                                                  u:object_r:camera_socket:s0
 /data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
+/data/misc/qvop(/.*)?                                               u:object_r:qvop-daemon_data_file:s0
 /data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
 /data/vendor/time(/.*)?                                             u:object_r:time_data_file:s0
 /data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
