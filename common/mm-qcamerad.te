@@ -73,3 +73,10 @@ allow mm-qcamerad sysfs:file rw_file_perms;
 
 hal_client_domain(mm-qcamerad, hal_graphics_allocator)
 allow mm-qcamerad ion_device:chr_file rw_file_perms;
+
+# from sensors team
+
+allow mm-qcamerad self:socket create_socket_perms;
+allowxperm mm-qcamerad self:socket ioctl msm_sock_ipc_ioctls;
+
+allow mm-qcamerad sysfs_data:file r_file_perms;
