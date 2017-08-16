@@ -28,3 +28,6 @@
 
 #Define seemplog device
 type seemplog_device, dev_type;
+
+#define smcinvoke device
+type smcinvoke_device, dev_type;

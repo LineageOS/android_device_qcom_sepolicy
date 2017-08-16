@@ -18,31 +18,29 @@
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
 # BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# # CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
 # SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
 # BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+type smcinvoke_daemon, domain, coredomain;
+type smcinvoke_daemon_exec, exec_type, file_type;
 
-####### device files ##############
-/dev/seemplog                                   u:object_r:seemplog_device:s0
-/dev/smcinvoke                                  u:object_r:smcinvoke_device:s0
+init_daemon_domain(smcinvoke_daemon)
 
-####### dev/socket files ##########
-/dev/socket/seempdw                             u:object_r:seempdw_socket:s0
-/dev/socket/dpmd                                u:object_r:dpmd_socket:s0
-/dev/socket/dpmwrapper                          u:object_r:dpmwrapper_socket:s0
-/dev/socket/tcm                                 u:object_r:dpmtcm_socket:s0
+#Allow smcinvoke_daemon to use Binder IPC
+binder_use(smcinvoke_daemon)
 
-####### system file ###############
-/system/bin/seempd                              u:object_r:seempd_exec:s0
-/system/bin/dpmd                                u:object_r:dpmd_exec:s0
-/system/bin/dun-server                          u:object_r:dun-server_exec:s0
-/system/etc/init\.qcom\.testscripts\.sh         u:object_r:qti-testscripts_exec:s0
-/system/bin/smcinvoked                          u:object_r:smcinvoke_daemon_exec:s0
+#Allow apps to interact with smcinvoke_daemon
+binder_call(smcinvoke_daemon, system_app)
 
-####### data files ################
-/data/misc/seemp(/.*)?                          u:object_r:seemp_data_file:s0
-/data/dpm(/.*)?                                 u:object_r:dpmd_data_file:s0
+#Mark smcinvoke_daemon as a Binder service domain
+binder_service(smcinvoke_daemon)
+
+#Allow access to smcinvoke device
+allow smcinvoke_daemon smcinvoke_device:chr_file rw_file_perms;
+
+add_service(smcinvoke_daemon, MinkBinderSvc)
+allow smcinvoke_daemon system_app:unix_stream_socket connectto;
