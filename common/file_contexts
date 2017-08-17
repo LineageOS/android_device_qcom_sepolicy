@@ -474,6 +474,7 @@
 /data/vendor/vpp(/.*)?                                              u:object_r:vpp_data_file:s0
 /data/vendor/camera(/.*)?                                           u:object_r:vendor_camera_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
+/data/vendor/media(/.*)?                                            u:object_r:media_data_file:s0
 
 ###################################
 # persist files
