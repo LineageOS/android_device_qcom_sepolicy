@@ -270,6 +270,9 @@ type persist_vpp_file, file_type;
 # vendor camera files
 type vendor_camera_data_file, file_type, data_file_type;
 
+#tloc data files
+type tlocd_data_file, file_type, data_file_type;
+
 # wigig, fstman
 type sysfs_bond0, fs_type, sysfs_type;
 type sysfs_wigig, fs_type, sysfs_type;
