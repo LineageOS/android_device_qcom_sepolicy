@@ -25,25 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-## ssg_app
-##
-## This file defines the permissions that ssg_apps can carry
-
-type ssg_app, domain;
-
-app_domain(ssg_app)
-net_domain(ssg_app)
-
-# Allow access to sockets
-unix_socket_connect(ssg_app, mlid, mlid)
-unix_socket_connect(ssg_app, ssgqmig, ssgqmigd)
-unix_socket_connect(ssg_app, ssgtzd, ssgtzd)
-
-allow ssg_app radio_service:service_manager find;
-allow ssg_app surfaceflinger_service:service_manager find;
-allow ssg_app app_api_service:service_manager find;
-
-# To get uuid and device info
-allow ssg_app proc_cpuinfo:file r_file_perms;
-allow ssg_app proc_meminfo:file r_file_perms;
-r_dir_file(ssg_app, proc)
+#define smcinvoke device
+type smcinvoke_device, dev_type;

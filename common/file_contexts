@@ -126,6 +126,7 @@
 /dev/socket/msm_irqbalance                      u:object_r:msm_irqbalance_socket:s0
 /dev/socket/mlid                                u:object_r:mlid_socket:s0
 /dev/socket/ssgqmig                             u:object_r:ssgqmig_socket:s0
+/dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
 /dev/socket/wpa_wigig[0-9]                      u:object_r:wpa_socket:s0
 
@@ -232,6 +233,7 @@
 /(vendor|system/vendor)/bin/ssgqmigd            u:object_r:ssgqmigd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.iop@1\.0-service        u:object_r:hal_iop_default_exec:s0
 /(vendor|system/vendor)/bin/mlid                u:object_r:mlid_exec:s0
+/(vendor|system/vendor)/bin/ssgtzd              u:object_r:ssgtzd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service u:object_r:hal_esepowermanager_qti_exec:s0
 /(vendor|system/vendor)/bin/loc_launcher        u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/lowi-server         u:object_r:location_exec:s0
