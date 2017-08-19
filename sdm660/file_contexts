@@ -143,15 +143,3 @@
 #
 /vendor/lib(64)?/hw/gralloc\.sdm660\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/vulkan\.sdm660\.so    u:object_r:same_process_hal_file:s0
-
-###############################################################################
-# sysfs
-#
-
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_cam/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,vidc/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,cci/[a-z0-9]+.qcom,cci:qcom,camera@[0-2]/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
-/sys/devices/soc/[a-z0-9]+.qcom,mdss_mdp/bw_mode_bitmap  u:object_r:sysfs_graphics:s0
-/sys/devices/soc/[a-z0-9]+.qcom,jpeg/video4linux/video[0-33]/name  u:object_r:sysfs_graphics:s0
-#/sys/devices/soc/[a-z0-9]+.qcom,mdss_rotator/caps(/.*)?  u:object_r:sysfs_type:s0
