@@ -257,7 +257,6 @@
 /(vendor|system/vendor)/bin/btnvtool            u:object_r:btnvtool_exec:s0
 /(vendor|system/vendor)/bin/btsnoop                             u:object_r:btsnoop_exec:s0
 /(vendor|system/vendor)/bin/bt_logger                           u:object_r:bt_logger_exec:s0
-/(vendor|system/vendor)/bin/dun-server                          u:object_r:dun-server_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /(vendor|system/vendor)/bin/wifidisplayhalservice               u:object_r:wifidisplayhalservice_qti_exec:s0
 /(vendor|system/vendor)/bin/wcnss_filter        u:object_r:wcnss_filter_exec:s0
