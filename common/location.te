@@ -16,7 +16,7 @@ wakelock_use(location)
 
 allow location location_data_file:dir create_dir_perms;
 allow location location_data_file:{ file fifo_file } create_file_perms;
-allow location location_data_file:sock_file write;
+allow location location_data_file:sock_file { write unlink };
 allow location location_exec:file x_file_perms;
 allow location location_socket:sock_file create_file_perms;
 allow location self:capability { setuid setgid net_admin net_bind_service };
