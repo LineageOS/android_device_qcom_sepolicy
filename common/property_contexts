@@ -69,7 +69,7 @@ sys.usb.tethering          u:object_r:sys_usb_tethering_prop:s0
 qemu.hw.mainkeys           u:object_r:qemu_hw_mainkeys_prop:s0
 ro.dbg.coresight.cfg_file     u:object_r:coresight_prop:s0
 ctl.hbtp                   u:object_r:ctl_hbtp_prop:s0
-sys.audio.init             u:object_r:audio_prop:s0
+vendor.audio.sys.init             u:object_r:audio_prop:s0
 ro.alarm_boot                 u:object_r:alarm_boot_prop:s0
 debug.sf.nobootanimation   u:object_r:boot_animation_prop:s0
 debug.gralloc.             u:object_r:debug_gralloc_prop:s0
