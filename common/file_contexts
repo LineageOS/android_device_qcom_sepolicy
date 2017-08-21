@@ -20,6 +20,11 @@
 /dev/spcom                                      u:object_r:spcom_device:s0
 /dev/sp_kernel                                  u:object_r:skp_device:s0
 /dev/sp_ssr                                     u:object_r:sp_ssr_device:s0
+/dev/sec_nvm_sp_kernel                          u:object_r:sec_nvm_device:s0
+/dev/sec_nvm_jcos                               u:object_r:sec_nvm_device:s0
+/dev/sec_nvm_spiris                             u:object_r:sec_nvm_device:s0
+/dev/sec_nvm_keymaster                          u:object_r:sec_nvm_device:s0
+/dev/sec_nvm_iuicc                              u:object_r:sec_nvm_device:s0
 /dev/sp_keymaster                               u:object_r:sp_keymaster_device:s0
 /dev/cryptoapp                                  u:object_r:cryptoapp_device:s0
 /dev/qsee_ipc_irq_spss                          u:object_r:qsee_ipc_irq_spss_device:s0
@@ -493,6 +498,7 @@
 /persist/misc(/.*)?                                                 u:object_r:persist_misc_file:s0
 /persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
 /persist/vpp(/.*)?                                                  u:object_r:persist_vpp_file:s0
+/persist/secnvm(/.*)?                                               u:object_r:persist_secnvm_file:s0
 
 ###################################
 # etc files
