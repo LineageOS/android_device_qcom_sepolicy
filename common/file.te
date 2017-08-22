@@ -113,6 +113,9 @@ type mlid_socket, file_type, mlstrustedobject;
 #ssg qmi gateway daemon socket
 type ssgqmig_socket, file_type, mlstrustedobject;
 
+#ssg tz daemon socket
+type ssgtzd_socket, file_type, mlstrustedobject;
+
 #location file types
 type location_data_file, file_type, data_file_type;
 type location_socket, file_type;
