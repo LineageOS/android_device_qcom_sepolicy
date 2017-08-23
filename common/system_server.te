@@ -18,6 +18,8 @@ allow system_server self:socket create_socket_perms;
 allowxperm system_server self:socket ioctl msm_sock_ipc_ioctls;
 allow system_server sensors_persist_file:dir r_dir_perms;
 allow system_server sensors_persist_file:file r_file_perms;
+allow system_server sysfs_sensors:dir search;
+allow system_server sysfs_sensors:file rw_file_perms;
 
 #access to gamed
 #unix_socket_connect(system_server, gamed, gamed)
@@ -182,6 +184,7 @@ binder_call(system_server, mm-qcamerad)
 hal_client_domain(system_server,hal_bluetooth);
 
 hal_client_domain(system_server, hal_perf)
+hal_client_domain(system_server, hal_sensors)
 
 # allow access to QDMA
 allow system_server { qdma_app_data_file } :file rw_file_perms;
