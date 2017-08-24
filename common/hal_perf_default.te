@@ -58,7 +58,7 @@ allow hal_perf {
     sysfs_memory
     sysfs_graphics
     sysfs
-    sysfs_lpm
+    sysfs_msm_power
     sysfs_battery_supply
 }:dir r_dir_perms;
 
@@ -74,7 +74,7 @@ allow hal_perf {
     sysfs_scsi_host
     sysfs_devfreq
     sysfs_mmc_host
-    sysfs_lpm
+    sysfs_msm_power
     sysfs_battery_supply
 }:file rw_file_perms;
 

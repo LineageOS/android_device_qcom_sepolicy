@@ -417,7 +417,6 @@
 /sys/devices(/platform)?/soc/soc:qcom,l3-cpu[0-9]/devfreq/soc:qcom,l3-cpu[0-9](/.*)? u:object_r:sysfs_devfreq:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/clkscale_enable        u:object_r:sysfs_scsi_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+/host0/scsi_host/host0(/.*)?  u:object_r:sysfs_scsi_host:s0
-/sys/module/lpm_levels/parameters(/.*)?                             u:object_r:sysfs_lpm:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
 
@@ -433,7 +432,7 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/gro_flush_timeout     u:object_r:sysfs_wigig:s0
 /sys/module/msm_core(/.*)?                                          u:object_r:sysfs_ea:s0
 /sys/module/lpm_stats(/.*)?                                         u:object_r:sysfs_msm_stats:s0
-/sys/module/lpm_level(/.*)?                                         u:object_r:sysfs_msm_power:s0
+/sys/module/lpm_levels(/.*)?                                        u:object_r:sysfs_msm_power:s0
 
 ###################################
 # data files

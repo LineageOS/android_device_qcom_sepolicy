@@ -85,7 +85,6 @@ type mpctl_socket, file_type, mlstrustedobject;
 type mpctl_data_file, file_type, data_file_type;
 
 type sysfs_devfreq, fs_type, sysfs_type;
-type sysfs_lpm, fs_type, sysfs_type;
 type sysfs_mmc_host, fs_type, sysfs_type;
 type sysfs_scsi_host, fs_type, sysfs_type;
 type sysfs_cpu_boost, fs_type, sysfs_type;
