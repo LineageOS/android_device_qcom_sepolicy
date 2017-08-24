@@ -45,7 +45,8 @@ ctl.ipacm                  u:object_r:ipacm_prop:s0
 ctl.ipacm-diag             u:object_r:ipacm-diag_prop:s0
 ctl.qti                    u:object_r:qti_prop:s0
 ctl.sensors                u:object_r:sensors_prop:s0
-ctl.msm_irqbalance         u:object_r:msm_irqbalance_prop:s0
+ctl.vendor.msm_irqbalance         u:object_r:msm_irqbalance_prop:s0
+ctl.vendor.msm_irqbl_sdm630       u:object_r:msm_irqbl_sdm630_prop:s0
 ctl.msm_irqbal_lb          u:object_r:msm_irqbalance_prop:s0
 camera.                    u:object_r:camera_prop:s0
 persist.camera.            u:object_r:camera_prop:s0
@@ -108,3 +109,8 @@ ctl.vendor.LKCore-rel      u:object_r:ctl_LKCore_prop:s0
 vendor.rild.libpath        u:object_r:vendor_rild_libpath_prop:s0
 # Peripheral Manager
 vendor.peripheral.         u:object_r:per_mgr_state_prop:s0
+
+persist.vendor.radio       u:object_r:radio_prop:s0
+vendor.radio               u:object_r:radio_prop:s0
+ro.vendor.ril.             u:object_r:radio_prop:s0
+persist.vendor.sys.        u:object_r:vendor_system_prop:s0

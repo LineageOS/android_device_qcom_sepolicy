@@ -92,3 +92,4 @@
 
 # Same process file
 /vendor/lib(64)?/hw/gralloc\.sdm845\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/vulkan\.sdm845\.so    u:object_r:same_process_hal_file:s0

@@ -159,18 +159,16 @@
 /(vendor|system/vendor)/bin/init\.qcom\.usb\.sh         u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.mdm\.sh                   u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.mdm\.crashdata\.sh        u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.testscripts\.sh     u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.syspart_fixup\.sh   u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/hcidump.sh                      u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/hsic\.control\.bt\.sh           u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.ath3k\.bt\.sh             u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.crda\.sh                  u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.audio\.sh           u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.coex\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.debug-sdm660\.sh    u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.debug\.sh           u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.efs\.sync\.sh       u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.fm\.sh              u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.fm\.sh               u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sdio\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.uicc\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.wifi\.sh            u:object_r:qti_init_shell_exec:s0
@@ -189,12 +187,12 @@
 /(vendor|system/vendor)/bin/qmuxd               u:object_r:qmuxd_exec:s0
 /(vendor|system/vendor)/bin/port-bridge         u:object_r:port-bridge_exec:s0
 /(vendor|system/vendor)/bin/sensors.qcom        u:object_r:sensors_exec:s0
-/(vendor|system/vendor)/bin/sns.*               u:object_r:sensors_test_exec:s0
 /(vendor|system/vendor)/bin/test_diag           u:object_r:diag_exec:s0
 /(vendor|system/vendor)/bin/thermal-engine      u:object_r:thermal-engine_exec:s0
 /(vendor|system/vendor)/bin/vm_bms                              u:object_r:vm_bms_exec:s0
 /(vendor|system/vendor)/bin/mm-qcamera-daemon   u:object_r:mm-qcamerad_exec:s0
 /(vendor|system/vendor)/bin/qfp-daemon          u:object_r:qfp-daemon_exec:s0
+/(vendor|system/vendor)/bin/qvop-daemon         u:object_r:qvop-daemon_exec:s0
 /system/rfs.*                                   u:object_r:rfs_system_file:s0
 /(vendor|system/vendor)/bin/time_daemon         u:object_r:time_daemon_exec:s0
 /(vendor|system/vendor)/bin/rmt_storage         u:object_r:rmt_storage_exec:s0
@@ -259,7 +257,6 @@
 /(vendor|system/vendor)/bin/btnvtool            u:object_r:btnvtool_exec:s0
 /(vendor|system/vendor)/bin/btsnoop                             u:object_r:btsnoop_exec:s0
 /(vendor|system/vendor)/bin/bt_logger                           u:object_r:bt_logger_exec:s0
-/(vendor|system/vendor)/bin/dun-server                          u:object_r:dun-server_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /(vendor|system/vendor)/bin/wifidisplayhalservice               u:object_r:wifidisplayhalservice_qti_exec:s0
 /(vendor|system/vendor)/bin/wcnss_filter        u:object_r:wcnss_filter_exec:s0
@@ -289,6 +286,7 @@
 /(vendor|system/vendor)/bin/imsrcsd             u:object_r:hal_rcsservice_exec:s0
 /(vendor|system/vendor)/bin/vppservice          u:object_r:vppservice_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service u:object_r:hal_qteeconnector_qti_exec:s0
+/(vendor|system/vendor)/bin/fm_qsoc_patches     u:object_r:fm_qsoc_patches_exec:s0
 
 ###################################
 # sysfs files
@@ -331,11 +329,24 @@
 /sys/devices/virtual/graphics/fb([0-3])+/s3d_mode                   u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_panel_info          u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_type                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_fb_split               u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/show_blank_event           u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/bl_event                   u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/ad_event                   u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/ad_bl_event                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/hist_event                 u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/vsync_event                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/lineptr_event              u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/idle_notify                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_fb_thermal_level       u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/idle_power_collapse        u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/mode                       u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/name                       u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/rotator/mdss_rotator/caps                      u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/workqueue/kgsl-events/cpumask                  u:object_r:sysfs_kgsl:s0
+/sys/devices/virtual/workqueue/kgsl-events/nice                     u:object_r:sysfs_kgsl:s0
+/sys/devices/virtual/workqueue/kgsl-workqueue/cpumask               u:object_r:sysfs_kgsl:s0
+/sys/devices/virtual/workqueue/kgsl-workqueue/nice                  u:object_r:sysfs_kgsl:s0
 /sys/class/graphics/fb([0-2])+/mdp/caps                             u:object_r:sysfs_graphics:s0
 /sys/class/graphics/fb([0-2])+/ad                                   u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[0-9a-z]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-z]+.qcom,spmi:qcom,pmi[0-9]+@[0-9]+:qcom,leds@[a-z0-9]+(/.*)? u:object_r:sysfs_graphics:s0
@@ -343,7 +354,14 @@
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/switch/hdmi(/.*)?                              u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/caps                       u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/caps           u:object_r:sysfs_graphics:s0
+/sys/devices/soc/[a-z0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_cam/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/caps       u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,vidc/video4linux/video[0-33]/name(/.*)?   u:object_r:video_device:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,cci/[a-z0-9]+.qcom,cci:qcom,camera@[0-2]/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/bus/platform/drivers/xhci_msm_hsic(/.*)?                       u:object_r:sysfs_hsic:s0
 /sys/devices/msm_hsic_host/host_ready                               u:object_r:sysfs_hsic_host_rdy:s0
 /sys/bus/esoc(/.*)?                                                 u:object_r:sysfs_esoc:s0
@@ -393,6 +411,8 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/queues/rx-0/rps_cpus  u:object_r:sysfs_wigig:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/gro_flush_timeout     u:object_r:sysfs_wigig:s0
 /sys/module/msm_core(/.*)?                                          u:object_r:sysfs_ea:s0
+/sys/module/lpm_stats(/.*)?                                         u:object_r:sysfs_msm_stats:s0
+/sys/module/lpm_level(/.*)?                                         u:object_r:sysfs_msm_power:s0
 
 ###################################
 # data files
@@ -406,6 +426,7 @@
 /data/hlos_rfs(/.*)?                                                u:object_r:rfs_shared_hlos_file:s0
 /data/camera(/.*)?                                                  u:object_r:camera_socket:s0
 /data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
+/data/misc/qvop(/.*)?                                               u:object_r:qvop-daemon_data_file:s0
 /data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
 /data/vendor/time(/.*)?                                             u:object_r:time_data_file:s0
 /data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0

@@ -29,3 +29,4 @@ type seemp_service,               service_manager_type;
 type cne_service,                 service_manager_type;
 type dpmservice,                  service_manager_type;
 type uce_service,                 service_manager_type;
+type MinkBinderSvc,               app_api_service, service_manager_type;

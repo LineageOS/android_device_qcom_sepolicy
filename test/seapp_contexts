@@ -31,3 +31,6 @@ user=_app seinfo=platform name=com.qualcomm.qct.dlt domain=location_app type=loc
 #Add new domain for QSEE sample services
 user=system seinfo=platform name=com.qualcomm.qti.auth.securesampleauthservice domain=qsee_svc_app type=qsee_svc_app_data_file
 user=system seinfo=platform name=com.qualcomm.qti.auth.secureextauthservice domain=qsee_svc_app type=qsee_svc_app_data_file
+
+#Add new domain for pdt apps
+user=system seinfo=platform name=.pdtapps domain=pdt_app type=system_app_data_file

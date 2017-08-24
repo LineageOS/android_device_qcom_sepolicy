@@ -74,6 +74,7 @@ set_prop(qti_init_shell, bluetooth_prop)
 set_prop(qti_init_shell, config_prop)
 set_prop(qti_init_shell, sensors_prop)
 set_prop(qti_init_shell, msm_irqbalance_prop)
+set_prop(qti_init_shell, msm_irqbl_sdm630_prop)
 set_prop(qti_init_shell, ipacm_prop)
 set_prop(qti_init_shell, ipacm-diag_prop)
 set_prop(qti_init_shell, qti_prop)
@@ -221,3 +222,5 @@ allow qti_init_shell vendor_radio_data_file:file create_file_perms;
 
 set_prop(qti_init_shell, vendor_rild_libpath_prop);
 set_prop(qti_init_shell, system_radio_prop)
+
+allow qti_init_shell fm_qsoc_patches_exec:file rx_file_perms;

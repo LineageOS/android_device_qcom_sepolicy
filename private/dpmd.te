@@ -58,11 +58,11 @@ get_prop(dpmd, persist_dpm_prop)
 #allow dpmd to create socket
 allow dpmd self:socket create_socket_perms_no_ioctl;
 allow dpmd self:{ netlink_socket netlink_generic_socket } create_socket_perms_no_ioctl;
-allow dpmd priv_app:fd use;
-allow dpmd system_server:fd use;
-allow dpmd system_app:fd use;
-allow dpmd untrusted_app:fd use;
-allow dpmd untrusted_app_25:fd use;
-allow dpmd platform_app:fd use;
+dpmd_socket_perm(priv_app)
+dpmd_socket_perm(system_server)
+dpmd_socket_perm(system_app)
+dpmd_socket_perm(untrusted_app)
+dpmd_socket_perm(untrusted_app_25)
+dpmd_socket_perm(platform_app)
 #allow dpmd to write to /proc/net/sys
 allow dpmd proc_net:file write;
