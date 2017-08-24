@@ -81,3 +81,11 @@ attribute hal_iop_server;
 attribute hal_voiceprint;
 attribute hal_voiceprint_server;
 attribute hal_voiceprint_client;
+
+attribute hal_qdutils_disp;
+attribute hal_qdutils_disp_client;
+attribute hal_qdutils_disp_server;
+
+attribute hal_tui_comm;
+attribute hal_tui_comm_client;
+attribute hal_tui_comm_server;
