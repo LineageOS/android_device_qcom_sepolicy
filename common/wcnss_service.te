@@ -63,3 +63,6 @@ use_per_mgr(wcnss_service)
 
 hwbinder_use(wcnss_service)
 get_prop(wcnss_service, hwservicemanager_prop)
+
+#access to perflock
+hal_client_domain(wcnss_service, hal_perf)
