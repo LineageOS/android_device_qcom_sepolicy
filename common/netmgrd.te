@@ -33,6 +33,7 @@ allow netmgrd netmgrd_data_file:dir w_dir_perms;
 use_netutils(netmgrd)
 allow netutils_wrapper netmgrd_data_file:file rw_file_perms;
 allow netutils_wrapper wcnss_service_exec:file rx_file_perms;
+allow netmgrd netutils_wrapper:process sigkill;
 
 #Allow operations on different types of sockets
 allow netmgrd netmgrd:rawip_socket { create getopt setopt write };
