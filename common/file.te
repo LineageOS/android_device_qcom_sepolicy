@@ -98,6 +98,7 @@ type sysfs_scsi_host, fs_type, sysfs_type;
 type sysfs_cpu_boost, fs_type, sysfs_type;
 type sysfs_msm_perf, fs_type, sysfs_type;
 type sysfs_memory, fs_type, sysfs_type;
+type sysfs_lib, fs_type, sysfs_type;
 
 #define the files writer during the operation of app state changes
 type gamed_socket, file_type;

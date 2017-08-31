@@ -443,6 +443,7 @@
 /sys/module/lpm_stats(/.*)?                                         u:object_r:sysfs_msm_stats:s0
 /sys/module/lpm_levels(/.*)?                                        u:object_r:sysfs_msm_power:s0
 /sys/module/radio_iris_transport/parameters/fmsmd_set               u:object_r:sysfs_fm:s0
+/sys/module/app_setting/parameters/lib_name                         u:object_r:sysfs_lib:s0
 
 ###################################
 # data files
