@@ -48,8 +48,11 @@ allow dpmd self:capability {
     net_raw
     net_admin
 };
-allow dpmd appdomain:dir r_dir_perms;
-allow dpmd appdomain:file r_file_perms;
+
+allow dpmd self:capability2 wake_alarm;
+
+r_dir_file(dpmd, appdomain)
+
 wakelock_use(dpmd)
 allow dpmd shell_exec:file rx_file_perms;
 dontaudit dpmd self:capability sys_module;
