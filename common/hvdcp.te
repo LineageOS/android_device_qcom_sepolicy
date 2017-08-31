@@ -11,13 +11,24 @@ allow hvdcp {
     sysfs_battery_supply
     sysfs_usb_supply
     sysfs_usbpd_device
+    sysfs_vadc_dev
+    sysfs_spmi_dev
 }:dir r_dir_perms;
 
 allow hvdcp {
     sysfs_battery_supply
     sysfs_usb_supply
     sysfs_usbpd_device
+    sysfs_vadc_dev
+    sysfs_spmi_dev
 }:file rw_file_perms;
+
+allow hvdcp {
+    sysfs_battery_supply
+    sysfs_usb_supply
+    sysfs_vadc_dev
+    sysfs_spmi_dev
+}:lnk_file r_file_perms;
 
 allow hvdcp self:capability { setgid setuid };
 allow hvdcp self:capability2 wake_alarm;
