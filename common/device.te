@@ -94,6 +94,9 @@ type sp_ssr_device, dev_type;
 # Define sp_keymaster device
 type sp_keymaster_device, dev_type;
 
+# Define sec_nvm devices
+type sec_nvm_device, dev_type;
+
 # Define cryptoapp device
 type cryptoapp_device, dev_type;
 

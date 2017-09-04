@@ -1,5 +1,6 @@
 #allow access to sysfs to know HDMI repeater state
 allow wfdservice sysfs_graphics:file rw_file_perms;
+allow wfdservice sysfs_graphics:dir r_dir_perms;
 
 #Allow access to firmware files for HDCP session
 r_dir_file(wfdservice, firmware_file)
@@ -20,5 +21,3 @@ hal_client_domain(wfdservice, wifidisplayhalservice);
 #Denial seen - SELinux : avc:  denied  { find } for interface=com.qualcomm.qti.wifidisplayhal::IHDCPSession
 #pid=3530 scontext=u:r:wfdservice:s0 tcontext=u:object_r:wifidisplayhalservice_hwservice:s0 tclass=hwservice_manager
 allow wfdservice wifidisplayhalservice_hwservice:hwservice_manager find;
-allow wfdservice sysfs_graphics:file r_file_perms;
-allow wfdservice sysfs_graphics:dir r_dir_perms;

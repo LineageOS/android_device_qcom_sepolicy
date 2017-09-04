@@ -20,6 +20,11 @@
 /dev/spcom                                      u:object_r:spcom_device:s0
 /dev/sp_kernel                                  u:object_r:skp_device:s0
 /dev/sp_ssr                                     u:object_r:sp_ssr_device:s0
+/dev/sec_nvm_sp_kernel                          u:object_r:sec_nvm_device:s0
+/dev/sec_nvm_jcos                               u:object_r:sec_nvm_device:s0
+/dev/sec_nvm_spiris                             u:object_r:sec_nvm_device:s0
+/dev/sec_nvm_keymaster                          u:object_r:sec_nvm_device:s0
+/dev/sec_nvm_iuicc                              u:object_r:sec_nvm_device:s0
 /dev/sp_keymaster                               u:object_r:sp_keymaster_device:s0
 /dev/cryptoapp                                  u:object_r:cryptoapp_device:s0
 /dev/qsee_ipc_irq_spss                          u:object_r:qsee_ipc_irq_spss_device:s0
@@ -126,6 +131,7 @@
 /dev/socket/msm_irqbalance                      u:object_r:msm_irqbalance_socket:s0
 /dev/socket/mlid                                u:object_r:mlid_socket:s0
 /dev/socket/ssgqmig                             u:object_r:ssgqmig_socket:s0
+/dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
 /dev/socket/wpa_wigig[0-9]                      u:object_r:wpa_socket:s0
 
@@ -232,6 +238,7 @@
 /(vendor|system/vendor)/bin/ssgqmigd            u:object_r:ssgqmigd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.iop@1\.0-service        u:object_r:hal_iop_default_exec:s0
 /(vendor|system/vendor)/bin/mlid                u:object_r:mlid_exec:s0
+/(vendor|system/vendor)/bin/ssgtzd              u:object_r:ssgtzd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service u:object_r:hal_esepowermanager_qti_exec:s0
 /(vendor|system/vendor)/bin/loc_launcher        u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/lowi-server         u:object_r:location_exec:s0
@@ -299,20 +306,22 @@
 /sys/devices/msm_otg/power_supply/usb(/.*)?                         u:object_r:sysfs_usb_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/usb(/.*)?        u:object_r:sysfs_usb_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/pc_port(/.*)?    u:object_r:sysfs_usb_supply:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.i2c/i2c-[0-9]+/[0-9]+-[0-9]+/[a-z0-9]+.i2c:qcom,[a-z0-9]+@[0-9]:qcom,smb[0-9]+-charger@[0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_usb_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,usb-pdphy@[0-9]+/usbpd/usbpd[0-9](/.*)?    u:object_r:sysfs_usbpd_device:s0
 /sys/devices/platform/battery_current_limit                         u:object_r:sysfs_thermal:s0
 /sys/devices/qpnp-charger.*/power_supply/battery(/.*)?              u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qpnp,fg/power_supply/bms(/.*)?               u:object_r:sysfs_battery_supply:s0
-/sys/class/qcom-batery(/.*)?              u:object_r:sysfs_battery_supply:s0
+/sys/class/qcom-battery(/.*)?              u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc/qpnp-linear-charger-[a-z0-9]+/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/kernel/irq_helper/irq_blacklist_on                             u:object_r:sysfs_irqbalance:s0
-/sys/devices/virtual/graphics/fb([0-2])+/idle_time                  u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/graphics/fb([0-2])+/dynamic_fps                u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/graphics/fb([0-2])+/product_description        u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/graphics/fb([0-2])+/vendor_name                u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/graphics/fb([0-2])+/hdcp/tp                    u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/graphics/fb([0-9])+/msm_fb_panel_status        u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/graphics/fb([0-9])+/msm_fb_panel_info          u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/idle_time                  u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/dynamic_fps                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/product_description        u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/vendor_name                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/hdcp/tp                    u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_fb_panel_status        u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/hsicctl/hsicctl1[0-9]/modem_wait               u:object_r:sysfs_hsic_modem_wait:s0
 /sys/devices/virtual/hsicctl/hsicctl[0-9]/modem_wait                u:object_r:sysfs_hsic_modem_wait:s0
 /sys/devices/virtual/net/bond0/bonding/queue_id                     u:object_r:sysfs_bond0:s0
@@ -342,13 +351,27 @@
 /sys/devices/virtual/graphics/fb([0-3])+/idle_power_collapse        u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/mode                       u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/name                       u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/connected                  u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_cmd_autorefresh_en     u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/mdp/bw_mode_bitmap         u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/edid_modes                 u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/hdcp2p2(/.*)               u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/scan_info                  u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/edid_3d_modes              u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_fb_dfps_mode           u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_fb_src_split_info      u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/hdr_stream                 u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/cec(/.*)                   u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msmfb_b10(/.*)             u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/modes                      u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/edid_raw_data              u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/rotator/mdss_rotator/caps                      u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/workqueue/kgsl-events/cpumask                  u:object_r:sysfs_kgsl:s0
 /sys/devices/virtual/workqueue/kgsl-events/nice                     u:object_r:sysfs_kgsl:s0
 /sys/devices/virtual/workqueue/kgsl-workqueue/cpumask               u:object_r:sysfs_kgsl:s0
 /sys/devices/virtual/workqueue/kgsl-workqueue/nice                  u:object_r:sysfs_kgsl:s0
-/sys/class/graphics/fb([0-2])+/mdp/caps                             u:object_r:sysfs_graphics:s0
-/sys/class/graphics/fb([0-2])+/ad                                   u:object_r:sysfs_graphics:s0
+/sys/class/graphics/fb([0-3])+/mdp/caps                             u:object_r:sysfs_graphics:s0
+/sys/class/graphics/fb([0-3])+/ad                                   u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[0-9a-z]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-z]+.qcom,spmi:qcom,pmi[0-9]+@[0-9]+:qcom,leds@[a-z0-9]+(/.*)? u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-0/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,haptics@c000/leds/vibrator(/.*)?   u:object_r:sysfs_leds:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:sysfs_graphics:s0
@@ -397,8 +420,6 @@
 /sys/module/lpm_levels/parameters(/.*)?                             u:object_r:sysfs_lpm:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
-
-/sys/devices/virtual/graphics/fb([0-9])+/modes                      u:object_r:sysfs_graphics:s0
 
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:sysfs_mmc_host:s0
 /sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
@@ -471,6 +492,7 @@
 /data/vendor/vpp(/.*)?                                              u:object_r:vpp_data_file:s0
 /data/vendor/camera(/.*)?                                           u:object_r:vendor_camera_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
+/data/vendor/media(/.*)?                                            u:object_r:media_data_file:s0
 
 ###################################
 # persist files
@@ -493,6 +515,7 @@
 /persist/misc(/.*)?                                                 u:object_r:persist_misc_file:s0
 /persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
 /persist/vpp(/.*)?                                                  u:object_r:persist_vpp_file:s0
+/persist/secnvm(/.*)?                                               u:object_r:persist_secnvm_file:s0
 
 ###################################
 # etc files

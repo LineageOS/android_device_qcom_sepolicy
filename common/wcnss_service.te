@@ -60,3 +60,6 @@ diag_use(wcnss_service)
 
 #binder_use(wcnss_service)
 use_per_mgr(wcnss_service)
+
+hwbinder_use(wcnss_service)
+get_prop(wcnss_service, hwservicemanager_prop)

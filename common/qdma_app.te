@@ -50,3 +50,6 @@ allow qdma_app { mount_service }:service_manager find;
 # allow access to qdma dropbox
 allow qdma_app qdma_data_file:dir create_dir_perms;
 allow qdma_app qdma_data_file:file create_file_perms;
+
+# allow access to socket
+unix_socket_connect(qdma_app, dpmtcm, dpmd)

@@ -12,6 +12,16 @@ allow vm_bms {
     battery_data_device
 }:chr_file rw_file_perms;
 
+allow vm_bms {
+    sysfs_battery_supply
+    sysfs_usb_supply
+}:dir r_dir_perms;
+
+allow vm_bms {
+    sysfs_battery_supply
+    sysfs_usb_supply
+}:file rw_file_perms;
+
 #allow vm_bms to drop down to system service
 allow vm_bms self:capability { setpcap setgid setuid };
 
