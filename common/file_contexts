@@ -586,6 +586,7 @@
 /vendor/lib(64)?/libcdsprpc\.so             u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libsdsprpc\.so             u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libdiag\.so                u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libqvrservice_client\.so   u:object_r:same_process_hal_file:s0
 
 ###################################
 # firmware images
