@@ -31,6 +31,9 @@ allow location sensors_device:chr_file r_file_perms;
 allow location sensors_socket:sock_file rw_file_perms;
 allow location vendor_shell_exec:file rx_file_perms;
 
+unix_socket_connect(location,location,hal_gnss)
+allow location hal_gnss:unix_dgram_socket sendto;
+
 #allow location system_server:unix_stream_socket { read write connectto};
 
 # For interfacing with the device sensorservice
