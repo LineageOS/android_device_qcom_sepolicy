@@ -20,11 +20,7 @@
 /dev/spcom                                      u:object_r:spcom_device:s0
 /dev/sp_kernel                                  u:object_r:skp_device:s0
 /dev/sp_ssr                                     u:object_r:sp_ssr_device:s0
-/dev/sec_nvm_sp_kernel                          u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_jcos                               u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_spiris                             u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_keymaster                          u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_iuicc                              u:object_r:sec_nvm_device:s0
+/dev/sec_nvm_.*                                 u:object_r:sec_nvm_device:s0
 /dev/sp_keymaster                               u:object_r:sp_keymaster_device:s0
 /dev/cryptoapp                                  u:object_r:cryptoapp_device:s0
 /dev/qsee_ipc_irq_spss                          u:object_r:qsee_ipc_irq_spss_device:s0
@@ -208,6 +204,7 @@
 /(vendor|system/vendor)/bin/qseecomd            u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/bg_daemon           u:object_r:bg_daemon_exec:s0
 /(vendor|system/vendor)/bin/spdaemon            u:object_r:spdaemon_exec:s0
+/(vendor|system/vendor)/bin/sec_nvm             u:object_r:sec_nvm_exec:s0
 /(vendor|system/vendor)/bin/cnss-daemon         u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/hostapd_cli         u:object_r:hostapd_exec:s0
 /(vendor|system/vendor)/bin/adsprpcd            u:object_r:adsprpcd_exec:s0
