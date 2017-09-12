@@ -39,9 +39,6 @@ improveTouch.HandBiometricManagerService       u:object_r:improve_touch_service:
 wfdservice                                     u:object_r:wfdservice_service:s0
 DigitalPen                                     u:object_r:usf_service:s0
 dts_eagle_service                              u:object_r:dtseagleservice_service:s0
-extphone                                       u:object_r:radio_service:s0
-qti.ims.ext                                    u:object_r:radio_service:s0
-com.qualcomm.location.izat.IzatService         u:object_r:izat_service:s0
 com.qualcomm.qti.secota.service.SecotaNService u:object_r:secotad_service:s0
 mdtp                                           u:object_r:mdtpdaemon_service:s0
 qtitetherservice                               u:object_r:qtitetherservice_service:s0
@@ -52,4 +49,3 @@ wigig                                          u:object_r:wigig_service:s0
 # DOLBY_START
 media.dolby_memoryservice                      u:object_r:audioserver_service:s0
 # DOLBY_END
-sms-sec                                        u:object_r:radio_service:s0

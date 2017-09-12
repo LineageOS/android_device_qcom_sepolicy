@@ -12,7 +12,6 @@ type improve_touch_service,       service_manager_type;
 type usf_service,                 service_manager_type;
 type dtseagleservice_service,     service_manager_type;
 type gba_auth_service,            service_manager_type;
-type izat_service,                app_api_service, system_api_service, service_manager_type;
 type mdtpdaemon_service,          service_manager_type;
 type qtitetherservice_service,    service_manager_type;
 type wigigp2p_service,            app_api_service, system_server_service, service_manager_type;
