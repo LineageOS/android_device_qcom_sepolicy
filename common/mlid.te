@@ -34,3 +34,6 @@ init_daemon_domain(mlid)
 # Allow access to location socket
 allow mlid location_data_file:dir r_dir_perms;
 unix_socket_connect(mlid, location, location)
+
+# Allow access to netlink socket
+allow mlid self:netlink_generic_socket create_socket_perms_no_ioctl;
