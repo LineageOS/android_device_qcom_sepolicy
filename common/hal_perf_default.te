@@ -25,7 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_perf_default, domain;
+# mlstrustedsubject is needed for access to /pro/pid of other apps.
+type hal_perf_default, domain, mlstrustedsubject;
 hal_server_domain_bypass(hal_perf_default, hal_perf)
 
 type hal_perf_default_exec, exec_type, vendor_file_type, file_type;
@@ -47,6 +48,20 @@ allow hal_perf_default mpctl_data_file:file create_file_perms;
 allow hal_perf_default lm_data_file:dir rw_dir_perms;
 allow hal_perf_default lm_data_file:file create_file_perms;
 allow hal_perf_default sysfs_lib:file w_file_perms;
+
+#Access to /proc/meminfo
+allow hal_perf proc_meminfo:file r_file_perms;
+
+#Access to /proc/pid of other apps
+r_dir_file(hal_perf, appdomain);
+dontaudit hal_perf domain:dir r_dir_perms;
+allow hal_perf appdomain:process sigkill;
+allow hal_perf_default self:capability {dac_override sys_resource kill};
+
+#Acess to kgsl memory /sys/class/kgsl/kgsl/proc/<pid>/kernel &
+#Acess to ion  memory /sys/class/kgsl/kgsl/proc/<pid>/ion
+allow hal_perf sysfs_kgsl_proc:dir r_dir_perms;
+allow hal_perf sysfs_kgsl_proc:file r_file_perms;
 
 allow hal_perf {
     sysfs_devices_system_cpu
