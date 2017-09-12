@@ -50,3 +50,6 @@ allow init {
     modem_block_device
     mdtp_device
 }:{ blk_file lnk_file } relabelto;
+
+#rawdump
+allow init rawdump_block_device:blk_file setattr;
