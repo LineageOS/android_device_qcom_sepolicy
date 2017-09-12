@@ -115,3 +115,5 @@ persist.vendor.radio       u:object_r:radio_prop:s0
 vendor.radio               u:object_r:radio_prop:s0
 ro.vendor.ril.             u:object_r:radio_prop:s0
 persist.vendor.sys.        u:object_r:vendor_system_prop:s0
+
+persist.vendor.mmi.        u:object_r:mmi_prop:s0
