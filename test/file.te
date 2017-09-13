@@ -3,4 +3,4 @@ type display_test_media_file, file_type, data_file_type;
 # kgsl snapshot file type for sysfs access
 type sysfs_kgsl_snapshot, sysfs_type, fs_type;
 # To allow GPU application to write "/data/vendor/gpu" path
-typeattribute coredump_file mlstrustedobject;
+#typeattribute coredump_file mlstrustedobject,  data_file_type;
