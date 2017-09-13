@@ -176,6 +176,7 @@ allow system_server appdomain:file w_file_perms;
 # IPC call for sensor feed
 binder_call(system_server, mm-pp-daemon)
 binder_call(system_server, hal_camera)
+binder_call(system_server, mm-qcamerad)
 
 # Ant ipc
 hal_client_domain(system_server,hal_bluetooth);
