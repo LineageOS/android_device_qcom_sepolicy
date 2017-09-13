@@ -51,3 +51,9 @@
 
 #For adreno libs
 /vendor/lib(64)?/libsc-a3xx\.so                                     u:object_r:same_process_hal_file:s0
+
+############################################################################################
+#Same hal process libs
+
+/vendor/lib(64)?/hw/gralloc\.msm8909\.so  			    u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/vulkan\.msm8909\.so    			    u:object_r:same_process_hal_file:s0
