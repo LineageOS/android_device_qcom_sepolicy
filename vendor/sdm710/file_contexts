@@ -87,3 +87,6 @@
 
 # FBE
 /(vendor|system/vendor)/bin/init.qti.qseecomd.sh		u:object_r:init-qti-fbe-sh_exec:s0
+
+#LED sysfs nodes
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-03/c440000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds(/.*)? u:object_r:sysfs_leds:s0
