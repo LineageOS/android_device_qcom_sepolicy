@@ -84,7 +84,7 @@ vendor.audio.              u:object_r:debug_prop:s0
 vendor.voice.              u:object_r:debug_prop:s0
 persist.vendor.audio.      u:object_r:debug_prop:s0
 ro.vendor.audio.           u:object_r:debug_prop:s0
-ro.alarm_boot                 u:object_r:alarm_boot_prop:s0
+ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
 debug.sf.nobootanimation   u:object_r:boot_animation_prop:s0
 persist.vendor.net.doxlat  u:object_r:vendor_xlat_prop:s0
 debug.gralloc.             u:object_r:debug_gralloc_prop:s0

@@ -27,3 +27,6 @@ user=system seinfo=platform name=.imshelperservice domain=imshelper_app type=ims
 
 #Add new domain for perfdump app
 user=system seinfo=platform name=com.qualcomm.qti.perfdump domain=perfdump_app type=system_app_data_file
+
+#Add new domain for power off alarm app
+user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=system_app_data_file
