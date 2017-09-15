@@ -238,6 +238,7 @@
 /(vendor|system/vendor)/bin/subsystem_ramdump   u:object_r:vendor_subsystem_ramdump_exec:s0
 /(vendor|system/vendor)/bin/ssr_diag            u:object_r:vendor_ssr_diag_exec:s0
 /(vendor|system/vendor)/bin/hw/qcrild           u:object_r:rild_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.0-service.widevine   	u:object_r:hal_drm_widevine_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service-qti u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.1-service-qti u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.0-service u:object_r:hal_gnss_qti_exec:s0
@@ -527,6 +528,7 @@
 /data/vendor/tzstorage(/.*)?                                        u:object_r:data_tzstorage_file:s0
 /data/vendor/tloc(/.*)?                                             u:object_r:tlocd_data_file:s0
 /data/vendor/media(/.*)?                                            u:object_r:vendor_media_data_file:s0
+/data/vendor/mediadrm(/.*)?                                         u:object_r:vendor_mediadrm_data_file:s0
 /sys/kernel/debug/ipc_logging(/.*)?                                 u:object_r:qti_debugfs:s0
 
 ###################################
