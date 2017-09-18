@@ -33,3 +33,6 @@ allow system_server { dpmd_socket dpmtcm_socket dpmwrapper_socket }:sock_file w_
 
 allow system_server dpmd_data_file:dir create_dir_perms;
 allow system_server dpmd_data_file:file create_file_perms;
+
+# Allow Izat service
+allow system_server izat_service:service_manager add;
