@@ -31,6 +31,10 @@ r_dir_file(tee, persist_data_file)
 allow tee persist_drm_file:dir create_dir_perms;
 allow tee persist_drm_file:file create_file_perms;
 
+# Allow SFS to write to data partition
+allow tee data_persist_drm_file:dir create_dir_perms;
+allow tee data_persist_drm_file:file create_file_perms;
+
 # Provide tee access to ssd partition for HW FDE
 allow tee ssd_device:blk_file rw_file_perms;
 
