@@ -1,0 +1,2 @@
+# Time services
+/data/time(/.*)?                                u:object_r:time_data_file:s0
