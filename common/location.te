@@ -83,3 +83,6 @@ allow location self:udp_socket ioctl;
 allow location wifi_prop:file r_file_perms;
 # Replace this with macro
 allowxperm location self:udp_socket ioctl priv_sock_ioctls;
+
+#Allow access to wake alarm
+allow location self:capability2 wake_alarm;
