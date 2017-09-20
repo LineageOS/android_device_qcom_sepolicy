@@ -17,3 +17,6 @@
 
 # Subsys restart
 /sys/devices(/platform)?/soc\.0/[a-z0-9\.:]+,[a-z0-9\-]+/subsys[0-9]+/name    u:object_r:sysfs_ssr:s0
+
+# Time services
+/data/vendor/time(/.*)?               u:object_r:time_data_file:s0
