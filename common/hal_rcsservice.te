@@ -28,6 +28,7 @@
 type hal_rcsservice, domain;
 type hal_rcsservice_exec, exec_type, vendor_file_type, file_type;
 
+allow hal_rcsservice self:capability2 wake_alarm;
 # Started by init
 init_daemon_domain(hal_rcsservice)
 net_domain(hal_rcsservice)
