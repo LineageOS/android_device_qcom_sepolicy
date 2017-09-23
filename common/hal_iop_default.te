@@ -45,11 +45,21 @@ allow hal_iop_default proc:file rw_file_perms;
 allow hal_iop iop_data_file:dir rw_dir_perms;
 allow hal_iop iop_data_file:file create_file_perms;
 
-#Allow access for /data/app
+#Allow access for /data/data
 allow hal_iop_default app_data_file:dir r_dir_perms;
 allow hal_iop_default app_data_file:file r_file_perms ;
 
+#Allow access for /data/app
+allow hal_iop_default apk_data_file:dir r_dir_perms;
+allow hal_iop_default apk_data_file:file r_file_perms ;
 
+#Allow access for /data/app/oat
+allow hal_iop_default dalvikcache_data_file:dir r_dir_perms;
+allow hal_iop_default dalvikcache_data_file:file r_file_perms ;
+
+#Allow access for /data/app/oat
+allow hal_iop_default system_data_file:dir r_dir_perms;
+allow hal_iop_default system_data_file:file r_file_perms ;
 
 allow hal_iop self:capability {
       dac_override  # for database operations
