@@ -50,4 +50,8 @@ userdebug_or_eng(`
 
 allow hal_rcsservice sysfs_data:file r_file_perms;
 binder_call(hal_rcsservice, dataservice_app)
+userdebug_or_eng(`
+  binder_call(hal_rcsservice, radio)
+')
+
 get_prop(hal_rcsservice, persist_dpm_prop)
