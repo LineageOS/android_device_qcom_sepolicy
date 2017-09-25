@@ -185,7 +185,7 @@
 /(vendor|system/vendor)/bin/mmi                 u:object_r:mmi_exec:s0
 /(vendor|system/vendor)/bin/mpdecision          u:object_r:mpdecision_exec:s0
 /(vendor|system/vendor)/bin/gamed               u:object_r:gamed_exec:s0
-/(vendor|system/vendor)/bin/msm_irqbalance	u:object_r:msm_irqbalanced_exec:s0
+/(vendor|system/vendor)/bin/msm_irqbalance  u:object_r:msm_irqbalanced_exec:s0
 /(vendor|system/vendor)/bin/imsdatadaemon       u:object_r:ims_exec:s0
 /(vendor|system/vendor)/bin/imsqmidaemon        u:object_r:ims_exec:s0
 /(vendor|system/vendor)/bin/ims_rtp_daemon      u:object_r:hal_imsrtp_exec:s0
@@ -440,6 +440,7 @@
 /sys/module/msm_core(/.*)?                                          u:object_r:sysfs_ea:s0
 /sys/module/lpm_stats(/.*)?                                         u:object_r:sysfs_msm_stats:s0
 /sys/module/lpm_levels(/.*)?                                        u:object_r:sysfs_msm_power:s0
+/sys/module/radio_iris_transport/parameters/fmsmd_set               u:object_r:sysfs_fm:s0
 
 ###################################
 # data files
