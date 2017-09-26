@@ -53,3 +53,4 @@ wigig                                          u:object_r:wigig_service:s0
 media.dolby_memoryservice                      u:object_r:audioserver_service:s0
 # DOLBY_END
 sms-sec                                        u:object_r:radio_service:s0
+vendor.qcom.PeripheralManager                  u:object_r:per_mgr_service:s0
