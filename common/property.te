@@ -123,3 +123,6 @@ type vendor_rild_libpath_prop, property_type;
 type per_mgr_state_prop, property_type;
 
 type vendor_system_prop, property_type;
+
+#crash property
+type crash_prop, property_type;

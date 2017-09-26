@@ -156,6 +156,7 @@
 /(vendor|system/vendor)/bin/diag_buffering_test                 u:object_r:diag_exec:s0
 /(vendor|system/vendor)/bin/irsc_util                           u:object_r:irsc_util_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sh              u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.crashdata\.sh              u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.class_core\.sh  u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.bt\.sh          u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.early_boot\.sh  u:object_r:qti_init_shell_exec:s0

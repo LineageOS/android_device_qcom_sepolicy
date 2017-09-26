@@ -94,6 +94,7 @@ set_prop(qti_init_shell, qemu_hw_mainkeys_prop)
 set_prop(qti_init_shell, alarm_boot_prop)
 set_prop(qti_init_shell, boot_animation_prop)
 set_prop(qti_init_shell, debug_gralloc_prop)
+set_prop(qti_init_shell, crash_prop)
 userdebug_or_eng(`
 # Needed for starting console in userdebug mode
 set_prop(qti_init_shell, ctl_console_prop)
