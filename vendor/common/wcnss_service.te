@@ -70,3 +70,5 @@ get_prop(wcnss_service, wigig_prop);
 
 # allow to read /sys/class/net file
 r_dir_file(wcnss_service, sysfs_net);
+
+set_prop(wcnss_service, wcnss_prop)
