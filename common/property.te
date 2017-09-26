@@ -131,3 +131,5 @@ type mmi_prop, property_type;
 
 #imsrcsservice
 type ctl_vendor_imsrcsservice_prop, property_type;
+
+type wcnss_prop, property_type;
