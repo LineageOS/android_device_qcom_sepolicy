@@ -23,6 +23,10 @@ binder_call(surfaceflinger, mmi)
 
 #Allow access to cameraserver service
 allow surfaceflinger cameraserver_service:service_manager find;
+
+#Allow access to binder callback's to camera hal
+hal_client_domain(surfaceflinger, hal_camera)
+
 #diag
 userdebug_or_eng(`
     diag_use(surfaceflinger)
