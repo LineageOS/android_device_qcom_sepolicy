@@ -622,3 +622,8 @@
 /system/etc/firmware(/.*)?                                          u:object_r:firmware_file:s0
 /system/vendor/firmware(/.*)?                                       u:object_r:firmware_file:s0
 /firmware/image(/.*)?                                               u:object_r:firmware_file:s0
+
+##################################
+#vendor toolbox
+#
+/(vendor|system/vendor)/bin/toolbox_vendor                          u:object_r:vendor_toolbox_exec:s0
