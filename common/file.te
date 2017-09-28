@@ -296,3 +296,6 @@ type sysfs_msm_power, fs_type, sysfs_type;
 
 # Data type for QVOP
 type qvop-daemon_data_file, file_type, data_file_type;
+
+# /data/vendor/tombstones/ file
+type vendor_tombstone_data_file, file_type, data_file_type;
