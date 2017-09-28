@@ -36,4 +36,5 @@ userdebug_or_eng(`
   r_dir_file(platform_app, seemp_data_file)
   allow platform_app seemp_data_file: file w_file_perms;
 ')
+allow platform_app color_service:service_manager find;
 

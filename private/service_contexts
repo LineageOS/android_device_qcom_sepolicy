@@ -37,4 +37,4 @@ com.qualcomm.location.izat.IzatService         u:object_r:izat_service:s0
 sms-sec                                        u:object_r:radio_service:s0
 extphone                                       u:object_r:radio_service:s0
 qti.ims.ext                                    u:object_r:radio_service:s0
-
+com.qti.snapdragon.sdk.display.IColorService   u:object_r:color_service:s0

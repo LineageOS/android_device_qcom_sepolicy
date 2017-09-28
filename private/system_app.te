@@ -33,6 +33,7 @@ binder_call(system_app, seempd)
 allow system_app dpmtcm_socket:sock_file w_file_perms;
 allow system_app dpmwrapper_socket:sock_file w_file_perms;
 allow system_app dpmd:unix_stream_socket connectto;
+allow system_app color_service:service_manager add;
 
 # allow system_app to interact with smcinvoke daemon
 binder_call(system_app, smcinvoke_daemon)

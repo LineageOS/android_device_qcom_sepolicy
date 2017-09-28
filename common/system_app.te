@@ -37,11 +37,8 @@ allow system_app {
 allow system_app {
     atfwd_service
     dun_service
-    # access to color service SDK
-    color_service
     qfp_proxy_service
 }:service_manager add;
-
 # access to mm-pp-daemon
 #unix_socket_connect(system_app, pps, mm-pp-daemon)
 
