@@ -11,6 +11,7 @@ use_per_mgr(system_server)
 allow system_server binder_per_mgr_service:service_manager find;
 
 allow system_server sensors:unix_stream_socket sendto;
+allow system_server sensors_device:chr_file getattr;
 allow system_server sensors_socket:sock_file r_file_perms;
 unix_socket_connect(system_server, sensors, sensors)
 unix_socket_send(system_server, sensors, sensors)
