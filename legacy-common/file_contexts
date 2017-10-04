@@ -20,3 +20,14 @@
 
 # IOP
 /data/misc/iop(/.*)?                                                u:object_r:iop_data_file:s0
+
+# Battery
+/sys/devices(/platform)?/soc\.0/qpnp-linear-charger-[a-z0-9]+/power_supply/battery(/.*)?   u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc\.0/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?   u:object_r:sysfs_battery_supply:s0
+
+# Graphics
+/sys/devices(/platform)?/soc\.0/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary\.[0-9]+/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc\.0/[a-z0-9]+.qcom,mdss_mdp/caps   u:object_r:sysfs_graphics:s0
+
+# Subsys restart
+/sys/devices(/platform)?/soc\.0/[a-z0-9\.:]+,[a-z0-9\-]+/subsys[0-9]+/name    u:object_r:sysfs_ssr:s0
