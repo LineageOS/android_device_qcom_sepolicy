@@ -63,14 +63,8 @@ wakelock_use(cnd)
 #cnd_nims_socket_perm(wfdservice)
 #cnd_nims_socket_perm(drmserver)
 
-# allow cnd to access ipa_dev
-allow cnd ipa_dev:chr_file rw_file_perms;
-
 # allow access to nims
 allow cnd socket_device:dir remove_name;
-
-allow cnd ipacm_data_file:dir r_dir_perms;
-allow cnd ipacm_data_file:file r_file_perms;
 
 # explicitly allow udp socket permissions for appdomain
 #allow cnd appdomain:udp_socket rw_socket_perms;
