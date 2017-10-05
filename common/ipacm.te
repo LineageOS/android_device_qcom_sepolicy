@@ -31,6 +31,9 @@ allow ipacm ipacm:{
 allow ipacm ipacm_data_file:dir w_dir_perms;
 allow ipacm ipacm_data_file:file create_file_perms;
 
+# Allow receiving netlink_netfilter_socket messages
+allow ipacm ipacm:netlink_netfilter_socket create_socket_perms_no_ioctl;
+
 # To register ipacm to hwbinder
 add_hwservice(ipacm, hal_ipacm_hwservice)
 hwbinder_use(ipacm)
