@@ -24,7 +24,7 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 
-type qca1530, domain, domain_deprecated;
+type qca1530, domain;
 type qca1530_exec, exec_type, file_type;
 type qca1530_prop, property_type;
 net_domain(qca1530)
