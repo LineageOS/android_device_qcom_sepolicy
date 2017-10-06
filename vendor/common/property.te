@@ -132,3 +132,6 @@ type ctl_vendor_hbtp_prop, property_type;
 
 #WiFi Display
 type wfd_service_prop, property_type;
+
+#imsrcsservice
+type ctl_vendor_imsrcsservice_prop, property_type;
