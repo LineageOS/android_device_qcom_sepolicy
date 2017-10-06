@@ -29,3 +29,5 @@ allow hal_rcsservice devpts:chr_file rw_file_perms;
 userdebug_or_eng(`
   diag_use(hal_rcsservice)
 ')
+
+set_prop(hal_rcsservice, ctl_vendor_imsrcsservice_prop)
