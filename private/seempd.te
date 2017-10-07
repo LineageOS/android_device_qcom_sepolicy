@@ -48,7 +48,7 @@ binder_call(seempd, system_server)
 binder_call(seempd, appdomain)
 binder_call(seempd, smcinvoke_daemon)
 
-allow seempd MinkBinderSvc:service_manager { find };
+allow seempd MinkBinderSvc:service_manager { find };
 
 #for seemp
 allow seempd seemp_service:service_manager { find add };
