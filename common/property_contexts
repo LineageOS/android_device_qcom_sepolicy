@@ -117,3 +117,5 @@ ro.vendor.ril.             u:object_r:radio_prop:s0
 persist.vendor.sys.        u:object_r:vendor_system_prop:s0
 
 persist.vendor.mmi.        u:object_r:mmi_prop:s0
+
+ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0

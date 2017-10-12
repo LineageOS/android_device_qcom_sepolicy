@@ -124,3 +124,6 @@ type per_mgr_state_prop, property_type;
 type vendor_system_prop, property_type;
 
 type mmi_prop, property_type;
+
+#imsrcsservice
+type ctl_vendor_imsrcsservice_prop, property_type;
