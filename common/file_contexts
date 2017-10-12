@@ -131,6 +131,7 @@
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
 /dev/socket/wpa_wigig[0-9]                      u:object_r:wpa_socket:s0
 /dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
+/dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
 
 ###################################
 # System files

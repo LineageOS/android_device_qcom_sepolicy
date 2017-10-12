@@ -53,3 +53,7 @@ allow qdma_app qdma_data_file:file create_file_perms;
 
 # allow access to socket
 unix_socket_connect(qdma_app, dpmtcm, dpmd)
+
+# allow qdma_socket
+allow qdma_app qdma_socket:dir w_dir_perms;
+allow qdma_app qdma_socket:sock_file create_file_perms;
