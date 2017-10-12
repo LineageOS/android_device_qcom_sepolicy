@@ -237,3 +237,5 @@ allow qti_init_shell {
 
 allow qti_init_shell sysfs_battery_supply:file setattr;
 allow qti_init_shell sysfs_usb_supply:file setattr;
+
+allow qti_init_shell sysfs_fm:file rw_file_perms;
