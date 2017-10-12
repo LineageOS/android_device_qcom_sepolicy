@@ -303,4 +303,4 @@ type qvop-daemon_data_file, file_type, data_file_type;
 type vendor_tombstone_data_file, file_type, data_file_type;
 
 # SFS listener data file
-type data_persist_drm_file, file_type, data_file_type;
+type data_tzstorage_file, file_type, data_file_type;
