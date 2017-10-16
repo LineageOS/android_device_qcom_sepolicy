@@ -24,3 +24,6 @@ user=system seinfo=platform name=com.qualcomm.qti.logkit domain=qti_logkit_app t
 
 #Add new domain for imshelper service
 user=system seinfo=platform name=.imshelperservice domain=imshelper_app type=imshelper_app_data_file
+
+#Add new domain for power off alarm app
+user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=system_app_data_file

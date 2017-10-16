@@ -219,8 +219,6 @@ hal_client_domain(system_app, hal_perf)
 allowxperm system_app self:socket ioctl msm_sock_ipc_ioctls;
 allow system_app self:socket ioctl;
 
-hal_client_domain(system_app, hal_alarm_qti);
-
 #allow system app to interact with the esepowermanager
 hal_client_domain(system_app, hal_esepowermanager)
 allow system_app fm_prop:file r_file_perms;
