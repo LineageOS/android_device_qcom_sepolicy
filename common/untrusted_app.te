@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # diag device node access is restricted to untrusted_app
-neverallow untrusted_app diag_device:chr_file rw_file_perms;
+#neverallow untrusted_app diag_device:chr_file rw_file_perms;
 
 # for finding wbc_service
 allow untrusted_app wbc_service:service_manager find;
