@@ -3,6 +3,7 @@ app_domain(location_app)
 binder_use(location_app)
 hal_client_domain(location_app, hal_gnss)
 hal_client_domain(location_app, hal_perf)
+hal_client_domain(location_app, hal_iop)
 
 qmux_socket(location_app)
 
