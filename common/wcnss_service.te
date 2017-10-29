@@ -40,9 +40,9 @@ allow wcnss_service fuse:dir create_dir_perms;
 allow wcnss_service fuse:file create_file_perms;
 allow wcnss_service vfat:dir create_dir_perms;
 allow wcnss_service vfat:file create_file_perms;
+
+# needed for wlan dynamic nv feature
 allow wcnss_service persist_file:file { rw_file_perms setattr };
-allow wcnss_service dynamic_nv_data_file:file r_file_perms;
-allow wcnss_service dynamic_nv_data_file:dir r_dir_perms;
 
 # This is needed for ptt_socket app to write logs file collected to sdcard
 r_dir_file(wcnss_service, storage_file)
