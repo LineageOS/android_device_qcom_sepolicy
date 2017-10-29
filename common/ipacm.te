@@ -36,3 +36,8 @@ allow ipacm ipacm:{
 # Allow creating and modifying the PID file
 allow ipacm ipacm_data_file:dir w_dir_perms;
 allow ipacm ipacm_data_file:file create_file_perms;
+
+# Allow execution of 'ip neighbor change' command in shell
+allow ipacm system_file:file rx_file_perms;
+allow ipacm shell_exec:file rx_file_perms;
+allow ipacm ipacm:netlink_route_socket nlmsg_write;

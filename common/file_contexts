@@ -351,10 +351,9 @@
 /data/misc/qti-logkit/socket-privileged(/.*)?                       u:object_r:qti_logkit_priv_socket:s0
 /data/misc/qti-logkit/socket-public(/.*)?                           u:object_r:qti_logkit_pub_socket:s0
 /data/system/swap(/.*)?                                             u:object_r:swap_data_file:s0
-/data/misc/wifi/nvbin(/.*)?                                         u:object_r:dynamic_nv_data_file:s0
 /data/misc/wifi/wigig_sockets(/.*)?                                 u:object_r:wpa_socket:s0
 /data/misc/wifi/wigig_sockets/wpa_ctrl.*                            u:object_r:system_wpa_socket:s0
-
+/data/app-regional(/.*)?                                            u:object_r:regionalization_data_file:s0
 ###################################
 # persist files
 #

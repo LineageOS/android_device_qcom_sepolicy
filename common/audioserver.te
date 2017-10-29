@@ -89,3 +89,7 @@ set_prop(audioserver, dolby_prop)
 
 # for thermal sock files
 unix_socket_connect(audioserver, thermal, thermal-engine)
+
+# allow audioserver to write DTS files
+allow audioserver dts_data_file:dir rw_dir_perms;
+allow audioserver dts_data_file:file create_file_perms;

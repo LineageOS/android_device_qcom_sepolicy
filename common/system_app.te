@@ -62,6 +62,9 @@ userdebug_or_eng(`
   allow system_app tombstone_data_file:dir r_dir_perms;
   allow system_app tombstone_data_file:file r_file_perms;
   diag_use(system_app)
+
+  # allow to read ssr ramdump
+  allow system_app ssr_ramdump_data_file:dir r_dir_perms;
 ')
 
 allow system_app cnd_data_file:dir w_dir_perms;
