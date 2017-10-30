@@ -32,5 +32,9 @@ allow update_engine_common {
 	xbl_block_device
 	ssd_device
 	modem_block_device
+	root_block_device
+	system_block_device
+	boot_block_device
+	mdtp_device
 }:blk_file rw_file_perms;
 
