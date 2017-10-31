@@ -36,5 +36,7 @@ binder_call(hal_qdutils_disp_server, hal_qdutils_disp_client)
 
 add_hwservice(hal_qdutils_disp_server, hal_qdutils_disp_hwservice)
 allow hal_qdutils_disp_client hal_qdutils_disp_hwservice:hwservice_manager find;
+vndbinder_use(hal_qdutils_disp_qti);
+allow hal_qdutils_disp_qti qdisplay_service:service_manager find;
 hal_client_domain(hal_qdutils_disp_qti, hal_display_config);
 hal_client_domain(hal_qdutils_disp_qti, hal_graphics_composer);
