@@ -46,6 +46,8 @@ r_dir_file(hal_bluetooth, bt_firmware_file)
 
 allow hal_bluetooth persist_bluetooth_file:dir r_dir_perms;
 allow hal_bluetooth persist_bluetooth_file:file r_file_perms;
+allow hal_bluetooth self:socket create_socket_perms;
+allowxperm hal_bluetooth self:socket ioctl msm_sock_ipc_ioctls;
 
 r_dir_file(hal_bluetooth, persist_file)
 
