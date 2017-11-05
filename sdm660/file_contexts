@@ -141,5 +141,5 @@
 ############################################################################################
 #Same hal process libs
 #
-/vendor/lib(64)?/hw/gralloc\.sdm660\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/vulkan\.sdm660\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/gralloc\.sdm660\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/vulkan\.sdm660\.so    u:object_r:same_process_hal_file:s0
