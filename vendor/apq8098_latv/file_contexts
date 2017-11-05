@@ -114,8 +114,8 @@
 /sys/devices/virtual/graphics/fb([0-3])+/pa                                      u:object_r:sysfs_graphics:s0
 ###################################
 # adding same_process_hal_file
-/vendor/lib(64)?/hw/gralloc\.apq8098_latv\.so                                    u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/hdmi_cec\.apq8098_latv\.so                                   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/gralloc\.apq8098_latv\.so                                    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/hdmi_cec\.apq8098_latv\.so                                   u:object_r:same_process_hal_file:s0
 
 #TODO: Need to remove the regexp
 /sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name         u:object_r:sysfs_ssr:s0

@@ -54,13 +54,13 @@
 /dev/block/platform/soc/7824900.sdhci/by-name/logdump               u:object_r:logdump_partition:s0
 
 #For adreno libs
-/vendor/lib(64)?/libsc-a3xx\.so                                     u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libsc-a3xx\.so                     u:object_r:same_process_hal_file:s0
 
 ############################################################################################
 #Same hal process libs
 
-/vendor/lib(64)?/hw/gralloc\.msm8909\.so  			    u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/vulkan\.msm8909\.so    			    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/gralloc\.msm8909\.so            u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/vulkan\.msm8909\.so             u:object_r:same_process_hal_file:s0
 
 # System files
 /(vendor|system/vendor)/bin/hw/vendor\.google_clockwork\.sidekickgraphics@1\.0-service      u:object_r:hal_sidekickgraphics_default_exec:s0

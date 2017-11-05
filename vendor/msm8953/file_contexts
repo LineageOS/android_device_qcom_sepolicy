@@ -56,8 +56,8 @@
 ############################################################################################
 #Same hal process libs
 #
-/vendor/lib(64)?/hw/gralloc\.msm8953\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/vulkan\.msm8953\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/gralloc\.msm8953\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/vulkan\.msm8953\.so    u:object_r:same_process_hal_file:s0
 ##################################
 # non-hlos mount points
 /firmware                  u:object_r:firmware_file:s0
