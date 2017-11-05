@@ -150,8 +150,8 @@
 ############################################################################################
 #Same hal process libs
 #
-/vendor/lib(64)?/hw/gralloc\.sdm660\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/vulkan\.sdm660\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/gralloc\.sdm660\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/vulkan\.sdm660\.so    u:object_r:same_process_hal_file:s0
 
 #/(vendor|system/vendor)/bin/init\.qcom\.debug-sdm660\.sh    u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.can\.sh              u:object_r:qti_init_shell_exec:s0
