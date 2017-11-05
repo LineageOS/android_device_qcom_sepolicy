@@ -248,7 +248,7 @@
 /(vendor|system/vendor)/bin/hostapd_cli         u:object_r:hostapd_exec:s0
 /(vendor|system/vendor)/bin/adsprpcd            u:object_r:adsprpcd_exec:s0
 /(vendor|system/vendor)/bin/cdsprpcd            u:object_r:cdsprpcd_exec:s0
-/vendor/bin/dspservice                          u:object_r:vendor_dspservice_exec:s0
+/(vendor|system/vendor)/bin/dspservice          u:object_r:vendor_dspservice_exec:s0
 /(vendor|system/vendor)/bin/wpa_cli             u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper          u:object_r:mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper_proxy    u:object_r:mdm_helper_exec:s0
@@ -331,7 +331,7 @@
 /(vendor|system/vendor)/bin/imsrcsd             u:object_r:hal_rcsservice_exec:s0
 /(vendor|system/vendor)/bin/vppservice          u:object_r:vendor_vppservice_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service u:object_r:hal_qteeconnector_qti_exec:s0
-/vendor/bin/hw/vendor\.qti\.hardware\.qseecom@1\.0-service                  u:object_r:hal_qseecom_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qseecom@1\.0-service                  u:object_r:hal_qseecom_default_exec:s0
 /(vendor|system/vendor)/bin/fm_qsoc_patches     u:object_r:fm_qsoc_patches_exec:s0
 /(vendor|system/vendor)/bin/chre                u:object_r:chre_exec:s0
 /(vendor|system/vendor)/bin/tloc_daemon         u:object_r:tlocd_exec:s0
@@ -346,8 +346,8 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qdutils_disp@1\.0-service-qti u:object_r:hal_qdutils_disp_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service u:object_r:hal_sensorscalibrate_qti_default_exec:s0
 /(vendor|system/vendor)/bin/power_off_alarm        u:object_r:power_off_alarm_exec:s0
-/vendor/bin/hw/vendor\.qti\.hardware\.vibrator@1\.[0-2]-service    u:object_r:hal_vibrator_default_exec:s0
-/vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service    u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.vibrator@1\.[0-2]-service    u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.vibrator\.service    u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.usb\.gadget@1\.0-service-qti u:object_r:hal_usb_gadget_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.scve\.panorama@1\.0-service    u:object_r:vendor_scve_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.scve\.objecttracker@1\.0-service    u:object_r:vendor_scve_exec:s0
@@ -608,7 +608,7 @@
 ###################################
 # etc files
 #
-/vendor/etc/hbtp/*                                                  u:object_r:hbtp_cfg_file:s0
+/(vendor|system/vendor)/etc/hbtp/*                                  u:object_r:hbtp_cfg_file:s0
 
 ###################################
 # adsp files
@@ -623,101 +623,101 @@
 ###################################
 # vendor files
 #
-/vendor/package(/.*)?                      u:object_r:vendor_carrier_file:s0
-/vendor/package(/.*)?/overlay(/.*)?        u:object_r:vendor_overlay_file:s0
-/vendor/package(/.*)?/app(/.*)?            u:object_r:vendor_app_file:s0
+/(vendor|system/vendor)/package(/.*)?                               u:object_r:vendor_carrier_file:s0
+/(vendor|system/vendor)/package(/.*)?/overlay(/.*)?                 u:object_r:vendor_overlay_file:s0
+/(vendor|system/vendor)/package(/.*)?/app(/.*)?                     u:object_r:vendor_app_file:s0
 
 #######################################
 # .so File which  needs to be shared across Treble boundary
 # are labeled as same-process HAL files
 # .so dependent chain also need to be in this list so adding this.
 #
-/vendor/lib(64)?/hw/android\.hardware\.graphics\.mapper@2\.0-impl-qti-display\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapper@1\.0\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapper@1\.1\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapper@2\.0\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapperextensions@1\.0\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapperextensions@1\.1\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/android\.hardware\.graphics\.mapper@3\.0-impl-qti-display\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapper@3\.0\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/android\.hardware\.graphics\.mapper@4\.0-impl-qti-display\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapper@4\.0\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libcamxexternalformatutils\.so                    u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libqdMetaData\.so         u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libgralloc\.qti\.so       u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libqservice\.so           u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libqdutils\.so            u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libadreno_utils\.so       u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libgsl\.so                u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/android\.hardware\.graphics\.mapper@2\.0-impl-qti-display\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.display\.mapper@1\.0\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.display\.mapper@1\.1\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.display\.mapper@2\.0\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.display\.mapperextensions@1\.0\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.display\.mapperextensions@1\.1\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/android\.hardware\.graphics\.mapper@3\.0-impl-qti-display\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.display\.mapper@3\.0\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/android\.hardware\.graphics\.mapper@4\.0-impl-qti-display\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.display\.mapper@4\.0\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libcamxexternalformatutils\.so                    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libqdMetaData\.so         u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libgralloc\.qti\.so       u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libqservice\.so           u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libqdutils\.so            u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libadreno_utils\.so       u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libgsl\.so                u:object_r:same_process_hal_file:s0
 
-/vendor/lib(64)?/hw/vulkan\.adreno\.so     u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libEGL_adreno\.so         u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libGLESv1_CM_adreno\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libGLESv2_adreno\.so      u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/vulkan\.adreno\.so     u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libEGL_adreno\.so         u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libGLESv1_CM_adreno\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libGLESv2_adreno\.so      u:object_r:same_process_hal_file:s0
 
-/vendor/lib(64)?/libdrmutils\.so           u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libdrm\.so                u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libdrmutils\.so           u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libdrm\.so                u:object_r:same_process_hal_file:s0
 
-/vendor/lib(64)?/libavenhancements\.so     u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libgrallocutils\.so       u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libgralloccore\.so        u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libExtendedExtractor.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libavenhancements\.so     u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libgrallocutils\.so       u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libgralloccore\.so        u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libExtendedExtractor.so   u:object_r:same_process_hal_file:s0
 
 # RenderScript dependencies.
 # To test: run cts -m CtsRenderscriptTestCases
-/vendor/lib(64)?/libRSDriver_adreno\.so     u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libCB\.so                  u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libllvm-qgl\.so            u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libbccQTI\.so              u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libllvm-qcom\.so           u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/librs_adreno\.so           u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/librs_adreno_sha1\.so      u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libqti-perfd-client\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libRSDriver_adreno\.so     u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libCB\.so                  u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libllvm-qgl\.so            u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libbccQTI\.so              u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libllvm-qcom\.so           u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/librs_adreno\.so           u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/librs_adreno_sha1\.so      u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libqti-perfd-client\.so    u:object_r:same_process_hal_file:s0
 # perf-hal client lib (included by libqti-perfd-client.so)
-/vendor/lib(64)?/vendor\.qti\.hardware\.perf@1\.0\.so    u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor\.qti\.hardware\.perf@2\.0\.so    u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor\.qti\.hardware\.perf@2\.1\.so    u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor\.qti\.hardware\.perf@2\.2\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.perf@1\.0\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.perf@2\.0\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.perf@2\.1\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.perf@2\.2\.so    u:object_r:same_process_hal_file:s0
 
 # libGLESv2_adreno depends on this
-/vendor/lib(64)?/libllvm-glnext\.so         u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libllvm-glnext\.so         u:object_r:same_process_hal_file:s0
 
 # libOpenCL and its dependencies
-/vendor/lib(64)?/libOpenCL\.so              u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libq3dtools_adreno\.so     u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libOpenCL\.so              u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libq3dtools_adreno\.so     u:object_r:same_process_hal_file:s0
 
 # hbtp dependencies
-/vendor/lib(64)?/libhbtpitsjni\.so          u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libhbtpdbgclientjni\.so    u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libhbtpjni\.so             u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libhbtpitsjni\.so          u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libhbtpdbgclientjni\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libhbtpjni\.so             u:object_r:same_process_hal_file:s0
 
 #Loaded by native loader (zygote) for all processes
-/vendor/lib(64)?/libhalide_hexagon_host\.so u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libadsprpc\.so             u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libcdsprpc\.so             u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libsdsprpc\.so             u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/vendor.qti.hardware.dsp@1.0\.so     u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libdiag\.so                u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libtime_genoff\.so         u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libhalide_hexagon_host\.so u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libadsprpc\.so             u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libcdsprpc\.so             u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libsdsprpc\.so             u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor.qti.hardware.dsp@1.0\.so     u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libdiag\.so                u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libtime_genoff\.so         u:object_r:same_process_hal_file:s0
 
 # libmmi_jni
-/vendor/lib(64)?/libmmi_jni\.so             u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libmmi_jni\.so             u:object_r:same_process_hal_file:s0
 
 # libqti_vndfwk_detect libs
-/vendor/lib(64)?/libvndfwk_detect_jni\.qti\.so        u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libqti_vndfwk_detect\.so             u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libvndfwk_detect_jni\.qti\.so        u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libqti_vndfwk_detect\.so             u:object_r:same_process_hal_file:s0
 
 # Fastcv libs
-/vendor/lib(64)?/libfastcvdsp_stub\.so      u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libfastcvadsp_stub\.so     u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libfastcvopt\.so           u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libfastcvdsp_stub\.so      u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libfastcvadsp_stub\.so     u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libfastcvopt\.so           u:object_r:same_process_hal_file:s0
 
 # SVA files
-/vendor/lib(64)?/liblistenjni\.so           u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/liblistensoundmodel2\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/liblistenjni\.so           u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/liblistensoundmodel2\.so   u:object_r:same_process_hal_file:s0
 
 # libnpu
-/vendor/lib(64)?/libnpu\.so                 u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libnpu\.so                 u:object_r:same_process_hal_file:s0
 ###################################
 # firmware images -- Only Vendor path should be added here
 #
@@ -741,4 +741,4 @@
 #wifilearner daemon
 /(vendor|system/vendor)/bin/wifilearner    u:object_r:wifilearnersvc_exec:s0
 
-/vendor/bin/embmsslServer       u:object_r:vendor_hal_embmssl_qti_exec:s0
+/(vendor|system/vendor)/bin/embmsslServer u:object_r:vendor_hal_embmssl_qti_exec:s0
