@@ -58,11 +58,11 @@
 ############################################################################################
 #Same hal process libs
 #
-/vendor/lib(64)?/hw/gralloc\.msm8937\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/vulkan\.msm8937\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/gralloc\.msm8937\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/vulkan\.msm8937\.so    u:object_r:same_process_hal_file:s0
 
 #For adreno libs
-/vendor/lib(64)?/libsc-a3xx\.so                                     u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libsc-a3xx\.so            u:object_r:same_process_hal_file:s0
 
 # Single hal process
 /(vendor|system/vendor)/bin/hw/hal-server             u:object_r:hal-server_exec:s0
