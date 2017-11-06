@@ -58,3 +58,4 @@ userdebug_or_eng(`
   diag_use(hal_gnss);
 ')
 use_per_mgr(hal_gnss)
+qmux_socket(hal_gnss)
