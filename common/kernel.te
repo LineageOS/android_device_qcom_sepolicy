@@ -4,6 +4,7 @@ userdebug_or_eng(`
  #allow kernel self:capability { dac_read_search dac_override };
   allow kernel self:socket create_socket_perms_no_ioctl;
   r_dir_file(kernel, qti_debugfs);
+  allow kernel debugfs_mmc:dir search;
 ')
 
 # Access firmware_file
