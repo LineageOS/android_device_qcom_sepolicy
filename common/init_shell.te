@@ -127,6 +127,7 @@ allow qti_init_shell {
 }:file w_file_perms;
 
 allow qti_init_shell sysfs_process_reclaim:file write;
+allow qti_init_shell sysfs_msm_power:file write;
 r_dir_file(qti_init_shell, sysfs_thermal)
 r_dir_file(qti_init_shell, sysfs_type)
 allow qti_init_shell sysfs_socinfo:file write;
