@@ -74,8 +74,8 @@ userdebug_or_eng(`
   #under one common file.
 
   # All domains can read proc enrty of qti-testscripts
-  r_dir_file(domain, qti-testscripts)
-  r_dir_file(qti-testscripts, domain)
+  # r_dir_file(domain, qti-testscripts)
+  # r_dir_file(qti-testscripts, domain)
   
 # allow adbd qti-testscripts:process dyntransition;
   #allow { domain -mediaextractor -mediacodec } qti-testscripts:unix_stream_socket connectto;

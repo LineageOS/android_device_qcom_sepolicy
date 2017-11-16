@@ -43,7 +43,7 @@ allow cameraserver sensors_device:chr_file rw_file_perms;
 allow cameraserver system_server:unix_stream_socket { read write };
 
 #Allow read access to soc/msm-cam/video4linux/video0/name sysfs
-allow cameraserver sysfs:file r_file_perms;
+# allow cameraserver sysfs:file r_file_perms;
 
 allow cameraserver persist_file:dir r_dir_perms;
 set_prop(cameraserver, camera_prop)

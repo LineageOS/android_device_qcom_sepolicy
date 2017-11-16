@@ -25,5 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#TODO: Need to revist this changes as this are 
+#      hitting new never_allow so commenting to 
+#      unblock but needs an alternative for this.
 # allow untrusted apps to access hal_perf
-hal_client_domain(untrusted_app_25, hal_perf);
+#hal_client_domain(untrusted_app_25, hal_perf);

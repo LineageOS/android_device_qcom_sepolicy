@@ -34,5 +34,8 @@ allow untrusted_app wbc_service:service_manager find;
 # for finding gba_auth_service
 allow untrusted_app gba_auth_service:service_manager find;
 
+#TODO: this are been commeted as there is a new
+#      neverallow resctiction which may need 
+#      some addtional change.
 # allow untrusted apps to access hal_perf
-hal_client_domain(untrusted_app, hal_perf);
+# hal_client_domain(untrusted_app, hal_perf);

@@ -70,8 +70,8 @@ userdebug_or_eng(`
   #under one common file.
 
   # All domains can read proc enrty of vendor-qti-testscripts
-  r_dir_file(domain, vendor-qti-testscripts)
-  r_dir_file(vendor-qti-testscripts, domain)
+  # r_dir_file(domain, vendor-qti-testscripts)
+  # r_dir_file(vendor-qti-testscripts, domain)
 
  # allow adbd vendor-qti-testscripts:process dyntransition;
  # allow { domain -mediaextractor -mediacodec } vendor-qti-testscripts:unix_stream_socket connectto;

@@ -33,7 +33,7 @@ type pdt_app, domain;
 app_domain(pdt_app);
 net_domain(pdt_app)
 permissive pdt_app;
-r_dir_file(pdt_app, domain)
+# r_dir_file(pdt_app, domain)
 dontaudit pdt_app service_manager_type:service_manager *;
 dontaudit pdt_app hwservice_manager_type:hwservice_manager *;
 dontaudit pdt_app file_type:dir_file_class_set *;
