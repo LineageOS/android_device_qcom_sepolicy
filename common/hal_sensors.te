@@ -28,6 +28,7 @@
 
 userdebug_or_eng(`
     diag_use(hal_sensors)
+    allow hal_sensors debugfs_tracing:file { open write };
 ')
 allow hal_sensors persist_file:dir r_dir_perms;
 allow hal_sensors self:socket create_socket_perms;
@@ -44,3 +45,9 @@ allow hal_sensors hal_graphics_allocator:fd use;
 
 # Allow access to FastRPC
 allow hal_sensors qdsp_device:chr_file r_file_perms;
+
+allow hal_sensors sysfs_sensors:dir r_dir_perms;
+allow hal_sensors sysfs_sensors:file rw_file_perms;
+allow hal_sensors sysfs_sensors:lnk_file read;
+allow hal_sensors input_device:dir r_dir_perms;
+allow hal_sensors input_device:chr_file r_file_perms;

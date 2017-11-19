@@ -26,7 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # For Regionalization service
-allow system_server regionalization_service:service_manager { add find };
 allow system_server regionalization_file:file rw_file_perms;
 allow system_server regionalization_file:dir r_dir_perms;
 allow system_server resourcecache_data_file:dir create_dir_perms;

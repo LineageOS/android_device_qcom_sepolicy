@@ -46,6 +46,7 @@ allow hal_perf_default mpctl_data_file:dir rw_dir_perms;
 allow hal_perf_default mpctl_data_file:file create_file_perms;
 allow hal_perf_default lm_data_file:dir rw_dir_perms;
 allow hal_perf_default lm_data_file:file create_file_perms;
+allow hal_perf_default sysfs_lib:file w_file_perms;
 
 allow hal_perf {
     sysfs_devices_system_cpu

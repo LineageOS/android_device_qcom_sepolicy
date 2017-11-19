@@ -156,6 +156,7 @@
 /(vendor|system/vendor)/bin/diag_buffering_test                 u:object_r:diag_exec:s0
 /(vendor|system/vendor)/bin/irsc_util                           u:object_r:irsc_util_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sh              u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.crashdata\.sh              u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.class_core\.sh  u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.bt\.sh          u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.early_boot\.sh  u:object_r:qti_init_shell_exec:s0
@@ -300,6 +301,7 @@
 #
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:sysfs_graphics:s0
 /sys/class/thermal(/.*)?                                            u:object_r:sysfs_thermal:s0
+/sys/class/sensors(/.*)?                                            u:object_r:sysfs_sensors:s0
 /sys/devices/[^/]+bcl[^/]+(/.*)?                                    u:object_r:sysfs_thermal:s0
 /sys/devices/f9200000.*/power_supply/usb(/.*)?                      u:object_r:sysfs_usb_supply:s0
 /sys/devices/msm_dwc3/power_supply/usb(/.*)?                        u:object_r:sysfs_usb_supply:s0
@@ -442,6 +444,8 @@
 /sys/module/lpm_stats(/.*)?                                         u:object_r:sysfs_msm_stats:s0
 /sys/module/lpm_levels(/.*)?                                        u:object_r:sysfs_msm_power:s0
 /sys/module/radio_iris_transport/parameters/fmsmd_set               u:object_r:sysfs_fm:s0
+/sys/module/app_setting/parameters/lib_name                         u:object_r:sysfs_lib:s0
+/sys/module/process_reclaim(/.*)?  u:object_r:sysfs_process_reclaim:s0
 
 ###################################
 # data files
@@ -605,3 +609,5 @@
 /system/etc/firmware(/.*)?                                          u:object_r:firmware_file:s0
 /system/vendor/firmware(/.*)?                                       u:object_r:firmware_file:s0
 /firmware/image(/.*)?                                               u:object_r:firmware_file:s0
+
+/(vendor|system/vendor)/bin/grep                                    u:object_r:vendor_toolbox_exec:s0

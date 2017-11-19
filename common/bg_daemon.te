@@ -38,3 +38,4 @@ allow bg_daemon bg_daemon_device:chr_file rw_file_perms;
 allow bg_daemon ssr_device:chr_file r_file_perms;
 allow bg_daemon self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 set_prop(bg_daemon, bg_daemon_prop)
+set_prop(bg_daemon, bg_boot_complete_prop)
