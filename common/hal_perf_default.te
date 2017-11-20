@@ -78,6 +78,7 @@ allow hal_perf {
     sysfs
     sysfs_msm_power
     sysfs_battery_supply
+    sysfs_process_reclaim
 }:dir r_dir_perms;
 
 allow hal_perf {
@@ -94,6 +95,7 @@ allow hal_perf {
     sysfs_mmc_host
     sysfs_msm_power
     sysfs_battery_supply
+    sysfs_process_reclaim
 }:file rw_file_perms;
 
 allow hal_perf {
