@@ -61,6 +61,9 @@ allow cameraserver camera_prop:file r_file_perms;
 #need this in full_treble for camera perview
 allow cameraserver hal_allocator:fd use;
 
+#Allow camera to use mediacodec binder calls
+allow cameraserver mediacodec:binder call;
+
 # added now for camcorder functionality. need to use HIDL
 userdebug_or_eng(`
 binder_call(cameraserver, hal_graphics_composer)

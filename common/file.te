@@ -155,6 +155,7 @@ type persist_display_file, file_type;
 # IPA file types
 type ipacm_socket, file_type;
 type ipacm_data_file, file_type, data_file_type;
+type ipa_vendor_data_file, file_type, data_file_type;
 
 # Port-bridge file types
 type port_bridge_data_file, file_type, data_file_type;
@@ -240,6 +241,8 @@ type persist_time_file, file_type;
 
 # kgsl file type for sysfs access
 type sysfs_kgsl, sysfs_type, fs_type;
+type sysfs_kgsl_proc, sysfs_type, fs_type;
+type sysfs_kgsl_gpuclk, sysfs_type, fs_type;
 
 # secure touch files
 type sysfs_securetouch, fs_type, sysfs_type;
@@ -256,6 +259,7 @@ type sysfs_laser, fs_type, sysfs_type;
 # QDMA data files
 type qdma_data_file, file_type, data_file_type;
 type qdma_app_data_file, file_type, data_file_type;
+type qdma_socket, file_type;
 
 # path to debugfs use this whic should be only used
 # in debug builds
@@ -273,9 +277,13 @@ type persist_vpp_file, file_type;
 # vendor camera files
 type vendor_camera_data_file, file_type, data_file_type;
 
+#tloc data files
+type tlocd_data_file, file_type, data_file_type;
+
 # wigig, fstman
 type sysfs_bond0, fs_type, sysfs_type;
 type sysfs_wigig, fs_type, sysfs_type;
+type wigignpt_socket, file_type, data_file_type;
 
 # wigig_hostapd
 type wigig_hostapd_socket, file_type, data_file_type;
@@ -294,3 +302,8 @@ type sysfs_msm_power, fs_type, sysfs_type;
 type qvop-daemon_data_file, file_type, data_file_type;
 
 type sysfs_fm, sysfs_type, fs_type;
+# /data/vendor/tombstones/ file
+type vendor_tombstone_data_file, file_type, data_file_type;
+
+# SFS listener data file
+type data_tzstorage_file, file_type, data_file_type;

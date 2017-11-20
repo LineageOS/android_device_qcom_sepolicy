@@ -27,3 +27,6 @@
 
 # allow untrusted apps to access hal_perf
 hal_client_domain(untrusted_app_25, hal_perf);
+
+# allow untrusted apps to access hal_iop
+hal_client_domain(untrusted_app_25, hal_iop);

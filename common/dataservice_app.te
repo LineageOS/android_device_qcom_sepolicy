@@ -28,7 +28,6 @@
 set_prop(dataservice_app, sys_usb_tethering_prop)
 
 allow dataservice_app sysfs_data:file r_file_perms;
-allow dataservice_app ipa_dev:chr_file rw_file_perms;
 
 userdebug_or_eng(`
   diag_use(dataservice_app)

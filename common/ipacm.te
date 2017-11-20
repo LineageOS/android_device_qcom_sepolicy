@@ -8,6 +8,8 @@ init_daemon_domain(ipacm-diag)
 
 # associate netdomain to use for accessing internet sockets
 net_domain(ipacm)
+# ipacm to become hal_tetheroffload_server
+hal_server_domain(ipacm, hal_tetheroffload)
 
 userdebug_or_eng(`
   # Allow using the logging file between ipacm and ipacm-diag
@@ -28,11 +30,14 @@ allow ipacm ipacm:{
 } create_socket_perms_no_ioctl;
 
 # Allow creating and modifying the PID file
-allow ipacm ipacm_data_file:dir w_dir_perms;
-allow ipacm ipacm_data_file:file create_file_perms;
+allow ipacm ipa_vendor_data_file:dir w_dir_perms;
+allow ipacm ipa_vendor_data_file:file create_file_perms;
+
+# Allow receiving netlink_netfilter_socket messages
+allow ipacm ipacm:netlink_netfilter_socket create_socket_perms_no_ioctl;
 
 # To register ipacm to hwbinder
-add_hwservice(ipacm, hal_ipacm_hwservice)
+add_hwservice(ipacm, hal_tetheroffload_hwservice)
 hwbinder_use(ipacm)
 get_prop(ipacm, hwservicemanager_prop)
 binder_call(ipacm, system_server)

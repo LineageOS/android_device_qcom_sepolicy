@@ -85,3 +85,13 @@ get_prop($1, hwservicemanager_prop)
 typeattribute $1 $2_server;
 typeattribute $1 $2;
 ')
+
+#####################################
+# qdma_file_socket(clientdomain)
+# Allow client domain to connecto and send
+# via a local socket to the qdma domain.
+define(`qdma_file_socket', `
+allow $1 qdma_socket:dir r_dir_perms;
+allow $1 qdma_socket:sock_file { read getattr write };
+allow $1 qdma_app:unix_stream_socket { connectto };
+')

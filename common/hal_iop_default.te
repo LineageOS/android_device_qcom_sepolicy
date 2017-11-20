@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type hal_iop_default, domain, mlstrustedsubject;
-hal_server_domain(hal_iop_default, hal_iop)
+hal_server_domain_bypass(hal_iop_default, hal_iop)
 
 type hal_iop_default_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_iop_default)
@@ -42,16 +42,26 @@ allow hal_iop_client hal_iop_hwservice:hwservice_manager find;
 allow hal_iop_default proc:file rw_file_perms;
 
 #Allow Access for /data/vendor/iop
-allow hal_iop iop_data_file:dir rw_dir_perms;
-allow hal_iop iop_data_file:file create_file_perms;
+allow hal_iop_default iop_data_file:dir rw_dir_perms;
+allow hal_iop_default iop_data_file:file create_file_perms;
 
-#Allow access for /data/app
+#Allow access for /data/data
 allow hal_iop_default app_data_file:dir r_dir_perms;
 allow hal_iop_default app_data_file:file r_file_perms ;
 
+#Allow access for /data/app
+allow hal_iop_default apk_data_file:dir r_dir_perms;
+allow hal_iop_default apk_data_file:file r_file_perms ;
 
+#Allow access for /data/app/oat
+allow hal_iop_default dalvikcache_data_file:dir r_dir_perms;
+allow hal_iop_default dalvikcache_data_file:file r_file_perms ;
 
-allow hal_iop self:capability {
+#Allow access for /data/app/oat
+allow hal_iop_default system_data_file:dir r_dir_perms;
+allow hal_iop_default system_data_file:file r_file_perms ;
+
+allow hal_iop_default self:capability {
       dac_override  # for database operations
       dac_read_search # For database operations
 };
