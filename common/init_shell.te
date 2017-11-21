@@ -116,6 +116,9 @@ set_prop(qti_init_shell, reschedule_service_prop)
 
 allow qti_init_shell efs_boot_dev:blk_file r_file_perms;
 
+# For setting read_ahead_kb
+allow qti_init_shell sysfs_mmc_host:file write;
+
 # For hci_comm_init
 allow qti_init_shell { serial_device userdebug_or_eng(`qdss_device') }:chr_file rw_file_perms;
 
