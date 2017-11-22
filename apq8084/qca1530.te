@@ -32,7 +32,6 @@ init_daemon_domain(qca1530)
 
 userdebug_or_eng(`
   domain_auto_trans(shell, qca1530_exec, qca1530)
-  domain_auto_trans(adbd, qca1530_exec, qca1530)
 ')
 
 qmux_socket(qca1530)
