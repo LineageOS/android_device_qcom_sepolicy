@@ -92,4 +92,7 @@ userdebug_or_eng(`
   allow priv_app qti-testscripts:binder { transfer call };
   allow surfaceflinger qti-testscripts:binder { transfer call };
   allow system_server qti-testscripts:fifo_file read;
+  binder_call(platform_app, qti-testscripts)
+  binder_call(system_app, qti-testscripts)
+
 ')
