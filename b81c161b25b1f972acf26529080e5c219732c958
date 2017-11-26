@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "62e22216_972cf1bd",
+        "filename": "apq8098_latv/init_shell.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2017-11-26T20:47:35Z",
+      "side": 1,
+      "message": "Any reason to move it? having it in the same line reduces chances of confusion when merging in the future",
+      "revId": "b81c161b25b1f972acf26529080e5c219732c958",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fc3997a9_0132eae0",
+        "filename": "msm8952/init_shell.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2017-11-26T20:47:35Z",
+      "side": 1,
+      "message": "derp",
+      "range": {
+        "startLine": 31,
+        "startChar": 36,
+        "endLine": 31,
+        "endChar": 38
+      },
+      "revId": "b81c161b25b1f972acf26529080e5c219732c958",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
