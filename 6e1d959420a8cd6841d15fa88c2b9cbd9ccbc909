@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "f6bc9fe9_dd782240",
+        "filename": "common/system_app.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2017-11-26T20:16:03Z",
+      "side": 1,
+      "message": "Since this is added... see comment bellow.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 29
+      },
+      "revId": "6e1d959420a8cd6841d15fa88c2b9cbd9ccbc909",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dd9c63c8_14e44b84",
         "filename": "common/system_app.te",
         "patchSetId": 2
@@ -13,6 +36,24 @@
       "writtenOn": "2017-11-26T13:21:28Z",
       "side": 1,
       "message": "Could use get_prop() here",
+      "revId": "6e1d959420a8cd6841d15fa88c2b9cbd9ccbc909",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e6b04263_1dd63eee",
+        "filename": "common/system_app.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2017-11-26T20:16:03Z",
+      "side": 1,
+      "message": "It turns out that we should be deleting this line - set_prop implies get_prop: https://github.com/LineageOS/android_system_sepolicy/blob/lineage-15.0/public/te_macros#L288-L292.",
+      "parentUuid": "dd9c63c8_14e44b84",
       "revId": "6e1d959420a8cd6841d15fa88c2b9cbd9ccbc909",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
