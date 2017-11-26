@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dd9c63c8_14e44b84",
+        "filename": "common/system_app.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2017-11-26T13:21:28Z",
+      "side": 1,
+      "message": "Could use get_prop() here",
+      "revId": "6e1d959420a8cd6841d15fa88c2b9cbd9ccbc909",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3c58bfcd_90eaf3e0",
+        "filename": "common/system_server.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2017-11-26T13:21:28Z",
+      "side": 1,
+      "message": "All these props could use getprop()",
+      "revId": "6e1d959420a8cd6841d15fa88c2b9cbd9ccbc909",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
