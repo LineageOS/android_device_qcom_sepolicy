@@ -60,6 +60,24 @@
     },
     {
       "key": {
+        "uuid": "45b0d6b0_5e337cae",
+        "filename": "common/system_app.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2017-11-26T20:36:31Z",
+      "side": 1,
+      "message": "Absolutely true.",
+      "parentUuid": "e6b04263_1dd63eee",
+      "revId": "6e1d959420a8cd6841d15fa88c2b9cbd9ccbc909",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3c58bfcd_90eaf3e0",
         "filename": "common/system_server.te",
         "patchSetId": 2
