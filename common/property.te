@@ -126,3 +126,8 @@ type vendor_system_prop, property_type;
 
 #crash property
 type crash_prop, property_type;
+
+type mmi_prop, property_type;
+
+#imsrcsservice
+type ctl_vendor_imsrcsservice_prop, property_type;

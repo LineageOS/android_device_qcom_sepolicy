@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,24 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type tlocd, domain;
-type tlocd_exec, exec_type, vendor_file_type, file_type;
-
-#init_daemon_domain(tlocd)
-
-# Allow interracting with tlocd directory
-allow tlocd tlocd_data_file:dir create_dir_perms;
-allow tlocd tlocd_data_file:file create_file_perms;
-
-# Allow interracting with qseecom
-allow tlocd tee_device:chr_file rw_file_perms;
-
-# Allow interracting with trust-zone
-r_dir_file(tlocd, firmware_file)
-
-# Allow interracting with nqs fifos
-allow tlocd tlocd_data_file:fifo_file create_file_perms;
-
-#Allow access MODEM
-allow tlocd self:socket create_socket_perms_no_ioctl;
-qmux_socket(tlocd);
+# media_sdm670_version_prop - to choose target version specific media_codecs.xml
+allow qti_init_shell {
+    media_sdm670_version_prop
+}:property_service set;

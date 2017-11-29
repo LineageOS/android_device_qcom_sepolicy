@@ -1,2 +1,6 @@
 genfscon debugfs /regmap u:object_r:qti_debugfs:s0
 genfscon debugfs /asoc u:object_r:qti_debugfs:s0
+genfscon debugfs /ipc_logging/898000.qcom,qup_uart_misc  u:object_r:qti_debugfs:s0
+genfscon debugfs /ipc_logging/898000.qcom,qup_uart_rx    u:object_r:qti_debugfs:s0
+genfscon debugfs /ipc_logging/898000.qcom,qup_uart_tx    u:object_r:qti_debugfs:s0
+genfscon debugfs /ipc_logging/898000.qcom,qup_uart_pwr   u:object_r:qti_debugfs:s0

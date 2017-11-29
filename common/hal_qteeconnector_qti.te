@@ -44,6 +44,9 @@ hal_client_domain(hal_qteeconnector_qti, hal_allocator)
 #allow access to ion device
 allow hal_qteeconnector ion_device:chr_file rw_file_perms;
 
+#allow access to and use of graphics allocator
+hal_client_domain(hal_qteeconnector_qti, hal_graphics_allocator)
+
 #Allow access to tee device
 allow hal_qteeconnector_qti tee_device:chr_file rw_file_perms;
 
@@ -54,6 +57,8 @@ allow hal_qteeconnector firmware_file:file r_file_perms;
 #Allow access to session files
 allow hal_qteeconnector data_qtee_file:dir create_dir_perms;
 allow hal_qteeconnector data_qtee_file:file create_file_perms;
+allow hal_qteeconnector data_qsee_file:dir create_dir_perms;
+allow hal_qteeconnector data_qsee_file:file create_file_perms;
 
 #Allow access to qp_reqcancel socket
 allow hal_qteeconnector tee:unix_dgram_socket sendto;

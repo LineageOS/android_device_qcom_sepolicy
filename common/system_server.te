@@ -165,6 +165,7 @@ allow system_server sysfs_graphics:file rw_file_perms;
 # timerslack_ns
 allow system_server { location_app system_app } :file write;
 allow system_server opengles_prop:file r_file_perms;
+allow system_server graphics_vulkan_prop:file r_file_perms;
 allow system_server qemu_hw_mainkeys_prop:file r_file_perms;
 
 allow system_server hwui_prop:file r_file_perms;
@@ -175,6 +176,7 @@ allow system_server appdomain:file w_file_perms;
 # IPC call for sensor feed
 binder_call(system_server, mm-pp-daemon)
 binder_call(system_server, hal_camera)
+binder_call(system_server, mm-qcamerad)
 
 # Ant ipc
 hal_client_domain(system_server,hal_bluetooth);
@@ -188,6 +190,10 @@ allow system_server { qdma_app_data_file } :dir r_dir_perms;
 
 # allow WIGIG framework hosted in system_server to access wigig_hal
 hal_client_domain(system_server, hal_wigig)
+# allow WIGIG framework to access network performance tuner
+hal_client_domain(system_server, hal_wigig_npt)
+# allow WIGIG framework access to wil6210 sysfs files like thermal_throttling
+allow system_server sysfs_wigig:file rw_file_perms;
 
 # allow system_server to access IOP HAL service
 hal_client_domain(system_server, hal_iop)

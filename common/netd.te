@@ -12,10 +12,6 @@ allow netd wfdservice:fd use;
 #allow netd wfdservice:tcp_socket rw_socket_perms;
 hal_client_domain(netd, wifidisplayhalservice);
 
-# allow to read /data/misc/ipa/tether_stats file
-allow netd ipacm_data_file:dir r_dir_perms;
-allow netd ipacm_data_file:file r_file_perms;
-
 #allow netd to use privileged sock ioctls
 allowxperm netd self: { unix_stream_socket } ioctl priv_sock_ioctls;
 

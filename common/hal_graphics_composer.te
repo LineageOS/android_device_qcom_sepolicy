@@ -67,7 +67,7 @@ allow hal_graphics_composer persist_file:dir r_dir_perms;
 allow hal_graphics_composer oemfs:dir r_dir_perms;
 
 # Allow pps socket access
-#unix_socket_connect(hal_graphics_composer, pps, mm-pp-daemon)
+unix_socket_connect(hal_graphics_composer_default, pps, mm-pp-daemon)
 
 # TBD: remove when dependency on libpowermanager is removed
 #allow hal_graphics_composer power_service:service_manager find;
