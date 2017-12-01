@@ -10,9 +10,6 @@ binder_call(platform_app, secotad)
 
 allow platform_app imsrcs_service:service_manager find;
 
-# Allow NFC service to be found
-allow platform_app nfc_service:service_manager find;
-
 #Allow platform apps to interact with seemp health daemon
 binder_call(platform_app, seemp_health_daemon)
 
