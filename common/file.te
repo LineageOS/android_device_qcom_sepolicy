@@ -12,7 +12,7 @@ type pps_socket, file_type;
 
 # Define cnd socket and data file type
 type cnd_socket, file_type, mlstrustedobject;
-type cnd_data_file, file_type;
+type cnd_data_file, file_type, data_file_type;
 
 # Define dpmd data file type
 #type dpmd_socket, file_type;
@@ -34,7 +34,7 @@ type persist_file, file_type;
 type persist_bluetooth_file, file_type;
 type persist_data_file, file_type;
 type persist_drm_file, file_type;
-type data_qsee_file, file_type;
+type data_qsee_file, file_type, data_file_type;
 type data_qtee_file, file_type, data_file_type;
 type persist_misc_file, file_type;
 type persist_bms_file, file_type;
@@ -85,7 +85,7 @@ type sysfs_spmi_dev, sysfs_type, fs_type;
 type sysfs_mpdecision, fs_type, sysfs_type;
 type sysfs_rqstats, fs_type, sysfs_type;
 type sysfs_cpu_online, fs_type, sysfs_type;
-type mpctl_socket, file_type, mlstrustedobject;
+type mpctl_socket, file_type, mlstrustedobject, data_file_type;
 type mpctl_data_file, file_type, data_file_type;
 
 type sysfs_devfreq, fs_type, sysfs_type;
@@ -107,7 +107,7 @@ type iop_data_file, file_type, data_file_type;
 type spss_data_file, file_type, data_file_type;
 
 #mm-qcamera-daemon socket
-type camera_socket, file_type;
+type camera_socket, file_type, data_file_type;
 
 #Socket node needed by ims_data daemon
 type ims_socket, file_type;
@@ -123,7 +123,7 @@ type ssgtzd_socket, file_type, mlstrustedobject;
 
 #location file types
 type location_data_file, file_type, data_file_type;
-type location_socket, file_type;
+type location_socket, file_type, data_file_type;
 type location_app_data_file, file_type, data_file_type;
 
 #File types required by mdm-helper
@@ -140,7 +140,7 @@ type sysfs_socinfo, fs_type, sysfs_type;
 type sysfs_usb_uicc, sysfs_type, fs_type;
 
 type qlogd_socket, file_type, mlstrustedobject;
-type qlogd_data_file, file_type;
+type qlogd_data_file, file_type, data_file_type;
 #Defines the files (configs, dumps, etc) used by display processes
 type display_misc_file, file_type, data_file_type;
 
@@ -149,7 +149,7 @@ type persist_display_file, file_type;
 
 # IPA file types
 type ipacm_socket, file_type;
-type ipacm_data_file, file_type;
+type ipacm_data_file, file_type, data_file_type;
 
 # Port-bridge file types
 type port_bridge_data_file, file_type, data_file_type;
@@ -170,7 +170,7 @@ type mmi_socket, file_type;
 
 # hbtp config file
 type hbtp_cfg_file, file_type;
-type hbtp_log_file, file_type;
+type hbtp_log_file, file_type, data_file_type;
 type hbtp_kernel_sysfs, file_type, sysfs_type;
 
 #Define the files written during the operation of usf
@@ -197,8 +197,8 @@ type RIDL_socket, file_type;
 # qti_logkit data files (privileged and public)
 type qti_logkit_priv_data_file, file_type, data_file_type;
 type qti_logkit_pub_data_file, file_type, data_file_type;
-type qti_logkit_priv_socket, file_type;
-type qti_logkit_pub_socket, file_type, mlstrustedobject;
+type qti_logkit_priv_socket, file_type, data_file_type;
+type qti_logkit_pub_socket, file_type, mlstrustedobject, data_file_type;
 
 # used for /dsp files
 type adsprpcd_file, file_type, mlstrustedobject;
@@ -223,8 +223,8 @@ type dynamic_nv_data_file, file_type, data_file_type;
 
 # Wifi Data file
 type wifi_vendor_data_file, file_type, data_file_type;
-type wifi_vendor_wpa_socket, file_type;
-type wifi_vendor_hostapd_socket, file_type;
+type wifi_vendor_wpa_socket, file_type, data_file_type;
+type wifi_vendor_hostapd_socket, file_type, data_file_type;
 
 # wififtmd socket file
 type wififtmd_socket, file_type;
@@ -273,7 +273,7 @@ type sysfs_bond0, fs_type, sysfs_type;
 type sysfs_wigig, fs_type, sysfs_type;
 
 # wigig_hostapd
-type wigig_hostapd_socket, file_type;
+type wigig_hostapd_socket, file_type, data_file_type;
 
 # ea sysfs files
 type sysfs_ea, fs_type, sysfs_type;
