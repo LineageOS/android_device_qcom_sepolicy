@@ -36,3 +36,6 @@ allow rmt_storage kmsg_device:chr_file w_file_perms;
 #sysfs_uio
 r_dir_file(rmt_storage, sysfs_uio)
 r_dir_file(rmt_storage, sysfs_uio_file)
+
+#sysfs_ssr
+r_dir_file(rmt_storage, sysfs_ssr)
