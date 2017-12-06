@@ -39,3 +39,4 @@ get_prop(domain, vendor_security_patch_level_prop)
 get_prop(domain, public_vendor_default_prop)
 
 allow domain qti_debugfs:dir search;
+allow domain kgsl_debugfs:dir search;
