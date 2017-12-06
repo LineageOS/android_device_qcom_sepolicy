@@ -321,3 +321,5 @@ type sysfs_poweron_alarm, fs_type, sysfs_type;
 # ship mode sysfs file
 type sysfs_pon_dev, fs_type, sysfs_type;
 
+#kgsl
+type kgsl_debugfs, debugfs_type, fs_type;

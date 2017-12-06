@@ -25,8 +25,9 @@
 # # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#debugfs access to audio
-userdebug_or_eng(`
-allow hal_memtrack_default qti_debugfs:dir r_dir_perms;
-allow hal_memtrack_default qti_debugfs:file rw_file_perms;
-')
+r_dir_file(hal_memtrack_default, kgsl_debugfs);
+
+# Memtrack reads proc/<pid>/cmdline to check if process is surfaceflinger.
+# Grant access if that's the case; don't log denials for other processes.
+allow hal_memtrack_default surfaceflinger:file read;
+dontaudit hal_memtrack_default { domain -surfaceflinger}:file read;

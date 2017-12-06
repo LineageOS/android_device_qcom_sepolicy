@@ -24,3 +24,4 @@ dontaudit domain persist_dpm_prop:file r_file_perms;
 allow domain sysfs_kgsl_gpuclk:file r_file_perms;
 allow domain  sysfs_kgsl_gpuclk:lnk_file r_file_perms;
 allow domain qti_debugfs:dir search;
+allow domain kgsl_debugfs:dir search;
