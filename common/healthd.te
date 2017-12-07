@@ -2,6 +2,7 @@ r_dir_file(healthd, sysfs_battery_supply)
 r_dir_file(healthd, sysfs_usb_supply)
 r_dir_file(healthd, sysfs_thermal);
 r_dir_file(healthd, persist_file);
+r_dir_file(healthd, sysfs_graphics);
 
 #allow healthd read rtc device file
 allow healthd rtc_device:chr_file r_file_perms;
@@ -11,4 +12,7 @@ allow healthd persist_bms_file:file create_file_perms;
 allow healthd {
     sysfs_battery_supply
     sysfs_usb_supply
+    sysfs_graphics
 }:file rw_file_perms;
+
+allow healthd self:capability2 wake_alarm;

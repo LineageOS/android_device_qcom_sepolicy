@@ -85,5 +85,10 @@ qmux_socket(qdmastatsd);
 allow qdmastatsd self:socket create_socket_perms;
 allowxperm qdmastatsd self:socket ioctl msm_sock_ipc_ioctls;
 
+# diag
+userdebug_or_eng(`
+  diag_use(qdmastatsd)
+')
+
 # for dmesg
 #read_logd(qdmastatsd);

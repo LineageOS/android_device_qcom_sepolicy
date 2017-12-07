@@ -16,7 +16,7 @@ wakelock_use(location)
 
 allow location location_data_file:dir create_dir_perms;
 allow location location_data_file:{ file fifo_file } create_file_perms;
-allow location location_data_file:sock_file write;
+allow location location_data_file:sock_file { write unlink };
 allow location location_exec:file x_file_perms;
 allow location location_socket:sock_file create_file_perms;
 allow location self:capability { setuid setgid net_admin net_bind_service };
@@ -30,6 +30,9 @@ unix_socket_connect(location, sensors, sensors)
 allow location sensors_device:chr_file r_file_perms;
 allow location sensors_socket:sock_file rw_file_perms;
 allow location vendor_shell_exec:file rx_file_perms;
+
+unix_socket_connect(location,location,hal_gnss)
+allow location hal_gnss:unix_dgram_socket sendto;
 
 #allow location system_server:unix_stream_socket { read write connectto};
 
@@ -83,3 +86,9 @@ allow location self:udp_socket ioctl;
 allow location wifi_prop:file r_file_perms;
 # Replace this with macro
 allowxperm location self:udp_socket ioctl priv_sock_ioctls;
+
+#Allow access to wake alarm
+allow location self:capability2 wake_alarm;
+
+#access to qdma socket
+qdma_file_socket(location);

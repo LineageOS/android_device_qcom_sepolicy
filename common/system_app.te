@@ -219,11 +219,18 @@ hal_client_domain(system_app, hal_perf)
 allowxperm system_app self:socket ioctl msm_sock_ipc_ioctls;
 allow system_app self:socket ioctl;
 
-hal_client_domain(system_app, hal_alarm_qti);
-
 #allow system app to interact with the esepowermanager
 hal_client_domain(system_app, hal_esepowermanager)
 allow system_app fm_prop:file r_file_perms;
 
 allow system_app vendor_radio_data_file:dir rw_dir_perms;
 allow system_app vendor_radio_data_file:file create_file_perms;
+
+#secureUI
+hal_client_domain(system_app, hal_qdutils_disp);
+hal_client_domain(system_app, hal_tui_comm);
+
+allow system_app graphics_device:chr_file r_file_perms;
+allow system_app graphics_device:dir r_dir_perms;
+
+hal_client_domain(system_app, hal_sensorscalibrate_qti);

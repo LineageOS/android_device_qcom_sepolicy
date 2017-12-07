@@ -32,7 +32,10 @@ init_daemon_domain(hal_gnss_qti)
 
 hal_server_domain(hal_gnss_qti, hal_gnss)
 
-allow hal_gnss_qti location_data_file:dir r_dir_perms;
+allow hal_gnss location_data_file:dir { rw_dir_perms };
+allow hal_gnss location_data_file:sock_file { create unlink };
+allow hal_gnss location:unix_dgram_socket sendto;
+
 unix_socket_connect(hal_gnss, location, location)
 
 netmgr_socket(hal_gnss)

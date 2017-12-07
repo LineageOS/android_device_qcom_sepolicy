@@ -110,7 +110,6 @@
 /sys/devices/virtual/graphics/fb([0-3])+/cec/logical_addr                        u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/cec/rd_msg                              u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/cec/wr_msg                              u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/graphics/fb([0-3])+/connected                               u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/pa                                      u:object_r:sysfs_graphics:s0
 ###################################
 # adding same_process_hal_file

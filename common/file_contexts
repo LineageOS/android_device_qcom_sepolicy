@@ -20,11 +20,7 @@
 /dev/spcom                                      u:object_r:spcom_device:s0
 /dev/sp_kernel                                  u:object_r:skp_device:s0
 /dev/sp_ssr                                     u:object_r:sp_ssr_device:s0
-/dev/sec_nvm_sp_kernel                          u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_jcos                               u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_spiris                             u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_keymaster                          u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_iuicc                              u:object_r:sec_nvm_device:s0
+/dev/sec_nvm_.*                                 u:object_r:sec_nvm_device:s0
 /dev/sp_keymaster                               u:object_r:sp_keymaster_device:s0
 /dev/cryptoapp                                  u:object_r:cryptoapp_device:s0
 /dev/qsee_ipc_irq_spss                          u:object_r:qsee_ipc_irq_spss_device:s0
@@ -134,6 +130,8 @@
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
 /dev/socket/wpa_wigig[0-9]                      u:object_r:wpa_socket:s0
+/dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
+/dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
 
 ###################################
 # System files
@@ -180,6 +178,7 @@
 /(vendor|system/vendor)/bin/init\.qcom\.uicc\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.wifi\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.ims\.sh              u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.can\.sh              u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/qca6234-service.sh              u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/mm-pp-daemon        u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mm-pp-dpps          u:object_r:mm-pp-daemon_exec:s0
@@ -209,6 +208,7 @@
 /(vendor|system/vendor)/bin/qseecomd            u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/bg_daemon           u:object_r:bg_daemon_exec:s0
 /(vendor|system/vendor)/bin/spdaemon            u:object_r:spdaemon_exec:s0
+/(vendor|system/vendor)/bin/sec_nvm             u:object_r:sec_nvm_exec:s0
 /(vendor|system/vendor)/bin/cnss-daemon         u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/hostapd_cli         u:object_r:hostapd_exec:s0
 /(vendor|system/vendor)/bin/adsprpcd            u:object_r:adsprpcd_exec:s0
@@ -231,13 +231,16 @@
 /(vendor|system/vendor)/bin/ssr_setup           u:object_r:ssr_setup_exec:s0
 /(vendor|system/vendor)/bin/subsystem_ramdump   u:object_r:subsystem_ramdump_exec:s0
 /(vendor|system/vendor)/bin/ssr_diag            u:object_r:ssr_diag_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.0-service.widevine   	u:object_r:hal_drm_widevine_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service-qti u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.0-service u:object_r:hal_gnss_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.1-service u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti  u:object_r:hal_bluetooth_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.display\.color@1\.0-service            u:object_r:hal_display_color_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@1\.0-service       u:object_r:hal_perf_default_exec:s0
 /(vendor|system/vendor)/bin/ssgqmigd            u:object_r:ssgqmigd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.iop@1\.0-service        u:object_r:hal_iop_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.iop@2\.0-service        u:object_r:hal_iop_default_exec:s0
 /(vendor|system/vendor)/bin/mlid                u:object_r:mlid_exec:s0
 /(vendor|system/vendor)/bin/ssgtzd              u:object_r:ssgtzd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service u:object_r:hal_esepowermanager_qti_exec:s0
@@ -257,14 +260,13 @@
 /(vendor|system/vendor)/bin/dts_configurator    u:object_r:dtsconfigurator_exec:s0
 /(vendor|system/vendor)/bin/dts_eagle_service   u:object_r:dtseagleservice_exec:s0
 /(vendor|system/vendor)/bin/qti                 u:object_r:qti_exec:s0
-/(vendor|system/vendor)/bin/wcnss_service       u:object_r:wcnss_service_exec:s0
+/(vendor|system/vendor|system)/bin/wcnss_service       u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/hbtp_daemon         u:object_r:hbtp_exec:s0
 /(vendor|system/vendor)/bin/touch_fusion        u:object_r:touchfusion_exec:s0
 /(vendor|system/vendor)/bin/seemp_healthd       u:object_r:seemp_health_daemon_exec:s0
 /(vendor|system/vendor)/bin/sapd                                u:object_r:sapd_exec:s0
 /(vendor|system/vendor)/bin/btnvtool            u:object_r:btnvtool_exec:s0
 /(vendor|system/vendor)/bin/btsnoop                             u:object_r:btsnoop_exec:s0
-/(vendor|system/vendor)/bin/bt_logger                           u:object_r:bt_logger_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /(vendor|system/vendor)/bin/wifidisplayhalservice               u:object_r:wifidisplayhalservice_qti_exec:s0
 /(vendor|system/vendor)/bin/wcnss_filter        u:object_r:wcnss_filter_exec:s0
@@ -283,6 +285,7 @@
 /(vendor|system/vendor)/bin/mcStarter           u:object_r:mcStarter_exec:s0
 /(vendor|system/vendor)/bin/fstman              u:object_r:fstman_exec:s0
 /(vendor|system/vendor)/bin/wigighalsvc         u:object_r:wigighalsvc_exec:s0
+/(vendor|system/vendor)/bin/wigignpt            u:object_r:wigignpt_exec:s0
 /(vendor|system/vendor)/bin/mdtpd               u:object_r:mdtpdaemon_exec:s0
 /(vendor|system/vendor)/bin/wifi_ftmd           u:object_r:wifi_ftmd_exec:s0
 /(vendor|system/vendor)/bin/fingerprint.qcom    u:object_r:fps_hal_exec:s0
@@ -291,10 +294,15 @@
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.0-service     u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/qdmastatsd          u:object_r:qdmastatsd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service      u:object_r:hal_alarm_qti_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.tui_comm@1\.0-service-qti u:object_r:hal_tui_comm_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qdutils_disp@1\.0-service-qti u:object_r:hal_qdutils_disp_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service u:object_r:hal_sensorscalibrate_qti_default_exec:s0
 /(vendor|system/vendor)/bin/imsrcsd             u:object_r:hal_rcsservice_exec:s0
 /(vendor|system/vendor)/bin/vppservice          u:object_r:vppservice_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service u:object_r:hal_qteeconnector_qti_exec:s0
 /(vendor|system/vendor)/bin/fm_qsoc_patches     u:object_r:fm_qsoc_patches_exec:s0
+/(vendor|system/vendor)/bin/tloc_daemon                     u:object_r:tlocd_exec:s0
+/(vendor|system/vendor)/bin/power_off_alarm        u:object_r:power_off_alarm_exec:s0
 
 ###################################
 # sysfs files
@@ -308,7 +316,7 @@
 /sys/devices/msm_otg/power_supply/usb(/.*)?                         u:object_r:sysfs_usb_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/usb(/.*)?        u:object_r:sysfs_usb_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/pc_port(/.*)?    u:object_r:sysfs_usb_supply:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.i2c/i2c-[0-9]+/[0-9]+-[0-9]+/[a-z0-9]+.i2c:qcom,[a-z0-9]+@[0-9]:qcom,smb[0-9]+-charger@[0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_usb_supply:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.i2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/[a-z0-9]+.i2c:qcom,[a-z0-9]+@[a-z0-9]:qcom,smb[0-9]+-charger@[0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_usb_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,usb-pdphy@[0-9]+/usbpd/usbpd[0-9](/.*)?    u:object_r:sysfs_usbpd_device:s0
 /sys/devices/platform/battery_current_limit                         u:object_r:sysfs_thermal:s0
 /sys/devices/qpnp-charger.*/power_supply/battery(/.*)?              u:object_r:sysfs_battery_supply:s0
@@ -375,6 +383,9 @@
 /sys/devices/virtual/graphics/fb([0-3])+/modes                      u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/edid_raw_data              u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/packpattern                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/dyn_pu                     u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/ad                         u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/pp_bl_event                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/rotator/mdss_rotator/caps                      u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/workqueue/kgsl-events/cpumask                  u:object_r:sysfs_kgsl:s0
 /sys/devices/virtual/workqueue/kgsl-events/nice                     u:object_r:sysfs_kgsl:s0
@@ -383,13 +394,18 @@
 /sys/class/graphics/fb([0-3])+/mdp/caps                             u:object_r:sysfs_graphics:s0
 /sys/class/graphics/fb([0-3])+/ad                                   u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[0-9a-z]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-z]+.qcom,spmi:qcom,pmi[0-9]+@[0-9]+:qcom,leds@[a-z0-9]+(/.*)? u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[0-9a-z]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-z]+.qcom,spmi:qcom,pm[0-9a-z]+@[0-9]+:qcom,leds@[a-z0-9]+(/.*)? u:object_r:sysfs_leds:s0
+
 /sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-0/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,haptics@c000/leds/vibrator(/.*)?   u:object_r:sysfs_leds:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/switch/hdmi(/.*)?                              u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary.+[a-z0-9]/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/caps           u:object_r:sysfs_graphics:s0
 /sys/devices/soc/[a-z0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:sysfs_graphics:s0
+/sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/bw_mode_bitmap            u:object_r:sysfs_graphics:s0
+/sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/caps                      u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_cam/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/caps       u:object_r:sysfs_graphics:s0
@@ -399,7 +415,7 @@
 /sys/devices/msm_hsic_host/host_ready                               u:object_r:sysfs_hsic_host_rdy:s0
 /sys/bus/esoc(/.*)?                                                 u:object_r:sysfs_esoc:s0
 /sys/bus/msm_subsys(/.*)?                                           u:object_r:sysfs_ssr:s0
-/sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-]+/subsys[0-9]+/name         u:object_r:sysfs_ssr:s0
+/sys/devices(/platform)?/soc/(([a-z0-9\.:]+,)+[a-z0-9\-\_]+/)+subsys[0-9]+/name         u:object_r:sysfs_ssr:s0
 /sys/module/ccid_bridge(/.*)?                                       u:object_r:sysfs_usb_uicc:s0
 /sys/bus/msm_subsys/devices/subsys0/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/bus/msm_subsys/devices/subsys1/restart_level                   u:object_r:sysfs_ssr_toggle:s0
@@ -428,9 +444,17 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/clkscale_enable        u:object_r:sysfs_scsi_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+/host0/scsi_host/host0(/.*)?  u:object_r:sysfs_scsi_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
+/sys/devices(/platform)?/soc(.[0-9])?/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
+/sys/devices(/platform)?/soc(.[0-9])?/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
+/sys/devices(/platform)?/soc(.[0-9])?/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk u:object_r:sysfs_kgsl_gpuclk:s0
 
-/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:sysfs_mmc_host:s0
+/sys/devices(/platform)?/soc(.[0-9])?/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:sysfs_mmc_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/bdi/read_ahead_kb u:object_r:sysfs_mmc_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/queue/read_ahead_kb u:object_r:sysfs_mmc_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/mmcblk0rpmb/bdi/read_ahead_kb u:object_r:sysfs_mmc_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/mmcblk0rpmb/queue/read_ahead_kb u:object_r:sysfs_mmc_host:s0
+/sys/devices/virtual/bdi/[0-9]+:[0-9]+/read_ahead_kb u:object_r:sysfs_mmc_host:s0
+
 /sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
 /sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
 /sys/kernel/mm/ksm(/.*)?                                            u:object_r:sysfs_memory:s0
@@ -461,19 +485,21 @@
 /data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
 /data/misc/qvop(/.*)?                                               u:object_r:qvop-daemon_data_file:s0
 /data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
-/data/vendor/time(/.*)?                                             u:object_r:time_data_file:s0
+/data/time(/.*)?                                                    u:object_r:time_data_file:s0
 /data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
 /data/vendor/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
 /data/vendor/iop(/.*)?                                                u:object_r:iop_data_file:s0
 /data/vendor/lm(/.*)?                                               u:object_r:lm_data_file:s0
 /data/vendor/display(/.*)?                                          u:object_r:display_misc_file:s0
-/data/vendor/ipa(/.*)?                                              u:object_r:ipacm_data_file:s0
+/data/vendor/ipa(/.*)?                                              u:object_r:ipa_vendor_data_file:s0
 /data/misc/qsee(/.*)?                                               u:object_r:data_qsee_file:s0
 /data/vendor/qtee(/.*)?                                             u:object_r:data_qtee_file:s0
 /data/misc/spss(/.*)?                                               u:object_r:spss_data_file:s0
 /data/vendor/location(/.*)?                                         u:object_r:location_data_file:s0
 /data/vendor/location/mq/location-mq-s                              u:object_r:location_socket:s0
 /data/vendor/location/mq/alarm_svc                                  u:object_r:location_socket:s0
+/data/vendor/location/xtra/socket_xtra                              u:object_r:location_socket:s0
+/data/vendor/location/xtra/socket_hal_xtra                          u:object_r:location_socket:s0
 /data/FTM_AP(/.*)?                                                  u:object_r:mmi_data_file:s0
 /data/(misc|vendor)/hbtp(/.*)?                                      u:object_r:hbtp_log_file:s0
 /data/misc/qlogd(/.*)?                                              u:object_r:qlogd_data_file:s0
@@ -507,7 +533,9 @@
 /data/vendor/camera(/.*)?                                           u:object_r:vendor_camera_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
 /data/vendor/media(/.*)?                                            u:object_r:media_data_file:s0
+/data/vendor/tloc(/.*)?                                     u:object_r:tlocd_data_file:s0
 /sys/kernel/debug/ipc_logging(/.*)?                                 u:object_r:qti_debugfs:s0
+/data/vendor/tzstorage(/.*)?                                        u:object_r:data_tzstorage_file:s0
 
 ###################################
 # persist files
@@ -550,6 +578,7 @@
 ###################################
 # vendor files
 #
+/data/vendor/tombstones(/.*)?                                      u:object_r:vendor_tombstone_data_file:s0
 /data/vendor/misc/audio(/.*)?   u:object_r:audio_data_file:s0
 /vendor/package(/.*)?                                               u:object_r:regionalization_file:s0
 /vendor/package(/.*)?/overlay(/.*)?                                 u:object_r:vendor_overlay_file:s0
@@ -601,6 +630,8 @@
 /vendor/lib(64)?/libcdsprpc\.so             u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libsdsprpc\.so             u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libdiag\.so                u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libqvrservice_client\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libqvrcamera_client\.so    u:object_r:same_process_hal_file:s0
 
 ###################################
 # firmware images
@@ -611,3 +642,8 @@
 /firmware/image(/.*)?                                               u:object_r:firmware_file:s0
 
 /(vendor|system/vendor)/bin/grep                                    u:object_r:vendor_toolbox_exec:s0
+##################################
+#vendor toolbox
+#
+/(vendor|system/vendor)/bin/toolbox_vendor                          u:object_r:vendor_toolbox_exec:s0
+/(vendor|system/vendor)/bin/grep_vendor                             u:object_r:vendor_toolbox_exec:s0

@@ -33,8 +33,8 @@ allow hbtp self:netlink_kobject_uevent_socket { create read setopt bind };
 # Allow the service to access wakelock sysfs
 allow hbtp sysfs_wake_lock:file r_file_perms;
 
-# Allow the service to change to system from root
-allow hbtp self:capability { setgid setuid };
+# Allow the service to change to system from root and have sys_nice capability
+allow hbtp self:capability { setgid setuid sys_nice };
 
 # Allow load touch driver as touchPD
 r_dir_file(hbtp, adsprpcd_file)
