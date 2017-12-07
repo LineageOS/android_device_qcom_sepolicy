@@ -1,11 +1,11 @@
-# r_dir_file(domain, sysfs_socinfo);
-# r_dir_file(domain, sysfs_esoc);
-# r_dir_file(domain, sysfs_ssr);
+r_dir_file({domain - isolated_app}, sysfs_socinfo);
+r_dir_file({domain - isolated_app}, sysfs_esoc);
+r_dir_file({domain - isolated_app}, sysfs_ssr);
 
 dontaudit domain kernel:system module_request;
 
 # Allow all domains read access to sysfs_thermal
-# r_dir_file(domain, sysfs_thermal);
+r_dir_file({domain - isolated_app}, sysfs_thermal);
 
 # Allow domain to read /vendor -> /system/vendor
 allow domain system_file:lnk_file getattr;
