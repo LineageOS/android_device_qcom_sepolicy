@@ -102,6 +102,8 @@ hal_client_domain(hal-server, hal_perf)
 #allow acess to wcd_cpe
 allow hal-server sysfs_audio:file rw_file_perms;
 allow hal-server sysfs_audio:dir r_dir_perms;
+#allow access to adsp boot for peripheral manager
+allow hal-server sysfs_boot:file w_file_perms ;
 
 ##########################
 # sensors  services
