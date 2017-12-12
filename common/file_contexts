@@ -303,8 +303,6 @@
 /(vendor|system/vendor)/bin/fm_qsoc_patches     u:object_r:fm_qsoc_patches_exec:s0
 /(vendor|system/vendor)/bin/tloc_daemon         u:object_r:tlocd_exec:s0
 /(vendor|system/vendor)/bin/power_off_alarm      u:object_r:power_off_alarm_exec:s0
-#HAL Server
-/(vendor|system/vendor)/hw/hal-server             u:object_r:hal-server_exec:s0
 
 ###################################
 # sysfs files
