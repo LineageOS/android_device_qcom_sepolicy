@@ -48,6 +48,7 @@ userdebug_or_eng(`
   diag_use(hal_rcsservice)
 ')
 
+allow hal_rcsservice self:capability2 wake_alarm;
 allow hal_rcsservice sysfs_data:file r_file_perms;
 binder_call(hal_rcsservice, dataservice_app)
 get_prop(hal_rcsservice, persist_dpm_prop)
