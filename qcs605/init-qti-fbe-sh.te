@@ -24,13 +24,12 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 type init-qti-fbe-sh, domain;
 type init-qti-fbe-sh_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(init-qti-fbe-sh)
 
-not_full_treble(`allow init-qti-fbe-sh shell_exec:file rx_file_perms;')
+allow init-qti-fbe-sh vendor_shell_exec:file rx_file_perms;
 
 # execute toybox/toolbox
-not_full_treble(`allow init-qti-fbe-sh toolbox_exec:file rx_file_perms;')
+allow init-qti-fbe-sh vendor_toolbox_exec:file rx_file_perms;
