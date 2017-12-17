@@ -198,3 +198,5 @@ hal_client_domain(system_server, hal_wifilearner)
 r_dir_file(system_server, kgsl_debugfs);
 
 allow system_server { system_app_data_file bluetooth_data_file nfc_data_file radio_data_file shell_data_file app_data_file }:file map;
+
+allow system_server qti_debugfs:file r_file_perms;
