@@ -191,3 +191,5 @@ get_prop(system_server, vendor_mirrorlink_prop)
 
 # allow system server to get vendor_audio_prop
 get_prop(system_server, vendor_audio_prop)
+
+allow system_server qti_debugfs:file r_file_perms;
