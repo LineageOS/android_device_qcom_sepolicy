@@ -13,14 +13,6 @@ allow qti {
 
 qmux_socket(qti)
 
-allow qti self:capability {
-    net_admin
-    net_raw
-    fsetid
-    sys_module
-    dac_override
-};
-
 allow qti self:{
     netlink_socket
     socket
@@ -31,9 +23,10 @@ allow qti self:socket ioctl;
 allowxperm qti self:socket ioctl msm_sock_ipc_ioctls;
 allow qti { vendor_shell_exec system_file }:file rx_file_perms;
 
+allow qti sysfs_data:file r_file_perms;
+
 #diag
 userdebug_or_eng(`
     diag_use(qti)
     allow qti sysfs:file r_file_perms;
-    allow qti sysfs_data:file r_file_perms;
 ')
