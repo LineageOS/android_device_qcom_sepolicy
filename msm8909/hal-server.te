@@ -33,6 +33,7 @@ typeattribute hal-server  hal_audio_server;
 typeattribute hal-server  hal_sensors_server;
 typeattribute hal-server  hal_broadcastradio_server;
 typeattribute hal-server  hal_drm_server;
+typeattribute hal-server  hal_drm;
 typeattribute hal-server  hal_configstore_client;
 
 init_daemon_domain(hal-server)
@@ -136,6 +137,9 @@ allow hal-server media_data_file:dir create_dir_perms;
 allow hal-server media_data_file:file create_file_perms;
 
 allow hal-server sysfs:file r_file_perms;
+
+allow hal-server serialno_prop:file read;
+allow hal-server untrusted_app_25:fd use;
 
 ##########################
 # Config Store
