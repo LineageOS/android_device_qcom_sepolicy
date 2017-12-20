@@ -214,6 +214,7 @@ allow system_app mmi_data_file:file create_file_perms;
 binder_call( system_app, update_engine )
 
 hal_client_domain(system_app, hal_perf)
+hal_client_domain(system_app, hal_iop)
 
 #allow system_app access ioctl
 allowxperm system_app self:socket ioctl msm_sock_ipc_ioctls;
