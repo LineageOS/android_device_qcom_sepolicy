@@ -293,3 +293,6 @@ type sysfs_msm_power, fs_type, sysfs_type;
 type qvop-daemon_data_file, file_type, data_file_type;
 
 type sysfs_fm, sysfs_type, fs_type;
+
+# for adsp to load /sys/kernel/b ot_adsp/boot
+type sysfs_boot_adsp, sysfs_type, fs_type;
