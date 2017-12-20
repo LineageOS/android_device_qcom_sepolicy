@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-allow fsck persist_block_device:blk_file { ioctl open read write };
+allow fsck persist_block_device:blk_file rw_file_perms;
