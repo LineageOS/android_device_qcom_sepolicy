@@ -22,6 +22,30 @@
       "revId": "a85d2340a47a26a900965742d7154534268eb196",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3eb3775d_4368b51e",
+        "filename": "common/zygote.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2017-12-21T22:57:54Z",
+      "side": 1,
+      "message": "It already did in 8.0.",
+      "parentUuid": "5381705f_f0fe9dc7",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 33
+      },
+      "revId": "a85d2340a47a26a900965742d7154534268eb196",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
