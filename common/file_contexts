@@ -132,6 +132,7 @@
 /dev/socket/wpa_wigig[0-9]                      u:object_r:wpa_socket:s0
 /dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
 /dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
+/dev/socket/mmi                                 u:object_r:mmi_socket:s0
 
 ###################################
 # System files
@@ -183,6 +184,9 @@
 /(vendor|system/vendor)/bin/mm-pp-daemon        u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mm-pp-dpps          u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mmi                 u:object_r:mmi_exec:s0
+/(vendor|system/vendor)/bin/mmid                u:object_r:mmi_exec:s0
+/(vendor|system/vendor)/bin/ftmdaemon           u:object_r:mmi_exec:s0
+/(vendor|system/vendor)/bin/mm-audio-ftm        u:object_r:mmi_exec:s0
 /(vendor|system/vendor)/bin/mpdecision          u:object_r:mpdecision_exec:s0
 /(vendor|system/vendor)/bin/gamed               u:object_r:gamed_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance  u:object_r:msm_irqbalanced_exec:s0
@@ -303,6 +307,7 @@
 /(vendor|system/vendor)/bin/fm_qsoc_patches     u:object_r:fm_qsoc_patches_exec:s0
 /(vendor|system/vendor)/bin/tloc_daemon         u:object_r:tlocd_exec:s0
 /(vendor|system/vendor)/bin/power_off_alarm      u:object_r:power_off_alarm_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service      u:object_r:hal_factory_qti_default_exec:s0
 
 ###################################
 # sysfs files
@@ -476,6 +481,7 @@
 /sys/module/lpm_stats(/.*)?                                         u:object_r:sysfs_msm_stats:s0
 /sys/module/lpm_levels(/.*)?                                        u:object_r:sysfs_msm_power:s0
 /sys/module/radio_iris_transport/parameters/fmsmd_set               u:object_r:sysfs_fm:s0
+/sys/module/qpnp_power_on/parameters/ship_mode_en                   u:object_r:sysfs_pon_dev:s0
 /sys/module/app_setting/parameters/lib_name                         u:object_r:sysfs_lib:s0
 /sys/module/process_reclaim(/.*)?  u:object_r:sysfs_process_reclaim:s0
 /sys/module/qpnp_rtc/parameters/poweron_alarm                       u:object_r:sysfs_poweron_alarm:s0
