@@ -1,0 +1,4 @@
+# Access to perflock
+allow system_server mpctl_socket:dir r_dir_perms;
+unix_socket_send(system_server, mpctl, perfd)
+unix_socket_connect(system_server, mpctl, perfd)
