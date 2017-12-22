@@ -1,0 +1,2 @@
+# Access to time_daemon
+allow system_app time_daemon:unix_stream_socket connectto;
