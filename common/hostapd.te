@@ -57,3 +57,5 @@ allow hostapd wigighalsvc:unix_dgram_socket sendto;
 # allow hostapd to attach to fstman socket
 allow hostapd wpa_socket:dir r_dir_perms;
 allow hostapd wpa_socket:sock_file rw_file_perms;
+allow hostapd wifi_vendor_wpa_socket:dir r_dir_perms;
+allow hostapd wifi_vendor_wpa_socket:sock_file rw_file_perms;
