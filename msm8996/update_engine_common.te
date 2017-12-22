@@ -24,12 +24,17 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type init-qti-fbe-sh, domain;
-type init-qti-fbe-sh_exec, exec_type, file_type, vendor_file_type;
 
-init_daemon_domain(init-qti-fbe-sh)
+# Allow update_engine and update_engine_sideload (recovery) read/write on the
+# device-specific partitions it should update.
+allow update_engine_common {
+	custom_ab_block_device
+	xbl_block_device
+	ssd_device
+	modem_block_device
+        root_block_device
+        system_block_device
+        boot_block_device
+        mdtp_device
+}:blk_file rw_file_perms;
 
-allow init-qti-fbe-sh vendor_shell_exec:file rx_file_perms;
-
-# execute toybox/toolbox
-allow init-qti-fbe-sh vendor_toolbox_exec:file rx_file_perms;

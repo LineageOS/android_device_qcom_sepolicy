@@ -93,6 +93,7 @@ type mpctl_data_file, file_type, data_file_type;
 type lm_data_file, file_type, data_file_type;
 
 type sysfs_devfreq, fs_type, sysfs_type;
+type sysfs_devfreq_l3cdsp, fs_type, sysfs_type;
 type sysfs_mmc_host, fs_type, sysfs_type;
 type sysfs_scsi_host, fs_type, sysfs_type;
 type sysfs_cpu_boost, fs_type, sysfs_type;
@@ -267,6 +268,9 @@ type qti_debugfs, fs_type, debugfs_type;
 
 # vendor radio files
 type vendor_radio_data_file, file_type, data_file_type;
+
+#uio sysfs
+type sysfs_uio_file, fs_type, sysfs_type;
 
 #irq balance sysfs type
 type sysfs_irqbalance , sysfs_type, fs_type;

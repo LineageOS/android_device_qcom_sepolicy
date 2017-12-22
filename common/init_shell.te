@@ -85,6 +85,7 @@ set_prop(qti_init_shell, ctl_netmgrd_prop)
 set_prop(qti_init_shell, ctl_port-bridge_prop)
 set_prop(qti_init_shell, sdm_idle_time_prop)
 set_prop(qti_init_shell, sf_lcd_density_prop)
+set_prop(qti_init_shell, dalvik_prop)
 set_prop(qti_init_shell, scr_enabled_prop)
 set_prop(qti_init_shell, opengles_prop)
 set_prop(qti_init_shell, mdm_helper_prop)
@@ -221,6 +222,8 @@ allow qti_init_shell rmnet_mux_prop:file r_file_perms;
 
 r_dir_file(qti_init_shell, sysfs_devfreq)
 allow qti_init_shell sysfs_devfreq:file w_file_perms;
+r_dir_file(qti_init_shell, sysfs_devfreq_l3cdsp)
+allow qti_init_shell sysfs_devfreq_l3cdsp:file setattr;
 
 allow qti_init_shell vendor_radio_data_file:dir create_dir_perms;
 allow qti_init_shell vendor_radio_data_file:file create_file_perms;
