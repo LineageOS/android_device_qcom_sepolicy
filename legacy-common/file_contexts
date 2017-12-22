@@ -6,5 +6,10 @@
 /sys/devices(/platform)?/soc\.0/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary\.[0-9]+/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc\.0/[a-z0-9]+.qcom,mdss_mdp/caps   u:object_r:sysfs_graphics:s0
 
+# Perfd
+/(vendor|system/vendor)/bin/perfd     u:object_r:perfd_exec:s0
+/data/system/perfd(/.*)?              u:object_r:mpctl_data_file:s0
+/dev/socket/perfd                     u:object_r:mpctl_socket:s0
+
 # Subsys restart
 /sys/devices(/platform)?/soc\.0/[a-z0-9\.:]+,[a-z0-9\-]+/subsys[0-9]+/name    u:object_r:sysfs_ssr:s0
