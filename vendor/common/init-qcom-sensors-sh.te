@@ -37,6 +37,7 @@ r_dir_file(init-qcom-sensors-sh, persist_file)
 r_dir_file(init-qcom-sensors-sh, persist_sensors_file)
 
 allow init-qcom-sensors-sh persist_sensors_file:file setattr;
+allow init-qcom-sensors-sh persist_sensors_file:dir setattr;
 allow init-qcom-sensors-sh sensors_device:chr_file r_file_perms;
 
 set_prop(init-qcom-sensors-sh, sensors_prop)
