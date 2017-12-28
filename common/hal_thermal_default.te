@@ -27,3 +27,6 @@
 
 # access to /proc/stat
 allow hal_thermal  proc_stat:file r_file_perms;
+
+#access to connect thermal-engine socket.
+unix_socket_connect(hal_thermal, thermal, thermal-engine);
