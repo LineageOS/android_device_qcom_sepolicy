@@ -110,6 +110,9 @@ type bservice_prop, property_type;
 #Delayed Service Reschedule property
 type reschedule_service_prop, property_type;
 
+#mdlog property
+type diag_mdlog_prop, property_type;
+
 #boot mode property
 type boot_mode_prop, property_type;
 #properties for nfc
