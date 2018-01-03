@@ -4,13 +4,13 @@ LOCAL_PATH:= $(call my-dir)
 BOARD_SEPOLICY_DIRS := \
        $(BOARD_SEPOLICY_DIRS) \
        $(LOCAL_PATH) \
-       $(LOCAL_PATH)/common \
-       $(LOCAL_PATH)/ssg \
+       $(LOCAL_PATH)/vendor/common \
+       $(LOCAL_PATH)/vendor/ssg \
        $(LOCAL_PATH)/$(TARGET_BOARD_PLATFORM)
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 BOARD_SEPOLICY_DIRS += \
-       $(LOCAL_PATH)/test
+       $(LOCAL_PATH)/vendor/test
 endif
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
