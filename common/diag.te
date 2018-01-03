@@ -42,4 +42,6 @@ userdebug_or_eng(`
   allow diag fuse:file r_file_perms;
   r_dir_file(diag, storage_file)
   r_dir_file(diag, mnt_user_file)
+  allow diag media_rw_data_file:file r_file_perms;
+  r_dir_file(diag, sdcardfs)
 ')

@@ -23,6 +23,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 wc_transport.              u:object_r:bluetooth_prop:s0
+persist.vendor.bt.         u:object_r:bluetooth_prop:s0
 sys.usb_uicc.              u:object_r:uicc_prop:s0
 dolby.audio.               u:object_r:audio_prop:s0
 vendor.ims.                u:object_r:qcom_ims_prop:s0
@@ -31,6 +32,7 @@ hw.fm.                     u:object_r:fm_prop:s0
 sys.usf.                   u:object_r:usf_prop:s0
 ro.qc.sdk.us.                 u:object_r:usf_prop:s0
 radio.atfwd.               u:object_r:radio_prop:s0
+persist.radio.atfwd.       u:object_r:radio_prop:s0
 ctl.qmuxd                  u:object_r:ctl_qmuxd_prop:s0
 ctl.netmgrd                u:object_r:ctl_netmgrd_prop:s0
 ctl.port-bridge            u:object_r:ctl_port-bridge_prop:s0

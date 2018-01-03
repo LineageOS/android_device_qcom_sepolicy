@@ -69,7 +69,7 @@ binder_call(mm-qcamerad, mmi);
 #Allow camera to access laser nodes
 allow mm-qcamerad input_device:dir r_dir_perms;
 allow mm-qcamerad input_device:chr_file r_file_perms;
-allow mm-qcamerad sysfs:file rw_file_perms;
+allow mm-qcamerad sysfs_laser:file rw_file_perms;
 
 hal_client_domain(mm-qcamerad, hal_graphics_allocator)
 allow mm-qcamerad ion_device:chr_file rw_file_perms;

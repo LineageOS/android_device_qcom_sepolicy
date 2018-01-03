@@ -52,10 +52,15 @@ allow hal_audio firmware_file:file r_file_perms;
 #Split A2dp specific
 binder_call(hal_audio,bluetooth)
 
+#to read bt props
+get_prop(hal_audio, bluetooth_prop)
+
 #for perf hal call
 hal_client_domain(hal_audio_default, hal_perf)
 #allow acess to wcd_cpe
 allow hal_audio sysfs_audio:file rw_file_perms;
 allow hal_audio sysfs_audio:dir r_dir_perms ;
+#allow access to adsp boot for peripheral manager
+allow hal_audio sysfs_boot:file w_file_perms ;
 #Rules for audioserver to talk to peripheral manager
 use_per_mgr(hal_audio);

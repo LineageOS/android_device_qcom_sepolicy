@@ -58,6 +58,9 @@ allow cameraserver system_file:dir r_dir_perms;
 allow cameraserver qdsp_device:chr_file r_file_perms;
 allow cameraserver camera_prop:file r_file_perms;
 
+#allow cameraserver to access /dsp
+r_dir_file(cameraserver, adsprpcd_file);
+
 #need this in full_treble for camera perview
 allow cameraserver hal_allocator:fd use;
 

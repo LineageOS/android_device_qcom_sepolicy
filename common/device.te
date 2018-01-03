@@ -152,3 +152,6 @@ type modem_block_device, dev_type;
 
 #define bgcom char device
 type bg_daemon_device, dev_type;
+
+#define blkio device
+type blkio_device, dev_type;
