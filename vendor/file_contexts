@@ -115,7 +115,8 @@
 
 # files in /vendor
 /vendor/firmware(/.*)?          u:object_r:vendor_firmware_file:s0
-/vendor/bin/hw/android\.hardware\.dumpstate@1\.0-service.crosshatch      u:object_r:hal_dumpstate_impl_exec:s0
+/bt_firmware(/.*)?              u:object_r:bt_firmware_file:s0
+
 /vendor/bin/hw/android\.hardware\.vr@1\.0-service.crosshatch      u:object_r:hal_vr_default_exec:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.fpc u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/perfd               u:object_r:perfd_exec:s0
@@ -137,8 +138,6 @@
 /vendor/bin/netmgrd             u:object_r:netmgrd_exec:s0
 /vendor/bin/port-bridge         u:object_r:port-bridge_exec:s0
 /vendor/bin/qti                 u:object_r:qti_exec:s0
-/vendor/bin/ramdump             u:object_r:ramdump_exec:s0
-/vendor/bin/smlog_dump          u:object_r:smlog_dump_exec:s0
 /vendor/bin/wcnss_filter        u:object_r:wcnss_filter_exec:s0
 /vendor/bin/loc_launcher        u:object_r:location_exec:s0
 /vendor/bin/lowi-server         u:object_r:location_exec:s0
@@ -151,7 +150,6 @@
 /vendor/bin/ipacm-diag          u:object_r:hal_tetheroffload_default_exec:s0
 /vendor/bin/qmuxd               u:object_r:qmuxd_exec:s0
 /vendor/bin/cnd                 u:object_r:cnd_exec:s0
-/vendor/bin/hw/android\.hardware\.oemlock@1\.0-service               u:object_r:hal_oemlock_default_exec:s0
 /vendor/bin/oemlock_provision   u:object_r:hal_bootctl_default_exec:s0
 /vendor/bin/oemlock-bridge      u:object_r:hal_bootctl_default_exec:s0
 /vendor/bin/hw/android\.hardware\.usb@1\.1-service.crosshatch             u:object_r:hal_usb_default_exec:s0
@@ -172,7 +170,6 @@
 /vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service-qti        u:object_r:hal_gatekeeper_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.gnss@1\.0-service-qti              u:object_r:hal_gnss_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti         u:object_r:hal_bluetooth_default_exec:s0
-/vendor/bin/hw/citadeld                                              u:object_r:citadeld_exec:s0
 
 ###############################################
 # same-process HAL files and their dependencies
