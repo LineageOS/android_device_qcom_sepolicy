@@ -1,26 +1,19 @@
-# Allow firmware_file access to load Non-HLOS images
-r_dir_file(ueventd, firmware_file)
-
-# Allow persist_file access to wcnss bin
-r_dir_file(ueventd, persist_file)
-
-# For wifi to access wifi_data_file
-r_dir_file(ueventd, wifi_data_file)
-
-# For wifi to access wifi_vendor_data_file
-r_dir_file(ueventd, wifi_vendor_data_file)
-
-allow ueventd {
-    { sysfs_type - usermodehelper }
-    sysfs_battery_supply
-    sysfs_thermal
-    sysfs_usb_supply
-    sysfs_socinfo
-    sysfs_data
-    sysfs_kgsl
-}:file w_file_perms;
-
-#allow ueventd mba_debug_dev:blk_file r_file_perms;
-
-# For setting up various WIGIG files
-allow ueventd sysfs_bond0:file rw_file_perms;
+allow ueventd sysfs_thermal:file w_file_perms;
+allow ueventd sysfs_leds:file w_file_perms;
+allow ueventd sysfs_camera:file w_file_perms;
+allow ueventd sysfs_easel:file w_file_perms;
+allow ueventd sysfs_fingerprint:file w_file_perms;
+allow ueventd sysfs_graphics:file w_file_perms;
+allow ueventd sysfs_laser:file w_file_perms;
+allow ueventd sysfs_rmtfs:file w_file_perms;
+allow ueventd sysfs_scsi_devices_0000:file write;
+allow ueventd sysfs_soc:file w_file_perms;
+allow ueventd sysfs_net:file w_file_perms;
+allow ueventd sysfs_msm_subsys:file w_file_perms;
+allow ueventd sysfs_bluetooth_writable:file w_file_perms;
+allow ueventd sysfs_usb_c:file w_file_perms;
+allow ueventd firmware_file:dir search;
+allow ueventd firmware_file:file r_file_perms;
+allow ueventd tmpfs:blk_file getattr;
+allow ueventd persist_file:dir search;
+allow ueventd persist_file:file r_file_perms;

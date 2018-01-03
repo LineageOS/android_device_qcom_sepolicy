@@ -1,19 +1,27 @@
+get_prop(radio, ims_prop)
+userdebug_or_eng(`set_prop(radio, tel_mon_prop)')
+
+allow radio qmuxd_socket:dir search;
+allow radio qmuxd_socket:sock_file write;
+
+allow radio vendor_file:lnk_file r_file_perms;
+allow radio vendor_framework_file:file r_file_perms;
+allow radio vendor_framework_file:dir search;
+
+hwbinder_use(radio)
+allow radio vnd_ims_radio_hwservice:hwservice_manager find;
+allow radio vnd_qcrilhook_hwservice:hwservice_manager find;
+allow radio hal_imsrtp_hwservice:hwservice_manager find;
+
+add_service(radio, radio_service)
+allow radio {
+  mediaextractor_service
+  mediacodec_service
+}:service_manager find;
+
+r_dir_file(radio, sysfs_msm_subsys)
+
 # IMS needs permission to use avtimer
 allow radio avtimer_device:chr_file r_file_perms;
 
-allow radio { cameraserver_service mediaextractor_service mediacodec_service }:service_manager find;
-#diag
-userdebug_or_eng(`
-    diag_use(radio)
-')
-
 binder_call(radio, hal_imsrtp)
-allow radio hal_imsrtp_hwservice:hwservice_manager find;
-# qcril needs permission to load mbn file from regional carrier
-allow radio regionalization_file:file r_file_perms;
-allow radio regionalization_file:dir r_dir_perms;
-# permissions for IMS-ConnectionmanagerTestApp
-userdebug_or_eng(`
-  allow radio hal_imsrcsd_hwservice:hwservice_manager find;
-  binder_call(radio, hal_rcsservice)
-')

@@ -1,14 +1,14 @@
-allow kernel block_device:blk_file rw_file_perms;
-
+# for diag over socket
 userdebug_or_eng(`
- #allow kernel self:capability { dac_read_search dac_override };
-  allow kernel self:socket create_socket_perms_no_ioctl;
-  r_dir_file(kernel, qti_debugfs);
+  allow kernel self:socket create;
+  allow kernel debugfs_wlan:dir search;
 ')
 
-# Access firmware_file
-r_dir_file(kernel, firmware_file)
+allow kernel vendor_firmware_file:dir search;
+allow kernel vendor_firmware_file:file r_file_perms;
+allow kernel vendor_firmware_file:lnk_file read;
 
-# Allow kernel to schedule process to different cpuset
-# when the current cpu is hotplugged out
-allow kernel domain:process setsched;
+dontaudit kernel kernel:system module_request;
+
+allow kernel debugfs_ipc:dir search;
+allow kernel persist_file:dir search;
