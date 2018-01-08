@@ -68,3 +68,9 @@ allow hal_camera vendor_camera_data_file:dir w_dir_perms;
 allow hal_camera vendor_camera_data_file:sock_file write;
 unix_socket_send(hal_camera, camera, mm-qcamerad)
 unix_socket_connect(hal_camera, thermal, thermal-engine)
+
+#Allows camera to call ADSP QDSP6 functionality
+allow hal_camera qdsp_device:chr_file r_file_perms;
+
+#allow camera to access /dsp
+r_dir_file(hal_camera, adsprpcd_file);

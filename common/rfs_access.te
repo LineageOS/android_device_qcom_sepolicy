@@ -45,11 +45,9 @@ allow rfs_access rfs_shared_hlos_file:file create_file_perms;
 allow rfs_access tombstone_data_file:dir create_dir_perms;
 allow rfs_access tombstone_data_file:file create_file_perms;
 
-userdebug_or_eng('
-    #For ramdump entries in /data/vendor/tombstones.
-    allow rfs_access vendor_tombstone_data_file:dir create_dir_perms;
-    allow rfs_access vendor_tombstone_data_file:file create_file_perms;
-')
+#For ramdump entries in /data/vendor/tombstones.
+allow rfs_access vendor_tombstone_data_file:dir create_dir_perms;
+allow rfs_access vendor_tombstone_data_file:file create_file_perms;
 
 #For firmware entries in /firmware to read NHLOS.bin files ( only perms to read and get attributes).
 r_dir_file(rfs_access, firmware_file)

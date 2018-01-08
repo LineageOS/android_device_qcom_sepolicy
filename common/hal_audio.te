@@ -60,5 +60,7 @@ hal_client_domain(hal_audio_default, hal_perf)
 #allow acess to wcd_cpe
 allow hal_audio sysfs_audio:file rw_file_perms;
 allow hal_audio sysfs_audio:dir r_dir_perms ;
+#allow access to adsp boot for peripheral manager
+allow hal_audio sysfs_boot:file w_file_perms ;
 #Rules for audioserver to talk to peripheral manager
 use_per_mgr(hal_audio);
