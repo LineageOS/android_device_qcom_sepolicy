@@ -153,6 +153,7 @@ allow system_server system_file:system module_load;
 
 allow system_server persist_alarm_file:dir rw_dir_perms;
 allow system_server persist_alarm_file:file { rw_file_perms create };
+get_prop(system_server, alarm_boot_prop)
 userdebug_or_eng(`
   diag_use(system_server)
 ')
