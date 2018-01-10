@@ -133,6 +133,7 @@ allow system_server fingerprintd_data_file:dir { rw_dir_perms rmdir };
 #for Wifi module this is needed
 allow system_server system_file:system module_load;
 
+get_prop(system_server, vendor_alarm_boot_prop)
 userdebug_or_eng(`
   diag_use(system_server)
 ')
