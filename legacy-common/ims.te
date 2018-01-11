@@ -1,0 +1,5 @@
+# Allow binder communication
+binder_use(ims)
+
+# Allow NDC command run
+allow ims shell_exec:file rx_file_perms;

@@ -1,0 +1,4 @@
+unix_socket_connect(netd, cnd, cnd)
+allow netd wfdservice:tcp_socket rw_socket_perms;
+allow netd hostapd:unix_dgram_socket sendto;
+allow netd wpa_socket:sock_file create_file_perms;
