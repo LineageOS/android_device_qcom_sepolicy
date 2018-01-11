@@ -1,0 +1,1 @@
+allow qti shell_exec:file rx_file_perms;

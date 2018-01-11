@@ -1,0 +1,22 @@
+allow system_app mpctl_socket:dir r_dir_perms;
+unix_socket_connect(system_app, mpctl, mpdecision)
+unix_socket_connect(system_app, mpctl, perfd)
+unix_socket_send(system_app, mpctl, mpdecision)
+unix_socket_send(system_app, mpctl, perfd)
+
+allow system_app tee:unix_dgram_socket sendto;
+
+allow system_app wcnss_filter:unix_stream_socket connectto;
+unix_socket_send(system_app, wififtmd, wifi_ftmd)
+
+allow system_app time_daemon:unix_stream_socket connectto;
+
+allow system_app usf:unix_stream_socket connectto;
+
+unix_socket_connect(system_app, ims, ims)
+
+unix_socket_connect(system_app, pps, mm-pp-daemon)
+
+# Allow binder communication with ims
+binder_call(system_app, ims)
+allow system_app ims_service:service_manager find;
