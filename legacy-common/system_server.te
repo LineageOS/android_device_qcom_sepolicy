@@ -8,6 +8,7 @@ unix_socket_send(system_server, mpctl, perfd)
 netmgr_socket(system_server)
 qmux_socket(system_server)
 use_per_mgr(system_server)
+allow system_server binder_per_mgr_service:service_manager find;
 
 allow system_server sensors:unix_stream_socket sendto;
 allow system_server sensors_socket:sock_file r_file_perms;
