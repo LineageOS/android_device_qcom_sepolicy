@@ -2,3 +2,20 @@
 /(vendor|system/vendor)/bin/perfd     u:object_r:perfd_exec:s0
 /data/system/perfd(/.*)?              u:object_r:mpctl_data_file:s0
 /dev/socket/perfd                     u:object_r:mpctl_socket:s0
+
+# Location
+/data/misc/location(/.*)?                                           u:object_r:location_data_file:s0
+/data/misc/location/mq/location-mq-s                                u:object_r:location_socket:s0
+/data/misc/location/mq/alarm_svc                                    u:object_r:location_socket:s0
+
+# IMS
+/dev/socket/ims_rtpd                            u:object_r:ims_socket:s0
+
+# Port bridge
+/data/misc/port_bridge(/.*)?                                        u:object_r:port_bridge_data_file:s0
+
+# IPA
+/data/misc/ipa(/.*)?                                                u:object_r:ipacm_data_file:s0
+
+# IOP
+/data/misc/iop(/.*)?                                                u:object_r:iop_data_file:s0
