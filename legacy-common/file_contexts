@@ -9,6 +9,7 @@
 /data/misc/location/mq/alarm_svc                                    u:object_r:location_socket:s0
 
 # IMS
+/(vendor|system/vendor)/bin/imscmservice                            u:object_r:ims_exec:s0
 /dev/socket/ims_rtpd                            u:object_r:ims_socket:s0
 
 # Port bridge
