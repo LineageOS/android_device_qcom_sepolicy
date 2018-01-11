@@ -85,6 +85,7 @@ userdebug_or_eng(`
   allow domain qti-testscripts:fifo_file { write getattr };
   allow domain qti-testscripts:process sigchld;
   binder_use(qti-testscripts)
+  hwbinder_use(qti-testscripts)
   allow platform_app qti-testscripts:unix_stream_socket { read write connectto};
   allow system_app qti-testscripts:unix_stream_socket { read write connectto};
   allow system_server qti-testscripts:binder { transfer call };

@@ -212,6 +212,7 @@
 /(vendor|system/vendor)/bin/cnss-daemon         u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/hostapd_cli         u:object_r:hostapd_exec:s0
 /(vendor|system/vendor)/bin/adsprpcd            u:object_r:adsprpcd_exec:s0
+/(vendor|system/vendor)/bin/cdsprpcd            u:object_r:cdsprpcd_exec:s0
 /(vendor|system/vendor)/bin/wpa_cli             u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper          u:object_r:mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper_proxy    u:object_r:mdm_helper_exec:s0
@@ -267,7 +268,6 @@
 /(vendor|system/vendor)/bin/sapd                                u:object_r:sapd_exec:s0
 /(vendor|system/vendor)/bin/btnvtool            u:object_r:btnvtool_exec:s0
 /(vendor|system/vendor)/bin/btsnoop                             u:object_r:btsnoop_exec:s0
-/system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /(vendor|system/vendor)/bin/wifidisplayhalservice               u:object_r:wifidisplayhalservice_qti_exec:s0
 /(vendor|system/vendor)/bin/wcnss_filter        u:object_r:wcnss_filter_exec:s0
 /(vendor|system/vendor)/bin/fmhal_service                       u:object_r:fmhal_service_exec:s0
@@ -301,8 +301,8 @@
 /(vendor|system/vendor)/bin/vppservice          u:object_r:vppservice_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service u:object_r:hal_qteeconnector_qti_exec:s0
 /(vendor|system/vendor)/bin/fm_qsoc_patches     u:object_r:fm_qsoc_patches_exec:s0
-/(vendor|system/vendor)/bin/tloc_daemon                     u:object_r:tlocd_exec:s0
-/(vendor|system/vendor)/bin/power_off_alarm        u:object_r:power_off_alarm_exec:s0
+/(vendor|system/vendor)/bin/tloc_daemon         u:object_r:tlocd_exec:s0
+/(vendor|system/vendor)/bin/power_off_alarm      u:object_r:power_off_alarm_exec:s0
 
 ###################################
 # sysfs files
@@ -310,6 +310,9 @@
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:sysfs_graphics:s0
 /sys/class/thermal(/.*)?                                            u:object_r:sysfs_thermal:s0
 /sys/class/sensors(/.*)?                                            u:object_r:sysfs_sensors:s0
+/sys/class/uio(/.*)?                                                u:object_r:sysfs_uio:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+/maps/map[0-9]+(/.*)?    u:object_r:sysfs_uio_file:s0
 /sys/devices/[^/]+bcl[^/]+(/.*)?                                    u:object_r:sysfs_thermal:s0
 /sys/devices/f9200000.*/power_supply/usb(/.*)?                      u:object_r:sysfs_usb_supply:s0
 /sys/devices/msm_dwc3/power_supply/usb(/.*)?                        u:object_r:sysfs_usb_supply:s0
@@ -387,6 +390,10 @@
 /sys/devices/virtual/graphics/fb([0-3])+/ad                         u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/pp_bl_event                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/rotator/mdss_rotator/caps                      u:object_r:sysfs_graphics:s0
+
+/sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes          u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/modes u:object_r:sysfs_graphics:s0
+
 /sys/devices/virtual/workqueue/kgsl-events/cpumask                  u:object_r:sysfs_kgsl:s0
 /sys/devices/virtual/workqueue/kgsl-events/nice                     u:object_r:sysfs_kgsl:s0
 /sys/devices/virtual/workqueue/kgsl-workqueue/cpumask               u:object_r:sysfs_kgsl:s0
@@ -415,7 +422,7 @@
 /sys/devices/msm_hsic_host/host_ready                               u:object_r:sysfs_hsic_host_rdy:s0
 /sys/bus/esoc(/.*)?                                                 u:object_r:sysfs_esoc:s0
 /sys/bus/msm_subsys(/.*)?                                           u:object_r:sysfs_ssr:s0
-/sys/devices(/platform)?/soc/(([a-z0-9\.:]+,)+[a-z0-9\-\_]+/)+subsys[0-9]+/name         u:object_r:sysfs_ssr:s0
+/sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name         u:object_r:sysfs_ssr:s0
 /sys/module/ccid_bridge(/.*)?                                       u:object_r:sysfs_usb_uicc:s0
 /sys/bus/msm_subsys/devices/subsys0/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/bus/msm_subsys/devices/subsys1/restart_level                   u:object_r:sysfs_ssr_toggle:s0
@@ -437,10 +444,10 @@
 /sys/devices/virtual/xt_hardidletimer/timers(/.*)?                  u:object_r:sysfs_data:s0
 /sys/devices/virtual/xt_idletimer/timers(/.*)?                      u:object_r:sysfs_data:s0
 
-/sys/devices(/platform)?/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw(/.*)? u:object_r:sysfs_devfreq:s0
 /sys/devices(/platform)?/soc/soc:qcom,gpubw/devfreq/soc:qcom,gpubw(/.*)? u:object_r:sysfs_devfreq:s0
 /sys/devices(/platform)?/soc/soc:qcom,llccbw/devfreq/soc:qcom,llccbw(/.*)? u:object_r:sysfs_devfreq:s0
 /sys/devices(/platform)?/soc/soc:qcom,l3-cpu[0-9]/devfreq/soc:qcom,l3-cpu[0-9](/.*)? u:object_r:sysfs_devfreq:s0
+/sys/devices(/platform)?/soc/soc:qcom,l3-cdsp/devfreq/soc:qcom,l3-cdsp(/.*)? u:object_r:sysfs_devfreq:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/clkscale_enable        u:object_r:sysfs_scsi_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+/host0/scsi_host/host0(/.*)?  u:object_r:sysfs_scsi_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0

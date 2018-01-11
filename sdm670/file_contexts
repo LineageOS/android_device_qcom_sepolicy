@@ -48,6 +48,7 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/frp                                u:object_r:frp_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/mdtp                               u:object_r:mdtp_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/dip                                u:object_r:dip_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/storsec                            u:object_r:boot_block_device:s0
 
 #rawdump partition
 /dev/block/platform/soc/1d84000.ufshc/by-name/rawdump                            u:object_r:rawdump_block_device:s0
@@ -78,6 +79,7 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/mdtpsecapp_[ab]   u:object_r:mdtp_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/qupfw_[ab]        u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/xbl_config_[ab]   u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/storsec_[ab]      u:object_r:custom_ab_block_device:s0
 
 #for eMMC
 # A/B partitions.
@@ -106,6 +108,7 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/mdtpsecapp_[ab]   u:object_r:mdtp_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/qupfw_[ab]        u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/xbl_config_[ab]   u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/storsec_[ab]      u:object_r:custom_ab_block_device:s0
 
 #non A/B
 /dev/block/platform/soc/7c4000.sdhci/by-name/system                            u:object_r:system_block_device:s0
@@ -125,11 +128,13 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/frp                                u:object_r:frp_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/mdtp                               u:object_r:mdtp_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/dip                                u:object_r:dip_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/storsec                            u:object_r:boot_block_device:s0
 
 #rawdump partition
 /dev/block/platform/soc/7c4000.sdhci/by-name/rawdump                            u:object_r:rawdump_block_device:s0
 
 # Block device holding the GPT, where the A/B attributes are stored.
+/dev/block/mmcblk0                                              u:object_r:root_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/sd[ade]                   u:object_r:gpt_block_device:s0
 
 # Block devices for the drive that holds the xbl_a and xbl_b partitions.
