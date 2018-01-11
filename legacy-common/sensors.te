@@ -1,0 +1,2 @@
+binder_use(sensors)
+binder_call(sensors, servicemanager)

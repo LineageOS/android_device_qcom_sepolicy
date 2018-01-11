@@ -1,0 +1,4 @@
+binder_use(qseeproxy)
+binder_service(qseeproxy)
+
+allow qseeproxy system_app:unix_dgram_socket sendto;
