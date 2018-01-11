@@ -1,0 +1,7 @@
+# Allow binder communication
+binder_use(hal_camera)
+allow hal_camera surfaceflinger_service:service_manager find;
+
+# Allow socket communication with perfd
+unix_socket_connect(hal_camera, mpctl, perfd)
+unix_socket_send(hal_camera, mpctl, perfd)

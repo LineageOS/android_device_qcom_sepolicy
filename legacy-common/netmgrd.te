@@ -1,0 +1,4 @@
+allow netmgrd { wcnss_service_exec shell_exec toolbox_exec }:file rx_file_perms;
+
+allow netmgrd netd_socket:sock_file w_file_perms;
+r_dir_file(netmgrd, net_data_file)

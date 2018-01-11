@@ -1,0 +1,9 @@
+# Allow socket communication with perfd
+allow audioserver mpctl_socket:dir r_dir_perms;
+unix_socket_send(audioserver, mpctl, mpdecision)
+unix_socket_connect(audioserver, mpctl, mpdecision)
+unix_socket_send(audioserver, mpctl, perfd)
+unix_socket_connect(audioserver, mpctl, perfd)
+
+# Allow communication with peripheral manager
+use_per_mgr(audioserver)

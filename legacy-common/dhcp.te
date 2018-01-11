@@ -1,0 +1,2 @@
+# Allow socket communication with cnd
+unix_socket_connect(dhcp, cnd, cnd)
