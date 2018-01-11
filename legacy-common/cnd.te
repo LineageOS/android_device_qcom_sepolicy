@@ -1,0 +1,13 @@
+# Allow communication with udp sockets created by apps
+allow cnd appdomain:udp_socket rw_socket_perms;
+
+# Allow hostapd_cli launch
+allow cnd shell_exec:file rx_file_perms;
+
+# Allow communication with inet sockets
+cnd_nims_socket_perm(appdomain)
+cnd_nims_socket_perm(system_server)
+cnd_nims_socket_perm(mediaserver)
+cnd_nims_socket_perm(mtp)
+cnd_nims_socket_perm(wfdservice)
+cnd_nims_socket_perm(drmserver)

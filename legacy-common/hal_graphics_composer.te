@@ -1,0 +1,10 @@
+# Allow binder communication
+binder_use(hal_graphics_composer)
+binder_service(hal_graphics_composer_default)
+allow hal_graphics_composer power_service:service_manager find;
+
+# Allow socket communication with perfd
+unix_socket_connect(hal_graphics_composer, mpctl, perfd)
+
+# Allow socket communication with post process daemon
+unix_socket_connect(hal_graphics_composer, pps, mm-pp-daemon)

@@ -1,0 +1,1 @@
+allow mdm_helper shell_exec:file rx_file_perms;

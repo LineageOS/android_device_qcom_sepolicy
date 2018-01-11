@@ -1,0 +1,4 @@
+binder_use(tee)
+allow tee surfaceflinger_service:service_manager  find;
+
+allow tee system_app:unix_dgram_socket sendto;
