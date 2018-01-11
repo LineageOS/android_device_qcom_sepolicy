@@ -1,2 +1,9 @@
 binder_use(rild)
 allow rild { mediaserver_service audioserver_service }:service_manager find;
+
+# rild reads qcril.db linked to /system/etc/qcril.db
+allow rild radio_data_file:lnk_file read;
+
+# allow rild to access radio data file
+allow rild radio_data_file:dir rw_dir_perms;
+allow rild radio_data_file:file create_file_perms;
