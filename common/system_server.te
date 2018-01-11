@@ -197,3 +197,6 @@ allow system_server sysfs_wigig:file rw_file_perms;
 
 # allow system_server to access IOP HAL service
 hal_client_domain(system_server, hal_iop)
+
+#kgsl
+r_dir_file(system_server, kgsl_debugfs);
