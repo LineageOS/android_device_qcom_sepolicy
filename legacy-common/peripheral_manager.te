@@ -1,0 +1,2 @@
+binder_use(per_mgr)
+binder_service(per_mgr)

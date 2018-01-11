@@ -1,0 +1,3 @@
+qmux_socket(bluetooth)
+
+allow bluetooth wcnss_filter:unix_stream_socket connectto;
