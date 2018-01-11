@@ -1,0 +1,3 @@
+# Allow binder communication with ims
+binder_call(platform_app, ims)
+allow platform_app ims_service:service_manager find;

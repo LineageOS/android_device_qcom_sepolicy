@@ -1,5 +1,13 @@
 # Allow binder communication
 binder_use(ims)
+allow ims ims_service:service_manager add;
+allow ims imsrcs_service:service_manager add;
 
 # Allow NDC command run
 allow ims shell_exec:file rx_file_perms;
+
+# Allow communication with apps
+binder_call(ims, system_app)
+binder_call(ims, platform_app)
+
+allow ims devpts:chr_file rw_file_perms;
