@@ -13,6 +13,7 @@ type pps_socket, file_type;
 # Define cnd socket and data file type
 type cnd_socket, file_type, mlstrustedobject;
 type cnd_data_file, file_type, data_file_type;
+type chre_socket, file_type;
 
 # Define dpmd data file type
 #type dpmd_socket, file_type;
