@@ -67,3 +67,9 @@ vendor.qti.hardware.qteeconnector::IAppConnector             u:object_r:hal_qtee
 vendor.qti.hardware.qteeconnector::IGPAppConnector           u:object_r:hal_qteeconnector_hwservice:s0
 vendor.qti.esepowermanager::IEsePowerManager                 u:object_r:hal_esepowermanager_hwservice:s0
 vendor.qti.voiceprint::IQtiVoicePrintService                 u:object_r:hal_voiceprint_hwservice:s0
+# Below rules are added to support the devices that are using the HALs before they are moved to
+# vendor.qti.hardware. They are used as it is to maintain the integrity of the software.
+vendor.qti.qcril.am::IQcRilAudio                             u:object_r:hal_telephony_hwservice:s0
+com.qualcomm.qti.ims.radio::IImsRadio                        u:object_r:hal_telephony_hwservice:s0
+com.qualcomm.qti.qcril.qcrilhook::IQtiOemHook                u:object_r:hal_telephony_hwservice:s0
+vendor.qti.atcmdfwd::IAtCmdFwd                               u:object_r:hal_atfwd_hwservice:s0
