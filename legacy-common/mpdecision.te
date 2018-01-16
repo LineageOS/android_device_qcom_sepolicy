@@ -1,0 +1,4 @@
+allow mpdecision cgroup:file r_file_perms;
+allow mpdecision sysfs_kgsl:file rw_file_perms;
+
+get_prop(mpdecision, freq_prop)
