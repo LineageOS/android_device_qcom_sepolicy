@@ -1,2 +1,9 @@
+type_transition sensors system_data_file:{ dir file } sensors_data_file;
+
+# Create directories and files under /data/misc/sensors
+# and /data/system/sensors.
+allow sensors sensors_data_file:dir create_dir_perms;
+allow sensors sensors_data_file:file create_file_perms;
+
 binder_use(sensors)
 binder_call(sensors, servicemanager)
