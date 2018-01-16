@@ -35,3 +35,15 @@
 
 # Camera
 /data/fdAlbum                                                       u:object_r:camera_data_file:s0
+
+# UIO
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,msm-core/uio/uio[0-9]+(/.*)?			u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,dsp_sharedmem/uio/uio[0-9]+(/.*)?			u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,mdm_sharedmem/uio/uio[0-9]+(/.*)?			u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?			u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,sensors_sharedmem/uio/uio[0-9]+(/.*)?			u:object_r:sysfs_uio_file:s0
+/sys/devices/[0-9a-f]+\.rmtfs_sharedmem/uio/uio[0-9]+(/.*)?         u:object_r:sysfs_uio_file:s0
+/sys/devices/[0-9a-f]+\.dsp_sharedmem/uio/uio[0-9]+(/.*)?           u:object_r:sysfs_uio_file:s0
+/sys/devices/[0-9a-f]+\.mdm_sharedmem/uio/uio[0-9]+(/.*)?           u:object_r:sysfs_uio_file:s0
+/sys/devices/[0-9a-f]+\.bimc_sharedmem/uio/uio[0-9]+(/.*)?          u:object_r:sysfs_uio_file:s0
+/sys/devices/[0-9a-f]+\.oem_data_sharedmem/uio/uio[0-9]+(/.*)?      u:object_r:sysfs_uio_file:s0
