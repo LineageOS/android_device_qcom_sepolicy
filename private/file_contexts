@@ -46,6 +46,7 @@
 /system/etc/init\.qcom\.testscripts\.sh         u:object_r:qti-testscripts_exec:s0
 /system/bin/smcinvoked                          u:object_r:smcinvoke_daemon_exec:s0
 /system/bin/qvrservice                          u:object_r:qvrd_exec:s0
+/system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 
 ####### data files ################
 /data/misc/seemp(/.*)?                          u:object_r:seemp_data_file:s0

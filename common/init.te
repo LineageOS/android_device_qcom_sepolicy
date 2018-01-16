@@ -25,7 +25,7 @@ allow init tmpfs:lnk_file create_file_perms;
 
 #For configfs file permission
 allow init configfs:dir r_dir_perms;
-allow init configfs:file { rw_file_perms link };
+allow init configfs:file { create_file_perms link };
 allow init configfs:lnk_file create_file_perms;
 
 #Allow init to mount non-hlos partitions in A/B builds
@@ -53,3 +53,6 @@ allow init {
 
 #rawdump
 allow init rawdump_block_device:blk_file setattr;
+
+#cpu.rt_period_us and _runtime_us need this
+allow init cgroup:file create;
