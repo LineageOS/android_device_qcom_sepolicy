@@ -51,3 +51,8 @@
 /sys/devices/[0-9a-f]+\.mdm_sharedmem/uio/uio[0-9]+(/.*)?           u:object_r:sysfs_uio_file:s0
 /sys/devices/[0-9a-f]+\.bimc_sharedmem/uio/uio[0-9]+(/.*)?          u:object_r:sysfs_uio_file:s0
 /sys/devices/[0-9a-f]+\.oem_data_sharedmem/uio/uio[0-9]+(/.*)?      u:object_r:sysfs_uio_file:s0
+
+# GPU
+/sys/devices/[a-f0-9]+\.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)?                     u:object_r:sysfs_kgsl:s0
+/sys/devices/[a-f0-9]+\.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)?   u:object_r:sysfs_kgsl:s0
+/sys/devices/[a-f0-9]+\.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk                    u:object_r:sysfs_kgsl_gpuclk:s0
