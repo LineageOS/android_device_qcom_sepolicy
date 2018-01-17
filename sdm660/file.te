@@ -27,3 +27,5 @@
 
 #sysfs emmc dload type
 type sysfs_emmc_dload, sysfs_type, fs_type;
+#sysfs rndis usb type
+type sysfs_rndis_usb, sysfs_type, fs_type;
