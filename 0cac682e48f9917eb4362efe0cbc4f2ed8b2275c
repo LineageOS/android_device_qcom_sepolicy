@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "265a6ec8_a63b7a5b",
+        "filename": "legacy-common/mpdecision.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2018-01-17T22:29:48Z",
+      "side": 1,
+      "message": "Maybe this should be fixed properly by labelling the rest of sysfs, but in my defence perfd already allows this",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 42
+      },
+      "revId": "0cac682e48f9917eb4362efe0cbc4f2ed8b2275c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
