@@ -159,14 +159,8 @@ allow qti_init_shell mpctl_data_file:file { write getattr unlink };
 allow qti_init_shell { proc proc_net}:file write;
 allow qti_init_shell proc_net:file r_file_perms;
 
-allow qti_init_shell radio_data_file:dir create_dir_perms;
-allow qti_init_shell radio_data_file:file create_file_perms;
-
 allow qti_init_shell graphics_device:dir create_dir_perms;
 allow qti_init_shell graphics_device:lnk_file create_file_perms;
-
-# To create sensor dir inside /data/misc/
-allow qti_init_shell system_data_file:dir create_dir_perms;
 
 #insmod of ko from scripts need kernel key search
 allow qti_init_shell kernel:key search;

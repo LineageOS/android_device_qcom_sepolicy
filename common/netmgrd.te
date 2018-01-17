@@ -10,9 +10,6 @@ userdebug_or_eng(`
   diag_use(netutils_wrapper)
 ')
 
-#Allow files to be written during the operation of netmgrd
-file_type_auto_trans(netmgrd, system_data_file, data_test_data_file)
-
 #Allow netmgrd operations
 allow netmgrd netmgrd:capability {
     net_raw
@@ -31,7 +28,6 @@ allow netmgrd netmgrd_data_file:dir w_dir_perms;
 
 #Allow netutils usage
 use_netutils(netmgrd)
-allow netutils_wrapper netmgrd_data_file:file rw_file_perms;
 allow netutils_wrapper wcnss_service_exec:file rx_file_perms;
 allow netmgrd netutils_wrapper:process sigkill;
 

@@ -47,8 +47,6 @@ allow location sensors_persist_file:file r_file_perms;
 
 #wifi
 userdebug_or_eng(`
-allow location wifi_data_file:dir create_dir_perms;
-#allow location wifi_data_file:sock_file create_file_perms;
 allow location su:unix_dgram_socket sendto;
 ')
 # comment to remove compilation issue

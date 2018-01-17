@@ -23,10 +23,6 @@ userdebug_or_eng(`
 r_dir_file(mediaserver, sysfs_esoc)
 #allow mediaserver system_app_data_file:file rw_file_perms;
 
-# allow mediaserver to write DTS files
-allow mediaserver dts_data_file:dir rw_dir_perms;
-allow mediaserver dts_data_file:file create_file_perms;
-
 # allow poweroffhandler to binder mediaserver
 binder_call(mediaserver, poweroffhandler);
 
@@ -44,15 +40,8 @@ r_dir_file(mediaserver, sysfs_thermal);
 allow mediaserver audio_data_file:sock_file { create setattr unlink };
 allow mediaserver audio_data_file:dir remove_name;
 
-# Allow mediaserver to create audio pp files
-allow mediaserver audio_pp_data_file:dir rw_dir_perms;
-allow mediaserver audio_pp_data_file:file create_file_perms;
-
 #Allow mediaserver to set camera  properties
 allow mediaserver camera_prop:property_service set;
-
-#Allow mediaserver access mmi_data_file
-allow mediaserver mmi_data_file:file r_file_perms;
 
 #allow mediaserver to access wfdservice
 binder_call(mediaserver, wfdservice)

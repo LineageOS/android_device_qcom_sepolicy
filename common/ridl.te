@@ -70,29 +70,10 @@ allow RIDL sysfs:file write;
 allow RIDL system_file:file x_file_perms;
 binder_call(RIDL, system_server)
 
-# recovery
-allow RIDL cache_file:dir create_dir_perms;
-allow RIDL cache_file:file create_file_perms;
-allow RIDL cache_recovery_file:dir rw_dir_perms;
-allow RIDL cache_recovery_file:file create_file_perms;
-
 # reboot recovery
 set_prop(RIDL, powerctl_prop)
 
-# ANR
-allow RIDL anr_data_file:dir r_dir_perms;
-allow RIDL anr_data_file:file r_file_perms;
-
-# detect /data/anr directory is created
-allow RIDL system_data_file:dir read;
-
 userdebug_or_eng(`
-	# Access to ANR/segfaults
-	allow RIDL tombstone_data_file:dir rw_dir_perms;
-	allow RIDL tombstone_data_file:file { unlink rw_file_perms };
-	allow RIDL anr_data_file:dir rw_dir_perms;
-	allow RIDL anr_data_file:file { unlink rw_file_perms };
-
 	# tcpdump
 	allow RIDL self:packet_socket create_socket_perms_no_ioctl;
 	allow RIDL self:capability net_raw;

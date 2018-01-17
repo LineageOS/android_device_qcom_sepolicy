@@ -26,10 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Allow gotaab of RIDL and qti-logkit
-allow update_engine RIDL_data_file:file r_file_perms;
-allow update_engine RIDL_data_file:dir r_dir_perms;
-allow update_engine qti_logkit_priv_data_file:file r_file_perms;
-allow update_engine qti_logkit_priv_data_file:dir r_dir_perms;
 allow update_engine storage_file:file r_file_perms;
 allow update_engine storage_file:dir r_dir_perms;
 allow update_engine fuse:dir r_dir_perms;

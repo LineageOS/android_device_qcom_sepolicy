@@ -6,14 +6,12 @@ init_daemon_domain(mm-qcamerad)
 userdebug_or_eng(`
   allow mm-qcamerad qti_debugfs:dir r_dir_perms;
   allow mm-qcamerad qti_debugfs:file read;
-  allow mm-qcamerad camera_data_file:file create_file_perms;
   #allow mm-qcamerad self:tcp_socket create_stream_socket_perms;
   allow mm-qcamerad node:tcp_socket node_bind;
 
   # IMS use camera daemon to make VT call
   allow mm-qcamerad port:tcp_socket name_bind;
   allow mm-qcamerad self:tcp_socket { accept listen };
-  allow mm-qcamerad camera_data_file:file create_file_perms;
 
   # mm-qcamerad needs to set persist.camera. property
   set_prop(mm-qcamerad, camera_prop)
@@ -42,7 +40,6 @@ allow mm-qcamerad { gpu_device video_device sensors_device }:chr_file rw_file_pe
 
 allow mm-qcamerad { surfaceflinger mediaserver cameraserver hal_camera }:fd use;
 
-allow mm-qcamerad camera_data_file:dir w_dir_perms;
 #allow mm-qcamerad camera_data_file:sock_file { create unlink };
 
 allow mm-qcamerad vendor_camera_data_file:dir w_dir_perms;

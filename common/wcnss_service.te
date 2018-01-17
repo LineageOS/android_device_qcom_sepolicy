@@ -8,9 +8,6 @@ allow wcnss_service wcnss_device:chr_file rw_file_perms;
 
 qmux_socket(wcnss_service);
 
-allow wcnss_service wifi_data_file:dir w_dir_perms;
-allow wcnss_service wifi_data_file:file create_file_perms;
-
 set_prop(wcnss_service, system_prop)
 
 allow wcnss_service wifi_vendor_data_file:dir w_dir_perms;
@@ -48,8 +45,6 @@ allow wcnss_service fuse:dir create_dir_perms;
 allow wcnss_service fuse:file create_file_perms;
 allow wcnss_service vfat:dir create_dir_perms;
 allow wcnss_service vfat:file create_file_perms;
-allow wcnss_service media_rw_data_file:dir create_dir_perms;
-allow wcnss_service media_rw_data_file:file create_file_perms;
 allow wcnss_service sdcardfs:dir create_dir_perms;
 allow wcnss_service sdcardfs:file create_file_perms;
 allow wcnss_service persist_file:file { rw_file_perms setattr };
