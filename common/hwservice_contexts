@@ -73,3 +73,4 @@ vendor.qti.qcril.am::IQcRilAudio                             u:object_r:hal_tele
 com.qualcomm.qti.ims.radio::IImsRadio                        u:object_r:hal_telephony_hwservice:s0
 com.qualcomm.qti.qcril.qcrilhook::IQtiOemHook                u:object_r:hal_telephony_hwservice:s0
 vendor.qti.atcmdfwd::IAtCmdFwd                               u:object_r:hal_atfwd_hwservice:s0
+com.qualcomm.qti.imsrtpservice::IRTPService                  u:object_r:hal_imsrtp_hwservice:s0
