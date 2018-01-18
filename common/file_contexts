@@ -674,3 +674,8 @@
 #
 /(vendor|system/vendor)/bin/toolbox_vendor                          u:object_r:vendor_toolbox_exec:s0
 /(vendor|system/vendor)/bin/grep_vendor                             u:object_r:vendor_toolbox_exec:s0
+
+##################################
+# rawdump partition
+/sys/kernel/dload/emmc_dload                                        u:object_r:sysfs_emmc_dload:s0
+/sys/kernel/dload/dload_mode                                        u:object_r:sysfs_emmc_dload:s0
