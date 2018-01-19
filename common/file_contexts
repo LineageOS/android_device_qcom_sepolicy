@@ -134,6 +134,7 @@
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
 /dev/socket/wpa_wigig[0-9]                      u:object_r:wpa_socket:s0
+/dev/socket/location(/.*)?                      u:object_r:location_socket:s0
 
 ###################################
 # System files
