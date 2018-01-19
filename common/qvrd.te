@@ -30,7 +30,7 @@
 #
 
 userdebug_or_eng(` allow qvrd diag_device:chr_file rw_file_perms');
-r_dir_file(qvrd, vendor_file)
+#r_dir_file(qvrd, vendor_file)
 r_dir_file(qvrd, sysfs_kgsl)
 
 #
