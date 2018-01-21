@@ -50,6 +50,8 @@ ctl.sensors                u:object_r:sensors_prop:s0
 ctl.vendor.msm_irqbalance         u:object_r:msm_irqbalance_prop:s0
 ctl.vendor.msm_irqbl_sdm630       u:object_r:msm_irqbl_sdm630_prop:s0
 ctl.vendor.msm_irqbal_lb          u:object_r:msm_irqbalance_prop:s0
+ctl.diag_mdlog_start       u:object_r:diag_mdlog_prop:s0
+ctl.diag_mdlog_stop        u:object_r:diag_mdlog_prop:s0
 camera.                    u:object_r:camera_prop:s0
 persist.camera.            u:object_r:camera_prop:s0
 vendor.spcom.              u:object_r:spcomlib_prop:s0
