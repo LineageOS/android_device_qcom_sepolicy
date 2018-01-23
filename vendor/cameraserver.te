@@ -4,6 +4,7 @@ set_prop(cameraserver, camera_prop)
 
 allow cameraserver sysfs_camera:file r_file_perms;
 allow cameraserver sysfs_camera:dir search;
+allow cameraserver system_file:dir r_dir_perms;
 
 allow cameraserver system_server:unix_stream_socket { read write };
 

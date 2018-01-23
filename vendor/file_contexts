@@ -10,6 +10,7 @@
 /dev/wwan_ioctl                                 u:object_r:ipa_dev:s0
 /dev/ipaNatTable                                u:object_r:ipa_dev:s0
 /dev/cpu_dma_latency                            u:object_r:latency_device:s0
+/dev/dpl_ctrl                                   u:object_r:rmnet_device:s0
 /dev/rmnet_ctrl.*                               u:object_r:rmnet_device:s0
 /dev/at_.*                                      u:object_r:at_device:s0
 /dev/video([0-9])+                              u:object_r:video_device:s0
@@ -35,6 +36,8 @@
 /dev/mnh_sm                                     u:object_r:easel_device:s0
 /dev/easelcomm-client                           u:object_r:easel_device:s0
 /dev/citadel0                                   u:object_r:citadel_device:s0
+/dev/jdi-bu21150                                u:object_r:bu21150_device:s0
+/dev/usb_ext_chg                                u:object_r:hvdcp_device:s0
 
 # dev socket nodes
 /dev/socket/chre                                u:object_r:chre_socket:s0
@@ -57,49 +60,6 @@
 /dev/ttyHS0                                     u:object_r:hci_attach_dev:s0
 /dev/wlan                                       u:object_r:wlan_device:s0
 
-# dev block nodes
-/dev/block/platform/soc/1da4000\.ufshc/by-name/abl_[ab]        u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/apdp_[ab]       u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/cmnlib64_[ab]   u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/cmnlib_[ab]     u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/dtbo_[ab]       u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/devcfg_[ab]     u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/hosd_[ab]       u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/hyp_[ab]        u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/keymaster_[ab]  u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/lockbooter_[ab] u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/laf_[ab]        u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/msadp_[ab]      u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/pmic_[ab]       u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/rpm_[ab]        u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/storsec_[ab]    u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/trusty_[ab]     u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/tz_[ab]         u:object_r:ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/vbmeta_[ab]     u:object_r:ab_block_device:s0
-
-/dev/block/platform/soc/1da4000\.ufshc/by-name/boot_[ab]       u:object_r:boot_block_device:s0
-
-/dev/block/platform/soc/1da4000\.ufshc/by-name/metadata        u:object_r:metadata_block_device:s0
-
-/dev/block/platform/soc/1da4000\.ufshc/by-name/misc            u:object_r:misc_block_device:s0
-
-/dev/block/platform/soc/1da4000\.ufshc/by-name/frp             u:object_r:frp_block_device:s0
-
-/dev/block/platform/soc/1da4000\.ufshc/by-name/fsc             u:object_r:modem_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/fsg             u:object_r:modem_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/modem_[ab]      u:object_r:modem_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/modemst[12]     u:object_r:modem_block_device:s0
-
-/dev/block/platform/soc/1da4000\.ufshc/by-name/ramdump         u:object_r:ramdump_block_device:s0
-
-/dev/block/platform/soc/1da4000\.ufshc/by-name/ssd             u:object_r:ssd_block_device:s0
-
-/dev/block/platform/soc/1da4000\.ufshc/by-name/system_[ab]     u:object_r:system_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/vendor_[ab]     u:object_r:system_block_device:s0
-
-/dev/block/platform/soc/1da4000\.ufshc/by-name/userdata        u:object_r:userdata_block_device:s0
-
-/dev/block/platform/soc/1da4000\.ufshc/by-name/xbl_[ab]        u:object_r:xbl_block_device:s0
 
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/sda                                  u:object_r:gpt_block_device:s0
@@ -169,19 +129,19 @@
 /vendor/bin/hw/android\.hardware\.keymaster@3\.0-service-qti         u:object_r:hal_keymaster_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service-qti        u:object_r:hal_gatekeeper_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.gnss@1\.0-service-qti              u:object_r:hal_gnss_qti_exec:s0
+/vendor/bin/hw/android\.hardware\.gnss@1\.1-service-qti              u:object_r:hal_gnss_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti         u:object_r:hal_bluetooth_default_exec:s0
 
 ###############################################
 # same-process HAL files and their dependencies
 #
-/vendor/lib(64)?/hw/gralloc\.msm8998\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libgrallocutils\.so       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libqdMetaData\.so         u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libqservice\.so           u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libqdutils\.so            u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libadreno_utils\.so       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libgsl\.so                u:object_r:same_process_hal_file:s0
 
-/vendor/lib(64)?/hw/vulkan\.msm8998\.so    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libEGL_adreno\.so         u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libGLESv1_CM_adreno\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libGLESv2_adreno\.so      u:object_r:same_process_hal_file:s0
@@ -223,16 +183,20 @@
 /data/vendor/display(/.*)?             u:object_r:display_vendor_data_file:s0
 /data/vendor/nfc(/.*)?                 u:object_r:nfc_vendor_data_file:s0
 /data/vendor/radio(/.*)?               u:object_r:radio_vendor_data_file:s0
-/data/vendor/wifi(/.*)?                u:object_r:cnss_vendor_data_file:s0
+/data/vendor/wifi(/.*)?                u:object_r:wifi_vendor_data_file:s0
 /data/vendor/ramdump(/.*)?             u:object_r:ramdump_vendor_data_file:s0
 /data/vendor/ssrdump(/.*)?             u:object_r:ramdump_vendor_data_file:s0
 /data/vendor/modem_dump(/.*)?          u:object_r:modem_dump_file:s0
 /data/vendor/ipa(/.*)?                 u:object_r:ipa_vendor_data_file:s0
 /data/vendor/sensors(/.*)?             u:object_r:sensors_vendor_data_file:s0
 
+/data/connectivity(/.*)?               u:object_r:cnd_data_file:s0
+/data/vendor/connectivity(/.*)?        u:object_r:cnd_data_file:s0
+
+
 # /
 /tombstones             u:object_r:rootfs:s0
-/dsp                    u:object_r:rootfs:s0
+/dsp(/.*)?              u:object_r:adsprpcd_file:s0
 
 # files in firmware
 /firmware(/.*)?         u:object_r:firmware_file:s0
@@ -252,3 +216,146 @@
 
 /metadata                 u:object_r:rootfs:s0
 /metadata/.*              u:object_r:vold_data_file:s0
+
+# graphics device
+/dev/mdss_rotator                               u:object_r:graphics_device:s0
+/dev/dri/card0                                  u:object_r:graphics_device:s0
+/dev/dri/controlD64                             u:object_r:graphics_device:s0
+/dev/dri/renderD128                             u:object_r:graphics_device:s0
+
+# sysfs_leds
+/sys/devices(/platform)?/soc/[0-9a-z]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-z]+.qcom,spmi:qcom,pm[0-9a-z]+@[0-9]+:qcom,leds@[a-z0-9]+(/.*)? u:object_r:sysfs_leds:s0
+/sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-0/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,haptics@c000/leds/vibrator(/.*)?   u:object_r:sysfs_leds:s0
+
+#sysfs_data
+/sys/devices/virtual/xt_hardidletimer/timers(/.*)?                  u:object_r:sysfs_data:s0
+/sys/devices/virtual/xt_idletimer/timers(/.*)?                      u:object_r:sysfs_data:s0
+
+#persist_bluetooth_file
+/persist/bluetooth(/.*)? u:object_r:persist_bluetooth_file:s0
+
+
+/(vendor|system/vendor)/bin/hbtp_daemon         u:object_r:hbtp_exec:s0
+
+
+# sysfs_uio_file
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+/maps/map[0-9]+(/.*)?    u:object_r:sysfs_uio_file:s0
+
+
+# sysfs_graphics
+/sys/class/graphics/fb0/mdp/caps                                    u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/idle_time                  u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/dynamic_fps                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/product_description        u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/vendor_name                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/hdcp/tp                    u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_fb_panel_status        u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/hpd                        u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/res_info                   u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/s3d_mode                   u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_fb_panel_info          u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_fb_type                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_fb_split               u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/show_blank_event           u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/bl_event                   u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/ad_event                   u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/ad_bl_event                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/hist_event                 u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/vsync_event                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/lineptr_event              u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/idle_notify                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_fb_thermal_level       u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/idle_power_collapse        u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/mode                       u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/name                       u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/connected                  u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_cmd_autorefresh_en     u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/mdp/bw_mode_bitmap         u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/edid_modes                 u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/hdcp2p2(/.*)               u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/scan_info                  u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/edid_3d_modes              u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_fb_dfps_mode           u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msm_fb_src_split_info      u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/hdr_stream                 u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/cec(/.*)                   u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/msmfb_b10(/.*)             u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/modes                      u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/edid_raw_data              u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/dyn_pu                     u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/ad                         u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/pp_bl_event                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/rotator/mdss_rotator/caps                      u:object_r:sysfs_graphics:s0
+
+/sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes          u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/modes u:object_r:sysfs_graphics:s0
+/sys/class/graphics/fb([0-3])+/mdp/caps                             u:object_r:sysfs_graphics:s0
+/sys/class/graphics/fb([0-3])+/ad                                   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[0-9a-z]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-z]+.qcom,spmi:qcom,pmi[0-9]+@[0-9]+:qcom,leds@[a-z0-9]+(/.*)? u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/switch/hdmi(/.*)?                              u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary.+[a-z0-9]/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/caps           u:object_r:sysfs_graphics:s0
+/sys/devices/soc/[a-z0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:sysfs_graphics:s0
+/sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/bw_mode_bitmap            u:object_r:sysfs_graphics:s0
+/sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/caps                      u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_cam/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/caps       u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,cci/[a-z0-9]+.qcom,cci:qcom,camera@[0-2]/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
+
+
+# audio_data_file
+/data/vendor/misc/audio(/.*)? u:object_r:audio_data_file:s0
+
+
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
+
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,usb-pdphy@[0-9]+/usbpd/usbpd[0-9](/.*)? u:object_r:sysfs_usbpd_device:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/usb(/.*)?        u:object_r:sysfs_usb_supply:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/pc_port(/.*)?    u:object_r:sysfs_usb_supply:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.i2c/i2c-[0-9]+/[0-9]+-[0-9]+/[a-z0-9]+.i2c:qcom,[a-z0-9]+@[0-9]:qcom,smb[0-9]+-charger@[0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_usb_supply:s0
+/sys/devices/soc/[a-z0-9]+.ssusb/power_supply/usb(/.*)?             u:object_r:sysfs_usb_supply:s0
+
+/data/(misc|vendor)/hbtp(/.*)?                                      u:object_r:hbtp_log_file:s0
+/vendor/etc/hbtp/*                                                  u:object_r:hbtp_cfg_file:s0
+
+/sys/devices/qpnp-charger.*/power_supply/battery(/.*)?              u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qpnp,fg/power_supply/bms(/.*)?               u:object_r:sysfs_battery_supply:s0
+/sys/class/qcom-battery(/.*)?              u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc/qpnp-linear-charger-[a-z0-9]+/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?    u:object_r:sysfs_battery_supply:s0
+/sys/devices/soc/qpnp-smbcharger-[a-z0-9]+/power_supply/battery(/.*)?        u:object_r:sysfs_battery_supply:s0
+/sys/devices/soc/qpnp-fg-[a-z0-9]+/power_supply/bms(/.*)?           u:object_r:sysfs_battery_supply:s0
+/sys/devices/soc/qpnp-smbcharger-[a-z0-9]+/power_supply/dc(/.*)?    u:object_r:sysfs_battery_supply:s0
+/sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_battery_supply:s0
+
+/sys/devices/soc/qpnp-vadc-[0-9]+(/.*)? u:object_r:sysfs_vadc_dev:s0
+/sys/bus/spmi/devices(/.*)? u:object_r:sysfs_spmi_dev:s0
+
+
+/(vendor|system/vendor)/bin/init\.class_main\.sh        u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.crda\.sh              u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.mdm\.sh               u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.sh              u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.class_core\.sh  u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.coex\.sh        u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.crashdata\.sh   u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.debug\.sh       u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.debug-sdm660\.sh    u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.debug-sdm670\.sh    u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.early_boot\.sh  u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.efs\.sync\.sh   u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.post_boot\.sh   u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.sdio\.sh        u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.sensors\.sh     u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.syspart_fixup\.sh   u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.usb\.sh         u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.wifi\.sh        u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.ims\.sh          u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/qca6234-service.sh          u:object_r:qti_init_shell_exec:s0

@@ -23,3 +23,6 @@ allow per_mgr ssr_device:chr_file { open read };
 
 r_dir_file(per_mgr, sysfs_msm_subsys)
 r_dir_file(per_mgr, sysfs)
+
+# Set the peripheral state property
+set_prop(per_mgr, per_mgr_state_prop);

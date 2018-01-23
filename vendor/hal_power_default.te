@@ -1,2 +1,6 @@
 allow hal_power_default sysfs_soc:dir r_dir_perms;
 allow hal_power_default sysfs_soc:file r_file_perms;
+
+allow hal_power_default hbtp_kernel_sysfs:file rw_file_perms;
+
+hal_client_domain(hal_power_default, hal_perf)

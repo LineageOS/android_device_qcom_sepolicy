@@ -16,6 +16,9 @@ allow thermal-engine sysfs_thermal:dir r_dir_perms;
 allow thermal-engine sysfs_thermal:file rw_file_perms;
 allow thermal-engine sysfs_rmtfs:dir search;
 allow thermal-engine sysfs_rmtfs:file r_file_perms;
+allow thermal-engine sysfs_kgsl:dir r_dir_perms;
+allow thermal-engine sysfs_kgsl:file rw_file_perms;
+allow thermal-engine sysfs_kgsl:lnk_file r_file_perms;
 
 allow thermal-engine audio_device:chr_file rw_file_perms;
 
@@ -28,3 +31,11 @@ allowxperm thermal-engine self:socket ioctl msm_sock_ipc_ioctls;
 
 # reboot/shutdown for thermal limits exceeded
 set_prop(thermal-engine, powerctl_prop)
+
+# netlink access
+allow thermal-engine self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+# This is required read and write battery power supply sysfs
+allow thermal-engine sysfs_battery_supply:dir r_dir_perms;
+allow thermal-engine sysfs_battery_supply:file rw_file_perms;
+allow thermal-engine sysfs_battery_supply:lnk_file r_file_perms;

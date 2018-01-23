@@ -7,10 +7,11 @@ net_domain(qti)
 allow qti sysfs_soc:dir search;
 allow qti sysfs_soc:file r_file_perms;
 
-allow qti smd_device:chr_file { read write };
+allow qti smd_device:chr_file rw_file_perms;
 allow qti rmnet_device:chr_file rw_file_perms;
 
 allow qti self:socket create_socket_perms;
 allowxperm qti self:socket ioctl msm_sock_ipc_ioctls;
+allow qti { vendor_shell_exec }:file rx_file_perms;
 
 r_dir_file(qti, sysfs_msm_subsys)

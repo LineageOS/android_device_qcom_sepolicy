@@ -1,9 +1,12 @@
+allow init {
+    adsprpcd_file
+    cache_file
+    persist_file
+    storage_file
+}:dir mounton;
+
 # symlink /sdcard to backing block
 allow init tmpfs:lnk_file create;
-allow init configfs:lnk_file create;
-
-allow init firmware_file:dir mounton;
-allow init configfs:file w_file_perms;
 allow init debugfs_clk:file w_file_perms;
 
 allow init tty_device:chr_file rw_file_perms;
@@ -11,6 +14,29 @@ allow init tty_device:chr_file rw_file_perms;
 allow init persist_file:dir mounton;
 
 allow init ab_block_device:lnk_file relabelto;
-allow init boot_block_device:lnk_file relabelto;
+
+allow init cgroup:file create_file_perms;
+
+#Allow init to mount non-hlos partitions in A/B builds
+allow init firmware_file:dir { mounton };
+allow init bt_firmware_file:dir { mounton };
+allow init vendor_firmware_file:dir mounton;
 
 dontaudit init kernel:system module_request;
+
+allow init sysfs_leds:lnk_file r_file_perms;
+
+# need to check
+allow init socket_device:sock_file create_file_perms;
+
+#Needed for restorecon. Init already has these permissions
+#for generic block devices, but is unable to access those
+#which have a custom lable added by us.
+allow init {
+    custom_ab_block_device
+    boot_block_device
+    xbl_block_device
+    ssd_block_device
+    modem_block_device
+    mdtp_device
+}:{ blk_file lnk_file } relabelto;

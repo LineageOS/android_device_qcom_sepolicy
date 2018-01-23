@@ -24,3 +24,6 @@ allow sensors system_file:dir r_dir_perms;
 allow sensors sensors_device:chr_file rw_file_perms;
 
 r_dir_file(sensors, sysfs_msm_subsys)
+
+allow sensors ion_device:chr_file r_file_perms;
+allow sensors qdsp_device:chr_file r_file_perms;

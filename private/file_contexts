@@ -1,1 +1,2 @@
 /data/misc/elabel(/.*)?         u:object_r:elabel_data_file:s0
+/data/misc/seemp(/.*)?          u:object_r:seemp_data_file:s0

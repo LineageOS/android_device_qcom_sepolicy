@@ -4,3 +4,5 @@ passthrough_hal_client_domain(vold, hal_keymaster);
 get_prop(vold, tee_listener_prop)
 
 allow vold sysfs_scsi_devices_0000:file write;
+
+allow vold persist_file:dir r_dir_perms;
