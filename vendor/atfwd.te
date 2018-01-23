@@ -8,7 +8,7 @@ allowxperm atfwd self:socket ioctl msm_sock_ipc_ioctls;
 
 binder_call(atfwd, system_app);
 
-r_dir_file(atfwd, sysfs_ssr);
+r_dir_file(atfwd, sysfs_msm_subsys);
 r_dir_file(atfwd, sysfs_esoc);
 r_dir_file(atfwd, sysfs_data);
 
@@ -16,8 +16,3 @@ set_prop(atfwd, radio_prop)
 
 hwbinder_use(atfwd)
 get_prop(atfwd, hwservicemanager_prop)
-
-#diag
-userdebug_or_eng(`
-    diag_use(atfwd)
-')

@@ -1,4 +1,4 @@
-#Copyright (c) 2017, The Linux Foundation. All rights reserved.
+#Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
 #
 #Redistribution and use in source and binary forms, with or without
 #modification, are permitted provided that the following conditions are
@@ -30,4 +30,13 @@
 # Allow access to create socket and ioctl.
 allow hal_wifi_supplicant_default self:socket create_socket_perms;
 # ioctlcmd=c304, c302
-allowxperm hal_wifi_supplicant self:socket ioctl msm_sock_ipc_ioctls;
+allowxperm hal_wifi_supplicant_default self:socket ioctl msm_sock_ipc_ioctls;
+
+allow hal_wifi_supplicant_default wifi_vendor_data_file:dir create_dir_perms;
+allow hal_wifi_supplicant_default wifi_vendor_data_file:dir w_dir_perms;
+allow hal_wifi_supplicant_default wifi_vendor_data_file:file create_file_perms;
+allow hal_wifi_supplicant_default wpa_socket:dir create_dir_perms;
+allow hal_wifi_supplicant_default wpa_socket:sock_file create_file_perms;
+# Permission for wpa socket which IMS use to communicate
+# # Allow wpa_supplicant to send back wifi information to cnd
+allow hal_wifi_supplicant_default { cnd ims }:unix_dgram_socket sendto;
