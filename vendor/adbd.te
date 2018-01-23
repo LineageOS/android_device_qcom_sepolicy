@@ -1,8 +1,0 @@
-allow adbd tombstone_data_file:dir getattr;
-
-# allow read access for adb
-r_dir_file(adbd, RIDL_data_file)
-
-# allow read access for adb
-r_dir_file(adbd, qti_logkit_priv_data_file)
-r_dir_file(adbd, qti_logkit_pub_data_file)

@@ -1,2 +1,0 @@
-#add new domain for DataServices
-user=system seinfo=platform name=.dataservices domain=dataservice_app type=system_app_data_file

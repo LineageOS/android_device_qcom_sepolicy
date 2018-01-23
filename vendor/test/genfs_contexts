@@ -1,2 +1,0 @@
-genfscon debugfs /regmap u:object_r:qti_debugfs:s0
-genfscon debugfs /asoc u:object_r:qti_debugfs:s0
