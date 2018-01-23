@@ -96,6 +96,7 @@
 ###################################
 # Dev socket nodes
 #
+/dev/socket/chre                                u:object_r:chre_socket:s0
 /dev/socket/qmux_audio(/.*)?                    u:object_r:qmuxd_socket:s0
 /dev/socket/qmux_bluetooth(/.*)?                u:object_r:qmuxd_socket:s0
 /dev/socket/qmux_gps(/.*)?                      u:object_r:qmuxd_socket:s0
@@ -197,6 +198,7 @@
 /(vendor|system/vendor)/bin/qmuxd               u:object_r:qmuxd_exec:s0
 /(vendor|system/vendor)/bin/port-bridge         u:object_r:port-bridge_exec:s0
 /(vendor|system/vendor)/bin/sensors.qcom        u:object_r:sensors_exec:s0
+/(vendor|system/vendor)/bin/sensors.qti         u:object_r:sensors_exec:s0
 /(vendor|system/vendor)/bin/test_diag           u:object_r:diag_exec:s0
 /(vendor|system/vendor)/bin/thermal-engine      u:object_r:thermal-engine_exec:s0
 /(vendor|system/vendor)/bin/vm_bms                              u:object_r:vm_bms_exec:s0
@@ -306,6 +308,7 @@
 /(vendor|system/vendor)/bin/vppservice          u:object_r:vppservice_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service u:object_r:hal_qteeconnector_qti_exec:s0
 /(vendor|system/vendor)/bin/fm_qsoc_patches     u:object_r:fm_qsoc_patches_exec:s0
+/(vendor|system/vendor)/bin/chre                u:object_r:chre_exec:s0
 /(vendor|system/vendor)/bin/tloc_daemon         u:object_r:tlocd_exec:s0
 /(vendor|system/vendor)/bin/power_off_alarm      u:object_r:power_off_alarm_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service      u:object_r:hal_factory_qti_default_exec:s0
@@ -399,6 +402,7 @@
 
 /sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes          u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/modes u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/status u:object_r:sysfs_graphics:s0
 
 /sys/devices/virtual/workqueue/kgsl-events/cpumask                  u:object_r:sysfs_kgsl:s0
 /sys/devices/virtual/workqueue/kgsl-events/nice                     u:object_r:sysfs_kgsl:s0
