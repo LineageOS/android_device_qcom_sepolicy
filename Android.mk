@@ -4,7 +4,7 @@ LOCAL_PATH:= $(call my-dir)
 BOARD_SEPOLICY_DIRS := \
        $(BOARD_SEPOLICY_DIRS) \
        $(LOCAL_PATH) \
-       $(LOCAL_PATH)/vendor \
+       $(LOCAL_PATH)/vendor/common \
        $(LOCAL_PATH)/vendor/$(TARGET_BOARD_PLATFORM)
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
