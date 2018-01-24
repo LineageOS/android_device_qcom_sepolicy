@@ -95,3 +95,6 @@ userdebug_or_eng(`
 
 # for dmesg
 #read_logd(qdmastatsd);
+
+# allow qdma_prop
+set_prop(qdmastatsd, qdma_prop);
