@@ -56,3 +56,6 @@
 /sys/devices/[a-f0-9]+\.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)?                     u:object_r:sysfs_kgsl:s0
 /sys/devices/[a-f0-9]+\.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)?   u:object_r:sysfs_kgsl:s0
 /sys/devices/[a-f0-9]+\.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk                    u:object_r:sysfs_kgsl_gpuclk:s0
+
+# Runtime status
+/sys/devices/mdp\.0/power/runtime_status                                      u:object_r:sysfs_runtime_status:s0
