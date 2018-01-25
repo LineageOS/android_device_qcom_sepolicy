@@ -1,0 +1,23 @@
+type bluetooth_loader, domain;
+type bluetooth_loader_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(bluetooth_loader)
+
+# Set persist.service.bdroid.* and bluetooth.* property values
+get_prop(bluetooth_loader, bluetooth_prop)
+
+# Access the serial device
+allow bluetooth_loader serial_device:chr_file rw_file_perms;
+
+# And the smd device
+allow bluetooth_loader smd_device:chr_file rw_file_perms;
+
+# And qmuxd
+allow bluetooth_loader qmuxd_socket:dir create_dir_perms;
+allow bluetooth_loader qmuxd_socket:sock_file create_file_perms;
+allow bluetooth_loader qmuxd:unix_stream_socket connectto;
+
+userdebug_or_eng(`
+  diag_use(bluetooth_loader)
+')
