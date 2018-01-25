@@ -2,6 +2,7 @@ ctl.hbtp                   u:object_r:ctl_hbtp_prop:s0
 ctl.ipacm                  u:object_r:ipacm_prop:s0
 ctl.ipacm-diag             u:object_r:ipacm-diag_prop:s0
 ctl.qti                    u:object_r:qti_prop:s0
+ctl.sensors                u:object_r:sensors_prop:s0
 ctl.thermal-engine         u:object_r:thermal_prop:s0
 debug.gralloc.             u:object_r:debug_gralloc_prop:s0
 debug.ramdump.             u:object_r:ramdump_prop:s0
@@ -16,6 +17,8 @@ persist.sys.cnss.          u:object_r:cnss_diag_prop:s0
 persist.sys.crash_rcu      u:object_r:ramdump_prop:s0
 persist.sys.modem.diag.    u:object_r:modem_diag_prop:s0
 persist.vendor.sys.cnd     u:object_r:cnd_prop:s0
+persist.vendor.crash.cnt   u:object_r:crash_cnt_prop:s0
+persist.vendor.crash.detect u:object_r:crash_detect_prop:s0
 radio.                     u:object_r:radio_prop:s0
 rcs.publish.status         u:object_r:radio_prop:s0
 sys.ims.                   u:object_r:ims_prop:s0

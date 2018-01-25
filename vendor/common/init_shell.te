@@ -66,9 +66,7 @@ allow qti_init_shell sysfs_devices_system_cpu: { dir file lnk_file } relabelto;
 
 # To start sensors for DSPS enabled platforms
 r_dir_file(qti_init_shell, persist_file)
-r_dir_file(qti_init_shell, persist_sensors_file)
 r_dir_file(qti_init_shell, persist_bluetooth_file)
-allow qti_init_shell persist_sensors_file:file setattr;
 
 allow qti_init_shell { proc proc_net}:file write;
 allow qti_init_shell proc_net:file r_file_perms;
@@ -126,7 +124,6 @@ allow qti_init_shell proc:dir w_file_perms;
 
 allow qti_init_shell post_boot_prop:property_service set;
 allow qti_init_shell proc:dir add_name;
-allow qti_init_shell sensors_device:chr_file r_file_perms;
 allow qti_init_shell sysfs:file w_file_perms;
 allow qti_init_shell sysfs_devices_system_cpu:dir w_dir_perms;
 allow qti_init_shell sysfs_devices_system_cpu:file w_file_perms;

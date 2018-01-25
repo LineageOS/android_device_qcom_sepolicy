@@ -1,6 +1,8 @@
 type camera_prop, property_type;
 type cnd_prop, property_type;
 type cnss_diag_prop, property_type;
+type crash_cnt_prop, property_type;
+type crash_detect_prop, property_type;
 type ctl_hbtp_prop, property_type;
 type debug_gralloc_prop, property_type;
 type ims_prop, property_type;
@@ -13,6 +15,7 @@ type per_mgr_state_prop, property_type;
 type post_boot_prop, property_type;
 type qti_prop, property_type;
 type ramdump_prop, property_type;
+type sensors_prop, property_type;
 type ssr_prop, property_type;
 type sys_time_prop, property_type;
 type sys_usb_configfs_prop, property_type;

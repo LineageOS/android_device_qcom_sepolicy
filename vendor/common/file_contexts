@@ -339,7 +339,7 @@
 /(vendor|system/vendor)/bin/init\.qcom\.sh              u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.class_core\.sh  u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.coex\.sh        u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.crashdata\.sh   u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.crashdata\.sh   u:object_r:init-qcom-crashdata-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.debug\.sh       u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.debug-sdm660\.sh    u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.debug-sdm670\.sh    u:object_r:qti_init_shell_exec:s0
@@ -347,9 +347,9 @@
 /(vendor|system/vendor)/bin/init\.qcom\.efs\.sync\.sh   u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.post_boot\.sh   u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sdio\.sh        u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.sensors\.sh     u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.sensors\.sh     u:object_r:init-qcom-sensors-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.syspart_fixup\.sh   u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.usb\.sh         u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.wifi\.sh        u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qti\.ims\.sh          u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.ims\.sh          u:object_r:init-qti-ims-sh_exec:s0
 /(vendor|system/vendor)/bin/qca6234-service.sh          u:object_r:qti_init_shell_exec:s0

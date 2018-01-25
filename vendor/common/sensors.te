@@ -27,3 +27,6 @@ r_dir_file(sensors, sysfs_msm_subsys)
 
 allow sensors ion_device:chr_file r_file_perms;
 allow sensors qdsp_device:chr_file r_file_perms;
+
+# For reading dir/files on /dsp
+r_dir_file(sensors, adsprpcd_file)
