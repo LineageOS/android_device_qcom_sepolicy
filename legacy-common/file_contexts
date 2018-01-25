@@ -62,3 +62,6 @@
 
 # Old camera sockets
 /data/cam_socket[12]                                                          u:object_r:camera_socket:s0
+
+# Bluetooth
+/(vendor|system/vendor)/bin/hci_qcomm_init                                    u:object_r:bluetooth_loader_exec:s0
