@@ -1,5 +1,7 @@
 type sysfs_battery_supply, sysfs_type, fs_type;
 type sysfs_camera, sysfs_type, fs_type;
+type sysfs_cpu_boost, fs_type, sysfs_type;
+type sysfs_devfreq, fs_type, sysfs_type;
 type sysfs_easel, sysfs_type, fs_type;
 type sysfs_esoc, sysfs_type, fs_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
@@ -42,7 +44,6 @@ type proc_wifi_dbg, fs_type;
 type qmuxd_socket, file_type;
 type netmgrd_socket, file_type;
 type thermal_socket, file_type;
-type perfd_socket, file_type;
 
 type ims_socket, file_type;
 type ipacm_socket, file_type;

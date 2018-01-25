@@ -6,6 +6,7 @@ net_domain(ims)
 
 get_prop(ims, hwservicemanager_prop)
 set_prop(ims, ims_prop)
+get_prop(ims, ims_prop)
 
 unix_socket_connect(ims, netmgrd, netmgrd)
 

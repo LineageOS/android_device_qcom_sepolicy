@@ -18,14 +18,17 @@ allow rmt_storage sysfs_rmtfs:dir search;
 allow rmt_storage sysfs_rmtfs:file r_file_perms;
 allow rmt_storage sysfs_rmtfs:dir search;
 
-allow rmt_storage debugfs_rmt_storage:dir search;
-allow rmt_storage debugfs_rmt_storage:file w_file_perms;
 
 allow rmt_storage self:socket create_socket_perms;
 allowxperm rmt_storage self:socket ioctl IPC_ROUTER_IOCTL_BIND_CONTROL_PORT;
 
 allow rmt_storage kmsg_device:chr_file w_file_perms;
 
+#debugfs access
+userdebug_or_eng(`
+allow rmt_storage debugfs_rmt_storage:dir search;
+allow rmt_storage debugfs_rmt_storage:file w_file_perms;
+')
 r_dir_file(rmt_storage, sysfs_uio)
 r_dir_file(rmt_storage, sysfs_uio_file)
 

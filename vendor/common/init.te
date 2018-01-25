@@ -7,7 +7,6 @@ allow init {
 
 # symlink /sdcard to backing block
 allow init tmpfs:lnk_file create;
-allow init debugfs_clk:file w_file_perms;
 
 allow init tty_device:chr_file rw_file_perms;
 
@@ -26,7 +25,6 @@ dontaudit init kernel:system module_request;
 
 allow init sysfs_leds:lnk_file r_file_perms;
 
-# need to check
 allow init socket_device:sock_file create_file_perms;
 
 #Needed for restorecon. Init already has these permissions
@@ -40,3 +38,7 @@ allow init {
     modem_block_device
     mdtp_device
 }:{ blk_file lnk_file } relabelto;
+
+#Allow /sys access to write zram disksize
+allow init sysfs_zram:dir r_dir_perms;
+allow init sysfs_zram:file r_file_perms;

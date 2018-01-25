@@ -2,6 +2,7 @@
 userdebug_or_eng(`
   allow kernel self:socket create;
   allow kernel debugfs_wlan:dir search;
+  allow kernel debugfs_ipc:dir search;
 ')
 
 allow kernel vendor_firmware_file:dir search;
@@ -10,5 +11,4 @@ allow kernel vendor_firmware_file:lnk_file read;
 
 dontaudit kernel kernel:system module_request;
 
-allow kernel debugfs_ipc:dir search;
 allow kernel persist_file:dir search;

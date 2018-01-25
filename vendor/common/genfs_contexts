@@ -19,7 +19,9 @@ genfscon sysfs /class/uio                                               u:object
 genfscon sysfs /devices/soc/soc:bt_wcn3990                              u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/soc/a1800000.qcom,rmtfs_rtel_sharedmem          u:object_r:sysfs_rmtfs:s0
 genfscon sysfs /devices/soc/c17a000.i2c                                 u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,gpubw                              u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpubw                              u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,gpubw                              u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,llccbw                             u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi                           u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /devices/platform/soc/4080000.qcom,mss                            u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /devices/platform/soc/17300000.qcom,lpass                         u:object_r:sysfs_msm_subsys:s0
@@ -42,6 +44,7 @@ genfscon sysfs /devices/platform/soc/0.qcom,rmtfs_sharedmem                     
 genfscon sysfs /devices/platform/soc/soc:fp_fpc1020                              u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/virtual/thermal                                 u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/virtual/wahoo_laser                             u:object_r:sysfs_laser:s0
+genfscon sysfs /module/cpu_boost                                        u:object_r:sysfs_cpu_boost:s0
 genfscon sysfs /module/msm_thermal                                      u:object_r:sysfs_thermal:s0
 genfscon sysfs /module/tcp_cubic/parameters                             u:object_r:sysfs_net:s0
 genfscon sysfs /module/diagchar/parameters/timestamp_switch             u:object_r:sysfs_timestamp_switch:s0
@@ -66,16 +69,15 @@ genfscon sysfs /devices/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.0.auto/usb2 u:ob
 genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-02/800f000.qcom,spmi:qcom,pmi8998@2:qcom,usb-pdphy@1700/usbpd0/typec     u:object_r:sysfs_usb_c:s0
 genfscon sysfs /module/diagchar                                         u:object_r:sysfs_diag:s0
 
-
 genfscon sysfs /devices/virtual/workqueue/kgsl-events/cpumask                  u:object_r:sysfs_kgsl:s0
 genfscon sysfs /devices/virtual/workqueue/kgsl-events/nice                     u:object_r:sysfs_kgsl:s0
 genfscon sysfs /devices/virtual/workqueue/kgsl-workqueue/cpumask               u:object_r:sysfs_kgsl:s0
 genfscon sysfs /devices/virtual/workqueue/kgsl-workqueue/nice                  u:object_r:sysfs_kgsl:s0
 
+genfscon sysfs /module/drm/parameters/vblankoffdelay                           u:object_r:sysfs_graphics:s0
 
 genfscon sysfs /class/sensors u:object_r:sysfs_sensors:s0
 genfscon sysfs /bus/esoc u:object_r:sysfs_esoc:s0
-
 
 genfscon sysfs /devices/soc/soc:hbtp/secure_touch                           u:object_r:hbtp_kernel_sysfs:s0
 genfscon sysfs /devices/soc/soc:hbtp/secure_touch_enable                    u:object_r:hbtp_kernel_sysfs:s0

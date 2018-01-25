@@ -1,6 +1,3 @@
-allow mediacodec perfd:unix_stream_socket connectto;
-allow mediacodec perfd_socket:sock_file write;
-
 allow mediacodec sysfs_soc:file r_file_perms;
 allow mediacodec sysfs_soc:dir search;
 

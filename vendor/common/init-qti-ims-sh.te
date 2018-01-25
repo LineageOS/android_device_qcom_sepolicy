@@ -33,4 +33,8 @@ init_daemon_domain(init-qti-ims-sh)
 allow init-qti-ims-sh vendor_shell_exec:file rx_file_perms;
 allow init-qti-ims-sh vendor_toolbox_exec:file rx_file_perms;
 
-set_prop(init-qti-ims-sh, system_prop)
+set_prop(init-qti-ims-sh, ims_prop)
+get_prop(init-qti-ims-sh, ims_prop)
+
+# for ro.build.product
+get_prop(init-qti-ims-sh, default_prop)

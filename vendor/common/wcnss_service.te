@@ -41,8 +41,8 @@ userdebug_or_eng(`
 userdebug_or_eng(`
 allow wcnss_service sdcardfs:dir create_dir_perms;
 allow wcnss_service sdcardfs:file create_file_perms;
-')
-
 # This is needed for ptt_socket_app to write logs file collected to sdcard
 r_dir_file(wcnss_service, storage_file)
 r_dir_file(wcnss_service, mnt_user_file)
+')
+

@@ -43,6 +43,8 @@ allow hal_perf_default proc:file rw_file_perms;
 
 allow hal_perf {
     sysfs_devices_system_cpu
+    sysfs_devfreq
+    sysfs_cpu_boost
     sysfs_kgsl
     sysfs_graphics
     sysfs
@@ -51,11 +53,14 @@ allow hal_perf {
 
 allow hal_perf {
     sysfs_devices_system_cpu
+    sysfs_devfreq
+    sysfs_cpu_boost
     sysfs_kgsl
     sysfs_graphics
     sysfs_battery_supply
 }:file rw_file_perms;
 
 allow hal_perf {
+    sysfs_devfreq
     sysfs_kgsl
 }:lnk_file r_file_perms;

@@ -6,7 +6,7 @@ userdebug_or_eng(`
   allow diag {
       diag_device
       devpts
-      console_device
+      tty_device
       # allow access to qseecom for drmdiagapp
       tee_device
   }:chr_file rw_file_perms;
