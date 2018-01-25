@@ -1,0 +1,4 @@
+allow hal_power_default mpctl_socket:dir search;
+allow hal_power_default mpctl_socket:sock_file write;
+
+allow hal_power_default mpdecision:unix_stream_socket connectto;

@@ -3,3 +3,6 @@ allow mpdecision sysfs_kgsl:file rw_file_perms;
 allow mpdecision sysfs_runtime_status:file r_file_perms;
 
 get_prop(mpdecision, freq_prop)
+
+allow mpdecision hal_power_default:dir r_dir_perms;
+allow mpdecision hal_power_default:file r_file_perms;
