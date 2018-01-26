@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e311582a_6e40b476",
+        "filename": "common/wcnss_service.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-01-26T23:40:01Z",
+      "side": 1,
+      "message": "The original change was:\n\nget_prop(wcnss_service, wcnss_prop)\nset_prop(wcnss_service, wcnss_prop)",
+      "range": {
+        "startLine": 78,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 35
+      },
+      "revId": "4239d698fa31f42faef881744a1b30e159628bab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
