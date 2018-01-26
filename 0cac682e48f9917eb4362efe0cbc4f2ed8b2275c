@@ -46,6 +46,30 @@
       "revId": "0cac682e48f9917eb4362efe0cbc4f2ed8b2275c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "909efae6_85f5bb00",
+        "filename": "legacy-common/mpdecision.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2018-01-26T22:51:52Z",
+      "side": 1,
+      "message": "Fixed in https://review.lineageos.org/#/c/204278/1",
+      "parentUuid": "c48d0392_d13dcf1b",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 42
+      },
+      "revId": "0cac682e48f9917eb4362efe0cbc4f2ed8b2275c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
