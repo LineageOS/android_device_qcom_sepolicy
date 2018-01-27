@@ -729,3 +729,9 @@
 
 #Android NN Driver
 /(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-qti u:object_r:hal_neuralnetworks_default_exec:s0
+
+##################################
+# SDM blobs
+#
+/(vendor|system/vendor)/lib(64)?/libsdm-disp-vndapis.so             u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libsdmutils.so                     u:object_r:same_process_hal_file:s0
