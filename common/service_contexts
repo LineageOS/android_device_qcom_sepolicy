@@ -42,8 +42,6 @@ mdtp                                           u:object_r:mdtpdaemon_service:s0
 qtitetherservice                               u:object_r:qtitetherservice_service:s0
 com.qualcomm.qti.seemp.health                  u:object_r:seemp_health_daemon_service:s0
 com.qualcomm.qti.uceservice                    u:object_r:imsrcs_service:s0
-wigigp2p                                       u:object_r:wigigp2p_service:s0
-wigig                                          u:object_r:wigig_service:s0
 # DOLBY_START
 media.dolby_memoryservice                      u:object_r:audioserver_service:s0
 # DOLBY_END
