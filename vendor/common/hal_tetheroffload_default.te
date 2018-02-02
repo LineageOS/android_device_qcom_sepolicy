@@ -30,3 +30,5 @@ allow hal_tetheroffload_default ipacm_socket:sock_file w_file_perms;
 
 allow hal_tetheroffload_default ipa_vendor_data_file:dir w_dir_perms;
 allow hal_tetheroffload_default ipa_vendor_data_file:file create_file_perms;
+
+add_hwservice(hal_tetheroffload_default, hal_tetheroffload_hwservice)

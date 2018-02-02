@@ -17,23 +17,27 @@ userdebug_or_eng(`
 ')
 
 # Allow operations with /dev/ipa, /dev/wwan_ioctl and /dev/ipaNatTable
-allow ipacm ipa_dev:chr_file rw_file_perms;
+allow hal_tetheroffload ipa_dev:chr_file rw_file_perms;
+
+# Allow UDP socket create and ioctl
+allow hal_tetheroffload self:udp_socket create_socket_perms;
+allowxperm ipacm self:udp_socket ioctl SIOCGIFNAME;
 
 # Allow receiving NETLINK messages
-allow ipacm ipacm:{
-    netlink_route_socket
+allow hal_tetheroffload self:netlink_route_socket { nlmsg_read create_socket_perms_no_ioctl };
+
+
+# Allow receiving NETLINK messages
+allow hal_tetheroffload self:{
     netlink_socket
     # Allow querying the network stack via IOCTLs
-    udp_socket
     netlink_generic_socket
 } create_socket_perms_no_ioctl;
 
 # Allow creating and modifying the PID file
-allow ipacm ipa_vendor_data_file:dir w_dir_perms;
-allow ipacm ipa_vendor_data_file:file create_file_perms;
+allow hal_tetheroffload ipa_vendor_data_file:dir w_dir_perms;
+allow hal_tetheroffload ipa_vendor_data_file:file create_file_perms;
 
 # To register ipacm to hwbinder
 add_hwservice(ipacm, hal_ipacm_hwservice)
-hwbinder_use(ipacm)
-get_prop(ipacm, hwservicemanager_prop)
 binder_call(ipacm, system_server)

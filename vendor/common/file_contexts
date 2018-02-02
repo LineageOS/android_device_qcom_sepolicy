@@ -181,6 +181,7 @@
 /data/vendor/modem_dump(/.*)?          u:object_r:modem_dump_file:s0
 /data/vendor/ipa(/.*)?                 u:object_r:ipa_vendor_data_file:s0
 /data/vendor/sensors(/.*)?             u:object_r:sensors_vendor_data_file:s0
+/data/vendor/port_bridge(/.*)?         u:object_r:port_bridge_data_file:s0
 
 /data/vendor/connectivity(/.*)?        u:object_r:cnd_data_file:s0
 
