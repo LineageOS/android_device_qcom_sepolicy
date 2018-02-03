@@ -134,6 +134,7 @@
 /dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
 /dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
 /dev/socket/mmi                                 u:object_r:mmi_socket:s0
+/dev/socket/location(/.*)?                      u:object_r:location_socket:s0
 
 ###################################
 # System files
