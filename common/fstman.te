@@ -65,5 +65,5 @@ allow fstman wifi_vendor_wpa_socket:dir rw_dir_perms;
 allow fstman wifi_vendor_wpa_socket:sock_file create_file_perms;
 # supplicant global socket
 # hostapd global socket
-allow fstman wifi_vendor_hostapd_socket:dir rw_dir_perms;
-allow fstman wifi_vendor_hostapd_socket:sock_file create_file_perms;
+allow fstman hostapd_data_file:dir rw_dir_perms;
+allow fstman hostapd_data_file:sock_file create_file_perms;
