@@ -36,12 +36,6 @@ unix_socket_connect(ims, ims, qmuxd)
 
 set_prop(ims, qcom_ims_prop)
 
-# permissions needed for IMS to connect and interact with WPA supplicant
-# comment to remove compilation
-#unix_socket_send(ims, wpa, wpa)
-allow ims wpa_socket:dir w_dir_perms;
-allow ims wpa_socket:sock_file { create unlink setattr };
-
 # permissions for communication with CNE in LBO use case
 unix_socket_connect(ims, cnd, cnd)
 

@@ -50,11 +50,6 @@ allow location sensors_persist_file:file r_file_perms;
 userdebug_or_eng(`
 allow location su:unix_dgram_socket sendto;
 ')
-# comment to remove compilation issue
-#unix_socket_send(wpa, location, location)
-#allow location wpa:unix_dgram_socket sendto;
-allow location wpa_socket:dir rw_dir_perms;
-allow location wpa_socket:sock_file create_file_perms;
 
 allow location rfs_shared_hlos_file:dir r_dir_perms;
 allow location rfs_shared_hlos_file:file rw_file_perms;

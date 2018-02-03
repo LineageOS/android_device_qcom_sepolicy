@@ -32,8 +32,6 @@ type touchfusion_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(touchfusion)
 
-domain_auto_trans(kernel, touchfusion_exec, touchfusion);
-
 allow touchfusion kmsg_device:chr_file rw_file_perms;
 
 allow touchfusion graphics_device:dir r_dir_perms;
