@@ -654,6 +654,7 @@
 /vendor/lib(64)?/libdiag\.so                u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libqvrservice_client\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libqvrcamera_client\.so    u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libvraudio_client\.so      u:object_r:same_process_hal_file:s0
 
 ###################################
 # firmware images
