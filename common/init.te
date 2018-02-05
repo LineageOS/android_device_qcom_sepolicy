@@ -30,6 +30,7 @@ allow init configfs:lnk_file create_file_perms;
 
 #Allow init to mount non-hlos partitions in A/B builds
 allow init firmware_file:dir { mounton };
+allow init vendor_firmware_file:dir mounton;
 allow init bt_firmware_file:dir { mounton };
 
 allow init sysfs_boot_adsp:file write;

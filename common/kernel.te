@@ -9,6 +9,10 @@ userdebug_or_eng(`
 # Access firmware_file
 r_dir_file(kernel, firmware_file)
 
+allow kernel vendor_firmware_file:dir search;
+allow kernel vendor_firmware_file:file r_file_perms;
+allow kernel vendor_firmware_file:lnk_file read;
+
 # Allow kernel to schedule process to different cpuset
 # when the current cpu is hotplugged out
 allow kernel domain:process setsched;
