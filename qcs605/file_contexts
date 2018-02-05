@@ -155,6 +155,8 @@
 
 # qmmf server
 /(vendor|system/vendor)/bin/qmmf-server   u:object_r:qmmf-servd_exec:s0
+/(vendor|system/vendor)/bin/qmmf-webserver-zygote    u:object_r:qmmf-webserverd_exec:s0
 
 # qmmf data files
 /data/misc/qmmf(/.*)?                     u:object_r:qmmf_data_file:s0
+/data/misc/vam(/.*)?                      u:object_r:qmmf_vam_data_file:s0

@@ -27,3 +27,6 @@
 
 # qmmf data file
 type qmmf_data_file, file_type, data_file_type;
+
+# vam data file
+type qmmf_vam_data_file, file_type, data_file_type;
