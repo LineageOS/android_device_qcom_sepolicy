@@ -33,6 +33,7 @@ allow init firmware_file:dir { mounton };
 allow init bt_firmware_file:dir { mounton };
 
 allow init sysfs_boot_adsp:file write;
+allow init sysfs_slpi:file write;
 
 #dontaudit non configfs usb denials
 dontaudit init sysfs:dir write;
