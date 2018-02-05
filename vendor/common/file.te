@@ -99,4 +99,4 @@ type rfs_file, file_type, data_file_type;
 type adsprpcd_file, file_type, mlstrustedobject;
 
 type hbtp_log_file, file_type, data_file_type;
-type hbtp_cfg_file, file_type;
+type hbtp_cfg_file, file_type, vendor_file_type;

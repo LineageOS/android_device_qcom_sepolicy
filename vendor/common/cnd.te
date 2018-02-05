@@ -36,9 +36,6 @@ allow cnd cnd_data_file:file create_file_perms;
 allow cnd cnd_data_file:sock_file { unlink create setattr };
 allow cnd cnd_data_file:dir rw_dir_perms;
 
-allow cnd wpa_socket:dir rw_dir_perms;
-allow cnd wpa_socket:sock_file { create unlink setattr };
-
 allow cnd self:socket ioctl;
 allowxperm cnd self:socket ioctl msm_sock_ipc_ioctls;
 
