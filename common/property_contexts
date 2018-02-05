@@ -121,6 +121,9 @@ vendor.radio               u:object_r:radio_prop:s0
 ro.vendor.ril.             u:object_r:radio_prop:s0
 persist.vendor.sys.        u:object_r:vendor_system_prop:s0
 
+# qdma property
+vendor.qti.qdma.        u:object_r:qdma_prop:s0
+
 #crashdata property
 persist.vendor.crash.cnt         u:object_r:crash_prop:s0
 persist.vendor.crash.detect        u:object_r:crash_prop:s0

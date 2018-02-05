@@ -200,8 +200,9 @@ allow qti_init_shell swap_data_file:dir rw_dir_perms;
 allow qti_init_shell swap_data_file:file create_file_perms;
 
 #For configfs permission
-allow qti_init_shell configfs:dir r_dir_perms;
-allow qti_init_shell configfs:file rw_file_perms;
+allow qti_init_shell configfs:dir create_dir_perms;
+allow qti_init_shell configfs:file create_file_perms;
+allow qti_init_shell configfs:lnk_file { create r_file_perms };
 
 #Allow read permissions to read adj
 allow qti_init_shell sysfs_lowmemorykiller:file read;
