@@ -77,7 +77,6 @@
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/wlan                                       u:object_r:wlan_device:s0
 /dev/bg_com_dev                                 u:object_r:bg_daemon_device:s0
-/dev/blkio(/.*)?                                u:object_r:blkio_device:s0
 ###################################
 # Dev block nodes
 #
