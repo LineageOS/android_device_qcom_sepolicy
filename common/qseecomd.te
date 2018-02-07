@@ -18,11 +18,6 @@ allow tee rpmb_device:blk_file rw_file_perms;
 allow tee device:dir r_dir_perms;
 allow tee sg_device:chr_file { rw_file_perms setattr };
 
-# Allow qseecom to qsee folder so that listeners can create
-# respective directories
-allow tee data_qsee_file:dir create_dir_perms;
-allow tee data_qsee_file:file create_file_perms;
-
 allow tee persist_file:dir r_dir_perms;
 r_dir_file(tee, persist_data_file)
 
@@ -72,10 +67,6 @@ allow tee qfp-daemon_data_file:dir create_dir_perms;
 allow tee qfp-daemon_data_file:file create_file_perms;
 allow tee persist_qti_fp_file:dir create_dir_perms;
 allow tee persist_qti_fp_file:file create_file_perms;
-
-# Provide access to Q VoicePrint
-allow tee qvop-daemon_data_file:dir create_dir_perms;
-allow tee qvop-daemon_data_file:file create_file_perms;
 
 # Allow access to qsee_ipc_irq_spss device
 allow tee qsee_ipc_irq_spss_device:chr_file rw_file_perms;

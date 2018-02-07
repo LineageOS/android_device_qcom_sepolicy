@@ -52,10 +52,6 @@ userdebug_or_eng(`
   allow qti_logkit_app tombstone_data_file:dir r_dir_perms;
   allow qti_logkit_app tombstone_data_file:file r_file_perms;
   diag_use(qti_logkit_app)
-
-  # allow to read ssr ramdump
-  allow qti_logkit_app ssr_ramdump_data_file:dir r_dir_perms;
-  allow qti_logkit_app ssr_ramdump_data_file:file r_file_perms;
 ')
 
 # allow access to qti_logkit

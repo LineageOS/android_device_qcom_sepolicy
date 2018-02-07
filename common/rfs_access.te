@@ -3,13 +3,6 @@ type rfs_access, domain;
 type rfs_access_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(rfs_access)
 
-#The files created by rfs_access process in the /data folder will have type rfs_file
-type_transition rfs_access system_data_file:dir rfs_shared_hlos_file "hlos_rfs";
-
-#The files created by rfs_access process in the /persist folder will have type rfs_file
-type_transition rfs_access persist_file:{ dir file } rfs_file;
-type_transition rfs_access persist_file:dir rfs_shared_hlos_file "hlos_rfs";
-
 allow rfs_access {
     #To read the uio char device
     uio_device
@@ -30,13 +23,6 @@ allow rfs_access persist_file:dir create_dir_perms;
 r_dir_file(rfs_access, rfs_system_file)
 allow rfs_access rfs_system_file:lnk_file r_file_perms;
 
-#For data folder entries
-allow rfs_access rfs_file:dir create_dir_perms;
-allow rfs_access rfs_file:file create_file_perms;
-
-allow rfs_access rfs_shared_hlos_file:dir create_dir_perms;
-allow rfs_access rfs_shared_hlos_file:file create_file_perms;
-
 #For firmware entries in /firmware to read NHLOS.bin files ( only perms to read and get attributes).
 r_dir_file(rfs_access, firmware_file)
 
@@ -56,7 +42,3 @@ allow rfs_access self:capability { dac_read_search chown dac_override };
 
 #For access to the kmsg device
 allow rfs_access kmsg_device:chr_file w_file_perms;
-
-#Prevent other domains from accessing RFS data files.
-neverallow { domain -rfs_access -kernel -recovery -init -vendor_init userdebug_or_eng(`-su') -qti_init_shell } rfs_file:dir create_dir_perms;
-neverallow { domain -rfs_access -kernel -recovery -init -vendor_init userdebug_or_eng(`-su') -qti_init_shell } rfs_file:file create_file_perms;

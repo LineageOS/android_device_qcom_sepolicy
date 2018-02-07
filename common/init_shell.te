@@ -29,14 +29,8 @@ allow qti_init_shell { system_file rootfs vendor_shell_exec }:file execute_no_tr
 # For accessing fmradio device node
 allow qti_init_shell fm_radio_device:chr_file r_file_perms;
 
-#give permission to read/write fm dir for calibration file
-allow qti_init_shell fm_data_file: dir rw_dir_perms;
-
 #allow shell to access /dev/vm_bms
 allow qti_init_shell vm_bms_device:chr_file getattr;
-
-# create/open, read/write permission for fm calibration file.
-allow qti_init_shell fm_data_file: file create_file_perms;
 
 allow qti_init_shell gpu_device:chr_file getattr;
 
@@ -131,8 +125,6 @@ r_dir_file(qti_init_shell, sysfs_type)
 allow qti_init_shell sysfs_socinfo:file write;
 allow qti_init_shell sysfs:{ dir file lnk_file } relabelfrom;
 allow qti_init_shell sysfs_devices_system_cpu: { dir file lnk_file } relabelto;
-# Check if /dev/sensors or /dev/msm_dsps present
-allow qti_init_shell sensors_data_file:dir r_dir_perms;
 allow qti_init_shell sensors_device:chr_file r_file_perms;
 
 # To start sensors for DSPS enabled platforms
@@ -143,12 +135,8 @@ allow qti_init_shell sensors_persist_file:file setattr;
 allow qti_init_shell sensors_persist_file:dir setattr;
 
 # To start of selected USF based calculators
-r_dir_file(qti_init_shell, usf_data_file)
-allow qti_init_shell usf_data_file:file w_file_perms;
 r_dir_file(qti_init_shell, persist_usf_file)
 allow qti_init_shell persist_usf_file:dir w_dir_perms;
-allow qti_init_shell usf_data_file:dir create_dir_perms;
-allow qti_init_shell usf_data_file:{ file lnk_file } create_file_perms;
 
 # To check if /system/bin/msm_irqbalance is persent in the device
 allow qti_init_shell msm_irqbalanced_exec:file getattr;
@@ -181,10 +169,6 @@ r_dir_file(qti_init_shell, firmware_file)
 # /dev/block/zram0
 allow qti_init_shell block_device:dir r_dir_perms;
 allow qti_init_shell swap_block_device:blk_file rw_file_perms;
-
-# /data/system/swap/swapfile
-allow qti_init_shell swap_data_file:dir rw_dir_perms;
-allow qti_init_shell swap_data_file:file create_file_perms;
 
 #For configfs permission
 allow qti_init_shell configfs:dir r_dir_perms;

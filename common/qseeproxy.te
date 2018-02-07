@@ -37,9 +37,6 @@ vndbinder_use(qseeproxy)
 #Allow apps to interact with qseeproxy
 binder_call(qseeproxy, qsee_svc_app)
 
-#Mark qseeproxy as a Binder service domain
-#binder_service(qseeproxy)
-
 #Allow qseeproxy to be registered with service manager
 allow qseeproxy qseeproxy_service:service_manager add;
 
@@ -55,13 +52,6 @@ allow qseeproxy tee_device:chr_file rw_file_perms;
 #Allow access to firmware
 allow qseeproxy firmware_file:dir r_dir_perms;
 allow qseeproxy firmware_file:file r_file_perms;
-
-#Allow access to session files
-allow qseeproxy data_qsee_file:dir create_dir_perms;
-allow qseeproxy data_qsee_file:file create_file_perms ;
-
-#Allow access to system_app domain
-#allow qseeproxy system_app:unix_dgram_socket sendto;
 
 #Allow access to sysfs files
 allow qseeproxy sysfs:file w_file_perms;

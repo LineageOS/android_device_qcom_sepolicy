@@ -25,9 +25,6 @@ allow qlogd self:capability {
 allow qlogd self:capability2 syslog;
 allow qlogd self:packet_socket { create bind getopt setopt };
 
-# need to access system_data partitions for configration files
-allow qlogd qlogd_data_file:dir rw_dir_perms;
-allow qlogd qlogd_data_file:file create_file_perms;
 allow qlogd system_file:file x_file_perms;
 
 # need to create and listen socket

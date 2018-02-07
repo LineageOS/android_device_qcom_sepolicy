@@ -43,27 +43,11 @@ userdebug_or_eng(`
 #Allow for transition from init domain to mdtpdaemon
 init_daemon_domain(mdtpdaemon)
 
-#Allow mdtpdaemon to use Binder IPC
-#binder_use(mdtpdaemon)
-
-#Mark mdtpdaemon as a Binder service domain
-#binder_service(mdtpdaemon)
-
-#Allow mdtpdaemon to be registered with service manager
-#allow mdtpdaemon mdtpdaemon_service:service_manager { add find };
-
 #Allow apps to interact with mdtpdaemon
 binder_call(mdtpdaemon, platform_app)
 
 #Allow access to firmware
 r_dir_file(mdtpdaemon, firmware_file)
-
-#Allow access to qsee directories
-allow mdtpdaemon data_qsee_file:dir create_dir_perms;
-allow mdtpdaemon data_qsee_file:file create_file_perms;
-
-#Allow access to qsee fifos
-allow mdtpdaemon data_qsee_file:fifo_file create_file_perms;
 
 #Allow access to tee device
 allow mdtpdaemon tee_device:chr_file rw_file_perms;

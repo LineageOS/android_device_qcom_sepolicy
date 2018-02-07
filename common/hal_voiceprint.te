@@ -32,12 +32,6 @@ binder_call(hal_voiceprint_server, hal_voiceprint_client)
 add_hwservice(hal_voiceprint_server, hal_voiceprint_hwservice)
 allow hal_voiceprint_client hal_voiceprint_hwservice:hwservice_manager find;
 
-# read dir
-allow hal_voiceprint qvop-daemon_data_file: file create_file_perms;
-
-# r/w/u contents
-allow hal_voiceprint qvop-daemon_data_file: dir rw_dir_perms;
-
 # memory alloc
 allow hal_voiceprint ion_device:chr_file r_file_perms;
 

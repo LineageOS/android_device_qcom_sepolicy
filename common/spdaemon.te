@@ -53,13 +53,6 @@ allow spdaemon ion_device:chr_file rw_file_perms;
 # Allow to load SPSS firmware images
 r_dir_file(spdaemon, firmware_file);
 
-# Allow to load SPSS Apps images
-allow spdaemon spss_data_file:dir r_dir_perms;
-allow spdaemon spss_data_file:file r_file_perms;
-
-# Allow check SPSS Apps images stat()
-allow spdaemon spss_data_file:file getattr;
-
 # Allow get system info
 r_dir_file(spdaemon, sysfs)
 

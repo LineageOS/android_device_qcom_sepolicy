@@ -30,7 +30,6 @@ type sysfs_smd_open_timeout, sysfs_type, fs_type;
 
 #Define the files written during the operation of netmgrd and qmuxd
 type netmgrd_data_file, file_type, data_file_type;
-type data_test_data_file, file_type, data_file_type;
 type sysrq_trigger_proc, fs_type, mlstrustedobject;
 # Persist file types
 type persist_file, file_type;
@@ -38,12 +37,9 @@ type persist_bluetooth_file, file_type;
 type persist_data_file, file_type;
 type persist_drm_file, file_type;
 type data_qtee_file, file_type, data_file_type;
-type data_qsee_file, file_type, data_file_type;
 type persist_misc_file, file_type;
 type persist_bms_file, file_type;
 type persist_secnvm_file, file_type;
-
-type diag_data_file, file_type, data_file_type;
 
 #file type for restricting proc read by audiod
 type proc_audiod, fs_type;
@@ -53,7 +49,6 @@ type msm_irqbalance_socket, file_type;
 
 # Sensor file types
 type sensors_socket, file_type;
-type sensors_data_file, file_type, data_file_type;
 type sensors_persist_file, file_type;
 type sysfs_sensors, sysfs_type, fs_type;
 
@@ -63,9 +58,7 @@ type thermal_socket, file_type;
 type sysfs_msmuart_file, sysfs_type, fs_type;
 
 # Storage RFS file types
-type rfs_file, file_type, data_file_type;
 type rfs_system_file, file_type;
-type rfs_shared_hlos_file, file_type, data_file_type;
 
 #mm-pp-daemon file type for sysfs access
 #type sysfs_leds, fs_type, sysfs_type;
@@ -111,12 +104,6 @@ type gamed_socket, file_type;
 type iop_socket, file_type;
 type iop_data_file, file_type, data_file_type;
 
-# SPSS Apps images location
-type spss_data_file, file_type, data_file_type;
-
-#mm-qcamera-daemon socket
-type camera_socket, file_type, data_file_type;
-
 #Socket node needed by ims_data daemon
 type ims_socket, file_type;
 
@@ -148,7 +135,6 @@ type sysfs_socinfo, fs_type, sysfs_type;
 type sysfs_usb_uicc, sysfs_type, fs_type;
 
 type qlogd_socket, file_type, mlstrustedobject;
-type qlogd_data_file, file_type, data_file_type;
 #Defines the files (configs, dumps, etc) used by display processes
 type display_misc_file, file_type, data_file_type;
 
@@ -162,11 +148,6 @@ type ipa_vendor_data_file, file_type, data_file_type;
 # Port-bridge file types
 type port_bridge_data_file, file_type, data_file_type;
 
-type fm_data_file, file_type, data_file_type;
-
-#Define the files written during the operation of mmi
-type mmi_data_file, file_type, data_file_type;
-
 #bluetooth firmware file types
 type bt_firmware_file, fs_type, contextmount_type;
 
@@ -177,20 +158,15 @@ type  proc_dirty_ratio, fs_type;
 type mmi_socket, file_type;
 
 # hbtp config file
-type hbtp_cfg_file, file_type;
+type hbtp_cfg_file, file_type, vendor_file_type;
 type hbtp_log_file, file_type, data_file_type;
 type hbtp_kernel_sysfs, file_type, sysfs_type;
 
-#Define the files written during the operation of usf
-type usf_data_file, file_type, data_file_type;
 type persist_usf_file, file_type;
 
 #qfp-daemon
 type qfp-daemon_data_file, file_type, data_file_type;
 type persist_qti_fp_file, file_type;
-
-# dts notifier files
-type dts_data_file, file_type, data_file_type;
 
 #qsee_svc_app file types
 type qsee_svc_app_data_file, file_type, data_file_type;
@@ -211,18 +187,12 @@ type qti_logkit_pub_socket, file_type, mlstrustedobject, data_file_type;
 # used for /dsp files
 type adsprpcd_file, file_type, mlstrustedobject;
 
-# audio pp notifier files
-type audio_pp_data_file, file_type, data_file_type;
-
 #mdtp_svc_app file types
 type mdtp_svc_app_data_file, file_type, data_file_type;
 
-# subsystem_ramdump files
-type ssr_ramdump_data_file, file_type, data_file_type;
-
 # Regionalization files
 type regionalization_file, file_type;
-type vendor_carrier_file, file_type;
+type vendor_carrier_file, file_type, vendor_file_type;
 
 # /data/system/swap/swapfile - swapfile
 type swap_data_file, file_type, data_file_type;
@@ -293,9 +263,6 @@ type sysfs_audio, fs_type, sysfs_type;
 # lpm sysfs files
 type sysfs_msm_stats, fs_type, sysfs_type;
 type sysfs_msm_power, fs_type, sysfs_type;
-
-# Data type for QVOP
-type qvop-daemon_data_file, file_type, data_file_type;
 
 type sysfs_fm, sysfs_type, fs_type;
 

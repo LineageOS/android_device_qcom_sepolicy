@@ -18,8 +18,6 @@ userdebug_or_eng(`
 ')
 
 #Communicate with user land process through domain socket
-#allow mm-qcamerad camera_socket:sock_file { create unlink write };
-allow mm-qcamerad camera_socket:dir w_dir_perms;
 unix_socket_connect(mm-qcamerad, sensors, sensors)
 
 #Allow connections between sensor manager and mm-qcamerad

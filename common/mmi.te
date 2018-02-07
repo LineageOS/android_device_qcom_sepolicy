@@ -22,10 +22,6 @@ allow mmi nfc_device:chr_file rw_file_perms;
 allow mmi vendor_shell_exec:file rx_file_perms;
 wakelock_use(mmi)
 
-#FTM_AP folder permissions
-allow mmi mmi_data_file:dir rw_dir_perms;
-allow mmi mmi_data_file:file create_file_perms;
-
 #socket
 allow mmi socket_device:dir w_dir_perms;
 
@@ -50,7 +46,6 @@ allow mmi audio_device:chr_file rw_file_perms;
 
 #FM case
 allow mmi fm_radio_device:chr_file r_file_perms;
-allow mmi fm_data_file:file r_file_perms;
 set_prop(mmi, fm_prop)
 set_prop(mmi, ctl_default_prop)
 #bluetooth case

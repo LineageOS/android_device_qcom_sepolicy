@@ -24,7 +24,6 @@
 
 # fm_radio app needes  open read write on fm_radio_device
 allow system_app fm_radio_device:chr_file r_file_perms;
-r_dir_file(system_app, fm_data_file);
 r_dir_file(system_app, bluetooth_data_file);
 r_dir_file(system_app, bt_firmware_file);
 
@@ -56,9 +55,6 @@ userdebug_or_eng(`
   allow system_app tombstone_data_file:file r_file_perms;
   diag_use(system_app)
 
-  # allow to read ssr ramdump
-  allow system_app ssr_ramdump_data_file:dir r_dir_perms;
-  allow system_app ssr_ramdump_data_file:file r_file_perms;
 ')
 
 allow system_app cnd_data_file:dir w_dir_perms;
@@ -67,15 +63,6 @@ allow system_app bluetooth:unix_stream_socket ioctl;
 
 # access to tee domain
 #allow system_app tee:unix_dgram_socket sendto;
-
-# system app to access DTS data files
-r_dir_file(system_app, dts_data_file)
-
-# usf (ultrasound) apps need following permissions
-#allow system_app usf:unix_stream_socket connectto;
-allow system_app usf_data_file:sock_file write;
-allow system_app usf_data_file:dir rw_dir_perms;
-allow system_app usf_data_file:{ file lnk_file } create_file_perms;
 
 # Allow hbtp hal Service to be found
 hal_client_domain(system_app, hal_hbtp)
@@ -152,9 +139,6 @@ allow system_app self:netlink_kobject_uevent_socket { read bind setopt create };
 # allow system_app to interact with mdtp daemon
 binder_call(system_app, mdtpdaemon)
 
-# allow access to system_app for audio pp files
-r_dir_file(system_app, audio_pp_data_file);
-
 # allow access to system app for radio files
 allow system_app radio_data_file:dir rw_dir_perms;
 allow system_app radio_data_file:file create_file_perms;
@@ -199,10 +183,6 @@ allow system_app cache_file:dir create_dir_perms;
 allow system_app cache_file:file create_file_perms;
 allow system_app cache_recovery_file:dir rw_dir_perms;
 allow system_app cache_recovery_file:file create_file_perms;
-
-#Allow system app access mmi_data_file
-allow system_app mmi_data_file:dir create_dir_perms;
-allow system_app mmi_data_file:file create_file_perms;
 
 # update engine
 binder_call( system_app, update_engine )

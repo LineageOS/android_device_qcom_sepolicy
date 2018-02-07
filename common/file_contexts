@@ -453,52 +453,30 @@
 ###################################
 # data files
 #
-/data/connectivity(/.*)?                                            u:object_r:cnd_data_file:s0
 /data/vendor/connectivity(/.*)?                                     u:object_r:cnd_data_file:s0
-/data/data_test(/.*)?                                               u:object_r:data_test_data_file:s0
-/data/diag_log(/.*)?                                                u:object_r:diag_data_file:s0
-/data/misc/sensors(/.*)?                                            u:object_r:sensors_data_file:s0
-/data/rfs.*                                                         u:object_r:rfs_file:s0
-/data/hlos_rfs(/.*)?                                                u:object_r:rfs_shared_hlos_file:s0
-/data/camera(/.*)?                                                  u:object_r:camera_socket:s0
 /data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
-/data/misc/qvop(/.*)?                                               u:object_r:qvop-daemon_data_file:s0
-/data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
 /data/vendor/time(/.*)?                                             u:object_r:time_data_file:s0
-/data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
 /data/vendor/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
-/data/vendor/iop(/.*)?                                                u:object_r:iop_data_file:s0
+/data/vendor/iop(/.*)?                                              u:object_r:iop_data_file:s0
 /data/vendor/lm(/.*)?                                               u:object_r:lm_data_file:s0
 /data/vendor/display(/.*)?                                          u:object_r:display_misc_file:s0
 /data/vendor/ipa(/.*)?                                              u:object_r:ipa_vendor_data_file:s0
-/data/misc/qsee(/.*)?                                               u:object_r:data_qsee_file:s0
 /data/vendor/qtee(/.*)?                                             u:object_r:data_qtee_file:s0
-/data/misc/spss(/.*)?                                               u:object_r:spss_data_file:s0
 /data/vendor/location(/.*)?                                         u:object_r:location_data_file:s0
 /data/vendor/location/mq/location-mq-s                              u:object_r:location_socket:s0
 /data/vendor/location/mq/alarm_svc                                  u:object_r:location_socket:s0
-/data/FTM_AP(/.*)?                                                  u:object_r:mmi_data_file:s0
-/data/(misc|vendor)/hbtp(/.*)?                                      u:object_r:hbtp_log_file:s0
-/data/misc/qlogd(/.*)?                                              u:object_r:qlogd_data_file:s0
-/data/usf(/.*)?                                                     u:object_r:usf_data_file:s0
-/data/misc/dts(/.*)?                                                u:object_r:dts_data_file:s0
+/data/vendor/hbtp(/.*)?                                             u:object_r:hbtp_log_file:s0
 /data/vendor/qti-logkit(/.*)?                                       u:object_r:qti_logkit_priv_data_file:s0
 /data/vendor/qti-logkit/shared-public(/.*)?                         u:object_r:qti_logkit_pub_data_file:s0
 /data/vendor/qti-logkit/logdata(/.*)?                               u:object_r:qti_logkit_pub_data_file:s0
 /data/vendor/qti-logkit/socket-privileged(/.*)?                     u:object_r:qti_logkit_priv_socket:s0
 /data/vendor/qti-logkit/socket-public(/.*)?                         u:object_r:qti_logkit_pub_socket:s0
-/data/misc/radio(/.*)?                                              u:object_r:radio_data_file:s0
 /data/vendor/radio(/.*)?                                            u:object_r:vendor_radio_data_file:s0
 /data/vendor/netmgr(/.*)?                                           u:object_r:netmgrd_data_file:s0
 /data/vendor/port_bridge(/.*)?                                      u:object_r:port_bridge_data_file:s0
-/data/misc/fm(/.*)?                                                 u:object_r:fm_data_file:s0
-/data/misc/audio_pp(/.*)?                                           u:object_r:audio_pp_data_file:s0
-/data/ramdump(/.*)?                                                 u:object_r:ssr_ramdump_data_file:s0
-/data/system/swap(/.*)?                                             u:object_r:swap_data_file:s0
 /data/vendor/wifi(/.*)?                                             u:object_r:wifi_vendor_data_file:s0
 /data/vendor/wifi/sockets(/.*)?                                     u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/hostapd(/.*)?                                     u:object_r:wifi_vendor_hostapd_socket:s0
-/data/misc/wifi/nvbin(/.*)?                                         u:object_r:dynamic_nv_data_file:s0
 /data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wpa_socket:s0
 /data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/qdmastats(/.*)?                                        u:object_r:qdma_data_file:s0
@@ -526,9 +504,9 @@
 /persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
 /persist/qti_fp(/.*)?                                               u:object_r:persist_qti_fp_file:s0
 /persist/usf(/.*)?                                                  u:object_r:persist_usf_file:s0
-/persist/hlos_rfs(/.*)?                                             u:object_r:rfs_shared_hlos_file:s0
+#/persist/hlos_rfs(/.*)?                                             u:object_r:rfs_shared_hlos_file:s0
 /persist/display(/.*)?                                              u:object_r:persist_display_file:s0
-/persist/rfs.*                                                      u:object_r:rfs_file:s0
+#/persist/rfs.*                                                      u:object_r:rfs_file:s0
 /persist/speccfg(/.*)?                                              u:object_r:regionalization_file:s0
 /persist/misc(/.*)?                                                 u:object_r:persist_misc_file:s0
 /persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
@@ -548,7 +526,6 @@
 ###################################
 # cache files
 #
-/cache/FTM_AP(/.*)?                                                 u:object_r:mmi_data_file:s0
 
 ###################################
 # vendor files
