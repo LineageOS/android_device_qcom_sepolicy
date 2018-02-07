@@ -1,4 +1,4 @@
-# Copyright (c) 2015, 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,20 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-qti.security.seemp                             u:object_r:seemp_service:s0
-seempservice                                   u:object_r:seemp_service:s0
-qti.security.seempspa                          u:object_r:seemp_service:s0
-cneservice                                     u:object_r:cne_service:s0
-dpmservice                                     u:object_r:dpmservice:s0
-uce                                            u:object_r:uce_service:s0
-vendor.audio.vrservice                         u:object_r:audioserver_service:s0
-MinkBinderSvc                                  u:object_r:MinkBinderSvc:s0
-com.qualcomm.location.izat.IzatService         u:object_r:izat_service:s0
-sms-sec                                        u:object_r:radio_service:s0
-extphone                                       u:object_r:radio_service:s0
-qti.ims.ext                                    u:object_r:radio_service:s0
-com.qti.snapdragon.sdk.display.IColorService   u:object_r:color_service:s0
-regionalization                                u:object_r:regionalization_service:s0
-wfdservice                                     u:object_r:wfdservice_service:s0
-wigigp2p                                       u:object_r:wigigp2p_service:s0
-wigig                                          u:object_r:wigig_service:s0
+allow mediacodec media_sdm670_version_prop:file r_file_perms;

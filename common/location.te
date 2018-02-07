@@ -92,3 +92,6 @@ allow location self:capability2 wake_alarm;
 
 #access to qdma socket
 qdma_file_socket(location);
+
+#allow qdma prop
+get_prop(location, qdma_prop);

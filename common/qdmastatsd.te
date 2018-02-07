@@ -33,6 +33,9 @@ init_daemon_domain(qdmastatsd)
 allow qdmastatsd qdma_data_file:file create_file_perms;
 allow qdmastatsd qdma_data_file:dir create_dir_perms;
 
+# access to /dev/ramdump_microdump_modem
+allow qdmastatsd ramdump_device:chr_file r_file_perms;
+
 # access to /sys/class/power_supply/bms/charge_counter
 # access to /sys/class/power_supply/battery/capacity
 # access to /sys/class/power_supply/battery/status
@@ -92,3 +95,6 @@ userdebug_or_eng(`
 
 # for dmesg
 #read_logd(qdmastatsd);
+
+# allow qdma_prop
+set_prop(qdmastatsd, qdma_prop);
