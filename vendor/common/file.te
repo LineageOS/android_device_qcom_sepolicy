@@ -114,7 +114,7 @@ type sysfs_poweron_alarm, sysfs_type, fs_type;
 type sysfs_mpdecision, fs_type, sysfs_type;
 type sysfs_rqstats, fs_type, sysfs_type;
 type sysfs_cpu_online, fs_type, sysfs_type;
-type mpctl_socket, file_type, mlstrustedobject;
+type mpctl_socket, file_type, data_file_type, mlstrustedobject;
 type mpctl_data_file, file_type, data_file_type;
 
 #Define the files used by lm
