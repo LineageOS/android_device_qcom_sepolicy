@@ -110,11 +110,12 @@ allow qti_init_shell efs_boot_dev:blk_file r_file_perms;
 # For hci_comm_init
 allow qti_init_shell { serial_device userdebug_or_eng(`qdss_device') }:chr_file rw_file_perms;
 
-
 allow qti_init_shell {
     sysfs_devices_system_cpu
     sysfs_thermal
     sysfs_lowmemorykiller
+    sysfs_mmc_host
+    sysfs_process_reclaim
 }:file w_file_perms;
 
 r_dir_file(qti_init_shell, sysfs_thermal)
@@ -216,3 +217,6 @@ allow qti_init_shell sysfs_battery_supply:file setattr;
 allow qti_init_shell sysfs_usb_supply:file setattr;
 
 allow qti_init_shell sysfs_fm:file rw_file_perms;
+
+# To read /proc/meminfo
+allow qti_init_shell proc_meminfo:file r_file_perms;
