@@ -3,6 +3,9 @@ type rfs_access, domain;
 type rfs_access_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(rfs_access)
 
+type_transition rfs_access persist_file:{ dir file } persist_rfs_file;
+type_transition rfs_access persist_file:dir persist_rfs_shared_hlos_file "hlos_rfs";
+
 allow rfs_access {
     #To read the uio char device
     uio_device
@@ -18,6 +21,11 @@ wakelock_use(rfs_access)
 
 #To create the folders in /persist
 allow rfs_access persist_file:dir create_dir_perms;
+
+allow rfs_access persist_rfs_file:dir create_dir_perms;
+allow rfs_access persist_rfs_file:file create_file_perms;
+allow rfs_access persist_rfs_shared_hlos_file:dir create_dir_perms;
+allow rfs_access persist_rfs_shared_hlos_file:file create_file_perms;
 
 #For system folder entries
 r_dir_file(rfs_access, rfs_system_file)
