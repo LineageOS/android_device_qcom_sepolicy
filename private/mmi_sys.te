@@ -40,3 +40,5 @@ allow mmi_sys ion_device:chr_file { ioctl open };
 allow mmi_sys surfaceflinger_service:service_manager find;
 allow mmi_sys hal_graphics_mapper_hwservice:hwservice_manager find;
 hwbinder_use(mmi_sys)
+get_prop(mmi_sys, hwservicemanager_prop);
+allow mmi_sys mmi_sys_exec:file execute_no_trans;
