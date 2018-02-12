@@ -37,7 +37,7 @@ allow qmuxd {
     sysfs_hsic_modem_wait
 }:file w_file_perms;
 
-allow qmuxd self:capability { setuid setgid setpcap dac_override };
+allow qmuxd self:capability { setuid setgid setpcap };
 
 #Allow qmuxd to have the CAP_BLOCK_SUSPEND capability
 wakelock_use(qmuxd)

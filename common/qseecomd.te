@@ -4,7 +4,6 @@ allow tee self:capability {
     setgid
     sys_admin
     chown
-    dac_override
     sys_rawio
 };
 

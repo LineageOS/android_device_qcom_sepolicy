@@ -24,16 +24,6 @@ allow dpmd sysfs_data:file r_file_perms;
 
 #r_dir_file(dpmd,proc_net)
 
-#allow dpmd self:capability {
- #   setuid
-  #  setgid
-   # dac_override
-#    net_raw chown
- #   fsetid
-  #  net_admin
-   # sys_module
-#}; #Need to check on it . It was present earlier
-
 #socket, self
 allow dpmd smem_log_device:chr_file rw_file_perms;
 #wakelock_use(dpmd) # it was present earlier

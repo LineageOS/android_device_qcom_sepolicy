@@ -12,8 +12,6 @@ allow sensors self:capability {
     # Chown /data/misc/sensors/debug/ to nobody
     chown
     # Access /data/misc/sensors/debug and /data/system/sensors/settings
-    dac_override
-    dac_read_search
     net_bind_service
 };
 

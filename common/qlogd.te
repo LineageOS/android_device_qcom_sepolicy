@@ -12,8 +12,6 @@ allow qlogd smem_log_device:chr_file rw_file_perms;
 allow qlogd self:capability {
     setuid
     setgid
-    dac_override
-    dac_read_search
     sys_admin
     net_raw
     net_admin

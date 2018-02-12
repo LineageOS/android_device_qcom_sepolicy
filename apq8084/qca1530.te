@@ -51,7 +51,6 @@ allow qca1530 self:capability {
     setuid
     setgid
     setpcap
-    dac_override
     net_raw
     fowner
     chown

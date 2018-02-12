@@ -12,8 +12,6 @@ allow thermal-engine sysfs_devices_system_cpu:file rw_file_perms;
 allow thermal-engine { thermal_device smem_log_device }:chr_file rw_file_perms;
 
 allow thermal-engine self:capability {
-    dac_read_search
-    dac_override
     fsetid
     sys_boot
 };

@@ -59,7 +59,7 @@ allow rfs_access self:capability {
 # The below permissions are required to recursively update the folder ownership
 # to the new values in the OEM range.
 
-allow rfs_access self:capability { dac_read_search chown dac_override };
+allow rfs_access self:capability { chown };
 
 #For access to the kmsg device
 allow rfs_access kmsg_device:chr_file w_file_perms;
