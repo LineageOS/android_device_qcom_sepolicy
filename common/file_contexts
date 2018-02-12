@@ -475,6 +475,8 @@
 /data/vendor/radio(/.*)?                                            u:object_r:vendor_radio_data_file:s0
 /data/vendor/netmgr(/.*)?                                           u:object_r:netmgrd_data_file:s0
 /data/vendor/port_bridge(/.*)?                                      u:object_r:port_bridge_data_file:s0
+/data/vendor/rfs.*                                                  u:object_r:rfs_file:s0
+/data/vendor/hlos_rfs(/.*)?                                         u:object_r:rfs_shared_hlos_file:s0
 /data/vendor/wifi(/.*)?                                             u:object_r:wifi_vendor_data_file:s0
 /data/vendor/wifi/sockets(/.*)?                                     u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wpa_socket:s0
