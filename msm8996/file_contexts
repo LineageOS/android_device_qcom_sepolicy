@@ -96,11 +96,6 @@
 
 /sys/devices/soc/b00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_available_frequencies   u:object_r:sysfs_kgsl:s0
 
-###################################
-# data files
-#
-/data/misc/tloc(/.*)?      u:object_r:tlocd_data_file:s0
-
 #rawdump partition
 /dev/block/platform/soc/7464900.sdhci/by-name/rawdump                           u:object_r:rawdump_block_device:s0
 /sys/kernel/dload/emmc_dload                                                    u:object_r:sysfs_emmc_dload:s0

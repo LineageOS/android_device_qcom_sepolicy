@@ -279,3 +279,6 @@ type sysfs_boot_adsp, sysfs_type, fs_type;
 
 # SFS listener data file
 type data_tzstorage_file, file_type, data_file_type;
+
+#TLOC Files
+type tlocd_data_file, file_type, data_file_type;

@@ -492,6 +492,7 @@
 /data/vendor/media(/.*)?                                            u:object_r:media_data_file:s0
 /data/vendor/tombstones(/.*)?                                       u:object_r:vendor_tombstone_data_file:s0
 /data/vendor/tzstorage(/.*)?                                        u:object_r:data_tzstorage_file:s0
+/data/vendor/tloc(/.*)?                                             u:object_r:tlocd_data_file:s0
 
 
 /sys/kernel/debug/ipc_logging(/.*)?                                 u:object_r:qti_debugfs:s0
