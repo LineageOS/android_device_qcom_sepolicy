@@ -149,6 +149,9 @@ type persist_display_file, file_type;
 type ipacm_socket, file_type;
 type ipa_vendor_data_file, file_type, data_file_type;
 
+# Tombstone vendor data
+type vendor_tombstone_data_file, file_type, data_file_type;
+
 # Port-bridge file types
 type port_bridge_data_file, file_type, data_file_type;
 
