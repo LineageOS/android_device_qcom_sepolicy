@@ -89,7 +89,8 @@
 ###################################
 # System files
 #
-/(vendor|system/vendor)/bin/seccamd u:object_r:seccamd_exec:s0
+/(vendor|system/vendor)/bin/amfsservice                                         u:object_r:amfsservice_exec:s0
+/(vendor|system/vendor)/bin/seccamd                                             u:object_r:seccamd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
 
 ###################################
