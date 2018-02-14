@@ -43,11 +43,6 @@
 # dev socket nodes
 /dev/socket/chre                                u:object_r:chre_socket:s0
 /dev/socket/oemlock                             u:object_r:hal_bootctl_socket:s0
-/dev/socket/qmux_audio(/.*)?                    u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_bluetooth(/.*)?                u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_gps(/.*)?                      u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_nfc(/.*)?                      u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_radio(/.*)?                    u:object_r:qmuxd_socket:s0
 /dev/socket/ims_qmid                            u:object_r:ims_socket:s0
 /dev/socket/ims_datad                           u:object_r:ims_socket:s0
 /dev/socket/ipacm_log_file                      u:object_r:ipacm_socket:s0
@@ -111,7 +106,6 @@
 /vendor/bin/ims_rtp_daemon      u:object_r:hal_imsrtp_exec:s0
 /vendor/bin/ipacm               u:object_r:hal_tetheroffload_default_exec:s0
 /vendor/bin/ipacm-diag          u:object_r:hal_tetheroffload_default_exec:s0
-/vendor/bin/qmuxd               u:object_r:qmuxd_exec:s0
 /vendor/bin/cnd                 u:object_r:cnd_exec:s0
 /vendor/bin/oemlock_provision   u:object_r:hal_bootctl_default_exec:s0
 /vendor/bin/oemlock-bridge      u:object_r:hal_bootctl_default_exec:s0
