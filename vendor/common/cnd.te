@@ -52,6 +52,7 @@ hwbinder_use(cnd)
 get_prop(cnd, hwservicemanager_prop)
 binder_call(cnd, dataservice_app)
 binder_call(cnd, ims)
+binder_call(cnd, location)
 
 unix_socket_send(cnd, wpa, hal_wifi_supplicant)
 
