@@ -5,7 +5,7 @@ file_type_auto_trans(cnd, socket_device, cnd_socket);
 # cnd is started by init, type transit from init domain to cnd domain
 init_daemon_domain(cnd)
 
-#TODO remove chown fsetid setgid setuid once b/62571088 is resolved
+#communicating with QTI wlan driver for WFC/ VTiWLAN quality necessitates net_admin
 allow cnd self:capability { net_bind_service net_admin };
 
 allow cnd self:capability2 block_suspend;
