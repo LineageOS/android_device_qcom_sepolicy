@@ -25,6 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+typeattribute vendor_init data_between_core_and_vendor_violators;
+
 allow vendor_init persist_block_device:{ blk_file lnk_file } relabelto;
 allow vendor_init unlabeled:dir { r_dir_perms setattr relabelfrom };
 allow vendor_init unlabeled:file { r_file_perms setattr relabelfrom };
