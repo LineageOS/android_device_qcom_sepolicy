@@ -22,7 +22,7 @@ userdebug_or_eng(`
   }:dir create_dir_perms;
 
   allow diag port:tcp_socket name_connect;
-  allow diag self:capability { setuid net_raw sys_admin setgid dac_override };
+  allow diag self:capability { setuid net_raw sys_admin setgid };
   allow diag self:capability2 syslog;
   allow diag self:tcp_socket { create connect setopt};
   wakelock_use(diag)

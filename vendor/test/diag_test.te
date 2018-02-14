@@ -31,7 +31,6 @@ userdebug_or_eng(`
   domain_auto_trans(shell, diagdciclient_exec, diag_test)
   #domain_auto_trans(adbd, diagdciclient_exec, diag_test)
   allow diag_test devpts:chr_file getattr;
-  allow diag_test self:capability dac_override;
   allow diag_test devpts:chr_file {ioctl read write open};
 ')
 

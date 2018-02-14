@@ -32,8 +32,6 @@ allow qti_init_shell sysfs_cpu_boost:dir r_dir_perms;
 allow qti_init_shell sysfs_cpu_boost:file rw_file_perms;
 
 # for insmod of iris ko, this is needed.
-# dac_read/override is needed for scripts to do chown/mkdir which is
-# needed by most of the services
 # fowner and fsetid are needed for chmod display nodes.
 allow qti_init_shell self:capability {
     sys_module
@@ -41,8 +39,6 @@ allow qti_init_shell self:capability {
     chown
     fowner
     fsetid
-    dac_override
-    dac_read_search
     sys_admin
 };
 
