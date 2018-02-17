@@ -134,6 +134,7 @@
 /dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
 /dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
 /dev/socket/mmi                                 u:object_r:mmi_socket:s0
+/dev/socket/location(/.*)?                      u:object_r:location_socket:s0
 
 ###################################
 # System files
@@ -654,6 +655,7 @@
 /vendor/lib(64)?/libdiag\.so                u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libqvrservice_client\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libqvrcamera_client\.so    u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libvraudio_client\.so      u:object_r:same_process_hal_file:s0
 
 ###################################
 # firmware images
