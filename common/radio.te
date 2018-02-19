@@ -17,3 +17,4 @@ userdebug_or_eng(`
   allow radio hal_imsrcsd_hwservice:hwservice_manager find;
   binder_call(radio, hal_rcsservice)
 ')
+hal_client_domain(radio, hal_perf)
