@@ -13,6 +13,7 @@ allow hvdcp {
     sysfs_usbpd_device
     sysfs_vadc_dev
     sysfs_spmi_dev
+    qg_device
 }:dir r_dir_perms;
 
 allow hvdcp {
@@ -21,6 +22,7 @@ allow hvdcp {
     sysfs_usbpd_device
     sysfs_vadc_dev
     sysfs_spmi_dev
+    qg_device
 }:file rw_file_perms;
 
 allow hvdcp {
@@ -28,6 +30,7 @@ allow hvdcp {
     sysfs_usb_supply
     sysfs_vadc_dev
     sysfs_spmi_dev
+    qg_device
 }:lnk_file r_file_perms;
 
 allow hvdcp self:capability { setgid setuid };
