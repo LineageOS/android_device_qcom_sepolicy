@@ -1,0 +1,4 @@
+userdebug_or_eng(`
+    diag_use(qmuxd)
+')
+
