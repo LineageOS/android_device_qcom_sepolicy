@@ -304,7 +304,7 @@
 
 
 # audio_data_file
-/data/vendor/misc/audio(/.*)? u:object_r:audio_data_file:s0
+/data/vendor/misc/audio(/.*)? u:object_r:vendor_audio_data_file:s0
 
 
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
