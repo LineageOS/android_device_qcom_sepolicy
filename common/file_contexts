@@ -134,6 +134,7 @@
 /dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
 /dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
 /dev/socket/mmi                                 u:object_r:mmi_socket:s0
+/dev/socket/location(/.*)?                      u:object_r:location_socket:s0
 
 ###################################
 # System files
@@ -322,6 +323,8 @@
 /sys/class/uio(/.*)?                                                u:object_r:sysfs_uio:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+/maps/map[0-9]+(/.*)?    u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc.0/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc.0/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+/maps/map[0-9]+(/.*)?    u:object_r:sysfs_uio_file:s0
 /sys/devices/[^/]+bcl[^/]+(/.*)?                                    u:object_r:sysfs_thermal:s0
 /sys/devices/f9200000.*/power_supply/usb(/.*)?                      u:object_r:sysfs_usb_supply:s0
 /sys/devices/msm_dwc3/power_supply/usb(/.*)?                        u:object_r:sysfs_usb_supply:s0
@@ -654,6 +657,7 @@
 /vendor/lib(64)?/libdiag\.so                u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libqvrservice_client\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libqvrcamera_client\.so    u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libvraudio_client\.so      u:object_r:same_process_hal_file:s0
 
 ###################################
 # firmware images

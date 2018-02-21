@@ -1,4 +1,4 @@
-# Copyright (c) 2016-2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016-2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -148,3 +148,9 @@
 # same process HAL libs
 /vendor/lib(64)?/hw/gralloc\.qcs605\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/vulkan\.qcs605\.so    u:object_r:same_process_hal_file:s0
+
+# qmmf server
+/(vendor|system/vendor)/bin/qmmf-server   u:object_r:qmmf-servd_exec:s0
+
+# qmmf data files
+/data/misc/qmmf(/.*)?                     u:object_r:qmmf_data_file:s0
