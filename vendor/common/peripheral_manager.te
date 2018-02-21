@@ -21,7 +21,12 @@ allow per_mgr self:socket create_socket_perms;
 allowxperm per_mgr self:socket ioctl msm_sock_ipc_ioctls;
 allow per_mgr ssr_device:chr_file { open read };
 
-r_dir_file(per_mgr, sysfs_msm_subsys)
+# Needed by libmdmdetect to figure out the system configuration
+r_dir_file(per_mgr, sysfs_esoc)
+
+# Needed by libmdmdetect to get subsystem info and to check their states
+r_dir_file(per_mgr, sysfs_ssr)
+allow per_mgr sysfs_data:file r_file_perms;
 
 # Set the peripheral state property
 set_prop(per_mgr, per_mgr_state_prop);

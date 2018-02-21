@@ -185,6 +185,10 @@
 
 /data/vendor/connectivity(/.*)?        u:object_r:cnd_data_file:s0
 
+
+# audio_data_file
+/data/vendor/misc/audio(/.*)? u:object_r:vendor_audio_data_file:s0
+
 # /
 /tombstones             u:object_r:rootfs:s0
 /dsp(/.*)?              u:object_r:adsprpcd_file:s0
@@ -215,7 +219,6 @@
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 
 # sysfs_leds
-/sys/devices(/platform)?/soc/[0-9a-z]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-z]+.qcom,spmi:qcom,pm[0-9a-z]+@[0-9]+:qcom,leds@[a-z0-9]+(/.*)? u:object_r:sysfs_leds:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-0/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,haptics@c000/leds/vibrator(/.*)?   u:object_r:sysfs_leds:s0
 
 # sysfs_devfreq
@@ -231,11 +234,11 @@
 
 /(vendor|system/vendor)/bin/hbtp_daemon         u:object_r:hbtp_exec:s0
 
-
 # sysfs_uio_file
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+/maps/map[0-9]+(/.*)?    u:object_r:sysfs_uio_file:s0
-
+/sys/devices(/platform)?/soc.0/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc.0/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+/maps/map[0-9]+(/.*)?    u:object_r:sysfs_uio_file:s0
 
 # sysfs_graphics
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:sysfs_graphics:s0
@@ -277,6 +280,7 @@
 /sys/devices/virtual/graphics/fb([0-3])+/msmfb_b10(/.*)             u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/modes                      u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/edid_raw_data              u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/packpattern                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/dyn_pu                     u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/ad                         u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/pp_bl_event                u:object_r:sysfs_graphics:s0
@@ -300,12 +304,14 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_cam/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/caps       u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,vidc/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,cci/[a-z0-9]+.qcom,cci:qcom,camera@[0-2]/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
 
+/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:sysfs_mmc_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/clkscale_enable        u:object_r:sysfs_scsi_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+/host0/scsi_host/host0(/.*)?  u:object_r:sysfs_scsi_host:s0
 
-# audio_data_file
-/data/vendor/misc/audio(/.*)? u:object_r:vendor_audio_data_file:s0
-
+/sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name u:object_r:sysfs_ssr:s0
 
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
@@ -331,8 +337,6 @@
 /sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_battery_supply:s0
 
 /sys/devices/soc/qpnp-vadc-[0-9]+(/.*)? u:object_r:sysfs_vadc_dev:s0
-/sys/bus/spmi/devices(/.*)? u:object_r:sysfs_spmi_dev:s0
-
 
 /(vendor|system/vendor)/bin/init\.class_main\.sh        u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.crda\.sh              u:object_r:qti_init_shell_exec:s0

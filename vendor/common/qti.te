@@ -14,4 +14,8 @@ allow qti self:socket create_socket_perms;
 allowxperm qti self:socket ioctl msm_sock_ipc_ioctls;
 allow qti { vendor_shell_exec }:file rx_file_perms;
 
-r_dir_file(qti, sysfs_msm_subsys)
+#diag
+userdebug_or_eng(`
+    diag_use(qti)
+    allow qti sysfs_data:file r_file_perms;
+')

@@ -57,6 +57,7 @@ set_prop(qti_init_shell, sys_usb_configfs_prop)
 allow qti_init_shell {
     sysfs_devices_system_cpu
     sysfs_thermal
+    sysfs_lowmemorykiller
 }:file w_file_perms;
 
 r_dir_file(qti_init_shell, sysfs_thermal)
@@ -124,3 +125,5 @@ allow qti_init_shell sysfs_battery_supply:file setattr;
 allow qti_init_shell sysfs_usb_supply:file setattr;
 
 allow qti_init_shell sysfs_devices_system_cpu:file w_file_perms;
+
+allow qti_init_shell sysfs_msm_power:file rw_file_perms;

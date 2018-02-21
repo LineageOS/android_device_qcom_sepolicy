@@ -42,3 +42,5 @@ allow init {
 #Allow /sys access to write zram disksize
 allow init sysfs_zram:dir r_dir_perms;
 allow init sysfs_zram:file r_file_perms;
+
+allow init sysfs_boot_adsp:file w_file_perms;

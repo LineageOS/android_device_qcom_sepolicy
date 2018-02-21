@@ -1,18 +1,23 @@
-allow ueventd sysfs_thermal:file w_file_perms;
-allow ueventd sysfs_leds:file w_file_perms;
-allow ueventd sysfs_camera:file w_file_perms;
-allow ueventd sysfs_easel:file w_file_perms;
-allow ueventd sysfs_fingerprint:file w_file_perms;
-allow ueventd sysfs_graphics:file w_file_perms;
-allow ueventd sysfs_laser:file w_file_perms;
-allow ueventd sysfs_rmtfs:file w_file_perms;
-allow ueventd sysfs_scsi_devices_0000:file write;
-allow ueventd sysfs_soc:file w_file_perms;
-allow ueventd sysfs_net:file w_file_perms;
-allow ueventd sysfs_msm_subsys:file w_file_perms;
-allow ueventd sysfs_bluetooth_writable:file w_file_perms;
+# For setting up various WIGIG files
+allow ueventd sysfs_bond0:file rw_file_perms;
+
 allow ueventd sysfs_usb_c:file w_file_perms;
-allow ueventd sysfs_usbpd_device:file w_file_perms;
+
+allow ueventd {
+    { sysfs_type - usermodehelper }
+      sysfs_battery_supply
+      sysfs_data
+      sysfs_graphics
+      sysfs_kgsl
+      sysfs_leds
+      sysfs_net
+      sysfs_scsi_host
+      sysfs_soc
+      sysfs_thermal
+      sysfs_usbpd_device
+      sysfs_usb_supply
+}:file w_file_perms;
+
 allow ueventd firmware_file:dir search;
 allow ueventd firmware_file:file r_file_perms;
 allow ueventd tmpfs:blk_file getattr;

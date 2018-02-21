@@ -4,7 +4,8 @@ hal_server_domain(hal_gnss_qti, hal_gnss)
 type hal_gnss_qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_gnss_qti)
 
-r_dir_file(hal_gnss_qti, sysfs_msm_subsys)
+allow hal_gnss sysfs:dir r_dir_perms;
+allow hal_gnss sysfs_data:file r_file_perms;
 
 vndbinder_use(hal_gnss_qti)
 

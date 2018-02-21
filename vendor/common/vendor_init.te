@@ -56,13 +56,15 @@ allow vendor_init configfs:dir r_dir_perms;
 allow vendor_init configfs:file { rw_file_perms link };
 allow vendor_init configfs:lnk_file create_file_perms;
 
-allow vendor_init sysfs_msm_subsys:file write;
+allow vendor_init sysfs_ssr:file write;
 
 #dontaudit non configfs usb denials
 dontaudit vendor_init sysfs_android_usb:dir write;
 
 allow vendor_init sysfs_android_usb:dir { add_name };
 allow vendor_init sysfs_android_usb:file create_file_perms;
+
+allow vendor_init sysfs_slpi:file write;
 
 allow vendor_init vendor_file:system module_load;
 

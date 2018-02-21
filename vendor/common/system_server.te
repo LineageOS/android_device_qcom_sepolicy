@@ -13,3 +13,7 @@ allow system_server sysfs_sensors:file rw_file_perms;
 
 # allow access to low persistence mode sysfs node
 allow system_server sysfs_graphics:file rw_file_perms;
+
+userdebug_or_eng(`
+    diag_use(system_server)
+')

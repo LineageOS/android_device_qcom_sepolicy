@@ -28,6 +28,3 @@
 allow hal_usb_default sysfs_usbpd_device:dir r_dir_perms;
 allow hal_usb_default sysfs_usbpd_device:lnk_file r_file_perms;
 allow hal_usb_default sysfs_usbpd_device:file rw_file_perms;
-
-allow hal_usb_default sysfs_msm_subsys:dir r_dir_perms;
-allow hal_usb_default sysfs_msm_subsys:file r_file_perms;
