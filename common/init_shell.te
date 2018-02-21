@@ -220,3 +220,5 @@ allow qti_init_shell sysfs_fm:file rw_file_perms;
 
 # To read /proc/meminfo
 allow qti_init_shell proc_meminfo:file r_file_perms;
+
+allow qti_init_shell sysfs_msm_power:file rw_file_perms;
