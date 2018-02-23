@@ -497,17 +497,13 @@
 /data/vendor/hlos_rfs(/.*)?                                         u:object_r:rfs_shared_hlos_file:s0
 /data/vendor/wifi(/.*)?                                             u:object_r:wifi_vendor_data_file:s0
 /data/vendor/wifi/sockets(/.*)?                                     u:object_r:wifi_vendor_wpa_socket:s0
-/data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wpa_socket:s0
+/data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/qdmastats(/.*)?                                        u:object_r:qdma_data_file:s0
 /data/vendor/qdma(/.*)?                                             u:object_r:qdma_data_file:s0
-/data/vendor/ramdump/bluetooth(/.*)?                                u:object_r:bluetooth_data_file:s0
-/data/vendor/bluetooth(/.*)?                                        u:object_r:bluetooth_data_file:s0
-/data/vendor/ramdump/bluetooth/logs(/.*)?                           u:object_r:bluetooth_logs_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vpp_data_file:s0
 /data/vendor/camera(/.*)?                                           u:object_r:vendor_camera_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
-/data/vendor/media(/.*)?                                            u:object_r:media_data_file:s0
 /data/vendor/tombstones(/.*)?                                       u:object_r:vendor_tombstone_data_file:s0
 /data/vendor/tzstorage(/.*)?                                        u:object_r:data_tzstorage_file:s0
 /data/vendor/tloc(/.*)?                                             u:object_r:tlocd_data_file:s0
@@ -555,7 +551,7 @@
 ###################################
 # vendor files
 #
-/data/vendor/misc/audio(/.*)?   u:object_r:audio_data_file:s0
+/data/vendor/misc/audio(/.*)?   u:object_r:vendor_audio_data_file:s0
 /vendor/package(/.*)?                      u:object_r:vendor_carrier_file:s0
 /vendor/package(/.*)?/overlay(/.*)?        u:object_r:vendor_overlay_file:s0
 /vendor/package(/.*)?/app(/.*)?            u:object_r:vendor_app_file:s0
