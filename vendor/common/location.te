@@ -45,3 +45,6 @@ allow location location_data_file:{ file sock_file } create_file_perms;
 userdebug_or_eng(`
   allow location diag_device:chr_file rw_file_perms;
 ')
+
+allow location hal_cne_hwservice:hwservice_manager find;
+binder_call(location, cnd)
