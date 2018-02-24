@@ -2,52 +2,37 @@ genfscon proc /debug/fwdump                           u:object_r:proc_wifi_dbg:s
 genfscon proc /debugdriver/driverdump                 u:object_r:proc_wifi_dbg:s0
 genfscon proc /ath_pktlog/cld                         u:object_r:proc_wifi_dbg:s0
 
-genfscon sysfs /devices/soc/soc:qcom,cpubw            u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/soc/soc:qcom,mincpubw         u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /class/devfreq                         u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/soc/soc:qcom,memlat-cpu0      u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/soc/soc:qcom,memlat-cpu4      u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /android_touch                         u:object_r:sysfs_touch:s0
 genfscon sysfs /devices/virtual/input/ftm4_touch      u:object_r:sysfs_touch:s0
 
-genfscon sysfs /devices/soc/1da4000.ufshc/host0/target0:0:0/0:0:0:0 u:object_r:sysfs_scsi_devices_0000:s0
-
 genfscon sysfs /class/rfkill/rfkill0/state            u:object_r:sysfs_bluetooth_writable:s0
 
-genfscon sysfs /class/thermal                                           u:object_r:sysfs_thermal:s0
 genfscon sysfs /class/uio                                               u:object_r:sysfs_uio:s0
 genfscon sysfs /devices/soc/soc:bt_wcn3990                              u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/soc/a1800000.qcom,rmtfs_rtel_sharedmem          u:object_r:sysfs_rmtfs:s0
-genfscon sysfs /devices/soc/c17a000.i2c                                 u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpubw                              u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,gpubw                              u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,llccbw                             u:object_r:sysfs_devfreq:s0
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi                           u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss                            u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/17300000.qcom,lpass                         u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/188101c.qcom,spss                           u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc                            u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_rotator                   u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon       u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/ae00000.qcom.qcom,mdss_mdp/caps             u:object_r:sysfs_mdss_mdp_caps:s0
 genfscon sysfs /devices/platform/soc/c17a000.i2c/i2c-6/6-005a/leds               u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/c1b5000.i2c/i2c-7/7-0030/leds               u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/c900000.qcom,mdss_mdp:qcom,mdss_fb_primary/leds u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pmi8998@3:qcom,leds@d000/leds u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/5000000.qcom,kgsl-3d0                       u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp                           u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws@1e08000                    u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys2                    u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/aae0000.qcom,venus                          u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/8300000.qcom,turing                         u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/17d41000.qcom,cpucc/17d41000.qcom,cpucc:qcom,wil6210/subsys8 u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws@1e08000                    u:object_r:sysfs_data:s0
 genfscon sysfs /devices/platform/soc/0.qcom,rmtfs_sharedmem                      u:object_r:sysfs_rmtfs:s0
 genfscon sysfs /devices/platform/soc/soc:fp_fpc1020                              u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/virtual/thermal                                 u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/virtual/wahoo_laser                             u:object_r:sysfs_laser:s0
 genfscon sysfs /module/cpu_boost                                        u:object_r:sysfs_cpu_boost:s0
+genfscon sysfs /devices/virtual/thermal                                 u:object_r:sysfs_thermal:s0
+genfscon sysfs /class/thermal                                           u:object_r:sysfs_thermal:s0
 genfscon sysfs /module/msm_thermal                                      u:object_r:sysfs_thermal:s0
+genfscon sysfs /devices/platform/battery_current_limit                  u:object_r:sysfs_thermal:s0
 genfscon sysfs /module/tcp_cubic/parameters                             u:object_r:sysfs_net:s0
 genfscon sysfs /module/diagchar/parameters/timestamp_switch             u:object_r:sysfs_timestamp_switch:s0
+genfscon sysfs /module/msm_performance                                  u:object_r:sysfs_msm_perf:s0
+genfscon sysfs /module/lpm_levels                                       u:object_r:sysfs_msm_power:s0
+genfscon sysfs /module/lpm_stats                                        u:object_r:sysfs_msm_stats:s0
 genfscon sysfs /devices/virtual/graphics/fb0                            u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/virtual/graphics/fb1                            u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/soc/8c0000.qcom,msm-cam                         u:object_r:sysfs_camera:s0
@@ -56,10 +41,15 @@ genfscon sysfs /devices/soc/caa0000.qcom,jpeg                           u:object
 genfscon sysfs /devices/soc/caa4000.qcom,fd                             u:object_r:sysfs_camera:s0
 genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-02/800f000.qcom,spmi:qcom,pmi8998@2:qpnp,fg/power_supply/bms/capacity               u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-02/800f000.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/battery/capacity    u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /bus/msm_subsys                                          u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /bus/msm_subsys                                          u:object_r:sysfs_ssr:s0
+genfscon sysfs /bus/msm_subsys/devices/subsys0/restart_level            u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /bus/msm_subsys/devices/subsys1/restart_level            u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /bus/msm_subsys/devices/subsys2/restart_level            u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /bus/msm_subsys/devices/subsys3/restart_level            u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /bus/msm_subsys/devices/subsys4/restart_level            u:object_r:sysfs_ssr_toggle:s0
 genfscon sysfs /module/subsystem_restart                                u:object_r:sysfs_msm_subsys_restart:s0
-genfscon sysfs /kernel/boot_adsp/boot                                   u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /kernel/boot_slpi/boot                                   u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /kernel/boot_adsp/boot                                   u:object_r:sysfs_boot_adsp:s0
+genfscon sysfs /kernel/boot_slpi                                        u:object_r:sysfs_slpi:s0
 genfscon sysfs /devices/soc/c1b7000.i2c/i2c-9/9-0008                    u:object_r:sysfs_easel:s0
 genfscon sysfs /class/typec                                             u:object_r:sysfs_usb_c:s0
 genfscon sysfs /class/typec/usbc0                                       u:object_r:sysfs_usb_c:s0
@@ -81,8 +71,15 @@ genfscon sysfs /bus/esoc u:object_r:sysfs_esoc:s0
 
 genfscon sysfs /devices/soc/soc:hbtp/secure_touch                           u:object_r:hbtp_kernel_sysfs:s0
 genfscon sysfs /devices/soc/soc:hbtp/secure_touch_enable                    u:object_r:hbtp_kernel_sysfs:s0
-genfscon sysfs /sys/devices/soc/soc:hbtp/secure_touch_userspace             u:object_r:hbtp_kernel_sysfs:s0
+genfscon sysfs /devices/soc/soc:hbtp/secure_touch_userspace             u:object_r:hbtp_kernel_sysfs:s0
 genfscon sysfs /kernel/hbtp/display_pwr                                     u:object_r:hbtp_kernel_sysfs:s0
+
+genfscon sysfs /devices/virtual/net/bond0/bonding/queue_id u:object_r:sysfs_bond0:s0
+genfscon sysfs /devices/virtual/net/bond0/queues/rx-0/rps_cpus u:object_r:sysfs_bond0:s0
+
+genfscon sysfs /firmware/devicetree/base/cpus u:object_r:sysfs_devices_system_cpu:s0
+
+genfscon sysfs /bus/spmi/devices u:object_r:sysfs_spmi_dev:s0
 
 genfscon debugfs /kgsl/proc                           u:object_r:debugfs_kgsl:s0
 genfscon debugfs /clk/debug_suspend                   u:object_r:debugfs_clk:s0

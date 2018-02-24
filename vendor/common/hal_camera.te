@@ -51,3 +51,8 @@ hal_client_domain(hal_camera_default, hal_graphics_composer)
 
 allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager find;
 hal_client_domain(hal_camera_default, hal_perf)
+
+allow hal_camera_default sysfs_data:file read;
+allow hal_camera sysfs_data:file r_file_perms;
+
+r_dir_file(hal_camera_default, sysfs_graphics)

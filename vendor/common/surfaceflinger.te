@@ -1,2 +1,4 @@
 dontaudit surfaceflinger firmware_file:dir search;
 dontaudit surfaceflinger kernel:system module_request;
+
+allow surfaceflinger sysfs_graphics:file rw_file_perms;

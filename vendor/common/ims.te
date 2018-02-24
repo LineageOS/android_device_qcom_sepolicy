@@ -29,8 +29,10 @@ allow ims netmgrd_socket:sock_file w_file_perms;
 allowxperm ims self:socket ioctl msm_sock_ipc_ioctls;
 allowxperm ims self:udp_socket ioctl RMNET_IOCTL_EXTENDED;
 
-r_dir_file(ims, sysfs_msm_subsys)
-r_dir_file(ims, sysfs_diag)
+#diag
+userdebug_or_eng(`
+    diag_use(ims)
+')
 
 hwbinder_use(ims)
 allow ims hal_cne_hwservice:hwservice_manager find;

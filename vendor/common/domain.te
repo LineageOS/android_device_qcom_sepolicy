@@ -14,7 +14,7 @@ allow domain debug_gralloc_prop:file r_file_perms;
 
 r_dir_file({domain - isolated_app}, sysfs_soc);
 r_dir_file({domain - isolated_app}, sysfs_esoc);
-r_dir_file({domain - isolated_app}, sysfs_msm_subsys);
+r_dir_file({domain - isolated_app}, sysfs_ssr);
 r_dir_file({domain - isolated_app}, sysfs_thermal);
 
 dontaudit domain kernel:system module_request;

@@ -23,9 +23,7 @@ allow cnd self:{
 allowxperm cnd self:udp_socket ioctl SIOCGIFMTU;
 
 allow cnd sysfs_timestamp_switch:file r_file_perms;
-r_dir_file(cnd, sysfs_msm_subsys)
-r_dir_file(cnd, sysfs_diag)
-r_dir_file(cnd, sysfs_soc)
+allow cnd sysfs_data:file r_file_perms;
 
 allow cnd proc_meminfo:file r_file_perms;
 
@@ -53,3 +51,8 @@ binder_call(cnd, dataservice_app)
 binder_call(cnd, ims)
 
 unix_socket_send(cnd, wpa, hal_wifi_supplicant)
+
+#diag
+userdebug_or_eng(`
+    diag_use(cnd)
+')

@@ -19,9 +19,12 @@ allow radio {
   mediacodec_service
 }:service_manager find;
 
-r_dir_file(radio, sysfs_msm_subsys)
-
 # IMS needs permission to use avtimer
 allow radio avtimer_device:chr_file r_file_perms;
 
 binder_call(radio, hal_imsrtp)
+
+#diag
+userdebug_or_eng(`
+    diag_use(radio)
+')

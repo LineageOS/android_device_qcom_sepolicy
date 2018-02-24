@@ -5,11 +5,8 @@ allow hal_graphics_composer_default qdisplay_service:service_manager { add find 
 allow hal_graphics_composer_default persist_display_file:dir search;
 allow hal_graphics_composer_default persist_display_file:file r_file_perms;
 
-allow hal_graphics_composer_default sysfs_camera:dir search;
-allow hal_graphics_composer_default sysfs_camera:file r_file_perms;
-allow hal_graphics_composer_default sysfs_msm_subsys:dir search;
-allow hal_graphics_composer_default sysfs_msm_subsys:file r_file_perms;
-allow hal_graphics_composer_default sysfs_mdss_mdp_caps:file r_file_perms;
+allow hal_graphics_composer sysfs_graphics:dir r_dir_perms;
+allow hal_graphics_composer sysfs_graphics:file rw_file_perms;
 allow hal_graphics_composer_default persist_file:dir search;
 
 allow hal_graphics_composer oemfs:dir r_dir_perms;

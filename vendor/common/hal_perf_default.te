@@ -45,6 +45,10 @@ allow hal_perf {
     sysfs_devices_system_cpu
     sysfs_devfreq
     sysfs_cpu_boost
+    sysfs_msm_perf
+    sysfs_msm_power
+    sysfs_mmc_host
+    sysfs_scsi_host
     sysfs_kgsl
     sysfs_graphics
     sysfs
@@ -55,6 +59,10 @@ allow hal_perf {
     sysfs_devices_system_cpu
     sysfs_devfreq
     sysfs_cpu_boost
+    sysfs_msm_perf
+    sysfs_msm_power
+    sysfs_mmc_host
+    sysfs_scsi_host
     sysfs_kgsl
     sysfs_graphics
     sysfs_battery_supply
@@ -63,4 +71,6 @@ allow hal_perf {
 allow hal_perf {
     sysfs_devfreq
     sysfs_kgsl
+    sysfs_mmc_host
+    sysfs_scsi_host
 }:lnk_file r_file_perms;

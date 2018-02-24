@@ -1,6 +1,6 @@
 get_prop(dataservice_app, cnd_prop)
 
-r_dir_file(dataservice_app, sysfs_msm_subsys)
+allow dataservice_app sysfs_data:file r_file_perms;
 
 binder_call(dataservice_app, cnd)
 

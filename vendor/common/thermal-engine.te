@@ -8,23 +8,34 @@ allow thermal-engine self:capability2 block_suspend;
 # to read /sys/devices
 allow thermal-engine sysfs:dir r_dir_perms;
 
-allow thermal-engine sysfs_msm_subsys:dir r_dir_perms;
-allow thermal-engine sysfs_msm_subsys:file rw_file_perms;
-allow thermal-engine sysfs_soc:dir search;
-allow thermal-engine sysfs_soc:file r_file_perms;
-allow thermal-engine sysfs_thermal:dir r_dir_perms;
-allow thermal-engine sysfs_thermal:file rw_file_perms;
-allow thermal-engine sysfs_rmtfs:dir search;
-allow thermal-engine sysfs_rmtfs:file r_file_perms;
+# This is required for thermal sysfs access
+r_dir_file(thermal-engine, sysfs_thermal)
+allow thermal-engine sysfs_thermal:file w_file_perms;
+
+# Allow to read and write cpufreq sysfs
+allow thermal-engine sysfs_devices_system_cpu:file rw_file_perms;
+
+# To search, read and write kgsl sysfs
 allow thermal-engine sysfs_kgsl:dir r_dir_perms;
 allow thermal-engine sysfs_kgsl:file rw_file_perms;
 allow thermal-engine sysfs_kgsl:lnk_file r_file_perms;
 
-allow thermal-engine audio_device:chr_file rw_file_perms;
+allow thermal-engine sysfs_data:file r_file_perms;
 
+# This is required read and write battery power supply sysfs
+allow thermal-engine sysfs_battery_supply:dir r_dir_perms;
+allow thermal-engine sysfs_battery_supply:file rw_file_perms;
+allow thermal-engine sysfs_battery_supply:lnk_file r_file_perms;
+
+# This is required to read and write lcd-backlight sysfs
+allow thermal-engine sysfs_graphics:dir r_dir_perms;
+allow thermal-engine sysfs_graphics:file rw_file_perms;
+allow thermal-engine sysfs_graphics:lnk_file r_file_perms;
+
+r_dir_file(thermal-engine, sysfs_ssr);
 r_dir_file(thermal-engine, sysfs_leds)
-r_dir_file(thermal-engine, sysfs_msm_subsys)
-r_dir_file(thermal-engine, sysfs_uio)
+
+allow thermal-engine audio_device:chr_file rw_file_perms;
 
 allow thermal-engine self:socket create_socket_perms;
 allowxperm thermal-engine self:socket ioctl msm_sock_ipc_ioctls;
@@ -34,8 +45,3 @@ set_prop(thermal-engine, powerctl_prop)
 
 # netlink access
 allow thermal-engine self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
-
-# This is required read and write battery power supply sysfs
-allow thermal-engine sysfs_battery_supply:dir r_dir_perms;
-allow thermal-engine sysfs_battery_supply:file rw_file_perms;
-allow thermal-engine sysfs_battery_supply:lnk_file r_file_perms;
