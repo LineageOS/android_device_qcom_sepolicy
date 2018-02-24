@@ -53,7 +53,6 @@ camera.                    u:object_r:camera_prop:s0
 persist.camera.            u:object_r:camera_prop:s0
 vendor.spcom.              u:object_r:spcomlib_prop:s0
 sdm.idle_time              u:object_r:sdm_idle_time_prop:s0
-ro.sf.lcd_density             u:object_r:sf_lcd_density_prop:s0
 ro.vendor.scr_enabled         u:object_r:scr_enabled_prop:s0
 vendor.bg_reset               u:object_r:bg_daemon_prop:s0
 vendor.bg.boot_complete       u:object_r:bg_boot_complete_prop:s0
