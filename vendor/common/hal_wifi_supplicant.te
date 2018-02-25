@@ -44,5 +44,3 @@ typeattribute hal_wifi_supplicant_default data_between_core_and_vendor_violators
 allow hal_wifi_supplicant wifi_data_file:dir create_dir_perms;
 allow hal_wifi_supplicant wifi_data_file:dir w_dir_perms;
 allow hal_wifi_supplicant wifi_data_file:file create_file_perms;
-allow hal_wifi_supplicant wpa_socket:dir create_dir_perms;
-allow hal_wifi_supplicant wpa_socket:sock_file create_file_perms;
