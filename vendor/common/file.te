@@ -104,6 +104,9 @@ type hexagon_halide_file, vendor_file_type, file_type;
 # rfs_file
 type rfs_file, file_type, data_file_type;
 
+# vendor media files
+type vendor_media_data_file, file_type, data_file_type;
+
 type adsprpcd_file, file_type, mlstrustedobject;
 
 type hbtp_log_file, file_type, data_file_type;
