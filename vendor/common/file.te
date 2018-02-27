@@ -65,7 +65,6 @@ type cnd_data_file, file_type, data_file_type;
 type location_data_file, file_type, data_file_type;
 type vendor_audio_data_file, file_type, data_file_type;
 type vendor_radio_data_file, file_type, data_file_type;
-type wifi_vendor_data_file, file_type, data_file_type;
 
 
 type persist_file, file_type;
