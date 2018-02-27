@@ -20,6 +20,9 @@ allow cnd self:{
     socket
 } create_socket_perms_no_ioctl;
 
+# required for VoWifi and WLAN events
+allow cnd self:netlink_route_socket nlmsg_read;
+
 allowxperm cnd self:udp_socket ioctl SIOCGIFMTU;
 
 allow cnd sysfs_timestamp_switch:file r_file_perms;
