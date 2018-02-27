@@ -36,5 +36,3 @@ allow qti_init_shell {
 allow qti_init_shell regionalization_file:dir r_dir_perms;
 allow qti_init_shell regionalization_file:file create_file_perms;
 
-# For dcc
-allow qti_init_shell sysfs_dcc_device:file rw_file_perms;

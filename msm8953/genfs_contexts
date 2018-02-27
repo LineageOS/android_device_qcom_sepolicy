@@ -25,5 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#for v4L node "name" access
-allow mm-qcamerad sysfs_graphics:file rw_file_perms;
+genfscon sysfs /devices/platform/soc/1b00000.qcom,msm-cam/video4linux/video0/name   u:object_r:sysfs_graphics:s0
+
