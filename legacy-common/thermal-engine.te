@@ -1,2 +1,4 @@
 # Label the thermal sockets correctly
 type_transition thermal-engine socket_device:sock_file thermal_socket;
+
+r_dir_file(thermal-engine, sysfs_spmi_dev)
