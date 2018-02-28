@@ -3,9 +3,6 @@ binder_call(audioserver, bootanim)
 allow audioserver sysfs_soc:file r_file_perms;
 allow audioserver sysfs_soc:dir search;
 
-# Allow audioserver to read sysfs_thermal files for speaker protection
-allow audioserver sysfs_thermal:file r_file_perms;
-
 userdebug_or_eng(`
     diag_use(audioserver)
 ')

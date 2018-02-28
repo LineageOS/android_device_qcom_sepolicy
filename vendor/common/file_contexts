@@ -195,7 +195,7 @@
 
 
 # audio_data_file
-/data/vendor/misc/audio(/.*)? u:object_r:vendor_audio_data_file:s0
+/data/vendor/audio(/.*)? u:object_r:vendor_audio_data_file:s0
 
 # /
 /tombstones             u:object_r:rootfs:s0

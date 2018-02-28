@@ -1,3 +1,4 @@
+type sysfs_audio, fs_type, sysfs_type;
 type sysfs_battery_supply, sysfs_type, fs_type;
 type sysfs_bond0, fs_type, sysfs_type;
 type sysfs_boot_adsp, sysfs_type, fs_type;
@@ -48,6 +49,7 @@ type debugfs_icnss, debugfs_type, fs_type;
 
 # /proc
 type proc_wifi_dbg, fs_type;
+type proc_audiod, fs_type;
 
 type qmuxd_socket, file_type;
 type netmgrd_socket, file_type;
@@ -66,7 +68,6 @@ type cnd_data_file, file_type, data_file_type;
 type location_data_file, file_type, data_file_type;
 type vendor_audio_data_file, file_type, data_file_type;
 type vendor_radio_data_file, file_type, data_file_type;
-
 
 type persist_file, file_type;
 type persist_data_file, file_type;
