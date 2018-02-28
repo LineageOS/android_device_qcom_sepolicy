@@ -1,1 +1,3 @@
 ctl.msm_irqbalance         u:object_r:msm_irqbalance_prop:s0
+hw.cabl                    u:object_r:postprocessing_prop:s0
+hw.pp.                     u:object_r:postprocessing_prop:s0
