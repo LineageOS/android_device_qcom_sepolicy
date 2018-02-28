@@ -3,6 +3,8 @@ type perfd_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(perfd)
 
+allow perfd self:capability fsetid;
+
 allow perfd {
     sysfs_devices_system_cpu
     sysfs_cpu_online
@@ -30,6 +32,10 @@ allow perfd sysfs_lib:file w_file_perms;
 r_dir_file(perfd, sysfs_kgsl)
 allow perfd sysfs_kgsl:file write;
 
+# Allow access to thermal sysfs entry
+allow perfd sysfs_thermal:dir search;
+allow perfd sysfs_thermal:file w_file_perms;
+
 # mpctl socket
 allow perfd mpctl_socket:dir rw_dir_perms;
 allow perfd mpctl_socket:sock_file create_file_perms;
@@ -46,3 +52,5 @@ set_prop(perfd, freq_prop)
 
 allow perfd cgroup:file r_file_perms;
 allow perfd sysfs:dir r_dir_perms;
+
+r_dir_file(perfd, hal_power_default)
