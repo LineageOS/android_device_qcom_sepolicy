@@ -4,3 +4,5 @@ unix_socket_connect(surfaceflinger, mpctl, perfd)
 unix_socket_send(surfaceflinger, mpctl, mpdecision)
 unix_socket_connect(surfaceflinger, mpctl, mpdecision)
 unix_socket_connect(surfaceflinger, pps, mm-pp-daemon)
+
+set_prop(surfaceflinger, postprocessing_prop)
