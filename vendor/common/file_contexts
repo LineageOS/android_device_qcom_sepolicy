@@ -564,7 +564,6 @@
 ###################################
 # vendor files
 #
-/data/vendor/misc/audio(/.*)?   u:object_r:vendor_audio_data_file:s0
 /vendor/package(/.*)?                      u:object_r:vendor_carrier_file:s0
 /vendor/package(/.*)?/overlay(/.*)?        u:object_r:vendor_overlay_file:s0
 /vendor/package(/.*)?/app(/.*)?            u:object_r:vendor_app_file:s0
