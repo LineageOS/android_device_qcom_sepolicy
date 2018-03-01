@@ -41,3 +41,4 @@ com.qti.snapdragon.sdk.display.IColorService   u:object_r:color_service:s0
 regionalization                                u:object_r:regionalization_service:s0
 wigigp2p                                       u:object_r:wigigp2p_service:s0
 wigig                                          u:object_r:wigig_service:s0
+vendor.perfservice                             u:object_r:vendor_perf_service:s0
