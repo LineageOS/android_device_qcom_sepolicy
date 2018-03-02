@@ -21,3 +21,7 @@ allow rild time_daemon:unix_stream_socket connectto;
 
 allow rild radio_vendor_data_file:dir rw_dir_perms;
 allow rild radio_vendor_data_file:file create_file_perms;
+
+userdebug_or_eng(`
+  allow rild diag_device:chr_file rw_file_perms;
+')
