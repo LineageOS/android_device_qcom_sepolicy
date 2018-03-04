@@ -39,9 +39,6 @@ dontaudit init sysfs:dir write;
 #load /vendor/lib/modules/wil6210.ko
 allow init vendor_file:system module_load;
 
-#allow init to mount blkio device
-allow init blkio_device:dir { create mounton };
-
 #Needed for restorecon. Init already has these permissions
 #for generic block devices, but is unable to access those
 #which have a custom lable added by us.

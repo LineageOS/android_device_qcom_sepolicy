@@ -50,7 +50,16 @@
 
 #rawdump partition
 /dev/block/platform/soc/7824900.sdhci/by-name/rawdump               u:object_r:rawdump_block_device:s0
-/sys/kernel/dload/emmc_dload                                        u:object_r:sysfs_emmc_dload:s0
+
+/sys/module/usb_f_mtp/parameters(/.*)?                              u:object_r:sysfs_usb_mtp_device:s0
+/sys/devices/platform/soc/200f000\.qcom,spmi/spmi-0/spmi0-02/200f000\.qcom,spmi:qcom,pmi8950@2:qcom,qpnp-smbcharger/leds/red/brightness    u:object_r:sysfs_spmi_device:s0
+/sys/devices/platform/soc/200f000\.qcom,spmi/spmi-0/spmi0-03/200f000\.qcom,spmi:qcom,pmi8950@3:qcom,haptic@c000/leds/vibrator/activate     u:object_r:sysfs_spmi_device:s0
+/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi632@3:qcom,vibrator@5700/leds/vibrator/activate      u:object_r:sysfs_spmi_device:s0
+
+/sys/devices/platform/soc/b3000.dcc(/.*)?                           u:object_r:sysfs_dcc_device:s0
+
+#video4linux_
+/sys/devices/platform/soc/1b00000.qcom,msm-cam/video4linux/video0/name u:object_r:sysfs_video4linux_device:s0
 
 ############################################################################################
 #Same hal process libs
