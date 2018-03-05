@@ -43,3 +43,5 @@ allow rild vendor_radio_data_file:file create_file_perms;
 
 # qcril.so needs access to /vendor/radio/qcril_database/qcril.db
 allow rild vendor_file:file lock;
+
+hal_server_domain(rild, hal_secure_element)
