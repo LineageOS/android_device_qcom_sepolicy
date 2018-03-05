@@ -25,3 +25,5 @@ allow rild radio_vendor_data_file:file create_file_perms;
 userdebug_or_eng(`
   allow rild diag_device:chr_file rw_file_perms;
 ')
+
+hal_server_domain(rild, hal_secure_element)
