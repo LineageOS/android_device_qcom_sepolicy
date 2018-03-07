@@ -1,4 +1,4 @@
-# Copyright (c) 2016, 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016, 2018 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,6 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#for oemfs
+r_dir_file(idmap, oemfs);
 #for regionalization
-r_dir_file(system_app, regionalization_file);
-r_dir_file(system_app, vendor_carrier_file);
+r_dir_file(idmap, regionalization_file);
+r_dir_file(idmap, vendor_carrier_file);
