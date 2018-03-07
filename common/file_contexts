@@ -77,7 +77,8 @@
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/wlan                                       u:object_r:wlan_device:s0
 /dev/bg_com_dev                                 u:object_r:bg_daemon_device:s0
-/dev/blkio(/.*)?                                u:object_r:blkio_device:s0
+/dev/qg                                         u:object_r:qg_device:s0
+/dev/qg_battery                                 u:object_r:qg_device:s0
 ###################################
 # Dev block nodes
 #
@@ -243,6 +244,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service-qti u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.0-service u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.1-service u:object_r:hal_gnss_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.2-service u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti  u:object_r:hal_bluetooth_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.display\.color@1\.0-service            u:object_r:hal_display_color_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@1\.0-service       u:object_r:hal_perf_default_exec:s0
@@ -508,6 +510,7 @@
 /data/rfs.*                                                         u:object_r:rfs_file:s0
 /data/hlos_rfs(/.*)?                                                u:object_r:rfs_shared_hlos_file:s0
 /data/camera(/.*)?                                                  u:object_r:camera_socket:s0
+/data/misc/camera/cam_socket[1-2]                                   u:object_r:camera_socket:s0
 /data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
 /data/misc/qvop(/.*)?                                               u:object_r:qvop-daemon_data_file:s0
 /data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
@@ -674,3 +677,8 @@
 #
 /(vendor|system/vendor)/bin/toolbox_vendor                          u:object_r:vendor_toolbox_exec:s0
 /(vendor|system/vendor)/bin/grep_vendor                             u:object_r:vendor_toolbox_exec:s0
+
+##################################
+# rawdump partition
+/sys/kernel/dload/emmc_dload                                        u:object_r:sysfs_emmc_dload:s0
+/sys/kernel/dload/dload_mode                                        u:object_r:sysfs_emmc_dload:s0

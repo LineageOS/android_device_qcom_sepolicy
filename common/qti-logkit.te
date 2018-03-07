@@ -79,3 +79,10 @@ binder_call(qti_logkit, system_server)
 # allow access to recovery directory
 allow qti_logkit cache_recovery_file:dir rw_dir_perms;
 allow qti_logkit cache_recovery_file:file create_file_perms;
+
+# allow qti_logkit for rawdump partition
+allow qti_logkit block_device:dir r_dir_perms;
+allow qti_logkit rawdump_block_device:blk_file rw_file_perms;
+
+# allow qti_logkit for sysfs emmc dload node
+allow qti_logkit sysfs_emmc_dload:file rw_file_perms;
