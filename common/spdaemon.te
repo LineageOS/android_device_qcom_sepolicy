@@ -47,6 +47,9 @@ allow spdaemon sp_keymaster_device:chr_file rw_file_perms;
 # Allow access to cryptoapp device
 allow spdaemon cryptoapp_device:chr_file rw_file_perms;
 
+# Allow access to spdaemon_ssr device
+allow spdaemon spdaemon_ssr_device:chr_file rw_file_perms;
+
 # Allow access to ion device
 allow spdaemon ion_device:chr_file rw_file_perms;
 
