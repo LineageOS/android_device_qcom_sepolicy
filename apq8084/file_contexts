@@ -43,6 +43,3 @@
 /dev/block/platform/msm_sdcc\.1/by-name/cache                           u:object_r:cache_block_device:s0
 /dev/block/platform/msm_sdcc\.1/by-name/recovery                        u:object_r:recovery_block_device:s0
 /dev/block/platform/msm_sdcc\.1/by-name/logdump                         u:object_r:logdump_partition:s0
-
-# qca data file for apq8084 target
-/data/misc/location/qca1530(/.*)?                                       u:object_r:qca1530_data_file:s0
