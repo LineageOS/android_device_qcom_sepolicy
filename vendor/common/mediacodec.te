@@ -66,6 +66,10 @@ allow mediacodec qdsp_device:chr_file r_file_perms;
 allow mediacodec wfdnativemm_service:service_manager find;
 hal_client_domain(mediacodec, wifidisplayhalservice)
 
+#Allow mediacodec to access vendor_media_data_file files
+allow mediacodec vendor_media_data_file:dir create_dir_perms;
+allow mediacodec vendor_media_data_file:file create_file_perms;
+
 # DOLBY_START
 #allow mediacodec audioserver_service:service_manager find;
 set_prop(mediacodec, dolby_prop)
