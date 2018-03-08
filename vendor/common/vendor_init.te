@@ -34,3 +34,13 @@ allow vendor_init ipa_dev:chr_file w_file_perms;
 allow vendor_init proc:file write;
 
 allow vendor_init sys_usb_controller_prop:file r_file_perms;
+
+allow vendor_init sysfs_dm:dir w_dir_perms;
+allow vendor_init sysfs_dm:file create_file_perms;
+allow vendor_init cgroup:file create_file_perms;
+
+# write from init.target.rc
+allow vendor_init sysfs_poweron_alarm:file w_file_perms;
+
+# vendor init needs permissions for sepolicy files
+allow vendor_init file_contexts_file:file r_file_perms;
