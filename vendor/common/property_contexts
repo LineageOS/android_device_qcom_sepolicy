@@ -1,3 +1,4 @@
+ctl.vendor.msm_irqbalance  u:object_r:msm_irqbalance_prop:s0
 ctl.vendor.netmgrd         u:object_r:ctl_netmgrd_prop:s0
 ctl.vendor.port-bridge     u:object_r:ctl_port-bridge_prop:s0
 ctl.vendor.qcrild          u:object_r:ctl_qcrild_prop:s0

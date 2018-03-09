@@ -13,6 +13,7 @@ type ipacm_prop, property_type;
 type ipacm-diag_prop, property_type;
 type keymaster_prop, property_type;
 type modem_diag_prop, property_type;
+type msm_irqbalance_prop, property_type;
 type net_rmnet_prop, property_type;
 type per_mgr_state_prop, property_type;
 type post_boot_prop, property_type;
