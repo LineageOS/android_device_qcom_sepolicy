@@ -38,6 +38,7 @@ allow netmgrd netmgrd:socket { create };
 allow netmgrd netmgrd:netlink_route_socket { setopt getattr write nlmsg_write };
 allow netmgrd self:netlink_generic_socket create_socket_perms_no_ioctl;
 allow netmgrd self:netlink_tcpdiag_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
+allow netmgrd self:qipcrtr_socket create_socket_perms_no_ioctl;
 
 unix_socket_connect(netmgrd, cnd, cnd);
 
