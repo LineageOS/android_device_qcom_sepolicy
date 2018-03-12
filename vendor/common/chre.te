@@ -5,8 +5,8 @@ type chre, domain;
 type chre_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(chre)
-
-allow chre ion_device:chr_file { open read };
-allow chre qdsp_device:chr_file { ioctl open read };
-
 r_dir_file(chre, adsprpcd_file)
+
+allow chre ion_device:chr_file r_file_perms;
+allow chre qdsp_device:chr_file r_file_perms;
+allow chre dsp_device:chr_file r_file_perms;
