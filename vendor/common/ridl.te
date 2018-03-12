@@ -66,7 +66,6 @@ unix_socket_connect(RIDL, logdr, logd)
 
 #binder_use(RIDL)
 allow RIDL vendor_shell_exec:file { rx_file_perms };
-allow RIDL sysfs:file write;
 allow RIDL system_file:file x_file_perms;
 binder_call(RIDL, system_server)
 

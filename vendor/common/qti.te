@@ -29,5 +29,4 @@ allow qti sysfs_data:file r_file_perms;
 #diag
 userdebug_or_eng(`
     diag_use(qti)
-    allow qti sysfs:file r_file_perms;
 ')
