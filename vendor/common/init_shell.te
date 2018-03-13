@@ -129,3 +129,5 @@ allow qti_init_shell sysfs_usb_supply:file setattr;
 allow qti_init_shell sysfs_devices_system_cpu:file w_file_perms;
 
 allow qti_init_shell sysfs_msm_power:file rw_file_perms;
+
+allow qti_init_shell msm_irqbalanced_exec:file getattr;
