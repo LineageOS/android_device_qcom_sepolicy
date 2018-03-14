@@ -132,6 +132,7 @@
 /dev/block/platform/soc/7464900.sdhci/by-name/rpm_[ab]              u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7464900.sdhci/by-name/system_[ab]           u:object_r:system_block_device:s0
 /dev/block/platform/soc/7464900.sdhci/by-name/tz_[ab]               u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7464900.sdhci/by-name/ImageFv_[ab]          u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7464900.sdhci/by-name/vendor_[ab]           u:object_r:system_block_device:s0
 /dev/block/platform/soc/7464900.sdhci/by-name/xbl_[ab]              u:object_r:xbl_block_device:s0
 
@@ -151,6 +152,7 @@
 /dev/block/platform/soc/624000.ufshc/by-name/rpm_[ab]          u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/624000.ufshc/by-name/system_[ab]       u:object_r:system_block_device:s0
 /dev/block/platform/soc/624000.ufshc/by-name/tz_[ab]           u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/624000.ufshc/by-name/ImageFv_[ab]      u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/624000.ufshc/by-name/vendor_[ab]       u:object_r:system_block_device:s0
 /dev/block/platform/soc/624000.ufshc/by-name/xbl_[ab]          u:object_r:xbl_block_device:s0
 
