@@ -248,6 +248,9 @@ type persist_alarm_file, file_type;
 
 type persist_time_file, file_type;
 
+# nfc file type for data vendor access
+type nfc_vendor_data_file, file_type, data_file_type;
+
 # kgsl file type for sysfs access
 type sysfs_kgsl, sysfs_type, fs_type;
 type sysfs_kgsl_proc, sysfs_type, fs_type;
