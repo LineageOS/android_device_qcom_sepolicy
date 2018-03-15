@@ -45,8 +45,8 @@ vendor.min_freq_0                 u:object_r:vendor_mpctl_prop:s0
 vendor.min_freq_4                 u:object_r:vendor_mpctl_prop:s0
 ctl.vm_bms                 u:object_r:vm_bms_prop:s0
 ro.vendor.qualcomm.bluetooth.        u:object_r:vendor_bluetooth_prop:s0
-ctl.ipacm                  u:object_r:ipacm_prop:s0
-ctl.ipacm-diag             u:object_r:ipacm-diag_prop:s0
+ctl.vendor.ipacm           u:object_r:vendor_ipacm_prop:s0
+ctl.vendor.ipacm-diag      u:object_r:vendor_ipacm-diag_prop:s0
 ctl.vendor.qti                    u:object_r:vendor_qti_prop:s0
 ctl.vendor.sensors                u:object_r:sensors_prop:s0
 ctl.vendor.msm_irqbalance         u:object_r:msm_irqbalance_prop:s0

@@ -40,8 +40,8 @@ type usf_prop, property_type;
 type freq_prop, property_type;
 type vm_bms_prop, property_type; #To start vm_bms
 type vendor_qti_prop, property_type;
-type ipacm_prop, property_type;
-type ipacm-diag_prop, property_type;
+type vendor_ipacm_prop, property_type;
+type vendor_ipacm-diag_prop, property_type;
 type sensors_prop, property_type;
 type slpi_prop, property_type;
 type msm_irqbalance_prop, property_type;
