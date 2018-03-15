@@ -6,3 +6,6 @@ allow mediacodec system_file:dir r_dir_perms;
 userdebug_or_eng(`
   allow mediacodec dumpstate:fd use;
 ')
+#Allow mediacodec to access vendor_media_data_file files
+allow mediacodec vendor_media_data_file:dir create_dir_perms;
+allow mediacodec vendor_media_data_file:file create_file_perms;
