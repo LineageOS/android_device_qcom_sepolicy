@@ -10,6 +10,7 @@ type sysfs_fingerprint, sysfs_type, fs_type;
 type sysfs_graphics, sysfs_type, fs_type;
 type sysfs_kgsl, sysfs_type, fs_type;
 type hbtp_kernel_sysfs, file_type, sysfs_type;
+type sysfs_irqbalance, file_type, sysfs_type;
 type sysfs_laser, sysfs_type, fs_type;
 type sysfs_mdss_mdp_caps, sysfs_type, fs_type;
 type sysfs_mmc_host, fs_type, sysfs_type;

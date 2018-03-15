@@ -6,6 +6,7 @@ genfscon sysfs /android_touch                         u:object_r:sysfs_touch:s0
 genfscon sysfs /devices/virtual/input/ftm4_touch      u:object_r:sysfs_touch:s0
 
 genfscon sysfs /class/rfkill/rfkill0/state            u:object_r:sysfs_bluetooth_writable:s0
+genfscon sysfs /kernel/irq_helper/irq_blacklist_on    u:object_r:sysfs_irqbalance:s0
 
 genfscon sysfs /class/uio                                               u:object_r:sysfs_uio:s0
 genfscon sysfs /devices/soc/soc:bt_wcn3990                              u:object_r:sysfs_bluetooth_writable:s0
