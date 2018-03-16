@@ -41,6 +41,7 @@ get_prop(hal_rcsservice, hwservicemanager_prop)
 # allow read datad property
 get_prop(hal_rcsservice, qcom_ims_prop)
 # allow imsrcsd to connect to imsdatad over socket
+allow hal_rcsservice self:socket create_socket_perms_no_ioctl;
 unix_socket_connect(hal_rcsservice, ims, ims)
 
 #diag
