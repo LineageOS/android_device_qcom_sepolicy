@@ -113,3 +113,6 @@ type adsprpcd_file, file_type, mlstrustedobject;
 
 type hbtp_log_file, file_type, data_file_type;
 type hbtp_cfg_file, file_type, vendor_file_type;
+
+#tloc data files
+type tlocd_data_file, file_type, data_file_type;
