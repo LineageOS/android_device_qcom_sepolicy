@@ -66,8 +66,7 @@ allow qca1530 { qca1530_exec shell_exec }:file rx_file_perms;
 allow qca1530 system_file:file x_file_perms;
 
 #Setting sys.qca1530 property in QCA1530 detect service
-#Setting system default properties on start command to system server
-allow qca1530 { qca1530_prop ctl_default_prop }:property_service set;
+set_prop(qca1530, qca1530_prop);
 
 # Access to serial port conncting to QCA1530 chip
 allow qca1530 serial_device:chr_file rw_file_perms;

@@ -28,8 +28,6 @@ allow dpmd sysfs_data:file r_file_perms;
 allow dpmd smem_log_device:chr_file rw_file_perms;
 #wakelock_use(dpmd) # it was present earlier
 
-set_prop(dpmd, system_prop)
-set_prop(dpmd, ctl_default_prop)
 #misc.
 #allow dpmd vendor_shell_exec:file rx_file_perms;
 
