@@ -34,7 +34,6 @@ allow hal_camera qdisplay_service:service_manager find;
 binder_call(hal_camera, surfaceflinger)
 set_prop(hal_camera, camera_prop)
 allow hal_camera gpu_device:chr_file rw_file_perms;
-allow hal_camera sysfs:file r_file_perms;
 
 #changes to access laser device
 allow hal_camera input_device:chr_file r_file_perms;

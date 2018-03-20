@@ -65,7 +65,6 @@ set_prop(location, location_prop);
 userdebug_or_eng(`
     diag_use(location)
 ')
-allow location sysfs:file r_file_perms;
 allow location sysfs_data:file r_file_perms;
 allow location self:socket ioctl;
 # ioctlcmd=c304

@@ -39,9 +39,6 @@ allow mdm_helper { system_file mdm_helper_exec }:file x_file_perms;
 allow mdm_helper block_device:dir rw_dir_perms;
 allow mdm_helper efs_boot_dev:blk_file rw_file_perms;
 
-#Needed to inform the hsic driver that mdm has booted up
-allow mdm_helper sysfs:file w_file_perms;
-
 #Needed in order to access the firmware partition
 r_dir_file(mdm_helper, firmware_file)
 

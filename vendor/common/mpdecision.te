@@ -31,8 +31,6 @@ allow mpdecision self:capability { net_admin chown fsetid sys_nice };
 allow mpdecision mpctl_socket:dir rw_dir_perms;
 allow mpdecision mpctl_socket:sock_file create_file_perms;
 
-allow mpdecision sysfs:file w_file_perms;
-
 #default_values file
 allow mpdecision mpctl_data_file:dir rw_dir_perms;
 allow mpdecision mpctl_data_file:file create_file_perms;

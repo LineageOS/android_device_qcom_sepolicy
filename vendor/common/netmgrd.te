@@ -45,7 +45,7 @@ unix_socket_connect(netmgrd, cnd, cnd);
 qmux_socket(netmgrd);
 
 #Allow writing of ipv6 network properties
-allow netmgrd { proc_net sysfs }:file rw_file_perms;
+allow netmgrd { proc_net }:file rw_file_perms;
 
 #Allow address configuration
 #Allow setting of DNS and GW Android properties
@@ -68,7 +68,6 @@ allow netmgrd sysfs_esoc:lnk_file r_file_perms;
 
 r_dir_file(netmgrd, sysfs_ssr);
 
-allow netmgrd sysfs:file w_file_perms;
 allow netmgrd sysfs_data:file r_file_perms;
 
 #Acquire lock on /system/etc/xtables.lock
