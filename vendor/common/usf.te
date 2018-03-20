@@ -10,7 +10,6 @@ net_domain(usf)
 allow usf usf_device:chr_file rw_file_perms;
 
 # Audio
-allow usf audio_data_file:sock_file write;
 #allow usf mediaserver:unix_stream_socket connectto;
 allow usf audio_device:chr_file rw_file_perms;
 allow usf proc_audiod:file r_file_perms;
