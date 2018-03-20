@@ -55,7 +55,6 @@ allow qti_init_shell self:capability {
 # rmnet_mux_prop - Needed to set persist.rmnet.mux property
 # sys_usb_controller_prop - Needed to set sys.usb.controller property
 # sys_usb_configfs_prop - Needed to set sys.usb.configfs property
-set_prop(qti_init_shell, system_prop)
 set_prop(qti_init_shell, freq_prop)
 set_prop(qti_init_shell, perfd_prop)
 set_prop(qti_init_shell, gamed_prop)

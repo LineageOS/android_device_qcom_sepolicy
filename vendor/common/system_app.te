@@ -28,7 +28,6 @@ r_dir_file(system_app, bluetooth_data_file);
 r_dir_file(system_app, bt_firmware_file);
 
 allow system_app {
-    ctl_default_prop
     fm_prop
     usf_prop
 }:property_service set;

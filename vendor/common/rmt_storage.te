@@ -20,8 +20,6 @@ allow rmt_storage self:capability {
     setpcap
 };
 
-#For set the ctl properties
-set_prop(rmt_storage, ctl_default_prop)
 
 #For Wakelocks
 wakelock_use(rmt_storage)

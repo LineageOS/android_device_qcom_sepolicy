@@ -30,8 +30,6 @@ type logdumpd_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(logdumpd)
 
-# To set ctl property
-set_prop(logdumpd, ctl_default_prop)
 
 userdebug_or_eng(`
 #logcat

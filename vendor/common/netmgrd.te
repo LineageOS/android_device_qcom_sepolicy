@@ -49,7 +49,6 @@ allow netmgrd { proc_net }:file rw_file_perms;
 
 #Allow address configuration
 #Allow setting of DNS and GW Android properties
-set_prop(netmgrd, system_prop)
 set_prop(netmgrd, net_radio_prop)
 set_prop(netmgrd, xlat_prop)
 

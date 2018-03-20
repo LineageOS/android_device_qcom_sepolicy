@@ -21,5 +21,4 @@ r_dir_file(usf, persist_file)
 r_dir_file(usf, persist_usf_file)
 
 # Properties
-set_prop(usf, ctl_default_prop)
 set_prop(usf, usf_prop)

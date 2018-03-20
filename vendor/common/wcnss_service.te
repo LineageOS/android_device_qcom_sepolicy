@@ -8,8 +8,6 @@ allow wcnss_service wcnss_device:chr_file rw_file_perms;
 
 qmux_socket(wcnss_service);
 
-set_prop(wcnss_service, system_prop)
-
 allow wcnss_service wifi_vendor_data_file:dir create_dir_perms;
 allow wcnss_service wifi_vendor_data_file:file create_file_perms;
 
