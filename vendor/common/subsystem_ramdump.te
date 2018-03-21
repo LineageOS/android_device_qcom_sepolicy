@@ -1,8 +1,8 @@
-type subsystem_ramdump, domain;
-type subsystem_ramdump_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(subsystem_ramdump);
+type vendor_subsystem_ramdump, domain;
+type vendor_subsystem_ramdump_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_subsystem_ramdump);
 
 userdebug_or_eng(`
-  allow subsystem_ramdump ramdump_device:chr_file r_file_perms;
-  allow subsystem_ramdump device:dir r_dir_perms;
+  allow vendor_subsystem_ramdump ramdump_device:chr_file r_file_perms;
+  allow vendor_subsystem_ramdump device:dir r_dir_perms;
 ')
