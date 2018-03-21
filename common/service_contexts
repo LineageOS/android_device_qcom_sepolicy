@@ -35,7 +35,6 @@ improveTouch.TouchService                      u:object_r:improve_touch_service:
 improveTouch.TouchManagerService               u:object_r:improve_touch_service:s0
 improveTouch.GestureManagerService             u:object_r:improve_touch_service:s0
 improveTouch.HandBiometricManagerService       u:object_r:improve_touch_service:s0
-wfdservice                                     u:object_r:wfdservice_service:s0
 DigitalPen                                     u:object_r:usf_service:s0
 dts_eagle_service                              u:object_r:dtseagleservice_service:s0
 com.qualcomm.qti.secota.service.SecotaNService u:object_r:secotad_service:s0
@@ -43,8 +42,6 @@ mdtp                                           u:object_r:mdtpdaemon_service:s0
 qtitetherservice                               u:object_r:qtitetherservice_service:s0
 com.qualcomm.qti.seemp.health                  u:object_r:seemp_health_daemon_service:s0
 com.qualcomm.qti.uceservice                    u:object_r:imsrcs_service:s0
-wigigp2p                                       u:object_r:wigigp2p_service:s0
-wigig                                          u:object_r:wigig_service:s0
 # DOLBY_START
 media.dolby_memoryservice                      u:object_r:audioserver_service:s0
 # DOLBY_END

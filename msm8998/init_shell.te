@@ -31,3 +31,7 @@ allow qti_init_shell regionalization_file:file create_file_perms;
 
 # For VR
 set_prop(qti_init_shell, ctl_qvrd_prop)
+
+#For sensors
+allow qti_init_shell sensors_persist_file:dir create_dir_perms;
+allow qti_init_shell sensors_persist_file:file create_file_perms;

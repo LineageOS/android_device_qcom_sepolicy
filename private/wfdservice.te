@@ -111,6 +111,7 @@ binder_call(wfdservice, mediacodec);
 
 #Allow wfdservice to query interface name of network (p2p etc.)
 allow wfdservice self:netlink_socket create_socket_perms_no_ioctl;
+allow wfdservice self:netlink_generic_socket create_socket_perms_no_ioctl;
 
 #Allow ion device access
 allow wfdservice ion_device:chr_file r_file_perms;

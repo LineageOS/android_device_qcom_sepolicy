@@ -34,3 +34,12 @@ init_daemon_domain(hal_gatekeeper_qti)
 
 # allow tee to load firmware images
 r_dir_file(hal_gatekeeper, firmware_file)
+
+# allow access to /dev/spcom
+allow hal_gatekeeper_qti spcom_device:chr_file rw_file_perms;
+
+# allow access to skp
+allow hal_gatekeeper_qti skp_device:chr_file rw_file_perms;
+
+allow hal_gatekeeper_qti sp_keymaster_device:chr_file rw_file_perms;
+allow hal_gatekeeper_qti sp_ssr_device:chr_file rw_file_perms;

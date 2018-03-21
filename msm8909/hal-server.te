@@ -33,6 +33,7 @@ typeattribute hal-server  hal_audio_server;
 typeattribute hal-server  hal_sensors_server;
 typeattribute hal-server  hal_broadcastradio_server;
 typeattribute hal-server  hal_drm_server;
+typeattribute hal-server  hal_drm;
 typeattribute hal-server  hal_configstore_client;
 
 init_daemon_domain(hal-server)
@@ -101,6 +102,8 @@ hal_client_domain(hal-server, hal_perf)
 #allow acess to wcd_cpe
 allow hal-server sysfs_audio:file rw_file_perms;
 allow hal-server sysfs_audio:dir r_dir_perms;
+#allow access to adsp boot for peripheral manager
+allow hal-server sysfs_boot:file w_file_perms ;
 
 ##########################
 # sensors  services
@@ -127,6 +130,7 @@ allow hal-server system_data_file:lnk_file r_file_perms;
 # Allow access to ion memory allocation device
 allow hal-server ion_device:chr_file rw_file_perms;
 allow hal-server hal_graphics_allocator:fd use;
+allow hal-server hal_allocator:fd use;
 
 # Allow access to fds allocated by mediaserver
 allow hal-server mediaserver:fd use;
@@ -136,6 +140,9 @@ allow hal-server media_data_file:dir create_dir_perms;
 allow hal-server media_data_file:file create_file_perms;
 
 allow hal-server sysfs:file r_file_perms;
+
+allow hal-server serialno_prop:file read;
+allow hal-server untrusted_app_25:fd use;
 
 ##########################
 # Config Store

@@ -32,6 +32,7 @@ hw.fm.                     u:object_r:fm_prop:s0
 sys.usf.                   u:object_r:usf_prop:s0
 ro.qc.sdk.us.                 u:object_r:usf_prop:s0
 radio.atfwd.               u:object_r:radio_prop:s0
+persist.radio.atfwd.       u:object_r:radio_prop:s0
 ctl.qmuxd                  u:object_r:ctl_qmuxd_prop:s0
 ctl.netmgrd                u:object_r:ctl_netmgrd_prop:s0
 ctl.port-bridge            u:object_r:ctl_port-bridge_prop:s0
@@ -49,6 +50,8 @@ ctl.sensors                u:object_r:sensors_prop:s0
 ctl.vendor.msm_irqbalance         u:object_r:msm_irqbalance_prop:s0
 ctl.vendor.msm_irqbl_sdm630       u:object_r:msm_irqbl_sdm630_prop:s0
 ctl.vendor.msm_irqbal_lb          u:object_r:msm_irqbalance_prop:s0
+ctl.diag_mdlog_start       u:object_r:diag_mdlog_prop:s0
+ctl.diag_mdlog_stop        u:object_r:diag_mdlog_prop:s0
 camera.                    u:object_r:camera_prop:s0
 persist.camera.            u:object_r:camera_prop:s0
 vendor.spcom.              u:object_r:spcomlib_prop:s0
@@ -116,6 +119,9 @@ persist.vendor.radio       u:object_r:radio_prop:s0
 vendor.radio               u:object_r:radio_prop:s0
 ro.vendor.ril.             u:object_r:radio_prop:s0
 persist.vendor.sys.        u:object_r:vendor_system_prop:s0
+
+# qdma property
+vendor.qti.qdma.        u:object_r:qdma_prop:s0
 
 #crashdata property
 persist.vendor.crash.cnt         u:object_r:crash_prop:s0

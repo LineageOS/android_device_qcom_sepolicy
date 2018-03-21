@@ -19,6 +19,7 @@ allow location location_data_file:{ file fifo_file } create_file_perms;
 allow location location_data_file:sock_file { write unlink };
 allow location location_exec:file x_file_perms;
 allow location location_socket:sock_file create_file_perms;
+allow location location_socket:dir rw_dir_perms;
 allow location self:capability { setuid setgid net_admin net_bind_service };
 allow location self:{
     socket
@@ -92,3 +93,6 @@ allow location self:capability2 wake_alarm;
 
 #access to qdma socket
 qdma_file_socket(location);
+
+#allow qdma prop
+get_prop(location, qdma_prop);

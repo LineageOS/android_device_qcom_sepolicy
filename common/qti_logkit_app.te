@@ -40,7 +40,7 @@ allow qti_logkit_app surfaceflinger_service:service_manager find;
 net_domain(qti_logkit_app)
 
 userdebug_or_eng(`
-# allow qti_logkit_app debugfs:file r_file_perms;
+  # allow qti_logkit_app debugfs:file r_file_perms;
   allow qti_logkit_app su:unix_dgram_socket sendto;
   allow qti_logkit_app persist_file:dir r_dir_perms;
   allow qti_logkit_app sensors_persist_file:dir r_dir_perms;
@@ -55,6 +55,7 @@ userdebug_or_eng(`
 
   # allow to read ssr ramdump
   allow qti_logkit_app ssr_ramdump_data_file:dir r_dir_perms;
+  allow qti_logkit_app ssr_ramdump_data_file:file r_file_perms;
 ')
 
 # allow access to qti_logkit

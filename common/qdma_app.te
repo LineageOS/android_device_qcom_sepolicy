@@ -59,3 +59,6 @@ unix_socket_connect(qdma_app, dpmtcm, dpmd)
 # allow qdma_socket
 allow qdma_app qdma_socket:dir w_dir_perms;
 allow qdma_app qdma_socket:sock_file create_file_perms;
+
+# allow qdma_prop
+set_prop(qdma_app, qdma_prop);
