@@ -5,9 +5,6 @@ type sapd_exec, exec_type, vendor_file_type, file_type;
 type btsnoop, bluetoothdomain;
 type btsnoop_exec, exec_type, vendor_file_type, file_type;
 
-type bt_logger, bluetoothdomain;
-type bt_logger_exec, exec_type, vendor_file_type, file_type;
-
 type btnvtool, bluetoothdomain;
 type btnvtool_exec, exec_type, vendor_file_type, file_type;
 
