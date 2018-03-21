@@ -1,4 +1,4 @@
-# Copyright (c) 2016-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,18 +25,15 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-attribute hal_hbtp;
-attribute hal_hbtp_client;
-attribute hal_hbtp_server;
+type hal_tui_comm_qti, domain;
+hal_server_domain(hal_tui_comm_qti, hal_tui_comm)
 
-attribute hal_perf;
-attribute hal_perf_client;
-attribute hal_perf_server;
+type hal_tui_comm_qti_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(hal_tui_comm_qti)
 
-attribute hal_qdutils_disp;
-attribute hal_qdutils_disp_client;
-attribute hal_qdutils_disp_server;
+binder_call(hal_tui_comm_client, hal_tui_comm_server)
+binder_call(hal_tui_comm_server, hal_tui_comm_client)
 
-attribute hal_tui_comm;
-attribute hal_tui_comm_client;
-attribute hal_tui_comm_server;
+add_hwservice(hal_tui_comm_server, hal_tui_comm_hwservice)
+allow hal_tui_comm_client hal_tui_comm_hwservice:hwservice_manager find;
+hal_client_domain(hal_tui_comm_qti, hal_graphics_allocator);

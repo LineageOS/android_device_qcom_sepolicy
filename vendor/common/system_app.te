@@ -12,3 +12,7 @@ allow system_app elabel_data_file:file r_file_perms;
 
 # Allow hbtp hal Service to be found
 hal_client_domain(system_app, hal_hbtp)
+
+#secureUI
+hal_client_domain(system_app, hal_qdutils_disp);
+hal_client_domain(system_app, hal_tui_comm);
