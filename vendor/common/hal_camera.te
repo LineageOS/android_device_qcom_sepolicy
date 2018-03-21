@@ -65,4 +65,7 @@ allow hal_camera sysfs_data:file r_file_perms;
 
 allow hal_camera vendor_camera_data_file:dir w_dir_perms;
 allow hal_camera vendor_camera_data_file:sock_file write;
+userdebug_or_eng(`
+allow hal_camera vendor_camera_data_file:file create_file_perms;
+')
 unix_socket_connect(hal_camera, thermal, thermal-engine)
