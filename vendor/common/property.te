@@ -129,3 +129,6 @@ type vendor_system_prop, property_type;
 
 # HBTP
 type ctl_vendor_hbtp_prop, property_type;
+
+#WiFi Display
+type wfd_service_prop, property_type;

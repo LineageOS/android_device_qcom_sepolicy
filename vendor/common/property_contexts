@@ -124,3 +124,6 @@ ctl.vendor.hbtp u:object_r:ctl_vendor_hbtp_prop:s0
 
 #Needed by qsee need to rename this
 sys.listeners.registered   u:object_r:tee_listener_prop:s0
+
+#WiFi Display
+vendor.wfdservice          u:object_r:wfd_service_prop:s0
