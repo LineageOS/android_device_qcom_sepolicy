@@ -77,7 +77,8 @@
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/wlan                                       u:object_r:wlan_device:s0
 /dev/bg_com_dev                                 u:object_r:bg_daemon_device:s0
-/dev/blkio(/.*)?                                u:object_r:blkio_device:s0
+/dev/qg                                         u:object_r:qg_device:s0
+/dev/qg_battery                                 u:object_r:qg_device:s0
 ###################################
 # Dev block nodes
 #
@@ -243,6 +244,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service-qti u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.0-service u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.1-service u:object_r:hal_gnss_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.2-service u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti  u:object_r:hal_bluetooth_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.display\.color@1\.0-service            u:object_r:hal_display_color_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@1\.0-service       u:object_r:hal_perf_default_exec:s0
@@ -323,6 +325,8 @@
 /sys/class/uio(/.*)?                                                u:object_r:sysfs_uio:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+/maps/map[0-9]+(/.*)?    u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc.0/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc.0/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+/maps/map[0-9]+(/.*)?    u:object_r:sysfs_uio_file:s0
 /sys/devices/[^/]+bcl[^/]+(/.*)?                                    u:object_r:sysfs_thermal:s0
 /sys/devices/f9200000.*/power_supply/usb(/.*)?                      u:object_r:sysfs_usb_supply:s0
 /sys/devices/msm_dwc3/power_supply/usb(/.*)?                        u:object_r:sysfs_usb_supply:s0
@@ -343,6 +347,7 @@
 /sys/devices/soc/qpnp-smbcharger-[a-z0-9]+/power_supply/dc(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/[a-z0-9]+.ssusb/power_supply/usb(/.*)?             u:object_r:sysfs_usb_supply:s0
+/sys/devices/soc/[a-z0-9]+.usb/power_supply/usb(/.*)?               u:object_r:sysfs_usb_supply:s0
 /sys/devices/soc/qpnp-vadc-[0-9]+(/.*)?                             u:object_r:sysfs_vadc_dev:s0
 /sys/bus/spmi/devices(/.*)?                                         u:object_r:sysfs_spmi_dev:s0
 /sys/kernel/irq_helper/irq_blacklist_on                             u:object_r:sysfs_irqbalance:s0
@@ -505,6 +510,7 @@
 /data/rfs.*                                                         u:object_r:rfs_file:s0
 /data/hlos_rfs(/.*)?                                                u:object_r:rfs_shared_hlos_file:s0
 /data/camera(/.*)?                                                  u:object_r:camera_socket:s0
+/data/misc/camera/cam_socket[1-2]                                   u:object_r:camera_socket:s0
 /data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
 /data/misc/qvop(/.*)?                                               u:object_r:qvop-daemon_data_file:s0
 /data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
@@ -676,6 +682,9 @@
 /(vendor|system/vendor)/lib(64)?/libsdm-disp-vndapis.so             u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libsdmutils.so                     u:object_r:same_process_hal_file:s0
 
+# rawdump partition
+/sys/kernel/dload/emmc_dload                                        u:object_r:sysfs_emmc_dload:s0
+/sys/kernel/dload/dload_mode                                        u:object_r:sysfs_emmc_dload:s0
 
 ##################################
 # Crypto

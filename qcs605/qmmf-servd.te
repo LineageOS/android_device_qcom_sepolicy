@@ -1,0 +1,78 @@
+# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+type qmmf-servd, domain;
+type qmmf-servd_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(qmmf-servd)
+
+vndbinder_use(qmmf-servd);
+
+userdebug_or_eng(`
+  # Allow access to debugfs
+  allow qmmf-servd qti_debugfs:dir r_dir_perms;
+  allow qmmf-servd qti_debugfs:file rw_file_perms;
+')
+
+# Allow access to video devices
+allow qmmf-servd { gpu_device video_device }:chr_file rw_file_perms;
+
+# Allow access to camera socket file
+allow qmmf-servd camera_data_file:dir w_dir_perms;
+allow qmmf-servd camera_data_file:file create_file_perms;
+
+hal_client_domain(qmmf-servd, hal_perf)
+unix_socket_connect(qmmf-servd, property, init)
+
+# Allow qmmf to get properties
+get_prop(qmmf-servd, bluetooth_prop)
+get_prop(qmmf-servd, camera_prop)
+set_prop(qmmf-servd, qmmf_prop)
+
+# Allow qmmf to talk with mm-qcamera daemon
+allow qmmf-servd mm-qcamerad:unix_dgram_socket sendto;
+
+# Allow qmmf to register it's services
+allow qmmf-servd { qmmf_system_service
+                   qmmf_recorder_service
+                   qmmf_audio_service
+                   qmmf_player_service
+                   qmmf_display_service
+                 }:service_manager { add find };
+
+allow qmmf-servd qmmf_data_file:dir rw_dir_perms;
+
+allow qmmf-servd audio_device:dir search;
+allow qmmf-servd audio_device:chr_file rw_file_perms;
+allow qmmf-servd audio_data_file:dir rw_dir_perms;
+allow qmmf-servd audio_data_file:file create_file_perms;
+allow qmmf-servd proc_audiod:file r_file_perms;
+
+allow qmmf-servd ion_device:chr_file r_file_perms;
+
+hal_client_domain(qmmf-servd, hal_graphics_allocator)
+hal_client_domain(qmmf-servd, hal_configstore)
+r_dir_file(qmmf-servd, oemfs)

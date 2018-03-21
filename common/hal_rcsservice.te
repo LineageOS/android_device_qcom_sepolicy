@@ -58,3 +58,4 @@ userdebug_or_eng(`
 get_prop(hal_rcsservice, persist_dpm_prop)
 
 set_prop(hal_rcsservice, ctl_vendor_imsrcsservice_prop)
+set_prop(hal_rcsservice, qcom_ims_prop)
