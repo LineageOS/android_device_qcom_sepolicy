@@ -44,9 +44,7 @@ r_dir_file(tlocd, firmware_file)
 allow tlocd tlocd_data_file:fifo_file create_file_perms;
 
 #Allow access MODEM
-allow tlocd self:socket create_socket_perms_no_ioctl;
-qmux_socket(tlocd);
-allow tlocd self:socket ioctl;
-allowxperm tlocd self:socket ioctl msm_sock_ipc_ioctls;
+allow tlocd self:{ socket qipcrtr_socket } create_socket_perms;
+allowxperm tlocd self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 
 allow tlocd ion_device:chr_file rw_file_perms;
