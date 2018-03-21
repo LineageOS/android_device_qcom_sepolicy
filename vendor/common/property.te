@@ -34,3 +34,6 @@ type wc_prop, property_type;
 type ctl_vendor_imsrcsservice_prop, property_type;
 #mpdecision
 type vendor_mpdecision_prop, property_type;
+
+# HBTP
+type ctl_vendor_hbtp_prop, property_type;
