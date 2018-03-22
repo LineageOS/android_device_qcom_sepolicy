@@ -18,6 +18,8 @@ allow bluetooth_loader qmuxd_socket:dir create_dir_perms;
 allow bluetooth_loader qmuxd_socket:sock_file create_file_perms;
 allow bluetooth_loader qmuxd:unix_stream_socket connectto;
 
+r_dir_file(bluetooth_loader, persist_file)
+
 userdebug_or_eng(`
   diag_use(bluetooth_loader)
 ')
