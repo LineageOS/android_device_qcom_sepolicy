@@ -77,6 +77,7 @@
 /vendor/firmware(/.*)?          u:object_r:vendor_firmware_file:s0
 /bt_firmware(/.*)?              u:object_r:bt_firmware_file:s0
 
+/vendor/bin/ATFWD-daemon        u:object_r:atfwd_exec:s0
 /vendor/bin/hw/android\.hardware\.vr@1\.0-service.crosshatch      u:object_r:hal_vr_default_exec:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.fpc u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/thermal-engine      u:object_r:thermal-engine_exec:s0
