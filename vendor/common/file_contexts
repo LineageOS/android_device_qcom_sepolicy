@@ -294,7 +294,9 @@
 /sys/devices/virtual/graphics/fb([0-3])+/pp_bl_event                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/rotator/mdss_rotator/caps                      u:object_r:sysfs_graphics:s0
 
-/sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes          u:object_r:sysfs_graphics:s0
+/sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes        u:object_r:sysfs_graphics:s0
+/sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/mode         u:object_r:sysfs_graphics:s0
+/sys/module/drm/parameters/vblankoffdelay                           u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/modes u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/status u:object_r:sysfs_graphics:s0
 /sys/class/graphics/fb([0-3])+/mdp/caps                             u:object_r:sysfs_graphics:s0
