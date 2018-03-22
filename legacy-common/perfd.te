@@ -28,6 +28,7 @@ allow perfd sysfs_lib:file w_file_perms;
 
 # Allow access to kgsl sysfs entry
 r_dir_file(perfd, sysfs_kgsl)
+allow perfd sysfs_kgsl:file write;
 
 # mpctl socket
 allow perfd mpctl_socket:dir rw_dir_perms;
