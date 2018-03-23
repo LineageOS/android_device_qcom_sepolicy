@@ -25,5 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#sysfs emmc dload type
-type sysfs_emmc_dload, sysfs_type, fs_type;
+#sysfs rndis usb type
+type sysfs_rndis_usb, sysfs_type, fs_type;

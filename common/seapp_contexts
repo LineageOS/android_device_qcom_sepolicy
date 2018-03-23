@@ -9,10 +9,6 @@ user=system seinfo=platform name=com.qualcomm.qti.auth.fidocryptoservice domain=
 #Add new domain for MDTP services
 user=system seinfo=platform name=com.qualcomm.qti.securemsm.mdtp.MdtpService domain=mdtpservice_app type=mdtp_svc_app_data_file
 
-
-# AtFwd and FastDormancy apps
-user=system seinfo=platform name=com.qualcomm.telephony domain=qtelephony type=system_app_data_file
-
 #Add new domain for QDMA
 user=system seinfo=platform name=com.qualcomm.qti.qdma domain=qdma_app type=qdma_app_data_file
 

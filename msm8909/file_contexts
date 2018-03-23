@@ -88,6 +88,7 @@
 /sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/ap3426-light(/.*)?             u:object_r:sysfs_sensors:s0
 /sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/input/input[0-9]/ap3426-proximity(/.*)?         u:object_r:sysfs_sensors:s0
 /sys/devices/virtual/input/input[0-9]/akm8963-mag(/.*)?                                                  u:object_r:sysfs_sensors:s0
+/sys/kernel/boot_adsp/boot                                                                               u:object_r:sysfs_boot:s0
 ###############################################
 # Bin seen on target
 #HAL Server

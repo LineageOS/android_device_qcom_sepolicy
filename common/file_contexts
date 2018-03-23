@@ -77,7 +77,8 @@
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/wlan                                       u:object_r:wlan_device:s0
 /dev/bg_com_dev                                 u:object_r:bg_daemon_device:s0
-
+/dev/qg                                         u:object_r:qg_device:s0
+/dev/qg_battery                                 u:object_r:qg_device:s0
 ###################################
 # Dev block nodes
 #
@@ -96,6 +97,7 @@
 ###################################
 # Dev socket nodes
 #
+/dev/socket/chre                                u:object_r:chre_socket:s0
 /dev/socket/qmux_audio(/.*)?                    u:object_r:qmuxd_socket:s0
 /dev/socket/qmux_bluetooth(/.*)?                u:object_r:qmuxd_socket:s0
 /dev/socket/qmux_gps(/.*)?                      u:object_r:qmuxd_socket:s0
@@ -132,6 +134,8 @@
 /dev/socket/wpa_wigig[0-9]                      u:object_r:wpa_socket:s0
 /dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
 /dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
+/dev/socket/mmi                                 u:object_r:mmi_socket:s0
+/dev/socket/location(/.*)?                      u:object_r:location_socket:s0
 
 ###################################
 # System files
@@ -183,6 +187,9 @@
 /(vendor|system/vendor)/bin/mm-pp-daemon        u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mm-pp-dpps          u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mmi                 u:object_r:mmi_exec:s0
+/(vendor|system/vendor)/bin/mmid                u:object_r:mmi_exec:s0
+/(vendor|system/vendor)/bin/ftmdaemon           u:object_r:mmi_exec:s0
+/(vendor|system/vendor)/bin/mm-audio-ftm        u:object_r:mmi_exec:s0
 /(vendor|system/vendor)/bin/mpdecision          u:object_r:mpdecision_exec:s0
 /(vendor|system/vendor)/bin/gamed               u:object_r:gamed_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance  u:object_r:msm_irqbalanced_exec:s0
@@ -193,6 +200,7 @@
 /(vendor|system/vendor)/bin/qmuxd               u:object_r:qmuxd_exec:s0
 /(vendor|system/vendor)/bin/port-bridge         u:object_r:port-bridge_exec:s0
 /(vendor|system/vendor)/bin/sensors.qcom        u:object_r:sensors_exec:s0
+/(vendor|system/vendor)/bin/sensors.qti         u:object_r:sensors_exec:s0
 /(vendor|system/vendor)/bin/test_diag           u:object_r:diag_exec:s0
 /(vendor|system/vendor)/bin/thermal-engine      u:object_r:thermal-engine_exec:s0
 /(vendor|system/vendor)/bin/vm_bms                              u:object_r:vm_bms_exec:s0
@@ -236,9 +244,11 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service-qti u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.0-service u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.1-service u:object_r:hal_gnss_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@1\.2-service u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti  u:object_r:hal_bluetooth_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.display\.color@1\.0-service            u:object_r:hal_display_color_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@1\.0-service       u:object_r:hal_perf_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.limits@1\.0-service     u:object_r:hal_thermal_default_exec:s0
 /(vendor|system/vendor)/bin/ssgqmigd            u:object_r:ssgqmigd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.iop@1\.0-service        u:object_r:hal_iop_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.iop@2\.0-service        u:object_r:hal_iop_default_exec:s0
@@ -301,8 +311,10 @@
 /(vendor|system/vendor)/bin/vppservice          u:object_r:vppservice_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service u:object_r:hal_qteeconnector_qti_exec:s0
 /(vendor|system/vendor)/bin/fm_qsoc_patches     u:object_r:fm_qsoc_patches_exec:s0
+/(vendor|system/vendor)/bin/chre                u:object_r:chre_exec:s0
 /(vendor|system/vendor)/bin/tloc_daemon         u:object_r:tlocd_exec:s0
 /(vendor|system/vendor)/bin/power_off_alarm      u:object_r:power_off_alarm_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service      u:object_r:hal_factory_qti_default_exec:s0
 
 ###################################
 # sysfs files
@@ -313,6 +325,8 @@
 /sys/class/uio(/.*)?                                                u:object_r:sysfs_uio:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+/maps/map[0-9]+(/.*)?    u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc.0/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc.0/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+/maps/map[0-9]+(/.*)?    u:object_r:sysfs_uio_file:s0
 /sys/devices/[^/]+bcl[^/]+(/.*)?                                    u:object_r:sysfs_thermal:s0
 /sys/devices/f9200000.*/power_supply/usb(/.*)?                      u:object_r:sysfs_usb_supply:s0
 /sys/devices/msm_dwc3/power_supply/usb(/.*)?                        u:object_r:sysfs_usb_supply:s0
@@ -333,6 +347,7 @@
 /sys/devices/soc/qpnp-smbcharger-[a-z0-9]+/power_supply/dc(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/[a-z0-9]+.ssusb/power_supply/usb(/.*)?             u:object_r:sysfs_usb_supply:s0
+/sys/devices/soc/[a-z0-9]+.usb/power_supply/usb(/.*)?               u:object_r:sysfs_usb_supply:s0
 /sys/devices/soc/qpnp-vadc-[0-9]+(/.*)?                             u:object_r:sysfs_vadc_dev:s0
 /sys/bus/spmi/devices(/.*)?                                         u:object_r:sysfs_spmi_dev:s0
 /sys/kernel/irq_helper/irq_blacklist_on                             u:object_r:sysfs_irqbalance:s0
@@ -392,7 +407,9 @@
 /sys/devices/virtual/rotator/mdss_rotator/caps                      u:object_r:sysfs_graphics:s0
 
 /sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes          u:object_r:sysfs_graphics:s0
+/sys/module/drm/parameters/vblankoffdelay                             u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/modes u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/status u:object_r:sysfs_graphics:s0
 
 /sys/devices/virtual/workqueue/kgsl-events/cpumask                  u:object_r:sysfs_kgsl:s0
 /sys/devices/virtual/workqueue/kgsl-events/nice                     u:object_r:sysfs_kgsl:s0
@@ -461,6 +478,7 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/mmcblk0rpmb/bdi/read_ahead_kb u:object_r:sysfs_mmc_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/mmcblk0rpmb/queue/read_ahead_kb u:object_r:sysfs_mmc_host:s0
 /sys/devices/virtual/bdi/[0-9]+:[0-9]+/read_ahead_kb u:object_r:sysfs_mmc_host:s0
+/sys/devices/virtual/block/dm-[0-9]+/queue/read_ahead_kb u:object_r:sysfs_mmc_host:s0
 
 /sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
 /sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
@@ -469,14 +487,17 @@
 /sys/devices/virtual/input/input[0-9]+/enable_ps_sensor           u:object_r:sysfs_laser:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/fst_link_loss            u:object_r:sysfs_wigig:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/thermal_throttling       u:object_r:sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/snr_thresh               u:object_r:sysfs_wigig:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/queues/rx-0/rps_cpus  u:object_r:sysfs_wigig:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/gro_flush_timeout     u:object_r:sysfs_wigig:s0
 /sys/module/msm_core(/.*)?                                          u:object_r:sysfs_ea:s0
 /sys/module/lpm_stats(/.*)?                                         u:object_r:sysfs_msm_stats:s0
 /sys/module/lpm_levels(/.*)?                                        u:object_r:sysfs_msm_power:s0
 /sys/module/radio_iris_transport/parameters/fmsmd_set               u:object_r:sysfs_fm:s0
+/sys/module/qpnp_power_on/parameters/ship_mode_en                   u:object_r:sysfs_pon_dev:s0
 /sys/module/app_setting/parameters/lib_name                         u:object_r:sysfs_lib:s0
 /sys/module/process_reclaim(/.*)?  u:object_r:sysfs_process_reclaim:s0
+/sys/module/qpnp_rtc/parameters/poweron_alarm                       u:object_r:sysfs_poweron_alarm:s0
 
 ###################################
 # data files
@@ -489,6 +510,7 @@
 /data/rfs.*                                                         u:object_r:rfs_file:s0
 /data/hlos_rfs(/.*)?                                                u:object_r:rfs_shared_hlos_file:s0
 /data/camera(/.*)?                                                  u:object_r:camera_socket:s0
+/data/misc/camera/cam_socket[1-2]                                   u:object_r:camera_socket:s0
 /data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
 /data/misc/qvop(/.*)?                                               u:object_r:qvop-daemon_data_file:s0
 /data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
@@ -637,6 +659,7 @@
 /(vendor|system/vendor)/lib(64)?/libdiag\.so                u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libqvrservice_client\.so   u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libqvrcamera_client\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libvraudio_client\.so      u:object_r:same_process_hal_file:s0
 
 ###################################
 # firmware images
@@ -659,6 +682,9 @@
 /(vendor|system/vendor)/lib(64)?/libsdm-disp-vndapis.so             u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libsdmutils.so                     u:object_r:same_process_hal_file:s0
 
+# rawdump partition
+/sys/kernel/dload/emmc_dload                                        u:object_r:sysfs_emmc_dload:s0
+/sys/kernel/dload/dload_mode                                        u:object_r:sysfs_emmc_dload:s0
 
 ##################################
 # Crypto

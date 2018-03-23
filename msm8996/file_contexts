@@ -28,6 +28,10 @@
 ###################################
 # Dev block nodes
 
+# Dev nodes
+/dev/spidev0.0                                                                  u:object_r:audio_device:s0
+/dev/i2c-6                                                                      u:object_r:audio_device:s0
+
 # common
 /dev/block/mmcblk0rpmb                                                          u:object_r:rpmb_device:s0
 /dev/block/mmcblk0                                                              u:object_r:root_block_device:s0
@@ -85,8 +89,9 @@
 ###################################
 # System files
 #
-/(vendor|system/vendor)/bin/seccamd u:object_r:seccamd_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.automotive\.vehicle@2\.0-hal-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
+/(vendor|system/vendor)/bin/amfsservice                                         u:object_r:amfsservice_exec:s0
+/(vendor|system/vendor)/bin/seccamd                                             u:object_r:seccamd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
 
 ###################################
 # sysfs files
@@ -97,7 +102,6 @@
 
 #rawdump partition
 /dev/block/platform/soc/7464900.sdhci/by-name/rawdump                           u:object_r:rawdump_block_device:s0
-/sys/kernel/dload/emmc_dload                                                    u:object_r:sysfs_emmc_dload:s0
 
 ############################################################################################
 #Same hal process libs

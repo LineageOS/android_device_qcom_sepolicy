@@ -69,7 +69,7 @@ binder_call(mm-qcamerad, mmi);
 #Allow camera to access laser nodes
 allow mm-qcamerad input_device:dir r_dir_perms;
 allow mm-qcamerad input_device:chr_file r_file_perms;
-allow mm-qcamerad sysfs:file rw_file_perms;
+allow mm-qcamerad sysfs_laser:file rw_file_perms;
 
 hal_client_domain(mm-qcamerad, hal_graphics_allocator)
 allow mm-qcamerad ion_device:chr_file rw_file_perms;
@@ -77,6 +77,9 @@ allow mm-qcamerad ion_device:chr_file rw_file_perms;
 #allow camera to access Isensormanager
 allow mm-qcamerad fwk_sensor_hwservice:hwservice_manager find;
 binder_call(mm-qcamerad, system_server)
+
+#allow camera to access system file/dir for CAC3 functionality
+allow mm-qcamerad system_file:dir r_dir_perms;
 
 # from sensors team
 

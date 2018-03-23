@@ -71,4 +71,6 @@ vendor.qti.esepowermanager::IEsePowerManager                 u:object_r:hal_esep
 vendor.qti.voiceprint::IQtiVoicePrintService                 u:object_r:hal_voiceprint_hwservice:s0
 vendor.qti.hardware.tui_comm::ITuiComm                       u:object_r:hal_tui_comm_hwservice:s0
 vendor.qti.hardware.qdutils_disp::IQdutilsDisp               u:object_r:hal_qdutils_disp_hwservice:s0
+vendor.qti.hardware.factory::IFactory                        u:object_r:hal_factory_qti_hwservice:s0
 vendor.qti.hardware.sensorscalibrate::ISensorsCalibrate       u:object_r:hal_sensorscalibrate_qti_hwservice:s0
+vendor.qti.hardware.limits::IThermal                         u:object_r:hal_thermal_hwservice:s0

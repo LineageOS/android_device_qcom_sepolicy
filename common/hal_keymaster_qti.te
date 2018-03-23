@@ -33,3 +33,12 @@ init_daemon_domain(hal_keymaster_qti)
 
 # allow tee to load firmware images
 r_dir_file(hal_keymaster_qti, firmware_file)
+
+# allow access to /dev/spcom
+allow hal_keymaster_qti spcom_device:chr_file rw_file_perms;
+
+# allow access to skp
+allow hal_keymaster_qti skp_device:chr_file rw_file_perms;
+
+allow hal_keymaster_qti sp_keymaster_device:chr_file rw_file_perms;
+allow hal_keymaster_qti sp_ssr_device:chr_file rw_file_perms;

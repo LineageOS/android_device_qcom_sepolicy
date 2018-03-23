@@ -114,6 +114,7 @@ set_prop(qti_init_shell, graphics_vulkan_prop)
 set_prop(qti_init_shell, bservice_prop)
 #Needed for setting DSR properties from post_boot
 set_prop(qti_init_shell, reschedule_service_prop)
+set_prop(qti_init_shell, diag_mdlog_prop)
 
 allow qti_init_shell efs_boot_dev:blk_file r_file_perms;
 
@@ -146,6 +147,7 @@ r_dir_file(qti_init_shell, persist_file)
 r_dir_file(qti_init_shell, sensors_persist_file)
 r_dir_file(qti_init_shell, persist_bluetooth_file)
 allow qti_init_shell sensors_persist_file:file setattr;
+allow qti_init_shell sensors_persist_file:dir setattr;
 
 # To start of selected USF based calculators
 r_dir_file(qti_init_shell, usf_data_file)
@@ -198,8 +200,9 @@ allow qti_init_shell swap_data_file:dir rw_dir_perms;
 allow qti_init_shell swap_data_file:file create_file_perms;
 
 #For configfs permission
-allow qti_init_shell configfs:dir r_dir_perms;
-allow qti_init_shell configfs:file rw_file_perms;
+allow qti_init_shell configfs:dir create_dir_perms;
+allow qti_init_shell configfs:file create_file_perms;
+allow qti_init_shell configfs:lnk_file { create r_file_perms };
 
 #Allow read permissions to read adj
 allow qti_init_shell sysfs_lowmemorykiller:file read;
@@ -230,6 +233,7 @@ allow qti_init_shell vendor_radio_data_file:file create_file_perms;
 
 set_prop(qti_init_shell, vendor_rild_libpath_prop);
 set_prop(qti_init_shell, system_radio_prop)
+set_prop(qti_init_shell, radio_prop)
 
 allow qti_init_shell fm_qsoc_patches_exec:file rx_file_perms;
 
@@ -255,3 +259,12 @@ set_prop(qti_init_shell, mmi_prop);
 allow qti_init_shell proc_meminfo:file r_file_perms;
 
 allow qti_init_shell sysfs_msm_power:file rw_file_perms;
+allow qti_init_shell  sysfs_devices_system_cpu:dir w_file_perms;
+allow qti_init_shell  sysfs_devices_system_cpu:file rw_file_perms;
+
+allow qti_init_shell sysfs_usb_mtp_device:dir r_dir_perms;
+allow qti_init_shell sysfs_usb_mtp_device:file rw_file_perms;
+
+# For IO Cgroups
+allow qti_init_shell cgroup:dir { mounton create_dir_perms };
+allow qti_init_shell cgroup:file { create_file_perms };

@@ -44,8 +44,9 @@ add_hwservice(hal_wigig, hal_wigig_hwservice)
 # allow start/stop services via ctl.start and ctl.stop
 set_prop(hal_wigig, ctl_vendor_wigigsvc_prop)
 
-# read wigig properties
-get_prop(hal_wigig, wigig_prop);
+# access wigig properties
+# need to write vendor.wigig.driver.status
+set_prop(hal_wigig, wigig_prop);
 
 # access wifi vendor data files
 r_dir_file(hal_wigig, wifi_vendor_data_file)
@@ -60,3 +61,9 @@ allow hal_wigig wpa_socket:sock_file create_file_perms;
 # connect to wigig_hostapd by socket
 allow hal_wigig wigig_hostapd_socket:dir rw_dir_perms;
 allow hal_wigig wigig_hostapd_socket:sock_file create_file_perms;
+
+# insmod /vendor/lib/modules/wil6210.ko
+allow hal_wigig self:capability sys_module;
+allow hal_wigig kernel:key search;
+allow hal_wigig vendor_file:system module_load;
+allow hal_wigig proc_modules:file r_file_perms;

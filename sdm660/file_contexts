@@ -146,8 +146,6 @@
 
 ##################################
 # rawdump partition
-/sys/kernel/dload/emmc_dload                                                    u:object_r:sysfs_emmc_dload:s0
-/sys/kernel/dload/dload_mode                                                    u:object_r:sysfs_emmc_dload:s0
 
 #EMMC
 /dev/block/platform/soc/c0c4000.sdhci/by-name/rawdump                           u:object_r:rawdump_block_device:s0
@@ -156,3 +154,6 @@
 #UFS
 /dev/block/platform/soc/1da4000.ufshc/by-name/rawdump                           u:object_r:rawdump_block_device:s0
 /dev/block/platform/soc/1da4000.ufshc/by-name/ramdump                           u:object_r:rawdump_block_device:s0
+
+#USB
+/sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size			u:object_r:sysfs_rndis_usb:s0
