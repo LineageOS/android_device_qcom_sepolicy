@@ -3,8 +3,8 @@ ctl.vendor.netmgrd         u:object_r:ctl_netmgrd_prop:s0
 ctl.vendor.port-bridge     u:object_r:ctl_port-bridge_prop:s0
 ctl.vendor.qcrild          u:object_r:ctl_qcrild_prop:s0
 ctl.hbtp                   u:object_r:ctl_hbtp_prop:s0
-ctl.ipacm                  u:object_r:ipacm_prop:s0
-ctl.ipacm-diag             u:object_r:ipacm-diag_prop:s0
+ctl.vendor.ipacm           u:object_r:ipacm_prop:s0
+ctl.vendor.ipacm-diag      u:object_r:ipacm-diag_prop:s0
 ctl.qti                    u:object_r:qti_prop:s0
 ctl.sensors                u:object_r:sensors_prop:s0
 ctl.thermal-engine         u:object_r:thermal_prop:s0
