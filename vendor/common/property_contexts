@@ -40,3 +40,4 @@ sys.usb.controller         u:object_r:sys_usb_controller_prop:s0
 vendor.peripheral.         u:object_r:per_mgr_state_prop:s0
 vendor.ims.                u:object_r:ims_prop:s0
 wc_transport.              u:object_r:wc_prop:s0
+ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
