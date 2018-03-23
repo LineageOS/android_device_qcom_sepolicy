@@ -73,3 +73,6 @@ allow location self:udp_socket ioctl;
 allow location wifi_prop:file r_file_perms;
 # Replace this with macro
 allowxperm location self:udp_socket ioctl priv_sock_ioctls;
+
+#access to qdma socket
+qdma_file_socket(location);
