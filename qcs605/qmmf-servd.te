@@ -76,3 +76,5 @@ allow qmmf-servd ion_device:chr_file r_file_perms;
 hal_client_domain(qmmf-servd, hal_graphics_allocator)
 hal_client_domain(qmmf-servd, hal_configstore)
 r_dir_file(qmmf-servd, oemfs)
+
+binder_call(qmmf-servd, qmmf-webserverd)

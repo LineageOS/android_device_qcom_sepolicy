@@ -27,3 +27,4 @@
 
 qmmf.             u:object_r:qmmf_prop:s0
 persist.qmmf.     u:object_r:qmmf_prop:s0
+vam.              u:object_r:qmmf_prop:s0

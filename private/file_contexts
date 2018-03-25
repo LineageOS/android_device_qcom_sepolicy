@@ -48,6 +48,7 @@
 /system/bin/qvrservice                          u:object_r:qvrd_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /system/bin/mmi                                 u:object_r:mmi_sys_exec:s0
+/system/bin/mmi_diag                            u:object_r:mmi_sys_exec:s0
 
 ####### data files ################
 /data/misc/seemp(/.*)?                          u:object_r:seemp_data_file:s0

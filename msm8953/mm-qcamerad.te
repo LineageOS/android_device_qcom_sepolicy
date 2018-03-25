@@ -26,5 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #for v4L node "name" access
-allow mm-qcamerad sysfs_graphics:file r_file_perms;
-allow mm-qcamerad sysfs_video4linux_device:file rw_file_perms;
+allow mm-qcamerad sysfs_graphics:file rw_file_perms;
