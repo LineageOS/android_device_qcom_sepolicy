@@ -57,6 +57,10 @@ IPC_ROUTER_IOCTL_BIND_CONTROL_PORT
 IPC_ROUTER_IOCTL_CONFIG_SEC_RULES
 }')
 
+define(`msm_sock_qrtr_ioctls', `{
+TIOCOUTQ
+}')
+
 define(`rmnet_sock_ioctls', `{
 SIOCDEVPRIVATE_1
 SIOCDEVPRIVATE_2
