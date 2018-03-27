@@ -31,7 +31,7 @@ genfscon sysfs /class/thermal                                           u:object
 genfscon sysfs /module/msm_thermal                                      u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/platform/battery_current_limit                  u:object_r:sysfs_thermal:s0
 genfscon sysfs /module/tcp_cubic/parameters                             u:object_r:sysfs_net:s0
-genfscon sysfs /devices/virtual/net                                     u:object_r:sysfs_net:s0
+genfscon sysfs /devices/virtual/net                                     u:object_r:sysfs_net:s0
 genfscon sysfs /module/diagchar/parameters/timestamp_switch             u:object_r:sysfs_timestamp_switch:s0
 genfscon sysfs /module/msm_performance                                  u:object_r:sysfs_msm_perf:s0
 genfscon sysfs /module/lpm_levels                                       u:object_r:sysfs_msm_power:s0
