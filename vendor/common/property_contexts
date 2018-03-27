@@ -37,6 +37,9 @@ ctl.port-bridge            u:object_r:ctl_port-bridge_prop:s0
 ctl.vendor.qcrild          u:object_r:ctl_qcrild_prop:s0
 vendor.min_freq_0                 u:object_r:freq_prop:s0
 vendor.min_freq_4                 u:object_r:freq_prop:s0
+ctl.vendor.ril-daemon      u:object_r:ctl_vendor_rild_prop:s0
+ctl.vendor.ril-daemon2     u:object_r:ctl_vendor_rild_prop:s0
+ctl.vendor.ril-daemon3     u:object_r:ctl_vendor_rild_prop:s0
 ctl.perfd                  u:object_r:perfd_prop:s0
 ctl.gamed                  u:object_r:gamed_prop:s0
 ctl.iop                    u:object_r:perfd_prop:s0
