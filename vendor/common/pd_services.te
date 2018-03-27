@@ -12,3 +12,4 @@ allow pd_mapper self:socket create_socket_perms;
 allowxperm pd_mapper self:socket ioctl IPC_ROUTER_IOCTL_BIND_CONTROL_PORT;
 
 allow pd_mapper sysfs_data:file r_file_perms;
+get_prop(pd_mapper, vendor_pd_locater_dbg_prop)

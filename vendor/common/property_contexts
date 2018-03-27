@@ -51,6 +51,7 @@ vendor.peripheral.         u:object_r:per_mgr_state_prop:s0
 vendor.ims.                u:object_r:ims_prop:s0
 wc_transport.              u:object_r:wc_prop:s0
 ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
+
 #mpdecision
 vendor.post_boot.parsed  u:object_r:vendor_mpdecision_prop:s0
 ro.vendor.perf.cores_online u:object_r:vendor_mpdecision_prop:s0
@@ -63,3 +64,9 @@ persist.vendor.radio       u:object_r:vendor_radio_prop:s0
 vendor.radio               u:object_r:vendor_radio_prop:s0
 ro.vendor.ril.             u:object_r:vendor_radio_prop:s0
 persist.vendor.sys.        u:object_r:vendor_system_prop:s0
+
+#ss-restart
+persist.vendor.ssr.    u:object_r:vendor_ssr_prop:s0
+
+#ss-services (PD)
+persist.vendor.pd_locater_debug    u:object_r:vendor_pd_locater_dbg_prop:s0

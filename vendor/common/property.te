@@ -32,6 +32,7 @@ type vendor_system_prop, property_type;
 
 #imsrcsservice
 type ctl_vendor_imsrcsservice_prop, property_type;
+
 #mpdecision
 type vendor_mpdecision_prop, property_type;
 
@@ -40,3 +41,9 @@ type ctl_vendor_hbtp_prop, property_type;
 
 # Bluetooth props
 type vendor_bluetooth_prop, property_type;
+
+#ss-restart
+type vendor_ssr_prop, property_type;
+
+#ss-services (PD)
+type vendor_pd_locater_dbg_prop, property_type;

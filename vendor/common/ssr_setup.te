@@ -12,3 +12,5 @@ allow ssr_setup sysfs_ssr:lnk_file w_file_perms;
 allow ssr_setup sysfs_ssr_toggle:file rw_file_perms;
 
 allow ssr_setup sysfs_data:file r_file_perms;
+
+get_prop(ssr_setup, vendor_ssr_prop)

@@ -14,4 +14,7 @@ userdebug_or_eng(`
   allow subsystem_ramdump ramdump_vendor_data_file:file create_file_perms;
 
   set_prop(subsystem_ramdump, ssr_prop);
+
+  allow subsystem_ramdump vendor_mdmhelperdata_data_file:dir r_dir_perms;
+  allow subsystem_ramdump vendor_mdmhelperdata_data_file:file r_file_perms;
 ')
