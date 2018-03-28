@@ -133,9 +133,9 @@ type location_app_data_file, file_type, data_file_type;
 #File types required by mdm-helper
 type sysfs_esoc, sysfs_type, fs_type;
 type sysfs_ssr,  sysfs_type, fs_type;
-type sysfs_ssr_toggle,  sysfs_type, file_type;
+type sysfs_ssr_toggle,  sysfs_type, fs_type;
 type sysfs_hsic, sysfs_type, fs_type;
-type sysfs_hsic_host_rdy, sysfs_type, file_type;
+type sysfs_hsic_host_rdy, sysfs_type, fs_type;
 
 # Files accessed by qcom-system-daemon
 type sysfs_socinfo, fs_type, sysfs_type;
@@ -175,7 +175,7 @@ type mmi_socket, file_type;
 # hbtp config file
 type hbtp_cfg_file, file_type, vendor_file_type;
 type hbtp_log_file, file_type, data_file_type;
-type hbtp_kernel_sysfs, file_type, sysfs_type;
+type hbtp_kernel_sysfs, fs_type, sysfs_type;
 
 type persist_usf_file, file_type;
 
