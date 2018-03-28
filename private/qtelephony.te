@@ -30,13 +30,9 @@ typeattribute qtelephony coredomain;
 
 app_domain(qtelephony)
 
-allow qtelephony { app_api_service system_api_service }:service_manager find;
-
-# Read and write /data/data subdirectory.
-allow qtelephony system_app_data_file:dir create_dir_perms;
-allow qtelephony system_app_data_file:{ file lnk_file } create_file_perms;
-
 hwbinder_use(qtelephony);
-allow qtelephony system_file:dir r_dir_perms;
 get_prop(qtelephony, hwservicemanager_prop);
 add_hwservice(qtelephony, hal_atfwd_hwservice);
+
+allow qtelephony system_api_service:service_manager find;
+allow qtelephony app_api_service:service_manager find;
