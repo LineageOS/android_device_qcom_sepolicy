@@ -69,7 +69,7 @@ userdebug_or_eng(`
 ')
 
 #Rules for audioserver to talk to peripheral manager
-#use_per_mgr(audioserver);
+#use_vendor_per_mgr(audioserver);
 
 # DOLBY_START
 allow audioserver activity_service:service_manager find;

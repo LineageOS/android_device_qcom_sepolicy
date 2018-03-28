@@ -107,7 +107,7 @@ allow system_server qti_logkit:fd use;
 allow system_server qti_logkit:fifo_file write;
 
 #Rules for system server to talk to peripheral manager
-get_prop(system_server, per_mgr_state_prop);
+get_prop(system_server, vendor_per_mgr_state_prop);
 
 # Allow system server access to qfp daemon
 binder_call(system_server, qfp-daemon);

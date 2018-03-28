@@ -13,7 +13,7 @@ binder_call(rild, audioserver)
 binder_call(audioserver, rild)
 
 #Rule for RILD to talk to peripheral manager
-use_per_mgr(rild);
+use_vendor_per_mgr(rild);
 
 allow rild rild_socket:chr_file r_file_perms;
 unix_socket_connect(rild, rild, time_daemon)
@@ -29,7 +29,7 @@ netmgr_socket(rild);
 #allow rild { mediaserver_service audioserver_service }:service_manager find;
 
 # Rule for RILD to talk to peripheral manager
-use_per_mgr(rild);
+use_vendor_per_mgr(rild);
 
 #diag
 userdebug_or_eng(`
