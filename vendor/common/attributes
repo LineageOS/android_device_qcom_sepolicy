@@ -82,6 +82,10 @@ attribute hal_voiceprint;
 attribute hal_voiceprint_server;
 attribute hal_voiceprint_client;
 
+attribute vendor_hal_factory_qti;
+attribute vendor_hal_factory_qti_client;
+attribute vendor_hal_factory_qti_server;
+
 attribute hal_wigig_npt;
 attribute hal_wigig_npt_client;
 attribute hal_wigig_npt_server;

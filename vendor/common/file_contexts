@@ -134,6 +134,7 @@
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
 /dev/socket/wpa_wigig[0-9]                      u:object_r:wifi_vendor_wpa_socket:s0
+/dev/socket/mmi                                 u:object_r:vendor_mmi_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:location_socket:s0
 /dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
 /dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
@@ -187,7 +188,8 @@
 /(vendor|system/vendor)/bin/qca6234-service.sh              u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/mm-pp-daemon        u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mm-pp-dpps          u:object_r:mm-pp-daemon_exec:s0
-/(vendor|system/vendor)/bin/mmi                 u:object_r:mmi_exec:s0
+/(vendor|system/vendor)/bin/mmi                 u:object_r:vendor_mmi_exec:s0
+/(vendor|system/vendor)/bin/mmid                u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance  u:object_r:msm_irqbalanced_exec:s0
 /(vendor|system/vendor)/bin/imsdatadaemon       u:object_r:ims_exec:s0
 /(vendor|system/vendor)/bin/imsqmidaemon        u:object_r:ims_exec:s0
@@ -224,7 +226,7 @@
 /(vendor|system/vendor)/bin/pd-mapper           u:object_r:vendor_pd_mapper_exec:s0
 /(vendor|system/vendor)/bin/pd-api-test         u:object_r:vendor_pd_mapper_exec:s0
 /(vendor|system/vendor)/bin/usb_uicc_client                     u:object_r:usb_uicc_daemon_exec:s0
-/(vendor|system/vendor)/bin/qcom-system-daemon  u:object_r:qcomsysd_exec:s0
+/(vendor|system/vendor)/bin/qcom-system-daemon  u:object_r:vendor_qcomsysd_exec:s0
 /(vendor|system/vendor)/bin/poweroffhandler                     u:object_r:poweroffhandler_exec:s0
 /(vendor|system/vendor)/xbin/qlogd                              u:object_r:qlogd_exec:s0
 /(vendor|system/vendor)/bin/ipacm                               u:object_r:ipacm_exec:s0
@@ -303,6 +305,7 @@
 /(vendor|system/vendor)/bin/fm_qsoc_patches     u:object_r:fm_qsoc_patches_exec:s0
 /(vendor|system/vendor)/bin/chre                u:object_r:chre_exec:s0
 /(vendor|system/vendor)/bin/tloc_daemon         u:object_r:tlocd_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service      u:object_r:vendor_hal_factory_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.allocator@1\.0-service   u:object_r:hal_graphics_allocator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.tui_comm@1\.0-service-qti u:object_r:hal_tui_comm_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qdutils_disp@1\.0-service-qti u:object_r:hal_qdutils_disp_qti_exec:s0
