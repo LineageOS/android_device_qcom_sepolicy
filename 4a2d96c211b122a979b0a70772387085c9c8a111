@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d6207e4c_a2275c94",
+        "filename": "common/mm-qcamerad.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6753
+      },
+      "writtenOn": "2018-03-28T08:45:40Z",
+      "side": 1,
+      "message": "untrusted_app_all would cover current and untrusted_app_25 denials",
+      "revId": "4a2d96c211b122a979b0a70772387085c9c8a111",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
