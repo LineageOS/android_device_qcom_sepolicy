@@ -34,8 +34,6 @@ allow vendor_init ipa_dev:chr_file w_file_perms;
 allow vendor_init proc:file write;
 
 allow vendor_init sys_usb_controller_prop:file r_file_perms;
-allow vendor_init sysfs_dm:dir w_dir_perms;
-allow vendor_init sysfs_dm:file create_file_perms;
 allow vendor_init self:capability sys_module;
 
 allow vendor_init vendor_file:system module_load;
@@ -58,11 +56,7 @@ allow vendor_init configfs:lnk_file create_file_perms;
 
 allow vendor_init sysfs_ssr:file write;
 
-#dontaudit non configfs usb denials
-dontaudit vendor_init sysfs_android_usb:dir write;
-
-allow vendor_init sysfs_android_usb:dir { add_name };
-allow vendor_init sysfs_android_usb:file create_file_perms;
+allow vendor_init sysfs_android_usb:file rw_file_perms;
 
 allow vendor_init sysfs_slpi:file write;
 
