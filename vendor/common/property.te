@@ -147,3 +147,4 @@ type vendor_mmi_prop, property_type;
 
 #time service
 type vendor_time_service_prop, property_type;
+type vendor_radio_prop, property_type;

@@ -125,11 +125,6 @@ vendor.rild.libpath        u:object_r:vendor_rild_libpath_prop:s0
 # Peripheral Manager
 vendor.peripheral.         u:object_r:vendor_per_mgr_state_prop:s0
 
-persist.vendor.radio       u:object_r:radio_prop:s0
-vendor.radio               u:object_r:radio_prop:s0
-ro.vendor.ril.             u:object_r:radio_prop:s0
-ipersist.vendor.sys.       u:object_r:vendor_system_prop:s0
-
 # HBTP
 ctl.vendor.hbtp u:object_r:ctl_vendor_hbtp_prop:s0
 
@@ -149,3 +144,7 @@ persist.vendor.mmi.        u:object_r:vendor_mmi_prop:s0
 #time service
 persist.vendor.delta_time.enable    u:object_r:vendor_time_service_prop:s0
 vendor.debug.time_services.enable   u:object_r:vendor_time_service_prop:s0
+persist.vendor.radio       u:object_r:vendor_radio_prop:s0
+vendor.radio               u:object_r:vendor_radio_prop:s0
+ro.vendor.ril.             u:object_r:vendor_radio_prop:s0
+persist.vendor.sys.        u:object_r:vendor_system_prop:s0
