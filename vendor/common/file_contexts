@@ -119,7 +119,7 @@
 /vendor/bin/chre                u:object_r:chre_exec:s0
 /vendor/bin/time_daemon         u:object_r:time_daemon_exec:s0
 /vendor/bin/imsrcsd             u:object_r:hal_rcsservice_exec:s0
-
+/vendor/bin/tloc_daemon         u:object_r:tlocd_exec:s0
 /vendor/bin/hw/qcrild           u:object_r:rild_exec:s0
 /vendor/bin/hw/android\.hardware\.drm@1\.0-service.widevine          u:object_r:hal_drm_widevine_exec:s0
 /vendor/bin/hw/android\.hardware\.vibrator@1\.1-service.crosshatch        u:object_r:hal_vibrator_default_exec:s0
@@ -193,7 +193,7 @@
 /data/vendor/ipa(/.*)?                 u:object_r:ipa_vendor_data_file:s0
 /data/vendor/sensors(/.*)?             u:object_r:sensors_vendor_data_file:s0
 /data/vendor/port_bridge(/.*)?         u:object_r:port_bridge_data_file:s0
-
+/data/vendor/tloc(/.*)?                u:object_r:tlocd_data_file:s0
 /data/vendor/connectivity(/.*)?        u:object_r:cnd_data_file:s0
 
 
