@@ -27,4 +27,4 @@
 
 
 #Allow access to read property file
-get_prop(wfdservice,media_sdm670_version_prop)
+get_prop(wfdservice,media_sdm710_version_prop)
