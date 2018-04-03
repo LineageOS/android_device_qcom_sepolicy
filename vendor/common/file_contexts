@@ -542,6 +542,7 @@
 ###################################
 # adsp files
 #
+/(vendor|system/vendor)/dsp(/.*)?                                   u:object_r:adsprpcd_file:s0
 /dsp(/.*)?                                                          u:object_r:adsprpcd_file:s0
 
 ###################################
