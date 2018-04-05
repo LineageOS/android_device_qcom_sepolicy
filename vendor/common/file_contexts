@@ -300,7 +300,7 @@
 /(vendor|system/vendor)/bin/qdmastatsd          u:object_r:qdmastatsd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service      u:object_r:hal_alarm_qti_default_exec:s0
 /(vendor|system/vendor)/bin/imsrcsd             u:object_r:hal_rcsservice_exec:s0
-/(vendor|system/vendor)/bin/vppservice          u:object_r:vppservice_exec:s0
+/(vendor|system/vendor)/bin/vppservice          u:object_r:vendor_vppservice_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service u:object_r:hal_qteeconnector_qti_exec:s0
 /(vendor|system/vendor)/bin/fm_qsoc_patches     u:object_r:fm_qsoc_patches_exec:s0
 /(vendor|system/vendor)/bin/chre                u:object_r:chre_exec:s0
@@ -522,7 +522,7 @@
 /data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/qdmastats(/.*)?                                        u:object_r:qdma_data_file:s0
 /data/vendor/qdma(/.*)?                                             u:object_r:qdma_data_file:s0
-/data/vendor/vpp(/.*)?                                              u:object_r:vpp_data_file:s0
+/data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
 /data/vendor/camera(/.*)?                                           u:object_r:vendor_camera_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
 /data/vendor/tombstones(/.*)?                                       u:object_r:vendor_tombstone_data_file:s0
