@@ -46,6 +46,8 @@ allow location location_data_file:file create_file_perms;
 allow location location_socket:sock_file create_file_perms;
 allow location location_socket:dir rw_dir_perms;
 
+allow location hal_gnss_qti:unix_dgram_socket sendto;
+
 # /data/vendor/wifi/wpa
 allow location wpa_data_file:dir rw_dir_perms;
 
