@@ -13,7 +13,7 @@ user=system seinfo=platform name=com.qualcomm.qti.securemsm.mdtp.MdtpService dom
 user=system seinfo=platform name=com.qualcomm.qti.qdma domain=qdma_app type=qdma_app_data_file
 
 # Add time service app
-user=_app seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file levelFrom=all
+user=system seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app type=system_app_data_file
 
 #Add new domain for logkit services
 user=system seinfo=platform name=com.qualcomm.qti.logkit domain=qti_logkit_app type=system_app_data_file
