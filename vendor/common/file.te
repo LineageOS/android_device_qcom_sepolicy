@@ -315,5 +315,8 @@ type data_qsee_file, file_type, data_file_type;
 #secure touch
 type sysfs_sectouch, sysfs_type, fs_type;
 
+#sysfs jpeg
+type sysfs_jpeg, fs_type, sysfs_type;
+
 #SSR Log Files
 type ramdump_vendor_data_file, file_type, data_file_type, mlstrustedobject;
