@@ -85,12 +85,6 @@ type sysfs_usb_mtp_device, sysfs_type, fs_type;
 # sysfs module for usb_f_mtp/parameters
 type sysfs_spmi_device, sysfs_type, fs_type;
 
-# sysfs devices for enable
-type sysfs_dcc_device, sysfs_type, fs_type;
-
-# sysfs devices for video4linux
-type sysfs_video4linux_device, sysfs_type, fs_type;
-
 # sysfs vadc device for hvdcp/quickcharge
 type sysfs_vadc_dev, sysfs_type, fs_type;
 # sysfs spmi device for hvdcp/quickcharge
