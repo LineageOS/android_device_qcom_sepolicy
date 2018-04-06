@@ -25,8 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# For Regionalization service
-allow system_server regionalization_file:file rw_file_perms;
-allow system_server regionalization_file:dir r_dir_perms;
+# For Regionalization
+allow system_server regionalization_file:file create_file_perms;
+allow system_server regionalization_file:dir rw_dir_perms;
+r_dir_file(system_server, vendor_carrier_file);
 allow system_server resourcecache_data_file:dir create_dir_perms;
 allow system_server resourcecache_data_file:file create_file_perms;
