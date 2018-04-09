@@ -84,6 +84,7 @@ type persist_audio_file, file_type;
 type persist_bluetooth_file, file_type;
 
 type netmgr_data_file, file_type, data_file_type;
+type netmgr_recovery_data_file, file_type, data_file_type;
 type ipa_vendor_data_file, file_type, data_file_type;
 
 type camera_vendor_data_file, file_type, data_file_type;
