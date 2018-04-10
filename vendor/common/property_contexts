@@ -35,11 +35,8 @@ ctl.qmuxd                  u:object_r:ctl_qmuxd_prop:s0
 ctl.netmgrd                u:object_r:ctl_netmgrd_prop:s0
 ctl.port-bridge            u:object_r:ctl_port-bridge_prop:s0
 ctl.vendor.qcrild          u:object_r:ctl_qcrild_prop:s0
-vendor.min_freq_0                 u:object_r:freq_prop:s0
-vendor.min_freq_4                 u:object_r:freq_prop:s0
-ctl.perfd                  u:object_r:perfd_prop:s0
-ctl.gamed                  u:object_r:gamed_prop:s0
-ctl.iop                    u:object_r:perfd_prop:s0
+vendor.min_freq_0                 u:object_r:vendor_mpctl_prop:s0
+vendor.min_freq_4                 u:object_r:vendor_mpctl_prop:s0
 ctl.vm_bms                 u:object_r:vm_bms_prop:s0
 ro.qualcomm.bluetooth.        u:object_r:bluetooth_prop:s0
 ctl.ipacm                  u:object_r:ipacm_prop:s0
@@ -61,8 +58,8 @@ vendor.bg.boot_complete       u:object_r:bg_boot_complete_prop:s0
 ro.opengles.version           u:object_r:opengles_prop:s0
 ro.qualcomm.bt.hci_transport  u:object_r:bluetooth_prop:s0
 ctl.mdm_helper             u:object_r:mdm_helper_prop:s0
-ctl.mpdecision             u:object_r:mpdecision_prop:s0
-qualcomm.perf.cores_online u:object_r:mpdecision_prop:s0
+vendor.post_boot.parsed    u:object_r:vendor_mpctl_prop:s0
+vendor.perf.cores_online   u:object_r:vendor_mpctl_prop:s0
 netd.fstman.               u:object_r:netd_prop:s0
 location.                  u:object_r:location_prop:s0
 qc.izat.                   u:object_r:location_prop:s0
