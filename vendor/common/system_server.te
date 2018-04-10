@@ -32,7 +32,7 @@ allow system_server qtitetherservice_service:service_manager find;
 
 #For ANT tty communication and to set wc_transport prop
 allow system_server {
-    bluetooth_prop
+    vendor_bluetooth_prop
     usf_prop
     alarm_handled_prop
     alarm_instance_prop

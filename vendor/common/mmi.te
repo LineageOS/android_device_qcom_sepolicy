@@ -47,7 +47,7 @@ allow mmi audio_device:chr_file rw_file_perms;
 allow mmi fm_radio_device:chr_file r_file_perms;
 set_prop(mmi, fm_prop)
 #bluetooth case
-set_prop(mmi, bluetooth_prop)
+set_prop(mmi, vendor_bluetooth_prop)
 allow mmi smd_device:chr_file rw_file_perms;
 allow mmi persist_bluetooth_file:file r_file_perms;
 allow mmi wcnss_filter:unix_stream_socket connectto;
