@@ -65,6 +65,7 @@ ro.qualcomm.bt.hci_transport  u:object_r:bluetooth_prop:s0
 ctl.mdm_helper             u:object_r:mdm_helper_prop:s0
 ctl.mpdecision             u:object_r:mpdecision_prop:s0
 qualcomm.perf.cores_online u:object_r:mpdecision_prop:s0
+vendor.post_boot.parsed    u:object_r:vendor_mpctl_prop:s0
 netd.fstman.               u:object_r:netd_prop:s0
 location.                  u:object_r:location_prop:s0
 qc.izat.                   u:object_r:location_prop:s0

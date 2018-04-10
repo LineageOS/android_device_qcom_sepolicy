@@ -171,6 +171,8 @@ allow system_server bservice_prop:file r_file_perms;
 allow system_server reschedule_service_prop:file r_file_perms;
 allow system_server appdomain:file w_file_perms;
 
+get_prop(system_server, vendor_mpctl_prop)
+
 # IPC call for sensor feed
 binder_call(system_server, mm-pp-daemon)
 binder_call(system_server, hal_camera)

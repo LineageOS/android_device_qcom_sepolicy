@@ -59,6 +59,7 @@ allow qti_init_shell self:capability {
 # freq_prop - for setting frequency from postboot script
 # perfd_prop - for setting ctl.perfd property from postboot script
 # mpdecision_prop - for setting ctl.mpdecision property from postboot script
+# vendor_mpctl_prop - for setting vendor.post_boot.parsed property from postboot script
 # bluetooth_prop - for setting bt related properties from postboot script
 # uicc_prop - for access to UICC property
 # ctl_qmuxd_prop/ctl_netmgrd_prop - Needed in order to set properties on qmuxd and netmgrd processes
@@ -70,6 +71,7 @@ set_prop(qti_init_shell, freq_prop)
 set_prop(qti_init_shell, perfd_prop)
 set_prop(qti_init_shell, gamed_prop)
 set_prop(qti_init_shell, mpdecision_prop)
+set_prop(qti_init_shell, vendor_mpctl_prop)
 set_prop(qti_init_shell, bluetooth_prop)
 set_prop(qti_init_shell, config_prop)
 set_prop(qti_init_shell, sensors_prop)

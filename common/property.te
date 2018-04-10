@@ -55,6 +55,7 @@ type opengles_prop, property_type;
 type mdm_helper_prop, property_type;
 type mpdecision_prop, property_type;
 type gamed_prop, property_type;
+type vendor_mpctl_prop, property_type;
 
 #Needed for  ubwc support
 type debug_gralloc_prop, property_type;
