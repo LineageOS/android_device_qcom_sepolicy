@@ -69,7 +69,7 @@ allow tee persist_qti_fp_file:file create_file_perms;
 # Allow access to qsee_ipc_irq_spss device
 allow tee qsee_ipc_irq_spss_device:chr_file rw_file_perms;
 
-set_prop(tee, tee_listener_prop)
+set_prop(tee, vendor_tee_listener_prop)
 
 #secureUI
 hal_client_domain(tee, hal_tui_comm);

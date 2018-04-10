@@ -137,7 +137,7 @@ ctl.vendor.hbtp u:object_r:ctl_vendor_hbtp_prop:s0
 ctl.vendor.mmid   u:object_r:ctl_vendor_mmid_prop:s0
 
 #Needed by qsee need to rename this
-sys.listeners.registered   u:object_r:tee_listener_prop:s0
+vendor.sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
 
 #WiFi Display
 vendor.wfdservice          u:object_r:wfd_service_prop:s0
