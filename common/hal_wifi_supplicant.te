@@ -39,5 +39,3 @@ allow hal_wifi_supplicant_default wpa_data_file:file create_file_perms;
 # Permission for wpa socket which IMS use to communicate
 # # Allow wpa_supplicant to send back wifi information to cnd
 allow hal_wifi_supplicant_default { cnd ims }:unix_dgram_socket sendto;
-
-typeattribute hal_wifi_supplicant_default data_between_core_and_vendor_violators;
