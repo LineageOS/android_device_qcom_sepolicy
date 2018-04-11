@@ -85,7 +85,7 @@ set_prop(qti_init_shell, debug_gralloc_prop)
 userdebug_or_eng(`
 # Needed for starting console in userdebug mode
 set_prop(qti_init_shell, ctl_console_prop)
-set_prop(qti_init_shell, coresight_prop)
+set_prop(qti_init_shell, vendor_coresight_prop)
 ')
 set_prop(qti_init_shell, rmnet_mux_prop)
 set_prop(qti_init_shell, ctl_hbtp_prop)
