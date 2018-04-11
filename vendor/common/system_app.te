@@ -175,7 +175,7 @@ allow system_app system_data_file:dir read;
 hal_client_domain(system_app, hal_qteeconnector);
 
 #allow system_app access boot mode switch
-set_prop(system_app, boot_mode_prop);
+set_prop(system_app, vendor_boot_mode_prop)
 
 # allow access to cache recovery for LK3
 allow system_app cache_file:dir create_dir_perms;

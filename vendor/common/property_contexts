@@ -97,7 +97,7 @@ ro.vendor.qti.sys.fw.bservice_ u:object_r:bservice_prop:s0
 ro.vendor.qti.am.reschedule_service u:object_r:reschedule_service_prop:s0
 persist.graphics.vulkan.disable     u:object_r:graphics_vulkan_prop:s0
 #boot mode property
-sys.boot_mode              u:object_r:boot_mode_prop:s0
+vendor.sys.boot_mode              u:object_r:vendor_boot_mode_prop:s0
 # GPU
 ro.gpu.available_frequencies u:object_r:freq_prop:s0
 # NFC
@@ -126,3 +126,5 @@ sys.listeners.registered   u:object_r:tee_listener_prop:s0
 vendor.wfdservice          u:object_r:wfd_service_prop:s0
 
 ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
+
+persist.vendor.mmi.        u:object_r:vendor_mmi_prop:s0
