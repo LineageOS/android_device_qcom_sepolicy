@@ -43,7 +43,7 @@ type persist_bms_file, file_type;
 type persist_secnvm_file, file_type;
 
 #file type for restricting proc read by audiod
-type proc_audiod, fs_type;
+type proc_audiod, fs_type, proc_type;
 
 #file type for irqbalance socket
 type msm_irqbalance_socket, file_type;
