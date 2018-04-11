@@ -32,3 +32,5 @@ type wc_prop, property_type;
 
 #imsrcsservice
 type ctl_vendor_imsrcsservice_prop, property_type;
+#mpdecision
+type vendor_mpdecision_prop, property_type;
