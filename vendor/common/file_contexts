@@ -531,6 +531,7 @@
 /data/vendor/media(/.*)?                                            u:object_r:vendor_media_data_file:s0
 /data/vendor/mediadrm(/.*)?                                         u:object_r:vendor_mediadrm_data_file:s0
 /sys/kernel/debug/ipc_logging(/.*)?                                 u:object_r:qti_debugfs:s0
+/data/vendor/misc/qsee(/.*)?                                        u:object_r:data_qsee_file:s0
 
 ###################################
 # persist files
