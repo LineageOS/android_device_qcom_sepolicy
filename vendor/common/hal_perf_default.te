@@ -42,6 +42,7 @@ allow hal_perf cgroup:file r_file_perms;
 allow hal_perf_default proc:file rw_file_perms;
 allow hal_perf device_latency:chr_file rw_file_perms;
 allow hal_perf freq_prop:file r_file_perms;
+allow hal_perf vendor_mpctl_prop:file r_file_perms;
 allow hal_perf_default mpctl_data_file:dir rw_dir_perms;
 allow hal_perf_default mpctl_data_file:file create_file_perms;
 allow hal_perf_default lm_data_file:dir rw_dir_perms;
