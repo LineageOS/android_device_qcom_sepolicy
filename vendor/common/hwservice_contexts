@@ -26,8 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 vendor.qti.hardware.fingerprint::IQtiExtendedFingerprint     u:object_r:hal_fingerprint_hwservice:s0
-android.hardware.tetheroffload.config::IOffloadConfig        u:object_r:hal_tetheroffload_hwservice:s0
-android.hardware.tetheroffload.control::IOffloadControl      u:object_r:hal_tetheroffload_hwservice:s0
 vendor.qti.hardware.radio.am::IQcRilAudio                    u:object_r:hal_telephony_hwservice:s0
 vendor.qti.hardware.radio.config::IConfig                    u:object_r:hal_telephony_hwservice:s0
 vendor.qti.hardware.radio.ims::IImsRadio                     u:object_r:hal_telephony_hwservice:s0
