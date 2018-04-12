@@ -21,6 +21,7 @@ type sysfs_msm_stats, fs_type, sysfs_type;
 type sysfs_msm_subsys_restart, sysfs_type, fs_type;
 type sysfs_rmtfs, sysfs_type, fs_type;
 type sysfs_sensors, sysfs_type, fs_type;
+type sysfs_sectouch, sysfs_type, fs_type;
 type sysfs_soc, sysfs_type, fs_type;
 type sysfs_scsi_host, fs_type, sysfs_type;
 type sysfs_slpi, fs_type, sysfs_type;
