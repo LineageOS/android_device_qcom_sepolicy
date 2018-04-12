@@ -41,6 +41,7 @@ type data_qtee_file, file_type, data_file_type;
 type persist_misc_file, file_type;
 type persist_bms_file, file_type;
 type persist_secnvm_file, file_type;
+type persist_mmi_file, file_type;
 
 #file type for restricting proc read by audiod
 type proc_audiod, fs_type, proc_type;
