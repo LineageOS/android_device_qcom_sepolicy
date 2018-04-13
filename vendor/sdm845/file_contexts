@@ -93,4 +93,7 @@
 # FBE
 /(vendor|system/vendor)/bin/init.qti.qseecomd.sh    u:object_r:init-qti-fbe-sh_exec:s0
 
+#Android NN Driver
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-qti u:object_r:hal_neuralnetworks_default_exec:s0
+
 /sys/devices/platform/soc/17d41000.qcom,cpucc/17d41000.qcom,cpucc:qcom,wil6210/subsys8/name u:object_r:sysfs_ssr:s0
