@@ -26,6 +26,9 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ###################################
 
+#secure touch sysfs node
+genfscon sysfs /devices/soc/c179000.i2c/i2c-5/5-0020 u:object_r:sysfs_sectouch:s0
+
 # msm8998 specific sysfs
 genfscon sysfs /devices/soc/soc:qcom,ipa_fws@1e08000/subsys0/name                                u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/soc/cce0000.qcom,venus/subsys1/name                                      u:object_r:sysfs_ssr:s0
