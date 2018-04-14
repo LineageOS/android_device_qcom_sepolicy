@@ -156,7 +156,7 @@ allow system_app persist_misc_file:file create_file_perms;
 # required for FM App to connectto wcnss_filter sockets
 # serial device ttyHS0 (transport layer for FM)
 allow system_app serial_device:chr_file rw_file_perms;
-set_prop(system_app, bluetooth_prop)
+set_prop(system_app, vendor_bluetooth_prop)
 # access unix sockets for fm application
 unix_socket_connect(system_app,bluetooth, bluetooth)
 # access  wcnss_filter from fm app

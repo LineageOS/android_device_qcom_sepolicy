@@ -52,6 +52,9 @@ allow hal_audio firmware_file:file r_file_perms;
 #Split A2dp specific
 binder_call(hal_audio,bluetooth)
 
+#to read bt props
+get_prop(hal_audio, vendor_bluetooth_prop)
+
 #for perf hal call
 hal_client_domain(hal_audio_default, hal_perf)
 hal_client_domain(hal_audio_default, hal_power)
