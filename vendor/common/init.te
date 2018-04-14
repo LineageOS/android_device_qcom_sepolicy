@@ -58,3 +58,5 @@ allow init {
     modem_block_device
     mdtp_device
 }:{ blk_file lnk_file } relabelto;
+
+domain_trans(init, vendor_init_exec, vendor_init);
