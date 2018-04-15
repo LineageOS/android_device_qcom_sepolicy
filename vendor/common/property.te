@@ -113,7 +113,7 @@ type bservice_prop, property_type;
 type reschedule_service_prop, property_type;
 
 #boot mode property
-type boot_mode_prop, property_type;
+type vendor_boot_mode_prop, property_type;
 #properties for nfc
 type nfc_nq_prop, property_type;
 type ppd_prop, property_type;
@@ -137,3 +137,6 @@ type wfd_service_prop, property_type;
 
 #imsrcsservice
 type ctl_vendor_imsrcsservice_prop, property_type;
+
+#mmi
+type vendor_mmi_prop, property_type;

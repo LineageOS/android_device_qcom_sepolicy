@@ -33,7 +33,7 @@ allow mmi_sys persist_mmi_file:dir rw_dir_perms;
 allow mmi_sys persist_mmi_file:file create_file_perms;
 
 #boot mode switch
-set_prop(mmi_sys, boot_mode_prop)
+set_prop(mmi_sys, vendor_boot_mode_prop)
 
 #diag
 userdebug_or_eng(`

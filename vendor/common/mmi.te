@@ -120,7 +120,7 @@ unix_socket_connect(mmi, netmgrd, netmgrd);
 net_domain(mmi);
 
 #allow mmi access boot mode switch
-set_prop(mmi, boot_mode_prop)
+set_prop(mmi, vendor_boot_mode_prop)
 #diag
 userdebug_or_eng(`
     diag_use(mmi)

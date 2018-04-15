@@ -57,3 +57,8 @@ allow vendor_init kernel:key search;
 allow vendor_init vendor_file:system module_load;
 allow vendor_init kernel:key search;
 allow vendor_init kernel:system module_request;
+userdebug_or_eng(`
+  allow vendor_init misc_block_device:blk_file w_file_perms;
+')
+get_prop(vendor_init, vendor_boot_mode_prop)
+get_prop(vendor_init, vendor_mmi_prop)
