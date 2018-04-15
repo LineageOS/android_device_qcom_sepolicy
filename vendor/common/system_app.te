@@ -16,3 +16,7 @@ hal_client_domain(system_app, hal_hbtp)
 #secureUI
 hal_client_domain(system_app, hal_qdutils_disp);
 hal_client_domain(system_app, hal_tui_comm);
+
+#allow system_app access ioctl
+allowxperm system_app self:socket ioctl msm_sock_ipc_ioctls;
+allow system_app self:socket create_socket_perms;
