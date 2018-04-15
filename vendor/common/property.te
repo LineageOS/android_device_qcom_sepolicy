@@ -56,6 +56,7 @@ type bg_boot_complete_prop, property_type;
 type opengles_prop, property_type;
 type mdm_helper_prop, property_type;
 type vendor_mpctl_prop, property_type;
+type vendor_iop_prop, property_type;
 
 #Needed for  ubwc support
 type debug_gralloc_prop, property_type;
