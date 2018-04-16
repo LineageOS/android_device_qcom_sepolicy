@@ -72,4 +72,6 @@ allow vendor_init {
     vendor_tui_data_file
 }:dir create_dir_perms;
 
+#Access persist.sys.usb.config
+set_prop(vendor_init, system_prop)
 set_prop(vendor_init, vendor_usb_prop)
