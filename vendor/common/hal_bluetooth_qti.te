@@ -65,6 +65,7 @@ userdebug_or_eng(`
 allow hal_bluetooth proc_sysrq:file w_file_perms;
 allow hal_bluetooth_qti qti_debugfs:file r_file_perms;
 allow hal_bluetooth_qti qti_debugfs:dir rw_dir_perms;
+allow hal_bluetooth_qti self:{ socket qipcrtr_socket } create_socket_perms_no_ioctl;
 ')
 
 allow system_app hal_bluetooth_hwservice :hwservice_manager find;
