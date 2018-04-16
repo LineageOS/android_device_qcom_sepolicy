@@ -42,12 +42,12 @@ userdebug_or_eng(`
   diag_use(hal_imsrtp)
 ')
 
-allow hal_imsrtp self:socket create_socket_perms;
+allow hal_imsrtp self:{ socket qipcrtr_socket } create_socket_perms;
 
 unix_socket_connect(hal_imsrtp, ims, ims)
 
 # ioctlcmd=c302
-allowxperm hal_imsrtp self:socket ioctl msm_sock_ipc_ioctls;
+allowxperm hal_imsrtp self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 
 allow hal_imsrtp self:capability net_bind_service;
 
