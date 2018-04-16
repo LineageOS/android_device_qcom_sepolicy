@@ -32,7 +32,6 @@ type hal_factory_qti_default_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_factory_qti_default)
 
 #setprop ctrl.start to start service
-unix_socket_connect(hal_factory_qti, property, init);
 set_prop(hal_factory_qti, ctl_default_prop)
 
 # connect with daemon

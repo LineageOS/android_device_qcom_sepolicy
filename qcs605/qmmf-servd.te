@@ -45,7 +45,6 @@ allow qmmf-servd camera_data_file:dir w_dir_perms;
 allow qmmf-servd camera_data_file:file create_file_perms;
 
 hal_client_domain(qmmf-servd, hal_perf)
-unix_socket_connect(qmmf-servd, property, init)
 
 # Allow qmmf to get properties
 get_prop(qmmf-servd, bluetooth_prop)
