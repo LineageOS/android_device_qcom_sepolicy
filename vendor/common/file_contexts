@@ -558,7 +558,7 @@
 /persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
 /persist/vpp(/.*)?                                                  u:object_r:persist_vpp_file:s0
 /persist/secnvm(/.*)?                                               u:object_r:persist_secnvm_file:s0
-/persist/FTM_AP(/.*)?                                               u:object_r:persist_mmi_file:s0
+/persist/FTM_AP(/.*)?                                               u:object_r:vendor_persist_mmi_file:s0
 
 ###################################
 # etc files

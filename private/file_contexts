@@ -47,8 +47,8 @@
 /system/bin/smcinvoked                          u:object_r:smcinvoke_daemon_exec:s0
 /system/bin/qvrservice                          u:object_r:qvrd_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
-/system/bin/mmi                                 u:object_r:mmi_sys_exec:s0
-/system/bin/mmi_diag                            u:object_r:mmi_sys_exec:s0
+/system/bin/mmi                                 u:object_r:vendor_mmi_sys_exec:s0
+/system/bin/mmi_diag                            u:object_r:vendor_mmi_sys_exec:s0
 
 ####### data files ################
 /data/nfc(/.*)?                                 u:object_r:nfc_data_file:s0
