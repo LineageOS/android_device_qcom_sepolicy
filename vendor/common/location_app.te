@@ -2,6 +2,7 @@ type location_app, domain;
 app_domain(location_app)
 binder_use(location_app)
 hal_client_domain(location_app, hal_gnss)
+hal_client_domain(location_app, hal_perf)
 
 qmux_socket(location_app)
 
@@ -15,13 +16,12 @@ userdebug_or_eng(`
   diag_use(location_app)
 ')
 
+allow location_app mediametrics_service:service_manager find;
+allow location_app system_app_data_file:dir create_dir_perms;
+allow location_app system_app_data_file:file create_file_perms;
 allow location_app surfaceflinger_service:service_manager find;
-allow location_app location_app_data_file:dir create_dir_perms;
-allow location_app location_app_data_file:file create_file_perms ;
 allow location_app location_data_file:dir rw_dir_perms;
-allow location_app location_data_file:sock_file create_file_perms;
 allow location_app self:socket create_socket_perms;
-#allow location_app system_app_data_file:dir r_dir_perms;
 allow location_app anr_data_file:dir rw_dir_perms;
 allow location_app anr_data_file:file rw_file_perms;
 allow location_app { app_api_service activity_service }:service_manager find;
