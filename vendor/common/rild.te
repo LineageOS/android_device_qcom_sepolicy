@@ -49,3 +49,5 @@ allow rild vendor_mbn_data_file:file r_file_perms;
 allow rild vendor_file:file lock;
 
 hal_server_domain(rild, hal_secure_element)
+
+set_prop(rild, vendor_xlat_prop)

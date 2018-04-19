@@ -91,7 +91,7 @@ r_dir_file(system_server, firmware_file)
 allow system_server usf:process signal;
 #allow system_server usf:unix_stream_socket connectto;
 
-get_prop(system_server, xlat_prop)
+get_prop(system_server, vendor_xlat_prop)
 
 # For WFD
 allow system_server graphics_device:dir r_dir_perms;
