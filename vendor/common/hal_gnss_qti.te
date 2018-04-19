@@ -44,15 +44,17 @@ allow hal_gnss self:{
     socket
     netlink_socket
     netlink_generic_socket
+    qipcrtr_socket
 } create_socket_perms_no_ioctl;
 allow hal_gnss self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_read nlmsg_write };
 
-allow hal_gnss self:socket rw_socket_perms;
+allow hal_gnss self:{ socket qipcrtr_socket } rw_socket_perms;
 allow hal_gnss sysfs_data:file r_file_perms;
 allow hal_gnss sysfs:dir r_dir_perms;
 
 allow hal_gnss self:socket { create ioctl };
-allowxperm hal_gnss self:socket ioctl msm_sock_ipc_ioctls;
+
+allowxperm hal_gnss self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 
 userdebug_or_eng(`
   diag_use(hal_gnss);
