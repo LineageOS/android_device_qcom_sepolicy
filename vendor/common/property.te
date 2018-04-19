@@ -141,3 +141,6 @@ type ctl_vendor_imsrcsservice_prop, property_type;
 
 #mmi
 type vendor_mmi_prop, property_type;
+
+#time service
+type vendor_time_service_prop, property_type;
