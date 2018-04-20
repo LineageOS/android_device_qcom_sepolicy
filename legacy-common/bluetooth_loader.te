@@ -21,5 +21,5 @@ allow bluetooth_loader qmuxd:unix_stream_socket connectto;
 r_dir_file(bluetooth_loader, persist_file)
 
 userdebug_or_eng(`
-  diag_use(bluetooth_loader)
+    diag_use(bluetooth_loader)
 ')

@@ -1,10 +1,10 @@
 # Allow binder communication
 binder_use(mm-pp-daemon)
 allow mm-pp-daemon {
-	surfaceflinger_service
-	sensorservice_service
-	permission_service
-	power_service
+    surfaceflinger_service
+    sensorservice_service
+    permission_service
+    power_service
 }:service_manager find;
 
 allow mm-pp-daemon { shell_exec zygote_exec }:file rx_file_perms;

@@ -1,34 +1,34 @@
 # Perfd
-/(vendor|system/vendor)/bin/perfd     u:object_r:perfd_exec:s0
-/data/system/perfd(/.*)?              u:object_r:mpctl_data_file:s0
-/dev/socket/perfd                     u:object_r:mpctl_socket:s0
-/data/misc/perfd(/.*)?                u:object_r:mpctl_socket:s0
+/(vendor|system/vendor)/bin/perfd                                             u:object_r:perfd_exec:s0
+/data/system/perfd(/.*)?                                                      u:object_r:mpctl_data_file:s0
+/dev/socket/perfd                                                             u:object_r:mpctl_socket:s0
+/data/misc/perfd(/.*)?                                                        u:object_r:mpctl_socket:s0
 
 # Location
-/data/misc/location(/.*)?                                           u:object_r:location_data_file:s0
-/data/misc/location/mq/location-mq-s                                u:object_r:location_socket:s0
-/data/misc/location/mq/alarm_svc                                    u:object_r:location_socket:s0
+/data/misc/location(/.*)?                                                     u:object_r:location_data_file:s0
+/data/misc/location/mq/location-mq-s                                          u:object_r:location_socket:s0
+/data/misc/location/mq/alarm_svc                                              u:object_r:location_socket:s0
 
 # IMS
-/(vendor|system/vendor)/bin/imscmservice                            u:object_r:ims_exec:s0
-/dev/socket/ims_rtpd                            u:object_r:ims_socket:s0
+/(vendor|system/vendor)/bin/imscmservice                                      u:object_r:ims_exec:s0
+/dev/socket/ims_rtpd                                                          u:object_r:ims_socket:s0
 
 # Port bridge
-/data/misc/port_bridge(/.*)?                                        u:object_r:port_bridge_data_file:s0
+/data/misc/port_bridge(/.*)?                                                  u:object_r:port_bridge_data_file:s0
 
 # IPA
-/data/misc/ipa(/.*)?                                                u:object_r:ipacm_data_file:s0
+/data/misc/ipa(/.*)?                                                          u:object_r:ipacm_data_file:s0
 
 # IOP
-/data/misc/iop(/.*)?                                                u:object_r:iop_data_file:s0
+/data/misc/iop(/.*)?                                                          u:object_r:iop_data_file:s0
 
 # Battery
-/sys/devices(/platform)?/soc\.0/qpnp-linear-charger-[a-z0-9]+/power_supply/battery(/.*)?   u:object_r:sysfs_battery_supply:s0
-/sys/devices(/platform)?/soc\.0/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?   u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc\.0/qpnp-linear-charger-[a-z0-9]+/power_supply/battery(/.*)?  u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc\.0/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?  u:object_r:sysfs_battery_supply:s0
 
 # Graphics
-/sys/devices(/platform)?/soc\.0/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary\.[0-9]+/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc\.0/[a-z0-9]+.qcom,mdss_mdp/caps   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc\.0/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary\.[0-9]+/leds/lcd-backlight(/.*)?  u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc\.0/[a-z0-9]+.qcom,mdss_mdp/caps                  u:object_r:sysfs_graphics:s0
 
 # Subsys restart
 /sys/devices(/platform)?/soc\.0/[a-z0-9\.:]+,[a-z0-9\-]+/subsys[0-9]+/name    u:object_r:sysfs_ssr:s0
@@ -38,19 +38,19 @@
 /sys/devices/[0-9a-f]+\.qcom,venus/subsys[0-9]+/name                          u:object_r:sysfs_ssr:s0
 
 # Camera
-/data/fdAlbum                                                       u:object_r:camera_data_file:s0
+/data/fdAlbum                                                                 u:object_r:camera_data_file:s0
 
 # UIO
-/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,msm-core/uio/uio[0-9]+(/.*)?			u:object_r:sysfs_uio_file:s0
-/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,dsp_sharedmem/uio/uio[0-9]+(/.*)?			u:object_r:sysfs_uio_file:s0
-/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,mdm_sharedmem/uio/uio[0-9]+(/.*)?			u:object_r:sysfs_uio_file:s0
-/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?			u:object_r:sysfs_uio_file:s0
-/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,sensors_sharedmem/uio/uio[0-9]+(/.*)?			u:object_r:sysfs_uio_file:s0
-/sys/devices/[0-9a-f]+\.rmtfs_sharedmem/uio/uio[0-9]+(/.*)?         u:object_r:sysfs_uio_file:s0
-/sys/devices/[0-9a-f]+\.dsp_sharedmem/uio/uio[0-9]+(/.*)?           u:object_r:sysfs_uio_file:s0
-/sys/devices/[0-9a-f]+\.mdm_sharedmem/uio/uio[0-9]+(/.*)?           u:object_r:sysfs_uio_file:s0
-/sys/devices/[0-9a-f]+\.bimc_sharedmem/uio/uio[0-9]+(/.*)?          u:object_r:sysfs_uio_file:s0
-/sys/devices/[0-9a-f]+\.oem_data_sharedmem/uio/uio[0-9]+(/.*)?      u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,msm-core/uio/uio[0-9]+(/.*)?  u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,dsp_sharedmem/uio/uio[0-9]+(/.*)?  u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,mdm_sharedmem/uio/uio[0-9]+(/.*)?  u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?  u:object_r:sysfs_uio_file:s0
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,sensors_sharedmem/uio/uio[0-9]+(/.*)?  u:object_r:sysfs_uio_file:s0
+/sys/devices/[0-9a-f]+\.rmtfs_sharedmem/uio/uio[0-9]+(/.*)?                   u:object_r:sysfs_uio_file:s0
+/sys/devices/[0-9a-f]+\.dsp_sharedmem/uio/uio[0-9]+(/.*)?                     u:object_r:sysfs_uio_file:s0
+/sys/devices/[0-9a-f]+\.mdm_sharedmem/uio/uio[0-9]+(/.*)?                     u:object_r:sysfs_uio_file:s0
+/sys/devices/[0-9a-f]+\.bimc_sharedmem/uio/uio[0-9]+(/.*)?                    u:object_r:sysfs_uio_file:s0
+/sys/devices/[0-9a-f]+\.oem_data_sharedmem/uio/uio[0-9]+(/.*)?                u:object_r:sysfs_uio_file:s0
 
 # GPU
 /sys/devices/[a-f0-9]+\.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)?                     u:object_r:sysfs_kgsl:s0
