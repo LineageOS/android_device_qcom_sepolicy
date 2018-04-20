@@ -229,6 +229,6 @@ allow qti_init_shell  sysfs_devices_system_cpu:file rw_file_perms;
 
 # For IO Cgroups
 allow qti_init_shell cgroup:dir { mounton create_dir_perms };
-allow qti_init_shell cgroup:file { create_file_perms };
+allow qti_init_shell cgroup:file { rw_file_perms };
 
 set_prop(qti_init_shell, vendor_mmi_prop)
