@@ -61,3 +61,6 @@ userdebug_or_eng(`
 ')
 get_prop(vendor_init, vendor_boot_mode_prop)
 get_prop(vendor_init, vendor_mmi_prop)
+
+#Access persist.sys.usb.config
+set_prop(vendor_init, system_prop)
