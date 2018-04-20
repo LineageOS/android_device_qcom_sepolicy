@@ -29,7 +29,7 @@ rcs.publish.status         u:object_r:radio_prop:s0
 service.qti.ims.enabled    u:object_r:ims_prop:s0
 sys.ims.                   u:object_r:ims_prop:s0
 sys.keymaster.loaded       u:object_r:keymaster_prop:s0
-sys.listeners.registered   u:object_r:tee_listener_prop:s0
+vendor.sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
 sys.modem.diag.            u:object_r:modem_diag_prop:s0
 sys.post_boot.             u:object_r:post_boot_prop:s0
 sys.qcom.thermalcfg        u:object_r:thermal_prop:s0

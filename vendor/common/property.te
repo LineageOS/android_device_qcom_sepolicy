@@ -25,7 +25,7 @@ type sys_time_prop, property_type;
 type sys_usb_configfs_prop, property_type;
 type sys_usb_controller_prop, property_type;
 type sys_usb_tethering_prop, property_type;
-type tee_listener_prop, property_type;
+type vendor_tee_listener_prop, property_type;
 type tel_mon_prop, property_type;
 type thermal_prop, property_type;
 type wc_prop, property_type;
