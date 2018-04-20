@@ -17,6 +17,8 @@ hal_client_domain(system_app, hal_hbtp)
 hal_client_domain(system_app, hal_qdutils_disp);
 hal_client_domain(system_app, hal_tui_comm);
 
-#allow system_app access ioctl
-allowxperm system_app self:socket ioctl msm_sock_ipc_ioctls;
-allow system_app self:socket create_socket_perms;
+#allow only system_app with userdebug to access ioctl
+userdebug_or_eng(`
+  allowxperm system_app self:socket ioctl msm_sock_ipc_ioctls;
+  allow system_app self:socket create_socket_perms;
+')
