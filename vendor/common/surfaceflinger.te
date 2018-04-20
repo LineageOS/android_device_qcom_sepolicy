@@ -19,7 +19,7 @@ binder_call(surfaceflinger, tee)
 r_dir_file(surfaceflinger, firmware_file)
 
 #Allow access to fastmmi
-binder_call(surfaceflinger, mmi)
+binder_call(surfaceflinger, vendor_mmi)
 
 #Allow access to cameraserver service
 allow surfaceflinger cameraserver_service:service_manager find;

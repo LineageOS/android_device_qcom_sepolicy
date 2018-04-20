@@ -171,7 +171,7 @@ type bt_firmware_file, file_type, contextmount_type, vendor_file_type;
 type  proc_dirty_ratio, fs_type, proc_type;
 
 #File types by mmi
-type mmi_socket, file_type;
+type vendor_mmi_socket, file_type;
 
 # hbtp config file
 type hbtp_cfg_file, file_type, vendor_file_type;
