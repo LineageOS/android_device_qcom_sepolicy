@@ -71,3 +71,5 @@ userdebug_or_eng(`
 allow hal_camera vendor_camera_data_file:file create_file_perms;
 ')
 unix_socket_connect(hal_camera, thermal, thermal-engine)
+
+allow hal_camera_default mm-qcamerad:unix_dgram_socket sendto;
