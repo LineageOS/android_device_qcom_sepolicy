@@ -4,8 +4,9 @@ type bluetooth_loader_exec, exec_type, file_type;
 # Started by init
 init_daemon_domain(bluetooth_loader)
 
-# Set persist.service.bdroid.* and bluetooth.* property values
+# Get persist.service.bdroid.*, bluetooth.* and wcnss property values
 get_prop(bluetooth_loader, bluetooth_prop)
+get_prop(bluetooth_loader, wcnss_prop)
 
 # Access the serial device
 allow bluetooth_loader serial_device:chr_file rw_file_perms;
