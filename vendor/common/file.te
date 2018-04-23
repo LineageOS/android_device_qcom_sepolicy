@@ -124,3 +124,6 @@ type tlocd_data_file, file_type, data_file_type;
 
 #qseecom
 type data_qsee_file, file_type, data_file_type;
+
+#TUI Files
+type vendor_tui_data_file, file_type, data_file_type;
