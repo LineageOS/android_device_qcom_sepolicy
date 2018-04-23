@@ -26,6 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # For regionalization
-allow zygote persist_file:dir r_dir_perms;
-r_dir_file(zygote, regionalization_file);
 r_dir_file(zygote, oemfs);

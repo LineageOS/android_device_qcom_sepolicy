@@ -26,7 +26,7 @@ type_transition vendor_mmi socket_device:sock_file vendor_mmi_socket;
 
 #allow mmi set system prop
 set_prop(vendor_mmi, powerctl_prop)
-allow vendor_mmi persist_file:dir r_dir_perms;
+allow vendor_mmi mnt_vendor_file:dir r_dir_perms;
 
 #Allow mmi operate on graphics
 hal_client_domain(vendor_mmi, hal_graphics_allocator);

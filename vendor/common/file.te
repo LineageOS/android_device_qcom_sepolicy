@@ -37,15 +37,15 @@ type sysfs_smd_open_timeout, sysfs_type, fs_type;
 type netmgrd_data_file, file_type, data_file_type;
 type sysrq_trigger_proc, fs_type, mlstrustedobject;
 # Persist file types
-type persist_file, file_type;
-type persist_bluetooth_file, file_type;
-type persist_data_file, file_type;
-type persist_drm_file, file_type;
+type persist_file, file_type, vendor_persist_type;
+type persist_bluetooth_file, file_type , vendor_persist_type;
+type persist_data_file, file_type , vendor_persist_type;
+type persist_drm_file, file_type , vendor_persist_type;
 type data_qtee_file, file_type, data_file_type;
-type persist_misc_file, file_type;
-type persist_bms_file, file_type;
-type persist_secnvm_file, file_type;
-type vendor_persist_mmi_file, file_type;
+type vendor_persist_mmi_file, file_type, vendor_persist_type;
+type persist_misc_file, file_type , vendor_persist_type;
+type persist_bms_file, file_type , vendor_persist_type;
+type persist_secnvm_file, file_type , vendor_persist_type;
 
 #file type for restricting proc read by audiod
 type proc_audiod, fs_type, proc_type;
@@ -55,7 +55,7 @@ type msm_irqbalance_socket, file_type;
 
 # Sensor file types
 type sensors_socket, file_type;
-type sensors_persist_file, file_type;
+type sensors_persist_file, file_type, vendor_persist_type;
 type sysfs_sensors, sysfs_type, fs_type;
 
 #type for thermal-engine
@@ -67,8 +67,8 @@ type sysfs_msmuart_file, sysfs_type, fs_type;
 type rfs_system_file, file_type;
 type rfs_file, file_type, data_file_type;
 type rfs_shared_hlos_file, file_type, data_file_type;
-type persist_rfs_file, file_type;
-type persist_rfs_shared_hlos_file, file_type;
+type persist_rfs_file, file_type, vendor_persist_type;
+type persist_rfs_shared_hlos_file, file_type, vendor_persist_type;
 
 #mm-pp-daemon file type for sysfs access
 #type sysfs_leds, fs_type, sysfs_type;
@@ -153,7 +153,7 @@ type qlogd_socket, file_type, mlstrustedobject;
 type display_vendor_data_file, file_type, data_file_type;
 
 #Define the files for the operation of QDCM
-type persist_display_file, file_type;
+type persist_display_file, file_type, vendor_persist_type;
 
 # IPA file types
 type ipacm_socket, file_type;
@@ -182,11 +182,11 @@ type hbtp_cfg_file, file_type, vendor_file_type;
 type hbtp_log_file, file_type, data_file_type;
 type hbtp_kernel_sysfs, fs_type, sysfs_type;
 
-type persist_usf_file, file_type;
+type persist_usf_file, file_type, vendor_persist_type;
 
 #qfp-daemon
 type qfp-daemon_data_file, file_type, data_file_type;
-type persist_qti_fp_file, file_type;
+type persist_qti_fp_file, file_type, vendor_persist_type;
 
 #qsee_svc_app file types
 type qsee_svc_app_data_file, file_type, data_file_type;
@@ -211,7 +211,7 @@ type adsprpcd_file, file_type, mlstrustedobject, vendor_file_type;
 type mdtp_svc_app_data_file, file_type, data_file_type;
 
 # Regionalization files
-type regionalization_file, file_type;
+type regionalization_file, file_type , vendor_persist_type;
 type vendor_carrier_file, file_type, vendor_file_type;
 
 # /data/system/swap/swapfile - swapfile
@@ -232,9 +232,9 @@ type vendor_mediadrm_data_file, file_type, data_file_type;
 # wififtmd socket file
 type wififtmd_socket, file_type;
 
-type persist_alarm_file, file_type;
+type persist_alarm_file, file_type, vendor_persist_type;
 
-type persist_time_file, file_type;
+type persist_time_file, file_type, vendor_persist_type;
 
 # nfc file type for data vendor access
 type nfc_vendor_data_file, file_type, data_file_type;
@@ -278,7 +278,8 @@ type sysfs_irqbalance , sysfs_type, fs_type;
 
 # vpp files
 type vendor_vpp_data_file, file_type, data_file_type;
-type persist_vpp_file, file_type;
+type persist_vpp_file, file_type, vendor_persist_type;
+
 # vendor camera files
 type vendor_camera_data_file, file_type, data_file_type;
 
@@ -335,3 +336,6 @@ type sysfs_npu, fs_type, sysfs_type;
 # subsystem_ramdump files
 type vendor_ramdump_data_file, file_type, data_file_type;
 type vendor_mdmhelperdata_data_file, file_type, data_file_type;
+
+#for mount of /persist
+typeattribute mnt_vendor_file vendor_persist_type;
