@@ -52,7 +52,6 @@ type debugfs_icnss, debugfs_type, fs_type;
 type proc_wifi_dbg, fs_type, proc_type;
 type proc_audiod, fs_type;
 
-type qmuxd_socket, file_type;
 type netmgrd_socket, file_type;
 type thermal_socket, file_type;
 

@@ -43,6 +43,4 @@ userdebug_or_eng(`
   #enable running test as root user => privileged process
   #enable privileged processes to bypass permission checks
   allow qmi_ping qmi_ping:capability {setgid setuid fsetid};
-  #QCCI calls qmuxd API.  The API will internally require this
-  qmux_socket(qmi_ping);
 ')
