@@ -34,6 +34,9 @@ allow cnd self:{
 # allow cnd to read tcp diagnostics through netlink
 allow cnd self:netlink_tcpdiag_socket nlmsg_read;
 
+# allow cnd to set cnd property
+set_prop(cnd, cnd_vendor_prop)
+
 # allow cnd to access cnd_data_file
 allow cnd cnd_data_file:file create_file_perms;
 allow cnd cnd_data_file:sock_file { unlink create setattr };

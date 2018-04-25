@@ -44,6 +44,9 @@ ctl.vendor.qcrild          u:object_r:ctl_qcrild_prop:s0
 vendor.min_freq_0                 u:object_r:vendor_mpctl_prop:s0
 vendor.min_freq_4                 u:object_r:vendor_mpctl_prop:s0
 ctl.vendor.ril-daemon      u:object_r:ctl_vendor_rild_prop:s0
+ctl.vendor.cnd             u:object_r:cnd_vendor_prop:s0
+persist.vendor.sys.cnd     u:object_r:cnd_vendor_prop:s0
+persist.vendor.cne.        u:object_r:cnd_vendor_prop:s0
 ctl.vm_bms                 u:object_r:vm_bms_prop:s0
 ro.vendor.qualcomm.bluetooth.        u:object_r:vendor_bluetooth_prop:s0
 ctl.vendor.ipacm           u:object_r:vendor_ipacm_prop:s0
