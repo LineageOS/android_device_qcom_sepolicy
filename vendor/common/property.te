@@ -27,6 +27,8 @@ type vendor_usb_prop, property_type;
 type tel_mon_prop, property_type;
 type thermal_prop, property_type;
 type wc_prop, property_type;
+type vendor_radio_prop, property_type;
+type vendor_system_prop, property_type;
 
 #imsrcsservice
 type ctl_vendor_imsrcsservice_prop, property_type;

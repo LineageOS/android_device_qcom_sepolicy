@@ -59,10 +59,6 @@ allow mm-pp-daemon sysfs_graphics:dir r_dir_perms;
 allow mm-pp-daemon sysfs_graphics:file rw_file_perms;
 allow mm-pp-daemon sysfs_data:file r_file_perms;
 
-userdebug_or_eng(`
-set_prop(mm-pp-daemon, debug_prop)
-')
-
 # Allow socket calls in pp-daemon
 unix_socket_connect(mm-pp-daemon, pps, init)
 
