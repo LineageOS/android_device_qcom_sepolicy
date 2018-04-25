@@ -16,9 +16,9 @@ allow thermal-engine self:capability {
     sys_boot
 };
 
-allow thermal-engine self:socket create_socket_perms;
+allow thermal-engine self:{ socket qipcrtr_socket } create_socket_perms;
 # ioctlcmd=c304
-allowxperm thermal-engine self:socket ioctl msm_sock_ipc_ioctls;
+allowxperm thermal-engine self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 
 # This is required to access thermal sockets
 allow thermal-engine thermal_socket:dir w_dir_perms;
