@@ -2,6 +2,7 @@ type vnd_ims_radio_hwservice, hwservice_manager_type;
 type vnd_qcrilhook_hwservice, hwservice_manager_type;
 type hal_display_config_hwservice, hwservice_manager_type;
 type hal_imsrtp_hwservice, hwservice_manager_type;
+type hal_imscallinfo_hwservice, hwservice_manager_type;
 type hal_ipacm_hwservice, hwservice_manager_type;
 type hal_hbtp_hwservice, hwservice_manager_type;
 type hal_perf_hwservice, hwservice_manager_type, untrusted_app_visible_hwservice;
