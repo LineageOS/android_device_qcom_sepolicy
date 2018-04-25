@@ -323,3 +323,6 @@ type sysfs_jpeg, fs_type, sysfs_type;
 
 #SSR Log Files
 type ramdump_vendor_data_file, file_type, data_file_type, mlstrustedobject;
+
+# npu file
+type sysfs_npu, fs_type, sysfs_type;
