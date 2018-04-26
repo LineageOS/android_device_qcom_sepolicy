@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -33,7 +33,6 @@ allow vendor_init unlabeled:file { r_file_perms setattr relabelfrom };
 allow vendor_init ipa_dev:chr_file w_file_perms;
 allow vendor_init proc:file write;
 
-allow vendor_init sys_usb_controller_prop:file r_file_perms;
 allow vendor_init self:capability sys_module;
 
 allow vendor_init vendor_file:system module_load;
@@ -71,3 +70,5 @@ allow vendor_init {
     system_data_file
     tombstone_data_file
 }:dir create_dir_perms;
+
+get_prop(vendor_init, vendor_usb_prop)
