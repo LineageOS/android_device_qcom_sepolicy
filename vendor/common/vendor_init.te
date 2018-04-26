@@ -25,7 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-typeattribute vendor_init data_between_core_and_vendor_violators;
 
 allow vendor_init persist_block_device:{ blk_file lnk_file } relabelto;
 allow vendor_init unlabeled:dir { r_dir_perms setattr relabelfrom };
@@ -42,13 +41,11 @@ allow vendor_init sysfs_poweron_alarm:file w_file_perms;
 allow vendor_init file_contexts_file:file r_file_perms;
 
 allow vendor_init {
-    bluetooth_data_file
     vendor_camera_data_file
-    dhcp_data_file
-    media_rw_data_file
-    system_data_file
-    tombstone_data_file
+    vendor_media_data_file
     vendor_tui_data_file
+    vendor_media_data_file
+    vendor_tombstone_data_file
 }:dir create_dir_perms;
 
 allow vendor_init self:capability sys_module;
