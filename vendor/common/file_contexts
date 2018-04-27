@@ -203,6 +203,7 @@
 /data/vendor/tloc(/.*)?                u:object_r:tlocd_data_file:s0
 /data/vendor/connectivity(/.*)?        u:object_r:cnd_data_file:s0
 /data/vendor/misc/qsee(/.*)?           u:object_r:data_qsee_file:s0
+/data/vendor/tui(/.*)?                 u:object_r:vendor_tui_data_file:s0
 
 
 # audio_data_file

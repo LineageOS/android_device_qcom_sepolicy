@@ -69,6 +69,7 @@ allow vendor_init {
     nfc_data_file
     system_data_file
     tombstone_data_file
+    vendor_tui_data_file
 }:dir create_dir_perms;
 
 set_prop(vendor_init, vendor_usb_prop)
