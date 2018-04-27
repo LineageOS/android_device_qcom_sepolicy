@@ -338,6 +338,7 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qpnp,fg/power_supply/bms(/.*)?               u:object_r:sysfs_battery_supply:s0
 /sys/class/qcom-battery(/.*)?              u:object_r:sysfs_battery_supply:s0
+/sys/class/charge_pump(/.*)?               u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/qpnp-linear-charger-[a-z0-9]+/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/qpnp-smbcharger-[a-z0-9]+/power_supply/battery(/.*)?        u:object_r:sysfs_battery_supply:s0
