@@ -42,7 +42,6 @@ allow qti_init_shell self:capability {
     sys_admin
 };
 
-set_prop(qti_init_shell, config_prop)
 set_prop(qti_init_shell, ctl_hbtp_prop)
 set_prop(qti_init_shell, ctl_netmgrd_prop)
 set_prop(qti_init_shell, ctl_port-bridge_prop)
@@ -53,8 +52,9 @@ set_prop(qti_init_shell, ipacm_prop)
 set_prop(qti_init_shell, msm_irqbalance_prop)
 set_prop(qti_init_shell, qti_prop)
 set_prop(qti_init_shell, vendor_usb_prop)
-set_prop(qti_init_shell, system_prop)
+set_prop(qti_init_shell, vendor_system_prop)
 set_prop(qti_init_shell, vendor_mpdecision_prop)
+set_prop(qti_init_shell, vendor_radio_prop)
 
 allow qti_init_shell {
     sysfs_devices_system_cpu
@@ -110,7 +110,6 @@ allow qti_init_shell sysfs:file r_file_perms;
 allow qti_init_shell radio_vendor_data_file:dir create_dir_perms;
 allow qti_init_shell radio_vendor_data_file:file create_file_perms;
 
-set_prop(qti_init_shell, system_radio_prop)
 set_prop(qti_init_shell, ctl_vendor_hbtp_prop)
 
 # rules for vm_bms

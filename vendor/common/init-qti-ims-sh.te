@@ -37,4 +37,4 @@ set_prop(init-qti-ims-sh, ims_prop)
 get_prop(init-qti-ims-sh, ims_prop)
 
 # for ro.build.product
-get_prop(init-qti-ims-sh, default_prop)
+get_prop(init-qti-ims-sh, exported2_default_prop)
