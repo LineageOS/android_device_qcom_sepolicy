@@ -86,7 +86,7 @@ type vendor_coresight_prop, property_type;
 
 
 type ctl_hbtp_prop, property_type;
-type alarm_boot_prop, property_type;
+type vendor_alarm_boot_prop, property_type;
 type boot_animation_prop, property_type;
 
 # DOLBY_START
