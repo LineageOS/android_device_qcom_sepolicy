@@ -1,5 +1,7 @@
 allow cameraserver mm-qcamerad:unix_dgram_socket sendto;
 
+allow cameraserver mpctl_socket:dir search;
+
 unix_socket_connect(cameraserver, mpctl, perfd)
 unix_socket_connect(cameraserver, thermal, thermal-engine)
 unix_socket_connect(cameraserver, sensors, sensors)
