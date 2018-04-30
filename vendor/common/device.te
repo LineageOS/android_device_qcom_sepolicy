@@ -13,6 +13,7 @@ type hvdcp_device, dev_type;
 type ipa_dev, dev_type;
 type latency_device, dev_type;
 type modem_block_device, dev_type;
+type modem_efs_partition_device, dev_type;
 type mdtp_device, dev_type;
 type persist_block_device, dev_type;
 type qsee_ipc_irq_spss_device, dev_type;

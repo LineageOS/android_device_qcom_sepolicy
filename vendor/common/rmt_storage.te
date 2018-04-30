@@ -9,16 +9,11 @@ allow rmt_storage self:capability { net_bind_service setgid setpcap setuid };
 
 set_prop(rmt_storage, ctl_vendor_rmt_storage_prop)
 
-allow rmt_storage modem_block_device:blk_file rw_file_perms;
+allow rmt_storage cgroup:dir create_dir_perms;
 allow rmt_storage uio_device:chr_file rw_file_perms;
-allow rmt_storage block_device:dir search;
 
-allow rmt_storage sysfs_rmtfs:dir search;
-allow rmt_storage sysfs_rmtfs:file r_file_perms;
-allow rmt_storage sysfs_rmtfs:dir search;
-
-allow rmt_storage self:socket create_socket_perms;
-allowxperm rmt_storage self:socket ioctl IPC_ROUTER_IOCTL_BIND_CONTROL_PORT;
+allow rmt_storage self:{ socket qipcrtr_socket } create_socket_perms;
+allowxperm rmt_storage self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 
 allow rmt_storage kmsg_device:chr_file w_file_perms;
 
@@ -28,7 +23,7 @@ r_dir_file(rmt_storage, sysfs_uio_file)
 allow rmt_storage block_device:dir r_dir_perms;
 
 allow rmt_storage {
-    modem_block_device
+    modem_efs_partition_device
     ssd_block_device
 }:blk_file rw_file_perms;
 

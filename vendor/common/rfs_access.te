@@ -8,16 +8,22 @@ allow rfs_access self:capability { chown setgid setpcap setuid net_bind_service 
 
 wakelock_use(rfs_access)
 
-type_transition rfs_access persist_file:{ dir file } persist_rfs_file;
+type_transition rfs_access mnt_vendor_file:{ dir file } persist_rfs_file;
+type_transition rfs_access mnt_vendor_file:dir persist_rfs_shared_hlos_file "hlos_rfs";
 
-# For tftp server file access
-allow rfs_access firmware_file:dir search;
-allow rfs_access firmware_file:file r_file_perms;
+r_dir_file(rfs_access, firmware_file);
 
-allow rfs_access persist_file:dir create_dir_perms;
+allow rfs_access mnt_vendor_file:dir create_dir_perms;
 
 allow rfs_access persist_rfs_file:dir search;
 allow rfs_access persist_rfs_file:dir create_dir_perms;
 allow rfs_access persist_rfs_file:file create_file_perms;
+allow rfs_access persist_rfs_shared_hlos_file:dir create_dir_perms;
+allow rfs_access persist_rfs_shared_hlos_file:file create_file_perms;
 
-allow rfs_access self:socket create_socket_perms_no_ioctl;
+#For QMI sockets and IPCR Sockets
+allow rfs_access self:{ socket qipcrtr_socket } create_socket_perms_no_ioctl;
+
+allow rfs_access vendor_tombstone_data_file:dir create_dir_perms;
+allow rfs_access vendor_tombstone_data_file:file create_file_perms;
+

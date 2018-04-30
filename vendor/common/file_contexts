@@ -208,6 +208,7 @@
 /data/vendor/connectivity(/.*)?        u:object_r:cnd_data_file:s0
 /data/vendor/misc/qsee(/.*)?           u:object_r:data_qsee_file:s0
 /data/vendor/tui(/.*)?                 u:object_r:vendor_tui_data_file:s0
+/data/vendor/tombstones/rfs(/.*)?       u:object_r:vendor_tombstone_data_file:s0
 
 /data/vendor/mdmhelperdata(/.*)?       u:object_r:vendor_mdmhelperdata_data_file:s0
 
@@ -225,7 +226,7 @@
 /mnt/vendor/persist/drm(/.*)?        u:object_r:persist_drm_file:s0
 /mnt/vendor/persist/elabel(/.*)?     u:object_r:persist_elabel_file:s0
 /mnt/vendor/persist/haptics(/.*)?    u:object_r:persist_haptics_file:s0
-/mnt/vendor/persist/hlos_rfs(/.*)?   u:object_r:persist_rfs_file:s0
+/mnt/vendor/persist/hlos_rfs(/.*)?   u:object_r:persist_rfs_shared_hlos_file:s0
 /mnt/vendor/persist/rfs(/.*)?        u:object_r:persist_rfs_file:s0
 /mnt/vendor/persist/sensors(/.*)?    u:object_r:persist_sensors_file:s0
 /mnt/vendor/persist/time(/.*)?       u:object_r:persist_time_file:s0
@@ -255,12 +256,6 @@
 
 
 /(vendor|system/vendor)/bin/hbtp_daemon         u:object_r:hbtp_exec:s0
-
-# sysfs_uio_file
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+/maps/map[0-9]+(/.*)?    u:object_r:sysfs_uio_file:s0
-/sys/devices(/platform)?/soc.0/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
-/sys/devices(/platform)?/soc.0/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+/maps/map[0-9]+(/.*)?    u:object_r:sysfs_uio_file:s0
 
 # sysfs_graphics
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:sysfs_graphics:s0

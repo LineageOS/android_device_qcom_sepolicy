@@ -11,7 +11,6 @@ genfscon sysfs /kernel/irq_helper/irq_blacklist_on    u:object_r:sysfs_irqbalanc
 genfscon sysfs /kernel/wcd_cpe0                                         u:object_r:sysfs_audio:s0
 genfscon sysfs /class/uio                                               u:object_r:sysfs_uio:s0
 genfscon sysfs /devices/soc/soc:bt_wcn3990                              u:object_r:sysfs_bluetooth_writable:s0
-genfscon sysfs /devices/soc/a1800000.qcom,rmtfs_rtel_sharedmem          u:object_r:sysfs_rmtfs:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpubw/devfreq 		u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,memlat-cpu0/devfreq 	u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,memlat-cpu2/devfreq 	u:object_r:sysfs_devfreq:s0
@@ -35,7 +34,7 @@ genfscon sysfs /devices/platform/soc/c1b5000.i2c/i2c-7/7-0030/leds              
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/c900000.qcom,mdss_mdp:qcom,mdss_fb_primary/leds u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pmi8998@3:qcom,leds@d000/leds u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws@1e08000                    u:object_r:sysfs_data:s0
-genfscon sysfs /devices/platform/soc/0.qcom,rmtfs_sharedmem                      u:object_r:sysfs_rmtfs:s0
+genfscon sysfs /devices/platform/soc/0.qcom,rmtfs_sharedmem/uio		u:object_r:sysfs_uio_file:s0
 genfscon sysfs /devices/platform/soc/soc:fp_fpc1020                              u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/virtual/wahoo_laser                             u:object_r:sysfs_laser:s0
 genfscon sysfs /module/cpu_boost                                        u:object_r:sysfs_cpu_boost:s0
