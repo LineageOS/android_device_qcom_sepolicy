@@ -26,4 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #for regionalization
+r_dir_file(system_app, regionalization_file);
 r_dir_file(system_app, vendor_carrier_file);

@@ -54,10 +54,10 @@ allow hal_dpmQmiMgr sysfs_ssr:file r_file_perms;
 r_dir_file(hal_dpmQmiMgr,proc_net)
 
 #Allow creating socket and IOCTLs
-allow hal_dpmQmiMgr self:socket create_socket_perms;
+allow hal_dpmQmiMgr self:{ socket qipcrtr_socket } create_socket_perms;
 
 #Rules below are needed to communicate with IPC_ROUTER for QMI
-allowxperm hal_dpmQmiMgr self:socket ioctl msm_sock_ipc_ioctls;
+allowxperm hal_dpmQmiMgr self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 allow hal_dpmQmiMgr self:capability net_bind_service;
 allow hal_dpmQmiMgr self:udp_socket create_socket_perms;
 allowxperm hal_dpmQmiMgr self:udp_socket ioctl priv_sock_ioctls;

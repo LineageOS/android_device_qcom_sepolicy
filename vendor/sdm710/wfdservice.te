@@ -25,4 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow mediaserver media_sdm670_version_prop:file r_file_perms;
+
+#Allow access to read property file
+get_prop(wfdservice,media_sdm710_version_prop)

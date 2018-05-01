@@ -11,7 +11,7 @@ type btnvtool_exec, exec_type, vendor_file_type, file_type;
 type fmhal_service, bluetoothdomain;
 type fmhal_service_exec, exec_type, vendor_file_type, file_type;
 
-allow bluetooth bluetooth_prop:property_service set;
+allow bluetooth vendor_bluetooth_prop:property_service set;
 allow bluetooth sysfs_bluetooth_writable:file w_file_perms;
 
 #Access to /data/media
@@ -54,11 +54,6 @@ allow bluetooth dun_service:service_manager find;
 
 # for finding wbc_service
 allow bluetooth wbc_service:service_manager find;
-
-# for fastmmi test bluetooth
-#allow bluetooth mmi:unix_stream_socket connectto;
-#connect to wcnss_filter
-#allow bluetooth wcnss_filter:unix_stream_socket connectto;
 
 # ioctlcmd=c302
 allow bluetooth self:socket ioctl;

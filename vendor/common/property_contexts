@@ -22,7 +22,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-wc_transport.              u:object_r:bluetooth_prop:s0
+persist.vendor.service.bdroid.      u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bluetooth.  u:object_r:vendor_bluetooth_prop:s0
+vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
+vendor.bluetooth.          u:object_r:vendor_bluetooth_prop:s0
+vendor.bt.                 u:object_r:vendor_bluetooth_prop:s0
+vendor.qcom.bluetooth.     u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bt.         u:object_r:vendor_bluetooth_prop:s0
 sys.usb_uicc.              u:object_r:uicc_prop:s0
 dolby.audio.               u:object_r:audio_prop:s0
 vendor.ims.                u:object_r:qcom_ims_prop:s0
@@ -35,19 +41,14 @@ ctl.qmuxd                  u:object_r:ctl_qmuxd_prop:s0
 ctl.netmgrd                u:object_r:ctl_netmgrd_prop:s0
 ctl.port-bridge            u:object_r:ctl_port-bridge_prop:s0
 ctl.vendor.qcrild          u:object_r:ctl_qcrild_prop:s0
-vendor.min_freq_0                 u:object_r:freq_prop:s0
-vendor.min_freq_4                 u:object_r:freq_prop:s0
+vendor.min_freq_0                 u:object_r:vendor_mpctl_prop:s0
+vendor.min_freq_4                 u:object_r:vendor_mpctl_prop:s0
 ctl.vendor.ril-daemon      u:object_r:ctl_vendor_rild_prop:s0
-ctl.vendor.ril-daemon2     u:object_r:ctl_vendor_rild_prop:s0
-ctl.vendor.ril-daemon3     u:object_r:ctl_vendor_rild_prop:s0
-ctl.perfd                  u:object_r:perfd_prop:s0
-ctl.gamed                  u:object_r:gamed_prop:s0
-ctl.iop                    u:object_r:perfd_prop:s0
 ctl.vm_bms                 u:object_r:vm_bms_prop:s0
-ro.qualcomm.bluetooth.        u:object_r:bluetooth_prop:s0
-ctl.ipacm                  u:object_r:ipacm_prop:s0
-ctl.ipacm-diag             u:object_r:ipacm-diag_prop:s0
-ctl.qti                    u:object_r:qti_prop:s0
+ro.vendor.qualcomm.bluetooth.        u:object_r:vendor_bluetooth_prop:s0
+ctl.vendor.ipacm           u:object_r:vendor_ipacm_prop:s0
+ctl.vendor.ipacm-diag      u:object_r:vendor_ipacm-diag_prop:s0
+ctl.vendor.qti                    u:object_r:vendor_qti_prop:s0
 ctl.vendor.sensors                u:object_r:sensors_prop:s0
 ctl.vendor.msm_irqbalance         u:object_r:msm_irqbalance_prop:s0
 ctl.vendor.msm_irqbl_sdm630       u:object_r:msm_irqbl_sdm630_prop:s0
@@ -57,35 +58,42 @@ camera.                    u:object_r:camera_prop:s0
 persist.camera.            u:object_r:camera_prop:s0
 vendor.spcom.              u:object_r:spcomlib_prop:s0
 sdm.idle_time              u:object_r:sdm_idle_time_prop:s0
+vendor.display.idle_time              u:object_r:sdm_idle_time_prop:s0
 ro.sf.lcd_density             u:object_r:sf_lcd_density_prop:s0
 ro.vendor.scr_enabled         u:object_r:scr_enabled_prop:s0
 vendor.bg_reset               u:object_r:bg_daemon_prop:s0
 vendor.bg.boot_complete       u:object_r:bg_boot_complete_prop:s0
 ro.opengles.version           u:object_r:opengles_prop:s0
-ro.qualcomm.bt.hci_transport  u:object_r:bluetooth_prop:s0
+ro.vendor.qualcomm.bt.hci_transport  u:object_r:vendor_bluetooth_prop:s0
 ctl.mdm_helper             u:object_r:mdm_helper_prop:s0
-ctl.mpdecision             u:object_r:mpdecision_prop:s0
-qualcomm.perf.cores_online u:object_r:mpdecision_prop:s0
+vendor.post_boot.parsed    u:object_r:vendor_mpctl_prop:s0
+vendor.perf.cores_online   u:object_r:vendor_mpctl_prop:s0
+vendor.iop.enable_uxe   u:object_r:vendor_iop_prop:s0
+vendor.iop.enable_prefetch_ofr   u:object_r:vendor_iop_prop:s0
 netd.fstman.               u:object_r:netd_prop:s0
 location.                  u:object_r:location_prop:s0
-qc.izat.                   u:object_r:location_prop:s0
+vendor.qti.izat.           u:object_r:location_prop:s0
 persist.rmnet.mux          u:object_r:rmnet_mux_prop:s0
 sys.usb.controller         u:object_r:sys_usb_controller_prop:s0
 sys.usb.configfs           u:object_r:sys_usb_configfs_prop:s0
 sys.usb.tethering          u:object_r:sys_usb_tethering_prop:s0
 qemu.hw.mainkeys           u:object_r:qemu_hw_mainkeys_prop:s0
-ro.dbg.coresight.cfg_file     u:object_r:coresight_prop:s0
+ro.vendor.dbg.coresight.cfg_file     u:object_r:vendor_coresight_prop:s0
 ctl.hbtp                   u:object_r:ctl_hbtp_prop:s0
-vendor.audio.sys.init             u:object_r:audio_prop:s0
+vendor.audio.              u:object_r:debug_prop:s0
+vendor.voice.              u:object_r:debug_prop:s0
+persist.vendor.audio.      u:object_r:debug_prop:s0
+ro.vendor.audio.           u:object_r:debug_prop:s0
 ro.alarm_boot                 u:object_r:alarm_boot_prop:s0
 debug.sf.nobootanimation   u:object_r:boot_animation_prop:s0
+persist.vendor.net.doxlat  u:object_r:vendor_xlat_prop:s0
 debug.gralloc.             u:object_r:debug_gralloc_prop:s0
-persist.net.doxlat         u:object_r:xlat_prop:s0
+vendor.gralloc.             u:object_r:debug_gralloc_prop:s0
 # DOLBY_START
 dolby.                     u:object_r:dolby_prop:s0
 # DOLBY_END
 wifi.ftmd.                 u:object_r:wififtmd_prop:s0
-ro.bluetooth.              u:object_r:bluetooth_prop:s0
+ro.vendor.bluetooth.       u:object_r:vendor_bluetooth_prop:s0
 # WIGIG
 persist.vendor.wigig.       u:object_r:wigig_prop:s0
 vendor.wigig.               u:object_r:wigig_prop:s0
@@ -103,7 +111,7 @@ ro.vendor.qti.sys.fw.bservice_ u:object_r:bservice_prop:s0
 ro.vendor.qti.am.reschedule_service u:object_r:reschedule_service_prop:s0
 persist.graphics.vulkan.disable     u:object_r:graphics_vulkan_prop:s0
 #boot mode property
-sys.boot_mode              u:object_r:boot_mode_prop:s0
+vendor.sys.boot_mode              u:object_r:vendor_boot_mode_prop:s0
 # GPU
 ro.gpu.available_frequencies u:object_r:freq_prop:s0
 # NFC
@@ -125,8 +133,19 @@ ipersist.vendor.sys.       u:object_r:vendor_system_prop:s0
 # HBTP
 ctl.vendor.hbtp u:object_r:ctl_vendor_hbtp_prop:s0
 
+# factory properties
+ctl.vendor.mmid   u:object_r:ctl_vendor_mmid_prop:s0
+
 #Needed by qsee need to rename this
-sys.listeners.registered   u:object_r:tee_listener_prop:s0
+vendor.sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
 
 #WiFi Display
 vendor.wfdservice          u:object_r:wfd_service_prop:s0
+
+ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
+
+persist.vendor.mmi.        u:object_r:vendor_mmi_prop:s0
+
+#time service
+persist.vendor.delta_time.enable    u:object_r:vendor_time_service_prop:s0
+vendor.debug.time_services.enable   u:object_r:vendor_time_service_prop:s0

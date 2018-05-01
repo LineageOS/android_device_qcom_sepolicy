@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,7 +25,17 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#for oemfs
-r_dir_file(idmap, oemfs);
-#for regionalization
-r_dir_file(idmap, regionalization_file);
+type hal_neuralnetworks_default, domain;
+hal_server_domain(hal_neuralnetworks_default, hal_neuralnetworks)
+
+type hal_neuralnetworks_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_neuralnetworks_default)
+
+allow hal_neuralnetworks_default fwk_sensor_hwservice:hwservice_manager find;
+allow hal_neuralnetworks_default qdsp_device:chr_file r_file_perms;
+allow hal_neuralnetworks_default ion_device:chr_file r_file_perms;
+
+allow hal_neuralnetworks_default app_data_file:file { read getattr };
+allow hal_neuralnetworks_default shell_data_file:file { read getattr };
+
+r_dir_file(hal_neuralnetworks_default, adsprpcd_file)

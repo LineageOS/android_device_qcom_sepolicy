@@ -41,9 +41,10 @@ type data_qtee_file, file_type, data_file_type;
 type persist_misc_file, file_type;
 type persist_bms_file, file_type;
 type persist_secnvm_file, file_type;
+type persist_mmi_file, file_type;
 
 #file type for restricting proc read by audiod
-type proc_audiod, fs_type;
+type proc_audiod, fs_type, proc_type;
 
 #file type for irqbalance socket
 type msm_irqbalance_socket, file_type;
@@ -133,9 +134,9 @@ type location_app_data_file, file_type, data_file_type;
 #File types required by mdm-helper
 type sysfs_esoc, sysfs_type, fs_type;
 type sysfs_ssr,  sysfs_type, fs_type;
-type sysfs_ssr_toggle,  sysfs_type, file_type;
+type sysfs_ssr_toggle,  sysfs_type, fs_type;
 type sysfs_hsic, sysfs_type, fs_type;
-type sysfs_hsic_host_rdy, sysfs_type, file_type;
+type sysfs_hsic_host_rdy, sysfs_type, fs_type;
 
 # Files accessed by qcom-system-daemon
 type sysfs_socinfo, fs_type, sysfs_type;
@@ -145,7 +146,7 @@ type sysfs_usb_uicc, sysfs_type, fs_type;
 
 type qlogd_socket, file_type, mlstrustedobject;
 #Defines the files (configs, dumps, etc) used by display processes
-type display_misc_file, file_type, data_file_type;
+type display_vendor_data_file, file_type, data_file_type;
 
 #Define the files for the operation of QDCM
 type persist_display_file, file_type;
@@ -164,18 +165,18 @@ type vendor_tombstone_data_file, file_type, data_file_type;
 type port_bridge_data_file, file_type, data_file_type;
 
 #bluetooth firmware file types
-type bt_firmware_file, fs_type, contextmount_type;
+type bt_firmware_file, file_type, contextmount_type, vendor_file_type;
 
 #needed by vold
-type  proc_dirty_ratio, fs_type;
+type  proc_dirty_ratio, fs_type, proc_type;
 
 #File types by mmi
-type mmi_socket, file_type;
+type vendor_mmi_socket, file_type;
 
 # hbtp config file
 type hbtp_cfg_file, file_type, vendor_file_type;
 type hbtp_log_file, file_type, data_file_type;
-type hbtp_kernel_sysfs, file_type, sysfs_type;
+type hbtp_kernel_sysfs, fs_type, sysfs_type;
 
 type persist_usf_file, file_type;
 
@@ -221,6 +222,9 @@ type wifi_vendor_wpa_socket, file_type, data_file_type;
 type wifi_vendor_hostapd_socket, file_type, data_file_type;
 type hostapd_socket, file_type, data_file_type;
 
+#widevine data file
+type vendor_mediadrm_data_file, file_type, data_file_type;
+
 # wififtmd socket file
 type wififtmd_socket, file_type;
 
@@ -258,6 +262,9 @@ type qti_debugfs, fs_type, debugfs_type;
 # vendor radio files
 type vendor_radio_data_file, file_type, data_file_type;
 
+# vendor MBN files
+type vendor_mbn_data_file, file_type, data_file_type;
+
 #uio sysfs
 type sysfs_uio_file, fs_type, sysfs_type;
 
@@ -265,7 +272,7 @@ type sysfs_uio_file, fs_type, sysfs_type;
 type sysfs_irqbalance , sysfs_type, fs_type;
 
 # vpp files
-type vpp_data_file, file_type, data_file_type;
+type vendor_vpp_data_file, file_type, data_file_type;
 type persist_vpp_file, file_type;
 # vendor camera files
 type vendor_camera_data_file, file_type, data_file_type;
@@ -301,3 +308,15 @@ type data_tzstorage_file, file_type, data_file_type;
 
 #TLOC Files
 type tlocd_data_file, file_type, data_file_type;
+
+#DRM files
+type data_qsee_file, file_type, data_file_type;
+
+#secure touch
+type sysfs_sectouch, sysfs_type, fs_type;
+
+#sysfs jpeg
+type sysfs_jpeg, fs_type, sysfs_type;
+
+#SSR Log Files
+type ramdump_vendor_data_file, file_type, data_file_type, mlstrustedobject;

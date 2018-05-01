@@ -31,7 +31,9 @@ hal_server_domain(hal_bluetooth_qti, hal_bluetooth)
 type hal_bluetooth_qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_bluetooth_qti)
 
-# Logging for backward compatibility
+# bluetooth properties
+set_prop(hal_bluetooth, vendor_bluetooth_prop)
+
 r_dir_file(hal_bluetooth_qti, firmware_file)
 
 allow hal_bluetooth {
@@ -59,9 +61,14 @@ userdebug_or_eng(`
 ')
 
 userdebug_or_eng(`
+# Logging for backward compatibility
+allow hal_bluetooth_qti ramdump_vendor_data_file:file create_file_perms;
+allow hal_bluetooth_qti ramdump_vendor_data_file:dir rw_dir_perms;
+
 allow hal_bluetooth proc_sysrq:file w_file_perms;
 allow hal_bluetooth_qti qti_debugfs:file r_file_perms;
 allow hal_bluetooth_qti qti_debugfs:dir rw_dir_perms;
+allow hal_bluetooth_qti self:{ socket qipcrtr_socket } create_socket_perms_no_ioctl;
 ')
 
 allow system_app hal_bluetooth_hwservice :hwservice_manager find;

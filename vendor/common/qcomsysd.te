@@ -1,32 +1,32 @@
 #Policy file for qcom-system-daemon
 #qcomsysd = qcom-system-daemon domain
-type qcomsysd, domain;
-type qcomsysd_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(qcomsysd);
+type vendor_qcomsysd, domain;
+type vendor_qcomsysd_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_qcomsysd);
 
 #Needed for logging
-allow qcomsysd smem_log_device:chr_file rw_file_perms;
+allow vendor_qcomsysd smem_log_device:chr_file rw_file_perms;
 
 #Needed to read/write cookies to the misc partition
-allow qcomsysd block_device:dir r_dir_perms;
-allow qcomsysd {
+allow vendor_qcomsysd block_device:dir r_dir_perms;
+allow vendor_qcomsysd {
     #Needed to access the bootselect partition
     bootselect_device
 }:blk_file rw_file_perms;
 
 #Needed to get image info from socinfo
-r_dir_file(qcomsysd, sysfs_socinfo)
-allow qcomsysd sysfs_socinfo:file w_file_perms;
+r_dir_file(vendor_qcomsysd, sysfs_socinfo)
+allow vendor_qcomsysd sysfs_socinfo:file w_file_perms;
 
-allow qcomsysd self:capability { sys_boot };
-allow qcomsysd self:qipcrtr_socket create_socket_perms_no_ioctl;
-use_vendor_per_mgr(qcomsysd);
+allow vendor_qcomsysd self:capability { sys_boot };
+allow vendor_qcomsysd self:qipcrtr_socket create_socket_perms_no_ioctl;
+use_vendor_per_mgr(vendor_qcomsysd);
 #allow qcomsysd access boot mode switch
-set_prop(qcomsysd, boot_mode_prop);
+set_prop(vendor_qcomsysd, vendor_boot_mode_prop);
 
 #diag
 userdebug_or_eng(`
-    diag_use(qcomsysd)
-    set_prop(qcomsysd, powerctl_prop)
-    allow qcomsysd sysfs_data:file r_file_perms;
+    diag_use(vendor_qcomsysd)
+    set_prop(vendor_qcomsysd, powerctl_prop)
+    allow vendor_qcomsysd sysfs_data:file r_file_perms;
 ')
