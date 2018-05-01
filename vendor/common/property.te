@@ -152,3 +152,6 @@ type vendor_ssr_prop, property_type;
 
 #ss-services (PD)
 type vendor_pd_locater_dbg_prop, property_type;
+
+#qdcmss property
+type vendor_qdcmss_prop, property_type;

@@ -72,6 +72,9 @@ allow hal_graphics_composer sensors_device:chr_file r_file_perms;
 allow hal_graphics_composer_default sensors_socket:sock_file rw_file_perms;
 allow hal_graphics_composer_default sensors:unix_stream_socket connectto;
 
+# Allow qdcmss socket access
+unix_socket_connect(hal_graphics_composer_default, qdcmsocket, qdcm-ss)
+
 # TBD: remove when dependency on libpowermanager is removed
 #allow hal_graphics_composer power_service:service_manager find;
 
