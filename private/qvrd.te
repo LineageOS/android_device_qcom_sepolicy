@@ -34,6 +34,8 @@ init_daemon_domain(qvrd)
 # General
 #
 
+binder_call(qvrd, system_server);
+
 # Allow interracting with qvrd directory
 allow qvrd qvrd_data_file:dir create_dir_perms;
 allow qvrd qvrd_data_file:file create_file_perms;

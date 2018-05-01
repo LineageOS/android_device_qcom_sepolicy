@@ -43,11 +43,6 @@ allow qvrd { ion_device qdsp_device dsp_device }:chr_file r_file_perms;
 # Allow access to adsprpcd
 r_dir_file(qvrd, adsprpcd_file);
 
-# Allow access to sensor1 API
-allow qvrd persist_file:dir r_dir_perms;
-allow qvrd sensors_persist_file:dir r_dir_perms;
-allow qvrd sensors_persist_file:file r_file_perms;
-
 #
 # Display
 #
@@ -70,4 +65,17 @@ allow qvrd { gpu_device video_device camera_device sensors_device }:chr_file rw_
 # Perfd
 #
 
-hal_client_domain(qvrd, hal_perf);
+hal_client_domain(qvrd, hal_perf)
+
+allow qvrd fwk_sensor_hwservice:hwservice_manager find;
+hal_client_domain(qvrd, hal_sensors)
+
+# QVRD
+userdebug_or_eng(`
+allow qvrd debugfs:dir r_dir_perms;
+allow qvrd qti_debugfs:dir r_dir_perms;
+allow qvrd qti_debugfs:file rw_file_perms;
+')
+
+# Allow access to kgsl sysfs nodes for performance optimization
+allow qvrd sysfs_kgsl:file rw_file_perms;
