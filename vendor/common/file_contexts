@@ -654,7 +654,7 @@
 /system/vendor/firmware(/.*)?                                       u:object_r:firmware_file:s0
 /firmware/image(/.*)?                                               u:object_r:firmware_file:s0
 /vendor/bt_firmware(/.*)?                                           u:object_r:bt_firmware_file:s0
-/vendor/firmware__mnt(/.*)?                                         u:object_r:firmware_file:s0
+/vendor/firmware_mnt(/.*)?                                          u:object_r:firmware_file:s0
 
 /bt_firmware/bt_firmware(/.*)?                                      u:object_r:bt_firmware_file:s0
 
