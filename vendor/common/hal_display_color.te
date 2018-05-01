@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -44,7 +44,7 @@ vndbinder_use(hal_display_color);
 binder_call(hal_display_color, hal_graphics_composer)
 
 # Rule for pps socket usage
-unix_socket_connect(hal_display_color, pps, mm-pp-daemon)
+unix_socket_connect(hal_display_color, pps, hal_graphics_composer_default)
 
 #Add rules for postproc hal
 add_hwservice(hal_display_color_server, hal_display_postproc_hwservice)
