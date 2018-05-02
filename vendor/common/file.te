@@ -330,3 +330,7 @@ type ramdump_vendor_data_file, file_type, data_file_type, mlstrustedobject;
 
 # npu file
 type sysfs_npu, fs_type, sysfs_type;
+
+# subsystem_ramdump files
+type vendor_ramdump_data_file, file_type, data_file_type;
+type vendor_mdmhelperdata_data_file, file_type, data_file_type;

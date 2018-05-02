@@ -5,4 +5,9 @@ init_daemon_domain(vendor_subsystem_ramdump);
 userdebug_or_eng(`
   allow vendor_subsystem_ramdump ramdump_device:chr_file r_file_perms;
   allow vendor_subsystem_ramdump device:dir r_dir_perms;
+
+  allow vendor_subsystem_ramdump vendor_ramdump_data_file:file create_file_perms;
+  allow vendor_subsystem_ramdump vendor_ramdump_data_file:dir rw_dir_perms;
+  allow vendor_subsystem_ramdump vendor_mdmhelperdata_data_file:dir r_dir_perms;
+  allow vendor_subsystem_ramdump vendor_mdmhelperdata_data_file:file r_file_perms;
 ')
