@@ -32,6 +32,9 @@
 
 userdebug_or_eng(`
     diag_use(hal_graphics_composer)
+    # Allow read to '/sys/kernel/debug/*'
+    allow hal_graphics_composer qti_debugfs:dir r_dir_perms;
+    allow hal_graphics_composer qti_debugfs:file r_file_perms;
 ')
 hal_client_domain(hal_graphics_composer_default, hal_graphics_allocator);
 allow hal_graphics_composer sdm_idle_time_prop:file r_file_perms;
@@ -57,6 +60,7 @@ allow hal_graphics_composer video_device:dir r_dir_perms;
 allow hal_graphics_composer persist_display_file:dir rw_dir_perms;
 allow hal_graphics_composer persist_display_file:file create_file_perms;
 
+# Allow reading/writing to '/data/vendor/display/*'
 allow hal_graphics_composer_default display_vendor_data_file:dir create_dir_perms;
 allow hal_graphics_composer_default display_vendor_data_file:file create_file_perms;
 
