@@ -10,6 +10,9 @@ type qmuxd_socket, file_type;
 #Define the netmgrd socket type
 type netmgrd_socket, file_type;
 
+#QTI file types
+type vendor_qti_data_file, file_type, data_file_type;
+
 #Define the pps socket type
 type pps_socket, file_type;
 
