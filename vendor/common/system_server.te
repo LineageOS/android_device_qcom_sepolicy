@@ -11,7 +11,7 @@ allow system_server hal_audio_default:file w_file_perms;
 
 allow system_server sysfs_sensors:dir search;
 allow system_server sysfs_sensors:file rw_file_perms;
-
+binder_call(system_server, mm-pp-daemon)
 # allow access to low persistence mode sysfs node
 allow system_server sysfs_graphics:file rw_file_perms;
 
