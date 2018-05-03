@@ -23,6 +23,5 @@ recovery_only(`
     allow recovery configfs:file rw_file_perms;
     allow recovery configfs:dir rw_dir_perms;
     set_prop(recovery, ffs_prop);
-    get_prop(recovery, sys_usb_controller_prop);
     get_prop(recovery, vendor_boot_mode_prop)
 ')
