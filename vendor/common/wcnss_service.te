@@ -50,6 +50,7 @@ allow wcnss_service sdcardfs:file create_file_perms;
 allow wcnss_service persist_file:file { rw_file_perms setattr };
 
 # This is needed for ptt_socket app to write logs file collected to sdcard
+r_dir_file(wcnss_service, proc_wifi_dbg)
 r_dir_file(wcnss_service, storage_file)
 r_dir_file(wcnss_service, mnt_user_file)
 diag_use(wcnss_service)
