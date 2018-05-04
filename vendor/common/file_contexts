@@ -2,6 +2,7 @@
 # Dev nodes
 #
 /dev/adsprpc-smd                                u:object_r:qdsp_device:s0
+/dev/adsprpc-smd-secure                         u:object_r:xdsp_device:s0
 /dev/cpu_dma_latency                            u:object_r:device_latency:s0
 /dev/diag                                       u:object_r:diag_device:s0
 /dev/hsicctl.*                                  u:object_r:hsic_device:s0

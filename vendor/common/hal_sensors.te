@@ -43,6 +43,7 @@ allow hal_sensors hal_graphics_allocator:fd use;
 
 # Allow access to FastRPC
 allow hal_sensors qdsp_device:chr_file r_file_perms;
+allow hal_sensors xdsp_device:chr_file r_file_perms;
 
 allow hal_sensors sysfs_sensors:dir r_dir_perms;
 allow hal_sensors sysfs_sensors:file rw_file_perms;
