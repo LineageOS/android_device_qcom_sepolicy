@@ -97,3 +97,5 @@ attribute hal_tui_comm_server;
 attribute hal_sensorscalibrate_qti;
 attribute hal_sensorscalibrate_qti_client;
 attribute hal_sensorscalibrate_qti_server;
+# All types in /mnt/vendor/persist
+attribute vendor_persist_type;

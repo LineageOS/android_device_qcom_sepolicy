@@ -29,7 +29,7 @@ allow sensors socket_device:dir rw_dir_perms;
 allow sensors sensors_device:chr_file rw_file_perms;
 
 # Access to /persist/sensors
-allow sensors persist_file:dir r_dir_perms;
+allow sensors mnt_vendor_file:dir r_dir_perms;
 allow sensors sensors_persist_file:dir create_dir_perms;
 allow sensors sensors_persist_file:file create_file_perms;
 

@@ -27,6 +27,4 @@
 
 #for oemfs
 r_dir_file(idmap, oemfs);
-#for regionalization
-r_dir_file(idmap, regionalization_file);
 r_dir_file(idmap, vendor_carrier_file);

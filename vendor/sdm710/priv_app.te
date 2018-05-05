@@ -27,6 +27,4 @@
 
 #for oemfs
 allow priv_app oemfs:lnk_file { read getattr };
-#for regionalization
-r_dir_file(priv_app, regionalization_file);
 r_dir_file(priv_app, vendor_carrier_file);

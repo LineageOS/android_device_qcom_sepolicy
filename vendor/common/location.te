@@ -54,7 +54,7 @@ allow location su:unix_dgram_socket sendto;
 
 dontaudit location domain:dir r_dir_perms;
 r_dir_file(location, netmgrd)
-allow location persist_file:dir r_dir_perms;
+allow location mnt_vendor_file:dir r_dir_perms;
 
 allow location hal_gnss_qti:unix_dgram_socket sendto;
 

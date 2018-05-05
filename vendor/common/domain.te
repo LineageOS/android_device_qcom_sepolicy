@@ -23,3 +23,8 @@ allow domain hal_graphics_composer:fd use;
 allow domain qti_debugfs:dir search;
 ')
 dontaudit domain persist_dpm_prop:file r_file_perms;
+
+neverallow {
+    coredomain
+    -init
+    } vendor_persist_type: { dir file } *;

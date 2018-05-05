@@ -18,8 +18,8 @@ allow qti_init_shell vendor_toolbox_exec:file  rx_file_perms;
 # this is needed for dynamic_fps and bw_mode_bitmap
 allow qti_init_shell sysfs_graphics:file {rw_file_perms setattr};
 
-allow qti_init_shell persist_file:dir w_dir_perms;
-allow qti_init_shell persist_file:file create_file_perms;
+allow qti_init_shell mnt_vendor_file:dir w_dir_perms;
+allow qti_init_shell mnt_vendor_file:file create_file_perms;
 allow qti_init_shell smd_device:chr_file rw_file_perms;
 
 # Run helpers from / or /system without changing domain.
@@ -118,7 +118,7 @@ allow qti_init_shell sysfs_devices_system_cpu: { dir file lnk_file } relabelto;
 allow qti_init_shell sensors_device:chr_file r_file_perms;
 
 # To start sensors for DSPS enabled platforms
-r_dir_file(qti_init_shell, persist_file)
+r_dir_file(qti_init_shell, mnt_vendor_file)
 r_dir_file(qti_init_shell, sensors_persist_file)
 r_dir_file(qti_init_shell, persist_bluetooth_file)
 allow qti_init_shell sensors_persist_file:file setattr;
