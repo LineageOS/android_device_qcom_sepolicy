@@ -44,6 +44,7 @@ type hal_wigig_hwservice, hwservice_manager_type;
 type hal_qteeconnector_hwservice, hwservice_manager_type;
 type hal_esepowermanager_hwservice, hwservice_manager_type;
 type hal_voiceprint_hwservice, hwservice_manager_type;
+type vendor_hal_factory_qti_hwservice, hwservice_manager_type;
 type hal_wigig_npt_hwservice, hwservice_manager_type;
 type hal_tui_comm_hwservice, hwservice_manager_type;
 type hal_qdutils_disp_hwservice, hwservice_manager_type;

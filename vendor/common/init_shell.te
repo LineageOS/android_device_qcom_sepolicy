@@ -52,19 +52,17 @@ allow qti_init_shell self:capability {
 # uicc_prop - for access to UICC property
 # ctl_qmuxd_prop/ctl_netmgrd_prop - Needed in order to set properties on qmuxd and netmgrd processes
 # rmnet_mux_prop - Needed to set persist.rmnet.mux property
-# sys_usb_controller_prop - Needed to set sys.usb.controller property
-# sys_usb_configfs_prop - Needed to set sys.usb.configfs property
+# TODO :Need to remove the system_prop which is used for USB once this
 set_prop(qti_init_shell, system_prop)
 set_prop(qti_init_shell, freq_prop)
 set_prop(qti_init_shell, vendor_mpctl_prop)
 set_prop(qti_init_shell, vendor_bluetooth_prop)
-set_prop(qti_init_shell, config_prop)
 set_prop(qti_init_shell, sensors_prop)
 set_prop(qti_init_shell, msm_irqbalance_prop)
 set_prop(qti_init_shell, msm_irqbl_sdm630_prop)
 set_prop(qti_init_shell, vendor_ipacm_prop)
 set_prop(qti_init_shell, vendor_ipacm-diag_prop)
-set_prop(qti_init_shell, vendor_qti_prop)
+set_prop(qti_init_shell, vendor_dataqti_prop)
 set_prop(qti_init_shell, ctl_rildaemon_prop)
 set_prop(qti_init_shell, ctl_qcrild_prop)
 set_prop(qti_init_shell, ctl_vendor_rild_prop)
@@ -80,7 +78,7 @@ set_prop(qti_init_shell, mdm_helper_prop)
 set_prop(qti_init_shell, fm_prop)
 set_prop(qti_init_shell, usf_prop)
 set_prop(qti_init_shell, qemu_hw_mainkeys_prop)
-set_prop(qti_init_shell, alarm_boot_prop)
+set_prop(qti_init_shell, vendor_alarm_boot_prop)
 set_prop(qti_init_shell, boot_animation_prop)
 set_prop(qti_init_shell, debug_gralloc_prop)
 userdebug_or_eng(`
@@ -179,8 +177,8 @@ allow qti_init_shell persist_alarm_file:file r_file_perms;
 allow qti_init_shell sysfs_zram:dir r_dir_perms;
 allow qti_init_shell sysfs_zram:file w_file_perms;
 
-# To get GPU frequencies
-allow qti_init_shell sysfs_kgsl:file r_file_perms;
+# To get GPU frequencies  and set attributes
+allow qti_init_shell sysfs_kgsl:file { r_file_perms setattr };
 
 allow qti_init_shell proc:file r_file_perms;
 allow qti_init_shell rootfs:file r_file_perms;
@@ -197,8 +195,8 @@ allow qti_init_shell vendor_mbn_data_file:dir create_dir_perms;
 allow qti_init_shell vendor_mbn_data_file:file create_file_perms;
 
 set_prop(qti_init_shell, vendor_rild_libpath_prop);
-set_prop(qti_init_shell, system_radio_prop)
 set_prop(qti_init_shell, ctl_vendor_hbtp_prop)
+set_prop(qti_init_shell, vendor_radio_prop)
 
 allow qti_init_shell fm_qsoc_patches_exec:file rx_file_perms;
 
@@ -230,6 +228,9 @@ allow qti_init_shell  sysfs_devices_system_cpu:file rw_file_perms;
 
 # For IO Cgroups
 allow qti_init_shell cgroup:dir { mounton create_dir_perms };
-allow qti_init_shell cgroup:file { create_file_perms };
+allow qti_init_shell cgroup:file { rw_file_perms };
 
 set_prop(qti_init_shell, vendor_mmi_prop)
+
+# allow rw access to sysfs_npu
+allow qti_init_shell sysfs_npu:file rw_file_perms;

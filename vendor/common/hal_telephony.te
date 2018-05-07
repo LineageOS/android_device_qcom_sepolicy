@@ -25,28 +25,4 @@
 #OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 #IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# IMS needs permission to use avtimer
-allow radio avtimer_device:chr_file r_file_perms;
-
-allow radio { cameraserver_service mediaextractor_service mediacodec_service }:service_manager find;
-#diag
-userdebug_or_eng(`
-    diag_use(radio)
-')
-
-set_prop(radio, vendor_radio_prop)
-
-binder_call(radio, hal_imsrtp)
-allow radio hal_imsrtp_hwservice:hwservice_manager find;
-# qcril needs permission to load mbn file from regional carrier
-allow radio regionalization_file:file r_file_perms;
-allow radio regionalization_file:dir r_dir_perms;
-# permissions for IMS-ConnectionmanagerTestApp
-userdebug_or_eng(`
-  allow radio hal_imsrcsd_hwservice:hwservice_manager find;
-  binder_call(radio, hal_rcsservice);
-
-  allow radio vendor_mbn_data_file:dir r_dir_perms;
-  allow radio vendor_mbn_data_file:file r_file_perms;
-')
-hal_client_domain(radio, hal_perf)
+set_prop(hal_telephony_server, vendor_radio_prop);

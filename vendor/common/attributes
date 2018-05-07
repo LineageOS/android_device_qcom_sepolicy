@@ -54,10 +54,6 @@ attribute hal_alarm_qti;
 attribute hal_alarm_qti_client;
 attribute hal_alarm_qti_server;
 
-attribute hal_vehicle;
-attribute hal_vehicle_client;
-attribute hal_vehicle_server;
-
 attribute hal_vpp;
 attribute hal_vpp_client;
 attribute hal_vpp_server;
@@ -81,6 +77,10 @@ attribute hal_iop_server;
 attribute hal_voiceprint;
 attribute hal_voiceprint_server;
 attribute hal_voiceprint_client;
+
+attribute vendor_hal_factory_qti;
+attribute vendor_hal_factory_qti_client;
+attribute vendor_hal_factory_qti_server;
 
 attribute hal_wigig_npt;
 attribute hal_wigig_npt_client;

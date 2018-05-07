@@ -1,7 +1,5 @@
 #Add new domain for Location services
-user=gps domain=location_app type=location_app_data_file
-user=system seinfo=platform name=com.qualcomm.services.location domain=location_app type=location_app_data_file
-user=system seinfo=platform name=com.qualcomm.location.XT domain=location_app type=location_app_data_file
+user=system seinfo=platform name=com.qualcomm.location.XT isPrivApp=true domain=location_app type=system_app_data_file
 
 #Add new domain for QSEE services
 user=system seinfo=platform name=com.qualcomm.qti.auth.fidocryptoservice domain=qsee_svc_app type=qsee_svc_app_data_file
@@ -27,3 +25,6 @@ user=system seinfo=platform name=.imshelperservice domain=imshelper_app type=ims
 
 #Add new domain for perfdump app
 user=system seinfo=platform name=com.qualcomm.qti.perfdump domain=perfdump_app type=system_app_data_file
+
+#Add new domain for power off alarm app
+user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=system_app_data_file

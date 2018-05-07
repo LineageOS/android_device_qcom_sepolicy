@@ -42,3 +42,4 @@ add_service(system_server, regionalization_service);
 
 #Allow system_server to add and find perf service
 add_service(system_server, vendor_perf_service);
+binder_call(system_server,qvrd);

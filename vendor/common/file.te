@@ -1,5 +1,5 @@
 # Default type for anything under /firmware.
-type firmware_file, fs_type, contextmount_type;
+type firmware_file, file_type, contextmount_type, vendor_file_type;
 
 # All files under /vendor/firmware
 type vendor_firmware_file, vendor_file_type, file_type;
@@ -9,6 +9,9 @@ type qmuxd_socket, file_type;
 
 #Define the netmgrd socket type
 type netmgrd_socket, file_type;
+
+#QTI file types
+type vendor_qti_data_file, file_type, data_file_type;
 
 #Define the pps socket type
 type pps_socket, file_type;
@@ -41,7 +44,7 @@ type data_qtee_file, file_type, data_file_type;
 type persist_misc_file, file_type;
 type persist_bms_file, file_type;
 type persist_secnvm_file, file_type;
-type persist_mmi_file, file_type;
+type vendor_persist_mmi_file, file_type;
 
 #file type for restricting proc read by audiod
 type proc_audiod, fs_type, proc_type;
@@ -146,7 +149,7 @@ type sysfs_usb_uicc, sysfs_type, fs_type;
 
 type qlogd_socket, file_type, mlstrustedobject;
 #Defines the files (configs, dumps, etc) used by display processes
-type display_misc_file, file_type, data_file_type;
+type display_vendor_data_file, file_type, data_file_type;
 
 #Define the files for the operation of QDCM
 type persist_display_file, file_type;
@@ -171,7 +174,7 @@ type bt_firmware_file, file_type, contextmount_type, vendor_file_type;
 type  proc_dirty_ratio, fs_type, proc_type;
 
 #File types by mmi
-type mmi_socket, file_type;
+type vendor_mmi_socket, file_type;
 
 # hbtp config file
 type hbtp_cfg_file, file_type, vendor_file_type;
@@ -201,7 +204,7 @@ type qti_logkit_priv_socket, file_type, data_file_type;
 type qti_logkit_pub_socket, file_type, mlstrustedobject, data_file_type;
 
 # used for /dsp files
-type adsprpcd_file, file_type, mlstrustedobject;
+type adsprpcd_file, file_type, mlstrustedobject, vendor_file_type;
 
 #mdtp_svc_app file types
 type mdtp_svc_app_data_file, file_type, data_file_type;
@@ -237,6 +240,7 @@ type nfc_vendor_data_file, file_type, data_file_type;
 
 # kgsl file type for sysfs access
 type sysfs_kgsl, sysfs_type, fs_type;
+type sysfs_kgsl_proc, sysfs_type, fs_type;
 
 # secure touch files
 type sysfs_securetouch, fs_type, sysfs_type;
@@ -315,8 +319,18 @@ type data_qsee_file, file_type, data_file_type;
 #secure touch
 type sysfs_sectouch, sysfs_type, fs_type;
 
+#TUI Files
+type vendor_tui_data_file, file_type, data_file_type;
+
 #sysfs jpeg
 type sysfs_jpeg, fs_type, sysfs_type;
 
 #SSR Log Files
 type ramdump_vendor_data_file, file_type, data_file_type, mlstrustedobject;
+
+# npu file
+type sysfs_npu, fs_type, sysfs_type;
+
+# subsystem_ramdump files
+type vendor_ramdump_data_file, file_type, data_file_type;
+type vendor_mdmhelperdata_data_file, file_type, data_file_type;

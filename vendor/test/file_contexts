@@ -65,7 +65,7 @@
 /(vendor|system/vendor)/bin/sns.*               u:object_r:sensors_test_exec:s0
 #for testscripts support
 /(vendor|system/vendor)/bin/init\.qcom\.vendor\.testscripts\.sh u:object_r:vendor-qti-testscripts_exec:s0
-
+/sys/kernel/debug/dsi_dual_samsung_cmd(/.*)?                    u:object_r:qti_debugfs:s0
 #TODO: coredump_file need have a attribute of data_file_type and
 # is going to show compile time issue need to fix this
 #Context for GPU applications
