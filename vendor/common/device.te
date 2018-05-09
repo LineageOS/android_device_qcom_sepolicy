@@ -100,6 +100,9 @@ type sec_nvm_device, dev_type;
 # Define cryptoapp device
 type cryptoapp_device, dev_type;
 
+# Define spdaemon_ssr device
+type spdaemon_ssr_device, dev_type;
+
 # Define qsee_ipc_irq_spss device
 type qsee_ipc_irq_spss_device, dev_type;
 
