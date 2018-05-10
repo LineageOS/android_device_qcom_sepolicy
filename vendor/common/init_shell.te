@@ -186,7 +186,7 @@ allow qti_init_shell sysfs_zram:file w_file_perms;
 allow qti_init_shell sysfs_kgsl:file { r_file_perms setattr };
 
 allow qti_init_shell proc:file r_file_perms;
-allow qti_init_shell rootfs:file r_file_perms;
+r_dir_file(qti_init_shell, rootfs)
 
 r_dir_file(qti_init_shell, sysfs_devfreq)
 allow qti_init_shell sysfs_devfreq:file w_file_perms;
