@@ -50,7 +50,7 @@ allow qti_init_shell self:capability {
 # vendor_mpctl_prop - for setting ctl.mpdecision property from postboot script
 # vendor_bluetooth_prop - for setting bt related properties from postboot script
 # uicc_prop - for access to UICC property
-# ctl_qmuxd_prop/ctl_netmgrd_prop - Needed in order to set properties on qmuxd and netmgrd processes
+# ctl_vendor_qmuxd_prop/ctl_vendor_netmgrd_prop - Needed in order to set properties on qmuxd and netmgrd processes
 # rmnet_mux_prop - Needed to set persist.rmnet.mux property
 set_prop(qti_init_shell, freq_prop)
 set_prop(qti_init_shell, vendor_mpctl_prop)
@@ -65,9 +65,9 @@ set_prop(qti_init_shell, ctl_rildaemon_prop)
 set_prop(qti_init_shell, ctl_qcrild_prop)
 set_prop(qti_init_shell, ctl_vendor_rild_prop)
 set_prop(qti_init_shell, uicc_prop)
-set_prop(qti_init_shell, ctl_qmuxd_prop)
-set_prop(qti_init_shell, ctl_netmgrd_prop)
-set_prop(qti_init_shell, ctl_port-bridge_prop)
+set_prop(qti_init_shell, ctl_vendor_qmuxd_prop)
+set_prop(qti_init_shell, ctl_vendor_netmgrd_prop)
+set_prop(qti_init_shell, ctl_vendor_port-bridge_prop)
 set_prop(qti_init_shell, sdm_idle_time_prop)
 set_prop(qti_init_shell, sf_lcd_density_prop)
 set_prop(qti_init_shell, scr_enabled_prop)
