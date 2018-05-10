@@ -219,6 +219,7 @@ allow qti_init_shell sysfs_kgsl:file r_file_perms;
 
 allow qti_init_shell proc:file r_file_perms;
 allow qti_init_shell rootfs:file r_file_perms;
+allow qti_init_shell rootfs:dir r_dir_perms;
 allow qti_init_shell sysfs:file r_file_perms;
 
 allow qti_init_shell rmnet_mux_prop:file r_file_perms;
