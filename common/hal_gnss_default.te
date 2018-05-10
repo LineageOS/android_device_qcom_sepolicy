@@ -7,3 +7,5 @@
 # attempt to use a UDP socket, we still see a selinux denial,
 # but it is safe to ignore.
 dontaudit hal_gnss_default self:udp_socket create;
+
+allow hal_gnss_default location_data_file:dir create;
