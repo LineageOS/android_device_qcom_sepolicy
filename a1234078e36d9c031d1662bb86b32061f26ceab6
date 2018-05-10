@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3704ccbf_8110982b",
+        "filename": "common/init_shell.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2018-05-10T03:41:57Z",
+      "side": 1,
+      "message": "This should just be r_dir_file(qti_init_shell, rootfs)\n\nr_dir_file is defined as file r_file_perms + dir r_dir_perms.",
+      "range": {
+        "startLine": 221,
+        "startChar": 0,
+        "endLine": 222,
+        "endChar": 44
+      },
+      "revId": "a1234078e36d9c031d1662bb86b32061f26ceab6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
