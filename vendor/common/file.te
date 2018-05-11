@@ -129,3 +129,6 @@ type data_qsee_file, file_type, data_file_type;
 
 #TUI Files
 type vendor_tui_data_file, file_type, data_file_type;
+
+#NNHAL files
+type hal_neuralnetworks_data_file, file_type, data_file_type;

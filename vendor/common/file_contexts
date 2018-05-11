@@ -336,6 +336,7 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+/host0/scsi_host/host0(/.*)?  u:object_r:sysfs_scsi_host:s0
 /data/vendor/media(/.*)?                                            u:object_r:vendor_media_data_file:s0
 /data/vendor/mediadrm(/.*)?                                         u:object_r:vendor_mediadrm_data_file:s0
+/data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
 
 /sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name u:object_r:sysfs_ssr:s0
 
