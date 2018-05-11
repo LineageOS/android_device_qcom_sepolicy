@@ -51,6 +51,7 @@
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /system/bin/mmi                                 u:object_r:vendor_mmi_sys_exec:s0
 /system/bin/mmi_diag                            u:object_r:vendor_mmi_sys_exec:s0
+/system/bin/perfservice                         u:object_r:perfservice_exec:s0
 
 ####### data files ################
 /data/nfc(/.*)?                                 u:object_r:nfc_data_file:s0
