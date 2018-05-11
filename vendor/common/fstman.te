@@ -47,10 +47,14 @@ allow fstman self:netlink_route_socket nlmsg_write;
 allowxperm fstman self:udp_socket ioctl { SIOCGIFFLAGS SIOCSIFFLAGS SIOCSIFTXQLEN SIOCBONDENSLAVE SIOCBONDRELEASE SIOCETHTOOL};
 
 # need access to bond0 sysfs in order to manage attached interfaces
+allow fstman sysfs_net:dir r_dir_perms;
 allow fstman sysfs_bond0:file rw_file_perms;
 
 # need access to wigig sysfs in order to control fst_link_loss
 allow fstman sysfs_wigig:file rw_file_perms;
+
+#allow fstman to read FST properties
+get_prop(fstman, fst_prop);
 
 # create/read fstman configuration file (/data/vendor/wifi/fstman.ini)
 r_dir_file(fstman, wifi_vendor_data_file)
@@ -63,7 +67,6 @@ allow fstman { hal_wifi_supplicant hal_wifi_hostapd_default }:unix_dgram_socket 
 # supplicant interface sockets
 allow fstman wifi_vendor_wpa_socket:dir rw_dir_perms;
 allow fstman wifi_vendor_wpa_socket:sock_file create_file_perms;
-# supplicant global socket
 # hostapd global socket
 allow fstman hostapd_data_file:dir rw_dir_perms;
 allow fstman hostapd_data_file:sock_file create_file_perms;

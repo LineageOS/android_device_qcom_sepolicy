@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Allow hostapd to access it's data folder
-allow hal_wifi_hostapd_default wifi_vendor_data_file:dir search;
+r_dir_file(hal_wifi_hostapd_default, wifi_vendor_data_file)
 allow hal_wifi_hostapd_default hostapd_data_file:dir rw_dir_perms;
 allow hal_wifi_hostapd_default hostapd_data_file:file create_file_perms;
 # Allow hostapd to connect to fstman using control socket
