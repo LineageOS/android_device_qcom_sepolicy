@@ -154,3 +154,6 @@ type modem_block_device, dev_type;
 type bg_daemon_device, dev_type;
 
 type persist_block_device, dev_type;
+
+#Define npu device
+type npu_device, dev_type;
