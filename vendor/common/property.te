@@ -155,3 +155,6 @@ type vendor_pd_locater_dbg_prop, property_type;
 
 #qdcmss property
 type vendor_qdcmss_prop, property_type;
+
+# Wifi Softap
+type vendor_softap_prop, property_type;
