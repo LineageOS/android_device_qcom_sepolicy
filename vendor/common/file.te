@@ -88,6 +88,9 @@ type sysfs_vadc_dev, sysfs_type, fs_type;
 # sysfs spmi device for hvdcp/quickcharge
 type sysfs_spmi_dev, sysfs_type, fs_type;
 
+# sysfs qdss device for qcomsysd
+type sysfs_qdss_dev, sysfs_type, fs_type;
+
 # sysfs poweron_alarm is used in init.target.rc
 type sysfs_poweron_alarm, sysfs_type, fs_type;
 

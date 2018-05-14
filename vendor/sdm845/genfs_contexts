@@ -30,3 +30,9 @@
 genfscon sysfs /devices/platform/soc/a98000.i2c/i2c-2/2-0020 u:object_r:sysfs_sectouch:s0
 
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm8998@0:qcom,pm8998_rtc/rtc u:object_r:sysfs_rtc:s0
+
+#qdss sysfs-node
+genfscon sysfs /devices/platform/soc/6047000.tmc/coresight-tmc-etf u:object_r:sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/6048000.tmc/coresight-tmc-etr u:object_r:sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/6002000.stm/coresight-stm u:object_r:sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/14066f0.hwevent/coresight-hwevent u:object_r:sysfs_qdss_dev:s0

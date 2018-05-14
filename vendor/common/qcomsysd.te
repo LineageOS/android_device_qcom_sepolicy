@@ -28,5 +28,7 @@ set_prop(vendor_qcomsysd, vendor_boot_mode_prop);
 userdebug_or_eng(`
     diag_use(vendor_qcomsysd)
     set_prop(vendor_qcomsysd, powerctl_prop)
+    allow vendor_qcomsysd sysfs_qdss_dev:dir r_dir_perms;
+    allow vendor_qcomsysd sysfs_qdss_dev:file rw_file_perms;
     allow vendor_qcomsysd sysfs_data:file r_file_perms;
 ')
