@@ -23,6 +23,10 @@ userdebug_or_eng(`
  allow bluetooth qti_debugfs:file r_file_perms;
 ')
 
+# bluetooth properties
+# TODO to remove this completely
+set_prop(bluetooth, vendor_bluetooth_prop)
+
 allow bluetooth {
     uhid_device
     #input_device

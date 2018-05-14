@@ -23,12 +23,11 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 persist.vendor.service.bdroid.      u:object_r:vendor_bluetooth_prop:s0
-persist.vendor.bluetooth.  u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bt.soc.scram_freqs   u:object_r:vendor_bluetooth_prop:s0
 vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
-vendor.bluetooth.          u:object_r:vendor_bluetooth_prop:s0
-vendor.bt.                 u:object_r:vendor_bluetooth_prop:s0
 #vendor.qcom.bluetooth.     u:object_r:vendor_bluetooth_prop:s0
-persist.vendor.bt.         u:object_r:vendor_bluetooth_prop:s0
+#ro.vendor.bt.              u:object_r:vendor_bluetooth_prop:s0
+ro.vendor.bluetooth.       u:object_r:vendor_bluetooth_prop:s0
 sys.usb_uicc.              u:object_r:uicc_prop:s0
 dolby.audio.               u:object_r:audio_prop:s0
 vendor.ims.                u:object_r:qcom_ims_prop:s0
@@ -100,7 +99,6 @@ vendor.gralloc.             u:object_r:debug_gralloc_prop:s0
 dolby.                     u:object_r:dolby_prop:s0
 # DOLBY_END
 wifi.ftmd.                 u:object_r:wififtmd_prop:s0
-ro.vendor.bluetooth.       u:object_r:vendor_bluetooth_prop:s0
 # WIGIG
 persist.vendor.wigig.       u:object_r:wigig_prop:s0
 vendor.wigig.               u:object_r:wigig_prop:s0
