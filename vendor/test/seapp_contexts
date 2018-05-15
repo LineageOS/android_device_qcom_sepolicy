@@ -27,6 +27,8 @@
 
 user=_app seinfo=platform name=com.qualcomm.location.qvtester levelfrom=all domain=location_app type=app_data_file
 user=_app seinfo=platform name=com.qualcomm.qct.dlt levelfrom=all domain=location_app type=app_data_file
+user=_app seinfo=platform name=com.qualcomm.qti.pdrtesttool levelfrom=all domain=location_app type=app_data_file
+user=_app seinfo=platform name=com.qualcomm.qti.magcaltool levelfrom=all domain=location_app type=app_data_file
 
 #Add new domain for QSEE sample services
 user=system seinfo=platform name=com.qualcomm.qti.auth.securesampleauthservice domain=qsee_svc_app type=qsee_svc_app_data_file
