@@ -31,7 +31,7 @@
 /sys/devices(/platform)?/soc\.0/[a-z0-9]+\.qcom,mdss_mdp/caps                 u:object_r:sysfs_graphics:s0
 
 # Subsys restart
-/sys/devices(/platform)?/soc\.0/[a-z0-9\.:]+,[a-z0-9\-]+/subsys[0-9]+/name    u:object_r:sysfs_ssr:s0
+/sys/devices(/platform)?/soc\.0/[a-z0-9\.:]+,[a-z0-9\-]+(\.[0-9]+)?/subsys[0-9]+/name  u:object_r:sysfs_ssr:s0
 /sys/devices/[0-9a-f]+\.qcom,lpass/subsys[0-9]+/name                          u:object_r:sysfs_ssr:s0
 /sys/devices/[0-9a-f]+\.qcom,mss/subsys[0-9]+/name                            u:object_r:sysfs_ssr:s0
 /sys/devices/[0-9a-f]+\.qcom,pronto/subsys[0-9]+/name                         u:object_r:sysfs_ssr:s0
