@@ -217,6 +217,7 @@
 /(vendor|system/vendor)/bin/cnss-daemon         u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/hostapd_cli         u:object_r:hostapd_exec:s0
 /(vendor|system/vendor)/bin/adsprpcd            u:object_r:adsprpcd_exec:s0
+/(vendor|system/vendor)/bin/cdsprpcd            u:object_r:cdsprpcd_exec:s0
 /(vendor|system/vendor)/bin/wpa_cli             u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper          u:object_r:mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper_proxy    u:object_r:mdm_helper_exec:s0
@@ -546,7 +547,30 @@
 ###################################
 # persist files
 #
-/persist(/.*)?                                                      u:object_r:persist_file:s0
+/persist(/.*)?                                                                 u:object_r:mnt_vendor_file:s0
+/mnt/vendor/persist/bluetooth(/.*)?                                            u:object_r:persist_bluetooth_file:s0
+/mnt/vendor/persist/drm(/.*)?                                                  u:object_r:persist_drm_file:s0
+/mnt/vendor/persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0
+/mnt/vendor/persist/alarm(/.*)?                                                u:object_r:persist_alarm_file:s0
+/mnt/vendor/persist/time(/.*)?                                                 u:object_r:persist_time_file:s0
+/mnt/vendor/persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
+/mnt/vendor/persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
+/mnt/vendor/persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
+/mnt/vendor/persist/qti_fp(/.*)?                                               u:object_r:persist_qti_fp_file:s0
+/mnt/vendor/persist/usf(/.*)?                                                  u:object_r:persist_usf_file:s0
+/mnt/vendor/persist/hlos_rfs(/.*)?                                             u:object_r:persist_rfs_shared_hlos_file:s0
+/mnt/vendor/persist/display(/.*)?                                              u:object_r:persist_display_file:s0
+/mnt/vendor/persist/rfs.*                                                      u:object_r:persist_rfs_file:s0
+/mnt/vendor/persist/speccfg(/.*)?                                              u:object_r:regionalization_file:s0
+/mnt/vendor/persist/misc(/.*)?                                                 u:object_r:persist_misc_file:s0
+/mnt/vendor/persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
+/mnt/vendor/persist/vpp(/.*)?                                                  u:object_r:persist_vpp_file:s0
+/mnt/vendor/persist/secnvm(/.*)?                                               u:object_r:persist_secnvm_file:s0
+/mnt/vendor/persist/FTM_AP(/.*)?                                               u:object_r:vendor_persist_mmi_file:s0
+###################################
+# persist changes for backword comptaibily
+# this changes would be removed once tech team make the changes
+#
 /persist/bluetooth(/.*)?                                            u:object_r:persist_bluetooth_file:s0
 /persist/drm(/.*)?                                                  u:object_r:persist_drm_file:s0
 /persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0

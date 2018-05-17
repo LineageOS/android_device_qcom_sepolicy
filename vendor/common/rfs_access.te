@@ -6,8 +6,8 @@ init_daemon_domain(rfs_access)
 #The files created by rfs_access process in the /data folder will have type rfs_file
 type_transition rfs_access vendor_data_file:dir rfs_shared_hlos_file "hlos_rfs";
 
-type_transition rfs_access persist_file:{ dir file } persist_rfs_file;
-type_transition rfs_access persist_file:dir persist_rfs_shared_hlos_file "hlos_rfs";
+type_transition rfs_access mnt_vendor_file:{ dir file } persist_rfs_file;
+type_transition rfs_access mnt_vendor_file:dir persist_rfs_shared_hlos_file "hlos_rfs";
 
 allow rfs_access {
     #To read the uio char device
@@ -23,7 +23,7 @@ allow rfs_access self:{ socket qipcrtr_socket } create_socket_perms_no_ioctl;
 wakelock_use(rfs_access)
 
 #To create the folders in /persist
-allow rfs_access persist_file:dir create_dir_perms;
+allow rfs_access mnt_vendor_file:dir create_dir_perms;
 
 allow rfs_access persist_rfs_file:dir create_dir_perms;
 allow rfs_access persist_rfs_file:file create_file_perms;
@@ -63,3 +63,5 @@ allow rfs_access self:capability { chown };
 
 #For access to the kmsg device
 allow rfs_access kmsg_device:chr_file w_file_perms;
+
+allow rfs_access mnt_vendor_file:lnk_file r_file_perms;

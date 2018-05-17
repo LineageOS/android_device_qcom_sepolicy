@@ -85,7 +85,6 @@
 ###################################
 # System files
 #
-/system/bin/tloc_daemon u:object_r:tlocd_exec:s0
 /(vendor|system/vendor)/bin/seccamd u:object_r:seccamd_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.automotive\.vehicle@2\.0-hal-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
 

@@ -4,7 +4,7 @@ allow init self:capability sys_module;
 allow init {
     adsprpcd_file
     cache_file
-    persist_file
+    mnt_vendor_file
     storage_file
 }:dir mounton;
 allow init kmsg_device:chr_file write;
@@ -60,3 +60,4 @@ allow init {
 }:{ blk_file lnk_file } relabelto;
 
 domain_trans(init, vendor_init_exec, vendor_init);
+allow init mnt_vendor_file:lnk_file r_file_perms;

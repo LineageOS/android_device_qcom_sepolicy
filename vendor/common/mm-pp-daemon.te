@@ -13,7 +13,7 @@ allow mm-pp-daemon persist_display_file:dir rw_dir_perms;
 allow mm-pp-daemon persist_display_file:file create_file_perms;
 
 # Allow for directory search only to '/persist'
-allow mm-pp-daemon persist_file:dir search;
+allow mm-pp-daemon mnt_vendor_file:dir search;
 
 # Allow reading/writing data config files
 allow mm-pp-daemon display_vendor_data_file:dir create_dir_perms;

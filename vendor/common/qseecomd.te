@@ -17,7 +17,7 @@ allow tee rpmb_device:blk_file rw_file_perms;
 allow tee device:dir r_dir_perms;
 allow tee sg_device:chr_file { rw_file_perms setattr };
 
-allow tee persist_file:dir r_dir_perms;
+allow tee mnt_vendor_file:dir r_dir_perms;
 r_dir_file(tee, persist_data_file)
 
 # Write to drm related pieces of persist partition

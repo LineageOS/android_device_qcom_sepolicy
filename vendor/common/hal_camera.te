@@ -50,8 +50,8 @@ hal_client_domain(hal_camera_default, hal_perf)
 binder_call(hal_camera, hal_graphics_composer_default)
 allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager find;
 
-allow hal_camera persist_file:dir r_dir_perms;
-r_dir_file(hal_camera, sensors_persist_file);
+#allow hal_camera mnt_vendor_file:dir r_dir_perms;
+#r_dir_file(hal_camera, sensors_persist_file);
 r_dir_file(hal_camera_default, sysfs_graphics)
 #allow hal_camera to access Isensormanager
 allow hal_camera fwk_sensor_hwservice:hwservice_manager find;

@@ -27,5 +27,3 @@
 
 #for oemfs
 allow platform_app oemfs:lnk_file { read getattr };
-#for regionalization
-r_dir_file(platform_app, regionalization_file);

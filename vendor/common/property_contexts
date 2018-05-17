@@ -27,7 +27,7 @@ persist.vendor.bluetooth.  u:object_r:vendor_bluetooth_prop:s0
 vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
 vendor.bluetooth.          u:object_r:vendor_bluetooth_prop:s0
 vendor.bt.                 u:object_r:vendor_bluetooth_prop:s0
-vendor.qcom.bluetooth.     u:object_r:vendor_bluetooth_prop:s0
+#vendor.qcom.bluetooth.     u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bt.         u:object_r:vendor_bluetooth_prop:s0
 sys.usb_uicc.              u:object_r:uicc_prop:s0
 dolby.audio.               u:object_r:audio_prop:s0
@@ -47,6 +47,7 @@ ctl.vendor.ril-daemon      u:object_r:ctl_vendor_rild_prop:s0
 ctl.vendor.cnd             u:object_r:cnd_vendor_prop:s0
 persist.vendor.sys.cnd     u:object_r:cnd_vendor_prop:s0
 persist.vendor.cne.        u:object_r:cnd_vendor_prop:s0
+init.svc.vendor.cnd        u:object_r:cnd_vendor_prop:s0
 ctl.vm_bms                 u:object_r:vm_bms_prop:s0
 ro.vendor.qualcomm.bluetooth.        u:object_r:vendor_bluetooth_prop:s0
 ctl.vendor.ipacm           u:object_r:vendor_ipacm_prop:s0
@@ -77,9 +78,8 @@ netd.fstman.               u:object_r:netd_prop:s0
 location.                  u:object_r:location_prop:s0
 vendor.qti.izat.           u:object_r:location_prop:s0
 persist.rmnet.mux          u:object_r:rmnet_mux_prop:s0
-sys.usb.controller         u:object_r:sys_usb_controller_prop:s0
-sys.usb.configfs           u:object_r:sys_usb_configfs_prop:s0
-sys.usb.tethering          u:object_r:sys_usb_tethering_prop:s0
+vendor.usb.                u:object_r:vendor_usb_prop:s0
+persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
 qemu.hw.mainkeys           u:object_r:qemu_hw_mainkeys_prop:s0
 ro.vendor.dbg.coresight.cfg_file     u:object_r:vendor_coresight_prop:s0
 ctl.hbtp                   u:object_r:ctl_hbtp_prop:s0

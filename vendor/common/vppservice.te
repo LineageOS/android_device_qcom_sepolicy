@@ -49,7 +49,7 @@ allow vendor_vppservice vendor_vpp_data_file:file create_file_perms;
 
 #allow access to vppservice (/persist/vpp)
 r_dir_file(vendor_vppservice, persist_vpp_file)
-allow vendor_vppservice persist_file:dir search;
+allow vendor_vppservice mnt_vendor_file:dir search;
 
 # allow vppservice to access ion, video device & qdsp_device
 allow vendor_vppservice ion_device:chr_file rw_file_perms;

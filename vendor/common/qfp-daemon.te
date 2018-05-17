@@ -56,7 +56,7 @@ allow qfp-daemon qbt1000_device:chr_file rw_file_perms;
 r_dir_file(qfp-daemon, firmware_file)
 
 # R dir perms for persist qc_senseid dir
-r_dir_file(qfp-daemon, persist_file)
+r_dir_file(qfp-daemon, mnt_vendor_file)
 r_dir_file(qfp-daemon, persist_qti_fp_file)
 
 # Allow listing input devices and sending input events

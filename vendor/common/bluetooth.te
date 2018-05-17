@@ -32,11 +32,6 @@ allow bluetooth {
     bt_device
 }:chr_file rw_file_perms;
 
-#Access to persist_file
-allow bluetooth persist_bluetooth_file:dir rw_dir_perms;
-allow bluetooth persist_bluetooth_file:file create_file_perms;
-r_dir_file(bluetooth, persist_file)
-allow bluetooth persist_file:file w_file_perms;
 
 allow bluetooth self:socket { create write getopt read };
 
