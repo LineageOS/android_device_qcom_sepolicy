@@ -39,6 +39,8 @@
 
 # Camera
 /data/fdAlbum                                                                 u:object_r:camera_data_file:s0
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,msm-cam/video4linux/video[0-33]/name(/.*)?  u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,cci/[0-9]+\.qcom,camera/video4linux/video[0-33]/name(/.*)?  u:object_r:sysfs_graphics:s0
 
 # UIO
 /sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,msm-core/uio/uio[0-9]+(/.*)?  u:object_r:sysfs_uio_file:s0
