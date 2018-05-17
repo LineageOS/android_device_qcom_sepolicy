@@ -189,6 +189,7 @@
 /(vendor|system/vendor)/bin/qca6234-service.sh              u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/mm-pp-daemon        u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mm-pp-dpps          u:object_r:mm-pp-daemon_exec:s0
+/(vendor|system/vendor)/bin/mm-audio-ftm        u:object_r:vendor_audioftm_exec:s0
 /(vendor|system/vendor)/bin/mmi                 u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/mmid                u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance  u:object_r:msm_irqbalanced_exec:s0
