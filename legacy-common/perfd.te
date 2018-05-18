@@ -3,7 +3,7 @@ type perfd_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(perfd)
 
-allow perfd self:capability fsetid;
+allow perfd self:capability { fsetid kill };
 
 allow perfd {
     sysfs_devices_system_cpu
