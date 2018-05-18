@@ -49,3 +49,5 @@ r_dir_file(mediaserver, adsprpcd_file);
 binder_call(mediaserver, bootanim);
 
 allow mediaserver surfaceflinger:unix_stream_socket rw_socket_perms;
+
+binder_call(mediaserver, hal_display_config);
