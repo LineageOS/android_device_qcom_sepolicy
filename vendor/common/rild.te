@@ -26,3 +26,4 @@ userdebug_or_eng(`
 hal_server_domain(rild, hal_secure_element)
 get_prop(rild, vendor_pd_locater_dbg_prop)
 
+get_prop(rild, exported3_radio_prop)
