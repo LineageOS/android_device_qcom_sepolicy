@@ -50,4 +50,5 @@ allow rild vendor_file:file lock;
 
 hal_server_domain(rild, hal_secure_element)
 
+get_prop(rild, exported3_radio_prop)
 set_prop(rild, vendor_xlat_prop)
