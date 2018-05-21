@@ -134,6 +134,7 @@
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
 /dev/socket/wpa_wigig[0-9]                      u:object_r:wifi_vendor_wpa_socket:s0
+/dev/socket/vendor_wpa_wlan[0-9]                u:object_r:wifi_vendor_wpa_socket:s0
 /dev/socket/mmi                                 u:object_r:vendor_mmi_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:location_socket:s0
 /dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
@@ -338,6 +339,7 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qpnp,fg/power_supply/bms(/.*)?               u:object_r:sysfs_battery_supply:s0
 /sys/class/qcom-battery(/.*)?              u:object_r:sysfs_battery_supply:s0
+/sys/class/charge_pump(/.*)?               u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/qpnp-linear-charger-[a-z0-9]+/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/qpnp-smbcharger-[a-z0-9]+/power_supply/battery(/.*)?        u:object_r:sysfs_battery_supply:s0
@@ -527,8 +529,8 @@
 /data/vendor/wifi/sockets(/.*)?                                     u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:wifi_vendor_wpa_socket:s0
-/data/vendor/qdmastats(/.*)?                                        u:object_r:qdma_data_file:s0
-/data/vendor/qdma(/.*)?                                             u:object_r:qdma_data_file:s0
+/data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qdma_data_file:s0
+/data/vendor/qdma(/.*)?                                             u:object_r:vendor_qdma_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
 /data/vendor/camera(/.*)?                                           u:object_r:vendor_camera_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
@@ -543,6 +545,7 @@
 /sys/kernel/debug/ipc_logging(/.*)?                                 u:object_r:qti_debugfs:s0
 /data/vendor/misc/qsee(/.*)?                                        u:object_r:data_qsee_file:s0
 /data/vendor/tui(/.*)?                                              u:object_r:vendor_tui_data_file:s0
+/data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
 
 ###################################
 # persist files

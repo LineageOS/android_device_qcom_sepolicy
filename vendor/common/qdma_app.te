@@ -30,10 +30,6 @@ app_domain(qdma_app)
 net_domain(qdma_app)
 binder_use(qdma_app)
 
-# read and write /data/data subdirectory.
-allow qdma_app qdma_app_data_file:dir create_dir_perms;
-allow qdma_app qdma_app_data_file:{ file lnk_file } create_file_perms;
-
 # allow invoking activity and access app content to qdma_app
 allow qdma_app { activity_service content_service }:service_manager find;
 # allow display service to qdma_app
@@ -48,8 +44,8 @@ allow qdma_app { power_service }:service_manager find;
 allow qdma_app { mount_service }:service_manager find;
 
 # allow access to qdma dropbox
-allow qdma_app qdma_data_file:dir create_dir_perms;
-allow qdma_app qdma_data_file:file create_file_perms;
+allow qdma_app vendor_qdma_data_file:dir create_dir_perms;
+allow qdma_app vendor_qdma_data_file:file create_file_perms;
 
 allow qdma_app user_service:service_manager find;
 
@@ -62,3 +58,8 @@ allow qdma_app qdma_socket:sock_file create_file_perms;
 
 # allow access to mediadrmserver for qdmastats/wvstats
 allow qdma_app mediadrmserver_service:service_manager find;
+
+# allow qdma_app to access system_app_data_file
+# necessary for read and write /data/data subdirectory.
+allow qdma_app system_app_data_file:dir create_dir_perms;
+allow qdma_app system_app_data_file:file create_file_perms;

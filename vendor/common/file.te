@@ -256,8 +256,7 @@ type sysfs_diag, fs_type, sysfs_type;
 type sysfs_laser, fs_type, sysfs_type;
 
 # QDMA data files
-type qdma_data_file, file_type, data_file_type;
-type qdma_app_data_file, file_type, data_file_type;
+type vendor_qdma_data_file, file_type, data_file_type;
 type qdma_socket, file_type;
 
 # path to debugfs use this whic should be only used
@@ -339,3 +338,6 @@ type vendor_mdmhelperdata_data_file, file_type, data_file_type;
 
 #for mount of /persist
 typeattribute mnt_vendor_file vendor_persist_type;
+
+#NNHAL files
+type hal_neuralnetworks_data_file, file_type, data_file_type;
