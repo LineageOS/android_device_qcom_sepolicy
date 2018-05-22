@@ -24,10 +24,3 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-#Access to power costs for testing
-
-userdebug_or_eng(`
-allow energyawareness qti_debugfs:dir r_dir_perms;
-allow energyawareness qti_debugfs:file rw_file_perms;
-')
