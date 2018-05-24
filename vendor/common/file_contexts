@@ -122,6 +122,7 @@
 #/dev/socket/dpmd                                u:object_r:dpmd_socket:s0
 #/dev/socket/dpmwrapper                          u:object_r:dpmwrapper_socket:s0
 /dev/socket/pps                                 u:object_r:pps_socket:s0
+/dev/socket/qdcmsocket                          u:object_r:qdcmsocket_socket:s0
 /dev/socket/rild2                               u:object_r:rild_socket:s0
 /dev/socket/rild2-debug                         u:object_r:rild_debug_socket:s0
 /dev/socket/rild-debug2                         u:object_r:rild_debug_socket:s0
@@ -191,6 +192,7 @@
 /(vendor|system/vendor)/bin/mm-pp-dpps          u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mmi                 u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/mmid                u:object_r:vendor_mmi_exec:s0
+/(vendor|system/vendor)/bin/qdcmss              u:object_r:qdcm-ss_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance  u:object_r:msm_irqbalanced_exec:s0
 /(vendor|system/vendor)/bin/imsdatadaemon       u:object_r:ims_exec:s0
 /(vendor|system/vendor)/bin/imsqmidaemon        u:object_r:ims_exec:s0
