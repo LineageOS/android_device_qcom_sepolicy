@@ -24,9 +24,6 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-###################################
 
-#secure touch
-genfscon sysfs /devices/platform/soc/a98000.i2c/i2c-2/2-0020 u:object_r:sysfs_sectouch:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,l3-cdsp/devfreq u:object_r:sysfs_devfreq:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,l3-cdsp/devfreq/soc:qcom,l3-cdsp/userspace u:object_r:sysfs_devfreq_l3cdsp:s0
+r_dir_file(qti_init_shell, sysfs_devfreq_l3cdsp)
+allow qti_init_shell sysfs_devfreq_l3cdsp:file setattr;

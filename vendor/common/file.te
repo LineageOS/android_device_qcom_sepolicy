@@ -14,6 +14,7 @@ type hbtp_kernel_sysfs, sysfs_type, fs_type;
 type sysfs_irqbalance, sysfs_type, fs_type;
 type sysfs_laser, sysfs_type, fs_type;
 type sysfs_mdss_mdp_caps, sysfs_type, fs_type;
+type sysfs_devfreq_l3cdsp, fs_type, sysfs_type;
 type sysfs_mmc_host, fs_type, sysfs_type;
 type sysfs_msm_perf, fs_type, sysfs_type;
 type sysfs_msm_power, fs_type, sysfs_type;
