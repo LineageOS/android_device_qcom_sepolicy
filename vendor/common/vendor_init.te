@@ -64,6 +64,7 @@ set_prop(vendor_init, system_prop)
 set_prop(vendor_init, vendor_usb_prop)
 set_prop(vendor_init, vendor_ipacm_prop)
 set_prop(vendor_init, vendor_ipacm-diag_prop)
+set_prop(vendor_init, vendor_radio_prop)
 
 # allow vendor toolbox usage
 allow vendor_init vendor_toolbox_exec:file rx_file_perms;
