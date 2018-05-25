@@ -45,4 +45,13 @@ allow sec_nvm sp_ssr_device:chr_file rw_file_perms;
 allow sec_nvm sec_nvm_device:chr_file rw_file_perms;
 
 # Allow to rw secnvm files
+allow sec_nvm mnt_vendor_file:dir search;
+allow sec_nvm persist_secnvm_file:dir rw_dir_perms;
 allow sec_nvm persist_secnvm_file:file create_file_perms;
+
+# Allow access to ion device
+allow sec_nvm ion_device:chr_file rw_file_perms;
+
+# Allow set/get prop to set/check if app is loaded
+set_prop(sec_nvm, spcomlib_prop)
+allow sec_nvm sysfs_data:file r_file_perms;
