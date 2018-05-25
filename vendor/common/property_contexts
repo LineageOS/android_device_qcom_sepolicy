@@ -168,3 +168,21 @@ vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0
 
 # Wifi Softap
 persist.vendor.wifi.softap.        u:object_r:vendor_softap_prop:s0
+#mm-parser
+vendor.mm.enable.qcom_parser       u:object_r:mm_parser_prop:s0
+vendor.qcom_parser.                u:object_r:mm_parser_prop:s0
+vendor.audio.parser.ip.buffer.size u:object_r:mm_parser_prop:s0
+
+#mm-osal
+vendor.debug.mmosal.config         u:object_r:debug_prop:s0
+
+#mm-video
+vendor.encoder.video.profile       u:object_r:mm_video_prop:s0
+vendor.video.disable.ubwc          u:object_r:mm_video_prop:s0
+persist.vendor.dbg.av.logs.level   u:object_r:mm_video_prop:s0
+persist.vendor.mm.en.dropcorrupt   u:object_r:mm_video_prop:s0
+vendor.vidc.enc.trgt_sup_bframe    u:object_r:mm_video_prop:s0
+persist.vendor.media.hls.          u:object_r:mm_video_prop:s0
+vendor.av.dbg.disable.pers.cache   u:object_r:mm_video_prop:s0
+persist.vendor.sys.media.rtp-ports u:object_r:mm_video_prop:s0
+vendor.mm.en.sec.smoothstreaming   u:object_r:mm_video_prop:s0

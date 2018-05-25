@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow mediaextractor sdcard_type:file { getattr read };
+allow mediaextractor mm_parser_prop:file r_file_perms;
