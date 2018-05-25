@@ -228,6 +228,10 @@ allow qti_init_shell sysfs_cpu_boost:file rw_file_perms;
 allow qti_init_shell sysfs_msm_power:file rw_file_perms;
 allow qti_init_shell  sysfs_devices_system_cpu:file rw_file_perms;
 
+allow qti_init_shell sysfs_vservices:dir r_dir_perms;
+allow qti_init_shell sysfs_vservices:lnk_file { create_file_perms };
+allow qti_init_shell sysfs_vservices:file { create_file_perms };
+
 # For IO Cgroups
 allow qti_init_shell cgroup:dir { mounton create_dir_perms };
 allow qti_init_shell cgroup:file { rw_file_perms };
