@@ -496,6 +496,7 @@
 /sys/kernel/boot_adsp/boot                                          u:object_r:sysfs_boot_adsp:s0
 /sys/kernel/boot_slpi(/.*)?                                         u:object_r:sysfs_slpi:s0
 /sys/module/process_reclaim(/.*)?                                   u:object_r:sysfs_process_reclaim:s0
+/sys/module/vmpressure(/.*)?                                        u:object_r:sysfs_vmpressure:s0
 
 ###################################
 # data files
