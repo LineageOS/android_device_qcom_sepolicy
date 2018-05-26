@@ -33,3 +33,4 @@ allow hal_wifi kernel:key search;
 allow hal_wifi vendor_file:system module_load;
 not_full_treble(`allow hal_wifi system_file:system module_load';)
 allow hal_wifi proc_modules:file r_file_perms;
+allow hal_wifi_default vendor_softap_prop:file r_file_perms;
