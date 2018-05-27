@@ -36,8 +36,6 @@ userdebug_or_eng(`
   allow qmi_test_service shell:fd use;
   #test is launched from pseudo terminal so output goes there
   allow qmi_test_service devpts:chr_file {read write getattr ioctl};
-  #to access smem log
-  allow qmi_test_service smem_log_device:chr_file {read write open ioctl};
   #enable accessing the path where qmuxds named sockets are present
   #to interface with qmuxd through unix sockets
   #to access ipc router socket
@@ -45,7 +43,4 @@ userdebug_or_eng(`
   #enable running test as root user => privileged process
   #enable privileged processes to bypass permission checks
   allow qmi_test_service qmi_test_service:capability {setgid setuid fsetid};
-  #enable accessing the system health monitor to check the system health,
-  #if a request times out
-  allow qmi_test_service system_health_monitor_device:chr_file rw_file_perms;
 ')

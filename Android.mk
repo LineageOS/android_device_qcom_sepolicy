@@ -14,4 +14,9 @@ BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
     $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
     $(LOCAL_PATH)/private
+
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/vendor/test
+endif
+
 endif
