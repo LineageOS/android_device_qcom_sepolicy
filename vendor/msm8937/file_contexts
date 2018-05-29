@@ -67,6 +67,9 @@
 /firmware                  u:object_r:firmware_file:s0
 /bt_firmware               u:object_r:bt_firmware_file:s0
 
+# Single hal process
+/(vendor|system/vendor)/bin/hw/hal-server             u:object_r:hal-server_exec:s0
+
 ##################################
 # A/B partitions.
 #EMMC
