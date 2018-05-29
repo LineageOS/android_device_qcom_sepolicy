@@ -42,11 +42,8 @@ allow cameraserver sensors_device:chr_file rw_file_perms;
 #unix_socket_connect(cameraserver, sensors, sensors);
 allow cameraserver system_server:unix_stream_socket { read write };
 
-allow cameraserver persist_file:dir r_dir_perms;
 set_prop(cameraserver, camera_prop)
 allow cameraserver self:socket create_socket_perms_no_ioctl;
-allow cameraserver sensors_persist_file:dir r_dir_perms;
-allow cameraserver sensors_persist_file:file r_file_perms;
 allow cameraserver graphics_device:dir r_dir_perms;
 allow cameraserver sensorservice_service:service_manager find;
 allow cameraserver system_file:dir r_dir_perms;

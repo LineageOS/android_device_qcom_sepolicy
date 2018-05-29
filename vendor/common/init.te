@@ -4,7 +4,7 @@ allow init self:capability sys_module;
 allow init {
     adsprpcd_file
     cache_file
-    persist_file
+    mnt_vendor_file
     storage_file
 }:dir mounton;
 allow init kmsg_device:chr_file write;
@@ -29,13 +29,12 @@ allow init configfs:file { rw_file_perms link };
 allow init configfs:lnk_file create_file_perms;
 
 #Allow init to mount non-hlos partitions in A/B builds
-allow init firmware_file:dir { mounton };
-allow init vendor_firmware_file:dir mounton;
-allow init bt_firmware_file:dir { mounton };
+allow init { bt_firmware_file vendor_firmware_file  firmware_file } :dir mounton;
+
 # Moved to vendor so need relabelfrom and associate permissions
-allow init bt_firmware_file:filesystem  { relabelfrom  mount };
+allow init { bt_firmware_file firmware_file }:filesystem  { relabelfrom  mount };
 #TODO: This should not be needed and needs to be cleaned.
-allow bt_firmware_file bt_firmware_file:filesystem associate;
+allow { bt_firmware_file firmware_file  }self:filesystem associate;
 
 allow init sysfs_boot_adsp:file write;
 allow init sysfs_slpi:file write;
@@ -59,3 +58,6 @@ allow init {
     modem_block_device
     mdtp_device
 }:{ blk_file lnk_file } relabelto;
+
+domain_trans(init, vendor_init_exec, vendor_init);
+allow init mnt_vendor_file:lnk_file r_file_perms;

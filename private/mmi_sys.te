@@ -25,20 +25,19 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-typeattribute mmi_sys coredomain;
-type mmi_sys_exec, exec_type, file_type;
+typeattribute vendor_mmi_sys coredomain;
+type vendor_mmi_sys_exec, exec_type, file_type;
 
 #init
-init_daemon_domain(mmi_sys)
+init_daemon_domain(vendor_mmi_sys)
 
 #Allow mmi to use IPC
-binder_call(mmi_sys,surfaceflinger)
-binder_use(mmi_sys)
+binder_call(vendor_mmi_sys,surfaceflinger)
+binder_use(vendor_mmi_sys)
 
 #mmi_sys
-allow mmi_sys ion_device:chr_file r_file_perms;
-allow mmi_sys kmsg_device:chr_file w_file_perms;
-#r_dir_file(mmi_sys, sysfs_leds)
-allow mmi_sys surfaceflinger_service:service_manager find;
-hal_client_domain(mmi_sys, hal_graphics_allocator)
-allow mmi_sys mmi_sys_exec:file execute_no_trans;
+allow vendor_mmi_sys ion_device:chr_file r_file_perms;
+allow vendor_mmi_sys kmsg_device:chr_file w_file_perms;
+allow vendor_mmi_sys surfaceflinger_service:service_manager find;
+hal_client_domain(vendor_mmi_sys, hal_graphics_allocator)
+allow vendor_mmi_sys vendor_mmi_sys_exec:file execute_no_trans;

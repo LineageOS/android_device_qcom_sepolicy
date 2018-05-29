@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -32,6 +32,9 @@
 
 userdebug_or_eng(`
     diag_use(hal_graphics_composer)
+    # Allow read to '/sys/kernel/debug/*'
+    allow hal_graphics_composer qti_debugfs:dir r_dir_perms;
+    allow hal_graphics_composer qti_debugfs:file r_file_perms;
 ')
 hal_client_domain(hal_graphics_composer_default, hal_graphics_allocator);
 allow hal_graphics_composer sdm_idle_time_prop:file r_file_perms;
@@ -44,7 +47,7 @@ allow hal_graphics_composer_default sysfs_leds:dir r_dir_perms;
 allow hal_graphics_composer_default sysfs_leds:file rw_file_perms;
 allow hal_graphics_composer_default sysfs_leds:lnk_file read;
 
-# Rules for vdnbinder
+# Rules for vndbinder
 allow hal_graphics_composer_default qdisplay_service:service_manager { add find };
 #binder_service(hal_graphics_composer_default);
 vndbinder_use(hal_graphics_composer_default);
@@ -53,21 +56,21 @@ vndbinder_use(hal_graphics_composer_default);
 allow hal_graphics_composer video_device:chr_file rw_file_perms;
 allow hal_graphics_composer video_device:dir r_dir_perms;
 
-# Allow reading/writing to 'persist/display/*'
-allow hal_graphics_composer persist_display_file:dir rw_dir_perms;
-allow hal_graphics_composer persist_display_file:file create_file_perms;
-
+# Allow reading/writing to '/data/vendor/display/*'
 allow hal_graphics_composer_default display_vendor_data_file:dir create_dir_perms;
 allow hal_graphics_composer_default display_vendor_data_file:file create_file_perms;
-
-# Allow only directory search to '/persist'
-allow hal_graphics_composer persist_file:dir r_dir_perms;
 
 # Allow dir search in '/oem'
 allow hal_graphics_composer oemfs:dir r_dir_perms;
 
-# Allow pps socket access
-unix_socket_connect(hal_graphics_composer_default, pps, mm-pp-daemon)
+# Allow sensor service access
+allow hal_graphics_composer fwk_sensor_hwservice:hwservice_manager find;
+binder_call(hal_graphics_composer, system_server)
+
+# Allow read to sensor device and read/write to sensor socket
+allow hal_graphics_composer sensors_device:chr_file r_file_perms;
+allow hal_graphics_composer_default sensors_socket:sock_file rw_file_perms;
+allow hal_graphics_composer_default sensors:unix_stream_socket connectto;
 
 # TBD: remove when dependency on libpowermanager is removed
 #allow hal_graphics_composer power_service:service_manager find;

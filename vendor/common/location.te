@@ -54,7 +54,11 @@ allow location su:unix_dgram_socket sendto;
 
 dontaudit location domain:dir r_dir_perms;
 r_dir_file(location, netmgrd)
-allow location persist_file:dir r_dir_perms;
+allow location mnt_vendor_file:dir r_dir_perms;
+allow location persist_rfs_shared_hlos_file:dir r_dir_perms;
+allow location persist_rfs_shared_hlos_file:file rw_file_perms;
+
+allow location hal_gnss_qti:unix_dgram_socket sendto;
 
 #Allow access to netmgrd socket
 netmgr_socket(location);
@@ -73,7 +77,7 @@ allow location self:socket ioctl;
 # ioctlcmd=c304
 allowxperm location self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 allow location self:udp_socket ioctl;
-allow location wifi_prop:file r_file_perms;
+#allow location wifi_prop:file r_file_perms;
 # Replace this with macro
 allowxperm location self:udp_socket ioctl priv_sock_ioctls;
 
@@ -82,3 +86,6 @@ qdma_file_socket(location);
 
 allow location hal_cne_hwservice:hwservice_manager find;
 binder_call(location, cnd)
+
+#Allow access to wake alarm
+allow location self:capability2 wake_alarm;

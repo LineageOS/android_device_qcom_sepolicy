@@ -23,12 +23,11 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 persist.vendor.service.bdroid.      u:object_r:vendor_bluetooth_prop:s0
-persist.vendor.bluetooth.  u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bt.soc.scram_freqs   u:object_r:vendor_bluetooth_prop:s0
 vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
-vendor.bluetooth.          u:object_r:vendor_bluetooth_prop:s0
-vendor.bt.                 u:object_r:vendor_bluetooth_prop:s0
-vendor.qcom.bluetooth.     u:object_r:vendor_bluetooth_prop:s0
-persist.vendor.bt.         u:object_r:vendor_bluetooth_prop:s0
+#vendor.qcom.bluetooth.     u:object_r:vendor_bluetooth_prop:s0
+#ro.vendor.bt.              u:object_r:vendor_bluetooth_prop:s0
+ro.vendor.bluetooth.       u:object_r:vendor_bluetooth_prop:s0
 sys.usb_uicc.              u:object_r:uicc_prop:s0
 dolby.audio.               u:object_r:audio_prop:s0
 vendor.ims.                u:object_r:qcom_ims_prop:s0
@@ -43,12 +42,20 @@ ctl.port-bridge            u:object_r:ctl_port-bridge_prop:s0
 ctl.vendor.qcrild          u:object_r:ctl_qcrild_prop:s0
 vendor.min_freq_0                 u:object_r:vendor_mpctl_prop:s0
 vendor.min_freq_4                 u:object_r:vendor_mpctl_prop:s0
+ro.vendor.qti.core_ctl_min_cpu    u:object_r:vendor_mpctl_prop:s0
+ro.vendor.qti.core_ctl_max_cpu    u:object_r:vendor_mpctl_prop:s0
 ctl.vendor.ril-daemon      u:object_r:ctl_vendor_rild_prop:s0
+ctl.vendor.cnd             u:object_r:cnd_vendor_prop:s0
+persist.vendor.sys.cnd     u:object_r:cnd_vendor_prop:s0
+persist.vendor.cne.        u:object_r:cnd_vendor_prop:s0
+init.svc.vendor.cnd        u:object_r:cnd_vendor_prop:s0
 ctl.vm_bms                 u:object_r:vm_bms_prop:s0
 ro.vendor.qualcomm.bluetooth.        u:object_r:vendor_bluetooth_prop:s0
 ctl.vendor.ipacm           u:object_r:vendor_ipacm_prop:s0
+init.svc.vendor.ipacm       u:object_r:vendor_ipacm_prop:s0
 ctl.vendor.ipacm-diag      u:object_r:vendor_ipacm-diag_prop:s0
-ctl.vendor.qti                    u:object_r:vendor_qti_prop:s0
+init.svc.vendor.ipacm-diag  u:object_r:vendor_ipacm-diag_prop:s0
+ctl.vendor.dataqti         u:object_r:vendor_dataqti_prop:s0
 ctl.vendor.sensors                u:object_r:sensors_prop:s0
 ctl.vendor.msm_irqbalance         u:object_r:msm_irqbalance_prop:s0
 ctl.vendor.msm_irqbl_sdm630       u:object_r:msm_irqbl_sdm630_prop:s0
@@ -74,9 +81,8 @@ netd.fstman.               u:object_r:netd_prop:s0
 location.                  u:object_r:location_prop:s0
 vendor.qti.izat.           u:object_r:location_prop:s0
 persist.rmnet.mux          u:object_r:rmnet_mux_prop:s0
-sys.usb.controller         u:object_r:sys_usb_controller_prop:s0
-sys.usb.configfs           u:object_r:sys_usb_configfs_prop:s0
-sys.usb.tethering          u:object_r:sys_usb_tethering_prop:s0
+vendor.usb.                u:object_r:vendor_usb_prop:s0
+persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
 qemu.hw.mainkeys           u:object_r:qemu_hw_mainkeys_prop:s0
 ro.vendor.dbg.coresight.cfg_file     u:object_r:vendor_coresight_prop:s0
 ctl.hbtp                   u:object_r:ctl_hbtp_prop:s0
@@ -84,7 +90,7 @@ vendor.audio.              u:object_r:debug_prop:s0
 vendor.voice.              u:object_r:debug_prop:s0
 persist.vendor.audio.      u:object_r:debug_prop:s0
 ro.vendor.audio.           u:object_r:debug_prop:s0
-ro.alarm_boot                 u:object_r:alarm_boot_prop:s0
+ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
 debug.sf.nobootanimation   u:object_r:boot_animation_prop:s0
 persist.vendor.net.doxlat  u:object_r:vendor_xlat_prop:s0
 debug.gralloc.             u:object_r:debug_gralloc_prop:s0
@@ -93,7 +99,6 @@ vendor.gralloc.             u:object_r:debug_gralloc_prop:s0
 dolby.                     u:object_r:dolby_prop:s0
 # DOLBY_END
 wifi.ftmd.                 u:object_r:wififtmd_prop:s0
-ro.vendor.bluetooth.       u:object_r:vendor_bluetooth_prop:s0
 # WIGIG
 persist.vendor.wigig.       u:object_r:wigig_prop:s0
 vendor.wigig.               u:object_r:wigig_prop:s0
@@ -125,11 +130,6 @@ vendor.rild.libpath        u:object_r:vendor_rild_libpath_prop:s0
 # Peripheral Manager
 vendor.peripheral.         u:object_r:vendor_per_mgr_state_prop:s0
 
-persist.vendor.radio       u:object_r:radio_prop:s0
-vendor.radio               u:object_r:radio_prop:s0
-ro.vendor.ril.             u:object_r:radio_prop:s0
-ipersist.vendor.sys.       u:object_r:vendor_system_prop:s0
-
 # HBTP
 ctl.vendor.hbtp u:object_r:ctl_vendor_hbtp_prop:s0
 
@@ -149,3 +149,13 @@ persist.vendor.mmi.        u:object_r:vendor_mmi_prop:s0
 #time service
 persist.vendor.delta_time.enable    u:object_r:vendor_time_service_prop:s0
 vendor.debug.time_services.enable   u:object_r:vendor_time_service_prop:s0
+persist.vendor.radio       u:object_r:vendor_radio_prop:s0
+vendor.radio               u:object_r:vendor_radio_prop:s0
+ro.vendor.ril.             u:object_r:vendor_radio_prop:s0
+persist.vendor.sys.        u:object_r:vendor_system_prop:s0
+
+#ss-restart
+persist.vendor.ssr.    u:object_r:vendor_ssr_prop:s0
+
+#ss-services (PD)
+persist.vendor.pd_locater_debug    u:object_r:vendor_pd_locater_dbg_prop:s0

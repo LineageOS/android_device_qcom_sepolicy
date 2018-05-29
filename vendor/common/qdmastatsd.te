@@ -30,8 +30,8 @@ type qdmastatsd_exec, file_type, vendor_file_type, exec_type;
 
 init_daemon_domain(qdmastatsd)
 
-allow qdmastatsd qdma_data_file:file create_file_perms;
-allow qdmastatsd qdma_data_file:dir create_dir_perms;
+allow qdmastatsd vendor_qdma_data_file:file create_file_perms;
+allow qdmastatsd vendor_qdma_data_file:dir create_dir_perms;
 
 # access to /dev/ramdump_microdump_modem
 allow qdmastatsd ramdump_device:chr_file r_file_perms;

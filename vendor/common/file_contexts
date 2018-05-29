@@ -134,6 +134,7 @@
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
 /dev/socket/wpa_wigig[0-9]                      u:object_r:wifi_vendor_wpa_socket:s0
+/dev/socket/vendor_wpa_wlan[0-9]                u:object_r:wifi_vendor_wpa_socket:s0
 /dev/socket/mmi                                 u:object_r:vendor_mmi_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:location_socket:s0
 /dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
@@ -217,6 +218,7 @@
 /(vendor|system/vendor)/bin/cnss-daemon         u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/hostapd_cli         u:object_r:hostapd_exec:s0
 /(vendor|system/vendor)/bin/adsprpcd            u:object_r:adsprpcd_exec:s0
+/(vendor|system/vendor)/bin/cdsprpcd            u:object_r:cdsprpcd_exec:s0
 /(vendor|system/vendor)/bin/wpa_cli             u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper          u:object_r:mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper_proxy    u:object_r:mdm_helper_exec:s0
@@ -297,6 +299,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-service-qti u:object_r:hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service-qti u:object_r:hal_gatekeeper_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.0-service     u:object_r:hal_nfc_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.1-service     u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/qdmastatsd          u:object_r:qdmastatsd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service      u:object_r:hal_alarm_qti_default_exec:s0
 /(vendor|system/vendor)/bin/imsrcsd             u:object_r:hal_rcsservice_exec:s0
@@ -310,6 +313,8 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.tui_comm@1\.0-service-qti u:object_r:hal_tui_comm_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qdutils_disp@1\.0-service-qti u:object_r:hal_qdutils_disp_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service u:object_r:hal_sensorscalibrate_qti_default_exec:s0
+/(vendor|system/vendor)/bin/power_off_alarm        u:object_r:power_off_alarm_exec:s0
+
 ###################################
 # sysfs files
 #
@@ -334,6 +339,7 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qpnp,fg/power_supply/bms(/.*)?               u:object_r:sysfs_battery_supply:s0
 /sys/class/qcom-battery(/.*)?              u:object_r:sysfs_battery_supply:s0
+/sys/class/charge_pump(/.*)?               u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/qpnp-linear-charger-[a-z0-9]+/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/qpnp-smbcharger-[a-z0-9]+/power_supply/battery(/.*)?        u:object_r:sysfs_battery_supply:s0
@@ -514,6 +520,7 @@
 /data/vendor/qti-logkit/socket-public(/.*)?                         u:object_r:qti_logkit_pub_socket:s0
 /data/vendor/radio(/.*)?                                            u:object_r:vendor_radio_data_file:s0
 /data/vendor/modem_config(/.*)?                                     u:object_r:vendor_mbn_data_file:s0
+/data/vendor/qti(/.*)?                                              u:object_r:vendor_qti_data_file:s0
 /data/vendor/netmgr(/.*)?                                           u:object_r:netmgrd_data_file:s0
 /data/vendor/port_bridge(/.*)?                                      u:object_r:port_bridge_data_file:s0
 /data/vendor/rfs.*                                                  u:object_r:rfs_file:s0
@@ -522,8 +529,8 @@
 /data/vendor/wifi/sockets(/.*)?                                     u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:wifi_vendor_wpa_socket:s0
-/data/vendor/qdmastats(/.*)?                                        u:object_r:qdma_data_file:s0
-/data/vendor/qdma(/.*)?                                             u:object_r:qdma_data_file:s0
+/data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qdma_data_file:s0
+/data/vendor/qdma(/.*)?                                             u:object_r:vendor_qdma_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
 /data/vendor/camera(/.*)?                                           u:object_r:vendor_camera_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
@@ -533,13 +540,40 @@
 /data/vendor/media(/.*)?                                            u:object_r:vendor_media_data_file:s0
 /data/vendor/mediadrm(/.*)?                                         u:object_r:vendor_mediadrm_data_file:s0
 /data/vendor/ssrdump(/.*)?                                          u:object_r:ramdump_vendor_data_file:s0
+/data/vendor/ramdump(/.*)?                                          u:object_r:vendor_ramdump_data_file:s0
+/data/vendor/mdmhelperdata(/.*)?                                    u:object_r:vendor_mdmhelperdata_data_file:s0
 /sys/kernel/debug/ipc_logging(/.*)?                                 u:object_r:qti_debugfs:s0
 /data/vendor/misc/qsee(/.*)?                                        u:object_r:data_qsee_file:s0
+/data/vendor/tui(/.*)?                                              u:object_r:vendor_tui_data_file:s0
+/data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
 
 ###################################
 # persist files
 #
-/persist(/.*)?                                                      u:object_r:persist_file:s0
+/persist(/.*)?                                                                 u:object_r:mnt_vendor_file:s0
+/mnt/vendor/persist/bluetooth(/.*)?                                            u:object_r:persist_bluetooth_file:s0
+/mnt/vendor/persist/drm(/.*)?                                                  u:object_r:persist_drm_file:s0
+/mnt/vendor/persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0
+/mnt/vendor/persist/alarm(/.*)?                                                u:object_r:persist_alarm_file:s0
+/mnt/vendor/persist/time(/.*)?                                                 u:object_r:persist_time_file:s0
+/mnt/vendor/persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
+/mnt/vendor/persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
+/mnt/vendor/persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
+/mnt/vendor/persist/qti_fp(/.*)?                                               u:object_r:persist_qti_fp_file:s0
+/mnt/vendor/persist/usf(/.*)?                                                  u:object_r:persist_usf_file:s0
+/mnt/vendor/persist/hlos_rfs(/.*)?                                             u:object_r:persist_rfs_shared_hlos_file:s0
+/mnt/vendor/persist/display(/.*)?                                              u:object_r:persist_display_file:s0
+/mnt/vendor/persist/rfs.*                                                      u:object_r:persist_rfs_file:s0
+/mnt/vendor/persist/speccfg(/.*)?                                              u:object_r:regionalization_file:s0
+/mnt/vendor/persist/misc(/.*)?                                                 u:object_r:persist_misc_file:s0
+/mnt/vendor/persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
+/mnt/vendor/persist/vpp(/.*)?                                                  u:object_r:persist_vpp_file:s0
+/mnt/vendor/persist/secnvm(/.*)?                                               u:object_r:persist_secnvm_file:s0
+/mnt/vendor/persist/FTM_AP(/.*)?                                               u:object_r:vendor_persist_mmi_file:s0
+###################################
+# persist changes for backword comptaibily
+# this changes would be removed once tech team make the changes
+#
 /persist/bluetooth(/.*)?                                            u:object_r:persist_bluetooth_file:s0
 /persist/drm(/.*)?                                                  u:object_r:persist_drm_file:s0
 /persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0
@@ -558,7 +592,7 @@
 /persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
 /persist/vpp(/.*)?                                                  u:object_r:persist_vpp_file:s0
 /persist/secnvm(/.*)?                                               u:object_r:persist_secnvm_file:s0
-/persist/FTM_AP(/.*)?                                               u:object_r:persist_mmi_file:s0
+/persist/FTM_AP(/.*)?                                               u:object_r:vendor_persist_mmi_file:s0
 
 ###################################
 # etc files
@@ -568,6 +602,7 @@
 ###################################
 # adsp files
 #
+/(vendor|system/vendor)/dsp(/.*)?                                   u:object_r:adsprpcd_file:s0
 /dsp(/.*)?                                                          u:object_r:adsprpcd_file:s0
 
 ###################################
@@ -652,6 +687,8 @@
 /system/vendor/firmware(/.*)?                                       u:object_r:firmware_file:s0
 /firmware/image(/.*)?                                               u:object_r:firmware_file:s0
 /vendor/bt_firmware(/.*)?                                           u:object_r:bt_firmware_file:s0
+/vendor/firmware_mnt(/.*)?                                          u:object_r:firmware_file:s0
+
 /bt_firmware/bt_firmware(/.*)?                                      u:object_r:bt_firmware_file:s0
 
 /(vendor|system/vendor)/bin/grep                                    u:object_r:vendor_toolbox_exec:s0

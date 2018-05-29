@@ -43,9 +43,6 @@ allow system_app {
 userdebug_or_eng(`
   allow system_app qti_debugfs:file r_file_perms;
   allow system_app su:unix_dgram_socket sendto;
-  allow system_app persist_file:dir r_dir_perms;
-  allow system_app sensors_persist_file:dir r_dir_perms;
-  allow system_app sensors_persist_file:file rw_file_perms;
   # access to firmware file
   r_dir_file(system_app, firmware_file);
 
@@ -149,10 +146,6 @@ set_prop(system_app, dolby_prop)
 # allow system_app to access netd
 unix_socket_connect(system_app, netd, netd)
 
-allow system_app persist_file:dir rw_dir_perms;
-allow system_app persist_misc_file:dir rw_dir_perms;
-allow system_app persist_misc_file:file create_file_perms;
-
 # required for FM App to connectto wcnss_filter sockets
 # serial device ttyHS0 (transport layer for FM)
 allow system_app serial_device:chr_file rw_file_perms;
@@ -188,18 +181,15 @@ binder_call( system_app, update_engine )
 
 hal_client_domain(system_app, hal_perf)
 
-#allow system_app access ioctl
-allowxperm system_app self:socket ioctl msm_sock_ipc_ioctls;
-allow system_app self:socket ioctl;
-
-hal_client_domain(system_app, hal_alarm_qti);
+#allow only system_app with userdebug to access ioctl
+userdebug_or_eng(`
+  allowxperm system_app self:socket ioctl msm_sock_ipc_ioctls;
+  allow system_app self:socket create_socket_perms;
+')
 
 #allow system app to interact with the esepowermanager
 hal_client_domain(system_app, hal_esepowermanager)
 allow system_app fm_prop:file r_file_perms;
-
-allow system_app vendor_radio_data_file:dir rw_dir_perms;
-allow system_app vendor_radio_data_file:file create_file_perms;
 
 #allow system_app access factory
 hal_client_domain(system_app, vendor_hal_factory_qti);

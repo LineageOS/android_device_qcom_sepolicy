@@ -1,2 +1,6 @@
 genfscon debugfs /regmap u:object_r:qti_debugfs:s0
 genfscon debugfs /asoc u:object_r:qti_debugfs:s0
+genfscon debugfs /dri/0/debug/dump u:object_r:qti_debugfs:s0
+genfscon debugfs /dri/0/debug/recovery_reg u:object_r:qti_debugfs:s0
+genfscon debugfs /dri/0/debug/recovery_dbgbus u:object_r:qti_debugfs:s0
+genfscon debugfs /dri/0/debug/recovery_vbif_dbgbus u:object_r:qti_debugfs:s0

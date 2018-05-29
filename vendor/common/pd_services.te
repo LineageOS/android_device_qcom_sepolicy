@@ -47,3 +47,5 @@ allow vendor_pd_mapper system_file:dir r_dir_perms;
 
 #Allow pd-mapper to write error strings from non-hlos side to kmsg
 allow vendor_pd_mapper kmsg_device:chr_file w_file_perms;
+
+get_prop(vendor_pd_mapper, vendor_pd_locater_dbg_prop)

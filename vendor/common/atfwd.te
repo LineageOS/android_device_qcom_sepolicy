@@ -12,7 +12,7 @@ r_dir_file(atfwd, sysfs_ssr);
 r_dir_file(atfwd, sysfs_esoc);
 r_dir_file(atfwd, sysfs_data);
 
-set_prop(atfwd, radio_prop)
+set_prop(atfwd, vendor_radio_prop)
 
 hwbinder_use(atfwd)
 get_prop(atfwd, hwservicemanager_prop)
