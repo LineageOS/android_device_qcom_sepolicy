@@ -168,3 +168,5 @@ allow system_server sysfs_wigig:file rw_file_perms;
 
 # allow system_server to access IOP HAL service
 hal_client_domain(system_server, hal_iop)
+#Allow access for vendor property
+allow system_server vendor_iop_prop:file r_file_perms;
