@@ -33,7 +33,7 @@ init_daemon_domain(init-qcom-sensors-sh)
 allow init-qcom-sensors-sh vendor_shell_exec:file rx_file_perms;
 allow init-qcom-sensors-sh vendor_toolbox_exec:file rx_file_perms;
 
-r_dir_file(init-qcom-sensors-sh, persist_file)
+r_dir_file(init-qcom-sensors-sh, mnt_vendor_file)
 r_dir_file(init-qcom-sensors-sh, persist_sensors_file)
 
 allow init-qcom-sensors-sh persist_sensors_file:file setattr;

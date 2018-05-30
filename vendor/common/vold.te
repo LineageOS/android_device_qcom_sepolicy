@@ -1,3 +1,2 @@
 get_prop(vold, vendor_tee_listener_prop)
 
-allow vold persist_file:dir r_dir_perms;

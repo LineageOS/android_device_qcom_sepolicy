@@ -72,17 +72,17 @@ type vendor_audio_data_file, file_type, data_file_type;
 type vendor_radio_data_file, file_type, data_file_type;
 type wifi_vendor_log_data_file, file_type, data_file_type;
 
-type persist_file, file_type;
-type persist_data_file, file_type;
+type persist_file, file_type, vendor_persist_type;
+type persist_data_file, file_type , vendor_persist_type;
 type persist_display_file, file_type;
-type persist_drm_file, file_type;
+type persist_drm_file, file_type, vendor_persist_type;
 type persist_elabel_file, file_type;
 type persist_haptics_file, file_type;
 type persist_rfs_file, file_type;
 type persist_sensors_file, file_type;
 type persist_time_file, file_type;
 type persist_audio_file, file_type;
-type persist_bluetooth_file, file_type;
+type persist_bluetooth_file, file_type, vendor_persist_type;
 
 type netmgr_data_file, file_type, data_file_type;
 type netmgr_recovery_data_file, file_type, data_file_type;
@@ -97,7 +97,7 @@ type modem_dump_file, file_type, data_file_type;
 type sensors_vendor_data_file, file_type, data_file_type;
 type port_bridge_data_file, file_type, data_file_type;
 type vendor_firmware_file, vendor_file_type, file_type;
-type bt_firmware_file, fs_type, contextmount_type;
+type bt_firmware_file, file_type, contextmount_type, vendor_file_type;
 type vendor_mdmhelperdata_data_file, file_type, data_file_type;
 
 #widevine data file

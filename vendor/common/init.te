@@ -1,7 +1,7 @@
 allow init {
     adsprpcd_file
     cache_file
-    persist_file
+    mnt_vendor_file
     storage_file
 }:dir mounton;
 
@@ -10,7 +10,7 @@ allow init tmpfs:lnk_file create;
 
 allow init tty_device:chr_file rw_file_perms;
 
-allow init persist_file:dir mounton;
+allow init mnt_vendor_file:dir mounton;
 
 allow init ab_block_device:lnk_file relabelto;
 

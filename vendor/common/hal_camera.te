@@ -56,4 +56,7 @@ hal_client_domain(hal_camera_default, hal_perf)
 allow hal_camera_default sysfs_data:file read;
 allow hal_camera sysfs_data:file r_file_perms;
 
+allow hal_camera_default mnt_vendor_file:lnk_file r_file_perms;
+allow hal_camera_default mnt_vendor_file:dir r_dir_perms;
+
 r_dir_file(hal_camera_default, sysfs_graphics)

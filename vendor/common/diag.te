@@ -28,7 +28,7 @@ userdebug_or_eng(`
   wakelock_use(diag)
   allow diag kernel:system syslog_mod;
   # allow drmdiagapp access to drm related paths
-  allow diag persist_file:dir r_dir_perms;
+  allow diag mnt_vendor_file:dir r_dir_perms;
   r_dir_file(diag, persist_data_file)
   # Write to drm related pieces of persist partition
   allow diag persist_drm_file:file create_file_perms;

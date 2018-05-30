@@ -52,3 +52,6 @@ attribute hal_display_config_server;
 attribute hal_display_postproc;
 attribute hal_display_postproc_client;
 attribute hal_display_postproc_server;
+
+# All types in /mnt/vendor/persist
+attribute vendor_persist_type;

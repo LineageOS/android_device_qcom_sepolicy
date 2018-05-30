@@ -72,7 +72,7 @@
 
 # files in /vendor
 /vendor/firmware(/.*)?          u:object_r:vendor_firmware_file:s0
-/bt_firmware(/.*)?              u:object_r:bt_firmware_file:s0
+/vendor/bt_firmware(/.*)?       u:object_r:vendor_firmware_file:s0
 
 /vendor/bin/ATFWD-daemon        u:object_r:atfwd_exec:s0
 /vendor/bin/hw/android\.hardware\.vr@1\.0-service.crosshatch      u:object_r:hal_vr_default_exec:s0
@@ -218,21 +218,18 @@
 /tombstones             u:object_r:rootfs:s0
 /dsp(/.*)?              u:object_r:adsprpcd_file:s0
 
-# files in firmware
-/firmware(/.*)?         u:object_r:firmware_file:s0
 
 # /persist
-/persist(/.*)?            u:object_r:persist_file:s0
-/persist/data(/.*)?       u:object_r:persist_data_file:s0
-/persist/display(/.*)?    u:object_r:persist_display_file:s0
-/persist/drm(/.*)?        u:object_r:persist_drm_file:s0
-/persist/elabel(/.*)?     u:object_r:persist_elabel_file:s0
-/persist/haptics(/.*)?    u:object_r:persist_haptics_file:s0
-/persist/hlos_rfs(/.*)?   u:object_r:persist_rfs_file:s0
-/persist/rfs(/.*)?        u:object_r:persist_rfs_file:s0
-/persist/sensors(/.*)?    u:object_r:persist_sensors_file:s0
-/persist/time(/.*)?       u:object_r:persist_time_file:s0
-/persist/audio(/.*)?      u:object_r:persist_audio_file:s0
+/mnt/vendor/persist/data(/.*)?       u:object_r:persist_data_file:s0
+/mnt/vendor/persist/display(/.*)?    u:object_r:persist_display_file:s0
+/mnt/vendor/persist/drm(/.*)?        u:object_r:persist_drm_file:s0
+/mnt/vendor/persist/elabel(/.*)?     u:object_r:persist_elabel_file:s0
+/mnt/vendor/persist/haptics(/.*)?    u:object_r:persist_haptics_file:s0
+/mnt/vendor/persist/hlos_rfs(/.*)?   u:object_r:persist_rfs_file:s0
+/mnt/vendor/persist/rfs(/.*)?        u:object_r:persist_rfs_file:s0
+/mnt/vendor/persist/sensors(/.*)?    u:object_r:persist_sensors_file:s0
+/mnt/vendor/persist/time(/.*)?       u:object_r:persist_time_file:s0
+/mnt/vendor/persist/audio(/.*)?      u:object_r:persist_audio_file:s0
 
 /metadata                 u:object_r:rootfs:s0
 /metadata/.*              u:object_r:vold_data_file:s0
@@ -254,7 +251,7 @@
 /sys/devices/virtual/xt_idletimer/timers(/.*)?                      u:object_r:sysfs_data:s0
 
 #persist_bluetooth_file
-/persist/bluetooth(/.*)? u:object_r:persist_bluetooth_file:s0
+/mnt/vendor/persist/bluetooth(/.*)? u:object_r:persist_bluetooth_file:s0
 
 
 /(vendor|system/vendor)/bin/hbtp_daemon         u:object_r:hbtp_exec:s0

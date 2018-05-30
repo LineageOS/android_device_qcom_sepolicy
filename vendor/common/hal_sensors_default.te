@@ -1,5 +1,5 @@
 # read factory calibration and sensor configuration data
-allow hal_sensors_default persist_file:dir search;
+allow hal_sensors_default mnt_vendor_file:dir search;
 r_dir_file(hal_sensors_default, persist_sensors_file)
 
 # interact with the sensors low power island (SLPI) CPU
