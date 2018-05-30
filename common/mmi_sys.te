@@ -28,6 +28,9 @@
 #mmi_sys basic
 allow mmi_sys hal_graphics_allocator_default:fd use;
 r_dir_file(mmi_sys, sysfs_graphics)
+allow mmi_sys persist_mmi_file:dir rw_dir_perms;
+allow mmi_sys persist_mmi_file:file create_file_perms;
+allow mmi_sys persist_file:dir search;
 
 #boot mode switch
 set_prop(mmi_sys, boot_mode_prop)

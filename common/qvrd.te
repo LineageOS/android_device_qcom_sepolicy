@@ -71,3 +71,17 @@ allow qvrd { gpu_device video_device camera_device sensors_device }:chr_file rw_
 #
 
 hal_client_domain(qvrd, hal_perf);
+
+allow qvrd fwk_sensor_hwservice:hwservice_manager find;
+hal_client_domain(qvrd, hal_sensors);
+binder_call(qvrd, system_server);
+
+# QVRD
+userdebug_or_eng(`
+allow qvrd debugfs:dir r_dir_perms;
+allow qvrd qti_debugfs:dir r_dir_perms;
+allow qvrd qti_debugfs:file rw_file_perms;
+')
+
+# Allow access to kgsl sysfs nodes for performance optimization
+allow qvrd sysfs_kgsl:file rw_file_perms;

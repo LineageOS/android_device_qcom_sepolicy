@@ -54,5 +54,12 @@ allow init {
 #rawdump
 allow init rawdump_block_device:blk_file setattr;
 
+# QVRD
+userdebug_or_eng(`
+allow init debugfs:dir r_dir_perms;
+allow init qti_debugfs:dir r_dir_perms;
+allow init qti_debugfs:file rw_file_perms;
+')
+
 #cpu.rt_period_us and _runtime_us need this
 allow init cgroup:file create;

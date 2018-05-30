@@ -77,3 +77,6 @@ hal_client_domain(qmmf-servd, hal_configstore)
 r_dir_file(qmmf-servd, oemfs)
 
 binder_call(qmmf-servd, qmmf-webserverd)
+
+allow qmmf-servd persist_file:dir r_dir_perms;
+r_dir_file(qmmf-servd, sensors_persist_file)

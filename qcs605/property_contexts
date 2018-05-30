@@ -28,3 +28,5 @@
 qmmf.             u:object_r:qmmf_prop:s0
 persist.qmmf.     u:object_r:qmmf_prop:s0
 vam.              u:object_r:qmmf_prop:s0
+
+ctl.vendor.discoveryd u:object_r:ctl_vendor_discoveryd_prop:s0

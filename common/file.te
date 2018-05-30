@@ -7,6 +7,9 @@ type qmuxd_socket, file_type;
 #Define the netmgrd socket type
 type netmgrd_socket, file_type;
 
+#QTI file types
+type qti_data_file, file_type, data_file_type;
+
 #Define the pps socket type
 type pps_socket, file_type;
 
@@ -40,6 +43,7 @@ type data_qsee_file, file_type, data_file_type;
 type persist_misc_file, file_type;
 type persist_bms_file, file_type;
 type persist_secnvm_file, file_type;
+type persist_mmi_file, file_type;
 
 type diag_data_file, file_type, data_file_type;
 

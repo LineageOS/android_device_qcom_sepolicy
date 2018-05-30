@@ -57,3 +57,21 @@ set_prop(qmmf-webserverd, qmmf_prop)
 
 r_dir_file(qmmf-webserverd, input_device);
 allow qmmf-webserverd input_device:chr_file r_file_perms;
+
+#Read /sys/firmware/devicetree/base/model
+r_dir_file(qmmf-webserverd, sysfs_devices_base_model);
+
+#Read /sys/class/power_supply/battery/status (or capacity)
+r_dir_file(qmmf-webserverd, sysfs_battery_supply);
+
+#Update /sys/class/leds/red (or green)/brightness
+allow qmmf-webserverd sysfs_leds:dir r_dir_perms;
+allow qmmf-webserverd sysfs_leds:file rw_file_perms;
+allow qmmf-webserverd sysfs_leds:lnk_file read;
+
+#For using vendor/bin/sh
+allow qmmf-webserverd vendor_shell_exec:file rx_file_perms;
+allow qmmf-webserverd vendor_toolbox_exec:file execute_no_trans;
+
+#To shutdown using powerctl property
+set_prop(qmmf-webserverd, powerctl_prop)

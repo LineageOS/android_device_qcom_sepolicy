@@ -18,6 +18,7 @@ not_full_treble(`allow domain vendor_file:dir r_dir_perms;')
 # Remove this after HIDL implementation
 userdebug_or_eng(`
 allow domain hal_graphics_composer:fd use;
+allow domain qti_debugfs:dir search;
 ')
 dontaudit domain persist_dpm_prop:file r_file_perms;
 

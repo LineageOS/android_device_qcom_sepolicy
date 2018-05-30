@@ -95,5 +95,7 @@ userdebug_or_eng(`
   allow system_server qti-testscripts:fifo_file read;
   binder_call(platform_app, qti-testscripts)
   binder_call(system_app, qti-testscripts)
+  allow mediaserver qti-testscripts:binder { transfer call };
+  allow mediacodec qti-testscripts:binder { transfer call };
 
 ')

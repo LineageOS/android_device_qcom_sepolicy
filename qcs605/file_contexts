@@ -162,3 +162,6 @@
 # qmmf data files
 /data/misc/qmmf(/.*)?                     u:object_r:qmmf_data_file:s0
 /data/misc/vam(/.*)?                      u:object_r:qmmf_vam_data_file:s0
+/sys/firmware/devicetree/base/model       u:object_r:sysfs_devices_base_model:s0
+
+/(vendor|system/vendor)/bin/discoveryd          u:object_r:discoveryd_exec:s0

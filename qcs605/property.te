@@ -26,3 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type qmmf_prop, property_type;
+
+type ctl_vendor_discoveryd_prop, property_type;
