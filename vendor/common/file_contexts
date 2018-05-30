@@ -548,6 +548,7 @@
 /data/vendor/misc/qsee(/.*)?                                        u:object_r:data_qsee_file:s0
 /data/vendor/tui(/.*)?                                              u:object_r:vendor_tui_data_file:s0
 /data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
+/data/vendor/bluetooth(/.*)?                                        u:object_r:vendor_bt_data_file:s0
 
 ###################################
 # persist files
