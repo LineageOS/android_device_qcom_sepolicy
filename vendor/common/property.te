@@ -134,6 +134,9 @@ type ctl_vendor_hbtp_prop, property_type;
 # factory properties
 type ctl_vendor_mmid_prop, property_type;
 
+#qdma property
+type vendor_qdma_prop, property_type;
+
 #WiFi Display
 type wfd_service_prop, property_type;
 
