@@ -2,12 +2,12 @@
 ## peripheral_manager
 ## Allow clients to interact with peripheral
 ## manager
-define(`use_per_mgr', `
+define(`use_vendor_per_mgr', `
     vndbinder_use($1);
-    binder_call(per_mgr, $1);
-    binder_call($1, per_mgr);
-    allow $1 per_mgr_service:service_manager find;
-    get_prop($1, per_mgr_state_prop);
+    binder_call(vendor_per_mgr, $1);
+    binder_call($1, vendor_per_mgr);
+    allow $1 vendor_per_mgr_service:service_manager find;
+    get_prop($1, vendor_per_mgr_state_prop);
 ')
 
 #####################################
