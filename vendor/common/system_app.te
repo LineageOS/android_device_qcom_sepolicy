@@ -200,3 +200,6 @@ set_prop(system_app, wfd_service_prop);
 hal_client_domain(system_app, hal_qdutils_disp);
 hal_client_domain(system_app, hal_tui_comm);
 hal_client_domain(system_app, hal_sensorscalibrate_qti);
+
+#soter
+hal_client_domain(system_app, hal_soter);
