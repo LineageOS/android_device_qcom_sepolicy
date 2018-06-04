@@ -79,3 +79,5 @@ vndbinder_use(mediacodec);
 hwbinder_use(mediacodec);
 hal_client_domain(mediacodec, hal_vpp)
 hal_client_domain(mediacodec, hal_perf)
+
+allow mediacodec mm_video_prop:file r_file_perms;
