@@ -42,12 +42,14 @@ allow hal_perf_client hal_perf_hwservice:hwservice_manager find;
 allow hal_perf cgroup:file r_file_perms;
 allow hal_perf_default proc:file rw_file_perms;
 allow hal_perf device_latency:chr_file rw_file_perms;
-allow hal_perf freq_prop:file r_file_perms;
 allow hal_perf_default mpctl_data_file:dir rw_dir_perms;
 allow hal_perf_default mpctl_data_file:file create_file_perms;
 allow hal_perf_default lm_data_file:dir rw_dir_perms;
 allow hal_perf_default lm_data_file:file create_file_perms;
 allow hal_perf_default sysfs_lib:file w_file_perms;
+
+# Allow perf HAL to set freq props
+set_prop(hal_perf_default, freq_prop)
 
 #Access to /proc/meminfo
 allow hal_perf proc_meminfo:file r_file_perms;
