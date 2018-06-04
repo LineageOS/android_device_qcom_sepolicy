@@ -28,6 +28,8 @@
 typeattribute qvrd coredomain;
 typeattribute qvrd mlstrustedsubject;
 type qvrd_exec, exec_type, file_type;
+typeattribute qvrd  system_writes_vendor_properties_violators;
+
 init_daemon_domain(qvrd)
 
 #

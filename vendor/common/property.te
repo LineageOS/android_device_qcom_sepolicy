@@ -66,8 +66,6 @@ type debug_gralloc_prop, property_type;
 type fm_prop, property_type;
 type chgdiabled_prop, property_type;
 
-#properites for netd
-type netd_prop, property_type;
 
 type vendor_xlat_prop, property_type;
 
@@ -96,9 +94,6 @@ type wififtmd_prop, property_type;
 type wigig_prop, property_type;
 type fst_prop, property_type;
 type ctl_vendor_wigigsvc_prop, property_type;
-
-type alarm_handled_prop, property_type;
-type alarm_instance_prop, property_type;
 
 #HWUI property
 type hwui_prop, property_type;

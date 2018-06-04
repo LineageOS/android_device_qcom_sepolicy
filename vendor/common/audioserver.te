@@ -73,5 +73,5 @@ userdebug_or_eng(`
 
 # DOLBY_START
 allow audioserver activity_service:service_manager find;
-set_prop(audioserver, dolby_prop)
+get_prop(audioserver, dolby_prop)
 # DOLBY_END

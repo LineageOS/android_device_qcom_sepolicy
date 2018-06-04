@@ -77,7 +77,6 @@ vendor.post_boot.parsed    u:object_r:vendor_mpctl_prop:s0
 vendor.perf.cores_online   u:object_r:vendor_mpctl_prop:s0
 vendor.iop.enable_uxe   u:object_r:vendor_iop_prop:s0
 vendor.iop.enable_prefetch_ofr   u:object_r:vendor_iop_prop:s0
-netd.fstman.               u:object_r:netd_prop:s0
 location.                  u:object_r:location_prop:s0
 vendor.qti.izat.           u:object_r:location_prop:s0
 persist.rmnet.mux          u:object_r:rmnet_mux_prop:s0
@@ -106,8 +105,6 @@ ctl.vendor.wigig_supplicant u:object_r:ctl_vendor_wigigsvc_prop:s0
 ctl.vendor.wigig_hostapd    u:object_r:ctl_vendor_wigigsvc_prop:s0
 
 persist.vendor.fst.         u:object_r:fst_prop:s0
-ro.alarm_handled           u:object_r:alarm_handled_prop:s0
-ro.alarm_instance          u:object_r:alarm_instance_prop:s0
 #HWUI Property
 ro.hwui.texture_cache_size u:object_r:hwui_prop:s0
 #Bservice Property

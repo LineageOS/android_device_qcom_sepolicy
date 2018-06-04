@@ -25,6 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+typeattribute zygote system_writes_vendor_properties_violators;
 allow zygote debug_gralloc_prop:file r_file_perms;
 allow zygote sf_lcd_density_prop:file r_file_perms;
 # persist.service.bdroid.bdaddr hw.cabl.level
