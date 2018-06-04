@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "56601e7d_57c67418",
+        "filename": "common/file_contexts",
+        "patchSetId": 3
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2018-06-04T21:13:22Z",
+      "side": 1,
+      "message": "Maybe we can remove this from legacy sepolicy now?",
+      "range": {
+        "startLine": 439,
+        "startChar": 40,
+        "endLine": 439,
+        "endChar": 52
+      },
+      "revId": "2d7d40129ba7e04cbc8a10ad7b480dc9280284c5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
