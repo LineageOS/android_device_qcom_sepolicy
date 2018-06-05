@@ -86,3 +86,4 @@ vendor.qti.hardware.wifi.supplicant::ISupplicantVendor       u:object_r:hal_wifi
 vendor.qti.hardware.scve.panorama::IPanoramaTracking            u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.scve.panorama::IPanoramaStitching           u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.wifi.hostapd::IHostapdVendor             u:object_r:hal_wifi_hostapd_hwservice:s0
+vendor.qti.hardware.mlshal::IMlsDap                          u:object_r:hal_mirrorlink_hwservice:s0
