@@ -26,7 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow zygote debug_gralloc_prop:file r_file_perms;
-allow zygote sf_lcd_density_prop:file r_file_perms;
 # persist.service.bdroid.bdaddr hw.cabl.level
 #set_prop(zygote, bluetooth_prop)
 set_prop(zygote, ppd_prop)

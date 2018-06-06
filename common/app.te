@@ -24,8 +24,5 @@ allow appdomain bservice_prop:file r_file_perms;
 allow appdomain reschedule_service_prop:file r_file_perms;
 allow appdomain debug_gralloc_prop:file r_file_perms;
 
-#most of apps/UI try to read this prop
-get_prop(appdomain, sf_lcd_density_prop)
-
 # Allow apps to read graphics vulkan property
 allow appdomain graphics_vulkan_prop:file r_file_perms;
