@@ -6,8 +6,6 @@ allow hal_bluetooth_default wcnss_filter:unix_stream_socket connectto;
 allow hal_bluetooth fwk_scheduler_hwservice:hwservice_manager find;
 allow hal_bluetooth system_server:binder call;
 
-set_prop(hal_bluetooth_default, wc_prop)
-
 # bluetooth properties
 set_prop(hal_bluetooth, vendor_bluetooth_prop)
 
@@ -28,5 +26,3 @@ allow hal_bluetooth_default debugfs_ipc:dir  rw_dir_perms;
 ')
 
 r_dir_file(hal_bluetooth_default, persist_file)
-
-allow hal_bluetooth_default wc_prop:file read;
