@@ -3,8 +3,7 @@ type atfwd_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(atfwd)
 
-allow atfwd self:qipcrtr_socket create_socket_perms_no_ioctl;;
-allow atfwd self:{ socket qipcrtr_socket } ioctl;
+allow atfwd self:{socket qipcrtr_socket } create_socket_perms;
 allowxperm atfwd self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 
 binder_call(atfwd, system_app);
