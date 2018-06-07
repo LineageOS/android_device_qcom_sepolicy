@@ -34,7 +34,7 @@ userdebug_or_eng(`
     diag_use(radio)
 ')
 
-set_prop(radio, vendor_radio_prop)
+get_prop(radio, vendor_radio_prop)
 
 binder_call(radio, hal_imsrtp)
 allow radio hal_imsrtp_hwservice:hwservice_manager find;

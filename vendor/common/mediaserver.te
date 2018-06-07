@@ -36,9 +36,6 @@ r_dir_file(mediaserver, sysfs_thermal);
 #allow mediaserver to communicate with timedaemon
 #allow mediaserver time_daemon:unix_stream_socket connectto;
 
-#Allow mediaserver to set camera  properties
-allow mediaserver camera_prop:property_service set;
-
 #allow mediaserver to access wfdservice
 binder_call(mediaserver, wfdservice)
 
