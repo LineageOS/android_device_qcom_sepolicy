@@ -24,6 +24,7 @@ hal_client_domain(platform_app, hal_hbtp)
 
 #get_prop(platform_app, vendor_bluetooth_prop)
 get_prop(platform_app, debug_gralloc_prop)
+get_prop(platform_app, wigig_prop)
 
 #for perf-hal call
 hal_client_domain(platform_app, hal_perf)
