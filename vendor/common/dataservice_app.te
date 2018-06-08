@@ -1,5 +1,8 @@
 get_prop(dataservice_app, cnd_prop)
 
+allow dataservice_app hal_imsrcsd_hwservice:hwservice_manager find;
+allow dataservice_app hal_cne_hwservice:hwservice_manager find;
+
 allow dataservice_app sysfs_data:file r_file_perms;
 
 binder_call(dataservice_app, cnd)

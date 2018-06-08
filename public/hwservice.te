@@ -1,3 +1,1 @@
 type hal_atfwd_hwservice, coredomain_hwservice, hwservice_manager_type;
-type hal_cne_hwservice, hwservice_manager_type;
-type hal_imsrcsd_hwservice, hwservice_manager_type;
