@@ -185,7 +185,7 @@
 /(vendor|system/vendor)/bin/init\.qcom\.sdio\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.uicc\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.wifi\.sh            u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qti\.ims\.sh              u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.ims\.sh              u:object_r:init-qti-ims-sh_exec:s0
 /(vendor|system/vendor)/bin/qca6234-service.sh              u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/mm-pp-daemon        u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mm-pp-dpps          u:object_r:mm-pp-daemon_exec:s0
