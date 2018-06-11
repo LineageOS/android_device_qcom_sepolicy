@@ -66,8 +66,6 @@ type debug_gralloc_prop, property_type;
 type fm_prop, property_type;
 type chgdiabled_prop, property_type;
 
-#properites for netd
-type netd_prop, property_type;
 
 type vendor_xlat_prop, property_type;
 
@@ -96,9 +94,6 @@ type wififtmd_prop, property_type;
 type wigig_prop, property_type;
 type fst_prop, property_type;
 type ctl_vendor_wigigsvc_prop, property_type;
-
-type alarm_handled_prop, property_type;
-type alarm_instance_prop, property_type;
 
 #HWUI property
 type hwui_prop, property_type;
@@ -134,6 +129,9 @@ type ctl_vendor_hbtp_prop, property_type;
 # factory properties
 type ctl_vendor_mmid_prop, property_type;
 
+#qdma property
+type vendor_qdma_prop, property_type;
+
 #WiFi Display
 type wfd_service_prop, property_type;
 
@@ -152,3 +150,14 @@ type vendor_ssr_prop, property_type;
 
 #ss-services (PD)
 type vendor_pd_locater_dbg_prop, property_type;
+
+#qdcmss property
+type vendor_qdcmss_prop, property_type;
+
+# Wifi Softap
+type vendor_softap_prop, property_type;
+#mm-parser
+type mm_parser_prop, property_type;
+
+#mm-video
+type mm_video_prop, property_type;

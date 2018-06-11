@@ -1,3 +1,4 @@
+typeattribute surfaceflinger system_writes_vendor_properties_violators;
 allow surfaceflinger sysfs_graphics:file rw_file_perms;
 
 # Use open file provided by poweroffhandler

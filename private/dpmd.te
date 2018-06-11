@@ -28,6 +28,7 @@
 
 typeattribute dpmd coredomain;
 typeattribute dpmd mlstrustedsubject;
+typeattribute dpmd system_writes_vendor_properties_violators;
 type dpmd_exec, exec_type, file_type;
 
 init_daemon_domain(dpmd)

@@ -77,7 +77,6 @@ vendor.post_boot.parsed    u:object_r:vendor_mpctl_prop:s0
 vendor.perf.cores_online   u:object_r:vendor_mpctl_prop:s0
 vendor.iop.enable_uxe   u:object_r:vendor_iop_prop:s0
 vendor.iop.enable_prefetch_ofr   u:object_r:vendor_iop_prop:s0
-netd.fstman.               u:object_r:netd_prop:s0
 location.                  u:object_r:location_prop:s0
 vendor.qti.izat.           u:object_r:location_prop:s0
 persist.rmnet.mux          u:object_r:rmnet_mux_prop:s0
@@ -106,8 +105,6 @@ ctl.vendor.wigig_supplicant u:object_r:ctl_vendor_wigigsvc_prop:s0
 ctl.vendor.wigig_hostapd    u:object_r:ctl_vendor_wigigsvc_prop:s0
 
 persist.vendor.fst.         u:object_r:fst_prop:s0
-ro.alarm_handled           u:object_r:alarm_handled_prop:s0
-ro.alarm_instance          u:object_r:alarm_instance_prop:s0
 #HWUI Property
 ro.hwui.texture_cache_size u:object_r:hwui_prop:s0
 #Bservice Property
@@ -136,6 +133,9 @@ ctl.vendor.hbtp u:object_r:ctl_vendor_hbtp_prop:s0
 # factory properties
 ctl.vendor.mmid   u:object_r:ctl_vendor_mmid_prop:s0
 
+# qdma property
+vendor.qti.qdma.        u:object_r:vendor_qdma_prop:s0
+
 #Needed by qsee need to rename this
 vendor.sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
 
@@ -159,3 +159,27 @@ persist.vendor.ssr.    u:object_r:vendor_ssr_prop:s0
 
 #ss-services (PD)
 persist.vendor.pd_locater_debug    u:object_r:vendor_pd_locater_dbg_prop:s0
+
+#qdcm socket service
+vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0
+
+# Wifi Softap
+persist.vendor.wifi.softap.        u:object_r:vendor_softap_prop:s0
+#mm-parser
+vendor.mm.enable.qcom_parser       u:object_r:mm_parser_prop:s0
+vendor.qcom_parser.                u:object_r:mm_parser_prop:s0
+vendor.audio.parser.ip.buffer.size u:object_r:mm_parser_prop:s0
+
+#mm-osal
+vendor.debug.mmosal.config         u:object_r:debug_prop:s0
+
+#mm-video
+vendor.encoder.video.profile       u:object_r:mm_video_prop:s0
+vendor.video.disable.ubwc          u:object_r:mm_video_prop:s0
+persist.vendor.dbg.av.logs.level   u:object_r:mm_video_prop:s0
+persist.vendor.mm.en.dropcorrupt   u:object_r:mm_video_prop:s0
+vendor.vidc.enc.trgt_sup_bframe    u:object_r:mm_video_prop:s0
+persist.vendor.media.hls.          u:object_r:mm_video_prop:s0
+vendor.av.dbg.disable.pers.cache   u:object_r:mm_video_prop:s0
+persist.vendor.sys.media.rtp-ports u:object_r:mm_video_prop:s0
+vendor.mm.en.sec.smoothstreaming   u:object_r:mm_video_prop:s0

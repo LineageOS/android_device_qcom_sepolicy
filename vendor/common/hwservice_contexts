@@ -76,7 +76,9 @@ vendor.qti.atcmdfwd::IAtCmdFwd                               u:object_r:hal_atfw
 com.qualcomm.qti.imsrtpservice::IRTPService                  u:object_r:hal_imsrtp_hwservice:s0
 vendor.qti.hardware.factory::IFactory                        u:object_r:vendor_hal_factory_qti_hwservice:s0
 vendor.qti.hardware.display.allocator::IQtiAllocator         u:object_r:hal_graphics_allocator_hwservice:s0
+vendor.qti.hardware.soter::ISoter                            u:object_r:hal_soter_hwservice:s0
 vendor.qti.hardware.tui_comm::ITuiComm                       u:object_r:hal_tui_comm_hwservice:s0
 vendor.qti.hardware.qdutils_disp::IQdutilsDisp               u:object_r:hal_qdutils_disp_hwservice:s0
 vendor.qti.hardware.sensorscalibrate::ISensorsCalibrate      u:object_r:hal_sensorscalibrate_qti_hwservice:s0
 vendor.qti.hardware.wifi.supplicant::ISupplicantVendor       u:object_r:hal_wifi_supplicant_hwservice:s0
+vendor.qti.hardware.wifi.hostapd::IHostapdVendor             u:object_r:hal_wifi_hostapd_hwservice:s0

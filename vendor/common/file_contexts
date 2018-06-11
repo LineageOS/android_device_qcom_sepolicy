@@ -6,7 +6,7 @@
 /dev/diag                                       u:object_r:diag_device:s0
 /dev/hsicctl.*                                  u:object_r:hsic_device:s0
 /dev/kgsl-3d0                                   u:object_r:gpu_device:s0
-/dev/mhi_pipe_.*                                u:object_r:mhi_device:s0
+/dev/mhi_.*                                     u:object_r:mhi_device:s0
 /dev/bhi                                        u:object_r:bhi_device:s0
 /dev/msm_.*                                     u:object_r:audio_device:s0
 /dev/wcd_dsp0_control                           u:object_r:audio_device:s0
@@ -20,13 +20,10 @@
 /dev/spcom                                      u:object_r:spcom_device:s0
 /dev/sp_kernel                                  u:object_r:skp_device:s0
 /dev/sp_ssr                                     u:object_r:sp_ssr_device:s0
-/dev/sec_nvm_sp_kernel                          u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_jcos                               u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_spiris                             u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_keymaster                          u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_iuicc                              u:object_r:sec_nvm_device:s0
+/dev/sec_nvm_.*                                 u:object_r:sec_nvm_device:s0
 /dev/sp_keymaster                               u:object_r:sp_keymaster_device:s0
 /dev/cryptoapp                                  u:object_r:cryptoapp_device:s0
+/dev/spdaemon_ssr                               u:object_r:spdaemon_ssr_device:s0
 /dev/qsee_ipc_irq_spss                          u:object_r:qsee_ipc_irq_spss_device:s0
 /dev/radio0                                     u:object_r:fm_radio_device:s0
 /dev/btpower                                    u:object_r:bt_device:s0
@@ -81,6 +78,7 @@
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/wlan                                       u:object_r:wlan_device:s0
 /dev/bg_com_dev                                 u:object_r:bg_daemon_device:s0
+/dev/msm_npu                                    u:object_r:npu_device:s0
 ###################################
 # Dev block nodes
 #
@@ -122,6 +120,7 @@
 #/dev/socket/dpmd                                u:object_r:dpmd_socket:s0
 #/dev/socket/dpmwrapper                          u:object_r:dpmwrapper_socket:s0
 /dev/socket/pps                                 u:object_r:pps_socket:s0
+/dev/socket/qdcmsocket                          u:object_r:qdcmsocket_socket:s0
 /dev/socket/rild2                               u:object_r:rild_socket:s0
 /dev/socket/rild2-debug                         u:object_r:rild_debug_socket:s0
 /dev/socket/rild-debug2                         u:object_r:rild_debug_socket:s0
@@ -191,6 +190,7 @@
 /(vendor|system/vendor)/bin/mm-pp-dpps          u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mmi                 u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/mmid                u:object_r:vendor_mmi_exec:s0
+/(vendor|system/vendor)/bin/qdcmss              u:object_r:qdcm-ss_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance  u:object_r:msm_irqbalanced_exec:s0
 /(vendor|system/vendor)/bin/imsdatadaemon       u:object_r:ims_exec:s0
 /(vendor|system/vendor)/bin/imsqmidaemon        u:object_r:ims_exec:s0
@@ -215,6 +215,7 @@
 /(vendor|system/vendor)/bin/qseecomd            u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/bg_daemon           u:object_r:bg_daemon_exec:s0
 /(vendor|system/vendor)/bin/spdaemon            u:object_r:spdaemon_exec:s0
+/(vendor|system/vendor)/bin/sec_nvm             u:object_r:sec_nvm_exec:s0
 /(vendor|system/vendor)/bin/cnss-daemon         u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/hostapd_cli         u:object_r:hostapd_exec:s0
 /(vendor|system/vendor)/bin/adsprpcd            u:object_r:adsprpcd_exec:s0
@@ -311,6 +312,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service      u:object_r:vendor_hal_factory_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.allocator@1\.0-service   u:object_r:hal_graphics_allocator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.tui_comm@1\.0-service-qti u:object_r:hal_tui_comm_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.soter@1\.0-service u:object_r:hal_soter_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qdutils_disp@1\.0-service-qti u:object_r:hal_qdutils_disp_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service u:object_r:hal_sensorscalibrate_qti_default_exec:s0
 /(vendor|system/vendor)/bin/power_off_alarm        u:object_r:power_off_alarm_exec:s0
@@ -467,6 +469,7 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+/host0/scsi_host/host0(/.*)?  u:object_r:sysfs_scsi_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/snapshot(/.*)? u:object_r:sysfs_kgsl_snapshot:s0
 
 /sys/devices(/platform)?/soc(.[0-9])?/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:sysfs_mmc_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/bdi/read_ahead_kb u:object_r:sysfs_mmc_host:s0
@@ -494,6 +497,7 @@
 /sys/kernel/boot_adsp/boot                                          u:object_r:sysfs_boot_adsp:s0
 /sys/kernel/boot_slpi(/.*)?                                         u:object_r:sysfs_slpi:s0
 /sys/module/process_reclaim(/.*)?                                   u:object_r:sysfs_process_reclaim:s0
+/sys/module/vmpressure(/.*)?                                        u:object_r:sysfs_vmpressure:s0
 
 ###################################
 # data files
@@ -546,6 +550,7 @@
 /data/vendor/misc/qsee(/.*)?                                        u:object_r:data_qsee_file:s0
 /data/vendor/tui(/.*)?                                              u:object_r:vendor_tui_data_file:s0
 /data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
+/data/vendor/bluetooth(/.*)?                                        u:object_r:vendor_bt_data_file:s0
 
 ###################################
 # persist files
@@ -679,6 +684,10 @@
 /vendor/lib(64)?/libfastcvdsp_stub\.so      u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libfastcvadsp_stub\.so     u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libfastcvopt\.so           u:object_r:same_process_hal_file:s0
+
+# SVA files
+/vendor/lib(64)?/liblistenjni\.so          u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/liblistensoundmodel2\.so  u:object_r:same_process_hal_file:s0
 ###################################
 # firmware images
 #

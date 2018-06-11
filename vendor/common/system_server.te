@@ -1,3 +1,4 @@
+typeattribute system_server system_writes_vendor_properties_violators;
 allow system_server self:capability sys_module;
 
 # allow system_server to communicate with cnd process over cnd_socket
@@ -32,8 +33,6 @@ allow system_server qtitetherservice_service:service_manager find;
 allow system_server {
     vendor_bluetooth_prop
     usf_prop
-    alarm_handled_prop
-    alarm_instance_prop
 }:property_service set;
 
 # required for ANT App to connectto wcnss_filter sockets
@@ -59,6 +58,8 @@ allow system_server location_prop:property_service set;
 #For wifistatemachine
 allow system_server kernel:key search;
 allow system_server wlan_device:chr_file rw_file_perms;
+allow system_server vendor_softap_prop:property_service set;
+allow system_server vendor_softap_prop:file r_file_perms;
 
 #For ssr
 allow system_server ssr_device:chr_file r_file_perms;
@@ -150,6 +151,7 @@ allow system_server appdomain:file w_file_perms;
 # IPC call for sensor feed
 binder_call(system_server, hal_graphics_composer)
 binder_call(system_server, hal_camera)
+binder_call(system_server, mm-pp-daemon)
 
 # Ant ipc
 hal_client_domain(system_server,hal_bluetooth);

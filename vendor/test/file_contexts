@@ -66,8 +66,6 @@
 #for testscripts support
 /(vendor|system/vendor)/bin/init\.qcom\.vendor\.testscripts\.sh u:object_r:vendor-qti-testscripts_exec:s0
 /sys/kernel/debug/dsi_dual_samsung_cmd(/.*)?                    u:object_r:qti_debugfs:s0
-#TODO: coredump_file need have a attribute of data_file_type and
-# is going to show compile time issue need to fix this
+
 #Context for GPU applications
-#/data/vendor/gpu(/.*)?				u:object_r:coredump_file:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/snapshot(/.*)? u:object_r:sysfs_kgsl_snapshot:s0
+/data/vendor/gpu(/.*)?                                          u:object_r:vendor_gles_data_file:s0

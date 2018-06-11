@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,38 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-typeattribute dataservice_app mlstrustedsubject;
-typeattribute dataservice_app coredomain;
-typeattribute dataservice_app system_writes_vendor_properties_violators;
-app_domain(dataservice_app)
-net_domain(dataservice_app)
+## npu_app
+##
+## This file defines the permissions that npu_apps can carry
+type npu_app, domain;
+app_domain(npu_app)
 
-add_service(dataservice_app, cne_service)
-add_service(dataservice_app, uce_service)
-add_service(dataservice_app, dpmservice)
-
-allow dataservice_app {
-    app_api_service
-    system_api_service
-    audioserver_service
-    radio_service
-}:service_manager find;
-
-allow dataservice_app system_app_data_file:dir create_dir_perms;
-allow dataservice_app system_app_data_file:{ file lnk_file } create_file_perms;
-allow dataservice_app dpmd_socket:sock_file write;
-allow dataservice_app dpmd_data_file:dir rw_dir_perms;
-allow dataservice_app dpmd_data_file:file create_file_perms;
-
-#don't audit /proc/<pid>/stat denials
-dontaudit dataservice_app domain:dir r_dir_perms;
-
-#allow dpmservice to get running time for apps
-# r_dir_file(dataservice_app, appdomain)
-
-allow dataservice_app self:socket create_socket_perms;
-allowxperm dataservice_app self:socket ioctl msm_sock_ipc_ioctls_system;
-unix_socket_connect(dataservice_app, netd, netd);
-unix_socket_connect(dataservice_app,dpmd,dpmd);
-hwbinder_use(dataservice_app)
-set_prop(dataservice_app, persist_dpm_prop)
+allow npu_app npu_device:chr_file r_file_perms;
