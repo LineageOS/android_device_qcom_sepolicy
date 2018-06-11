@@ -10,6 +10,7 @@ r_dir_file(vendor_ssr_setup, sysfs_esoc)
 r_dir_file(vendor_ssr_setup, sysfs_ssr)
 allow vendor_ssr_setup sysfs_ssr:lnk_file w_file_perms;
 allow vendor_ssr_setup sysfs_ssr_toggle:file rw_file_perms;
+allow vendor_ssr_setup sysfs_ssr:file rw_file_perms;
 
 allow vendor_ssr_setup sysfs_data:file r_file_perms;
 
