@@ -32,3 +32,4 @@ type npu_app, domain;
 app_domain(npu_app)
 
 allow npu_app npu_device:chr_file r_file_perms;
+allow npu_app app_api_service:service_manager find;
