@@ -80,7 +80,6 @@ vendor.iop.enable_uxe   u:object_r:vendor_iop_prop:s0
 vendor.iop.enable_prefetch_ofr   u:object_r:vendor_iop_prop:s0
 location.                  u:object_r:location_prop:s0
 vendor.qti.izat.           u:object_r:location_prop:s0
-persist.rmnet.mux          u:object_r:rmnet_mux_prop:s0
 vendor.usb.                u:object_r:vendor_usb_prop:s0
 persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
 qemu.hw.mainkeys           u:object_r:qemu_hw_mainkeys_prop:s0

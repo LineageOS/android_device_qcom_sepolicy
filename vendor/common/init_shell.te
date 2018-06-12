@@ -51,7 +51,6 @@ allow qti_init_shell self:capability {
 # vendor_bluetooth_prop - for setting bt related properties from postboot script
 # uicc_prop - for access to UICC property
 # ctl_vendor_qmuxd_prop/ctl_vendor_netmgrd_prop - Needed in order to set properties on qmuxd and netmgrd processes
-# rmnet_mux_prop - Needed to set persist.rmnet.mux property
 set_prop(qti_init_shell, freq_prop)
 set_prop(qti_init_shell, vendor_mpctl_prop)
 set_prop(qti_init_shell, vendor_bluetooth_prop)
@@ -85,7 +84,6 @@ userdebug_or_eng(`
 set_prop(qti_init_shell, ctl_console_prop)
 set_prop(qti_init_shell, vendor_coresight_prop)
 ')
-set_prop(qti_init_shell, rmnet_mux_prop)
 set_prop(qti_init_shell, ctl_hbtp_prop)
 #Needed for starting vm_bms executable post-boot
 set_prop(qti_init_shell, vm_bms_prop)
@@ -183,8 +181,6 @@ allow qti_init_shell sysfs_kgsl:file { r_file_perms setattr };
 
 allow qti_init_shell proc:file r_file_perms;
 allow qti_init_shell rootfs:file r_file_perms;
-
-allow qti_init_shell rmnet_mux_prop:file r_file_perms;
 
 r_dir_file(qti_init_shell, sysfs_devfreq)
 allow qti_init_shell sysfs_devfreq:file w_file_perms;
