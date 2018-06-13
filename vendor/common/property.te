@@ -135,6 +135,7 @@ type vendor_qdma_prop, property_type;
 
 #WiFi Display
 type wfd_service_prop, property_type;
+type wfd_debug_prop, property_type;
 
 #imsrcsservice
 type ctl_vendor_imsrcsservice_prop, property_type;
