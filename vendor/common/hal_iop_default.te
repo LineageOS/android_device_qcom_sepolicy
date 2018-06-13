@@ -40,6 +40,7 @@ allow hal_iop_client hal_iop_hwservice:hwservice_manager find;
 
 #Allow access for vendor property
 allow hal_iop vendor_iop_prop:file r_file_perms;
+allow hal_iop vendor_mpctl_prop:file r_file_perms;
 
 # Allow access for /proc
 allow hal_iop_default proc:file rw_file_perms;
