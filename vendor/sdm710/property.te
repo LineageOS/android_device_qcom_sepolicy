@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #properites for init.qcom.sh script
-type media_sdm710_version_prop, property_type;
+type vendor_media_sdm710_version_prop, property_type;
