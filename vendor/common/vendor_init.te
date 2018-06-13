@@ -71,6 +71,8 @@ set_prop(vendor_init, vendor_am_prop)
 set_prop(vendor_init, vendor_display_prop)
 get_prop(vendor_init, vendor_display_prop)
 
+set_prop(vendor_init, vendor_audio_prop)
+
 # allow vendor toolbox usage
 allow vendor_init vendor_toolbox_exec:file rx_file_perms;
 type vendor_init_exec, exec_type, vendor_file_type, file_type;
