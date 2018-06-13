@@ -40,6 +40,9 @@ type ctl_vendor_hbtp_prop, property_type;
 # Bluetooth props
 type vendor_bluetooth_prop, property_type;
 
+# Audio props
+type vendor_audio_prop, property_type;
+
 #ss-restart
 type vendor_ssr_prop, property_type;
 

@@ -14,10 +14,10 @@ ctl.vendor.ipacm-diag      u:object_r:ipacm-diag_prop:s0
 ctl.vendor.dataqti         u:object_r:vendor_dataqti_prop:s0
 ctl.vendor.sensors         u:object_r:sensors_prop:s0
 ctl.thermal-engine         u:object_r:thermal_prop:s0
-vendor.audio.              u:object_r:debug_prop:s0
-vendor.voice.              u:object_r:debug_prop:s0
-persist.vendor.audio.      u:object_r:debug_prop:s0
-ro.vendor.audio.           u:object_r:debug_prop:s0
+vendor.audio.              u:object_r:vendor_audio_prop:s0
+vendor.voice.              u:object_r:vendor_audio_prop:s0
+persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
+ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
 debug.gralloc.             u:object_r:debug_gralloc_prop:s0
 debug.ramdump.             u:object_r:ramdump_prop:s0
 debug.ssrdump              u:object_r:ssr_prop:s0
