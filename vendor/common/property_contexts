@@ -3,7 +3,6 @@ persist.vendor.bluetooth.  u:object_r:vendor_bluetooth_prop:s0
 vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
 vendor.bluetooth.          u:object_r:vendor_bluetooth_prop:s0
 vendor.bt.                 u:object_r:vendor_bluetooth_prop:s0
-vendor.qcom.bluetooth.     u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bt.         u:object_r:vendor_bluetooth_prop:s0
 ctl.vendor.msm_irqbalance  u:object_r:msm_irqbalance_prop:s0
 ctl.vendor.netmgrd         u:object_r:ctl_netmgrd_prop:s0
