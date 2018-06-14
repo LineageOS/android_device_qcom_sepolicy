@@ -108,6 +108,9 @@ ctl.vendor.wigig_hostapd    u:object_r:ctl_vendor_wigigsvc_prop:s0
 persist.vendor.fst.         u:object_r:fst_prop:s0
 #HWUI Property
 ro.hwui.texture_cache_size u:object_r:hwui_prop:s0
+# ActivityManager tuning properties
+ro.vendor.qti.sys.fw.      u:object_r:vendor_am_prop:s0
+
 #Bservice Property
 ro.vendor.qti.sys.fw.bservice_ u:object_r:bservice_prop:s0
 #Delayed Service Restart Property

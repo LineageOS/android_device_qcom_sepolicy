@@ -65,6 +65,7 @@ set_prop(vendor_init, vendor_usb_prop)
 set_prop(vendor_init, vendor_ipacm_prop)
 set_prop(vendor_init, vendor_ipacm-diag_prop)
 set_prop(vendor_init, vendor_radio_prop)
+set_prop(vendor_init, vendor_am_prop)
 
 #Access vendor display properties
 set_prop(vendor_init, vendor_display_prop)
