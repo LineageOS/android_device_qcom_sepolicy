@@ -64,7 +64,7 @@ type hal_bootctl_socket, file_type;
 type location_socket, file_type;
 type pps_socket, file_type;
 
-type firmware_file, fs_type, contextmount_type;
+type firmware_file, file_type, contextmount_type, vendor_file_type;
 
 type cnd_data_file, file_type, data_file_type;
 type location_data_file, file_type, data_file_type;
@@ -117,7 +117,7 @@ type rfs_file, file_type, data_file_type;
 # vendor media files
 type vendor_media_data_file, file_type, data_file_type;
 
-type adsprpcd_file, file_type, mlstrustedobject;
+type adsprpcd_file, file_type, mlstrustedobject, vendor_file_type;
 
 type hbtp_log_file, file_type, data_file_type;
 type hbtp_cfg_file, file_type, vendor_file_type;

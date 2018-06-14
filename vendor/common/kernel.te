@@ -5,9 +5,12 @@ userdebug_or_eng(`
   allow kernel debugfs_ipc:dir search;
 ')
 
-allow kernel vendor_firmware_file:dir search;
-allow kernel vendor_firmware_file:file r_file_perms;
-allow kernel vendor_firmware_file:lnk_file read;
+# Access firmware_file
+r_dir_file(kernel, firmware_file)
+
+
+# access vendor_firmware_file
+r_dir_file(kernel, vendor_firmware_file)
 
 dontaudit kernel kernel:system module_request;
 

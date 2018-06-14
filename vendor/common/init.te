@@ -15,9 +15,10 @@ allow init mnt_vendor_file:dir mounton;
 allow init ab_block_device:lnk_file relabelto;
 
 #Allow init to mount non-hlos partitions in A/B builds
-allow init firmware_file:dir { mounton };
-allow init bt_firmware_file:dir { mounton };
-allow init vendor_firmware_file:dir mounton;
+allow init { bt_firmware_file vendor_firmware_file  firmware_file } :dir mounton;
+
+allow init { bt_firmware_file firmware_file }:filesystem  { relabelfrom  mount };
+allow { bt_firmware_file firmware_file  }self:filesystem associate;
 
 dontaudit init kernel:system module_request;
 
