@@ -29,7 +29,4 @@
 typeattribute bootanim system_writes_vendor_properties_violators;
 binder_call(bootanim, mediaserver);
 allow bootanim mediaserver_service:service_manager find;
-allow bootanim boot_animation_prop:file r_file_perms;
-allow bootanim debug_gralloc_prop:file r_file_perms;
-set_prop(bootanim, qemu_gles_prop)
 userdebug_or_eng(`allow bootanim self:process execmem;')

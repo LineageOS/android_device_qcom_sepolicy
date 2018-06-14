@@ -69,7 +69,9 @@ set_prop(vendor_init, vendor_am_prop)
 
 #Access vendor display properties
 set_prop(vendor_init, vendor_display_prop)
-get_prop(vendor_init, vendor_display_prop)
+
+#Access vendor gralloc properties
+set_prop(vendor_init, vendor_gralloc_prop)
 
 # allow vendor toolbox usage
 allow vendor_init vendor_toolbox_exec:file rx_file_perms;

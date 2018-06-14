@@ -75,7 +75,6 @@ allow mediacodec vendor_media_data_file:file create_file_perms;
 #allow mediacodec audioserver_service:service_manager find;
 set_prop(mediacodec, dolby_prop)
 # DOLBY_END
-allow mediacodec debug_gralloc_prop:file r_file_perms;
 vndbinder_use(mediacodec);
 hwbinder_use(mediacodec);
 hal_client_domain(mediacodec, hal_vpp)
