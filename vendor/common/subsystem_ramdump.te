@@ -13,7 +13,7 @@ userdebug_or_eng(`
   allow vendor_subsystem_ramdump ramdump_vendor_data_file:dir rw_dir_perms;
   allow vendor_subsystem_ramdump ramdump_vendor_data_file:file create_file_perms;
 
-  set_prop(vendor_subsystem_ramdump, ssr_prop);
+  set_prop(vendor_subsystem_ramdump, vendor_ssr_prop);
 
   allow vendor_subsystem_ramdump vendor_mdmhelperdata_data_file:dir r_dir_perms;
   allow vendor_subsystem_ramdump vendor_mdmhelperdata_data_file:file r_file_perms;

@@ -42,11 +42,9 @@ allow qti_init_shell self:capability {
     sys_admin
 };
 
-set_prop(qti_init_shell, ctl_hbtp_prop)
 set_prop(qti_init_shell, ctl_netmgrd_prop)
 set_prop(qti_init_shell, ctl_port-bridge_prop)
 set_prop(qti_init_shell, ctl_qcrild_prop)
-set_prop(qti_init_shell, debug_gralloc_prop)
 set_prop(qti_init_shell, ipacm-diag_prop)
 set_prop(qti_init_shell, ipacm_prop)
 set_prop(qti_init_shell, msm_irqbalance_prop)
