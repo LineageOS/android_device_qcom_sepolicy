@@ -47,3 +47,5 @@ userdebug_or_eng(`
   allow radio vendor_mbn_data_file:file r_file_perms;
 ')
 hal_client_domain(radio, hal_perf)
+
+get_prop(radio, qcom_ims_prop)
