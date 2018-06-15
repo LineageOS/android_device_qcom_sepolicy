@@ -44,7 +44,8 @@ allow hostapd cnd:{
           fifo_file
           netlink_route_socket
           netlink_tcpdiag_socket
-          unix_stream_socket} { read write };
+          unix_stream_socket
+          unix_dgram_socket} { read write };
 allow hostapd cnd:fifo_file r_file_perms;
 allow hostapd smem_log_device:chr_file rw_file_perms;
 allow hostapd fstman:unix_dgram_socket sendto;
@@ -63,3 +64,8 @@ allow hostapd wigighalsvc:unix_dgram_socket sendto;
 # allow hostapd to attach to fstman socket
 allow hostapd wifi_vendor_wpa_socket:dir r_dir_perms;
 allow hostapd wifi_vendor_wpa_socket:sock_file rw_file_perms;
+
+#diag
+userdebug_or_eng(`
+    diag_use(hostapd)
+')
