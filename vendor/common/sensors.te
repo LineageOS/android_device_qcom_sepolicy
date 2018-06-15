@@ -72,6 +72,7 @@ allow sensors dsp_device:chr_file r_file_perms;
 
 allow sensors ion_device:chr_file r_file_perms;
 allow sensors qdsp_device:chr_file r_file_perms;
+allow sensors xdsp_device:chr_file r_file_perms;
 
 
 # For reading dir/files on /dsp
