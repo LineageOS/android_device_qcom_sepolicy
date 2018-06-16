@@ -162,6 +162,8 @@ vendor.debug.time_services.enable   u:object_r:vendor_time_service_prop:s0
 persist.vendor.radio       u:object_r:vendor_radio_prop:s0
 vendor.radio               u:object_r:vendor_radio_prop:s0
 ro.vendor.ril.             u:object_r:vendor_radio_prop:s0
+ro.vendor.radio            u:object_r:vendor_radio_prop:s0
+
 persist.vendor.sys.        u:object_r:vendor_system_prop:s0
 
 #ss-restart
