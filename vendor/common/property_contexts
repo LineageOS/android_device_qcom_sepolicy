@@ -64,9 +64,9 @@ ctl.msm_irqbal_lb          u:object_r:msm_irqbalance_prop:s0
 camera.                    u:object_r:camera_prop:s0
 persist.camera.            u:object_r:camera_prop:s0
 vendor.spcom.              u:object_r:spcomlib_prop:s0
-sdm.idle_time              u:object_r:sdm_idle_time_prop:s0
-vendor.display.idle_time              u:object_r:sdm_idle_time_prop:s0
 vendor.display.               u:object_r:vendor_display_prop:s0
+ro.vendor.display.            u:object_r:vendor_display_prop:s0
+persist.vendor.display.       u:object_r:vendor_display_prop:s0
 ro.vendor.scr_enabled         u:object_r:scr_enabled_prop:s0
 vendor.bg_reset               u:object_r:bg_daemon_prop:s0
 vendor.bg.boot_complete       u:object_r:bg_boot_complete_prop:s0
@@ -92,10 +92,8 @@ vendor.voice.              u:object_r:vendor_audio_prop:s0
 persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
 ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
 ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
-debug.sf.nobootanimation   u:object_r:boot_animation_prop:s0
 persist.vendor.net.doxlat  u:object_r:vendor_xlat_prop:s0
-debug.gralloc.             u:object_r:debug_gralloc_prop:s0
-vendor.gralloc.             u:object_r:debug_gralloc_prop:s0
+vendor.gralloc.            u:object_r:vendor_gralloc_prop:s0
 # DOLBY_START
 dolby.                     u:object_r:dolby_prop:s0
 # DOLBY_END
@@ -123,8 +121,6 @@ vendor.sys.boot_mode              u:object_r:vendor_boot_mode_prop:s0
 ro.gpu.available_frequencies u:object_r:freq_prop:s0
 # NFC
 vendor.qti.nfc.            u:object_r:nfc_nq_prop:s0
-ctl.ppd                    u:object_r:ppd_prop:s0
-qemu.gles                  u:object_r:qemu_gles_prop:s0
 # LKCore start
 ctl.vendor.LKCore-dbg      u:object_r:ctl_LKCore_prop:s0
 ctl.vendor.LKCore-rel      u:object_r:ctl_LKCore_prop:s0
