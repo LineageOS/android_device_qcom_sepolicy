@@ -60,6 +60,8 @@ type opengles_prop, property_type;
 type mdm_helper_prop, property_type;
 type vendor_mpctl_prop, property_type;
 type vendor_iop_prop, property_type;
+#Scroll Pre-obtain
+type vendor_preobtain_prop, property_type;
 
 # properties for ActivityManager tuning
 type vendor_am_prop, property_type;
