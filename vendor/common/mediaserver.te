@@ -46,6 +46,9 @@ r_dir_file(mediaserver, adsprpcd_file);
 # allow mediaserver to communicate with bootanim
 binder_call(mediaserver, bootanim);
 
+#allow mediaserver to access audio properties
+get_prop(mediaserver, vendor_audio_prop)
+
 allow mediaserver surfaceflinger:unix_stream_socket rw_socket_perms;
 
 allow mediaserver mm_video_prop:file r_file_perms;

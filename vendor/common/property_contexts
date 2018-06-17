@@ -87,10 +87,10 @@ persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
 qemu.hw.mainkeys           u:object_r:qemu_hw_mainkeys_prop:s0
 ro.vendor.dbg.coresight.cfg_file     u:object_r:vendor_coresight_prop:s0
 ctl.hbtp                   u:object_r:ctl_hbtp_prop:s0
-vendor.audio.              u:object_r:debug_prop:s0
-vendor.voice.              u:object_r:debug_prop:s0
-persist.vendor.audio.      u:object_r:debug_prop:s0
-ro.vendor.audio.           u:object_r:debug_prop:s0
+vendor.audio.              u:object_r:vendor_audio_prop:s0
+vendor.voice.              u:object_r:vendor_audio_prop:s0
+persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
+ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
 ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
 debug.sf.nobootanimation   u:object_r:boot_animation_prop:s0
 persist.vendor.net.doxlat  u:object_r:vendor_xlat_prop:s0

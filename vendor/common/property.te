@@ -151,6 +151,9 @@ type vendor_mmi_prop, property_type;
 type vendor_time_service_prop, property_type;
 type vendor_radio_prop, property_type;
 
+# Audio props
+type vendor_audio_prop, property_type;
+
 #ss-restart
 type vendor_ssr_prop, property_type;
 
