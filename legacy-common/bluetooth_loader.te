@@ -4,8 +4,15 @@ type bluetooth_loader_exec, exec_type, file_type;
 # Started by init
 init_daemon_domain(bluetooth_loader)
 
-# Get persist.service.bdroid.*, bluetooth.* and wcnss property values
-get_prop(bluetooth_loader, bluetooth_prop)
+# Execute init.qcom.bt.sh
+allow bluetooth_loader qti_init_shell_exec:file entrypoint;
+
+# Run hci_qcomm_init and log without changing domain
+allow bluetooth_loader bluetooth_loader_exec:file execute_no_trans;
+allow bluetooth_loader vendor_toolbox_exec:file execute_no_trans;
+
+# Set persist.service.bdroid.*, bluetooth.* and get wcnss property values
+set_prop(bluetooth_loader, bluetooth_prop)
 get_prop(bluetooth_loader, wcnss_prop)
 
 # Access the serial device
