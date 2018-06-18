@@ -7,6 +7,9 @@ allow hal_bootctl block_device:dir r_dir_perms;
 
 # Edit the attributes stored in the GPT.
 allow hal_bootctl gpt_block_device:blk_file rw_file_perms;
+allow hal_bootctl root_block_device:blk_file rw_file_perms;
+
+# Allow boot_control_hal to get attributes on all the A/B partitions.
 allow hal_bootctl boot_block_device:blk_file rw_file_perms;
 allow hal_bootctl ab_block_device:blk_file getattr;
 allow hal_bootctl xbl_block_device:blk_file getattr;
