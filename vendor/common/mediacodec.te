@@ -81,3 +81,5 @@ hal_client_domain(mediacodec, hal_vpp)
 hal_client_domain(mediacodec, hal_perf)
 
 allow mediacodec mm_video_prop:file r_file_perms;
+allow mediacodec hal_display_config_hwservice:hwservice_manager find;
+allow mediacodec hal_graphics_composer_default:binder call;
