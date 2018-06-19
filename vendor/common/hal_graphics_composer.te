@@ -38,6 +38,7 @@ userdebug_or_eng(`
 ')
 hal_client_domain(hal_graphics_composer_default, hal_graphics_allocator);
 allow hal_graphics_composer sdm_idle_time_prop:file r_file_perms;
+allow hal_graphics_composer vendor_display_prop:file r_file_perms;
 allow hal_graphics_composer_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 allow hal_graphics_composer sysfs_graphics:dir r_dir_perms;
 allow hal_graphics_composer sysfs_graphics:file rw_file_perms;
@@ -83,6 +84,9 @@ unix_socket_connect(hal_graphics_composer_default, qdcmsocket, qdcm-ss)
 
 # allow composer client to find display config service.
 allow hal_display_config_client hal_display_config_hwservice:hwservice_manager find;
+
+# Rule for pps socket usage
+unix_socket_connect(hal_graphics_composer_default, pps, mm-pp-daemon)
 
 # allow composer to register display config
 add_hwservice(hal_graphics_composer_server, hal_display_config_hwservice);

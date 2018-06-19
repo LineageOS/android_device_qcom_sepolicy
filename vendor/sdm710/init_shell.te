@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -27,9 +27,12 @@
 
 # media_sdm710_version_prop - to choose target version specific media_codecs.xml
 allow qti_init_shell {
-    media_sdm710_version_prop
+    vendor_media_sdm710_version_prop
 }:property_service set;
 
 # For regionalization
 allow qti_init_shell regionalization_file:dir r_dir_perms;
 allow qti_init_shell regionalization_file:file create_file_perms;
+
+r_dir_file(qti_init_shell, sysfs_devfreq_l3cdsp)
+allow qti_init_shell sysfs_devfreq_l3cdsp:file setattr;

@@ -148,6 +148,9 @@ allow system_server bservice_prop:file r_file_perms;
 allow system_server reschedule_service_prop:file r_file_perms;
 allow system_server appdomain:file w_file_perms;
 
+# Allow system_server to access ActivityManager tuning properties from vendor
+allow system_server vendor_am_prop:file r_file_perms;
+
 # IPC call for sensor feed
 binder_call(system_server, hal_graphics_composer)
 binder_call(system_server, hal_camera)
@@ -168,3 +171,5 @@ allow system_server sysfs_wigig:file rw_file_perms;
 
 # allow system_server to access IOP HAL service
 hal_client_domain(system_server, hal_iop)
+#Allow access for vendor property
+allow system_server vendor_iop_prop:file r_file_perms;

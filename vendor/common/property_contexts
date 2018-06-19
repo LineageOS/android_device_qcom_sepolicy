@@ -36,9 +36,9 @@ hw.fm.                     u:object_r:fm_prop:s0
 sys.usf.                   u:object_r:usf_prop:s0
 ro.qc.sdk.us.                 u:object_r:usf_prop:s0
 radio.atfwd.               u:object_r:radio_prop:s0
-ctl.qmuxd                  u:object_r:ctl_qmuxd_prop:s0
-ctl.netmgrd                u:object_r:ctl_netmgrd_prop:s0
-ctl.port-bridge            u:object_r:ctl_port-bridge_prop:s0
+ctl.vendor.qmuxd                  u:object_r:ctl_vendor_qmuxd_prop:s0
+ctl.vendor.netmgrd                u:object_r:ctl_vendor_netmgrd_prop:s0
+ctl.vendor.port-bridge            u:object_r:ctl_vendor_port-bridge_prop:s0
 ctl.vendor.qcrild          u:object_r:ctl_qcrild_prop:s0
 vendor.min_freq_0                 u:object_r:vendor_mpctl_prop:s0
 vendor.min_freq_4                 u:object_r:vendor_mpctl_prop:s0
@@ -56,6 +56,7 @@ init.svc.vendor.ipacm       u:object_r:vendor_ipacm_prop:s0
 ctl.vendor.ipacm-diag      u:object_r:vendor_ipacm-diag_prop:s0
 init.svc.vendor.ipacm-diag  u:object_r:vendor_ipacm-diag_prop:s0
 ctl.vendor.dataqti         u:object_r:vendor_dataqti_prop:s0
+ctl.vendor.dataadpl         u:object_r:vendor_dataadpl_prop:s0
 ctl.vendor.sensors                u:object_r:sensors_prop:s0
 ctl.vendor.msm_irqbalance         u:object_r:msm_irqbalance_prop:s0
 ctl.vendor.msm_irqbl_sdm630       u:object_r:msm_irqbl_sdm630_prop:s0
@@ -66,7 +67,7 @@ persist.camera.            u:object_r:camera_prop:s0
 vendor.spcom.              u:object_r:spcomlib_prop:s0
 sdm.idle_time              u:object_r:sdm_idle_time_prop:s0
 vendor.display.idle_time              u:object_r:sdm_idle_time_prop:s0
-ro.sf.lcd_density             u:object_r:sf_lcd_density_prop:s0
+vendor.display.               u:object_r:vendor_display_prop:s0
 ro.vendor.scr_enabled         u:object_r:scr_enabled_prop:s0
 vendor.bg_reset               u:object_r:bg_daemon_prop:s0
 vendor.bg.boot_complete       u:object_r:bg_boot_complete_prop:s0
@@ -107,6 +108,9 @@ ctl.vendor.wigig_hostapd    u:object_r:ctl_vendor_wigigsvc_prop:s0
 persist.vendor.fst.         u:object_r:fst_prop:s0
 #HWUI Property
 ro.hwui.texture_cache_size u:object_r:hwui_prop:s0
+# ActivityManager tuning properties
+ro.vendor.qti.sys.fw.      u:object_r:vendor_am_prop:s0
+
 #Bservice Property
 ro.vendor.qti.sys.fw.bservice_ u:object_r:bservice_prop:s0
 #Delayed Service Restart Property
@@ -141,6 +145,10 @@ vendor.sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
 
 #WiFi Display
 vendor.wfdservice          u:object_r:wfd_service_prop:s0
+persist.vendor.debug.mux.  u:object_r:wfd_debug_prop:s0
+persist.vendor.debug.rtp.  u:object_r:wfd_debug_prop:s0
+persist.vendor.debug.wfd.  u:object_r:wfd_debug_prop:s0
+vendor.debug.wfd.          u:object_r:wfd_debug_prop:s0
 
 ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
 
@@ -183,3 +191,6 @@ persist.vendor.media.hls.          u:object_r:mm_video_prop:s0
 vendor.av.dbg.disable.pers.cache   u:object_r:mm_video_prop:s0
 persist.vendor.sys.media.rtp-ports u:object_r:mm_video_prop:s0
 vendor.mm.en.sec.smoothstreaming   u:object_r:mm_video_prop:s0
+
+#rmt_storage
+ctl.vendor.rmt_storage     u:object_r:ctl_vendor_rmt_storage_prop:s0

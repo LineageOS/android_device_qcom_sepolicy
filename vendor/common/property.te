@@ -25,9 +25,9 @@
 # property for uicc_daemon
 type uicc_prop, property_type;
 type qcom_ims_prop, property_type;
-type ctl_qmuxd_prop, property_type;
-type ctl_netmgrd_prop, property_type;
-type ctl_port-bridge_prop, property_type;
+type ctl_vendor_qmuxd_prop, property_type;
+type ctl_vendor_netmgrd_prop, property_type;
+type ctl_vendor_port-bridge_prop, property_type;
 type ctl_qcrild_prop, property_type;
 type vendor_tee_listener_prop, property_type;
 type ctl_vendor_rild_prop, property_type;
@@ -41,6 +41,7 @@ type usf_prop, property_type;
 type freq_prop, property_type;
 type vm_bms_prop, property_type; #To start vm_bms
 type vendor_dataqti_prop, property_type;
+type vendor_dataadpl_prop, property_type;
 type vendor_ipacm_prop, property_type;
 type vendor_ipacm-diag_prop, property_type;
 type cnd_vendor_prop, property_type;
@@ -51,7 +52,7 @@ type msm_irqbl_sdm630_prop, property_type;
 type camera_prop, property_type;
 type spcomlib_prop, property_type;
 type sdm_idle_time_prop, property_type;
-type sf_lcd_density_prop, property_type;
+type vendor_display_prop, property_type;
 type scr_enabled_prop, property_type;
 type bg_daemon_prop, property_type;
 type bg_boot_complete_prop, property_type;
@@ -59,6 +60,9 @@ type opengles_prop, property_type;
 type mdm_helper_prop, property_type;
 type vendor_mpctl_prop, property_type;
 type vendor_iop_prop, property_type;
+
+# properties for ActivityManager tuning
+type vendor_am_prop, property_type;
 
 #Needed for  ubwc support
 type debug_gralloc_prop, property_type;
@@ -134,6 +138,7 @@ type vendor_qdma_prop, property_type;
 
 #WiFi Display
 type wfd_service_prop, property_type;
+type wfd_debug_prop, property_type;
 
 #imsrcsservice
 type ctl_vendor_imsrcsservice_prop, property_type;
@@ -161,3 +166,6 @@ type mm_parser_prop, property_type;
 
 #mm-video
 type mm_video_prop, property_type;
+
+#rmt_storage
+type ctl_vendor_rmt_storage_prop, property_type;

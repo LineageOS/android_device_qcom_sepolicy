@@ -88,6 +88,14 @@ qmux_socket(qdmastatsd);
 allow qdmastatsd self:socket create_socket_perms;
 allowxperm qdmastatsd self:socket ioctl msm_sock_ipc_ioctls;
 
+#access to qdma_socket
+allow qdmastatsd qdma_socket:dir rw_dir_perms;
+allow qdmastatsd qdma_socket:sock_file create_file_perms;
+
+# access to /persist/hlos_rfs/shared
+allow qdmastatsd persist_rfs_shared_hlos_file:dir r_dir_perms;
+allow qdmastatsd persist_rfs_shared_hlos_file:file rw_file_perms;
+
 # diag
 userdebug_or_eng(`
   diag_use(qdmastatsd)

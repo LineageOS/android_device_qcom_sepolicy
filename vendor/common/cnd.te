@@ -95,8 +95,17 @@ allow cnd sysfs_data:file r_file_perms;
 
 add_hwservice(cnd, hal_cne_hwservice)
 add_hwservice(cnd, hal_latency_hwservice)
+add_hwservice(cnd, hal_datafactory_hwservice)
 hwbinder_use(cnd)
 get_prop(cnd, hwservicemanager_prop)
 binder_call(cnd, dataservice_app)
 binder_call(cnd, ims)
 binder_call(cnd, location)
+
+##############################################################
+#for using public interface vendor.qti.data.factory
+#client should add their domain to cnd.te
+##############################################################
+userdebug_or_eng('
+  binder_call(cnd, radio)
+')

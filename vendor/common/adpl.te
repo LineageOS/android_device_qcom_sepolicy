@@ -1,4 +1,4 @@
-#Copyright (c) 2017, The Linux Foundation. All rights reserved.
+#Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 #Redistribution and use in source and binary forms, with or without
 #modification, are permitted provided that the following conditions are
@@ -24,21 +24,32 @@
 #WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 #OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 #IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-#
 
-allow hal_wifi wlan_device:chr_file rw_file_perms;
-allow hal_wifi self:capability sys_module;
-allow hal_wifi kernel:key search;
-allow hal_wifi vendor_file:system module_load;
-not_full_treble(`allow hal_wifi system_file:system module_load';)
-allow hal_wifi proc_modules:file r_file_perms;
-allow hal_wifi_default vendor_softap_prop:file r_file_perms;
+type adpl, domain;
+type adpl_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(adpl)
+net_domain(adpl)
 
-# allow hal_wifi to write into /data/vendor/tombstones/wifi
+allow adpl {
+    rmnet_device
+    mhi_device
+}:chr_file rw_file_perms;
+
+qmux_socket(adpl)
+
+allow adpl self:{
+    netlink_socket
+    socket
+    udp_socket
+    qipcrtr_socket
+} create_socket_perms_no_ioctl;
+
+allow adpl self:socket ioctl;
+allowxperm adpl self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+
+allow adpl sysfs_data:file r_file_perms;
+
+#diag
 userdebug_or_eng(`
-  allow hal_wifi_server vendor_tombstone_data_file:dir rw_dir_perms;
-  allow hal_wifi_server vendor_tombstone_data_file:file create_file_perms;
-# allow hal_wifi to write into /proc/debugdriver/driverdump
-  r_dir_file(hal_wifi_server, proc_wifi_dbg);
+    diag_use(adpl)
 ')

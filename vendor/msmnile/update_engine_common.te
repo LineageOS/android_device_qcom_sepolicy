@@ -25,26 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_iop_default, domain, mlstrustedsubject;
-hal_server_domain(hal_iop_default, hal_iop)
+# Allow update_engine and update_engine_sideload (recovery) read/write on the
+# device-specific partitions it should update.
+allow update_engine_common {
+	custom_ab_block_device
+	xbl_block_device
+	uefi_block_device
+	ssd_device
+	modem_block_device
+}:blk_file rw_file_perms;
 
-type hal_iop_default_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_iop_default)
-
-# Allow hwbinder call from hal client to server
-binder_call(hal_iop_client, hal_iop_server)
-
-# Add hwservice related rules
-add_hwservice(hal_iop_server, hal_iop_hwservice)
-allow hal_iop_client hal_iop_hwservice:hwservice_manager find;
-
-#Allow access for vendor property
-allow hal_iop vendor_iop_prop:file r_file_perms;
-allow hal_iop vendor_mpctl_prop:file r_file_perms;
-
-# Allow access for /proc
-allow hal_iop_default proc:file rw_file_perms;
-
-#Allow Access for /data/vendor/iop
-allow hal_iop iop_data_file:dir rw_dir_perms;
-allow hal_iop iop_data_file:file create_file_perms;

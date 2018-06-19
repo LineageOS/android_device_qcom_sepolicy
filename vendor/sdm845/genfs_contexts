@@ -36,3 +36,6 @@ genfscon sysfs /devices/platform/soc/6047000.tmc/coresight-tmc-etf u:object_r:sy
 genfscon sysfs /devices/platform/soc/6048000.tmc/coresight-tmc-etr u:object_r:sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/6002000.stm/coresight-stm u:object_r:sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/14066f0.hwevent/coresight-hwevent u:object_r:sysfs_qdss_dev:s0
+
+genfscon sysfs /devices/platform/soc/soc:qcom,l3-cdsp/devfreq u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,l3-cdsp/devfreq/soc:qcom,l3-cdsp/userspace u:object_r:sysfs_devfreq_l3cdsp:s0
