@@ -72,7 +72,8 @@ vendor.bg_reset               u:object_r:bg_daemon_prop:s0
 vendor.bg.boot_complete       u:object_r:bg_boot_complete_prop:s0
 ro.opengles.version           u:object_r:opengles_prop:s0
 ro.vendor.qualcomm.bt.hci_transport  u:object_r:vendor_bluetooth_prop:s0
-ctl.mdm_helper             u:object_r:mdm_helper_prop:s0
+ctl.mdm_helper             u:object_r:vendor_mdm_helper_prop:s0
+ctl.vendor.mdm_helper      u:object_r:vendor_mdm_helper_prop:s0
 vendor.post_boot.parsed    u:object_r:vendor_mpctl_prop:s0
 vendor.perf.cores_online   u:object_r:vendor_mpctl_prop:s0
 vendor.iop.enable_uxe      u:object_r:vendor_iop_prop:s0
