@@ -29,6 +29,7 @@
 # device-specific partitions it should update.
 allow update_engine_common {
 	custom_ab_block_device
+	ab_block_device
 	xbl_block_device
 	ssd_block_device
 	modem_block_device
