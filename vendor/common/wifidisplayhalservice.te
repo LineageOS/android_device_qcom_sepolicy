@@ -50,6 +50,7 @@ add_service(wifidisplayhalservice, wfdnativemm_service)
 
 #Allow access to firmware files for HDCP session
 r_dir_file(wifidisplayhalservice, vendor_firmware_file)
+r_dir_file(wifidisplayhalservice, firmware_file)
 
 #Allow access to tee/ion device and tcp socket for HDCP sessions
 allow wifidisplayhalservice tee_device:chr_file rw_file_perms;
