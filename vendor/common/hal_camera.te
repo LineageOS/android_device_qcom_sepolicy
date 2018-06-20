@@ -82,3 +82,5 @@ allow hal_camera qdsp_device:chr_file r_file_perms;
 r_dir_file(hal_camera, adsprpcd_file);
 
 allow hal_camera_default mm-qcamerad:unix_dgram_socket sendto;
+
+get_prop(hal_camera, mm_video_prop)
