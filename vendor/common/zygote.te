@@ -28,3 +28,4 @@
 typeattribute zygote system_writes_vendor_properties_violators;
 # persist.service.bdroid.bdaddr hw.cabl.level
 allow zygote { vendor_bluetooth_prop system_prop } :property_service set;
+get_prop(zygote, vendor_mpctl_prop)

@@ -150,6 +150,7 @@ allow system_server appdomain:file w_file_perms;
 
 # Allow system_server to access ActivityManager tuning properties from vendor
 allow system_server vendor_am_prop:file r_file_perms;
+get_prop(system_server, vendor_mpctl_prop)
 
 # IPC call for sensor feed
 binder_call(system_server, hal_graphics_composer)
