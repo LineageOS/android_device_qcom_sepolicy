@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_perf_default, domain;
+type hal_perf_default, domain, mlstrustedsubject;
 hal_server_domain_bypass(hal_perf_default, hal_perf)
 
 type hal_perf_default_exec, exec_type, vendor_file_type, file_type;
@@ -48,6 +48,7 @@ allow hal_perf_default mpctl_data_file:file create_file_perms;
 allow hal_perf_default lm_data_file:dir rw_dir_perms;
 allow hal_perf_default lm_data_file:file create_file_perms;
 allow hal_perf_default sysfs_lib:file w_file_perms;
+r_dir_file(hal_perf_default, appdomain);
 
 allow hal_perf {
     sysfs_devices_system_cpu
