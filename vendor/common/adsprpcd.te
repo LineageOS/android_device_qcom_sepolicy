@@ -11,3 +11,4 @@ allow adsprpcd system_file:dir r_dir_perms;
 r_dir_file(adsprpcd, adsprpcd_file)
 allow adsprpcd persist_sensors_file:dir create_dir_perms;
 allow adsprpcd persist_sensors_file:file create_file_perms;
+allow adsprpcd mnt_vendor_file:dir r_dir_perms;
