@@ -36,6 +36,7 @@ unix_socket_connect(ims, netd, netd)
 unix_socket_connect(ims, ims, qmuxd)
 
 set_prop(ims, qcom_ims_prop)
+set_prop(ims, ctl_vendor_imsrcsservice_prop)
 
 # permissions for communication with CNE in LBO use case
 unix_socket_connect(ims, cnd, cnd)
