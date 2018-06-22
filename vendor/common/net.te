@@ -3,3 +3,5 @@
 
 # allow netdomain access to dpmd
 #unix_socket_connect(netdomain, dpmwrapper, dpmd)
+
+allow netdomain self:icmp_socket create_socket_perms;
