@@ -33,6 +33,8 @@ dolby.audio.               u:object_r:audio_prop:s0
 vendor.ims.                u:object_r:qcom_ims_prop:s0
 persist.vendor.ims.disabled       u:object_r:qcom_ims_prop:s0
 vendor.service.qti.ims.enabled    u:object_r:qcom_ims_prop:s0
+persist.vendor.ims.        u:object_r:qcom_ims_prop:s0
+persist.vendor.qti.telephony.vt_cam_interface u:object_r:qcom_ims_prop:s0
 hw.fm.                     u:object_r:fm_prop:s0
 sys.usf.                   u:object_r:usf_prop:s0
 ro.qc.sdk.us.                 u:object_r:usf_prop:s0
