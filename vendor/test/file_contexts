@@ -69,3 +69,6 @@
 
 #Context for GPU applications
 /data/vendor/gpu(/.*)?                                          u:object_r:vendor_gles_data_file:s0
+
+#Used only in debug build to enable gpu config settings
+/data/misc/gpu(/.*)?                                            u:object_r:system_gles_data_file:s0
