@@ -101,15 +101,19 @@ allow $1 qdma_app:unix_stream_socket { connectto };
 # Allow a base set of permissions required for a sh  to copy data from /data to /data/vendor
 #
 # For example, make nfc-sh copy data from /data/nfc to /data/vendor/nfc:
-#   coredata_datavendor_migration(camera-sh, nfc_data_file, data_vendor_nfc_file)
+#   coredata_datavendor_migration(nfc-sh, nfc_data_file, data_vendor_nfc_file)
+#   script that moves the data should be in /system/bin and should be using the
+#   /system/bin/sh.
 #
 define(`coredata_datavendor_migration', `
 type $1, domain;
-type $1_exec, exec_type, file_type, vendor_file_type;
+type $1_exec, exec_type, file_type;
+
 init_daemon_domain($1);
 typeattribute $1 data_between_core_and_vendor_violators;
-allow $1 vendor_shell_exec:file rx_file_perms;
-allow $1 vendor_toolbox_exec:file rx_file_perms;
+typeattribute $1 coredomain;
+allow $1 shell_exec:file rx_file_perms;
+allow $1 toolbox_exec:file rx_file_perms;
 allow $1 file_contexts_file:file { read getattr open };
 allow $1 $2:file { getattr setattr relabelfrom };
 allow $1 $2:dir { reparent rename rmdir setattr rw_dir_perms relabelfrom };
