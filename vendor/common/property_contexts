@@ -46,10 +46,12 @@ vendor.min_freq_0                 u:object_r:vendor_mpctl_prop:s0
 vendor.min_freq_4                 u:object_r:vendor_mpctl_prop:s0
 ro.vendor.qti.core_ctl_min_cpu    u:object_r:vendor_mpctl_prop:s0
 ro.vendor.qti.core_ctl_max_cpu    u:object_r:vendor_mpctl_prop:s0
-ctl.vendor.ril-daemon      u:object_r:ctl_vendor_rild_prop:s0
-ctl.vendor.cnd             u:object_r:cnd_vendor_prop:s0
-persist.vendor.sys.cnd     u:object_r:cnd_vendor_prop:s0
-persist.vendor.cne.        u:object_r:cnd_vendor_prop:s0
+ctl.vendor.ril-daemon             u:object_r:ctl_vendor_rild_prop:s0
+ctl.vendor.cnd                    u:object_r:cnd_vendor_prop:s0
+persist.vendor.sys.cnd            u:object_r:cnd_vendor_prop:s0
+persist.vendor.cne.               u:object_r:cnd_vendor_prop:s0
+persist.vendor.cne.feature        u:object_r:cnd_vendor_prop:s0
+persist.vendor.cne.logging.qxdm   u:object_r:cnd_vendor_prop:s0
 persist.vendor.cnd.        u:object_r:cnd_vendor_prop:s0
 persist.vendor.cnd.wqe     u:object_r:cnd_vendor_prop:s0
 ctl.vm_bms                 u:object_r:vm_bms_prop:s0
@@ -100,6 +102,9 @@ persist.vendor.data.dont_use_npflag  u:object_r:vendor_dataqdp_prop:s0
 persist.vendor.data.profile_update  u:object_r:vendor_dataqdp_prop:s0
 vendor.gralloc.            u:object_r:vendor_gralloc_prop:s0
 vendor.wifi.ftmd.                 u:object_r:vendor_wifi_ftmd_prop:s0
+ro.fota.oem                u:object_r:vendor_default_prop:s0
+ro.build.software.version  u:object_r:vendor_default_prop:s0
+
 # WIGIG
 persist.vendor.wigig.       u:object_r:wigig_prop:s0
 vendor.wigig.               u:object_r:wigig_prop:s0
