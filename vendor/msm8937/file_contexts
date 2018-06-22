@@ -70,6 +70,9 @@
 # Single hal process
 /(vendor|system/vendor)/bin/hw/hal-server             u:object_r:hal-server_exec:s0
 
+# FBE
+/(vendor|system/vendor)/bin/init.qti.qseecomd.sh      u:object_r:init-qti-fbe-sh_exec:s0
+
 ##################################
 # A/B partitions.
 #EMMC
