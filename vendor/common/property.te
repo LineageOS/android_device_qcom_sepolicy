@@ -150,6 +150,9 @@ type vendor_radio_prop, property_type;
 # Audio props
 type vendor_audio_prop, property_type;
 
+# Audio debug props
+type vendor_audio_debug_prop, property_type;
+
 #ss-restart
 type vendor_ssr_prop, property_type;
 
