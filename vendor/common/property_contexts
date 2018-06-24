@@ -156,6 +156,9 @@ persist.vendor.debug.rtp.  u:object_r:wfd_debug_prop:s0
 persist.vendor.debug.wfd.  u:object_r:wfd_debug_prop:s0
 vendor.debug.wfd.          u:object_r:wfd_debug_prop:s0
 
+persist.vendor.debug.wfdcdbg  u:object_r:wfd_debug_prop:s0
+persist.vendor.debug.wfdcdbgv u:object_r:wfd_debug_prop:s0
+
 ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
 
 persist.vendor.mmi.        u:object_r:vendor_mmi_prop:s0
