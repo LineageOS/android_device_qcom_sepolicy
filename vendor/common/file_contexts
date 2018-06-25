@@ -2,6 +2,7 @@
 # Dev nodes
 #
 /dev/adsprpc-smd                                u:object_r:qdsp_device:s0
+/dev/adsprpc-smd-secure                         u:object_r:xdsp_device:s0
 /dev/cpu_dma_latency                            u:object_r:device_latency:s0
 /dev/diag                                       u:object_r:diag_device:s0
 /dev/hsicctl.*                                  u:object_r:hsic_device:s0
@@ -79,6 +80,8 @@
 /dev/wlan                                       u:object_r:wlan_device:s0
 /dev/bg_com_dev                                 u:object_r:bg_daemon_device:s0
 /dev/msm_npu                                    u:object_r:npu_device:s0
+/dev/qg                                         u:object_r:qg_device:s0
+/dev/qg_battery                                 u:object_r:qg_device:s0
 ###################################
 # Dev block nodes
 #
@@ -184,10 +187,11 @@
 /(vendor|system/vendor)/bin/init\.qcom\.sdio\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.uicc\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.wifi\.sh            u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qti\.ims\.sh              u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.ims\.sh              u:object_r:init-qti-ims-sh_exec:s0
 /(vendor|system/vendor)/bin/qca6234-service.sh              u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/mm-pp-daemon        u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mm-pp-dpps          u:object_r:mm-pp-daemon_exec:s0
+/(vendor|system/vendor)/bin/mm-audio-ftm        u:object_r:vendor_audioftm_exec:s0
 /(vendor|system/vendor)/bin/mmi                 u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/mmid                u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/qdcmss              u:object_r:qdcm-ss_exec:s0
@@ -317,6 +321,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qdutils_disp@1\.0-service-qti u:object_r:hal_qdutils_disp_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service u:object_r:hal_sensorscalibrate_qti_default_exec:s0
 /(vendor|system/vendor)/bin/power_off_alarm        u:object_r:power_off_alarm_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.vibrator@1\.[0-2]-service    u:object_r:hal_vibrator_default_exec:s0
 
 ###################################
 # sysfs files
@@ -576,6 +581,7 @@
 /mnt/vendor/persist/vpp(/.*)?                                                  u:object_r:persist_vpp_file:s0
 /mnt/vendor/persist/secnvm(/.*)?                                               u:object_r:persist_secnvm_file:s0
 /mnt/vendor/persist/FTM_AP(/.*)?                                               u:object_r:vendor_persist_mmi_file:s0
+/mnt/vendor/persist/hvdcp_opti(/.*)?                                           u:object_r:persist_hvdcp_file:s0
 ###################################
 # persist changes for backword comptaibily
 # this changes would be removed once tech team make the changes
@@ -706,3 +712,6 @@
 #vendor toolbox
 #
 /(vendor|system/vendor)/bin/toolbox_vendor                          u:object_r:vendor_toolbox_exec:s0
+
+#Android NN Driver
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-qti u:object_r:hal_neuralnetworks_default_exec:s0

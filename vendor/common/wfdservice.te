@@ -30,5 +30,8 @@ hal_client_domain(wfdservice, hal_display_config);
 userdebug_or_eng(`
 allow wfdservice wfd_debug_prop:file r_file_perms;
 ')
-allow wfdservice debug_gralloc_prop:file r_file_perms;
+allow wfdservice vendor_gralloc_prop:file r_file_perms;
 allow wfdservice mm_video_prop:file r_file_perms;
+
+# Add the rule for wfd to access /proc/asound/pcm file
+r_dir_file(wfdservice, proc_asound)

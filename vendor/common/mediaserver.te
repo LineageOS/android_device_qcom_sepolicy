@@ -5,6 +5,7 @@
 
 allow mediaserver tee_device:chr_file rw_file_perms;
 allow mediaserver qdsp_device:chr_file r_file_perms;
+allow mediaserver xdsp_device:chr_file r_file_perms;
 
 allow mediaserver self:socket create_socket_perms_no_ioctl;
 
@@ -45,6 +46,10 @@ r_dir_file(mediaserver, adsprpcd_file);
 # allow mediaserver to communicate with bootanim
 binder_call(mediaserver, bootanim);
 
+#allow mediaserver to access audio properties
+get_prop(mediaserver, vendor_audio_prop)
+
 allow mediaserver surfaceflinger:unix_stream_socket rw_socket_perms;
 
 allow mediaserver mm_video_prop:file r_file_perms;
+binder_call(mediaserver, hal_display_config);

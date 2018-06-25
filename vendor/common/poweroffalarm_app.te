@@ -30,7 +30,7 @@ app_domain(poweroffalarm_app);
 
 allow poweroffalarm_app app_api_service:service_manager find;
 
-allow poweroffalarm_app persist_file:dir r_dir_perms;
+allow poweroffalarm_app mnt_vendor_file:dir r_dir_perms;
 allow poweroffalarm_app persist_alarm_file:dir rw_dir_perms;
 allow poweroffalarm_app persist_alarm_file:file create_file_perms;
 

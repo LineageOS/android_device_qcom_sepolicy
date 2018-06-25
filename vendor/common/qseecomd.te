@@ -12,6 +12,9 @@ allow tee self:capability {
 allow tee block_device:dir r_dir_perms;
 allow tee rpmb_device:blk_file rw_file_perms;
 
+#For Wakelocks
+wakelock_use(tee)
+
 # Need to figure out how many scsi generic devices are preset
 # before being able to identify which one is rpmb device
 allow tee device:dir r_dir_perms;

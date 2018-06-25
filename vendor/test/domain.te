@@ -33,3 +33,35 @@ r_dir_file({domain - coredomain - hal_configstore_default}, vendor_gles_data_fil
 allow {domain - coredomain - hal_configstore_default} vendor_gles_data_file:dir create_dir_perms;
 allow {domain - coredomain - hal_configstore_default} vendor_gles_data_file:file create_file_perms;
 ')
+
+userdebug_or_eng(`
+allow {system_server
+ system_app
+ mediaserver
+ cameraserver
+ surfaceflinger} sysfs_kgsl:dir search;
+
+r_dir_file({system_server
+ system_app
+ mediaserver
+ cameraserver
+ surfaceflinger}, sysfs_kgsl_snapshot);
+
+r_dir_file({system_server
+ system_app
+ mediaserver
+ cameraserver
+ surfaceflinger}, system_gles_data_file);
+
+allow {system_server
+ system_app
+ mediaserver
+ cameraserver
+ surfaceflinger} system_gles_data_file:dir create_dir_perms;
+
+allow {system_server
+ system_app
+ mediaserver
+ cameraserver
+ surfaceflinger} system_gles_data_file:file create_file_perms;
+')

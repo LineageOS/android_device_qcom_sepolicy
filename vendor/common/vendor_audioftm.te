@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,37 +24,22 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+type vendor_audioftm, domain;
+type vendor_audioftm_exec, exec_type, vendor_file_type, file_type;
 
-# Define domain
-type vendor_vppservice, domain;
-type vendor_vppservice_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_audioftm)
+domain_auto_trans(vendor_mmi, vendor_audioftm_exec, vendor_audioftm)
 
-init_daemon_domain(vendor_vppservice)
+allow vendor_audioftm vendor_audioftm_exec:file { rx_file_perms entrypoint };
 
-hal_server_domain(vendor_vppservice, hal_vpp)
+allow vendor_audioftm proc_audiod:file r_file_perms;
+allow vendor_audioftm proc_audiod:dir search;
 
-add_hwservice(vendor_vppservice, hal_vpp_hwservice)
+allow vendor_audioftm devpts:chr_file rw_file_perms;
 
-allow hal_vpp_client hal_vpp_hwservice:hwservice_manager find;
-binder_call(hal_vpp_client, hal_vpp_server)
-binder_call(hal_vpp_server, hal_vpp_client)
+allow vendor_audioftm vendor_audio_data_file:dir create_dir_perms;
+allow vendor_audioftm vendor_audio_data_file:file create_file_perms;
 
-# allow vppservice to access adsprpcd
-r_dir_file(vendor_vppservice, adsprpcd_file);
-r_dir_file(vendor_vppservice, firmware_file);
-
-#allow access to vppservice (/data/vendor/vpp)
-allow vendor_vppservice vendor_vpp_data_file:dir create_dir_perms;
-allow vendor_vppservice vendor_vpp_data_file:file create_file_perms;
-
-#allow access to vppservice (/persist/vpp)
-r_dir_file(vendor_vppservice, persist_vpp_file)
-allow vendor_vppservice mnt_vendor_file:dir search;
-
-# allow vppservice to access ion, video device & qdsp_device
-allow vendor_vppservice ion_device:chr_file rw_file_perms;
-allow vendor_vppservice video_device:chr_file rw_file_perms;
-allow vendor_vppservice qdsp_device:chr_file r_file_perms;
-allow vendor_vppservice xdsp_device:chr_file r_file_perms;
-
-hal_client_domain(vendor_vppservice, hal_graphics_allocator)
+allow vendor_audioftm audio_device:dir r_dir_perms;
+allow vendor_audioftm audio_device:chr_file rw_file_perms;

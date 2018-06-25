@@ -49,6 +49,7 @@ type vendor_persist_mmi_file, file_type, vendor_persist_type;
 type persist_misc_file, file_type , vendor_persist_type;
 type persist_bms_file, file_type , vendor_persist_type;
 type persist_secnvm_file, file_type , vendor_persist_type;
+type persist_hvdcp_file, file_type , vendor_persist_type;
 
 #file type for restricting proc read by audiod
 type proc_audiod, fs_type, proc_type;

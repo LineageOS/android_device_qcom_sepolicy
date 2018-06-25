@@ -51,21 +51,22 @@ type msm_irqbalance_prop, property_type;
 type msm_irqbl_sdm630_prop, property_type;
 type camera_prop, property_type;
 type spcomlib_prop, property_type;
-type sdm_idle_time_prop, property_type;
 type vendor_display_prop, property_type;
 type scr_enabled_prop, property_type;
 type bg_daemon_prop, property_type;
 type bg_boot_complete_prop, property_type;
 type opengles_prop, property_type;
-type mdm_helper_prop, property_type;
+type vendor_mdm_helper_prop, property_type;
 type vendor_mpctl_prop, property_type;
 type vendor_iop_prop, property_type;
+#Scroll Pre-obtain
+type vendor_preobtain_prop, property_type;
 
 # properties for ActivityManager tuning
 type vendor_am_prop, property_type;
 
 #Needed for  ubwc support
-type debug_gralloc_prop, property_type;
+type vendor_gralloc_prop, property_type;
 
 type fm_prop, property_type;
 type chgdiabled_prop, property_type;
@@ -77,7 +78,6 @@ type vendor_xlat_prop, property_type;
 type location_prop, property_type;
 
 #properites for init.qcom.sh script
-type rmnet_mux_prop, property_type;
 type qemu_hw_mainkeys_prop, property_type;
 type vendor_usb_prop, property_type;
 
@@ -86,7 +86,6 @@ type vendor_coresight_prop, property_type;
 
 type ctl_hbtp_prop, property_type;
 type vendor_alarm_boot_prop, property_type;
-type boot_animation_prop, property_type;
 
 # DOLBY_START
 type dolby_prop, property_type;
@@ -114,8 +113,6 @@ type reschedule_service_prop, property_type;
 type vendor_boot_mode_prop, property_type;
 #properties for nfc
 type nfc_nq_prop, property_type;
-type ppd_prop, property_type;
-type qemu_gles_prop, property_type;
 
 type vendor_rild_libpath_prop, property_type;
 
@@ -149,6 +146,9 @@ type vendor_mmi_prop, property_type;
 #time service
 type vendor_time_service_prop, property_type;
 type vendor_radio_prop, property_type;
+
+# Audio props
+type vendor_audio_prop, property_type;
 
 #ss-restart
 type vendor_ssr_prop, property_type;

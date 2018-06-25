@@ -61,6 +61,7 @@ allow mediacodec proc_net:file r_file_perms;
 
 allow mediacodec system_file:dir r_dir_perms;
 allow mediacodec qdsp_device:chr_file r_file_perms;
+allow mediacodec xdsp_device:chr_file r_file_perms;
 
 #Allow mediacodec to access service manager wfdnativemm_service
 allow mediacodec wfdnativemm_service:service_manager find;
@@ -74,10 +75,11 @@ allow mediacodec vendor_media_data_file:file create_file_perms;
 #allow mediacodec audioserver_service:service_manager find;
 set_prop(mediacodec, dolby_prop)
 # DOLBY_END
-allow mediacodec debug_gralloc_prop:file r_file_perms;
 vndbinder_use(mediacodec);
 hwbinder_use(mediacodec);
 hal_client_domain(mediacodec, hal_vpp)
 hal_client_domain(mediacodec, hal_perf)
 
 allow mediacodec mm_video_prop:file r_file_perms;
+allow mediacodec hal_display_config_hwservice:hwservice_manager find;
+allow mediacodec hal_graphics_composer_default:binder call;

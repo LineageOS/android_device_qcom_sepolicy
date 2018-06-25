@@ -31,11 +31,11 @@ ro.vendor.bluetooth.       u:object_r:vendor_bluetooth_prop:s0
 sys.usb_uicc.              u:object_r:uicc_prop:s0
 dolby.audio.               u:object_r:audio_prop:s0
 vendor.ims.                u:object_r:qcom_ims_prop:s0
-sys.ims.                   u:object_r:qcom_ims_prop:s0
+persist.vendor.ims.disabled       u:object_r:qcom_ims_prop:s0
+vendor.service.qti.ims.enabled    u:object_r:qcom_ims_prop:s0
 hw.fm.                     u:object_r:fm_prop:s0
 sys.usf.                   u:object_r:usf_prop:s0
 ro.qc.sdk.us.                 u:object_r:usf_prop:s0
-radio.atfwd.               u:object_r:radio_prop:s0
 ctl.vendor.qmuxd                  u:object_r:ctl_vendor_qmuxd_prop:s0
 ctl.vendor.netmgrd                u:object_r:ctl_vendor_netmgrd_prop:s0
 ctl.vendor.port-bridge            u:object_r:ctl_vendor_port-bridge_prop:s0
@@ -65,36 +65,41 @@ ctl.msm_irqbal_lb          u:object_r:msm_irqbalance_prop:s0
 camera.                    u:object_r:camera_prop:s0
 persist.camera.            u:object_r:camera_prop:s0
 vendor.spcom.              u:object_r:spcomlib_prop:s0
-sdm.idle_time              u:object_r:sdm_idle_time_prop:s0
-vendor.display.idle_time              u:object_r:sdm_idle_time_prop:s0
 vendor.display.               u:object_r:vendor_display_prop:s0
+ro.vendor.display.            u:object_r:vendor_display_prop:s0
+persist.vendor.display.       u:object_r:vendor_display_prop:s0
 ro.vendor.scr_enabled         u:object_r:scr_enabled_prop:s0
 vendor.bg_reset               u:object_r:bg_daemon_prop:s0
 vendor.bg.boot_complete       u:object_r:bg_boot_complete_prop:s0
 ro.opengles.version           u:object_r:opengles_prop:s0
 ro.vendor.qualcomm.bt.hci_transport  u:object_r:vendor_bluetooth_prop:s0
-ctl.mdm_helper             u:object_r:mdm_helper_prop:s0
+ctl.mdm_helper             u:object_r:vendor_mdm_helper_prop:s0
+ctl.vendor.mdm_helper      u:object_r:vendor_mdm_helper_prop:s0
 vendor.post_boot.parsed    u:object_r:vendor_mpctl_prop:s0
 vendor.perf.cores_online   u:object_r:vendor_mpctl_prop:s0
-vendor.iop.enable_uxe   u:object_r:vendor_iop_prop:s0
+persist.vendor.qti.        u:object_r:vendor_mpctl_prop:s0
+ro.vendor.at_library       u:object_r:vendor_mpctl_prop:s0
+vendor.debug.trace.perf    u:object_r:vendor_mpctl_prop:s0
+persist.vendor.perfservice.     u:object_r:vendor_mpctl_prop:s0
+vendor.iop.enable_uxe      u:object_r:vendor_iop_prop:s0
+vendor.perf.iop_v3.enable  u:object_r:vendor_iop_prop:s0
+vendor.perf.iop_v3.enable.debug u:object_r:vendor_iop_prop:s0
 vendor.iop.enable_prefetch_ofr   u:object_r:vendor_iop_prop:s0
+ro.vendor.scroll.preobtain.enable  u:object_r:vendor_preobtain_prop:s0
 location.                  u:object_r:location_prop:s0
 vendor.qti.izat.           u:object_r:location_prop:s0
-persist.rmnet.mux          u:object_r:rmnet_mux_prop:s0
 vendor.usb.                u:object_r:vendor_usb_prop:s0
 persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
 qemu.hw.mainkeys           u:object_r:qemu_hw_mainkeys_prop:s0
 ro.vendor.dbg.coresight.cfg_file     u:object_r:vendor_coresight_prop:s0
 ctl.hbtp                   u:object_r:ctl_hbtp_prop:s0
-vendor.audio.              u:object_r:debug_prop:s0
-vendor.voice.              u:object_r:debug_prop:s0
-persist.vendor.audio.      u:object_r:debug_prop:s0
-ro.vendor.audio.           u:object_r:debug_prop:s0
+vendor.audio.              u:object_r:vendor_audio_prop:s0
+vendor.voice.              u:object_r:vendor_audio_prop:s0
+persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
+ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
 ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
-debug.sf.nobootanimation   u:object_r:boot_animation_prop:s0
 persist.vendor.net.doxlat  u:object_r:vendor_xlat_prop:s0
-debug.gralloc.             u:object_r:debug_gralloc_prop:s0
-vendor.gralloc.             u:object_r:debug_gralloc_prop:s0
+vendor.gralloc.            u:object_r:vendor_gralloc_prop:s0
 # DOLBY_START
 dolby.                     u:object_r:dolby_prop:s0
 # DOLBY_END
@@ -122,8 +127,6 @@ vendor.sys.boot_mode              u:object_r:vendor_boot_mode_prop:s0
 ro.gpu.available_frequencies u:object_r:freq_prop:s0
 # NFC
 vendor.qti.nfc.            u:object_r:nfc_nq_prop:s0
-ctl.ppd                    u:object_r:ppd_prop:s0
-qemu.gles                  u:object_r:qemu_gles_prop:s0
 # LKCore start
 ctl.vendor.LKCore-dbg      u:object_r:ctl_LKCore_prop:s0
 ctl.vendor.LKCore-rel      u:object_r:ctl_LKCore_prop:s0
@@ -160,6 +163,8 @@ vendor.debug.time_services.enable   u:object_r:vendor_time_service_prop:s0
 persist.vendor.radio       u:object_r:vendor_radio_prop:s0
 vendor.radio               u:object_r:vendor_radio_prop:s0
 ro.vendor.ril.             u:object_r:vendor_radio_prop:s0
+ro.vendor.radio            u:object_r:vendor_radio_prop:s0
+
 persist.vendor.sys.        u:object_r:vendor_system_prop:s0
 
 #ss-restart
@@ -191,6 +196,8 @@ persist.vendor.media.hls.          u:object_r:mm_video_prop:s0
 vendor.av.dbg.disable.pers.cache   u:object_r:mm_video_prop:s0
 persist.vendor.sys.media.rtp-ports u:object_r:mm_video_prop:s0
 vendor.mm.en.sec.smoothstreaming   u:object_r:mm_video_prop:s0
+vendor.hevc.mux.print.codec.cfg    u:object_r:mm_video_prop:s0
+ro.vendor.mm-enable-accurate-seek  u:object_r:mm_video_prop:s0
 
 #rmt_storage
 ctl.vendor.rmt_storage     u:object_r:ctl_vendor_rmt_storage_prop:s0
