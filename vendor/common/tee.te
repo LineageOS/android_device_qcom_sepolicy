@@ -18,6 +18,10 @@ allow tee persist_data_file:file create_file_perms;
 
 allow tee time_daemon:unix_stream_socket connectto;
 
+# Allow SFS to write to data partition
+allow tee data_tzstorage_file:dir create_dir_perms;
+allow tee data_tzstorage_file:file create_file_perms;
+
 #secureUI
 hal_client_domain(tee, hal_tui_comm);
 hal_client_domain(tee, hal_qdutils_disp);
