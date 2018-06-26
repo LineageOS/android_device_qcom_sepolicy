@@ -37,6 +37,29 @@ genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.q
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,leds@a100 u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d800/leds/wled u:object_r:sysfs_leds:s0
+genfscon sysfs /bus/spmi/devices/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:vadc@3100/usbin u:object_r:sysfs_battery_supply:s0
+
+#PMI8940 files
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8940@2:qcom,qpnp-smbcharger/power_supply/battery u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8940@2:qcom,fg/power_supply/bms u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8940@2:qcom,qpnp-smbcharger/power_supply/usb u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8940@3:qcom,haptic@c000/leds/vibrator u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8940@2:qcom,qpnp-smbcharger/leds/red u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8940@2:qcom,leds@a100 u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8940@3:qcom,leds@d300/leds u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8940@3:qcom,leds@d800/leds/wled u:object_r:sysfs_leds:s0
+genfscon sysfs /bus/spmi/devices/spmi0-02/200f000.qcom,spmi:qcom,pmi8940@2:vadc@3100/usbin u:object_r:sysfs_battery_supply:s0
+
+#PMI8937 files
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8937@2:qcom,qpnp-smbcharger/power_supply/battery u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8937@2:qcom,fg/power_supply/bms u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8937@2:qcom,qpnp-smbcharger/power_supply/usb u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8937@3:qcom,haptic@c000/leds/vibrator u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8937@2:qcom,qpnp-smbcharger/leds/red u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8937@2:qcom,leds@a100 u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8937@3:qcom,leds@d300/leds u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8937@3:qcom,leds@d800/leds/wled u:object_r:sysfs_leds:s0
+genfscon sysfs /bus/spmi/devices/spmi0-02/200f000.qcom,spmi:qcom,pmi8937@2:vadc@3100/usbin u:object_r:sysfs_battery_supply:s0
 
 #PMI632 files
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi632@2:qcom,qpnp-smb5/power_supply/battery u:object_r:sysfs_battery_supply:s0
@@ -49,4 +72,4 @@ genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.q
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi632@3:qcom,vibrator@5700/leds/vibrator u:object_r:sysfs_leds:s0
 
 #Common PMIC files
-genfscon sysfs /class/qcom-battery(/.*)? u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /class/qcom-battery u:object_r:sysfs_battery_supply:s0
