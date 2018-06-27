@@ -82,6 +82,8 @@
 /dev/msm_npu                                    u:object_r:npu_device:s0
 /dev/qg                                         u:object_r:qg_device:s0
 /dev/qg_battery                                 u:object_r:qg_device:s0
+/dev/ipa_odl_ctl                                u:object_r:ipa_dev:s0
+/dev/ipa_adpl                                   u:object_r:ipa_dev:s0
 ###################################
 # Dev block nodes
 #
