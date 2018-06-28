@@ -57,6 +57,8 @@ allow cameraserver camera_prop:file r_file_perms;
 
 #allow cameraserver to access /dsp
 r_dir_file(cameraserver, adsprpcd_file);
+#allow cameraserver to read adsprpc_prop
+get_prop(cameraserver, adsprpc_prop)
 
 #need this in full_treble for camera perview
 allow cameraserver hal_allocator:fd use;

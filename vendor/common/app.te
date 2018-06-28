@@ -11,6 +11,8 @@
 allow appdomain qdsp_device:chr_file r_file_perms;
 #Allow all apps to have read access to dsp partition
 r_dir_file(appdomain, adsprpcd_file)
+#Allow all apps to have read access to adsprpc_prop
+get_prop(appdomain, adsprpc_prop)
 
 # Allow access to qti_logkit
 #allow { appdomain -untrusted_app } qti_logkit_pub_data_file:dir create_dir_perms;
