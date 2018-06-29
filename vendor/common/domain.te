@@ -27,6 +27,7 @@ dontaudit domain persist_dpm_prop:file r_file_perms;
 neverallow {
     coredomain
     -init
+    -ueventd
     } vendor_persist_type: { dir file } *;
 
 allow { domain - coredomain } mnt_vendor_file:lnk_file r_file_perms;
