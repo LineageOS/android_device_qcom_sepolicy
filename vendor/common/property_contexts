@@ -197,9 +197,9 @@ vendor.debug.mmosal.config         u:object_r:debug_prop:s0
 #mm-video
 vendor.encoder.video.profile       u:object_r:mm_video_prop:s0
 vendor.video.disable.ubwc          u:object_r:mm_video_prop:s0
-persist.vendor.dbg.av.logs.level   u:object_r:mm_video_prop:s0
-persist.vendor.mm.en.dropcorrupt   u:object_r:mm_video_prop:s0
-vendor.vidc.enc.trgt_sup_bframe    u:object_r:mm_video_prop:s0
+persist.vendor.debug.av.logs.lvl   u:object_r:debug_prop:s0
+persist.vendor.debug.en.drpcrpt   u:object_r:debug_prop:s0
+vendor.debug.vidc.enc.sup_bframe    u:object_r:debug_prop:s0
 persist.vendor.media.hls.          u:object_r:mm_video_prop:s0
 vendor.av.dbg.disable.pers.cache   u:object_r:mm_video_prop:s0
 persist.vendor.sys.media.rtp-ports u:object_r:mm_video_prop:s0
