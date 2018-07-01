@@ -1,0 +1,2 @@
+# Allow keystore to search and get keymaste.mdt
+r_dir_file(hal_keymaster_default, firmware_file)
