@@ -29,3 +29,5 @@ r_dir_file(system_server, vendor_carrier_file);
 allow system_server resourcecache_data_file:dir create_dir_perms;
 allow system_server resourcecache_data_file:file create_file_perms;
 hal_client_domain(system_server, hal_sidekickgraphics);
+
+allow system_server sysfs_virtualkeys:file r_file_perms;

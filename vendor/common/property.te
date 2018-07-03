@@ -25,9 +25,9 @@
 # property for uicc_daemon
 type uicc_prop, property_type;
 type qcom_ims_prop, property_type;
-type ctl_qmuxd_prop, property_type;
-type ctl_netmgrd_prop, property_type;
-type ctl_port-bridge_prop, property_type;
+type ctl_vendor_qmuxd_prop, property_type;
+type ctl_vendor_netmgrd_prop, property_type;
+type ctl_vendor_port-bridge_prop, property_type;
 type ctl_qcrild_prop, property_type;
 type vendor_tee_listener_prop, property_type;
 type ctl_vendor_rild_prop, property_type;
@@ -41,6 +41,7 @@ type usf_prop, property_type;
 type freq_prop, property_type;
 type vm_bms_prop, property_type; #To start vm_bms
 type vendor_dataqti_prop, property_type;
+type vendor_dataadpl_prop, property_type;
 type vendor_ipacm_prop, property_type;
 type vendor_ipacm-diag_prop, property_type;
 type cnd_vendor_prop, property_type;
@@ -50,24 +51,26 @@ type msm_irqbalance_prop, property_type;
 type msm_irqbl_sdm630_prop, property_type;
 type camera_prop, property_type;
 type spcomlib_prop, property_type;
-type sdm_idle_time_prop, property_type;
-type sf_lcd_density_prop, property_type;
+type vendor_display_prop, property_type;
 type scr_enabled_prop, property_type;
 type bg_daemon_prop, property_type;
 type bg_boot_complete_prop, property_type;
 type opengles_prop, property_type;
-type mdm_helper_prop, property_type;
+type vendor_mdm_helper_prop, property_type;
 type vendor_mpctl_prop, property_type;
 type vendor_iop_prop, property_type;
+#Scroll Pre-obtain
+type vendor_preobtain_prop, property_type;
+
+# properties for ActivityManager tuning
+type vendor_am_prop, property_type;
 
 #Needed for  ubwc support
-type debug_gralloc_prop, property_type;
+type vendor_gralloc_prop, property_type;
 
 type fm_prop, property_type;
 type chgdiabled_prop, property_type;
 
-#properites for netd
-type netd_prop, property_type;
 
 type vendor_xlat_prop, property_type;
 
@@ -75,7 +78,6 @@ type vendor_xlat_prop, property_type;
 type location_prop, property_type;
 
 #properites for init.qcom.sh script
-type rmnet_mux_prop, property_type;
 type qemu_hw_mainkeys_prop, property_type;
 type vendor_usb_prop, property_type;
 
@@ -84,21 +86,17 @@ type vendor_coresight_prop, property_type;
 
 type ctl_hbtp_prop, property_type;
 type vendor_alarm_boot_prop, property_type;
-type boot_animation_prop, property_type;
 
 # DOLBY_START
 type dolby_prop, property_type;
 # DOLBY_END
 
-type wififtmd_prop, property_type;
+type vendor_wifi_ftmd_prop, property_type;
 
 # WIGIG
 type wigig_prop, property_type;
 type fst_prop, property_type;
 type ctl_vendor_wigigsvc_prop, property_type;
-
-type alarm_handled_prop, property_type;
-type alarm_instance_prop, property_type;
 
 #HWUI property
 type hwui_prop, property_type;
@@ -115,8 +113,6 @@ type reschedule_service_prop, property_type;
 type vendor_boot_mode_prop, property_type;
 #properties for nfc
 type nfc_nq_prop, property_type;
-type ppd_prop, property_type;
-type qemu_gles_prop, property_type;
 
 type vendor_rild_libpath_prop, property_type;
 
@@ -134,8 +130,12 @@ type ctl_vendor_hbtp_prop, property_type;
 # factory properties
 type ctl_vendor_mmid_prop, property_type;
 
+#qdma property
+type vendor_qdma_prop, property_type;
+
 #WiFi Display
 type wfd_service_prop, property_type;
+type wfd_debug_prop, property_type;
 
 #imsrcsservice
 type ctl_vendor_imsrcsservice_prop, property_type;
@@ -147,8 +147,28 @@ type vendor_mmi_prop, property_type;
 type vendor_time_service_prop, property_type;
 type vendor_radio_prop, property_type;
 
+# Audio props
+type vendor_audio_prop, property_type;
+
+# Audio debug props
+type vendor_audio_debug_prop, property_type;
+
 #ss-restart
 type vendor_ssr_prop, property_type;
 
 #ss-services (PD)
 type vendor_pd_locater_dbg_prop, property_type;
+
+#qdcmss property
+type vendor_qdcmss_prop, property_type;
+
+# Wifi Softap
+type vendor_softap_prop, property_type;
+#mm-parser
+type mm_parser_prop, property_type;
+
+#mm-video
+type mm_video_prop, property_type;
+
+#rmt_storage
+type ctl_vendor_rmt_storage_prop, property_type;

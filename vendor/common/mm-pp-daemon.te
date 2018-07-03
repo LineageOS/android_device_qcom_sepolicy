@@ -24,6 +24,8 @@ allow mm-pp-daemon sensors_device:chr_file r_file_perms;
 allow mm-pp-daemon sensors_socket:sock_file rw_file_perms;
 allow mm-pp-daemon sensors:unix_stream_socket connectto;
 
+# Allow read to display vendor properties
+allow mm-pp-daemon vendor_display_prop:file r_file_perms;
 
 # Rule for IPC communication
 allow mm-pp-daemon qdisplay_service:service_manager find;

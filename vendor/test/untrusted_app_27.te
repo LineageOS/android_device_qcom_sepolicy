@@ -25,19 +25,11 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_neuralnetworks_default, domain;
-hal_server_domain(hal_neuralnetworks_default, hal_neuralnetworks)
-
-type hal_neuralnetworks_default_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_neuralnetworks_default)
-
-allow hal_neuralnetworks_default fwk_sensor_hwservice:hwservice_manager find;
-allow hal_neuralnetworks_default qdsp_device:chr_file r_file_perms;
-allow hal_neuralnetworks_default ion_device:chr_file r_file_perms;
-
-allow hal_neuralnetworks_default app_data_file:file { read getattr };
-allow hal_neuralnetworks_default shell_data_file:file { read getattr };
-allow hal_neuralnetworks_default hal_neuralnetworks_data_file:dir create_dir_perms;
-allow hal_neuralnetworks_default hal_neuralnetworks_data_file:{ file fifo_file } create_file_perms;
-
-r_dir_file(hal_neuralnetworks_default, adsprpcd_file)
+#allow untrusted_app_27 clients to access configuration settings
+userdebug_or_eng(`
+allow untrusted_app_27 sysfs_kgsl:dir search;
+r_dir_file(untrusted_app_27, sysfs_kgsl_snapshot);
+r_dir_file(untrusted_app_27, vendor_gles_data_file);
+allow untrusted_app_27 vendor_gles_data_file:dir rw_dir_perms;
+allow untrusted_app_27 vendor_gles_data_file:file rw_file_perms;
+')

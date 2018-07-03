@@ -55,6 +55,7 @@ allow vendor_init kernel:system module_request;
 
 userdebug_or_eng(`
   allow vendor_init misc_block_device:blk_file w_file_perms;
+  set_prop(vendor_init, vendor_audio_debug_prop)
 ')
 get_prop(vendor_init, vendor_boot_mode_prop)
 get_prop(vendor_init, vendor_mmi_prop)
@@ -64,6 +65,17 @@ set_prop(vendor_init, system_prop)
 set_prop(vendor_init, vendor_usb_prop)
 set_prop(vendor_init, vendor_ipacm_prop)
 set_prop(vendor_init, vendor_ipacm-diag_prop)
+set_prop(vendor_init, vendor_radio_prop)
+set_prop(vendor_init, vendor_am_prop)
+set_prop(vendor_init, vendor_mpctl_prop)
+
+#Access vendor display properties
+set_prop(vendor_init, vendor_display_prop)
+
+#Access vendor gralloc properties
+set_prop(vendor_init, vendor_gralloc_prop)
+
+set_prop(vendor_init, vendor_audio_prop)
 
 # allow vendor toolbox usage
 allow vendor_init vendor_toolbox_exec:file rx_file_perms;

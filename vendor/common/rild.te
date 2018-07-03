@@ -34,7 +34,9 @@ use_vendor_per_mgr(rild);
 #diag
 userdebug_or_eng(`
     diag_use(rild)
+    get_prop(rild, vendor_pd_locater_dbg_prop)
 ')
+
 allow rild self:qipcrtr_socket create_socket_perms_no_ioctl;;
 allow rild self:{ socket qipcrtr_socket } ioctl;
 allowxperm rild self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
@@ -50,4 +52,5 @@ allow rild vendor_file:file lock;
 
 hal_server_domain(rild, hal_secure_element)
 
+get_prop(rild, exported3_radio_prop)
 set_prop(rild, vendor_xlat_prop)

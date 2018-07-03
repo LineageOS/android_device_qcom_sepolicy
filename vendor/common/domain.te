@@ -10,7 +10,7 @@ r_dir_file({domain - isolated_app}, sysfs_thermal);
 # Allow domain to read /vendor -> /system/vendor
 allow domain system_file:lnk_file getattr;
 
-allow { domain - appdomain } debug_gralloc_prop:file r_file_perms;
+allow domain vendor_gralloc_prop:file r_file_perms;
 
 allow domain vendor_configs_file:file r_file_perms;
 
@@ -28,3 +28,7 @@ neverallow {
     coredomain
     -init
     } vendor_persist_type: { dir file } *;
+
+allow { domain - coredomain } mnt_vendor_file:lnk_file r_file_perms;
+
+allowxperm domain domain:icmp_socket ioctl { unpriv_sock_ioctls unpriv_tty_ioctls };

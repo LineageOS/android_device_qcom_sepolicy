@@ -7,6 +7,7 @@ init_daemon_domain(hvdcp)
 
 # Add rules for access permissions
 allow hvdcp hvdcp_device:chr_file rw_file_perms;
+allow hvdcp qg_device:chr_file rw_file_perms;
 allow hvdcp {
     sysfs_battery_supply
     sysfs_usb_supply
@@ -38,4 +39,9 @@ allow hvdcp self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 allow hvdcp sysfs_battery_supply:file setattr;
 allow hvdcp sysfs_usb_supply:file setattr;
 allow hvdcp sysfs_usbpd_device:file setattr;
+
+allow hvdcp mnt_vendor_file:dir search;
+allow hvdcp persist_hvdcp_file:dir rw_dir_perms;
+allow hvdcp persist_hvdcp_file:file create_file_perms;
+
 wakelock_use(hvdcp)

@@ -36,6 +36,7 @@ unix_socket_connect(ims, netd, netd)
 unix_socket_connect(ims, ims, qmuxd)
 
 set_prop(ims, qcom_ims_prop)
+set_prop(ims, ctl_vendor_imsrcsservice_prop)
 
 # permissions for communication with CNE in LBO use case
 unix_socket_connect(ims, cnd, cnd)
@@ -59,5 +60,6 @@ allow ims sysfs_data:file r_file_perms;
 hwbinder_use(ims)
 get_prop(ims, hwservicemanager_prop)
 get_prop(ims, qcom_ims_prop)
+get_prop(ims, cnd_vendor_prop)
 allow ims hal_cne_hwservice:hwservice_manager find;
 binder_call(ims, cnd)

@@ -35,6 +35,10 @@ allow mdm_helper shell:fd use;
 allow mdm_helper vendor_shell_exec:file rx_file_perms;
 allow mdm_helper { system_file mdm_helper_exec }:file x_file_perms;
 
+#Needed for ram dump storage
+allow mdm_helper vendor_tombstone_data_file:dir create_dir_perms;
+allow mdm_helper vendor_tombstone_data_file:file create_file_perms;
+
 #Needed by ks in order to access the efs sync partitions.
 allow mdm_helper block_device:dir rw_dir_perms;
 allow mdm_helper efs_boot_dev:blk_file rw_file_perms;

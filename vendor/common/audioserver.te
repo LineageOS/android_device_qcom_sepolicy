@@ -71,7 +71,10 @@ userdebug_or_eng(`
 #Rules for audioserver to talk to peripheral manager
 #use_vendor_per_mgr(audioserver);
 
+# audio properties
+get_prop(audioserver, vendor_audio_prop)
+
 # DOLBY_START
 allow audioserver activity_service:service_manager find;
-set_prop(audioserver, dolby_prop)
+get_prop(audioserver, dolby_prop)
 # DOLBY_END

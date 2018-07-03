@@ -1,1 +1,3 @@
 allow adbd tombstone_data_file:dir getattr;
+
+unix_socket_connect(adbd, qdcmsocket, qdcm-ss);

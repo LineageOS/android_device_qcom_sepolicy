@@ -27,6 +27,7 @@
 
 typeattribute vendor_mmi_sys coredomain;
 type vendor_mmi_sys_exec, exec_type, file_type;
+typeattribute vendor_mmi_sys  system_writes_vendor_properties_violators;
 
 #init
 init_daemon_domain(vendor_mmi_sys)
