@@ -78,3 +78,8 @@ set_prop(vendor_init, vendor_usb_prop)
 set_prop(vendor_init, vendor_audio_prop)
 #Enable radio properties setting
 set_prop(vendor_init, vendor_radio_prop)
+
+#Access vendor display properties
+set_prop(vendor_init, vendor_display_prop)
+get_prop(vendor_init, vendor_display_prop)
+

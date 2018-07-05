@@ -2,3 +2,15 @@ dontaudit surfaceflinger firmware_file:dir search;
 dontaudit surfaceflinger kernel:system module_request;
 
 allow surfaceflinger sysfs_graphics:file rw_file_perms;
+
+#diag
+userdebug_or_eng(`
+    diag_use(surfaceflinger)
+')
+
+allow surfaceflinger {
+    debug_gralloc_prop
+    sdm_idle_time_prop
+    vendor_display_prop
+}:file r_file_perms;
+
