@@ -81,5 +81,7 @@ set_prop(vendor_init, vendor_radio_prop)
 
 #Access vendor display properties
 set_prop(vendor_init, vendor_display_prop)
-get_prop(vendor_init, vendor_display_prop)
+
+#Access vendor gralloc properties
+set_prop(vendor_init, vendor_gralloc_prop)
 

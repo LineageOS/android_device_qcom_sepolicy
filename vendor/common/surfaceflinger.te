@@ -9,8 +9,6 @@ userdebug_or_eng(`
 ')
 
 allow surfaceflinger {
-    debug_gralloc_prop
-    sdm_idle_time_prop
+    vendor_gralloc_prop
     vendor_display_prop
 }:file r_file_perms;
-
