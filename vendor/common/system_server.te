@@ -66,6 +66,8 @@ allow system_server ssr_device:chr_file r_file_perms;
 
 allow system_server { fuse }:dir search;
 
+allow system_server proc_audiod:file r_file_perms;
+
 allow system_server {
     serial_device
     smd_device
