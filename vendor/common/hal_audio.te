@@ -62,6 +62,9 @@ get_prop(hal_audio, vendor_bluetooth_prop)
 hal_client_domain(hal_audio_default, hal_perf)
 hal_client_domain(hal_audio_default, hal_power)
 
+# Allow audio HAL to get updates from health hal
+hal_client_domain(hal_audio_default, hal_health)
+
 #allow acess to wcd_cpe
 allow hal_audio sysfs_audio:file rw_file_perms;
 allow hal_audio sysfs_audio:dir r_dir_perms ;
