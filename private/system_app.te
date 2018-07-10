@@ -37,3 +37,8 @@ allow system_app color_service:service_manager add;
 get_prop(system_app, bluetooth_prop);
 # allow system_app to interact with smcinvoke daemon
 binder_call(system_app, smcinvoke_daemon)
+
+# allow system app to interact with mirrorlinkserver
+binder_call(system_app, mirrorlink);
+# allow system app to connect to mirrorlink_socket
+unix_socket_connect(system_app, mirrorlink, mirrorlink);

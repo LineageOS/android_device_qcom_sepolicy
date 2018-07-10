@@ -36,3 +36,6 @@ set_prop(vendor_hal_factory_qti, ctl_vendor_mmid_prop)
 # Allow read/write to mmi socket
 allow vendor_hal_factory_qti vendor_mmi_socket:sock_file rw_file_perms;
 allow vendor_hal_factory_qti vendor_mmi:unix_stream_socket connectto;
+allow vendor_hal_factory_qti_default mnt_vendor_file:dir search;
+allow vendor_hal_factory_qti_default vendor_persist_mmi_file:dir rw_dir_perms;
+allow vendor_hal_factory_qti_default vendor_persist_mmi_file:file create_file_perms;

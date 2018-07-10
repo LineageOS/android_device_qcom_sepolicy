@@ -93,6 +93,7 @@
 /dev/block/bootdevice/by-name/misc              u:object_r:misc_block_device:s0
 #/dev/block/mmcblk0p13                          u:object_r:bootselect_device:s0
 /dev/block/zram0                                u:object_r:swap_block_device:s0
+/data/vendor/swap(/.*)?                         u:object_r:swap_data_file:s0
 /dev/block/bootdevice/by-name/dip               u:object_r:dip_device:s0
 /dev/block/bootdevice/by-name/mdtp              u:object_r:mdtp_device:s0
 /dev/block/bootdevice/by-name/logdump           u:object_r:logdump_partition:s0
@@ -256,6 +257,7 @@
 /(vendor|system/vendor)/bin/mlid                u:object_r:mlid_exec:s0
 /(vendor|system/vendor)/bin/ssgtzd              u:object_r:ssgtzd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service u:object_r:hal_esepowermanager_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.0-service u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/loc_launcher        u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/lowi-server         u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/xtwifi-inet-agent   u:object_r:location_exec:s0
@@ -303,6 +305,7 @@
 /(vendor|system/vendor)/bin/fingerprint.qcom    u:object_r:fps_hal_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service-qti u:object_r:hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-service-qti u:object_r:hal_keymaster_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-strongbox-service-qti u:object_r:hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service-qti u:object_r:hal_gatekeeper_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.0-service     u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.1-service     u:object_r:hal_nfc_default_exec:s0
@@ -322,6 +325,9 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service u:object_r:hal_sensorscalibrate_qti_default_exec:s0
 /(vendor|system/vendor)/bin/power_off_alarm        u:object_r:power_off_alarm_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator@1\.[0-2]-service    u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.usb\.gadget@1\.0-service-qti u:object_r:hal_usb_gadget_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.scve\.panorama@1\.0-service    u:object_r:vendor_scve_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.mlshal@1\.0-service       u:object_r:hal_mirrorlink_qti_exec:s0
 
 ###################################
 # sysfs files
@@ -504,6 +510,8 @@
 /sys/kernel/boot_slpi(/.*)?                                         u:object_r:sysfs_slpi:s0
 /sys/module/process_reclaim(/.*)?                                   u:object_r:sysfs_process_reclaim:s0
 /sys/module/vmpressure(/.*)?                                        u:object_r:sysfs_vmpressure:s0
+/sys/board_properties/virtualkeys.synaptics_dsx                     u:object_r:sysfs_virtualkeys:s0
+/sys/board_properties/virtualkeys.ft5x06_ts                         u:object_r:sysfs_virtualkeys:s0
 
 ###################################
 # data files
@@ -557,6 +565,7 @@
 /data/vendor/tui(/.*)?                                              u:object_r:vendor_tui_data_file:s0
 /data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
 /data/vendor/bluetooth(/.*)?                                        u:object_r:vendor_bt_data_file:s0
+/data/vendor/scve(/.*)?                                             u:object_r:vendor_scve_data_file:s0
 
 ###################################
 # persist files

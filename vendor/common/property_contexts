@@ -1,27 +1,3 @@
-# Copyright (c) 2015-2016 Dolby Laboratories, Inc. All rights reserved.
-#
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are
-# met:
-#     * Redistributions of source code must retain the above copyright
-#       notice, this list of conditions and the following disclaimer.
-#     * Redistributions in binary form must reproduce the above
-#       copyright notice, this list of conditions and the following
-#       disclaimer in the documentation and/or other materials provided
-#       with the distribution.
-#
-# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
-# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
-# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
-# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
-# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
-# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
-# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 persist.vendor.service.bdroid.      u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bt.soc.scram_freqs   u:object_r:vendor_bluetooth_prop:s0
 vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
@@ -29,10 +5,11 @@ vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
 #ro.vendor.bt.              u:object_r:vendor_bluetooth_prop:s0
 ro.vendor.bluetooth.       u:object_r:vendor_bluetooth_prop:s0
 sys.usb_uicc.              u:object_r:uicc_prop:s0
-dolby.audio.               u:object_r:audio_prop:s0
 vendor.ims.                u:object_r:qcom_ims_prop:s0
 persist.vendor.ims.disabled       u:object_r:qcom_ims_prop:s0
 vendor.service.qti.ims.enabled    u:object_r:qcom_ims_prop:s0
+persist.vendor.ims.        u:object_r:qcom_ims_prop:s0
+persist.vendor.qti.telephony.vt_cam_interface u:object_r:qcom_ims_prop:s0
 hw.fm.                     u:object_r:fm_prop:s0
 sys.usf.                   u:object_r:usf_prop:s0
 ro.qc.sdk.us.                 u:object_r:usf_prop:s0
@@ -48,7 +25,9 @@ ctl.vendor.ril-daemon      u:object_r:ctl_vendor_rild_prop:s0
 ctl.vendor.cnd             u:object_r:cnd_vendor_prop:s0
 persist.vendor.sys.cnd     u:object_r:cnd_vendor_prop:s0
 persist.vendor.cne.        u:object_r:cnd_vendor_prop:s0
+persist.vendor.cnd.        u:object_r:cnd_vendor_prop:s0
 init.svc.vendor.cnd        u:object_r:cnd_vendor_prop:s0
+persist.vendor.cnd.wqe     u:object_r:cnd_vendor_prop:s0
 ctl.vm_bms                 u:object_r:vm_bms_prop:s0
 ro.vendor.qualcomm.bluetooth.        u:object_r:vendor_bluetooth_prop:s0
 ctl.vendor.ipacm           u:object_r:vendor_ipacm_prop:s0
@@ -73,7 +52,6 @@ vendor.bg_reset               u:object_r:bg_daemon_prop:s0
 vendor.bg.boot_complete       u:object_r:bg_boot_complete_prop:s0
 ro.opengles.version           u:object_r:opengles_prop:s0
 ro.vendor.qualcomm.bt.hci_transport  u:object_r:vendor_bluetooth_prop:s0
-ctl.mdm_helper             u:object_r:vendor_mdm_helper_prop:s0
 ctl.vendor.mdm_helper      u:object_r:vendor_mdm_helper_prop:s0
 vendor.post_boot.parsed    u:object_r:vendor_mpctl_prop:s0
 vendor.perf.cores_online   u:object_r:vendor_mpctl_prop:s0
@@ -101,9 +79,6 @@ vendor.audio.debug.        u:object_r:vendor_audio_debug_prop:s0
 ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
 persist.vendor.net.doxlat  u:object_r:vendor_xlat_prop:s0
 vendor.gralloc.            u:object_r:vendor_gralloc_prop:s0
-# DOLBY_START
-dolby.                     u:object_r:dolby_prop:s0
-# DOLBY_END
 vendor.wifi.ftmd.                 u:object_r:vendor_wifi_ftmd_prop:s0
 # WIGIG
 persist.vendor.wigig.       u:object_r:wigig_prop:s0
@@ -154,6 +129,12 @@ persist.vendor.debug.rtp.  u:object_r:wfd_debug_prop:s0
 persist.vendor.debug.wfd.  u:object_r:wfd_debug_prop:s0
 vendor.debug.wfd.          u:object_r:wfd_debug_prop:s0
 
+persist.vendor.debug.wfdcdbg  u:object_r:wfd_debug_prop:s0
+persist.vendor.debug.wfdcdbgv u:object_r:wfd_debug_prop:s0
+
+#MirrorLink
+vendor.mls.                u:object_r:vendor_mirrorlink_prop:s0
+
 ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
 
 persist.vendor.mmi.        u:object_r:vendor_mmi_prop:s0
@@ -190,9 +171,9 @@ vendor.debug.mmosal.config         u:object_r:debug_prop:s0
 #mm-video
 vendor.encoder.video.profile       u:object_r:mm_video_prop:s0
 vendor.video.disable.ubwc          u:object_r:mm_video_prop:s0
-persist.vendor.dbg.av.logs.level   u:object_r:mm_video_prop:s0
-persist.vendor.mm.en.dropcorrupt   u:object_r:mm_video_prop:s0
-vendor.vidc.enc.trgt_sup_bframe    u:object_r:mm_video_prop:s0
+persist.vendor.debug.av.logs.lvl   u:object_r:debug_prop:s0
+persist.vendor.debug.en.drpcrpt   u:object_r:debug_prop:s0
+vendor.debug.vidc.enc.sup_bframe    u:object_r:debug_prop:s0
 persist.vendor.media.hls.          u:object_r:mm_video_prop:s0
 vendor.av.dbg.disable.pers.cache   u:object_r:mm_video_prop:s0
 persist.vendor.sys.media.rtp-ports u:object_r:mm_video_prop:s0

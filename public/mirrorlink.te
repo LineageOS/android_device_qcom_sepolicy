@@ -25,7 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# HALs
-attribute hal_audiocontrol;
-attribute hal_audiocontrol_client;
-attribute hal_audiocontrol_server;
+type mirrorlink, domain;

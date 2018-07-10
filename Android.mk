@@ -5,8 +5,13 @@ BOARD_SEPOLICY_DIRS := \
        $(BOARD_SEPOLICY_DIRS) \
        $(LOCAL_PATH) \
        $(LOCAL_PATH)/vendor/common \
-       $(LOCAL_PATH)/vendor/ssg \
-       $(LOCAL_PATH)/vendor/$(TARGET_BOARD_PLATFORM)
+       $(LOCAL_PATH)/vendor/ssg
+
+ifeq ($(TARGET_SEPOLICY_DIR),)
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/vendor/$(TARGET_BOARD_PLATFORM)
+else
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/vendor/$(TARGET_SEPOLICY_DIR)
+endif
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 BOARD_SEPOLICY_DIRS += \

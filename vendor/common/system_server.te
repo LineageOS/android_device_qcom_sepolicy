@@ -66,6 +66,8 @@ allow system_server ssr_device:chr_file r_file_perms;
 
 allow system_server { fuse }:dir search;
 
+allow system_server proc_audiod:file r_file_perms;
+
 allow system_server {
     serial_device
     smd_device
@@ -94,6 +96,9 @@ get_prop(system_server, vendor_xlat_prop)
 
 # For WFD
 allow system_server graphics_device:dir r_dir_perms;
+userdebug_or_eng(`
+allow system_server wfd_debug_prop:file r_file_perms;
+')
 
 #Allow access to netmgrd socket
 #netmgr_socket(system_server);
@@ -172,5 +177,9 @@ allow system_server sysfs_wigig:file rw_file_perms;
 
 # allow system_server to access IOP HAL service
 hal_client_domain(system_server, hal_iop)
+
 #Allow access for vendor property
 allow system_server vendor_iop_prop:file r_file_perms;
+
+# allow system server to get mirrorlink connection status prop
+get_prop(system_server, vendor_mirrorlink_prop)
