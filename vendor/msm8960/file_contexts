@@ -34,3 +34,6 @@
 # Data files
 #
 /data/qcks(/.*)?                                u:object_r:efs_data_file:s0
+
+#TODO : need to remove regexp
+/sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name         u:object_r:sysfs_ssr:s0
