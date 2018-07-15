@@ -25,22 +25,14 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# define SELinux domain
-type hal_drm_widevine, domain;
-hal_server_domain(hal_drm_widevine, hal_drm)
+# policy for /vendor/bin/hw/android.hardware.drm@1.1-service.clearkey
+type hal_drm_clearkey, domain;
+type hal_drm_clearkey_exec, exec_type, vendor_file_type, file_type;
 
-type hal_drm_widevine_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_drm_widevine)
+init_daemon_domain(hal_drm_clearkey)
 
-allow hal_drm_widevine mediacodec:fd use;
-allow hal_drm_widevine { appdomain -isolated_app }:fd use;
+hal_server_domain(hal_drm_clearkey, hal_drm)
 
-# The QTI DRM-HAL implementation uses a vendor-binder service provided
-# by the HWC HAL.
-vndbinder_use(hal_drm_widevine);
-allow hal_drm_widevine qdisplay_service:service_manager { find };
-#binder_call(hal_drm_widevine, hal_graphics_composer)
-hal_client_domain(hal_drm_widevine, hal_graphics_composer);
-allow hal_drm_widevine mediadrm_vendor_data_file:dir create_dir_perms;
-allow hal_drm_widevine mediadrm_vendor_data_file:file create_file_perms;
-allow hal_drm_widevine hal_allocator:fd use;
+vndbinder_use(hal_drm_clearkey);
+
+allow hal_drm_clearkey { appdomain -isolated_app }:fd use;
