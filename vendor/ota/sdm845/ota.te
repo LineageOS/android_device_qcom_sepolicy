@@ -36,3 +36,5 @@ coredata_datavendor_migration(move-widevine-data-sh,  media_data_file,   mediadr
 
 # move-time-data-sh for time-service
 coredata_datavendor_migration(move-time-data-sh, time_data_file, vendor_time_data_file);
+
+coredata_datavendor_migration(move_wifi_data-sh, wifi_data_file,   wifi_vendor_data_file)
