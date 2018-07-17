@@ -86,6 +86,7 @@ qdma_file_socket(location);
 
 allow location hal_cne_hwservice:hwservice_manager find;
 binder_call(location, cnd)
+get_prop(location, cnd_vendor_prop)
 
 #Allow access to wake alarm
 allow location self:capability2 wake_alarm;
