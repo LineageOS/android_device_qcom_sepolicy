@@ -340,6 +340,9 @@ type vendor_tui_data_file, file_type, data_file_type;
 #BT Files
 type vendor_bt_data_file, file_type, data_file_type;
 
+#FM Files
+type vendor_fm_data_file, file_type, data_file_type;
+
 #sysfs jpeg
 type sysfs_jpeg, fs_type, sysfs_type;
 
