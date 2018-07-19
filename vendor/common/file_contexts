@@ -570,6 +570,7 @@
 /data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
 /data/vendor/bluetooth(/.*)?                                        u:object_r:vendor_bt_data_file:s0
 /data/vendor/scve(/.*)?                                             u:object_r:vendor_scve_data_file:s0
+/data/vendor/fm(/.*)?                                               u:object_r:vendor_fm_data_file:s0
 
 ###################################
 # persist files
