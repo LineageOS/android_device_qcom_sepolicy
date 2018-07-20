@@ -87,9 +87,6 @@ type vendor_coresight_prop, property_type;
 type ctl_hbtp_prop, property_type;
 type vendor_alarm_boot_prop, property_type;
 
-# DOLBY_START
-type dolby_prop, property_type;
-# DOLBY_END
 
 type vendor_wifi_ftmd_prop, property_type;
 
