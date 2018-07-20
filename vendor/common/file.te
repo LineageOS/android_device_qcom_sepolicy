@@ -358,3 +358,9 @@ typeattribute mnt_vendor_file vendor_persist_type;
 
 #NNHAL files
 type hal_neuralnetworks_data_file, file_type, data_file_type;
+
+# vendor scve data file
+type vendor_scve_data_file, file_type, data_file_type;
+
+# usb device controller files
+type sysfs_usb_controller, sysfs_type, fs_type;

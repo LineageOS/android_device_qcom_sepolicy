@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,23 +25,14 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-user=_app seinfo=platform name=com.qualcomm.location.qvtester levelfrom=all domain=location_app type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.qct.dlt levelfrom=all domain=location_app type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.qti.pdrtesttool levelfrom=all domain=location_app type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.qti.magcaltool levelfrom=all domain=location_app type=app_data_file
+type init-qti-fbe-sh, domain;
+type init-qti-fbe-sh_exec, exec_type, file_type, vendor_file_type;
 
-#Add new domain for QSEE sample services
-user=system seinfo=platform name=com.qualcomm.qti.auth.securesampleauthservice domain=qsee_svc_app type=qsee_svc_app_data_file
-user=system seinfo=platform name=com.qualcomm.qti.auth.secureextauthservice domain=qsee_svc_app type=qsee_svc_app_data_file
+init_daemon_domain(init-qti-fbe-sh)
 
-#Add new domain for pdt apps
-user=system seinfo=platform name=.pdtapps domain=pdt_app type=system_app_data_file
-
-#Add new domain for npudemo app
-user=_app seinfo=platform name=com.qti.qualcomm.npudemo domain=npu_app type=app_data_file levelFrom=all
-
-#Add new domain for VT loopback app
-user=_app seinfo=platform name=com.qti.vtloopback domain=vtloopback_app type=app_data_file levelfrom=all
-
-#Add new domain for sysmon app
-user=_app seinfo=platform name=com.qualcomm.qti.sysmonappExternal domain=sysmon_app type=app_data_file levelFrom=all
+not_full_treble(`allow init-qti-fbe-sh shell_exec:file rx_file_perms;')
+full_treble_only(`allow init-qti-fbe-sh vendor_shell_exec:file rx_file_perms;')
+# execute toybox/toolbox
+not_full_treble(`allow init-qti-fbe-sh toolbox_exec:file rx_file_perms;')
+full_treble_only(`allow init-qti-fbe-sh vendor_toolbox_exec:file rx_file_perms;')
+get_prop(init-qti-fbe-sh, vendor_tee_listener_prop)

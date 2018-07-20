@@ -157,3 +157,5 @@
 
 # data files
 /data/vendor/netmgr/recovery(/.*)?                                  u:object_r:netmgr_recovery_data_file:s0
+
+/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service          u:object_r:hal_automotive_vehicle_qti_exec:s0

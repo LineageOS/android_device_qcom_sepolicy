@@ -9,8 +9,6 @@ allow energyawareness { pta_device uio_device }:chr_file rw_file_perms;
 
 allow energyawareness self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
-allow energyawareness self:capability net_admin;
-
 allow energyawareness sysfs_ea:file w_file_perms;
 
 r_dir_file(energyawareness, sysfs_ea)

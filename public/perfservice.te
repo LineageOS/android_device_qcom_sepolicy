@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,22 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# define SELinux domain
-type hal_drm_widevine, domain;
-hal_server_domain(hal_drm_widevine, hal_drm)
-
-type hal_drm_widevine_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_drm_widevine)
-
-allow hal_drm_widevine mediacodec:fd use;
-allow hal_drm_widevine { appdomain -isolated_app }:fd use;
-
-# The QTI DRM-HAL implementation uses a vendor-binder service provided
-# by the HWC HAL.
-vndbinder_use(hal_drm_widevine);
-allow hal_drm_widevine qdisplay_service:service_manager { find };
-#binder_call(hal_drm_widevine, hal_graphics_composer)
-hal_client_domain(hal_drm_widevine, hal_graphics_composer);
-allow hal_drm_widevine mediadrm_vendor_data_file:dir create_dir_perms;
-allow hal_drm_widevine mediadrm_vendor_data_file:file create_file_perms;
-allow hal_drm_widevine hal_allocator:fd use;
+type perfservice, domain, coredomain;

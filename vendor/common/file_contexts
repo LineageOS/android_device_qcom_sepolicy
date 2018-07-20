@@ -246,6 +246,7 @@
 /(vendor|system/vendor)/bin/ssr_diag            u:object_r:vendor_ssr_diag_exec:s0
 /(vendor|system/vendor)/bin/hw/qcrild           u:object_r:rild_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service.widevine   	u:object_r:hal_drm_widevine_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service.clearkey   	u:object_r:hal_drm_clearkey_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@.*-service-qti u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@.*-service u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti  u:object_r:hal_bluetooth_qti_exec:s0
@@ -257,6 +258,7 @@
 /(vendor|system/vendor)/bin/mlid                u:object_r:mlid_exec:s0
 /(vendor|system/vendor)/bin/ssgtzd              u:object_r:ssgtzd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service u:object_r:hal_esepowermanager_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.0-service u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/loc_launcher        u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/lowi-server         u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/xtwifi-inet-agent   u:object_r:location_exec:s0
@@ -324,6 +326,10 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service u:object_r:hal_sensorscalibrate_qti_default_exec:s0
 /(vendor|system/vendor)/bin/power_off_alarm        u:object_r:power_off_alarm_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator@1\.[0-2]-service    u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.usb\.gadget@1\.0-service-qti u:object_r:hal_usb_gadget_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.scve\.panorama@1\.0-service    u:object_r:vendor_scve_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.mlshal@1\.0-service       u:object_r:hal_mirrorlink_qti_exec:s0
+/(vendor|system/vendor)/bin/hdcp_srm               u:object_r:hdcp_srm_exec:s0
 
 ###################################
 # sysfs files
@@ -414,6 +420,7 @@
 /sys/devices/virtual/graphics/fb([0-3])+/ad                         u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/pp_bl_event                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_persist_mode        u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/config                     u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/rotator/mdss_rotator/caps                      u:object_r:sysfs_graphics:s0
 
 /sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes        u:object_r:sysfs_graphics:s0
@@ -561,6 +568,7 @@
 /data/vendor/tui(/.*)?                                              u:object_r:vendor_tui_data_file:s0
 /data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
 /data/vendor/bluetooth(/.*)?                                        u:object_r:vendor_bt_data_file:s0
+/data/vendor/scve(/.*)?                                             u:object_r:vendor_scve_data_file:s0
 
 ###################################
 # persist files

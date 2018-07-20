@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,23 +25,40 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-user=_app seinfo=platform name=com.qualcomm.location.qvtester levelfrom=all domain=location_app type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.qct.dlt levelfrom=all domain=location_app type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.qti.pdrtesttool levelfrom=all domain=location_app type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.qti.magcaltool levelfrom=all domain=location_app type=app_data_file
+type vendor_scve, domain;
+type vendor_scve_exec, exec_type, vendor_file_type, file_type;
 
-#Add new domain for QSEE sample services
-user=system seinfo=platform name=com.qualcomm.qti.auth.securesampleauthservice domain=qsee_svc_app type=qsee_svc_app_data_file
-user=system seinfo=platform name=com.qualcomm.qti.auth.secureextauthservice domain=qsee_svc_app type=qsee_svc_app_data_file
+init_daemon_domain(vendor_scve)
 
-#Add new domain for pdt apps
-user=system seinfo=platform name=.pdtapps domain=pdt_app type=system_app_data_file
+hal_server_domain(vendor_scve, hal_scve)
 
-#Add new domain for npudemo app
-user=_app seinfo=platform name=com.qti.qualcomm.npudemo domain=npu_app type=app_data_file levelFrom=all
+add_hwservice(hal_scve_server, hal_scve_hwservice)
 
-#Add new domain for VT loopback app
-user=_app seinfo=platform name=com.qti.vtloopback domain=vtloopback_app type=app_data_file levelfrom=all
+allow hal_scve_client hal_scve_hwservice:hwservice_manager find;
 
-#Add new domain for sysmon app
-user=_app seinfo=platform name=com.qualcomm.qti.sysmonappExternal domain=sysmon_app type=app_data_file levelFrom=all
+binder_call(hal_scve_client, hal_scve_server)
+binder_call(hal_scve_server, hal_scve_client)
+
+binder_call(platform_app, hal_scve)
+
+r_dir_file(vendor_scve, adsprpcd_file)
+
+#  Access for ion memory
+allow vendor_scve ion_device:chr_file rw_file_perms;
+
+#  Access for DSP/QDSP device
+allow vendor_scve qdsp_device:chr_file rw_file_perms;
+allow vendor_scve dsp_device:chr_file rw_file_perms;
+
+#  Access for GPU
+allow vendor_scve gpu_device:chr_file rw_file_perms;
+
+#  Access for sdcard
+userdebug_or_eng('
+allow vendor_scve sdcard_type:dir rw_dir_perms;
+allow vendor_scve sdcard_type:file create_file_perms;
+')
+
+#  Access for /data/vendor/scve
+allow vendor_scve vendor_scve_data_file:dir create_dir_perms;
+allow vendor_scve vendor_scve_data_file:file create_file_perms;

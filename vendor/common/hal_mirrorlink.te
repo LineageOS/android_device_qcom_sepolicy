@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,23 +25,32 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-user=_app seinfo=platform name=com.qualcomm.location.qvtester levelfrom=all domain=location_app type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.qct.dlt levelfrom=all domain=location_app type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.qti.pdrtesttool levelfrom=all domain=location_app type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.qti.magcaltool levelfrom=all domain=location_app type=app_data_file
+#Define Domain
+type hal_mirrorlink_qti, domain;
+type hal_mirrorlink_qti_exec, exec_type, vendor_file_type, file_type;
+hal_server_domain(hal_mirrorlink_qti,hal_mirrorlink)
 
-#Add new domain for QSEE sample services
-user=system seinfo=platform name=com.qualcomm.qti.auth.securesampleauthservice domain=qsee_svc_app type=qsee_svc_app_data_file
-user=system seinfo=platform name=com.qualcomm.qti.auth.secureextauthservice domain=qsee_svc_app type=qsee_svc_app_data_file
+#Allow for transition from init domain to hal_mirrorlink
+init_daemon_domain(hal_mirrorlink_qti)
 
-#Add new domain for pdt apps
-user=system seinfo=platform name=.pdtapps domain=pdt_app type=system_app_data_file
+#Allow hal_mirrorlink to use Vendor Binder IPC
+vndbinder_use(hal_mirrorlink)
 
-#Add new domain for npudemo app
-user=_app seinfo=platform name=com.qti.qualcomm.npudemo domain=npu_app type=app_data_file levelFrom=all
+#Allow hwbinder call from hal client to server
+binder_call(hal_mirrorlink_client, hal_mirrorlink_server)
+binder_call(hal_mirrorlink_server, hal_mirrorlink_client)
 
-#Add new domain for VT loopback app
-user=_app seinfo=platform name=com.qti.vtloopback domain=vtloopback_app type=app_data_file levelfrom=all
+#Add hwservice related rules
+add_hwservice(hal_mirrorlink_server, hal_mirrorlink_hwservice)
 
-#Add new domain for sysmon app
-user=_app seinfo=platform name=com.qualcomm.qti.sysmonappExternal domain=sysmon_app type=app_data_file levelFrom=all
+#Allow access to tee device
+allow hal_mirrorlink_qti tee_device:chr_file rw_file_perms;
+
+#Allow access to ion device
+allow hal_mirrorlink_qti ion_device:chr_file rw_file_perms;
+
+#Allow access to firmware
+allow hal_mirrorlink_qti firmware_file:dir r_dir_perms;
+allow hal_mirrorlink_qti firmware_file:file r_file_perms;
+
+allow hal_mirrorlink_client hal_mirrorlink_hwservice:hwservice_manager find;

@@ -4,6 +4,9 @@ r_dir_file(ueventd, firmware_file)
 # For wifi to access wifi_data_file
 r_dir_file(ueventd, wifi_data_file)
 
+# For wifi to access  mnt_vendor_file
+r_dir_file(ueventd, mnt_vendor_file)
+
 allow ueventd {
     { sysfs_type - usermodehelper }
     sysfs_battery_supply

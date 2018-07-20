@@ -201,6 +201,9 @@ userdebug_or_eng(`
 allow system_app wfd_debug_prop:file r_file_perms;
 ')
 
+# allow system app to set mirrorlink prop
+set_prop(system_app, vendor_mirrorlink_prop);
+
 #secureUI
 hal_client_domain(system_app, hal_qdutils_disp);
 hal_client_domain(system_app, hal_tui_comm);

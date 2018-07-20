@@ -24,6 +24,7 @@
 
 persist.vendor.service.bdroid.      u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bt.soc.scram_freqs   u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bluetooth.a2dp.      u:object_r:vendor_bluetooth_prop:s0
 vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
 #vendor.qcom.bluetooth.     u:object_r:vendor_bluetooth_prop:s0
 #ro.vendor.bt.              u:object_r:vendor_bluetooth_prop:s0
@@ -77,7 +78,6 @@ vendor.bg_reset               u:object_r:bg_daemon_prop:s0
 vendor.bg.boot_complete       u:object_r:bg_boot_complete_prop:s0
 ro.opengles.version           u:object_r:opengles_prop:s0
 ro.vendor.qualcomm.bt.hci_transport  u:object_r:vendor_bluetooth_prop:s0
-ctl.mdm_helper             u:object_r:vendor_mdm_helper_prop:s0
 ctl.vendor.mdm_helper      u:object_r:vendor_mdm_helper_prop:s0
 vendor.post_boot.parsed    u:object_r:vendor_mpctl_prop:s0
 vendor.perf.cores_online   u:object_r:vendor_mpctl_prop:s0
@@ -161,6 +161,9 @@ vendor.debug.wfd.          u:object_r:wfd_debug_prop:s0
 persist.vendor.debug.wfdcdbg  u:object_r:wfd_debug_prop:s0
 persist.vendor.debug.wfdcdbgv u:object_r:wfd_debug_prop:s0
 
+#MirrorLink
+vendor.mls.                u:object_r:vendor_mirrorlink_prop:s0
+
 ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
 
 persist.vendor.mmi.        u:object_r:vendor_mmi_prop:s0
@@ -197,9 +200,9 @@ vendor.debug.mmosal.config         u:object_r:debug_prop:s0
 #mm-video
 vendor.encoder.video.profile       u:object_r:mm_video_prop:s0
 vendor.video.disable.ubwc          u:object_r:mm_video_prop:s0
-persist.vendor.dbg.av.logs.level   u:object_r:mm_video_prop:s0
-persist.vendor.mm.en.dropcorrupt   u:object_r:mm_video_prop:s0
-vendor.vidc.enc.trgt_sup_bframe    u:object_r:mm_video_prop:s0
+persist.vendor.debug.av.logs.lvl   u:object_r:debug_prop:s0
+persist.vendor.debug.en.drpcrpt   u:object_r:debug_prop:s0
+vendor.debug.vidc.enc.sup_bframe    u:object_r:debug_prop:s0
 persist.vendor.media.hls.          u:object_r:mm_video_prop:s0
 vendor.av.dbg.disable.pers.cache   u:object_r:mm_video_prop:s0
 persist.vendor.sys.media.rtp-ports u:object_r:mm_video_prop:s0
