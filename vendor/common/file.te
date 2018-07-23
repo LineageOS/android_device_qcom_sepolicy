@@ -62,6 +62,9 @@ type sensors_socket, file_type;
 type sensors_persist_file, file_type, vendor_persist_type;
 type sysfs_sensors, sysfs_type, fs_type;
 
+#Memory offlining file types
+type sysfs_memory_offline, sysfs_type, fs_type;
+
 #VirtualKeys file type
 type sysfs_virtualkeys, sysfs_type, fs_type;
 
