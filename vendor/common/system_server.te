@@ -183,6 +183,9 @@ allow system_server vendor_iop_prop:file r_file_perms;
 # Allow Gesture based boost from System Server
 allow system_server vendor_scroll_prop:file r_file_perms;
 
+# allow system_server to access vendor display property.
+get_prop(system_server, vendor_display_prop)
+
 # allow system server to get mirrorlink connection status prop
 get_prop(system_server, vendor_mirrorlink_prop)
 
