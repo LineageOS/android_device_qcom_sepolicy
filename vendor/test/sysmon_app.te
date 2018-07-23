@@ -39,4 +39,3 @@ allow sysmon_app app_api_service:service_manager find;
 # Allow access to FastRPC
 allow sysmon_app qdsp_device:chr_file r_file_perms;
 allow sysmon_app xdsp_device:chr_file r_file_perms;
-allow sysmon_app dsp_device:chr_file r_file_perms;
