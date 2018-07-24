@@ -183,3 +183,6 @@ allow system_server vendor_iop_prop:file r_file_perms;
 
 # allow system server to get mirrorlink connection status prop
 get_prop(system_server, vendor_mirrorlink_prop)
+
+# allow system server to get vendor_audio_prop
+get_prop(system_server, vendor_audio_prop)

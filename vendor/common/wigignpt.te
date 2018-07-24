@@ -51,6 +51,7 @@ allow hal_wigig_npt proc_net:file rw_file_perms;
 allow hal_wigig_npt self:capability net_admin;
 
 #update wigig0 network parameters like rps_cpus and gro_flush_timeout
+allow hal_wigig_npt sysfs_net:dir search;
 allow hal_wigig_npt sysfs_wigig:file rw_file_perms;
 
 #update bond0 rps_cpus (FST)

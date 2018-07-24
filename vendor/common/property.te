@@ -173,5 +173,8 @@ type mm_parser_prop, property_type;
 #mm-video
 type mm_video_prop, property_type;
 
+#vendor-camera
+type vendor_camera_prop, property_type;
+
 #rmt_storage
 type ctl_vendor_rmt_storage_prop, property_type;

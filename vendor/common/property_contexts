@@ -24,6 +24,7 @@
 
 persist.vendor.service.bdroid.      u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bt.soc.scram_freqs   u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bluetooth.a2dp.      u:object_r:vendor_bluetooth_prop:s0
 vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
 #vendor.qcom.bluetooth.     u:object_r:vendor_bluetooth_prop:s0
 #ro.vendor.bt.              u:object_r:vendor_bluetooth_prop:s0
@@ -35,7 +36,7 @@ persist.vendor.ims.disabled       u:object_r:qcom_ims_prop:s0
 vendor.service.qti.ims.enabled    u:object_r:qcom_ims_prop:s0
 persist.vendor.ims.        u:object_r:qcom_ims_prop:s0
 persist.vendor.qti.telephony.vt_cam_interface u:object_r:qcom_ims_prop:s0
-hw.fm.                     u:object_r:fm_prop:s0
+vendor.hw.fm.                     u:object_r:fm_prop:s0
 sys.usf.                   u:object_r:usf_prop:s0
 ro.qc.sdk.us.                 u:object_r:usf_prop:s0
 ctl.vendor.qmuxd                  u:object_r:ctl_vendor_qmuxd_prop:s0
@@ -208,6 +209,10 @@ persist.vendor.sys.media.rtp-ports u:object_r:mm_video_prop:s0
 vendor.mm.en.sec.smoothstreaming   u:object_r:mm_video_prop:s0
 vendor.hevc.mux.print.codec.cfg    u:object_r:mm_video_prop:s0
 ro.vendor.mm-enable-accurate-seek  u:object_r:mm_video_prop:s0
+
+#vendor-camera
+vendor.camera.aux.packagelist      u:object_r:vendor_camera_prop:s0
+persist.vendor.camera.privapp.list u:object_r:vendor_camera_prop:s0
 
 #rmt_storage
 ctl.vendor.rmt_storage     u:object_r:ctl_vendor_rmt_storage_prop:s0
