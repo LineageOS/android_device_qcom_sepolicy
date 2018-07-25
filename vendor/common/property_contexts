@@ -65,3 +65,6 @@ persist.vendor.pd_locater_debug    u:object_r:vendor_pd_locater_dbg_prop:s0
 
 #rmt_storage
 ctl.vendor.rmt_storage     u:object_r:ctl_vendor_rmt_storage_prop:s0
+
+#GPU Available frequencies
+vendor.gpu.available_frequencies u:object_r:vendor_gpu_prop:s0
