@@ -134,3 +134,6 @@ type data_tzstorage_file, file_type, data_file_type;
 
 #NNHAL files
 type hal_neuralnetworks_data_file, file_type, data_file_type;
+
+#BT Files
+type vendor_bt_data_file, file_type, data_file_type;
