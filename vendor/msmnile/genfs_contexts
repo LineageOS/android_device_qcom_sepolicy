@@ -54,6 +54,7 @@ genfscon sysfs /devices/platform/soc/6047000.tmc/coresight-tmc-etf u:object_r:sy
 genfscon sysfs /devices/platform/soc/6048000.tmc/coresight-tmc-etr u:object_r:sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/6002000.stm/coresight-stm u:object_r:sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/91866f0.hwevent/coresight-hwevent u:object_r:sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/6b0e000.csr/coresight-swao-csr u:object_r:sysfs_qdss_dev:s0
 
 # subsys nodes
 genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys0/name u:object_r:sysfs_ssr:s0
