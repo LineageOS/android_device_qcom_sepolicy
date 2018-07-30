@@ -71,7 +71,6 @@ type location_prop, property_type;
 
 #properites for init.qcom.sh script
 type rmnet_mux_prop, property_type;
-type qemu_hw_mainkeys_prop, property_type;
 type sys_usb_controller_prop, property_type;
 type sys_usb_configfs_prop, property_type;
 
