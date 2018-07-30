@@ -57,6 +57,7 @@
 /dev/nq-nci                                     u:object_r:nfc_device:s0
 /dev/ttyHS0                                     u:object_r:hci_attach_dev:s0
 /dev/wlan                                       u:object_r:wlan_device:s0
+/dev/socket/qmux_radio(/.*)?                    u:object_r:qmuxd_socket:s0
 
 
 # Block device holding the GPT, where the A/B attributes are stored.
