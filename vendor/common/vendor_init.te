@@ -90,3 +90,4 @@ set_prop(vendor_init, mm_video_prop)
 
 #Access vendor gpu freq properties
 set_prop(vendor_init, vendor_gpu_prop)
+set_prop(vendor_init, public_vendor_default_prop)
