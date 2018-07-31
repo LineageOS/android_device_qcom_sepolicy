@@ -20,3 +20,7 @@ r_dir_file({domain - isolated_app}, sysfs_thermal);
 get_prop(domain, public_vendor_default_prop)
 
 dontaudit domain kernel:system module_request;
+
+# For compliance testing test suite reads vendor_security_path_level
+# Which is the public readable property “ ro.vendor.build.security_patch
+get_prop(domain, vendor_security_patch_level_prop)
