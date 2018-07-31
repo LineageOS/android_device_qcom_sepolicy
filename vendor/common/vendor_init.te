@@ -85,3 +85,5 @@ set_prop(vendor_init, vendor_display_prop)
 #Access vendor gralloc properties
 set_prop(vendor_init, vendor_gralloc_prop)
 
+#Access vendor gpu freq properties
+set_prop(vendor_init, vendor_gpu_prop)

@@ -57,6 +57,7 @@ set_prop(qti_init_shell, vendor_mpdecision_prop)
 set_prop(qti_init_shell, vendor_radio_prop)
 set_prop(qti_init_shell, vendor_audio_prop)
 get_prop(qti_init_shell, exported3_radio_prop)
+set_prop(qti_init_shell, vendor_gpu_prop)
 
 allow qti_init_shell {
     sysfs_devices_system_cpu
@@ -102,8 +103,8 @@ allow qti_init_shell configfs:file rw_file_perms;
 allow qti_init_shell sysfs_zram:dir r_dir_perms;
 allow qti_init_shell sysfs_zram:file rw_file_perms;
 
-# To get GPU frequencies
-allow qti_init_shell sysfs_kgsl:file r_file_perms;
+# To get GPU frequencies  and set attributes
+allow qti_init_shell sysfs_kgsl:file { r_file_perms setattr };
 
 allow qti_init_shell proc:file r_file_perms;
 allow qti_init_shell rootfs:file r_file_perms;
