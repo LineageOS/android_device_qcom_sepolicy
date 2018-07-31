@@ -177,3 +177,5 @@ type vendor_camera_prop, property_type;
 type ctl_vendor_rmt_storage_prop, property_type;
 
 type vendor_gpu_prop, property_type;
+
+type vendor_data_ko_prop, property_type;
