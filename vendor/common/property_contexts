@@ -16,6 +16,8 @@ vendor.audio.              u:object_r:vendor_audio_prop:s0
 vendor.voice.              u:object_r:vendor_audio_prop:s0
 persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
 ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
+ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
+ro.boot.alarmboot          u:object_r:vendor_alarm_boot_prop:s0
 ro.fota.oem                u:object_r:vendor_default_prop:s0
 vendor.debug.camera.       u:object_r:vendor_camera_prop:s0
 persist.vendor.camera.     u:object_r:vendor_camera_prop:s0

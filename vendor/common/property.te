@@ -52,3 +52,6 @@ type ctl_vendor_rmt_storage_prop, property_type;
 type vendor_gpu_prop, property_type;
 
 type public_vendor_default_prop, property_type;
+
+# alarm property
+type vendor_alarm_boot_prop, property_type;
