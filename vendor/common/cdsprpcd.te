@@ -36,6 +36,7 @@ init_daemon_domain(cdsprpcd)
 r_dir_file(cdsprpcd, adsprpcd_file)
 
 allow cdsprpcd qdsp_device:chr_file r_file_perms;
+allow cdsprpcd xdsp_device:chr_file r_file_perms;
 allow cdsprpcd ion_device:chr_file r_file_perms;
 
 r_dir_file(cdsprpcd, sysfs_devfreq)

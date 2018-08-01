@@ -33,6 +33,7 @@ init_daemon_domain(hal_neuralnetworks_default)
 
 allow hal_neuralnetworks_default fwk_sensor_hwservice:hwservice_manager find;
 allow hal_neuralnetworks_default qdsp_device:chr_file r_file_perms;
+allow hal_neuralnetworks_default xdsp_device:chr_file r_file_perms;
 allow hal_neuralnetworks_default ion_device:chr_file r_file_perms;
 
 allow hal_neuralnetworks_default app_data_file:file { read getattr };
