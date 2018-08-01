@@ -7,6 +7,7 @@ type citadel_device, dev_type;
 type custom_ab_block_device, dev_type;
 type diag_device, dev_type, mlstrustedobject;
 type dsp_device, dev_type;
+type xdsp_device, dev_type;
 type easel_device, dev_type;
 type hbtp_device, dev_type;
 type hvdcp_device, dev_type;

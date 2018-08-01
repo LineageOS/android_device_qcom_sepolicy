@@ -46,6 +46,7 @@ allow hal_camera sysfs_easel:file rw_file_perms;
 
 # access hexagon
 allow hal_camera qdsp_device:chr_file r_file_perms;
+allow hal_camera xdsp_device:chr_file r_file_perms;
 
 #needed for full_treble
 hal_client_domain(hal_camera_default, hal_graphics_composer)
