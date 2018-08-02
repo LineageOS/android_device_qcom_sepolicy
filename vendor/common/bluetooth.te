@@ -56,3 +56,8 @@ allowxperm bluetooth self:socket ioctl msm_sock_ipc_ioctls;
 #SplitA2dp bluetooth requires binding with audio hal
 binder_call(bluetooth, hal_audio);
 allow bluetooth hal_audio_hwservice:hwservice_manager find;
+
+# suppress denials for services, which should not be accessed by bluetooth
+dontaudit bluetooth {
+      netd_service
+}:service_manager find;
