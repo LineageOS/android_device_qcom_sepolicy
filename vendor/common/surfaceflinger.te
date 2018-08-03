@@ -7,8 +7,6 @@ binder_call(surfaceflinger, poweroffhandler);
 binder_call(surfaceflinger, location)
 binder_call(surfaceflinger, tee)
 
-hal_client_domain(surfaceflinger, hal_display_config)
-
 # Allows access to dpps daemon in calibration mode
 #unix_socket_connect(surfaceflinger, pps, mm-pp-daemon)
 
