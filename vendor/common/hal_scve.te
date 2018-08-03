@@ -39,8 +39,6 @@ allow hal_scve_client hal_scve_hwservice:hwservice_manager find;
 binder_call(hal_scve_client, hal_scve_server)
 binder_call(hal_scve_server, hal_scve_client)
 
-binder_call(platform_app, hal_scve)
-
 r_dir_file(vendor_scve, adsprpcd_file)
 
 #  Access for ion memory

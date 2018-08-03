@@ -32,3 +32,7 @@ hal_client_domain(platform_app, hal_perf)
 get_prop(radio, vendor_radio_prop)
 
 get_prop(platform_app, vendor_camera_prop)
+
+#allow scve hw service
+#allow platform_app hal_scve_hwservice:hwservice_manager find;
+hal_client_domain(platform_app, hal_scve)
