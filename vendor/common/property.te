@@ -79,7 +79,6 @@ type vendor_xlat_prop, property_type;
 type location_prop, property_type;
 
 #properites for init.qcom.sh script
-type qemu_hw_mainkeys_prop, property_type;
 type vendor_usb_prop, property_type;
 
 type vendor_coresight_prop, property_type;
