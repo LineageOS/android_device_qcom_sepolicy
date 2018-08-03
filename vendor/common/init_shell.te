@@ -84,7 +84,6 @@ set_prop(qti_init_shell, ctl_console_prop)
 set_prop(qti_init_shell, vendor_coresight_prop)
 set_prop(qti_init_shell, vendor_audio_debug_prop)
 ')
-set_prop(qti_init_shell, ctl_hbtp_prop)
 #Needed for starting vm_bms executable post-boot
 set_prop(qti_init_shell, vm_bms_prop)
 set_prop(qti_init_shell, vendor_usb_prop)

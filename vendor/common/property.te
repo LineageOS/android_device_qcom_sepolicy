@@ -85,7 +85,6 @@ type vendor_usb_prop, property_type;
 type vendor_coresight_prop, property_type;
 
 
-type ctl_hbtp_prop, property_type;
 type vendor_alarm_boot_prop, property_type;
 
 
