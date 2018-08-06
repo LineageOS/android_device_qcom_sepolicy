@@ -17,7 +17,6 @@ vendor.voice.              u:object_r:vendor_audio_prop:s0
 persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
 ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
 ro.fota.oem                u:object_r:vendor_default_prop:s0
-ro.build.software.version  u:object_r:vendor_default_prop:s0
 vendor.debug.camera.       u:object_r:vendor_camera_prop:s0
 persist.vendor.camera.     u:object_r:vendor_camera_prop:s0
 persist.vendor.sys.crash_rcu      u:object_r:vendor_ramdump_prop:s0
