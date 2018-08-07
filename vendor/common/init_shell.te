@@ -237,3 +237,7 @@ allow qti_init_shell sysfs_npu:file rw_file_perms;
 # allow rw create file access to fm patchdownloader
 allow qti_init_shell vendor_fm_data_file:file create_file_perms;
 allow qti_init_shell vendor_fm_data_file:dir ra_dir_perms;
+
+# For USB RNDIS configuration
+allow qti_init_shell sysfs_android_usb:dir r_dir_perms;
+allow qti_init_shell sysfs_android_usb:file rw_file_perms;
