@@ -33,6 +33,7 @@ net_domain(adpl)
 allow adpl {
     rmnet_device
     mhi_device
+    ipa_dev
 }:chr_file rw_file_perms;
 
 qmux_socket(adpl)
