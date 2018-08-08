@@ -78,6 +78,8 @@ set_prop(vendor_init, vendor_gralloc_prop)
 
 set_prop(vendor_init, vendor_audio_prop)
 
+set_prop(vendor_init, vendor_rild_libpath_prop)
+
 # allow vendor toolbox usage
 allow vendor_init vendor_toolbox_exec:file rx_file_perms;
 type vendor_init_exec, exec_type, vendor_file_type, file_type;

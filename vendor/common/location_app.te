@@ -16,6 +16,8 @@ userdebug_or_eng(`
   diag_use(location_app)
 ')
 
+get_prop(location_app, vendor_mpctl_prop)
+get_prop(location_app, vendor_iop_prop)
 allow location_app mediametrics_service:service_manager find;
 allow location_app system_app_data_file:dir create_dir_perms;
 allow location_app system_app_data_file:file create_file_perms;

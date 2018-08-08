@@ -25,17 +25,14 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-## sysmon_app
-##
-## This file defines the permissions that sysmon_apps can carry
+type init-qti-fbe-sh, domain;
+type init-qti-fbe-sh_exec, exec_type, file_type, vendor_file_type;
 
-type sysmon_app, domain;
+init_daemon_domain(init-qti-fbe-sh)
 
-app_domain(sysmon_app)
-
-# display by the com.qualcomm.qti.sysmonappExternal.SysMonApp
-allow sysmon_app app_api_service:service_manager find;
-
-# Allow access to FastRPC
-allow sysmon_app qdsp_device:chr_file r_file_perms;
-allow sysmon_app xdsp_device:chr_file r_file_perms;
+not_full_treble(`allow init-qti-fbe-sh shell_exec:file rx_file_perms;')
+full_treble_only(`allow init-qti-fbe-sh vendor_shell_exec:file rx_file_perms;')
+# execute toybox/toolbox
+not_full_treble(`allow init-qti-fbe-sh toolbox_exec:file rx_file_perms;')
+full_treble_only(`allow init-qti-fbe-sh vendor_toolbox_exec:file rx_file_perms;')
+get_prop(init-qti-fbe-sh, vendor_tee_listener_prop)

@@ -88,7 +88,8 @@ vendor.iop.enable_uxe      u:object_r:vendor_iop_prop:s0
 vendor.perf.iop_v3.enable  u:object_r:vendor_iop_prop:s0
 vendor.perf.iop_v3.enable.debug u:object_r:vendor_iop_prop:s0
 vendor.iop.enable_prefetch_ofr   u:object_r:vendor_iop_prop:s0
-ro.vendor.scroll.preobtain.enable  u:object_r:vendor_preobtain_prop:s0
+ro.vendor.scroll.preobtain.enable       u:object_r:vendor_scroll_prop:s0
+vendor.perf.gestureflingboost.enable  u:object_r:vendor_scroll_prop:s0
 location.                  u:object_r:location_prop:s0
 vendor.qti.izat.           u:object_r:location_prop:s0
 vendor.usb.                u:object_r:vendor_usb_prop:s0
@@ -103,6 +104,9 @@ ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
 vendor.audio.debug.        u:object_r:vendor_audio_debug_prop:s0
 ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
 persist.vendor.net.doxlat  u:object_r:vendor_xlat_prop:s0
+persist.vendor.data.dont_use_epc  u:object_r:vendor_dataqdp_prop:s0
+persist.vendor.data.dont_use_npflag  u:object_r:vendor_dataqdp_prop:s0
+persist.vendor.data.profile_update  u:object_r:vendor_dataqdp_prop:s0
 vendor.gralloc.            u:object_r:vendor_gralloc_prop:s0
 vendor.wifi.ftmd.                 u:object_r:vendor_wifi_ftmd_prop:s0
 # WIGIG

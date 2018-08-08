@@ -28,3 +28,9 @@
 
 #secure touch sysfs node
 genfscon sysfs /devices/soc/c178000.i2c/i2c-4/4-0020 u:object_r:sysfs_sectouch:s0
+
+genfscon  sysfs /devices/soc/cce0000.qcom,venus/subsys0/name              u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/soc/1a300000.qcom,turing/subsys3/name            u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/soc/4080000.qcom,mss/subsys4/name                u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/soc/soc:qcom,kgsl-hyp/subsys1/name               u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/soc/15700000.qcom,lpass/subsys2/name             u:object_r:sysfs_ssr:s0

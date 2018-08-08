@@ -43,3 +43,6 @@
 /dev/block/platform/soc.0/7824900.sdhci/by-name/recovery              u:object_r:recovery_block_device:s0
 /dev/block/platform/soc.0/7824900.sdhci/by-name/system                u:object_r:system_block_device:s0
 /dev/block/platform/soc.0/7824900.sdhci/by-name/cache                 u:object_r:cache_block_device:s0
+
+#TODO : need to cleanup regexp
+/sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name         u:object_r:sysfs_ssr:s0
