@@ -31,8 +31,5 @@ type ssgqmigd_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(ssgqmigd)
 
-allow ssgqmigd self:socket create_socket_perms_no_ioctl;
-allow ssgqmigd self:socket ioctl;
-# ioctlcmd=c304
-# ioctlcmd=c302
-allowxperm ssgqmigd self:socket ioctl msm_sock_ipc_ioctls;
+allow ssgqmigd self:{ socket qipcrtr_socket } create_socket_perms;
+allowxperm ssgqmigd self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;

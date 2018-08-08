@@ -42,6 +42,7 @@ type freq_prop, property_type;
 type vm_bms_prop, property_type; #To start vm_bms
 type vendor_dataqti_prop, property_type;
 type vendor_dataadpl_prop, property_type;
+type vendor_dataqdp_prop, property_type;
 type vendor_ipacm_prop, property_type;
 type vendor_ipacm-diag_prop, property_type;
 type cnd_vendor_prop, property_type;
@@ -60,7 +61,7 @@ type vendor_mdm_helper_prop, property_type;
 type vendor_mpctl_prop, property_type;
 type vendor_iop_prop, property_type;
 #Scroll Pre-obtain
-type vendor_preobtain_prop, property_type;
+type vendor_scroll_prop, property_type;
 
 # properties for ActivityManager tuning
 type vendor_am_prop, property_type;
@@ -87,9 +88,6 @@ type vendor_coresight_prop, property_type;
 type ctl_hbtp_prop, property_type;
 type vendor_alarm_boot_prop, property_type;
 
-# DOLBY_START
-type dolby_prop, property_type;
-# DOLBY_END
 
 type vendor_wifi_ftmd_prop, property_type;
 
@@ -172,6 +170,9 @@ type mm_parser_prop, property_type;
 
 #mm-video
 type mm_video_prop, property_type;
+
+#vendor-camera
+type vendor_camera_prop, property_type;
 
 #rmt_storage
 type ctl_vendor_rmt_storage_prop, property_type;

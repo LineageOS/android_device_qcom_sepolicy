@@ -56,3 +56,6 @@
 /dev/block/platform/soc/7824900.sdhci/by-name/dip                   u:object_r:dip_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/mdtp                  u:object_r:mdtp_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/logdump               u:object_r:logdump_partition:s0
+
+#TODO: need to remove the regexp
+/sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name         u:object_r:sysfs_ssr:s0

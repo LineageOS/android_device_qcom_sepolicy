@@ -455,7 +455,6 @@
 /sys/devices/msm_hsic_host/host_ready                               u:object_r:sysfs_hsic_host_rdy:s0
 /sys/bus/esoc(/.*)?                                                 u:object_r:sysfs_esoc:s0
 /sys/bus/msm_subsys(/.*)?                                           u:object_r:sysfs_ssr:s0
-/sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name         u:object_r:sysfs_ssr:s0
 /sys/module/ccid_bridge(/.*)?                                       u:object_r:sysfs_usb_uicc:s0
 /sys/bus/msm_subsys/devices/subsys0/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/bus/msm_subsys/devices/subsys1/restart_level                   u:object_r:sysfs_ssr_toggle:s0
@@ -519,11 +518,12 @@
 ###################################
 # data files
 #
+/data/time(/.*)?                                                    u:object_r:time_data_file:s0
 /data/vendor/nfc(/.*)?                                              u:object_r:nfc_vendor_data_file:s0
 /data/vendor/audio(/.*)?                                            u:object_r:vendor_audio_data_file:s0
 /data/vendor/connectivity(/.*)?                                     u:object_r:cnd_data_file:s0
 /data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
-/data/vendor/time(/.*)?                                             u:object_r:time_data_file:s0
+/data/vendor/time(/.*)?                                             u:object_r:vendor_time_data_file:s0
 /data/vendor/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
 /data/vendor/iop(/.*)?                                              u:object_r:iop_data_file:s0
 /data/vendor/lm(/.*)?                                               u:object_r:lm_data_file:s0
@@ -569,6 +569,7 @@
 /data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
 /data/vendor/bluetooth(/.*)?                                        u:object_r:vendor_bt_data_file:s0
 /data/vendor/scve(/.*)?                                             u:object_r:vendor_scve_data_file:s0
+/data/vendor/fm(/.*)?                                               u:object_r:vendor_fm_data_file:s0
 
 ###################################
 # persist files

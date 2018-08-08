@@ -59,3 +59,6 @@
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/cache                              u:object_r:cache_block_device:s0
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/config                             u:object_r:frp_block_device:s0
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/logdump                            u:object_r:logdump_partition:s0
+
+#TODO : need to remove regexp
+/sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name         u:object_r:sysfs_ssr:s0

@@ -140,10 +140,6 @@ binder_call(system_app, mdtpdaemon)
 allow system_app radio_data_file:dir rw_dir_perms;
 allow system_app radio_data_file:file create_file_perms;
 
-# DOLBY_START
-set_prop(system_app, dolby_prop)
-# DOLBY_END
-
 # allow system_app to access netd
 unix_socket_connect(system_app, netd, netd)
 
@@ -184,8 +180,8 @@ hal_client_domain(system_app, hal_perf)
 
 #allow only system_app with userdebug to access ioctl
 userdebug_or_eng(`
-  allowxperm system_app self:socket ioctl msm_sock_ipc_ioctls;
-  allow system_app self:socket create_socket_perms;
+  allowxperm system_app self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+  allow system_app self:{ socket qipcrtr_socket } create_socket_perms;
 ')
 
 #allow system app to interact with the esepowermanager

@@ -54,6 +54,14 @@ allow sensors device_latency:chr_file w_file_perms;
 userdebug_or_eng(`
   domain_auto_trans(shell, sensors_exec, sensors)
   diag_use(sensors)
+
+  # For starting diag_mdlog
+  allow sensors vendor_shell_exec:file execute_no_trans;
+  allow sensors qlogd_exec:file execute_no_trans;
+  allow sensors storage_file:lnk_file read;
+
+  # For Reading/creating/opening named pipe for diag flush
+  allow sensors sensors_persist_file:fifo_file { create open read };
 ')
 
 #binder_use(sensors)

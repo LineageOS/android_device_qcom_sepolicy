@@ -36,6 +36,18 @@ genfscon sysfs /devices/platform/soc/6047000.tmc/coresight-tmc-etf u:object_r:sy
 genfscon sysfs /devices/platform/soc/6048000.tmc/coresight-tmc-etr u:object_r:sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/6002000.stm/coresight-stm u:object_r:sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/14066f0.hwevent/coresight-hwevent u:object_r:sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/6b0e000.csr/coresight-swao-csr u:object_r:sysfs_qdss_dev:s0
 
 genfscon sysfs /devices/platform/soc/soc:qcom,l3-cdsp/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,l3-cdsp/devfreq/soc:qcom,l3-cdsp/userspace u:object_r:sysfs_devfreq_l3cdsp:s0
+
+# sdm845 specific sysfs
+genfscon sysfs /devices/platform/soc/17d41000.qcom,cpucc/17d41000.qcom,cpucc:qcom,wil6210/subsys8/name    u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys0/name                                       u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/aae0000.qcom,venus/subsys1/name                                      u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys2/name                                        u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys3/name                                       u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys4/name                                     u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys5/name                                        u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys6/name                                     u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys7/name                                        u:object_r:sysfs_ssr:s0
