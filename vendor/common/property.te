@@ -60,6 +60,7 @@ type opengles_prop, property_type;
 type vendor_mdm_helper_prop, property_type;
 type vendor_mpctl_prop, property_type;
 type vendor_iop_prop, property_type;
+type public_vendor_default_prop, property_type;
 #Scroll Pre-obtain
 type vendor_scroll_prop, property_type;
 
