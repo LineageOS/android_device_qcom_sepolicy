@@ -51,6 +51,9 @@ allowxperm hal_imsrtp self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 
 allow hal_imsrtp self:capability net_bind_service;
 
+# IMS needs permission to use avtimer
+allow hal_imsrtp avtimer_device:chr_file r_file_perms;
+
 allow hal_imsrtp ion_device:chr_file r_file_perms;
 
 allow hal_imsrtp sysfs_data:file r_file_perms;
