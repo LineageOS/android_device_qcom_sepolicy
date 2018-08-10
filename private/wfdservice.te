@@ -106,8 +106,8 @@ allow wfdservice {audioserver_service permission_service surfaceflinger_service 
 #Allow setting of net_admin capability so that libnl API's can be used
 allow wfdservice self:capability net_admin;
 
-#allow binder call to mediacodec from wfdservice
-binder_call(wfdservice, mediacodec);
+#allow binder call to hal_omx_server from wfdservice
+binder_call(wfdservice, hal_omx_server);
 
 #Allow wfdservice to query interface name of network (p2p etc.)
 allow wfdservice self:netlink_socket create_socket_perms_no_ioctl;

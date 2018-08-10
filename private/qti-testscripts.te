@@ -80,7 +80,7 @@ userdebug_or_eng(`
 # allow adbd qti-testscripts:process dyntransition;
   #allow { domain -mediaextractor -mediacodec } qti-testscripts:unix_stream_socket connectto;
   allow domain qti-testscripts:fd use;
-  allow { domain -mediaextractor -mediacodec -hal_configstore_server } qti-testscripts:unix_stream_socket { getattr getopt read write shutdown };
+  allow { domain -mediaextractor -hal_omx_server -hal_configstore_server } qti-testscripts:unix_stream_socket { getattr getopt read write shutdown };
 #  binder_call({ domain -init -netd }, qti-testscripts)
   allow domain qti-testscripts:fifo_file { write getattr };
   allow domain qti-testscripts:process sigchld;
