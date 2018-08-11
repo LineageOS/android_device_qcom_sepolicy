@@ -93,7 +93,6 @@ allowxperm cnd self:udp_socket ioctl wlan_sock_ioctls;
 
 allow cnd sysfs_data:file r_file_perms;
 
-add_hwservice(cnd, hal_cne_hwservice)
 add_hwservice(cnd, hal_latency_hwservice)
 add_hwservice(cnd, hal_datafactory_hwservice)
 hwbinder_use(cnd)

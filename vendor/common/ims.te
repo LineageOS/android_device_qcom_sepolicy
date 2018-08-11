@@ -61,5 +61,5 @@ hwbinder_use(ims)
 get_prop(ims, hwservicemanager_prop)
 get_prop(ims, qcom_ims_prop)
 get_prop(ims, cnd_vendor_prop)
-allow ims hal_cne_hwservice:hwservice_manager find;
+allow ims hal_datafactory_hwservice:hwservice_manager find;
 binder_call(ims, cnd)

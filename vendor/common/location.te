@@ -84,7 +84,7 @@ allowxperm location self:udp_socket ioctl priv_sock_ioctls;
 #access to qdma socket
 qdma_file_socket(location);
 
-allow location hal_cne_hwservice:hwservice_manager find;
+allow location hal_datafactory_hwservice:hwservice_manager find;
 binder_call(location, cnd)
 get_prop(location, cnd_vendor_prop)
 
