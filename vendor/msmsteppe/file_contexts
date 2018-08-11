@@ -87,3 +87,9 @@
 # non-hlos mount points
 /firmware                  u:object_r:firmware_file:s0
 /bt_firmware               u:object_r:bt_firmware_file:s0
+
+#for eMMC
+/dev/block/platform/soc/7c4000.sdhci/by-name/fsc                                u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/fsg                                u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/modemst1                           u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/modemst2                           u:object_r:modem_efs_partition_device:s0
