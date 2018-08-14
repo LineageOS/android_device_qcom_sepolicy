@@ -23,3 +23,8 @@ allow netd dhcp_data_file:dir create_dir_perms;
 
 type_transition netd wifi_data_file:dir wpa_socket "sockets";
 #allow netd wpa_socket:sock_file create_file_perms;
+
+# If an already existing file is opened with O_CREAT,
+# the kernel might generate a false report of a create
+# denial. Silence these denials
+dontaudit netd system_file:dir write;

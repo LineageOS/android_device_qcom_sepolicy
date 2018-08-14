@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 dontaudit netutils_wrapper self:capability sys_module;
+dontaudit netutils_wrapper system_file:dir write;
