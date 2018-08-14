@@ -27,3 +27,4 @@
 
 allow zygote oemfs:dir r_dir_perms;
 allow zygote oemfs:file r_file_perms;
+get_prop(zygote,vendor_media_msm8953_version_prop)
