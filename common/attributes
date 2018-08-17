@@ -54,10 +54,6 @@ attribute hal_alarm_qti;
 attribute hal_alarm_qti_client;
 attribute hal_alarm_qti_server;
 
-attribute hal_vehicle;
-attribute hal_vehicle_client;
-attribute hal_vehicle_server;
-
 attribute hal_vpp;
 attribute hal_vpp_client;
 attribute hal_vpp_server;
