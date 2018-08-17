@@ -69,12 +69,6 @@ allow cnd socket_device:dir remove_name;
 # explicitly allow udp socket permissions for appdomain
 #allow cnd appdomain:udp_socket rw_socket_perms;
 
-#allow cnd daemon to invoke hostapd_cli
-allow cnd vendor_shell_exec:file rx_file_perms;
-domain_auto_trans(cnd, hostapd_exec, hostapd)
-allow cnd hostapd_socket:dir r_dir_perms;
-unix_socket_send(cnd, hostapd, hostapd)
-
 # only allow getopt for appdomain
 allow appdomain zygote:unix_dgram_socket getopt;
 dontaudit { domain -appdomain } zygote:unix_dgram_socket getopt;

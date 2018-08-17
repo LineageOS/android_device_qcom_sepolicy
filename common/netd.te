@@ -19,7 +19,6 @@ allowxperm netd self: { unix_stream_socket } ioctl priv_sock_ioctls;
 set_prop(netd, netd_prop)
 
 allow netd self:capability fsetid;
-#allow netd hostapd:unix_dgram_socket sendto;
 
 # Allow netd to chmod dir /data/misc/dhcp
 allow netd dhcp_data_file:dir create_dir_perms;

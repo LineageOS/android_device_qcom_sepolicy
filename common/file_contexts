@@ -219,7 +219,6 @@
 /(vendor|system/vendor)/bin/spdaemon            u:object_r:spdaemon_exec:s0
 /(vendor|system/vendor)/bin/sec_nvm             u:object_r:sec_nvm_exec:s0
 /(vendor|system/vendor)/bin/cnss-daemon         u:object_r:wcnss_service_exec:s0
-/(vendor|system/vendor)/bin/hostapd_cli         u:object_r:hostapd_exec:s0
 /(vendor|system/vendor)/bin/adsprpcd            u:object_r:adsprpcd_exec:s0
 /(vendor|system/vendor)/bin/cdsprpcd            u:object_r:cdsprpcd_exec:s0
 /(vendor|system/vendor)/bin/wpa_cli             u:object_r:wcnss_service_exec:s0
