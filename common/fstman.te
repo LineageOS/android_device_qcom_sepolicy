@@ -59,7 +59,7 @@ allow fstman wifi_vendor_data_file:file create_file_perms;
 
 # fstman needs to communicate with wpa_supplicant and hostapd using socket
 # for managing FST state
-allow fstman { hal_wifi_supplicant hostapd }:unix_dgram_socket sendto;
+allow fstman { hal_wifi_supplicant hal_wifi_hostapd }:unix_dgram_socket sendto;
 # supplicant interface sockets
 allow fstman wifi_vendor_wpa_socket:dir rw_dir_perms;
 allow fstman wifi_vendor_wpa_socket:sock_file create_file_perms;
