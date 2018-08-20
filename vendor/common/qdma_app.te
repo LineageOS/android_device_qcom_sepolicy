@@ -56,6 +56,9 @@ unix_socket_connect(qdma_app, dpmtcm, dpmd)
 allow qdma_app qdma_socket:dir w_dir_perms;
 allow qdma_app qdma_socket:sock_file create_file_perms;
 
+# for /dev/socket/qdma/qdma-campmgr-s
+unix_socket_connect(qdma_app, qdma, qdmastatsd)
+
 # allow access to mediadrmserver for qdmastats/wvstats
 allow qdma_app mediadrmserver_service:service_manager find;
 

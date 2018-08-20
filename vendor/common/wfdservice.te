@@ -22,10 +22,6 @@ hal_client_domain(wfdservice, wifidisplayhalservice);
 #pid=3530 scontext=u:r:wfdservice:s0 tcontext=u:object_r:wifidisplayhalservice_hwservice:s0 tclass=hwservice_manager
 allow wfdservice wifidisplayhalservice_hwservice:hwservice_manager find;
 
-# Denial seen - SELinux : avc:  denied  { find } for interface=vendor.display.config::IDisplayConfig
-# pid=4252 scontext=u:r:wfdservice:s0 tcontext=u:object_r:hal_display_config_hwservice:s0 tclass=hwservice_manager
-hal_client_domain(wfdservice, hal_display_config);
-
 #Allow for property access
 userdebug_or_eng(`
 allow wfdservice wfd_debug_prop:file r_file_perms;

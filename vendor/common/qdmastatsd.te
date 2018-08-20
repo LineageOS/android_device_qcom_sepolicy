@@ -77,8 +77,7 @@ allow qdmastatsd proc_stat:file r_file_perms;
 allow qdmastatsd proc_stat:dir r_dir_perms;
 
 # access to /proc/net/xt_qtaguid/stats
-allow qdmastatsd proc_net:file r_file_perms;
-allow qdmastatsd proc_net:dir r_dir_perms;
+allow qdmastatsd proc_qtaguid_stat:file r_file_perms;
 
 # access to /proc/<pid>/
 r_dir_file(qdmastatsd, domain);

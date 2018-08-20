@@ -35,6 +35,7 @@ allow vendor_audioftm vendor_audioftm_exec:file { rx_file_perms entrypoint };
 
 allow vendor_audioftm proc_audiod:file r_file_perms;
 allow vendor_audioftm proc_audiod:dir search;
+allow vendor_audioftm proc_asound:dir search;
 
 allow vendor_audioftm devpts:chr_file rw_file_perms;
 
