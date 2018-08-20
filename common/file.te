@@ -239,7 +239,6 @@ type dynamic_nv_data_file, file_type, data_file_type;
 # Wifi Data file
 type wifi_vendor_data_file, file_type, data_file_type;
 type wifi_vendor_wpa_socket, file_type, data_file_type;
-type wifi_vendor_hostapd_socket, file_type, data_file_type;
 
 # wififtmd socket file
 type wififtmd_socket, file_type;
