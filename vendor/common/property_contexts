@@ -70,3 +70,10 @@ ctl.vendor.rmt_storage     u:object_r:ctl_vendor_rmt_storage_prop:s0
 
 #GPU Available frequencies
 vendor.gpu.available_frequencies u:object_r:vendor_gpu_prop:s0
+
+# public_vendor_default_prop
+ro.vendor.graphics.memory  u:object_r:public_vendor_default_prop:s0
+vendor.debug.egl.changepixelformat  u:object_r:public_vendor_default_prop:s0
+vendor.debug.prerotation.disable  u:object_r:public_vendor_default_prop:s0
+vendor.debug.egl.swapinterval  u:object_r:public_vendor_default_prop:s0
+vendor.debug.egl.profiler  u:object_r:public_vendor_default_prop:s0

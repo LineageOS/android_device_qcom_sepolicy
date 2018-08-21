@@ -17,4 +17,6 @@ r_dir_file({domain - isolated_app}, sysfs_esoc);
 r_dir_file({domain - isolated_app}, sysfs_ssr);
 r_dir_file({domain - isolated_app}, sysfs_thermal);
 
+get_prop(domain, public_vendor_default_prop)
+
 dontaudit domain kernel:system module_request;

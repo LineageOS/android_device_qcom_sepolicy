@@ -50,3 +50,5 @@ type vendor_pd_locater_dbg_prop, property_type;
 type ctl_vendor_rmt_storage_prop, property_type;
 
 type vendor_gpu_prop, property_type;
+
+type public_vendor_default_prop, property_type;
