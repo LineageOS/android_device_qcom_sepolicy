@@ -25,9 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#PM8950 files
-genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:qcom,pm8953@0:qcom,pm8953_typec@bf00/power_supply/typec u:object_r:sysfs_battery_supply:s0
-
 #PMI8950 files
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,qpnp-smbcharger/power_supply/battery u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/power_supply/bms u:object_r:sysfs_battery_supply:s0
@@ -60,7 +57,16 @@ genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.q
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8937@3:qcom,leds@d300/leds u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8937@3:qcom,leds@d800/leds/wled u:object_r:sysfs_leds:s0
 genfscon sysfs /bus/spmi/devices/spmi0-02/200f000.qcom,spmi:qcom,pmi8937@2:vadc@3100/usbin u:object_r:sysfs_battery_supply:s0
-
+#PMI path
+genfscon sysfs /devices/soc/qpnp-smbcharger-16/power_supply/battery u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/qpnp-fg-17/power_supply/bms u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/78db000.usb/power_supply/usb u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /devices/soc/qpnp-smbcharger-16/leds/red u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/soc/leds-qpnp-19/leds/ u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc/qpnp-flash-led-23/leds/ u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc/qpnp-wled-22/leds/ u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc/qpnp-haptic-24/leds/vibrator u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc/qpnp-vadc-14/usbin u:object_r:sysfs_battery_supply:s0
 #PMI632 files
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi632@2:qcom,qpnp-smb5/power_supply/battery u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi632@2:qcom,qpnp-smb5/power_supply/pc_port u:object_r:sysfs_battery_supply:s0
@@ -75,21 +81,3 @@ genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-000c/78b6000.i2c:qcom,s
 
 #Common PMIC files
 genfscon sysfs /class/qcom-battery u:object_r:sysfs_battery_supply:s0
-
-#Needed for SSR
-genfscon  sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys0/name   u:object_r:sysfs_ssr:s0
-genfscon  sysfs /devices/platform/soc/1de0000.qcom,venus/subsys1/name  u:object_r:sysfs_ssr:s0
-genfscon  sysfs /devices/platform/soc/c200000.qcom,lpass/subsys2/name  u:object_r:sysfs_ssr:s0
-genfscon  sysfs /devices/platform/soc/a21b000.qcom,pronto/subsys3/name u:object_r:sysfs_ssr:s0
-genfscon  sysfs /devices/platform/soc/4080000.qcom,mss/subsys4/name    u:object_r:sysfs_ssr:s0
-
-#PMI path
-genfscon sysfs /devices/soc/qpnp-smbcharger-16/power_supply/battery u:object_r:sysfs_battery_supply:s0
-genfscon sysfs /devices/soc/qpnp-fg-17/power_supply/bms u:object_r:sysfs_battery_supply:s0
-genfscon sysfs /devices/soc/78db000.usb/power_supply/usb u:object_r:sysfs_usb_supply:s0
-genfscon sysfs /devices/soc/qpnp-smbcharger-16/leds/red u:object_r:sysfs_graphics:s0
-genfscon sysfs /devices/soc/leds-qpnp-19/leds/ u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/soc/qpnp-flash-led-23/leds/ u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/soc/qpnp-wled-22/leds/ u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/soc/qpnp-haptic-24/leds/vibrator u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/soc/qpnp-vadc-14/usbin u:object_r:sysfs_battery_supply:s0
