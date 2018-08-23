@@ -157,9 +157,6 @@ type sysfs_hsic_host_rdy, sysfs_type, fs_type;
 # Files accessed by qcom-system-daemon
 type sysfs_socinfo, fs_type, sysfs_type;
 
-#Define the sysfs files for usb_uicc_daemon
-type sysfs_usb_uicc, sysfs_type, fs_type;
-
 type qlogd_socket, file_type, mlstrustedobject;
 #Defines the files (configs, dumps, etc) used by display processes
 type display_vendor_data_file, file_type, data_file_type;
