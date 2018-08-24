@@ -89,16 +89,13 @@ unix_socket_connect(hal_graphics_composer_default, qdcmsocket, qdcm-ss)
 #allow hal_graphics_composer power_service:service_manager find;
 
 # allow composer client to find display config service.
-allow hal_display_config_client hal_display_config_hwservice:hwservice_manager find;
+allow hal_graphics_composer_client hal_display_config_hwservice:hwservice_manager find;
 
 # Rule for pps socket usage
 unix_socket_connect(hal_graphics_composer_default, pps, mm-pp-daemon)
 
 # allow composer to register display config
 add_hwservice(hal_graphics_composer_server, hal_display_config_hwservice);
-
-# Allow hwbinder call from hal client to server
-binder_call(hal_display_config_client, hal_display_config_server)
 
 # Allow composer access to perf
 hal_client_domain(hal_graphics_composer_default, hal_perf)
