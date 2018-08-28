@@ -27,3 +27,4 @@
 
 allow mediaextractor sdcard_type:file { getattr read };
 allow mediaextractor mm_parser_prop:file r_file_perms;
+allow mediaextractor vendor_audio_prop:file r_file_perms;

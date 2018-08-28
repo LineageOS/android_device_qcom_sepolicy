@@ -198,7 +198,6 @@ persist.vendor.wifi.softap.        u:object_r:vendor_softap_prop:s0
 #mm-parser
 vendor.mm.enable.qcom_parser       u:object_r:mm_parser_prop:s0
 vendor.qcom_parser.                u:object_r:mm_parser_prop:s0
-vendor.audio.parser.ip.buffer.size u:object_r:mm_parser_prop:s0
 
 #mm-osal
 vendor.debug.mmosal.config         u:object_r:debug_prop:s0
