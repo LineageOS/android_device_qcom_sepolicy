@@ -32,8 +32,8 @@ app_domain(qsee_svc_app)
 hal_client_domain(qsee_svc_app, hal_qteeconnector)
 
 # file permission
-allow qsee_svc_app qsee_svc_app_data_file:dir create_dir_perms;
-allow qsee_svc_app qsee_svc_app_data_file:file create_file_perms;
+allow qsee_svc_app system_app_data_file:dir create_dir_perms;
+allow qsee_svc_app system_app_data_file:file create_file_perms;
 
 # allow service manager find
 allow qsee_svc_app app_api_service:service_manager find;
