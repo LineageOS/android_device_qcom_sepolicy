@@ -15,6 +15,10 @@ BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
     device/qcom/sepolicy/private
 
+# Board specific SELinux policy variable definitions for legacy devices
+BOARD_SEPOLICY_DIRS += \
+    device/qcom/sepolicy/legacy-common
+
 # Add sepolicy version to support OS upgrade and backward compatibility
 BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
 
