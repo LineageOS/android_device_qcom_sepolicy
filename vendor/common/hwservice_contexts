@@ -58,8 +58,6 @@ vendor.qti.hardware.alarm::IAlarm                            u:object_r:hal_alar
 com.qualcomm.qti.uceservice::IUceService                     u:object_r:hal_imsrcsd_hwservice:s0
 vendor.qti.ims.callinfo::IService                            u:object_r:hal_imscallinfo_hwservice:s0
 com.qualcomm.qti.imscmservice::IImsCmService                 u:object_r:hal_imsrcsd_hwservice:s0
-com.quicinc.cne.api::IApiService                             u:object_r:hal_cne_hwservice:s0
-com.quicinc.cne.server::IServer                              u:object_r:hal_cne_hwservice:s0
 vendor.qti.hardware.data.latency::ILinkLatency               u:object_r:hal_latency_hwservice:s0
 vendor.qti.data.factory::IFactory                            u:object_r:hal_datafactory_hwservice:s0
 vendor.qti.hardware.vpp::IHidlVppService                     u:object_r:hal_vpp_hwservice:s0

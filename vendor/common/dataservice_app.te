@@ -33,7 +33,6 @@ userdebug_or_eng(`
   diag_use(dataservice_app)
 ')
 
-allow dataservice_app hal_cne_hwservice:hwservice_manager find;
 allow dataservice_app hal_datafactory_hwservice:hwservice_manager find;
 binder_call(dataservice_app, cnd)
 

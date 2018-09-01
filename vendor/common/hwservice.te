@@ -37,7 +37,6 @@ type wifidisplayhalservice_hwservice, hwservice_manager_type;
 type hal_iop_hwservice, hwservice_manager_type;
 type hal_alarm_qti_hwservice, hwservice_manager_type;
 type hal_datafactory_hwservice, hwservice_manager_type;
-type hal_cne_hwservice, hwservice_manager_type;
 type hal_latency_hwservice, hwservice_manager_type;
 type hal_imsrcsd_hwservice, hwservice_manager_type;
 type hal_ipacm_hwservice, hwservice_manager_type;

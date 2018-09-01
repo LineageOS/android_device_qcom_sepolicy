@@ -49,6 +49,8 @@ allow hal_bluetooth_qti persist_bluetooth_file:file r_file_perms;
 r_dir_file(hal_bluetooth_qti, mnt_vendor_file)
 allow hal_bluetooth self:socket create_socket_perms;
 allowxperm hal_bluetooth self:socket ioctl msm_sock_ipc_ioctls;
+allow hal_bluetooth_qti vendor_bt_data_file:dir ra_dir_perms;
+allow hal_bluetooth_qti vendor_bt_data_file:file create_file_perms;
 
 #bt power node access
 allow hal_bluetooth {
@@ -70,8 +72,6 @@ allow hal_bluetooth proc_sysrq:file w_file_perms;
 allow hal_bluetooth_qti qti_debugfs:file r_file_perms;
 allow hal_bluetooth_qti qti_debugfs:dir rw_dir_perms;
 allow hal_bluetooth_qti self:{ socket qipcrtr_socket } create_socket_perms_no_ioctl;
-allow hal_bluetooth_qti vendor_bt_data_file:dir ra_dir_perms;
-allow hal_bluetooth_qti vendor_bt_data_file:file create_file_perms;
 ')
 
 allow system_app hal_bluetooth_hwservice :hwservice_manager find;

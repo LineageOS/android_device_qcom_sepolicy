@@ -31,3 +31,6 @@ allow wfdservice mm_video_prop:file r_file_perms;
 
 # Add the rule for wfd to access /proc/asound/pcm file
 r_dir_file(wfdservice, proc_asound)
+
+# Add the rule for wfd to access /proc/asound/card0/state file
+r_dir_file(wfdservice, proc_audiod)

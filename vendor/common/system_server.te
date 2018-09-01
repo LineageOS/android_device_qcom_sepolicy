@@ -152,6 +152,7 @@ allow system_server hwui_prop:file r_file_perms;
 allow system_server bservice_prop:file r_file_perms;
 allow system_server reschedule_service_prop:file r_file_perms;
 allow system_server appdomain:file w_file_perms;
+allow system_server vendor_cgroup_follow_prop:file r_file_perms;
 
 # Allow system_server to access ActivityManager tuning properties from vendor
 allow system_server vendor_am_prop:file r_file_perms;
