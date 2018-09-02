@@ -372,6 +372,7 @@
 /sys/devices/virtual/graphics/fb([0-3])+/vendor_name                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/hdcp/tp                    u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_panel_status        u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/lineptr_value              u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/hsicctl/hsicctl1[0-9]/modem_wait               u:object_r:sysfs_hsic_modem_wait:s0
 /sys/devices/virtual/hsicctl/hsicctl[0-9]/modem_wait                u:object_r:sysfs_hsic_modem_wait:s0
 /sys/devices/virtual/net/bond0/bonding/queue_id                     u:object_r:sysfs_bond0:s0

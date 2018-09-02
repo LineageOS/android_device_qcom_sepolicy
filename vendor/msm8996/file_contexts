@@ -92,7 +92,6 @@
 ###################################
 # sysfs files
 #
-/sys/devices/virtual/graphics/fb([0-2])+/lineptr_value                          u:object_r:sysfs_graphics:s0
 
 /sys/devices/soc/b00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_available_frequencies   u:object_r:sysfs_kgsl:s0
 
