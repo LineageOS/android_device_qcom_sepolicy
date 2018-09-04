@@ -20,7 +20,6 @@ not_full_treble(`allow domain vendor_file:dir r_dir_perms;')
 # Remove this after HIDL implementation
 userdebug_or_eng(`
 allow domain hal_graphics_composer:fd use;
-allow domain qti_debugfs:dir search;
 ')
 dontaudit domain persist_dpm_prop:file r_file_perms;
 
@@ -38,3 +37,5 @@ allowxperm domain domain:icmp_socket ioctl { unpriv_sock_ioctls unpriv_tty_ioctl
 # Which is the public readable property “ ro.vendor.build.security_patch
 get_prop(domain, vendor_security_patch_level_prop)
 get_prop(domain, public_vendor_default_prop)
+
+allow domain qti_debugfs:dir search;
