@@ -136,3 +136,5 @@ allow qti_init_shell sysfs_msm_power:file rw_file_perms;
 allow qti_init_shell msm_irqbalanced_exec:file getattr;
 
 set_prop(qti_init_shell, vendor_alarm_boot_prop)
+
+set_prop(qti_init_shell, vendor_wifi_prop)

@@ -55,3 +55,6 @@ type public_vendor_default_prop, property_type;
 
 # alarm property
 type vendor_alarm_boot_prop, property_type;
+
+#wlan-vendor prop
+type vendor_wifi_prop, property_type;
