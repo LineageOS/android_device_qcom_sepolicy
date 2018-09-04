@@ -237,6 +237,8 @@ set_prop(qti_init_shell, vendor_mmi_prop)
 # allow rw access to sysfs_npu
 allow qti_init_shell sysfs_npu:file rw_file_perms;
 
+set_prop(qti_init_shell, vendor_alarm_boot_prop)
+
 # allow rw create file access to fm patchdownloader
 allow qti_init_shell vendor_fm_data_file:file create_file_perms;
 allow qti_init_shell vendor_fm_data_file:dir ra_dir_perms;
