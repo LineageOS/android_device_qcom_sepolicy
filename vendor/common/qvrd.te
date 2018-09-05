@@ -84,3 +84,7 @@ allow qvrd sysfs_kgsl:file rw_file_perms;
 # Allow access to qvr_external_sensor sysfs nodes for external viewers
 allow qvrd sysfs_qvr_external_sensor:dir r_dir_perms;
 allow qvrd sysfs_qvr_external_sensor:file rw_file_perms;
+
+# qvr properties
+set_prop(qvrd, qvr_prop)
+get_prop(qvrd, qvr_prop)
