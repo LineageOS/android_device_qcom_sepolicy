@@ -35,14 +35,10 @@ userdebug_or_eng(`
 
 allow qrtr self:{
     socket
-    netlink_route_socket
     qipcrtr_socket
 } create_socket_perms;
 
-allowxperm qrtr self:{ socket qipcrtr_socket netlink_route_socket } ioctl msm_sock_qrtr_ioctls;
+allowxperm qrtr self:{ socket qipcrtr_socket } ioctl msm_sock_qrtr_ioctls;
 allow qrtr devpts:chr_file rw_file_perms;
 
-# Need net_admin to send RTM_NEWADDR packet to configure the Node ID in QRTR
-# using rtnetlink_rcv_msg
-allow qrtr self:capability { net_admin net_bind_service };
-allow qrtr self:netlink_route_socket nlmsg_write;
+allow qrtr self:capability { net_bind_service };
