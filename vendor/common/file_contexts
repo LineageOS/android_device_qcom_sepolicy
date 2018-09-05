@@ -437,6 +437,7 @@
 /sys/devices/virtual/workqueue/kgsl-workqueue/nice                  u:object_r:sysfs_kgsl:s0
 /sys/class/graphics/fb([0-3])+/mdp/caps                             u:object_r:sysfs_graphics:s0
 /sys/class/graphics/fb([0-3])+/ad                                   u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/hdcp/msm_hdcp/min_level_change                 u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[0-9a-z]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-z]+.qcom,spmi:qcom,pmi[0-9]+@[0-9]+:qcom,leds@[a-z0-9]+(/.*)? u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-0/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,haptics@c000/leds/vibrator(/.*)?   u:object_r:sysfs_leds:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:sysfs_graphics:s0
