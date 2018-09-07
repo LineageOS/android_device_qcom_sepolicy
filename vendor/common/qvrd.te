@@ -42,6 +42,7 @@ allow qvrd { ion_device qdsp_device dsp_device xdsp_device }:chr_file r_file_per
 
 # Allow access to adsprpcd
 r_dir_file(qvrd, adsprpcd_file);
+get_prop(qvrd, adsprpc_prop)
 
 #
 # Display

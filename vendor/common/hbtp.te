@@ -41,6 +41,7 @@ allow hbtp self:capability { setgid setuid };
 
 # Allow load touch driver as touchPD
 r_dir_file(hbtp, adsprpcd_file)
+get_prop(hbtp, adsprpc_prop)
 
 # Allow the service to access wakelock capability
 wakelock_use(hbtp)

@@ -184,3 +184,5 @@ type vendor_data_ko_prop, property_type;
 
 #hvdcp_opti
 type hvdcp_opti_prop, property_type;
+#adsprpc props
+type adsprpc_prop, property_type;
