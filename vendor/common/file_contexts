@@ -45,7 +45,6 @@
 /dev/battery_data                               u:object_r:battery_data_device:s0
 /dev/block/mmcblk1                              u:object_r:sd_device:s0
 /dev/block/mmcblk1p1                            u:object_r:sd_device:s0
-/dev/ccid_bridge                                u:object_r:usb_uicc_device:s0
 /dev/subsys_.*                                  u:object_r:ssr_device:s0
 /dev/ramdump_.*                                 u:object_r:ramdump_device:s0
 /dev/esoc.*                                     u:object_r:esoc_device:s0
@@ -188,7 +187,6 @@
 /(vendor|system/vendor)/bin/init\.qcom\.efs\.sync\.sh       u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.fm\.sh               u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sdio\.sh            u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.uicc\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.wifi\.sh            u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.ims\.sh              u:object_r:init-qti-ims-sh_exec:s0
 /(vendor|system/vendor)/bin/qca6234-service.sh              u:object_r:qti_init_shell_exec:s0
@@ -235,7 +233,6 @@
 /(vendor|system/vendor)/bin/pm-proxy            u:object_r:vendor_per_mgr_exec:s0
 /(vendor|system/vendor)/bin/pd-mapper           u:object_r:vendor_pd_mapper_exec:s0
 /(vendor|system/vendor)/bin/pd-api-test         u:object_r:vendor_pd_mapper_exec:s0
-/(vendor|system/vendor)/bin/usb_uicc_client                     u:object_r:usb_uicc_daemon_exec:s0
 /(vendor|system/vendor)/bin/qcom-system-daemon  u:object_r:vendor_qcomsysd_exec:s0
 /(vendor|system/vendor)/bin/poweroffhandler                     u:object_r:poweroffhandler_exec:s0
 /(vendor|system/vendor)/xbin/qlogd                              u:object_r:qlogd_exec:s0
@@ -375,6 +372,7 @@
 /sys/devices/virtual/graphics/fb([0-3])+/vendor_name                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/hdcp/tp                    u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_panel_status        u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/lineptr_value              u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/hsicctl/hsicctl1[0-9]/modem_wait               u:object_r:sysfs_hsic_modem_wait:s0
 /sys/devices/virtual/hsicctl/hsicctl[0-9]/modem_wait                u:object_r:sysfs_hsic_modem_wait:s0
 /sys/devices/virtual/net/bond0/bonding/queue_id                     u:object_r:sysfs_bond0:s0
@@ -458,7 +456,6 @@
 /sys/devices/msm_hsic_host/host_ready                               u:object_r:sysfs_hsic_host_rdy:s0
 /sys/bus/esoc(/.*)?                                                 u:object_r:sysfs_esoc:s0
 /sys/bus/msm_subsys(/.*)?                                           u:object_r:sysfs_ssr:s0
-/sys/module/ccid_bridge(/.*)?                                       u:object_r:sysfs_usb_uicc:s0
 /sys/bus/msm_subsys/devices/subsys0/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/bus/msm_subsys/devices/subsys1/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/bus/msm_subsys/devices/subsys2/restart_level                   u:object_r:sysfs_ssr_toggle:s0

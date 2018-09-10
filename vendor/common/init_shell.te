@@ -49,7 +49,6 @@ allow qti_init_shell self:capability {
 # freq_prop - for setting frequency from postboot script
 # vendor_mpctl_prop - for setting ctl.mpdecision property from postboot script
 # vendor_bluetooth_prop - for setting bt related properties from postboot script
-# uicc_prop - for access to UICC property
 # ctl_vendor_qmuxd_prop/ctl_vendor_netmgrd_prop - Needed in order to set properties on qmuxd and netmgrd processes
 set_prop(qti_init_shell, freq_prop)
 set_prop(qti_init_shell, vendor_mpctl_prop)
@@ -64,7 +63,6 @@ set_prop(qti_init_shell, vendor_dataadpl_prop)
 set_prop(qti_init_shell, ctl_rildaemon_prop)
 set_prop(qti_init_shell, ctl_qcrild_prop)
 set_prop(qti_init_shell, ctl_vendor_rild_prop)
-set_prop(qti_init_shell, uicc_prop)
 set_prop(qti_init_shell, ctl_vendor_qmuxd_prop)
 set_prop(qti_init_shell, ctl_vendor_netmgrd_prop)
 set_prop(qti_init_shell, ctl_vendor_port-bridge_prop)
@@ -89,10 +87,14 @@ set_prop(qti_init_shell, vendor_usb_prop)
 #Needed for setting hwui properties in post_boot
 set_prop(qti_init_shell, hwui_prop)
 set_prop(qti_init_shell, graphics_vulkan_prop)
+#Needed for setting vendor_cgroup_follow properties from post_boot
+set_prop(qti_init_shell, vendor_cgroup_follow_prop)
 #Needed for setting bservice properties from post_boot
 set_prop(qti_init_shell, bservice_prop)
 #Needed for setting DSR properties from post_boot
 set_prop(qti_init_shell, reschedule_service_prop)
+#Needed for setting hvdcp properties from post_boot
+set_prop(qti_init_shell, hvdcp_opti_prop)
 
 get_prop(qti_init_shell, exported3_radio_prop)
 set_prop(qti_init_shell, vendor_gpu_prop)
@@ -235,6 +237,8 @@ set_prop(qti_init_shell, vendor_mmi_prop)
 # allow rw access to sysfs_npu
 allow qti_init_shell sysfs_npu:file rw_file_perms;
 
+set_prop(qti_init_shell, vendor_alarm_boot_prop)
+
 # allow rw create file access to fm patchdownloader
 allow qti_init_shell vendor_fm_data_file:file create_file_perms;
 allow qti_init_shell vendor_fm_data_file:dir ra_dir_perms;
@@ -242,3 +246,6 @@ allow qti_init_shell vendor_fm_data_file:dir ra_dir_perms;
 # For USB RNDIS configuration
 allow qti_init_shell sysfs_android_usb:dir r_dir_perms;
 allow qti_init_shell sysfs_android_usb:file rw_file_perms;
+
+# allow read permisison for hvdcp_opti properties
+allow qti_init_shell hvdcp_opti_prop:file r_file_perms;

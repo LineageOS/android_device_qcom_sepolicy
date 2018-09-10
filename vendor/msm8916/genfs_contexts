@@ -24,7 +24,14 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+###################################
 
-allow mediaextractor sdcard_type:file { getattr read };
-allow mediaextractor mm_parser_prop:file r_file_perms;
-allow mediaextractor vendor_audio_prop:file r_file_perms;
+genfscon sysfs /devices/soc/qpnp-linear-charger-8/power_supply/battery u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/78b8000.i2c/i2c-4/4-0012/power_supply/battery u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/78b8000.i2c/i2c-4/4-001d/power_supply/battery u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/78b8000.i2c/i2c-4/4-0057/power_supply/battery u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/78b8000.i2c/i2c-4/4-0014/power_supply/battery u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/78b8000.i2c/i2c-4/4-001c/power_supply/battery u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/78b8000.i2c/i2c-4/4-0070/power_supply/bms u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/qpnp-vm-bms-9/power_supply/bms u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/78d9000.usb/power_supply/usb u:object_r:sysfs_usb_supply:s0
