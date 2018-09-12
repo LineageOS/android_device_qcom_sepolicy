@@ -98,6 +98,9 @@ binder_call(system_app, seemp_health_daemon)
 # allow system_app to interact with display color hal
 hal_client_domain(system_app, hal_display_color)
 
+# allow system_app to interact with pasr hal
+hal_client_domain(system_app, hal_pasrmanager)
+
 # allow system_app to interact with display postproc hal
 hal_client_domain(system_app, hal_display_postproc)
 
