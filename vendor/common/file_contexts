@@ -708,6 +708,9 @@
 # SVA files
 /vendor/lib(64)?/liblistenjni\.so          u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/liblistensoundmodel2\.so  u:object_r:same_process_hal_file:s0
+
+# libnpu
+/vendor/lib(64)?/libnpu\.so                u:object_r:same_process_hal_file:s0
 ###################################
 # firmware images
 #
