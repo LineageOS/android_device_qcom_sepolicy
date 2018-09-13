@@ -97,3 +97,6 @@ set_prop(vendor_init, vendor_opengles_prop)
 
 #Acess vendor hvdcp properties
 set_prop(vendor_init, hvdcp_opti_prop)
+
+# Allow timezone to be overrided by vendor
+set_prop(vendor_init, exported_system_prop)
