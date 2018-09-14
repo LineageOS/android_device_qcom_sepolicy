@@ -88,7 +88,7 @@ vendor.perf.gestureflingboost.enable  u:object_r:vendor_scroll_prop:s0
 vendor.qti.izat.           u:object_r:location_prop:s0
 vendor.usb.                u:object_r:vendor_usb_prop:s0
 persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
-ro.vendor.dbg.coresight.cfg_file     u:object_r:vendor_coresight_prop:s0
+ro.vendor.dbg.coresight.   u:object_r:vendor_coresight_prop:s0
 vendor.audio.              u:object_r:vendor_audio_prop:s0
 vendor.voice.              u:object_r:vendor_audio_prop:s0
 persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
