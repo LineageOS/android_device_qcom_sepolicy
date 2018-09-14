@@ -23,6 +23,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 wc_transport.              u:object_r:bluetooth_prop:s0
+vendor.wc_transport.       u:object_r:bluetooth_prop:s0
 persist.vendor.bt.         u:object_r:bluetooth_prop:s0
 sys.usb_uicc.              u:object_r:uicc_prop:s0
 dolby.audio.               u:object_r:audio_prop:s0
