@@ -103,7 +103,6 @@ persist.vendor.data.profile_update  u:object_r:vendor_dataqdp_prop:s0
 vendor.gralloc.            u:object_r:vendor_gralloc_prop:s0
 vendor.wifi.ftmd.                 u:object_r:vendor_wifi_ftmd_prop:s0
 ro.fota.oem                u:object_r:vendor_default_prop:s0
-ro.build.software.version  u:object_r:vendor_default_prop:s0
 
 # WIGIG
 persist.vendor.wigig.       u:object_r:wigig_prop:s0
