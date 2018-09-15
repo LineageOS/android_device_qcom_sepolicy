@@ -367,3 +367,6 @@ type sysfs_usb_controller, sysfs_type, fs_type;
 
 # time data files
 type time_data_file, file_type, data_file_type, core_data_file_type;
+
+#qvrservice sysfs files
+type sysfs_qvr_external_sensor, sysfs_type, fs_type;
