@@ -158,3 +158,5 @@ type bg_daemon_device, dev_type;
 
 #define qg char device
 type qg_device, dev_type;
+
+type persist_block_device, dev_type;
