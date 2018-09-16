@@ -156,7 +156,7 @@ type sysfs_usb_uicc, sysfs_type, fs_type;
 type qlogd_socket, file_type, mlstrustedobject;
 type qlogd_data_file, file_type, data_file_type;
 #Defines the files (configs, dumps, etc) used by display processes
-type display_misc_file, file_type, data_file_type;
+type display_vendor_data_file, file_type, data_file_type;
 
 #Define the files for the operation of QDCM
 type persist_display_file, file_type;

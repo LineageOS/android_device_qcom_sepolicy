@@ -15,9 +15,9 @@ binder_call(surfaceflinger, tee)
 
 hal_client_domain(surfaceflinger, hal_display_config)
 
-# access to /data/misc/display for dumping input frames
-allow surfaceflinger display_misc_file:dir create_dir_perms;
-allow surfaceflinger display_misc_file:file create_file_perms;
+# access to /data/vendor/display for dumping input frames
+allow surfaceflinger display_vendor_data_file:dir create_dir_perms;
+allow surfaceflinger display_vendor_data_file:file create_file_perms;
 
 # Allows access to dpps daemon in calibration mode
 #unix_socket_connect(surfaceflinger, pps, mm-pp-daemon)
