@@ -334,3 +334,6 @@ type kgsl_debugfs, debugfs_type, fs_type;
 
 #sysfs emmc dload type
 type sysfs_emmc_dload, sysfs_type, fs_type;
+
+# allow "adb sync system" to update symlinks to firmware files
+allow firmware_file labeledfs:filesystem associate;
