@@ -24,16 +24,6 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-###################################
 
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:qcom,pm660_rtc/rtc u:object_r:sysfs_rtc:s0
-
-genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/restart_level u:object_r:sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/aae0000.qcom,venus/subsys1/restart_level u:object_r:sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys2/restart_level u:object_r:sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/62400000.qcom,lpass/subsys3/restart_level u:object_r:sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys4/restart_level u:object_r:sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys5/restart_level u:object_r:sysfs_ssr_toggle:s0
-
-genfscon sysfs /devices/platform/soc/soc:qcom,l3-cdsp/devfreq u:object_r:sysfs_devfreq:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,l3-cdsp/devfreq/soc:qcom,l3-cdsp/userspace u:object_r:sysfs_devfreq_l3cdsp:s0
+r_dir_file(qti_init_shell, sysfs_devfreq_l3cdsp)
+allow qti_init_shell sysfs_devfreq_l3cdsp:file setattr;
