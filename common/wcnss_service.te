@@ -77,3 +77,6 @@ hal_client_domain(wcnss_service, hal_perf)
 
 # read persist.vendor.wigig.npt.enable
 get_prop(wcnss_service, wigig_prop);
+
+# set property to vendor.wlan is enable
+set_prop(wcnss_service, vendor_wifi_prop);
