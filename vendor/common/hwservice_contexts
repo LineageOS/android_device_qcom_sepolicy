@@ -87,4 +87,5 @@ vendor.qti.hardware.scve.panorama::IPanoramaStitching           u:object_r:hal_s
 vendor.qti.hardware.scve.objecttracker::IObjectTracker          u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.wifi.hostapd::IHostapdVendor             u:object_r:hal_wifi_hostapd_hwservice:s0
 vendor.qti.hardware.mlshal::IMlsDap                          u:object_r:hal_mirrorlink_hwservice:s0
+vendor.qti.hardware.mlshal::IMlsVnc                          u:object_r:hal_mirrorlink_hwservice:s0
 vendor.qti.hardware.wifi.wifilearner::IWifiStats             u:object_r:hal_wifilearner_hwservice:s0

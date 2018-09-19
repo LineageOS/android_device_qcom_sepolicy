@@ -91,3 +91,6 @@ allow mirrorlink sysfs_net:file r_file_perms;
 
 # Allow read access to EGL lib
 allow mirrorlink system_file:dir r_dir_perms;
+
+# Allow access to video encoder device.
+allow mirrorlink video_device:chr_file rw_file_perms;
