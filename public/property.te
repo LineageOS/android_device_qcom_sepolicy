@@ -26,6 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type persist_dpm_prop, property_type;
+type persist_khung_prop, property_type;
 # this is vendor defined property  and added with prefix vendor
 # which is going to be working from system
 type vendor_bt_prop, property_type;
