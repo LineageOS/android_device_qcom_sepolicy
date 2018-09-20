@@ -22,7 +22,6 @@ allow ims self:{
 # To run NDC command
 allow ims {
     vendor_shell_exec
-    system_file
     # IMS route installation
     wcnss_service_exec
     # for WPA supplicant comment to remove compilation issue

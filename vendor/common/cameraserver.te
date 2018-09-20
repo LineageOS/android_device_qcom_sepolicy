@@ -30,10 +30,6 @@ allow cameraserver gpu_device:chr_file rw_file_perms;
 #allow cameraserver mm-qcamerad:unix_dgram_socket sendto;
 #changes to access laser device
 r_dir_file(cameraserver, input_device);
-
-#interaction with thermal sockets
-#unix_socket_connect(cameraserver, thermal, thermal-engine)
-
 #Allow surfaceflinger access for camera preview
 allow cameraserver surfaceflinger:unix_stream_socket { read write };
 

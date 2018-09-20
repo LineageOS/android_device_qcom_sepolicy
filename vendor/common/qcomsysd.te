@@ -15,7 +15,6 @@ allow vendor_qcomsysd {
 }:blk_file rw_file_perms;
 
 #Needed to get image info from socinfo
-r_dir_file(vendor_qcomsysd, sysfs_socinfo)
 allow vendor_qcomsysd sysfs_socinfo:file w_file_perms;
 
 allow vendor_qcomsysd self:capability { sys_boot };

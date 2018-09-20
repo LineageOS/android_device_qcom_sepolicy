@@ -3,9 +3,6 @@ qmux_socket(rild);
 
 allow rild ssr_device:chr_file r_file_perms;
 
-r_dir_file(rild, sysfs_ssr)
-r_dir_file(rild, sysfs_esoc)
-
 allow rild sysfs_esoc:file w_file_perms;
 
 binder_call(rild, mediaserver)

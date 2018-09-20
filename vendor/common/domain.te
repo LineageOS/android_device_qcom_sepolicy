@@ -14,8 +14,6 @@ allow domain vendor_gralloc_prop:file r_file_perms;
 
 allow domain vendor_configs_file:file r_file_perms;
 
-not_full_treble(`allow domain vendor_file:dir r_dir_perms;')
-
 # Added now for smoother UI
 # Remove this after HIDL implementation
 userdebug_or_eng(`

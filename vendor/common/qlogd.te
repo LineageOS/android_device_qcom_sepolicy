@@ -23,8 +23,6 @@ allow qlogd self:capability {
 allow qlogd self:capability2 syslog;
 allow qlogd self:packet_socket { create bind getopt setopt };
 
-allow qlogd system_file:file x_file_perms;
-
 # need to create and listen socket
 allow qlogd qlogd_socket:sock_file create_file_perms;
 

@@ -7,9 +7,6 @@ init_daemon_domain(mdm_helper);
 #block_suspend capability is needed by kickstart(ks)
 wakelock_use(mdm_helper)
 
-#Needed to power on the peripheral
-allow mdm_helper ssr_device:chr_file r_file_perms;
-
 #Needed to access the esoc device to control the mdm
 allow mdm_helper esoc_device:dir r_dir_perms;
 allow mdm_helper esoc_device:chr_file rw_file_perms;
@@ -24,16 +21,13 @@ allow mdm_helper efsbridgehsic_device:chr_file rw_file_perms;
 r_dir_file(mdm_helper, sysfs_hsic)
 allow mdm_helper sysfs_hsic:file w_file_perms;
 
-#Needed by libmdmdetect to figure out the system configuration
-r_dir_file(mdm_helper, sysfs_esoc)
-
 #Needed by libmdmdetect to get system information regarding subsystems and to check their states
 r_dir_file(mdm_helper, sysfs_ssr)
 
 #Needed in order to run kickstart
 allow mdm_helper shell:fd use;
 allow mdm_helper vendor_shell_exec:file rx_file_perms;
-allow mdm_helper { system_file mdm_helper_exec }:file x_file_perms;
+allow mdm_helper  mdm_helper_exec:file x_file_perms;
 
 #Needed for ram dump storage
 allow mdm_helper vendor_tombstone_data_file:dir create_dir_perms;

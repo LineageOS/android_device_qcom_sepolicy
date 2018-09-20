@@ -10,7 +10,6 @@ allow vendor_mmi self:capability { fowner fsetid kill };
 
 #For various devices
 allow vendor_mmi {
-    sysfs_socinfo
     sysfs_devices_system_cpu
     sysfs_usb_supply
     sysfs_battery_supply

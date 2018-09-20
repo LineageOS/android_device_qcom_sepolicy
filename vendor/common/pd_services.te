@@ -43,7 +43,6 @@ qmux_socket(vendor_pd_mapper);
 
 allow vendor_pd_mapper sysfs:file r_file_perms;
 allow vendor_pd_mapper sysfs_data:file r_file_perms;
-allow vendor_pd_mapper system_file:dir r_dir_perms;
 
 #Allow pd-mapper to write error strings from non-hlos side to kmsg
 allow vendor_pd_mapper kmsg_device:chr_file w_file_perms;

@@ -24,7 +24,6 @@ userdebug_or_eng(`
 
 allow bluetooth {
     uhid_device
-    #input_device
     serial_device
     #BT needes read and write on smd device node
     smd_device
@@ -43,8 +42,6 @@ binder_call(bluetooth, system_app);
 binder_call(bluetooth, servicemanager);
 allow bluetooth dun_service:service_manager find;
 
-#sapd requires interaction with qmux sockets
-#qmux_socket(bluetooth);
 
 # for finding wbc_service
 allow bluetooth wbc_service:service_manager find;

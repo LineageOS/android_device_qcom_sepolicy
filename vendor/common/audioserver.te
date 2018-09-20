@@ -68,9 +68,5 @@ userdebug_or_eng(`
   diag_use(audioserver)
 ')
 
-#Rules for audioserver to talk to peripheral manager
-#use_vendor_per_mgr(audioserver);
-
 # audio properties
 get_prop(audioserver, vendor_audio_prop)
-

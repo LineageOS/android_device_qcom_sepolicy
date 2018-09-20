@@ -63,5 +63,3 @@ allow rfs_access self:capability { chown };
 
 #For access to the kmsg device
 allow rfs_access kmsg_device:chr_file w_file_perms;
-
-allow rfs_access mnt_vendor_file:lnk_file r_file_perms;

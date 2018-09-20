@@ -69,7 +69,6 @@ userdebug_or_eng(`
 
 #binder_use(qti_logkit)
 allow qti_logkit vendor_shell_exec:file { rx_file_perms };
-allow qti_logkit system_file:file x_file_perms;
 binder_call(qti_logkit, system_server)
 
 # allow logcat access

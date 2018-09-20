@@ -22,7 +22,7 @@ allow qti self:{
 
 allow qti self:socket ioctl;
 allowxperm qti self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
-allow qti { vendor_shell_exec system_file }:file rx_file_perms;
+allow qti vendor_shell_exec:file rx_file_perms;
 
 allow qti sysfs_data:file r_file_perms;
 

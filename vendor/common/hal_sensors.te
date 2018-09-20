@@ -33,7 +33,6 @@ userdebug_or_eng(`
 set_prop(hal_sensors, slpi_prop);
 allow hal_sensors self:{ socket qipcrtr_socket } create_socket_perms;
 allowxperm hal_sensors self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
-allow hal_sensors sysfs_socinfo:file r_file_perms;
 
 allow hal_sensors sysfs_data:file r_file_perms;
 
@@ -56,5 +55,4 @@ allow hal_sensors_default sysfs_slpi:file w_file_perms;
 
 allow hal_sensors_default sensors_persist_file:file create_file_perms;
 allow hal_sensors_default sensors_persist_file:dir create_dir_perms;
-allow hal_sensors_default mnt_vendor_file:lnk_file r_file_perms;
 allow hal_sensors_default mnt_vendor_file:dir r_dir_perms;

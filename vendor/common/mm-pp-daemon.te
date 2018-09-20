@@ -47,7 +47,6 @@ userdebug_or_eng(`
   allow mm-pp-daemon { vendor_shell_exec
                       #zygote_exec 
   }:file rx_file_perms;
-  allow mm-pp-daemon system_file:file x_file_perms;
   allow mm-pp-daemon self:process ptrace;
 
 

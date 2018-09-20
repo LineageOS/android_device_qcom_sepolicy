@@ -1,12 +1,3 @@
-# allow application to access cnd domain and socket
-#unix_socket_connect(appdomain, cnd, cnd)
-
-# allow application to access dpmd domain and socket
-#unix_socket_connect(appdomain, dpmwrapper, dpmd)
-
-#unix_socket_connect(appdomain, qlogd, qlogd)
-#unix_socket_send(appdomain, seempdw, seempd)
-
 #Allow all apps to open and send ioctl to qdsp device
 allow appdomain qdsp_device:chr_file r_file_perms;
 #Allow all apps to have read access to dsp partition
@@ -14,20 +5,14 @@ r_dir_file(appdomain, adsprpcd_file)
 #Allow all apps to have read access to adsprpc_prop
 get_prop(appdomain, adsprpc_prop)
 
+get_prop(appdomain, hwui_prop)
+get_prop(appdomain, bservice_prop)
+get_prop(appdomain, reschedule_service_prop)
+get_prop(appdomain, vendor_iop_prop)
+get_prop(appdomain, vendor_scroll_prop)
+
 # Allow access to qti_logkit
-#allow { appdomain -untrusted_app } qti_logkit_pub_data_file:dir create_dir_perms;
-#allow { appdomain -untrusted_app } qti_logkit_pub_data_file:file create_file_perms;
 allow appdomain qti_logkit_pub_socket:dir r_dir_perms;
-#unix_socket_connect(appdomain, qti_logkit_pub, qti_logkit)
-#allow appdomain qti_logkit_pub_socket:sock_file r_file_perms;
-#allow appdomain qti_logkit_priv_data_file:dir r_dir_perms;
-allow appdomain hwui_prop:file r_file_perms;
-allow appdomain bservice_prop:file r_file_perms;
-allow appdomain reschedule_service_prop:file r_file_perms;
 
 # Allow all apps to open and send ioctl to npu device
 allow appdomain npu_device:chr_file r_file_perms;
-
-# Allow all apps to read pre-obtain property
-allow appdomain vendor_iop_prop:file r_file_perms;
-allow appdomain vendor_scroll_prop:file r_file_perms;
