@@ -27,3 +27,4 @@
 
 #properites for init.qcom.sh script
 type vendor_cdsprpcd_prop, property_type;
+type vendor_media_sdm660_version_prop, property_type;
