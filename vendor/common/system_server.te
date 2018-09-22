@@ -195,3 +195,6 @@ get_prop(system_server, vendor_audio_prop)
 
 # allow system_server to access IWifiStats HAL service
 hal_client_domain(system_server, hal_wifilearner)
+
+#kgsl
+r_dir_file(system_server, kgsl_debugfs);

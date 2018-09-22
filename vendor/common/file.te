@@ -370,3 +370,6 @@ type time_data_file, file_type, data_file_type, core_data_file_type;
 
 #qvrservice sysfs files
 type sysfs_qvr_external_sensor, sysfs_type, fs_type;
+
+#kgsl
+type kgsl_debugfs, debugfs_type, fs_type;
