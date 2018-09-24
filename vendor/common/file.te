@@ -62,6 +62,9 @@ type sensors_socket, file_type;
 type sensors_persist_file, file_type, vendor_persist_type;
 type sysfs_sensors, sysfs_type, fs_type;
 
+#Memory offlining file types
+type sysfs_memory_offline, sysfs_type, fs_type;
+
 #VirtualKeys file type
 type sysfs_virtualkeys, sysfs_type, fs_type;
 
@@ -364,3 +367,6 @@ type sysfs_usb_controller, sysfs_type, fs_type;
 
 # time data files
 type time_data_file, file_type, data_file_type, core_data_file_type;
+
+#qvrservice sysfs files
+type sysfs_qvr_external_sensor, sysfs_type, fs_type;

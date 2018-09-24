@@ -330,6 +330,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.scve\.objecttracker@1\.0-service    u:object_r:vendor_scve_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.mlshal@1\.0-service       u:object_r:hal_mirrorlink_qti_exec:s0
 /(vendor|system/vendor)/bin/hdcp_srm               u:object_r:hdcp_srm_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.power\.pasrmanager\@1\.0-service u:object_r:hal_pasrmanager_qti_exec:s0
 
 ###################################
 # sysfs files
@@ -541,7 +542,7 @@
 /data/vendor/qti-logkit/socket-public(/.*)?                         u:object_r:qti_logkit_pub_socket:s0
 /data/vendor/radio(/.*)?                                            u:object_r:vendor_radio_data_file:s0
 /data/vendor/modem_config(/.*)?                                     u:object_r:vendor_mbn_data_file:s0
-/data/vendor/qti(/.*)?                                              u:object_r:vendor_qti_data_file:s0
+/data/vendor/dataqti(/.*)?                                          u:object_r:vendor_qti_data_file:s0
 /data/vendor/netmgr(/.*)?                                           u:object_r:netmgrd_data_file:s0
 /data/vendor/port_bridge(/.*)?                                      u:object_r:port_bridge_data_file:s0
 /data/vendor/rfs.*                                                  u:object_r:rfs_file:s0
@@ -708,6 +709,9 @@
 # SVA files
 /vendor/lib(64)?/liblistenjni\.so          u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/liblistensoundmodel2\.so  u:object_r:same_process_hal_file:s0
+
+# libnpu
+/vendor/lib(64)?/libnpu\.so                u:object_r:same_process_hal_file:s0
 ###################################
 # firmware images
 #
@@ -728,3 +732,6 @@
 
 #Android NN Driver
 /(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-qti u:object_r:hal_neuralnetworks_default_exec:s0
+
+#wifilearner daemon
+/(vendor|system/vendor)/bin/wifilearner    u:object_r:wifilearnersvc_exec:s0

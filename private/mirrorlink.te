@@ -62,9 +62,10 @@ allow mirrorlink gpu_device:chr_file rw_file_perms;
 # Allow read-write access to uhid device for HID event injection.
 allow mirrorlink uhid_device:chr_file rw_file_perms;
 
-# Allow binder IPC with surfaceflinger, audioserver, and system_app services.
+# Allow binder IPC with surfaceflinger, audioserver, mediametrics and system_app services.
 allow mirrorlink audioserver_service:service_manager find;
 allow mirrorlink surfaceflinger_service:service_manager find;
+allow mirrorlink mediametrics_service:service_manager find;
 binder_use(mirrorlink);
 binder_call(mirrorlink, surfaceflinger);
 binder_call(mirrorlink, audioserver);

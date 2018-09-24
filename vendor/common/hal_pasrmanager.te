@@ -25,22 +25,17 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# cdsprpcd daemon
-type cdsprpcd, domain;
-type cdsprpcd_exec, exec_type, vendor_file_type, file_type;
+#Define Domain
+type hal_pasrmanager_qti, domain;
+type hal_pasrmanager_qti_exec, exec_type, vendor_file_type, file_type;
+hal_server_domain(hal_pasrmanager_qti, hal_pasrmanager)
+init_daemon_domain(hal_pasrmanager_qti)
 
-# Started by init
-init_daemon_domain(cdsprpcd)
+binder_call(hal_pasrmanager_client, hal_pasrmanager_server)
 
-# For reading dir/files on /dsp
-r_dir_file(cdsprpcd, adsprpcd_file)
+add_hwservice(hal_pasrmanager_server, hal_pasrmanager_hwservice)
+allow hal_pasrmanager_client hal_pasrmanager_hwservice:hwservice_manager find;
 
-# For reading adsprpc_prop
-get_prop(cdsprpcd, adsprpc_prop)
-
-allow cdsprpcd qdsp_device:chr_file r_file_perms;
-allow cdsprpcd ion_device:chr_file r_file_perms;
-
-r_dir_file(cdsprpcd, sysfs_devfreq)
-allow cdsprpcd sysfs_devfreq_l3cdsp:dir r_dir_perms;
-allow cdsprpcd sysfs_devfreq_l3cdsp:file rw_file_perms;
+allow hal_pasrmanager_qti sysfs:dir r_dir_perms;
+allow hal_pasrmanager_qti sysfs_memory_offline:file rw_file_perms;
+allow hal_pasrmanager_qti sysfs_memory_offline:dir r_dir_perms;

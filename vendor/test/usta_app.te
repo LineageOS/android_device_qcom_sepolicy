@@ -1,5 +1,5 @@
 # Copyright (c) 2018, The Linux Foundation. All rights reserved.
-
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
@@ -25,22 +25,27 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# cdsprpcd daemon
-type cdsprpcd, domain;
-type cdsprpcd_exec, exec_type, vendor_file_type, file_type;
+## usta_app
+##
+## This file defines the permissions that usta_apps can carry
 
-# Started by init
-init_daemon_domain(cdsprpcd)
+type usta_app, domain;
 
-# For reading dir/files on /dsp
-r_dir_file(cdsprpcd, adsprpcd_file)
+app_domain(usta_app)
+hal_client_domain(usta_app, hal_perf)
 
-# For reading adsprpc_prop
-get_prop(cdsprpcd, adsprpc_prop)
+#allow only usta_app with userdebug to access ioctl
+userdebug_or_eng(`
+  allowxperm usta_app self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+  allow usta_app self:{ socket qipcrtr_socket } create_socket_perms;
+  allow usta_app xdsp_device:chr_file r_file_perms;
+  allow usta_app ssr_device:chr_file r_file_perms;
+')
 
-allow cdsprpcd qdsp_device:chr_file r_file_perms;
-allow cdsprpcd ion_device:chr_file r_file_perms;
+allow usta_app {
+  app_api_service
+  surfaceflinger_service
+}:service_manager find;
 
-r_dir_file(cdsprpcd, sysfs_devfreq)
-allow cdsprpcd sysfs_devfreq_l3cdsp:dir r_dir_perms;
-allow cdsprpcd sysfs_devfreq_l3cdsp:file rw_file_perms;
+allow usta_app system_app_data_file:dir create_dir_perms;
+allow usta_app system_app_data_file:file create_file_perms;

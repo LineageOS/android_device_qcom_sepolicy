@@ -42,6 +42,7 @@ allow qvrd { ion_device qdsp_device dsp_device xdsp_device }:chr_file r_file_per
 
 # Allow access to adsprpcd
 r_dir_file(qvrd, adsprpcd_file);
+get_prop(qvrd, adsprpc_prop)
 
 #
 # Display
@@ -57,7 +58,8 @@ allow qvrd sysfs_graphics:file rw_file_perms;
 hal_client_domain(qvrd, hal_camera);
 set_prop(qvrd, camera_prop)
 
-# Allow access to camera HAL
+# Allow access to camera HAL and UVC nodes
+allow qvrd device:dir r_dir_perms;
 allow qvrd { gpu_device video_device camera_device sensors_device }:chr_file rw_file_perms;
 
 
@@ -79,3 +81,11 @@ allow qvrd qti_debugfs:file rw_file_perms;
 
 # Allow access to kgsl sysfs nodes for performance optimization
 allow qvrd sysfs_kgsl:file rw_file_perms;
+
+# Allow access to qvr_external_sensor sysfs nodes for external viewers
+allow qvrd sysfs_qvr_external_sensor:dir r_dir_perms;
+allow qvrd sysfs_qvr_external_sensor:file rw_file_perms;
+
+# qvr properties
+set_prop(qvrd, qvr_prop)
+get_prop(qvrd, qvr_prop)

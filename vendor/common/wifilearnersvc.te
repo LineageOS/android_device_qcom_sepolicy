@@ -25,22 +25,20 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# cdsprpcd daemon
-type cdsprpcd, domain;
-type cdsprpcd_exec, exec_type, vendor_file_type, file_type;
+type wifilearnersvc, domain;
+type wifilearnersvc_exec, exec_type, vendor_file_type, file_type;
 
-# Started by init
-init_daemon_domain(cdsprpcd)
+init_daemon_domain(wifilearnersvc)
+hal_server_domain(wifilearnersvc, hal_wifilearner)
 
-# For reading dir/files on /dsp
-r_dir_file(cdsprpcd, adsprpcd_file)
+#allows calls between client and server and vice-versa
+binder_call(hal_wifilearner_client, hal_wifilearner_server)
+binder_call(hal_wifilearner_server, hal_wifilearner_client)
 
-# For reading adsprpc_prop
-get_prop(cdsprpcd, adsprpc_prop)
+#allow hal clients to find the service
+allow hal_wifilearner_client hal_wifilearner_hwservice:hwservice_manager find;
 
-allow cdsprpcd qdsp_device:chr_file r_file_perms;
-allow cdsprpcd ion_device:chr_file r_file_perms;
+#register hal service
+add_hwservice(hal_wifilearner, hal_wifilearner_hwservice)
 
-r_dir_file(cdsprpcd, sysfs_devfreq)
-allow cdsprpcd sysfs_devfreq_l3cdsp:dir r_dir_perms;
-allow cdsprpcd sysfs_devfreq_l3cdsp:file rw_file_perms;
+allow hal_wifilearner self:netlink_generic_socket create_socket_perms_no_ioctl;

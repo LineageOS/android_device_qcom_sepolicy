@@ -31,7 +31,6 @@
 #IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 #
-#this is for data migration of drm which is needed for upgrade products
-/system/bin/move_widevine_data\.sh        u:object_r:move-widevine-data-sh_exec:s0
-/system/bin/move_time_data\.sh            u:object_r:move-time-data-sh_exec:s0
-/system/bin/move_wifi_data\.sh            u:object_r:move_wifi_data-sh_exec:s0
+
+# move-time-data-sh for time-service
+coredata_datavendor_migration(move-time-data-sh, time_data_file, vendor_time_data_file);
