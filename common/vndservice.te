@@ -26,7 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type per_mgr_service,             vndservice_manager_type;
-type qdisplay_service,            vndservice_manager_type;
 type qseeproxy_service,           vndservice_manager_type;
 type esepmdaemon_service,         vndservice_manager_type;
 type wfdnativemm_service,         vndservice_manager_type;

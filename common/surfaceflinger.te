@@ -33,6 +33,8 @@ allow surfaceflinger cameraserver_service:service_manager find;
 #Allow access to binder callback's to camera hal
 binder_call(surfaceflinger, hal_camera_default)
 
+allow surfaceflinger qdisplay_service:service_manager { add find };
+
 #diag
 userdebug_or_eng(`
     diag_use(surfaceflinger)
