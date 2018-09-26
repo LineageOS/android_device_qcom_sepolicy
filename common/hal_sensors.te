@@ -51,3 +51,8 @@ allow hal_sensors sysfs_sensors:file rw_file_perms;
 allow hal_sensors sysfs_sensors:lnk_file read;
 allow hal_sensors input_device:dir r_dir_perms;
 allow hal_sensors input_device:chr_file r_file_perms;
+
+# Access sensor nodes (/dev/msm_dsps, /dev/sensors)
+allow hal_sensors_default sensors_device:chr_file rw_file_perms;
+# Access /dev/socket/sensor_ctl_socket
+unix_socket_connect(hal_sensors_default, sensors, sensors)
