@@ -43,6 +43,8 @@ allow wcnss_service firmware_file:file r_file_perms;
 allow wcnss_service sysfs:file rw_file_perms;
 allow wcnss_service sysfs_data:file r_file_perms;
 allow wcnss_service proc:file r_file_perms;
+allow wcnss_service sysfs_net:file rw_file_perms;
+allow wcnss_service sysfs_net:dir r_dir_perms;
 
 # allow access to network performance tuner
 unix_socket_connect(wcnss_service, wigignpt, wigignpt)
