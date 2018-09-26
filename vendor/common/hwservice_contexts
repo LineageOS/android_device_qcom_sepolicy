@@ -89,5 +89,6 @@ vendor.qti.hardware.scve.objecttracker::IObjectTracker          u:object_r:hal_s
 vendor.qti.hardware.wifi.hostapd::IHostapdVendor             u:object_r:hal_wifi_hostapd_hwservice:s0
 vendor.qti.hardware.mlshal::IMlsDap                          u:object_r:hal_mirrorlink_hwservice:s0
 vendor.qti.hardware.mlshal::IMlsVnc                          u:object_r:hal_mirrorlink_hwservice:s0
+vendor.qti.hardware.cvp::ICvp                                u:object_r:hal_cvp_hwservice:s0
 vendor.qti.hardware.wifi.wifilearner::IWifiStats             u:object_r:hal_wifilearner_hwservice:s0
 vendor.qti.hardware.seccam::ISecCam                          u:object_r:hal_seccam_hwservice:s0
