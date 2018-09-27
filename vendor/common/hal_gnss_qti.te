@@ -53,6 +53,7 @@ allow hal_gnss self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_re
 allow hal_gnss self:{ socket qipcrtr_socket } rw_socket_perms;
 allow hal_gnss sysfs_data:file r_file_perms;
 allow hal_gnss sysfs:dir r_dir_perms;
+get_prop(hal_gnss_qti, vendor_pd_locater_dbg_prop)
 
 allow hal_gnss self:socket { create ioctl };
 
