@@ -318,6 +318,7 @@ type sysfs_fm, sysfs_type, fs_type;
 
 # for adsp to load /sys/kernel/b ot_adsp/boot
 type sysfs_boot_adsp, sysfs_type, fs_type;
+type sysfs_adsp, sysfs_type, fs_type;
 
 # SFS listener data file
 type data_tzstorage_file, file_type, data_file_type;
