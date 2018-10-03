@@ -124,6 +124,9 @@ type vendor_system_prop, property_type;
 # Bluetooth props
 type vendor_bluetooth_prop, property_type;
 
+#Console configuration to enable
+type console_silent_prop, property_type;
+
 # HBTP
 type ctl_vendor_hbtp_prop, property_type;
 
