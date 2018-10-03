@@ -88,6 +88,8 @@ allow location hal_datafactory_hwservice:hwservice_manager find;
 binder_call(location, cnd)
 get_prop(location, cnd_vendor_prop)
 
+get_prop(location, vendor_wifi_prop)
+
 #Allow access to wake alarm
 allow location self:capability2 wake_alarm;
 
