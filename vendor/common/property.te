@@ -167,6 +167,9 @@ type vendor_qdcmss_prop, property_type;
 
 # Wifi Softap
 type vendor_softap_prop, property_type;
+
+#wlan-vendor prop
+type vendor_wifi_prop, property_type;
 #mm-parser
 type mm_parser_prop, property_type;
 

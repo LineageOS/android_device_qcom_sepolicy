@@ -200,6 +200,10 @@ vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0
 
 # Wifi Softap
 persist.vendor.wifi.softap.        u:object_r:vendor_softap_prop:s0
+
+#vendor-wlan
+vendor.wlan.  u:object_r:vendor_wifi_prop:s0
+
 #mm-parser
 vendor.mm.enable.qcom_parser       u:object_r:mm_parser_prop:s0
 vendor.qcom_parser.                u:object_r:mm_parser_prop:s0
