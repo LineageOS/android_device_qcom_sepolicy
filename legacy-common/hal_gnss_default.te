@@ -1,1 +1,2 @@
 allow hal_gnss_default location_data_file:dir create;
+allow hal_gnss_default location_data_file:fifo_file create_file_perms;
