@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8f041e4f_9cb6547b",
+        "filename": "legacy-common/mm-qcamerad.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-10-06T08:58:32Z",
+      "side": 1,
+      "message": "Given that Snap got labeled you should rewrite this instead. It\u0027s the same rule - https://github.com/LineageOS/android_device_qcom_sepolicy/commit/710d0979a13e15d51d8481f0d4e9f5b5ca8c7225",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 38
+      },
+      "revId": "533903f466f5d78c927746a9b600eea8807af8e1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
