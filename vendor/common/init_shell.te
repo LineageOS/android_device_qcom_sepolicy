@@ -82,7 +82,7 @@ set_prop(qti_init_shell, vendor_coresight_prop)
 set_prop(qti_init_shell, vendor_audio_debug_prop)
 ')
 #Needed for starting vm_bms executable post-boot
-set_prop(qti_init_shell, vm_bms_prop)
+set_prop(qti_init_shell, vendor_vm_bms_prop)
 set_prop(qti_init_shell, vendor_usb_prop)
 #Needed for setting hwui properties in post_boot
 set_prop(qti_init_shell, hwui_prop)

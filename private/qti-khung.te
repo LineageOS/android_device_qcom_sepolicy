@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -17,7 +17,7 @@
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
-# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR
 # CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
 # SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
 # BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
@@ -25,5 +25,33 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-ctl.vendor.cdsprpcd         u:object_r:vendor_cdsprpcd_prop:s0
-vendor.media.sdm660.version      u:object_r:vendor_media_sdm660_version_prop:s0
+#allow only for userdebug builds
+userdebug_or_eng(`
+typeattribute qti-khung coredomain;
+# Added to allow get prop on persist.vendor.khung.disable
+get_prop(qti-khung, persist_khung_prop)
+
+init_daemon_domain(qti-khung)
+allow qti-khung kernel:key search;
+
+# Added to allow execute for toybox/toolbox
+allow qti-khung toolbox_exec:file { execute execute_no_trans getattr open read map };
+# Added to allow use of ps and grep commands in script
+allow qti-khung system_file:file execute_no_trans;
+
+# Added to allow read acesses on /proc/pid
+r_dir_file(qti-khung, domain)
+
+# Added to allow executing  through /system/bin/sh
+allow qti-khung shell_exec:file {rx_file_perms entrypoint};
+
+# Added to allow for invoking script through exec_background
+allow init qti-khung:process { noatsecure rlimitinh siginh transition };
+
+# Added to allow for write access on files inside /proc/pid/
+allow qti-khung cameraserver:file write;
+allow qti-khung surfaceflinger:file write;
+allow qti-khung system_server:file write;
+allow qti-khung audioserver:file write;
+allow qti-khung vold:file write;
+')

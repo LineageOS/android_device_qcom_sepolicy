@@ -26,6 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 persist.vendor.dpm.        u:object_r:persist_dpm_prop:s0
+persist.vendor.khung.disable u:object_r:persist_khung_prop:s0
 #persist.vendor.bluetooth.  u:object_r:vendor_bt_prop:s0
 persist.vendor.btstack      u:object_r:bluetooth_prop:s0
 persist.vendor.bluetooth.emailaccountcount u:object_r:bluetooth_prop:s0

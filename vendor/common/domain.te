@@ -39,3 +39,31 @@ get_prop(domain, vendor_security_patch_level_prop)
 get_prop(domain, public_vendor_default_prop)
 
 allow domain qti_debugfs:dir search;
+allow domain kgsl_debugfs:dir search;
+
+# Latest versions of linux kernel do a check for dac_read_search before
+# verifying dac_override capability. So adding a dont audit rule for
+# dac_read_search for domains that already have dac_override exceptions
+# will address denials of dac_read_search from these domains.
+# kernel commit: https://github.com/torvalds/linux/commit/2a4c22426955d4fc04069811997b7390c0fb858e
+
+dontaudit {
+    dnsmasq
+    dumpstate
+    init
+    installd
+    install_recovery
+    lmkd
+    netd
+    perfprofd
+    postinstall_dexopt
+    recovery
+    sdcardd
+    tee
+    ueventd
+    uncrypt
+    vendor_init
+    vold
+    vold_prepare_subdirs
+    zygote
+} self:capability dac_read_search;
