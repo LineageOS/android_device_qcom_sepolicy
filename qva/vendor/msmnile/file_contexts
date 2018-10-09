@@ -27,6 +27,7 @@
 ###################################
 # Dev nodes
 #
+/dev/spidev2.0                                                                             u:object_r:audio_device:s0
 
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
 
