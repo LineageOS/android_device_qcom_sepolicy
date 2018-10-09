@@ -54,3 +54,4 @@ binder_call(hal_hbtp_server, hal_hbtp_client)
 add_hwservice(hal_hbtp_server, hal_hbtp_hwservice)
 allow hal_hbtp_client hal_hbtp_hwservice:hwservice_manager find;
 hal_client_domain(hbtp, hal_allocator);
+allow hbtp self:capability sys_nice;

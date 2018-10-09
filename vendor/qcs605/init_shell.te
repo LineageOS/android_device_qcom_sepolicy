@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,18 +25,17 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# This domain is for pdt apps and should always be in
-# userdebug_or_eng macro
+# media_qcs605_version_prop - to choose target version specific media_codecs.xml
+allow qti_init_shell {
+    vendor_media_qcs605_version_prop
+}:property_service set;
 
-userdebug_or_eng(`
-type pdt_app, domain;
-app_domain(pdt_app);
-net_domain(pdt_app)
-permissive pdt_app;
-# r_dir_file(pdt_app, domain)
-dontaudit pdt_app service_manager_type:service_manager *;
-dontaudit pdt_app hwservice_manager_type:hwservice_manager *;
-dontaudit pdt_app file_type:dir_file_class_set *;
-allow pdt_app sysfs_battery_supply:dir search;
-allow pdt_app sysfs_battery_supply:lnk_file read;
-')
+# For regionalization
+allow qti_init_shell regionalization_file:dir r_dir_perms;
+allow qti_init_shell regionalization_file:file create_file_perms;
+
+r_dir_file(qti_init_shell, sysfs_devfreq_l3cdsp)
+allow qti_init_shell sysfs_devfreq_l3cdsp:file setattr;
+allow qti_init_shell  configfs:dir  create_dir_perms;
+allow qti_init_shell  configfs:file  create_file_perms;
+allow qti_init_shell sensors_persist_file:fifo_file getattr;

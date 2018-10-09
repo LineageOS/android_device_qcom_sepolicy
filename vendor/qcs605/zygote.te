@@ -25,18 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# This domain is for pdt apps and should always be in
-# userdebug_or_eng macro
-
-userdebug_or_eng(`
-type pdt_app, domain;
-app_domain(pdt_app);
-net_domain(pdt_app)
-permissive pdt_app;
-# r_dir_file(pdt_app, domain)
-dontaudit pdt_app service_manager_type:service_manager *;
-dontaudit pdt_app hwservice_manager_type:hwservice_manager *;
-dontaudit pdt_app file_type:dir_file_class_set *;
-allow pdt_app sysfs_battery_supply:dir search;
-allow pdt_app sysfs_battery_supply:lnk_file read;
-')
+# For regionalization
+r_dir_file(zygote, oemfs);

@@ -25,18 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# This domain is for pdt apps and should always be in
-# userdebug_or_eng macro
+type init-qti-fbe-sh, domain;
+type init-qti-fbe-sh_exec, exec_type, file_type, vendor_file_type;
 
-userdebug_or_eng(`
-type pdt_app, domain;
-app_domain(pdt_app);
-net_domain(pdt_app)
-permissive pdt_app;
-# r_dir_file(pdt_app, domain)
-dontaudit pdt_app service_manager_type:service_manager *;
-dontaudit pdt_app hwservice_manager_type:hwservice_manager *;
-dontaudit pdt_app file_type:dir_file_class_set *;
-allow pdt_app sysfs_battery_supply:dir search;
-allow pdt_app sysfs_battery_supply:lnk_file read;
-')
+init_daemon_domain(init-qti-fbe-sh)
+
+allow init-qti-fbe-sh vendor_shell_exec:file rx_file_perms;
+
+# execute toybox/toolbox
+allow init-qti-fbe-sh vendor_toolbox_exec:file rx_file_perms;
+get_prop(init-qti-fbe-sh, vendor_tee_listener_prop)
