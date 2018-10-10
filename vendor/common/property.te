@@ -30,6 +30,7 @@ type ctl_vendor_port-bridge_prop, property_type;
 type ctl_qcrild_prop, property_type;
 type vendor_tee_listener_prop, property_type;
 type ctl_vendor_rild_prop, property_type;
+type vendor_disable_spu_prop, property_type;
 
 # property for LKCore ctl start
 type ctl_LKCore_prop, property_type;
@@ -166,6 +167,9 @@ type vendor_qdcmss_prop, property_type;
 
 # Wifi Softap
 type vendor_softap_prop, property_type;
+
+#wlan-vendor prop
+type vendor_wifi_prop, property_type;
 #mm-parser
 type mm_parser_prop, property_type;
 

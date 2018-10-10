@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,27 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# call into gatekeeperd process (callbacks)
 
-type hal_gatekeeper_qti, domain;
-hal_server_domain(hal_gatekeeper_qti, hal_gatekeeper)
-
-type hal_gatekeeper_qti_exec, exec_type, file_type, vendor_file_type;
-init_daemon_domain(hal_gatekeeper_qti)
-
-# allow tee to load firmware images
-r_dir_file(hal_gatekeeper, firmware_file)
-get_prop(hal_gatekeeper, vendor_tee_listener_prop)
-
-# allow access to /dev/spcom
-allow hal_gatekeeper_qti spcom_device:chr_file rw_file_perms;
-
-# allow access to skp
-allow hal_gatekeeper_qti skp_device:chr_file rw_file_perms;
-
-allow hal_gatekeeper_qti sp_keymaster_device:chr_file rw_file_perms;
-allow hal_gatekeeper_qti sp_ssr_device:chr_file rw_file_perms;
-
-get_prop(hal_gatekeeper_qti, spcomlib_prop)
-
-get_prop(hal_gatekeeper_qti, vendor_disable_spu_prop)
+# media_sm6150_version_prop - to choose target version specific media_codecs.xml
+# media_sm7150_version_prop - to choose target version specific media_codecs.xml
+allow qti_init_shell {
+    vendor_media_sm6150_version_prop
+    vendor_media_sm7150_version_prop
+}:property_service set;
