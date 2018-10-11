@@ -1,0 +1,91 @@
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# loc_launcher service
+# which launches various other services supporting GPS & Wifi-RTT (LOWI) location
+type location, domain;
+type location_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(location)
+
+# STOPSHIP b/28340421
+# Temporarily grant this permission (for LOWI) and log its use.
+allow location self:capability { net_admin };
+
+allow location self:capability { setgid setuid };
+
+hwbinder_use(location)
+get_prop(location, hwservicemanager_prop)
+allow location fwk_sensor_hwservice:hwservice_manager find;
+binder_call(location, system_server)
+allow location hal_wifi:unix_stream_socket { read write };
+
+# Enable standard network access (for XTRA download)
+net_domain(location)
+
+# And some additional network access
+allow location self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow location self:netlink_socket create_socket_perms_no_ioctl;
+allowxperm location self:udp_socket ioctl { SIOCGIFINDEX SIOCGIFHWADDR SIOCIWFIRSTPRIV_05 };
+
+allow location sysfs_data:file r_file_perms;
+
+allow location self:socket create_socket_perms;
+# whitelist socket ioctl commands
+allowxperm location self:socket ioctl msm_sock_ipc_ioctls;
+
+dontaudit location kernel:system module_request;
+
+allow location proc_net:file r_file_perms;
+
+# execute /vendor/bin/lowi-server
+allow location location_exec:file rx_file_perms;
+
+# /data/vendor/location
+allow location location_data_file:dir create_dir_perms;
+allow location location_data_file:file create_file_perms;
+
+# /dev/socket/location
+allow location location_socket:sock_file create_file_perms;
+allow location location_socket:dir rw_dir_perms;
+
+allow location hal_gnss_qti:unix_dgram_socket sendto;
+
+# /data/vendor/wifi/wpa
+allow location wpa_data_file:dir rw_dir_perms;
+
+allow location wpa_data_file:sock_file create_file_perms;
+
+allow location hal_wifi_supplicant_default:unix_dgram_socket sendto;
+
+userdebug_or_eng(`
+  allow location diag_device:chr_file rw_file_perms;
+')
+
+allow location hal_cne_hwservice:hwservice_manager find;
+binder_call(location, cnd)
+
+get_prop(location, vendor_wifi_prop)

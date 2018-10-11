@@ -1,0 +1,78 @@
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+########################################
+## peripheral_manager
+## Allow clients to interact with peripheral
+## manager
+define(`use_vendor_per_mgr', `
+    vndbinder_use($1);
+    binder_call(vendor_per_mgr, $1);
+    binder_call($1, vendor_per_mgr);
+    allow $1 vendor_per_mgr_service:service_manager find;
+    get_prop($1, vendor_per_mgr_state_prop);
+')
+
+#####################################
+## use_netutils(clientdomain)
+## allow access to netutils from vendor
+define(`use_netutils', `
+    domain_auto_trans($1, netutils_wrapper_exec, netutils_wrapper)
+    allow netutils_wrapper $1:fd use;
+    allow netutils_wrapper $1:fifo_file { read write getattr };
+    allow netutils_wrapper $1:netlink_route_socket { read write };
+    allow netutils_wrapper $1:unix_stream_socket { read write };
+    allow netutils_wrapper $1:netlink_generic_socket { read write };
+    allow netutils_wrapper $1:netlink_xfrm_socket { read write };
+    allow netutils_wrapper $1:udp_socket { read write };
+    allow netutils_wrapper $1:tcp_socket { read write };
+')
+
+#####################################
+## hal_server_domain_bypass(domain, hal_type)
+## Allow a base set of permissions required for a domain to offer a
+## HAL implementation of the specified type over HwBinder without
+## halserverdomain attribute
+##
+## For example, default implementation of Foo HAL:
+##   type hal_foo_default, domain;
+##   hal_server_domain_bypass(hal_foo_default, hal_foo)
+##
+define(`hal_server_domain_bypass', `
+    hwbinder_use($1)
+    allow $1 system_file:dir r_dir_perms;
+    get_prop($1, hwservicemanager_prop)
+    typeattribute $1 $2_server;
+    typeattribute $1 $2;
+')
+
+#####################################
+## diag_use(clientdomain)
+## allow clientdomain to read/write to diag
+define(`diag_use', `
+    r_dir_file($1, sysfs_diag)
+    allow $1 diag_device:chr_file rw_file_perms;
+')

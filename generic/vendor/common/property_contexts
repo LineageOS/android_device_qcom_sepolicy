@@ -1,0 +1,110 @@
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+persist.vendor.service.bdroid.      u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bluetooth.  u:object_r:vendor_bluetooth_prop:s0
+vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
+vendor.bluetooth.          u:object_r:vendor_bluetooth_prop:s0
+vendor.bt.                 u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bt.         u:object_r:vendor_bluetooth_prop:s0
+ctl.vendor.msm_irqbalance  u:object_r:msm_irqbalance_prop:s0
+ctl.vendor.netmgrd         u:object_r:ctl_netmgrd_prop:s0
+ctl.vendor.port-bridge     u:object_r:ctl_port-bridge_prop:s0
+ctl.vendor.qcrild          u:object_r:ctl_qcrild_prop:s0
+ctl.vendor.ipacm           u:object_r:ipacm_prop:s0
+ctl.vendor.ipacm-diag      u:object_r:ipacm-diag_prop:s0
+ctl.vendor.dataqti         u:object_r:vendor_dataqti_prop:s0
+ctl.vendor.sensors         u:object_r:sensors_prop:s0
+vendor.audio.              u:object_r:vendor_audio_prop:s0
+vendor.voice.              u:object_r:vendor_audio_prop:s0
+persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
+ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
+ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
+ro.boot.alarmboot          u:object_r:vendor_alarm_boot_prop:s0
+ro.fota.oem                u:object_r:vendor_default_prop:s0
+vendor.debug.camera.       u:object_r:vendor_camera_prop:s0
+persist.vendor.camera.     u:object_r:vendor_camera_prop:s0
+persist.vendor.sys.crash_rcu      u:object_r:vendor_ramdump_prop:s0
+persist.vendor.sys.modem.diag.    u:object_r:vendor_modem_diag_prop:s0
+persist.vendor.sys.cnd     u:object_r:cnd_prop:s0
+persist.vendor.cne.feature u:object_r:cnd_prop:s0
+persist.vendor.cnd.wqe     u:object_r:cnd_prop:s0
+persist.vendor.cne.logging.qxdm u:object_r:cnd_prop:s0
+persist.vendor.crash.cnt   u:object_r:crash_cnt_prop:s0
+persist.vendor.crash.detect u:object_r:crash_detect_prop:s0
+persist.vendor.data.dont_use_epc u:object_r:vendor_dataqdp_prop:s0
+persist.vendor.data.dont_use_npflag u:object_r:vendor_dataqdp_prop:s0
+persist.vendor.data.profile_update u:object_r:vendor_dataqdp_prop:s0
+vendor.sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
+vendor.sys.modem.diag.     u:object_r:vendor_modem_diag_prop:s0
+vendor.display.               u:object_r:vendor_display_prop:s0
+vendor.usb.                u:object_r:vendor_usb_prop:s0
+persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
+ro.vendor.display.            u:object_r:vendor_display_prop:s0
+persist.vendor.display.       u:object_r:vendor_display_prop:s0
+vendor.gralloc.            u:object_r:vendor_gralloc_prop:s0
+vendor.peripheral.         u:object_r:vendor_per_mgr_state_prop:s0
+vendor.ims.                u:object_r:ims_prop:s0
+persist.vendor.ims.        u:object_r:ims_prop:s0
+persist.vendor.qti.telephony.vt_cam_interface u:object_r:ims_prop:s0
+ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
+
+#mpdecision
+vendor.post_boot.parsed  u:object_r:vendor_mpdecision_prop:s0
+ro.vendor.perf.cores_online u:object_r:vendor_mpdecision_prop:s0
+
+# HBTP
+ctl.vendor.hbtp u:object_r:ctl_vendor_hbtp_prop:s0
+
+#Atel
+persist.vendor.radio       u:object_r:vendor_radio_prop:s0
+vendor.radio               u:object_r:vendor_radio_prop:s0
+ro.vendor.ril.             u:object_r:vendor_radio_prop:s0
+ro.vendor.radio            u:object_r:vendor_radio_prop:s0
+
+persist.vendor.sys.        u:object_r:vendor_system_prop:s0
+
+#ss-restart
+persist.vendor.ssr.    u:object_r:vendor_ssr_prop:s0
+
+#ss-services (PD)
+persist.vendor.pd_locater_debug    u:object_r:vendor_pd_locater_dbg_prop:s0
+
+#rmt_storage
+ctl.vendor.rmt_storage     u:object_r:ctl_vendor_rmt_storage_prop:s0
+
+#GPU Available frequencies
+vendor.gpu.available_frequencies u:object_r:vendor_gpu_prop:s0
+
+# public_vendor_default_prop
+ro.vendor.graphics.memory  u:object_r:public_vendor_default_prop:s0
+vendor.debug.egl.changepixelformat  u:object_r:public_vendor_default_prop:s0
+vendor.debug.prerotation.disable  u:object_r:public_vendor_default_prop:s0
+vendor.debug.egl.swapinterval  u:object_r:public_vendor_default_prop:s0
+vendor.debug.egl.profiler  u:object_r:public_vendor_default_prop:s0
+
+#vendor-wlan
+vendor.wlan.  u:object_r:vendor_wifi_prop:s0

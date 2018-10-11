@@ -1,2 +1,0 @@
-#allow embms app to access vendor radio property
-get_prop(radio, vendor_radio_prop)

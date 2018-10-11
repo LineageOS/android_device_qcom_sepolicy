@@ -1,0 +1,86 @@
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+type ctl_netmgrd_prop, property_type;
+type ctl_port-bridge_prop, property_type;
+type ctl_qcrild_prop, property_type;
+type vendor_camera_prop, property_type;
+type cnd_prop, property_type;
+type crash_cnt_prop, property_type;
+type crash_detect_prop, property_type;
+type ims_prop, property_type;
+type ipacm_prop, property_type;
+type ipacm-diag_prop, property_type;
+type vendor_modem_diag_prop, property_type;
+type msm_irqbalance_prop, property_type;
+type vendor_per_mgr_state_prop, property_type;
+type vendor_dataqti_prop, property_type;
+type vendor_dataqdp_prop, property_type;
+type vendor_ramdump_prop, property_type;
+type sensors_prop, property_type;
+type vendor_tee_listener_prop, property_type;
+type vendor_display_prop, property_type;
+type vendor_usb_prop, property_type;
+type vendor_radio_prop, property_type;
+
+#Needed for  ubwc support
+type vendor_gralloc_prop, property_type;
+
+type vendor_system_prop, property_type;
+
+#imsrcsservice
+type ctl_vendor_imsrcsservice_prop, property_type;
+
+#mpdecision
+type vendor_mpdecision_prop, property_type;
+
+# HBTP
+type ctl_vendor_hbtp_prop, property_type;
+
+# Bluetooth props
+type vendor_bluetooth_prop, property_type;
+
+# Audio props
+type vendor_audio_prop, property_type;
+
+#ss-restart
+type vendor_ssr_prop, property_type;
+
+#ss-services (PD)
+type vendor_pd_locater_dbg_prop, property_type;
+
+#rmt_storage
+type ctl_vendor_rmt_storage_prop, property_type;
+
+type vendor_gpu_prop, property_type;
+
+type public_vendor_default_prop, property_type;
+
+# alarm property
+type vendor_alarm_boot_prop, property_type;
+
+#wlan-vendor prop
+type vendor_wifi_prop, property_type;

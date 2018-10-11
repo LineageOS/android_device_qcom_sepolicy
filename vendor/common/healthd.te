@@ -1,9 +1,0 @@
-allow healthd self:capability2 wake_alarm;
-r_dir_file(healthd, sysfs_battery_supply)
-r_dir_file(healthd, sysfs_usb_supply)
-r_dir_file(healthd, sysfs_thermal);
-
-allow healthd {
-    sysfs_battery_supply
-    sysfs_usb_supply
-}:file rw_file_perms;
