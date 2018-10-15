@@ -33,6 +33,7 @@ typeattribute bt_logger coredomain;
 init_daemon_domain(bt_logger)
 bluetooth_domain(bt_logger)
 
+get_prop(bt_logger, bluetooth_prop)
 allow bluetooth bt_logger:unix_stream_socket connectto;
 allow bt_logger bluetooth:unix_stream_socket connectto;
 
