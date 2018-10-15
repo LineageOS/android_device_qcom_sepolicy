@@ -27,4 +27,4 @@
 
 # allow mediaserver to access media.msm8956hw
 get_prop(mediaserver,  media_msm8956hw_prop)
-get_prop(mediaserver media_msm8956_version_prop)
+get_prop(mediaserver,  media_msm8956_version_prop)

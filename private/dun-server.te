@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type dun-server_exec, exec_type, file_type;
+type dun-server_exec, system_file_type, exec_type, file_type;
 typeattribute  dun-server  bluetoothdomain;
 typeattribute dun-server coredomain;
 

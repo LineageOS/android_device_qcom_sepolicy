@@ -107,7 +107,7 @@ allow $1 qdma_app:unix_stream_socket { connectto };
 #
 define(`coredata_datavendor_migration', `
 type $1, domain;
-type $1_exec, exec_type, file_type;
+type $1_exec, system_file_type, exec_type, file_type;
 
 init_daemon_domain($1);
 typeattribute $1 data_between_core_and_vendor_violators;
