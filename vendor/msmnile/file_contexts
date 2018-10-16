@@ -154,9 +154,6 @@
 
 /(vendor|system/vendor)/bin/sscrpcd                                 u:object_r:sensors_exec:s0
 
-# /dev/block/bootdevice setup script - temporary
-/(vendor|system/vendor)/bin/init\.qti\.getbootdevice\.sh            u:object_r:vendor_init_exec:s0
-
 # data files
 /data/vendor/netmgr/recovery(/.*)?                                  u:object_r:netmgr_recovery_data_file:s0
 

@@ -53,7 +53,6 @@ allow vendor_init kernel:key search;
 allow vendor_init vendor_file:system module_load;
 allow vendor_init kernel:key search;
 allow vendor_init kernel:system module_request;
-
 userdebug_or_eng(`
   allow vendor_init misc_block_device:blk_file w_file_perms;
   set_prop(vendor_init, vendor_audio_debug_prop)
@@ -81,8 +80,6 @@ set_prop(vendor_init, vendor_audio_prop)
 set_prop(vendor_init, vendor_rild_libpath_prop)
 
 # allow vendor toolbox usage
-allow vendor_init vendor_toolbox_exec:file rx_file_perms;
-type vendor_init_exec, exec_type, vendor_file_type, file_type;
 allow vendor_init mnt_vendor_file:lnk_file r_file_perms;
 
 set_prop(vendor_init, cnd_vendor_prop)
