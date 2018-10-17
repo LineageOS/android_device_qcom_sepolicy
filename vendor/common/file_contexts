@@ -279,6 +279,7 @@
 /(vendor|system/vendor)/bin/adpl                u:object_r:adpl_exec:s0
 /(vendor|system/vendor)/bin/wcnss_service       u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/hbtp_daemon         u:object_r:hbtp_exec:s0
+/(vendor|system/vendor)/bin/sarproxymgr         u:object_r:sarproxymgr_exec:s0
 /(vendor|system/vendor)/bin/touch_fusion        u:object_r:touchfusion_exec:s0
 /(vendor|system/vendor)/bin/seemp_healthd       u:object_r:seemp_health_daemon_exec:s0
 /(vendor|system/vendor)/bin/sapd                                u:object_r:sapd_exec:s0
