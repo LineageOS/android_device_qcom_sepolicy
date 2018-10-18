@@ -139,8 +139,6 @@ ro.vendor.qti.am.reschedule_service u:object_r:reschedule_service_prop:s0
 persist.vendor.graphics.vulkan.disable     u:object_r:graphics_vulkan_prop:s0
 #boot mode property
 vendor.sys.boot_mode              u:object_r:vendor_boot_mode_prop:s0
-# GPU
-ro.vendor.gpu.available_frequencies u:object_r:freq_prop:s0
 # NFC
 vendor.qti.nfc.            u:object_r:nfc_nq_prop:s0
 # LKCore start
