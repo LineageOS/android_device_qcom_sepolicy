@@ -77,7 +77,6 @@ allow location self:socket ioctl;
 # ioctlcmd=c304
 allowxperm location self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 allow location self:udp_socket ioctl;
-#allow location wifi_prop:file r_file_perms;
 # Replace this with macro
 allowxperm location self:udp_socket ioctl priv_sock_ioctls;
 

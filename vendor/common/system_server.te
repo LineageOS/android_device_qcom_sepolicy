@@ -57,8 +57,8 @@ type_transition system_server location_data_file:sock_file location_socket "alar
 #For wifistatemachine
 allow system_server kernel:key search;
 allow system_server wlan_device:chr_file rw_file_perms;
-allow system_server vendor_softap_prop:property_service set;
-allow system_server vendor_softap_prop:file r_file_perms;
+set_prop(system_server, vendor_softap_prop)
+get_prop(system_server, vendor_softap_prop)
 
 #For ssr
 allow system_server ssr_device:chr_file r_file_perms;
@@ -96,7 +96,7 @@ get_prop(system_server, vendor_xlat_prop)
 # For WFD
 allow system_server graphics_device:dir r_dir_perms;
 userdebug_or_eng(`
-allow system_server wfd_debug_prop:file r_file_perms;
+get_prop(system_server, wfd_debug_prop)
 ')
 
 #Allow access to netmgrd socket
@@ -124,9 +124,9 @@ allow system_server ctl_bootanim_prop:property_service set;
 r_dir_file(system_server, dhcp_data_file)
 
 # Allow system server to access fst,wigig system properties
-allow system_server fst_prop:property_service set;
-get_prop(system_server, fst_prop);
-set_prop(system_server, wigig_prop);
+set_prop(system_server, fst_prop)
+get_prop(system_server, fst_prop)
+set_prop(system_server, wigig_prop)
 
 #allow access to fingerprintd data file
 allow system_server fingerprintd_data_file:file { r_file_perms unlink };
@@ -147,15 +147,16 @@ allow system_server { location_app system_app } :file write;
 
 #OpenGLES version
 get_prop(system_server, vendor_opengles_prop)
+get_prop(system_server, qemu_hw_mainkeys_prop)
 
-allow system_server hwui_prop:file r_file_perms;
-allow system_server bservice_prop:file r_file_perms;
-allow system_server reschedule_service_prop:file r_file_perms;
+get_prop(system_server, hwui_prop)
+get_prop(system_server, bservice_prop)
+get_prop(system_server, reschedule_service_prop)
 allow system_server appdomain:file w_file_perms;
-allow system_server vendor_cgroup_follow_prop:file r_file_perms;
+get_prop(system_server, vendor_cgroup_follow)
 
 # Allow system_server to access ActivityManager tuning properties from vendor
-allow system_server vendor_am_prop:file r_file_perms;
+get_prop(system_server, vendor_am_prop)
 get_prop(system_server, vendor_mpctl_prop)
 
 # IPC call for sensor feed
@@ -179,13 +180,12 @@ allow system_server sysfs_wigig:file rw_file_perms;
 # allow system_server to access IOP HAL service
 hal_client_domain(system_server, hal_iop)
 
-#Allow access for vendor property
-allow system_server vendor_iop_prop:file r_file_perms;
 # Allow Gesture based boost from System Server
-allow system_server vendor_scroll_prop:file r_file_perms;
+get_prop(system_server, vendor_scroll_prop)
 
 # allow system_server to access vendor display property.
 get_prop(system_server, vendor_display_prop)
+get_prop(system_server, vendor_iop_prop)
 
 # allow system server to get mirrorlink connection status prop
 get_prop(system_server, vendor_mirrorlink_prop)

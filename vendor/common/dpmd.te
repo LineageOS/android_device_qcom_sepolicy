@@ -28,7 +28,7 @@
 #Add netutils support to install iptables
 use_netutils(dpmd)
 
-allow dpmd persist_dpm_prop:file r_file_perms;
+get_prop(dpmd, persist_dpm_prop)
 
 allow dpmd sysfs_wake_lock:file rw_file_perms;
 

@@ -10,7 +10,7 @@ r_dir_file({domain - isolated_app}, sysfs_thermal);
 # Allow domain to read /vendor -> /system/vendor
 allow domain system_file:lnk_file getattr;
 
-allow domain vendor_gralloc_prop:file r_file_perms;
+get_prop(domain, vendor_gralloc_prop)
 
 allow domain vendor_configs_file:file r_file_perms;
 

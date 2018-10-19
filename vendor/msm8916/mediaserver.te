@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # allow mediaserver to access medis.msm8939hw
-allow mediaserver media_msm8939hw_prop:file r_file_perms;
+get_prop(mediaserver, media_msm8939hw_prop)

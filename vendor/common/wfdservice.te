@@ -24,10 +24,10 @@ allow wfdservice wifidisplayhalservice_hwservice:hwservice_manager find;
 
 #Allow for property access
 userdebug_or_eng(`
-allow wfdservice wfd_debug_prop:file r_file_perms;
+get_prop(wfdservice, wfd_debug_prop)
 ')
-allow wfdservice vendor_gralloc_prop:file r_file_perms;
-allow wfdservice mm_video_prop:file r_file_perms;
+get_prop(wfdservice, vendor_gralloc_prop)
+get_prop(wfdservice, mm_video_prop)
 
 # Add the rule for wfd to access /proc/asound/pcm file
 r_dir_file(wfdservice, proc_asound)
