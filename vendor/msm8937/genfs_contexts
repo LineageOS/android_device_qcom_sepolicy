@@ -82,19 +82,17 @@ genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-000c/78b6000.i2c:qcom,s
 #Common PMIC files
 genfscon sysfs /class/qcom-battery u:object_r:sysfs_battery_supply:s0
 
-#Needed for SSR
+#Needed for SSR for msm8937
 genfscon  sysfs /devices/platform/soc/1de0000.qcom,venus/subsys0/name  u:object_r:sysfs_ssr:s0
-genfscon  sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys1/name   u:object_r:sysfs_ssr:s0
-genfscon  sysfs /devices/platform/soc/c200000.qcom,lpass/subsys2/name  u:object_r:sysfs_ssr:s0
-genfscon  sysfs /devices/platform/soc/a21b000.qcom,pronto/subsys3/name u:object_r:sysfs_ssr:s0
-genfscon  sysfs /devices/platform/soc/4080000.qcom,mss/subsys4/name    u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/platform/soc/c200000.qcom,lpass/subsys1/name  u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/platform/soc/a21b000.qcom,pronto/subsys2/name u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/platform/soc/4080000.qcom,mss/subsys3/name    u:object_r:sysfs_ssr:s0
 
-#SSR nodes for 32 bit has diffrent path
+#SSR nodes for 32 bit has diffrent path/msm8917
 genfscon  sysfs /devices/soc/1de0000.qcom,venus/subsys0/name  u:object_r:sysfs_ssr:s0
-genfscon  sysfs /devices/soc/soc:qcom,kgsl-hyp/subsys1/name   u:object_r:sysfs_ssr:s0
-genfscon  sysfs /devices/soc/c200000.qcom,lpass/subsys2/name  u:object_r:sysfs_ssr:s0
-genfscon  sysfs /devices/soc/a21b000.qcom,pronto/subsys3/name u:object_r:sysfs_ssr:s0
-genfscon  sysfs /devices/soc/4080000.qcom,mss/subsys4/name    u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/soc/c200000.qcom,lpass/subsys1/name  u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/soc/a21b000.qcom,pronto/subsys2/name u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/soc/4080000.qcom,mss/subsys3/name    u:object_r:sysfs_ssr:s0
 
 #PM8916 FILES
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:pm8916@0:qcom,vmbms/power_supply/bms u:object_r:sysfs_battery_supply:s0
