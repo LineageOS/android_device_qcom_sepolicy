@@ -62,3 +62,6 @@ allow qdma_app qdma_socket:sock_file create_file_perms;
 
 # allow qdma_prop
 set_prop(qdma_app, qdma_prop);
+
+# allow access to mediadrmserver for qdmastats/wvstats
+allow qdma_app mediadrmserver_service:service_manager find;

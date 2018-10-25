@@ -1,0 +1,184 @@
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#    * Redistributions of source code must retain the above copyright
+#      notice, this list of conditions and the following disclaimer.
+#    * Redistributions in binary form must reproduce the above
+#      copyright notice, this list of conditions and the following
+#      disclaimer in the documentation and/or other materials provided
+#      with the distribution.
+#    * Neither the name of The Linux Foundation nor the names of its
+#      contributors may be used to endorse or promote products derived
+#      from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+#integrated process
+type mmi, domain;
+type mmi_exec, exec_type, vendor_file_type, file_type;
+
+#started by init
+init_daemon_domain(mmi)
+
+#self capability
+allow mmi self:socket create_socket_perms_no_ioctl;
+allow mmi self:{ netlink_socket netlink_generic_socket } create_socket_perms_no_ioctl;
+allow mmi self:udp_socket create_socket_perms_no_ioctl;
+allow mmi self:capability { sys_nice dac_override setuid setgid fowner chown fsetid kill net_admin sys_module net_raw};
+allow mmi self:capability2 wake_alarm;
+
+#For various devices
+allow mmi sysfs:file w_file_perms;
+allow mmi graphics_device:dir r_dir_perms;
+allow mmi graphics_device:chr_file rw_file_perms;
+allow mmi input_device:chr_file r_file_perms;
+allow mmi input_device:dir r_dir_perms;
+allow mmi nfc_device:chr_file rw_file_perms;
+allow mmi vendor_shell_exec:file rx_file_perms;
+wakelock_use(mmi)
+
+#FTM_AP folder permissions
+file_type_auto_trans(mmi, cache_file, mmi_data_file);
+allow mmi mmi_data_file:dir rw_dir_perms;
+allow mmi mmi_data_file:file create_file_perms;
+
+#socket
+allow mmi socket_device:dir w_dir_perms;
+
+#allow mmi set system prop,sensor need write persist
+set_prop(mmi, powerctl_prop)
+allow mmi persist_file:dir r_dir_perms;
+allow mmi sensors_persist_file:dir create_dir_perms;
+allow mmi sensors_persist_file:file create_file_perms;
+
+#wifi case
+allow mmi system_file:file x_file_perms;
+#allow mmi wpa_exec:file rx_file_perms;
+allow mmi wcnss_service_exec:file rx_file_perms;
+allow mmi kernel:key search;
+allow mmi kernel:system module_request;
+allow mmi vendor_toolbox_exec:file rx_file_perms;
+allow mmi system_file:system module_load;
+
+#audio case
+allow mmi audio_device:dir r_dir_perms;
+allow mmi audio_device:chr_file rw_file_perms;
+
+#FM case
+allow mmi fm_radio_device:chr_file r_file_perms;
+allow mmi fm_data_file:file r_file_perms;
+set_prop(mmi, fm_prop)
+set_prop(mmi, ctl_default_prop)
+#bluetooth case
+allow mmi bluetooth_data_file:dir rw_dir_perms;
+allow mmi bluetooth_data_file:file create_file_perms;
+set_prop(mmi, bluetooth_prop)
+allow mmi smd_device:chr_file rw_file_perms;
+allow mmi persist_bluetooth_file:file r_file_perms;
+allow mmi wcnss_filter:unix_stream_socket connectto;
+
+#GPS case
+allow mmi location_data_file:fifo_file create_file_perms;
+allow mmi location_data_file:dir create_dir_perms;
+allow mmi location_data_file:file create_file_perms;
+allow mmi mmi_socket:sock_file create_file_perms;
+type_transition mmi socket_device:sock_file mmi_socket;
+allow mmi location_exec:file rx_file_perms;
+allow mmi smem_log_device:chr_file rw_file_perms;
+allow mmi ssr_device:chr_file r_file_perms;
+
+#SD card case
+allow mmi sd_device:blk_file rw_file_perms;
+allow mmi block_device:blk_file getattr;
+allow mmi block_device:dir r_dir_perms;
+
+#camera
+allow mmi video_device:chr_file rw_file_perms;
+allow mmi camera_data_file:sock_file write;
+allow mmi camera_data_file:dir r_dir_perms;
+allow mmi mm-qcamerad:unix_dgram_socket sendto;
+
+#nfc case
+allow mmi nfc_data_file:dir rw_dir_perms;
+allow mmi nfc_data_file:file create_file_perms;
+
+#simcard
+qmux_socket(mmi);
+
+#allow mmi access chgdiabled prop
+set_prop(mmi, chgdiabled_prop)
+#Allow mmi operate on surfaceflinger
+allow mmi surfaceflinger:fd use;
+#allow mmi surfaceflinger_service:service_manager find;
+
+#Allow mmi operate on graphics
+hal_client_domain(mmi, hal_graphics_allocator);
+
+#Allow mmi operate on hwservicemanager
+hwbinder_use(hwservicemanager);
+get_prop(mmi, hwservicemanager_prop);
+
+#Allow mmi operate ion_device
+allow mmi ion_device:chr_file r_file_perms;
+
+#Allow mmi operate on graphics
+hal_client_domain(mmi, hal_graphics_allocator);
+
+#Allow mmi operate on hwservicemanager
+hwbinder_use(hwservicemanager);
+get_prop(mmi, hwservicemanager_prop);
+
+#Allow mmi operate ion_device
+allow mmi ion_device:chr_file r_file_perms;
+
+#Allow mmi to use IPC
+#binder_use(mmi)
+binder_call(mmi,surfaceflinger)
+
+#sensor cases
+unix_socket_connect(mmi, sensors, sensors);
+allow mmi sensors_device:chr_file r_file_perms;
+
+#logcat
+#domain_auto_trans(mmi, logcat_exec, logd);
+
+#access kmsg device for logging
+allow mmi kmsg_device:chr_file rw_file_perms;
+
+#mmi test
+unix_socket_connect(mmi, cnd, cnd);
+unix_socket_connect(mmi, netmgrd, netmgrd);
+net_domain(mmi);
+
+#mmi to start:mmid/ftmdaemon/mm-audio-ftm application
+allow mmi mmi_exec:file execute_no_trans;
+allow mmi proc:file r_file_perms;
+allow mmi sysfs_battery_supply:dir search;
+allow mmi sysfs_battery_supply:file rw_file_perms;
+allow mmi sysfs_pon_dev:file rw_file_perms;
+
+#read sysfs to operate LEDs
+allow mmi sysfs_leds:dir r_dir_perms;
+allow mmi sysfs_leds:lnk_file r_file_perms;
+allow mmi sysfs_leds:file rw_file_perms;
+allow mmi sysfs_graphics:dir r_dir_perms;
+allow mmi sysfs_graphics:file rw_file_perms;
+
+#allow mmi access boot mode switch
+set_prop(mmi, boot_mode_prop)
+#diag
+userdebug_or_eng(`
+    diag_use(mmi)
+')

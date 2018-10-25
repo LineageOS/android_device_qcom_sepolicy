@@ -72,7 +72,7 @@ sys.usb.controller         u:object_r:sys_usb_controller_prop:s0
 sys.usb.configfs           u:object_r:sys_usb_configfs_prop:s0
 sys.usb.tethering          u:object_r:sys_usb_tethering_prop:s0
 qemu.hw.mainkeys           u:object_r:qemu_hw_mainkeys_prop:s0
-ro.dbg.coresight.cfg_file     u:object_r:coresight_prop:s0
+ro.vendor.dbg.coresight.cfg_file     u:object_r:vendor_coresight_prop:s0
 ctl.hbtp                   u:object_r:ctl_hbtp_prop:s0
 vendor.audio.sys.init             u:object_r:audio_prop:s0
 ro.alarm_boot                 u:object_r:alarm_boot_prop:s0
@@ -133,3 +133,11 @@ ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
 
 wlan.driver.ath            u:object_r:wcnss_prop:s0
 wlan.driver.config         u:object_r:wcnss_prop:s0
+
+#qdcm socket service
+vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0
+
+ro.radio.noril          u:object_r:radio_noril_prop:s0
+
+#qvr properties
+vendor.qvr                 u:object_r:qvr_prop:s0

@@ -25,6 +25,10 @@ allow qti { vendor_shell_exec system_file }:file rx_file_perms;
 
 allow qti sysfs_data:file r_file_perms;
 
+# Allow write permissions for log file
+allow qti qti_data_file:file create_file_perms;
+allow qti qti_data_file:dir rw_dir_perms;
+
 #diag
 userdebug_or_eng(`
     diag_use(qti)

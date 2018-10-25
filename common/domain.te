@@ -14,10 +14,25 @@ allow domain debug_gralloc_prop:file r_file_perms;
 
 not_full_treble(`allow domain vendor_file:dir r_dir_perms;')
 
+# Neverallow any 3rdparty apps to access the xqdsp_device
+# we want to add all_untrusted_apps as the defination is not
+# exposed we are  expanding this
+# any app that need access should not be part of this domains
+neverallow {
+ ephemeral_app
+ isolated_app
+ mediaprovider
+ untrusted_app
+ untrusted_app_25
+ untrusted_app_all
+ untrusted_v2_app
+ }xdsp_device:chr_file no_rw_file_perms;
+
 # Added now for smoother UI
 # Remove this after HIDL implementation
 userdebug_or_eng(`
 allow domain hal_graphics_composer:fd use;
+allow domain qti_debugfs:dir search;
 ')
 dontaudit domain persist_dpm_prop:file r_file_perms;
 

@@ -26,3 +26,124 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type qmmf_prop, property_type;
+
+type ctl_vendor_discoveryd_prop, property_type;
+
+# property for uicc_daemon
+type uicc_prop, property_type;
+type qcom_ims_prop, property_type;
+type ctl_qmuxd_prop, property_type;
+type ctl_netmgrd_prop, property_type;
+type ctl_port-bridge_prop, property_type;
+
+# property for LKCore ctl start
+type ctl_LKCore_prop, property_type;
+
+# properties for usf daemons
+type usf_prop, property_type;
+
+type freq_prop, property_type;
+type perfd_prop, property_type;
+type vm_bms_prop, property_type; #To start vm_bms
+type qti_prop, property_type;
+type ipacm_prop, property_type;
+type ipacm-diag_prop, property_type;
+type sensors_prop, property_type;
+type msm_irqbalance_prop, property_type;
+type msm_irqbl_sdm630_prop, property_type;
+type camera_prop, property_type;
+type spcomlib_prop, property_type;
+type sdm_idle_time_prop, property_type;
+type sf_lcd_density_prop, property_type;
+type scr_enabled_prop, property_type;
+type bg_daemon_prop, property_type;
+type bg_boot_complete_prop, property_type;
+type opengles_prop, property_type;
+type mdm_helper_prop, property_type;
+type mpdecision_prop, property_type;
+type gamed_prop, property_type;
+
+#Needed for  ubwc support
+type debug_gralloc_prop, property_type;
+
+type fm_prop, property_type;
+type chgdiabled_prop, property_type;
+
+#properites for netd
+type netd_prop, property_type;
+
+type xlat_prop, property_type;
+
+# property for location
+type location_prop, property_type;
+
+#properites for init.qcom.sh script
+type rmnet_mux_prop, property_type;
+type qemu_hw_mainkeys_prop, property_type;
+type sys_usb_controller_prop, property_type;
+type sys_usb_configfs_prop, property_type;
+
+type sys_usb_tethering_prop, property_type;
+
+type vendor_coresight_prop, property_type;
+
+
+type ctl_hbtp_prop, property_type;
+type alarm_boot_prop, property_type;
+type boot_animation_prop, property_type;
+
+# DOLBY_START
+type dolby_prop, property_type;
+# DOLBY_END
+
+type wififtmd_prop, property_type;
+
+# WIGIG
+type wigig_prop, property_type;
+type fst_prop, property_type;
+type ctl_vendor_wigigsvc_prop, property_type;
+
+type alarm_handled_prop, property_type;
+type alarm_instance_prop, property_type;
+
+#HWUI property
+type hwui_prop, property_type;
+
+type graphics_vulkan_prop, property_type;
+
+#Bservice property
+type bservice_prop, property_type;
+
+#Delayed Service Reschedule property
+type reschedule_service_prop, property_type;
+
+#mdlog property
+type diag_mdlog_prop, property_type;
+
+#boot mode property
+type boot_mode_prop, property_type;
+#properties for nfc
+type nfc_nq_prop, property_type;
+type ppd_prop, property_type;
+type qemu_gles_prop, property_type;
+
+type vendor_rild_libpath_prop, property_type;
+
+#Peripheral manager
+type per_mgr_state_prop, property_type;
+
+type vendor_system_prop, property_type;
+
+#crash property
+type crash_prop, property_type;
+
+#qdma property
+type qdma_prop, property_type;
+
+type mmi_prop, property_type;
+
+#imsrcsservice
+type ctl_vendor_imsrcsservice_prop, property_type;
+
+#qdcmss property
+type vendor_qdcmss_prop, property_type;

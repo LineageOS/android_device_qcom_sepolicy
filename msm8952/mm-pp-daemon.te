@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow mm-pp-daemon { surfaceflinger_service sensorservice_service
-    permission_service }:service_manager find;
+    permission_service power_service }:service_manager find;
 
 binder_use(mm-pp-daemon)
 binder_call(mm-pp-daemon, surfaceflinger)

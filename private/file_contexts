@@ -37,6 +37,8 @@
 /dev/socket/dpmwrapper                          u:object_r:dpmwrapper_socket:s0
 /dev/socket/tcm                                 u:object_r:dpmtcm_socket:s0
 /dev/socket/qvrservice                          u:object_r:qvrd_socket:s0
+/dev/socket/qvrservice_camera                   u:object_r:qvrd_socket:s0
+/dev/socket/qvrservice_hvx_camera               u:object_r:qvrd_hvx_socket:s0
 
 ####### system file ###############
 /system/bin/seempd                              u:object_r:seempd_exec:s0

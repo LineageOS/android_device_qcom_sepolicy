@@ -32,3 +32,5 @@ allow system_app regionalization_file:file r_file_perms;
 allow system_app regionalization_file:dir r_dir_perms;
 allow system_app vendor_radio_data_file:dir rw_dir_perms;
 allow system_app vendor_radio_data_file:file create_file_perms;
+allow system_app hal_fingerprint_fpc:binder { call transfer };
+allow system_app hal_fingerprint_hwservice:hwservice_manager { find };

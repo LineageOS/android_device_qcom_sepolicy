@@ -1,0 +1,100 @@
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+type qdmastatsd, domain, mlstrustedsubject;
+type qdmastatsd_exec, file_type, vendor_file_type, exec_type;
+
+init_daemon_domain(qdmastatsd)
+
+allow qdmastatsd qdma_data_file:file create_file_perms;
+allow qdmastatsd qdma_data_file:dir create_dir_perms;
+
+# access to /dev/ramdump_microdump_modem
+allow qdmastatsd ramdump_device:chr_file r_file_perms;
+
+# access to /sys/class/power_supply/bms/charge_counter
+# access to /sys/class/power_supply/battery/capacity
+# access to /sys/class/power_supply/battery/status
+allow qdmastatsd sysfs_battery_supply:{file lnk_file} r_file_perms;
+allow qdmastatsd sysfs_battery_supply:dir r_dir_perms;
+
+# /sys/class/kgsl/kgsl-3d0/gpu_busy_percentage
+# /sys/class/kgsl/kgsl-3d0/gpuclk
+# /sys/class/kgsl/kgsl-3d0/gpu_clock_stats
+# /sys/class/kgsl/kgsl-3d0/num_pwrlevels
+# /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies
+allow qdmastatsd sysfs_kgsl:{file lnk_file} r_file_perms;
+allow qdmastatsd sysfs_kgsl:dir r_dir_perms;
+
+# /sys/class/leds/lcd-backlight/brightness
+allow qdmastatsd sysfs_leds:{file lnk_file} r_file_perms;
+allow qdmastatsd sysfs_leds:dir r_dir_perms;
+allow qdmastatsd sysfs_graphics:{file lnk_file} r_file_perms;
+allow qdmastatsd sysfs_graphics:dir r_dir_perms;
+
+# access to /sys/devices/system/cpu/possible
+allow qdmastatsd sysfs_devices_system_cpu:file r_file_perms;
+allow qdmastatsd sysfs_devices_system_cpu:dir r_dir_perms;
+
+# access to /sys/module/lpm_stats/cpu%d/total_sleep_time_secs
+#allow qdmastatsd sysfs_lpm_stats:{file lnk_file} r_file_perms;
+#allow qdmastatsd sysfs_lpm_stats:dir r_dir_perms;
+
+# access to /sys/class/thermal/thermal_zone%d
+allow qdmastatsd sysfs_thermal:{file lnk_file} r_file_perms;
+allow qdmastatsd sysfs_thermal:dir r_dir_perms;
+
+# access to /sys/power/wake_lock, wake_unlock
+allow qdmastatsd sysfs_wake_lock:file r_file_perms;
+allow qdmastatsd sysfs_wake_lock:dir r_dir_perms;
+
+# access to /proc/stat
+allow qdmastatsd proc_stat:file r_file_perms;
+allow qdmastatsd proc_stat:dir r_dir_perms;
+
+# access to /proc/net/xt_qtaguid/stats
+allow qdmastatsd proc_net:file r_file_perms;
+allow qdmastatsd proc_net:dir r_dir_perms;
+
+# access to /proc/<pid>/
+r_dir_file(qdmastatsd, domain);
+
+# qmi
+qmux_socket(qdmastatsd);
+allow qdmastatsd self:socket create_socket_perms;
+allowxperm qdmastatsd self:socket ioctl msm_sock_ipc_ioctls;
+
+# diag
+userdebug_or_eng(`
+  diag_use(qdmastatsd)
+')
+
+# for dmesg
+#read_logd(qdmastatsd);
+
+# allow qdma_prop
+set_prop(qdmastatsd, qdma_prop);

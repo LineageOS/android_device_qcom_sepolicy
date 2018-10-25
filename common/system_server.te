@@ -201,3 +201,6 @@ hal_client_domain(system_server, hal_iop)
 r_dir_file(system_server, kgsl_debugfs);
 
 allow system_server qti_debugfs:file r_file_perms;
+
+# allow system_server to read ro.radio.noril property
+get_prop(system_server, radio_noril_prop)

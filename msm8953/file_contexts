@@ -51,7 +51,6 @@
 #rawdump partition
 /dev/block/platform/soc/7824900\.sdhci/by-name/rawdump              u:object_r:rawdump_block_device:s0
 
-/sys/module/usb_f_mtp/parameters(/.*)?                              u:object_r:sysfs_usb_mtp_device:s0
 /sys/devices/platform/soc/200f000\.qcom,spmi/spmi-0/spmi0-02/200f000\.qcom,spmi:qcom,pmi8950@2:qcom,qpnp-smbcharger/leds/red/brightness    u:object_r:sysfs_spmi_device:s0
 /sys/devices/platform/soc/200f000\.qcom,spmi/spmi-0/spmi0-03/200f000\.qcom,spmi:qcom,pmi8950@3:qcom,haptic@c000/leds/vibrator/activate     u:object_r:sysfs_spmi_device:s0
 /sys/devices/platform/soc/200f000\.qcom,spmi/spmi-0/spmi0-03/200f000\.qcom,spmi:qcom,pmi632@3:qcom,vibrator@5700/leds/vibrator/activate    u:object_r:sysfs_spmi_device:s0
@@ -66,6 +65,9 @@
 # non-hlos mount points
 /firmware                  u:object_r:firmware_file:s0
 /bt_firmware               u:object_r:bt_firmware_file:s0
+
+# FBE
+/(vendor|system/vendor)/bin/init.qti.qseecomd.sh		u:object_r:init-qti-fbe-sh_exec:s0
 
 ##################################
 # A/B partitions.
@@ -83,6 +85,17 @@
 /dev/block/platform/soc/7824900\.sdhci/by-name/rpm_[ab]             u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900\.sdhci/by-name/system_[ab]          u:object_r:system_block_device:s0
 /dev/block/platform/soc/7824900\.sdhci/by-name/tz_[ab]              u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/lksecapp_[ab]        u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900\.sdhci/by-name/ImageFv_[ab]         u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900\.sdhci/by-name/vendor_[ab]          u:object_r:system_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/vbmeta_[ab]          u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/dtbo_[ab]            u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900\.sdhci/by-name/sbl1_[ab]            u:object_r:xbl_block_device:s0
+
+###################################
+# sysfs files
+#
+
+/sys/devices/soc/soc\:bt_qca9379/rfkill/rfkill0/state               u:object_r:sysfs_bluetooth_writable:s0
+/sys/devices/soc/soc\:bt_qca9379/extldo                             u:object_r:sysfs_bluetooth_writable:s0
+###################################

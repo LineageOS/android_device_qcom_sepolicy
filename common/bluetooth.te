@@ -42,6 +42,7 @@ allow bluetooth self:socket { create write getopt read };
 
 #For bluetooth firmware
 r_dir_file(bluetooth, bt_firmware_file)
+r_dir_file(bluetooth, firmware_file)
 
 #dun-server requires binding with system_app and servicemanager
 binder_use(bluetooth);
