@@ -24,6 +24,15 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# Allow access to net_admin ioctls
-allowxperm bluetooth self:udp_socket ioctl priv_sock_ioctls;
-get_prop(bluetooth, vendor_bluetooth_prop)
+
+type hal_soter_qti, domain;
+hal_server_domain(hal_soter_qti, hal_soter)
+
+type hal_soter_qti_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(hal_soter_qti)
+
+binder_call(hal_soter_client, hal_soter_server)
+binder_call(hal_soter_server, hal_soter_client)
+get_prop(hal_soter_qti, vendor_tee_listener_prop)
+add_hwservice(hal_soter_server, hal_soter_hwservice)
+allow hal_soter_client hal_soter_hwservice:hwservice_manager find;

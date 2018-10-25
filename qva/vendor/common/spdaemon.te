@@ -24,6 +24,22 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# Allow access to net_admin ioctls
-allowxperm bluetooth self:udp_socket ioctl priv_sock_ioctls;
-get_prop(bluetooth, vendor_bluetooth_prop)
+
+# spdaemon service
+type spdaemon, domain;
+
+type spdaemon_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(spdaemon)
+allow spdaemon spcom_device:chr_file { getattr rw_file_perms };
+r_dir_file(spdaemon, sysfs)
+allow spdaemon skp_device:chr_file { getattr rw_file_perms };
+# Need to check if really needed
+set_prop(spdaemon, spcomlib_prop)
+allow spdaemon spdaemon_ssr_device:chr_file rw_file_perms;
+allow spdaemon sp_ssr_device:chr_file rw_file_perms;
+allow spdaemon sp_keymaster_device:chr_file rw_file_perms;
+allow spdaemon cryptoapp_device:chr_file rw_file_perms;
+allow spdaemon ion_device:chr_file rw_file_perms;
+r_dir_file(spdaemon, firmware_file);
+use_vendor_per_mgr(spdaemon)

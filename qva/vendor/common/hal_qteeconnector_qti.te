@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,6 +24,36 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# Allow access to net_admin ioctls
-allowxperm bluetooth self:udp_socket ioctl priv_sock_ioctls;
-get_prop(bluetooth, vendor_bluetooth_prop)
+
+#define the type
+type hal_qteeconnector_qti, domain;
+
+#mark the type as hal_server_domain
+hal_server_domain(hal_qteeconnector_qti, hal_qteeconnector)
+
+#allow the service to be started by init
+type hal_qteeconnector_qti_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(hal_qteeconnector_qti)
+#allow the service to be added to hwservice list
+add_hwservice(hal_qteeconnector_qti, hal_qteeconnector_hwservice)
+
+#allow access to hal_allocator
+hal_client_domain(hal_qteeconnector_qti, hal_allocator)
+
+#allow access to ion device
+allow hal_qteeconnector ion_device:chr_file rw_file_perms;
+
+#allow access to and use of graphics allocator
+hal_client_domain(hal_qteeconnector_qti, hal_graphics_allocator)
+
+#Allow access to tee device
+allow hal_qteeconnector_qti tee_device:chr_file rw_file_perms;
+
+#Allow access to firmware
+allow hal_qteeconnector firmware_file:dir r_dir_perms;
+allow hal_qteeconnector firmware_file:file r_file_perms;
+
+#Allow hal_qteeconnector client domain apps to find hwservice
+binder_call(hal_qteeconnector_client, hal_qteeconnector_server)
+binder_call(hal_qteeconnector_server, hal_qteeconnector_client)
+allow hal_qteeconnector_client hal_qteeconnector_hwservice:hwservice_manager find;

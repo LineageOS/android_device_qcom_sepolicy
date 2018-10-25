@@ -24,6 +24,12 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# Allow access to net_admin ioctls
-allowxperm bluetooth self:udp_socket ioctl priv_sock_ioctls;
-get_prop(bluetooth, vendor_bluetooth_prop)
+
+type vendor_scve, domain;
+type vendor_scve_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_scve)
+
+hal_server_domain(vendor_scve, hal_scve)
+add_hwservice(hal_scve_server, hal_scve_hwservice)
+allow hal_scve_client hal_scve_hwservice:hwservice_manager find;

@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# Allow access to net_admin ioctls
-allowxperm bluetooth self:udp_socket ioctl priv_sock_ioctls;
-get_prop(bluetooth, vendor_bluetooth_prop)
+
+type seemp_health_daemon, domain;
+type seemp_health_daemon_exec, exec_type, vendor_file_type, file_type;
+
+#Allow for transition from init domain to seemp_health_daemon
+init_daemon_domain(seemp_health_daemon)
+#Allow access to tee device
+allow seemp_health_daemon tee_device:chr_file rw_file_perms;

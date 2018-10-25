@@ -25,6 +25,12 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow netmgrd to set vendor properties
-set_prop(netmgrd, vendor_data_ko_prop)
-allow netmgrd self:qipcrtr_socket create_socket_perms_no_ioctl;
+#Define Domain
+type hal_pasrmanager_qti, domain;
+type hal_pasrmanager_qti_exec, exec_type, vendor_file_type, file_type;
+hal_server_domain(hal_pasrmanager_qti, hal_pasrmanager)
+init_daemon_domain(hal_pasrmanager_qti)
+binder_call(hal_pasrmanager_client, hal_pasrmanager_server)
+
+add_hwservice(hal_pasrmanager_server, hal_pasrmanager_hwservice)
+allow hal_pasrmanager_client hal_pasrmanager_hwservice:hwservice_manager find;

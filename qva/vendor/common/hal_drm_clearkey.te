@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,6 +25,11 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow netmgrd to set vendor properties
-set_prop(netmgrd, vendor_data_ko_prop)
-allow netmgrd self:qipcrtr_socket create_socket_perms_no_ioctl;
+# policy for /vendor/bin/hw/android.hardware.drm@1.1-service.clearkey
+type hal_drm_clearkey, domain;
+type hal_drm_clearkey_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(hal_drm_clearkey)
+
+hal_server_domain(hal_drm_clearkey, hal_drm)
+vndbinder_use(hal_drm_clearkey);

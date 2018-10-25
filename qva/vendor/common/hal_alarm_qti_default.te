@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,6 +25,11 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow netmgrd to set vendor properties
-set_prop(netmgrd, vendor_data_ko_prop)
-allow netmgrd self:qipcrtr_socket create_socket_perms_no_ioctl;
+type hal_alarm_qti_default, domain;
+hal_server_domain(hal_alarm_qti_default, hal_alarm_qti)
+
+type hal_alarm_qti_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_alarm_qti_default)
+add_hwservice(hal_alarm_qti_server, hal_alarm_qti_hwservice)
+
+allow hal_alarm_qti_client hal_alarm_qti_hwservice:hwservice_manager find;

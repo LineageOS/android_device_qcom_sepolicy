@@ -24,6 +24,24 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# Allow access to net_admin ioctls
-allowxperm bluetooth self:udp_socket ioctl priv_sock_ioctls;
-get_prop(bluetooth, vendor_bluetooth_prop)
+
+#Define Domain
+type hal_mirrorlink_qti, domain;
+type hal_mirrorlink_qti_exec, exec_type, vendor_file_type, file_type;
+hal_server_domain(hal_mirrorlink_qti,hal_mirrorlink)
+
+#Allow for transition from init domain to hal_mirrorlink
+init_daemon_domain(hal_mirrorlink_qti)
+
+#Allow hal_mirrorlink to use Vendor Binder IPC
+vndbinder_use(hal_mirrorlink)
+
+#Allow hwbinder call from hal client to server
+binder_call(hal_mirrorlink_client, hal_mirrorlink_server)
+binder_call(hal_mirrorlink_server, hal_mirrorlink_client)
+
+#Add hwservice related rules
+add_hwservice(hal_mirrorlink_server, hal_mirrorlink_hwservice)
+allow hal_mirrorlink_client hal_mirrorlink_hwservice:hwservice_manager find;
+allow mirrorlink self:netlink_kobject_uevent_socket create;
+#allow mirrorlink vendor_default_prop:file read;

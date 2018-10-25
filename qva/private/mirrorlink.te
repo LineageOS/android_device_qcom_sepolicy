@@ -24,6 +24,15 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# Allow access to net_admin ioctls
-allowxperm bluetooth self:udp_socket ioctl priv_sock_ioctls;
-get_prop(bluetooth, vendor_bluetooth_prop)
+
+typeattribute mirrorlink coredomain;
+type mirrorlink_exec, exec_type, file_type;
+
+# Allow for transition from init to mirrorlink domain upon executing binary.
+init_daemon_domain(mirrorlink)
+
+# Inherit a base set of permissions required for network access.
+net_domain(mirrorlink)
+
+allow mirrorlink mirrorlink_data_file:file create_file_perms;
+allow mirrorlink mirrorlink_data_file:dir create_dir_perms;

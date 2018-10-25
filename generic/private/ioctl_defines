@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,6 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow netmgrd to set vendor properties
-set_prop(netmgrd, vendor_data_ko_prop)
-allow netmgrd self:qipcrtr_socket create_socket_perms_no_ioctl;
+# socket ioctls defined in the kernel in include/uapi/linux/msm_ipc.h
+define(`IPC_ROUTER_IOCTL_GET_VERSION', `0x0000c300')
+define(`IPC_ROUTER_IOCTL_GET_MTU', `0x0000c301')
+define(`IPC_ROUTER_IOCTL_LOOKUP_SERVER', `0x0000c302')
+define(`IPC_ROUTER_IOCTL_GET_CURR_PKT_SIZE', `0x0000c303')
+define(`IPC_ROUTER_IOCTL_BIND_CONTROL_PORT', `0x0000c304')
+define(`IPC_ROUTER_IOCTL_CONFIG_SEC_RULES', `0x0000c305')

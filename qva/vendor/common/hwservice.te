@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -24,6 +24,19 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# Allow access to net_admin ioctls
-allowxperm bluetooth self:udp_socket ioctl priv_sock_ioctls;
-get_prop(bluetooth, vendor_bluetooth_prop)
+
+type hal_iop_hwservice, hwservice_manager_type;
+type hal_mirrorlink_hwservice, hwservice_manager_type;
+type hal_pasrmanager_hwservice, hwservice_manager_type;
+type wifidisplayhalservice_hwservice , hwservice_manager_type;
+type hal_alarm_qti_hwservice , hwservice_manager_type;
+type hal_vpp_hwservice , hwservice_manager_type;
+type hal_wigig_hwservice , hwservice_manager_type;
+type hal_wigig_npt_hwservice , hwservice_manager_type;
+type hal_qteeconnector_hwservice , hwservice_manager_type;
+type hal_sensorscalibrate_qti_hwservice , hwservice_manager_type;
+type hal_datafactory_hwservice, hwservice_manager_type;
+type hal_latency_hwservice, hwservice_manager_type;
+type hal_scve_hwservice, hwservice_manager_type;
+type hal_soter_hwservice, hwservice_manager_type;
+type hal_esepowermanager_hwservice, hwservice_manager_type;

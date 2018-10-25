@@ -24,6 +24,17 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# Allow access to net_admin ioctls
-allowxperm bluetooth self:udp_socket ioctl priv_sock_ioctls;
-get_prop(bluetooth, vendor_bluetooth_prop)
+
+type qrtr, domain;
+type qrtr_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(qrtr)
+
+allow qrtr self:{
+    socket
+    qipcrtr_socket
+} create_socket_perms;
+
+allowxperm qrtr self:{ socket qipcrtr_socket } ioctl msm_sock_qrtr_ioctls;
+allow qrtr devpts:chr_file rw_file_perms;
+
+allow qrtr self:capability { net_bind_service };

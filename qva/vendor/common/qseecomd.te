@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -24,6 +24,24 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# Allow access to net_admin ioctls
-allowxperm bluetooth self:udp_socket ioctl priv_sock_ioctls;
-get_prop(bluetooth, vendor_bluetooth_prop)
+
+allow tee ssd_device:blk_file rw_file_perms;
+# Allow access to qsee_ipc_irq_spss device
+allow tee qsee_ipc_irq_spss_device:chr_file rw_file_perms;
+allow tee tee_device:chr_file rw_file_perms;
+hal_client_domain(tee, hal_soter);
+unix_socket_connect(tee, property, init)
+# Allow access to qsee data file
+allow tee data_qsee_file:dir create_dir_perms;
+allow tee data_qsee_file:file create_file_perms;
+# allow tee access for secure UI to work
+allow tee graphics_device:dir r_dir_perms;
+allow tee graphics_device:chr_file r_file_perms;
+allow tee vendor_data_file:dir r_dir_perms;
+
+wakelock_use(tee)
+r_dir_file(tee, firmware_file)
+allow tee qfp-daemon_data_file:dir create_dir_perms;
+allow tee qfp-daemon_data_file:file create_file_perms;
+allow tee persist_qti_fp_file:dir create_dir_perms;
+allow tee persist_qti_fp_file:file create_file_perms;

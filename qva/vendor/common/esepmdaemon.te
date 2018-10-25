@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,6 +25,29 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow netmgrd to set vendor properties
-set_prop(netmgrd, vendor_data_ko_prop)
-allow netmgrd self:qipcrtr_socket create_socket_perms_no_ioctl;
+type esepmdaemon, domain;
+type esepmdaemon_exec, exec_type, vendor_file_type, file_type;
+
+#Allow for transition from init domain to esepmdaemon
+init_daemon_domain(esepmdaemon)
+
+#Allow esepmdaemon to use Binder IPC
+vndbinder_use(esepmdaemon)
+
+#Allow apps to interact with esepmdaemon
+binder_call(esepmdaemon, system_app)
+
+#Allow esepmdaemon to be registered with service manager
+add_service(esepmdaemon, esepmdaemon_service)
+
+#Allow access to nfc device
+allow esepmdaemon nfc_device:chr_file rw_file_perms;
+
+# Allow esepmdaemon to load firmware images
+r_dir_file(esepmdaemon, firmware_file);
+
+# Allow esepmdaemon to interract with ion_device
+allow esepmdaemon ion_device:chr_file r_file_perms;
+
+# Allow esepmdaemon to interract with qseecom
+allow esepmdaemon tee_device:chr_file rw_file_perms;
