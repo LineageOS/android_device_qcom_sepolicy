@@ -30,3 +30,8 @@ type qmmf_recorder_service,       vndservice_manager_type;
 type qmmf_player_service,         vndservice_manager_type;
 type qmmf_display_service,        vndservice_manager_type;
 type qmmf_system_service,         vndservice_manager_type;
+type per_mgr_service,             vndservice_manager_type;
+type qdisplay_service,            vndservice_manager_type;
+type qseeproxy_service,           vndservice_manager_type;
+type esepmdaemon_service,         vndservice_manager_type;
+type wfdnativemm_service,         vndservice_manager_type;

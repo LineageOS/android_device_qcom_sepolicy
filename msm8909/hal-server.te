@@ -164,3 +164,6 @@ allow hal-server hal_sensors_hwservice:hwservice_manager find;
 allow hal-server hal_audio_hwservice:hwservice_manager find;
 allow hal-server hal_drm_hwservice:hwservice_manager find;
 allow hal_sensors_default  hidl_base_hwservice:hwservice_manager add;
+
+# Permission needed to write property
+set_prop(hal-server,audio_prop);

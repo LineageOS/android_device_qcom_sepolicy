@@ -30,3 +30,6 @@ allow priv_app oemfs:lnk_file { read getattr };
 #for regionalization
 allow priv_app regionalization_file:file r_file_perms;
 allow priv_app regionalization_file:dir r_dir_perms;
+#fpc
+allow priv_app hal_fingerprint_hwservice:hwservice_manager { find };
+hal_client_domain(priv_app, hal_fingerprint);

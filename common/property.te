@@ -77,7 +77,7 @@ type sys_usb_configfs_prop, property_type;
 
 type sys_usb_tethering_prop, property_type;
 
-type coresight_prop, property_type;
+type vendor_coresight_prop, property_type;
 
 
 type ctl_hbtp_prop, property_type;
@@ -138,3 +138,11 @@ type mmi_prop, property_type;
 type ctl_vendor_imsrcsservice_prop, property_type;
 
 type wcnss_prop, property_type;
+
+#qdcmss property
+type vendor_qdcmss_prop, property_type;
+
+type radio_noril_prop, property_type;
+
+#qvr property
+type qvr_prop, property_type;

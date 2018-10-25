@@ -27,3 +27,4 @@
 
 # allow mediacodec to access media.msm8952hw
 allow mediacodec media_msm8956hw_prop:file r_file_perms;
+allow mediacodec media_msm8956_version_prop:file r_file_perms;

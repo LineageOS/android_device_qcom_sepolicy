@@ -1,0 +1,94 @@
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#    * Redistributions of source code must retain the above copyright
+#      notice, this list of conditions and the following disclaimer.
+#    * Redistributions in binary form must reproduce the above
+#      copyright notice, this list of conditions and the following
+#      disclaimer in the documentation and/or other materials provided
+#      with the distribution.
+#    * Neither the name of The Linux Foundation nor the names of its
+#      contributors may be used to endorse or promote products derived
+#      from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# allow mediaserver to communicate with cnd
+#unix_socket_connect(mediaserver, cnd, cnd)
+
+#unix_socket_send(mediaserver, camera, mm-qcamerad)
+
+allow mediaserver tee_device:chr_file rw_file_perms;
+allow mediaserver qdsp_device:chr_file r_file_perms;
+allow mediaserver xdsp_device:chr_file r_file_perms;
+
+allow mediaserver self:socket create_socket_perms_no_ioctl;
+
+binder_call(mediaserver, rild)
+
+#qmux_socket(mediaserver)
+allow mediaserver camera_data_file:sock_file w_file_perms;
+
+userdebug_or_eng(`
+  allow mediaserver camera_data_file:dir rw_dir_perms;
+  allow mediaserver camera_data_file:file create_file_perms;
+  # Access to audio
+  allow mediaserver qti_debugfs:file rw_file_perms;
+')
+
+r_dir_file(mediaserver, sysfs_esoc)
+#allow mediaserver system_app_data_file:file rw_file_perms;
+
+# allow mediaserver to write DTS files
+allow mediaserver dts_data_file:dir rw_dir_perms;
+allow mediaserver dts_data_file:file create_file_perms;
+
+# allow poweroffhandler to binder mediaserver
+binder_call(mediaserver, poweroffhandler);
+
+
+# for thermal sock files
+#unix_socket_connect(mediaserver, thermal, thermal-engine)
+
+#This is required for thermal sysfs access
+r_dir_file(mediaserver, sysfs_thermal);
+
+#allow mediaserver to communicate with timedaemon
+#allow mediaserver time_daemon:unix_stream_socket connectto;
+
+# Allow mediaserver to create socket files for audio arbitration
+allow mediaserver audio_data_file:sock_file { create setattr unlink };
+allow mediaserver audio_data_file:dir remove_name;
+
+# Allow mediaserver to create audio pp files
+allow mediaserver audio_pp_data_file:dir rw_dir_perms;
+allow mediaserver audio_pp_data_file:file create_file_perms;
+
+#Allow mediaserver to set camera  properties
+allow mediaserver camera_prop:property_service set;
+
+#Allow mediaserver access mmi_data_file
+allow mediaserver mmi_data_file:file r_file_perms;
+
+#allow mediaserver to access wfdservice
+binder_call(mediaserver, wfdservice)
+
+#allow mediaserver to access adsprpcd
+r_dir_file(mediaserver, adsprpcd_file);
+
+# allow mediaserver to communicate with bootanim
+binder_call(mediaserver, bootanim);
+
+allow mediaserver surfaceflinger:unix_stream_socket rw_socket_perms;
