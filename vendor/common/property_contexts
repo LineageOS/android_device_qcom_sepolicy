@@ -125,6 +125,9 @@ vendor.debug.egl.swapinterval  u:object_r:public_vendor_default_prop:s0
 vendor.debug.egl.profiler  u:object_r:public_vendor_default_prop:s0
 vendor.debug.rs.           u:object_r:public_vendor_default_prop:s0
 
+#Console configuration to enable
+persist.vendor.console.silent.config u:object_r:console_silent_prop:s0
+
 # cgroup follow
 ro.vendor.qti.cgroup_follow.enable u:object_r:vendor_cgroup_follow_prop:s0
 ro.vendor.qti.cgroup_follow.dex2oat_only u:object_r:vendor_cgroup_follow_prop:s0

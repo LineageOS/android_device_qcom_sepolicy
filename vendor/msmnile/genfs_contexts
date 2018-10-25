@@ -44,6 +44,7 @@ genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-llcc-lat/devfreq u:object
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-llcc-ddr-lat/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-cpu-ddr-latfloor/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-cpu-l3-lat/devfreq u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu7-cpu-l3-lat/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-cpu-llcc-lat/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-llcc-ddr-lat/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,npu-npu-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0

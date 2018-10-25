@@ -251,6 +251,8 @@ type nfc_vendor_data_file, file_type, data_file_type;
 # kgsl file type for sysfs access
 type sysfs_kgsl, sysfs_type, fs_type;
 type sysfs_kgsl_proc, sysfs_type, fs_type;
+type sysfs_kgsl_gpuclk, sysfs_type, fs_type;
+
 # kgsl snapshot file type for sysfs access
 type sysfs_kgsl_snapshot, sysfs_type, fs_type;
 
@@ -318,6 +320,7 @@ type sysfs_fm, sysfs_type, fs_type;
 
 # for adsp to load /sys/kernel/b ot_adsp/boot
 type sysfs_boot_adsp, sysfs_type, fs_type;
+type sysfs_adsp, sysfs_type, fs_type;
 
 # SFS listener data file
 type data_tzstorage_file, file_type, data_file_type;

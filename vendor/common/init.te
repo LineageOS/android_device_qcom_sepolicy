@@ -59,5 +59,4 @@ allow init {
     mdtp_device
 }:{ blk_file lnk_file } relabelto;
 
-domain_trans(init, vendor_init_exec, vendor_init);
 allow init mnt_vendor_file:lnk_file r_file_perms;

@@ -250,3 +250,6 @@ allow qti_init_shell sysfs_android_usb:file rw_file_perms;
 
 # allow read permisison for hvdcp_opti properties
 allow qti_init_shell hvdcp_opti_prop:file r_file_perms;
+
+#Console configuration to enable
+set_prop(qti_init_shell, console_silent_prop)
