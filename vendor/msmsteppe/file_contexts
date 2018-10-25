@@ -149,6 +149,8 @@
 
 # FBE
 /(vendor|system/vendor)/bin/init.qti.qseecomd.sh                                u:object_r:init-qti-fbe-sh_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.can\.sh                                  u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
 
 ##################################
 # same process HAL libs
