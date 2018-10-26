@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,7 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-unix_socket_connect(untrusted_app_25,dpmtcm, dpmd);
-allow untrusted_app_25 dpmtcm_socket:sock_file w_file_perms;
-allow untrusted_app_25 dpmwrapper_socket:sock_file w_file_perms;
-allow untrusted_app_25 dpmd:unix_stream_socket connectto;
+unix_socket_connect(untrusted_app_all, qvrd, qvrd)
+allow untrusted_app_all qvrd:fd use;
