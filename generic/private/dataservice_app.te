@@ -42,4 +42,3 @@ allow dataservice_app radio_data_file:dir create_dir_perms;
 allow dataservice_app radio_data_file:{ file lnk_file } create_file_perms;
 
 hwbinder_use(dataservice_app)
-

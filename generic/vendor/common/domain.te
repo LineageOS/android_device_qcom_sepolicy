@@ -36,7 +36,7 @@ allow domain debugfs_kgsl:dir search;
 
 allow domain debugfs_ion:dir search;
 
-allow domain vendor_gralloc_prop:file r_file_perms;
+get_prop(domain, vendor_gralloc_prop)
 
 r_dir_file({domain - isolated_app}, sysfs_soc);
 r_dir_file({domain - isolated_app}, sysfs_esoc);
