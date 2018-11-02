@@ -33,5 +33,3 @@ userdebug_or_eng(`
   r_dir_file(untrusted_app, seemp_data_file)
   allow untrusted_app seemp_data_file: file w_file_perms;
 ')
-unix_socket_connect(untrusted_app, qvrd, qvrd);
-allow untrusted_app qvrd:fd use;
