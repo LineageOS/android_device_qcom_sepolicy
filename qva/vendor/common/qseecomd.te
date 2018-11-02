@@ -25,7 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow tee ssd_device:blk_file rw_file_perms;
 # Allow access to qsee_ipc_irq_spss device
 allow tee qsee_ipc_irq_spss_device:chr_file rw_file_perms;
 allow tee tee_device:chr_file rw_file_perms;

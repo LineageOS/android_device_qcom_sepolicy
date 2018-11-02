@@ -28,7 +28,6 @@
 type sysfs_usb_controller, sysfs_type, fs_type;
 #type sysfs_qdss_dev;
 type uefi_block_device, dev_type;
-type ssd_device, dev_type;
 #logdump partition
 type logdump_partition, dev_type;
 type mba_debug_dev, dev_type;
