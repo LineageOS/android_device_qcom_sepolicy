@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 typeattribute mirrorlink coredomain;
-type mirrorlink_exec, exec_type, file_type;
+type mirrorlink_exec, exec_type, system_file_type, file_type;
 
 # Allow for transition from init to mirrorlink domain upon executing binary.
 init_daemon_domain(mirrorlink)

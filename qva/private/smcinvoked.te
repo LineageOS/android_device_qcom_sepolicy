@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type smcinvoke_daemon, domain, coredomain;
-type smcinvoke_daemon_exec, exec_type, file_type;
+type smcinvoke_daemon_exec, exec_type, system_file_type, file_type;
 
 init_daemon_domain(smcinvoke_daemon)
 #Allow smcinvoke_daemon to use Binder IPC

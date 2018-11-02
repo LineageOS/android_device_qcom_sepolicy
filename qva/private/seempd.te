@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type seempd, domain, mlstrustedsubject, coredomain;
-type seempd_exec, exec_type, file_type;
+type seempd_exec, exec_type, system_file_type, file_type;
 
 init_daemon_domain(seempd)
 

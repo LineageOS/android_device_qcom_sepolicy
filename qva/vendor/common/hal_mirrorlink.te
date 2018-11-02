@@ -44,4 +44,3 @@ binder_call(hal_mirrorlink_server, hal_mirrorlink_client)
 add_hwservice(hal_mirrorlink_server, hal_mirrorlink_hwservice)
 allow hal_mirrorlink_client hal_mirrorlink_hwservice:hwservice_manager find;
 allow mirrorlink self:netlink_kobject_uevent_socket create;
-#allow mirrorlink vendor_default_prop:file read;
