@@ -34,8 +34,6 @@ allowxperm atfwd self:socket ioctl msm_sock_ipc_ioctls;
 
 binder_call(atfwd, system_app);
 
-r_dir_file(atfwd, sysfs_ssr);
-r_dir_file(atfwd, sysfs_esoc);
 r_dir_file(atfwd, sysfs_data);
 
 set_prop(atfwd, vendor_radio_prop)

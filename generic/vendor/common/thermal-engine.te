@@ -35,7 +35,6 @@ allow thermal-engine self:capability2 block_suspend;
 allow thermal-engine sysfs:dir r_dir_perms;
 
 # This is required for thermal sysfs access
-r_dir_file(thermal-engine, sysfs_thermal)
 allow thermal-engine sysfs_thermal:file w_file_perms;
 
 # Allow to read and write cpufreq sysfs
@@ -58,7 +57,6 @@ allow thermal-engine sysfs_graphics:dir r_dir_perms;
 allow thermal-engine sysfs_graphics:file rw_file_perms;
 allow thermal-engine sysfs_graphics:lnk_file r_file_perms;
 
-r_dir_file(thermal-engine, sysfs_ssr);
 r_dir_file(thermal-engine, sysfs_leds)
 
 allow thermal-engine audio_device:chr_file rw_file_perms;

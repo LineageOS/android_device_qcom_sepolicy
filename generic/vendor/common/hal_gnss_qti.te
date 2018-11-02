@@ -35,9 +35,6 @@ allow hal_gnss sysfs_data:file r_file_perms;
 
 vndbinder_use(hal_gnss_qti)
 
-allow hal_gnss_qti sysfs_soc:dir r_dir_perms;
-allow hal_gnss_qti sysfs_soc:file r_file_perms;
-
 binder_call(hal_gnss_qti, vendor_per_mgr)
 allow hal_gnss_qti vendor_per_mgr_service:service_manager find;
 

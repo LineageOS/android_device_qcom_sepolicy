@@ -47,11 +47,7 @@ allow vendor_per_mgr self:socket create_socket_perms;
 allowxperm vendor_per_mgr self:socket ioctl msm_sock_ipc_ioctls;
 allow vendor_per_mgr ssr_device:chr_file { open read };
 
-# Needed by libmdmdetect to figure out the system configuration
-r_dir_file(vendor_per_mgr, sysfs_esoc)
-
 # Needed by libmdmdetect to get subsystem info and to check their states
-r_dir_file(vendor_per_mgr, sysfs_ssr)
 allow vendor_per_mgr sysfs_data:file r_file_perms;
 
 # Set the peripheral state property

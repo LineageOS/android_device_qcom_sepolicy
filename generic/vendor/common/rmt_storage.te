@@ -52,6 +52,3 @@ allow rmt_storage {
     modem_efs_partition_device
     ssd_block_device
 }:blk_file rw_file_perms;
-
-#sysfs_ssr
-r_dir_file(rmt_storage, sysfs_ssr)

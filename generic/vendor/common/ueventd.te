@@ -38,8 +38,6 @@ allow ueventd {
       sysfs_leds
       sysfs_net
       sysfs_scsi_host
-      sysfs_soc
-      sysfs_thermal
       sysfs_usbpd_device
       sysfs_usb_supply
 }:file w_file_perms;

@@ -87,11 +87,9 @@ set_prop(qti_init_shell, vendor_gpu_prop)
 
 allow qti_init_shell {
     sysfs_devices_system_cpu
-    sysfs_thermal
     sysfs_lowmemorykiller
 }:file w_file_perms;
 
-r_dir_file(qti_init_shell, sysfs_thermal)
 r_dir_file(qti_init_shell, sysfs_type)
 r_dir_file(qti_init_shell, sysfs_devfreq)
 allow qti_init_shell sysfs_devfreq:file w_file_perms;

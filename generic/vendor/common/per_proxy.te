@@ -32,7 +32,5 @@ init_daemon_domain(vendor_per_proxy)
 
 allow vendor_per_proxy vendor_per_mgr_service:service_manager find;
 
-r_dir_file(vendor_per_proxy, sysfs_ssr)
-
 vndbinder_use(vendor_per_proxy)
 binder_call(vendor_per_proxy, vendor_per_mgr)
