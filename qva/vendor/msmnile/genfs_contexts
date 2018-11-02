@@ -25,5 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow hal_gnss self:qipcrtr_socket create_socket_perms_no_ioctl;
-allowxperm hal_gnss self:qipcrtr_socket ioctl msm_sock_ipc_ioctls;
+genfscon sysfs /devices/soc/18800000.qcom,icnss/net                     u:object_r:sysfs_net:s0

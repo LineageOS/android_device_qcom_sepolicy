@@ -38,6 +38,8 @@
 /system/bin/mirrorlinkserver        u:object_r:mirrorlink_exec:s0
 /system/bin/qvrservice              u:object_r:qvrd_exec:s0
 /system/bin/seempd                  u:object_r:seempd_exec:s0
+#/system/bin/dun-server              u:object_r:dun-server_exec:s0
+
 
 ####### data files ################
 /data/misc/mirrorlinkserver(/.*)?   u:object_r:mirrorlink_data_file:s0

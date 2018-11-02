@@ -36,6 +36,7 @@ vendor.qti.hardware.wigig.netperftuner::INetPerfTuner        u:object_r:hal_wigi
 vendor.qti.hardware.qteeconnector::IAppConnector             u:object_r:hal_qteeconnector_hwservice:s0
 vendor.qti.hardware.qteeconnector::IGPAppConnector           u:object_r:hal_qteeconnector_hwservice:s0
 vendor.qti.hardware.mlshal::IMlsDap                          u:object_r:hal_mirrorlink_hwservice:s0
+vendor.qti.hardware.mlshal::IMlsVnc                          u:object_r:hal_mirrorlink_hwservice:s0
 vendor.qti.power.pasrmanager::IPasrManager                   u:object_r:hal_pasrmanager_hwservice:s0
 com.qualcomm.qti.bluetooth_audio::IBluetoothAudio            u:object_r:hal_audio_hwservice:s0
 vendor.qti.gnss::ILocHidlGnss                                u:object_r:hal_gnss_hwservice:s0
@@ -52,3 +53,4 @@ vendor.qti.hardware.scve.panorama::IPanoramaStitching        u:object_r:hal_scve
 vendor.qti.hardware.soter::ISoter                            u:object_r:hal_soter_hwservice:s0
 vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_bluetooth_hwservice:s0
 vendor.qti.esepowermanager::IEsePowerManager                 u:object_r:hal_esepowermanager_hwservice:s0
+vendor.qti.hardware.wifi.supplicant::ISupplicantVendor       u:object_r:hal_wifi_supplicant_hwservice:s0

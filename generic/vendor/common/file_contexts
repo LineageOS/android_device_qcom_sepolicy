@@ -272,8 +272,9 @@
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 
+#TODO: move this to genfs_context or target based file_context
 # sysfs_leds
-/sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-0/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,haptics@c000/leds/vibrator(/.*)?   u:object_r:sysfs_leds:s0
+/sys/devices/platform/soc/[a-f0-9]+.qcom,spmi/spmi-0/spmi0-0[0-9]/[a-f0-9]+.qcom,spmi:qcom,[a-f0-9]+@[0-9]:qcom,haptics@c000/leds/vibrator(/.*)?   u:object_r:sysfs_leds:s0
 
 # sysfs_devfreq
 /sys/devices(/platform)?/soc/soc:qcom,l3-cpu[0-9]/devfreq/soc:qcom,l3-cpu[0-9](/.*)? u:object_r:sysfs_devfreq:s0
@@ -283,10 +284,10 @@
 /sys/devices/virtual/xt_idletimer/timers(/.*)?                      u:object_r:sysfs_data:s0
 
 #persist_bluetooth_file
-/mnt/vendor/persist/bluetooth(/.*)? u:object_r:persist_bluetooth_file:s0
+/mnt/vendor/persist/bluetooth(/.*)?                                 u:object_r:persist_bluetooth_file:s0
 
 
-/(vendor|system/vendor)/bin/hbtp_daemon         u:object_r:hbtp_exec:s0
+/(vendor|system/vendor)/bin/hbtp_daemon                             u:object_r:hbtp_exec:s0
 
 # sysfs_graphics
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:sysfs_graphics:s0
@@ -339,25 +340,25 @@
 /sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes        u:object_r:sysfs_graphics:s0
 /sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/mode         u:object_r:sysfs_graphics:s0
 /sys/module/drm/parameters/vblankoffdelay                           u:object_r:sysfs_graphics:s0
-/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/modes u:object_r:sysfs_graphics:s0
-/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/status u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/modes u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/status u:object_r:sysfs_graphics:s0
 /sys/class/graphics/fb([0-3])+/mdp/caps                             u:object_r:sysfs_graphics:s0
 /sys/class/graphics/fb([0-3])+/ad                                   u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[0-9a-z]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-z]+.qcom,spmi:qcom,pmi[0-9]+@[0-9]+:qcom,leds@[a-z0-9]+(/.*)? u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[0-9a-f]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-f]+.qcom,spmi:qcom,pmi[0-9]+@[0-9]+:qcom,leds@[a-f0-9]+(/.*)? u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/switch/hdmi(/.*)?                              u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
-/sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary.+[a-z0-9]/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/caps           u:object_r:sysfs_graphics:s0
-/sys/devices/soc/[a-z0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:sysfs_graphics:s0
-/sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/bw_mode_bitmap            u:object_r:sysfs_graphics:s0
-/sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/caps                      u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_cam/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_rotator/caps       u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,vidc/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,cci/[a-z0-9]+.qcom,cci:qcom,camera@[0-2]/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/[a-f0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices/soc.0/[a-f0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary.+[a-f0-9]/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/caps           u:object_r:sysfs_graphics:s0
+/sys/devices/soc/[a-f0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/bw_mode_bitmap             u:object_r:sysfs_graphics:s0
+/sys/devices/soc.0/[a-f0-9]+.qcom,mdss_mdp/bw_mode_bitmap            u:object_r:sysfs_graphics:s0
+/sys/devices/soc.0/[a-f0-9]+.qcom,mdss_mdp/caps                      u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_cam/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_rotator/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_rotator/caps       u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,vidc/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,cci/[a-f0-9]+.qcom,cci:qcom,camera@[0-2]/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_graphics:s0
 
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:sysfs_mmc_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/clkscale_enable        u:object_r:sysfs_scsi_host:s0
@@ -366,30 +367,32 @@
 /data/vendor/mediadrm(/.*)?                                         u:object_r:mediadrm_vendor_data_file:s0
 /data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
 
-/sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name u:object_r:sysfs_ssr:s0
+/sys/devices(/platform)?/soc/[a-f0-9\.:]+,[a-f0-9\-\_]+/subsys[0-9]+/name u:object_r:sysfs_ssr:s0
 
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
 
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,usb-pdphy@[0-9]+/usbpd/usbpd[0-9](/.*)? u:object_r:sysfs_usbpd_device:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/usb(/.*)?        u:object_r:sysfs_usb_supply:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/pc_port(/.*)?    u:object_r:sysfs_usb_supply:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.i2c/i2c-[0-9]+/[0-9]+-[0-9]+/[a-z0-9]+.i2c:qcom,[a-z0-9]+@[0-9]:qcom,smb[0-9]+-charger@[0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_usb_supply:s0
-/sys/devices/soc/[a-z0-9]+.ssusb/power_supply/usb(/.*)?             u:object_r:sysfs_usb_supply:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-f0-9]+.qcom,spmi:qcom,[a-f0-9]+@[0-9]:qcom,usb-pdphy@[0-9]+/usbpd/usbpd[0-9](/.*)? u:object_r:sysfs_usbpd_device:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-f0-9]+.qcom,spmi:qcom,[a-f0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/usb(/.*)?        u:object_r:sysfs_usb_supply:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-f0-9]+.qcom,spmi:qcom,[a-f0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/pc_port(/.*)?    u:object_r:sysfs_usb_supply:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.i2c/i2c-[0-9]+/[0-9]+-[0-9]+/[a-f0-9]+.i2c:qcom,[a-f0-9]+@[0-9]:qcom,smb[0-9]+-charger@[0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_usb_supply:s0
+/sys/devices/soc/[a-f0-9]+.ssusb/power_supply/usb(/.*)?             u:object_r:sysfs_usb_supply:s0
 
 /data/(misc|vendor)/hbtp(/.*)?                                      u:object_r:hbtp_log_file:s0
 /vendor/etc/hbtp/*                                                  u:object_r:hbtp_cfg_file:s0
 
 /sys/devices/qpnp-charger.*/power_supply/battery(/.*)?              u:object_r:sysfs_battery_supply:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qpnp,fg/power_supply/bms(/.*)?               u:object_r:sysfs_battery_supply:s0
+# TODO: move this 2 line to target specfic file_contexts/genfs_context
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-f0-9]+.qcom,spmi:qcom,[a-f0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-f0-9]+.qcom,spmi:qcom,[a-f0-9]+@[0-9]:qpnp,fg/power_supply/bms(/.*)?               u:object_r:sysfs_battery_supply:s0
+
 /sys/class/qcom-battery(/.*)?              u:object_r:sysfs_battery_supply:s0
-/sys/devices(/platform)?/soc/qpnp-linear-charger-[a-z0-9]+/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
-/sys/devices(/platform)?/soc/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?    u:object_r:sysfs_battery_supply:s0
-/sys/devices/soc/qpnp-smbcharger-[a-z0-9]+/power_supply/battery(/.*)?        u:object_r:sysfs_battery_supply:s0
-/sys/devices/soc/qpnp-fg-[a-z0-9]+/power_supply/bms(/.*)?           u:object_r:sysfs_battery_supply:s0
-/sys/devices/soc/qpnp-smbcharger-[a-z0-9]+/power_supply/dc(/.*)?    u:object_r:sysfs_battery_supply:s0
-/sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc/qpnp-linear-charger-[a-f0-9]+/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc/qpnp-vm-bms-[a-f0-9]+/power_supply/bms(/.*)?    u:object_r:sysfs_battery_supply:s0
+/sys/devices/soc/qpnp-smbcharger-[a-f0-9]+/power_supply/battery(/.*)?        u:object_r:sysfs_battery_supply:s0
+/sys/devices/soc/qpnp-fg-[a-f0-9]+/power_supply/bms(/.*)?           u:object_r:sysfs_battery_supply:s0
+/sys/devices/soc/qpnp-smbcharger-[a-f0-9]+/power_supply/dc(/.*)?    u:object_r:sysfs_battery_supply:s0
+/sys/devices/soc/[a-f0-9]+.i2c/i2c-[0-9]/[0-9]-[a-f0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_battery_supply:s0
 
 /sys/devices/soc/qpnp-vadc-[0-9]+(/.*)? u:object_r:sysfs_vadc_dev:s0
 

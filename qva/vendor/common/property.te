@@ -27,3 +27,4 @@
 
 type vendor_dataadpl_prop, property_type;
 type spcomlib_prop, property_type;
+type vendor_qdma_prop, property_type;
