@@ -196,3 +196,7 @@ type adsprpc_prop, property_type;
 
 #qvr property
 type qvr_prop, property_type;
+
+#seccam property
+type vendor_seccam_prop, property_type;
+type vendor_core_ctl_prop, property_type;
