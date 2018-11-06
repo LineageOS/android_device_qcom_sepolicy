@@ -382,3 +382,6 @@ type sysfs_qvr_external_sensor, sysfs_type, fs_type;
 
 #kgsl
 type kgsl_debugfs, debugfs_type, fs_type;
+
+# vservices sysfs files
+type sysfs_vservices, sysfs_type, fs_type;
