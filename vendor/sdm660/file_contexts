@@ -151,3 +151,4 @@
 /vendor/lib(64)?/hw/vulkan\.sdm660\.so    u:object_r:same_process_hal_file:s0
 #sysfs
 /sys/devices/soc/caa0000.qcom,jpeg/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_jpeg:s0
+/sys/devices/soc/ca00000.qcom,msm-cam/video4linux/video[0-33]/name(/.*)?  u:object_r:sysfs_jpeg:s0
