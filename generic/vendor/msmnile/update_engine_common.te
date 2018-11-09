@@ -31,7 +31,7 @@ allow update_engine_common {
 	custom_ab_block_device
 	xbl_block_device
 	uefi_block_device
-	ssd_device
+	ssd_block_device
 	modem_block_device
 }:blk_file rw_file_perms;
 
