@@ -63,6 +63,7 @@ type vendor_iop_prop, property_type;
 type public_vendor_default_prop, property_type;
 #Scroll Pre-obtain
 type vendor_scroll_prop, property_type;
+type vendor_dolphin_prop, property_type;
 
 # properties for ActivityManager tuning
 type vendor_am_prop, property_type;

@@ -85,6 +85,7 @@ vendor.perf.iop_v3.enable.debug u:object_r:vendor_iop_prop:s0
 vendor.iop.enable_prefetch_ofr   u:object_r:vendor_iop_prop:s0
 ro.vendor.scroll.preobtain.enable       u:object_r:vendor_scroll_prop:s0
 vendor.perf.gestureflingboost.enable  u:object_r:vendor_scroll_prop:s0
+vendor.perf.dolphin.enable      u:object_r:vendor_dolphin_prop:s0
 vendor.qti.izat.           u:object_r:location_prop:s0
 vendor.usb.                u:object_r:vendor_usb_prop:s0
 persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
