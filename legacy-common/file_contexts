@@ -87,3 +87,6 @@
 
 # LEDs
 /sys/devices/leds-qpnp-[0-9]+/leds(/.*)?                                      u:object_r:sysfs_leds:s0
+
+# CPU/perf
+/sys/module/msm_pm/modes/cpu[0-9](/.*)?                                       u:object_r:sysfs_msm_perf:s0
