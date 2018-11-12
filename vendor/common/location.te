@@ -84,6 +84,14 @@ allowxperm location self:udp_socket ioctl priv_sock_ioctls;
 #access to qdma socket
 qdma_file_socket(location);
 
+# /data/vendor/wifi/
+allow location wifi_vendor_data_file:dir rw_dir_perms;
+
+# /data/vendor/wifi/wpa
+allow location wpa_data_file:dir rw_dir_perms;
+allow location wpa_data_file:sock_file create_file_perms;
+allow location hal_wifi_supplicant_default:unix_dgram_socket sendto;
+
 allow location hal_datafactory_hwservice:hwservice_manager find;
 binder_call(location, cnd)
 get_prop(location, cnd_vendor_prop)
