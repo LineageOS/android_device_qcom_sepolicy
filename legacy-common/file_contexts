@@ -73,3 +73,6 @@
 /(vendor|system/vendor)/bin/hci_qcomm_init                                    u:object_r:bluetooth_loader_exec:s0
 /sys/devices/bt_qca6174\.[0-9]+/extldo                                        u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/bt_qca6174\.[0-9]+/rfkill/rfkill0/state                          u:object_r:sysfs_bluetooth_writable:s0
+
+# Block/storage
+/sys/devices/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/mmc[0-9]:[0-9]+/block/mmcblk[0-9]/stat  u:object_r:sysfs_disk_stat:s0
