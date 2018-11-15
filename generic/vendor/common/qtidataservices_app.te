@@ -24,18 +24,13 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#Add new domain for DataServices
-# Needed for CNEService , uceShimService and other connectivity services
-user=radio seinfo=platform name=.dataservices domain=dataservice_app type=radio_data_file
 
-# A fallback in case tango_core is missing something critical that untrusted_app provides
-user=_app seinfo=tango name=com.google.tango:app domain=untrusted_app type=app_data_file levelFrom=user
+type qtidataservices_app, domain;
+app_domain(qtidataservices_app);
 
-#Needed for time service apk
-user=_app seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file
+add_hwservice(qtidataservices_app, hal_cacert_hwservice)
+hwbinder_use(qtidataservices_app)
 
-# AtFwd app
-user=_app seinfo=platform name=com.qualcomm.telephony domain=qtelephony type=app_data_file levelFrom=all
-
-#add new domain for qtidataservices
-user=radio seinfo=platform name=.qtidataservices domain=qtidataservices_app type=radio_data_file
+allow qtidataservices_app { app_api_service activity_service }:service_manager find;
+allow qtidataservices_app self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow qtidataservices_app radio_data_file:dir r_dir_perms;

@@ -35,6 +35,7 @@ vendor.qti.imsrtpservice::IRTPService                          u:object_r:hal_im
 com.quicinc.cne.api::IApiService                                u:object_r:hal_cne_hwservice:s0
 com.quicinc.cne.server::IServer                                 u:object_r:hal_cne_hwservice:s0
 vendor.qti.hardware.data.connection::IDataConnection            u:object_r:hal_dataconnection_hwservice:s0
+vendor.qti.hardware.cacert::IService                            u:object_r:hal_cacert_hwservice:s0
 vendor.display.config::IDisplayConfig                           u:object_r:hal_display_config_hwservice:s0
 vendor.display.color::IDisplayColor                             u:object_r:hal_display_color_hwservice:s0
 vendor.display.postproc::IDisplayPostproc                       u:object_r:hal_display_postproc_hwservice:s0
