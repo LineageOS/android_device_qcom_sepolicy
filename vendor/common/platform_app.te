@@ -39,3 +39,6 @@ hal_client_domain(platform_app, hal_scve)
 
 #allow platform_app to read vendor_mpctl_prop
 get_prop(platform_app, vendor_mpctl_prop)
+
+#allow biometricsface hw service
+hal_client_domain(platform_app, hal_biometricsface)

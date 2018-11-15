@@ -119,3 +119,7 @@ attribute hal_wifilearner_server;
 attribute hal_seccam;
 attribute hal_seccam_client;
 attribute hal_seccam_server;
+
+attribute hal_biometricsface;
+attribute hal_biometricsface_client;
+attribute hal_biometricsface_server;

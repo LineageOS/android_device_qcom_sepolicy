@@ -201,3 +201,6 @@ type qvr_prop, property_type;
 #seccam property
 type vendor_seccam_prop, property_type;
 type vendor_core_ctl_prop, property_type;
+
+#face3d
+type face3d_producer_prop, property_type;
