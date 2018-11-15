@@ -90,3 +90,6 @@ set_prop(vendor_init, vendor_gpu_prop)
 
 #Access public_vendor_default_prop
 set_prop(vendor_init, public_vendor_default_prop)
+
+# Allow timezone to be overrided by vendor
+set_prop(vendor_init, exported_system_prop)
