@@ -94,6 +94,10 @@ genfscon  sysfs /devices/soc/c200000.qcom,lpass/subsys1/name  u:object_r:sysfs_s
 genfscon  sysfs /devices/soc/a21b000.qcom,pronto/subsys2/name u:object_r:sysfs_ssr:s0
 genfscon  sysfs /devices/soc/4080000.qcom,mss/subsys3/name    u:object_r:sysfs_ssr:s0
 
+#FPC
+genfscon  sysfs /devices/platform/soc/soc:fpc1020 u:object_r:sysfs_fps_attr:s0
+genfscon  sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi632@3:qcom,leds@d000/modalias u:object_r:sysfs_fps_attr:s0
+
 #PM8916 FILES
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:pm8916@0:qcom,vmbms/power_supply/bms u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:pm8916@0:qcom,charger/power_supply/usb u:object_r:sysfs_usb_supply:s0
