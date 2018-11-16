@@ -57,3 +57,4 @@ type hal_mirrorlink_hwservice, hwservice_manager_type;
 type hal_pasrmanager_hwservice, hwservice_manager_type;
 type hal_wifilearner_hwservice, hwservice_manager_type;
 type hal_seccam_hwservice, hwservice_manager_type;
+type hal_biometricsface_hwservice, hwservice_manager_type;
