@@ -85,6 +85,9 @@
 /firmware                  u:object_r:firmware_file:s0
 /bt_firmware               u:object_r:bt_firmware_file:s0
 
+# FBE
+/(vendor|system/vendor)/bin/init.qti.qseecomd.sh            u:object_r:init-qti-fbe-sh_exec:s0
+
 ##################################
 # A/B partitions.
 #EMMC
