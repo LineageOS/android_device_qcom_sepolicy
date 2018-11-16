@@ -98,6 +98,9 @@ binder_call(system_app, seemp_health_daemon)
 # allow system_app to interact with display color hal
 hal_client_domain(system_app, hal_display_color)
 
+# allow system_app to interact with pasr hal
+hal_client_domain(system_app, hal_pasrmanager)
+
 # allow system_app to interact with display postproc hal
 hal_client_domain(system_app, hal_display_postproc)
 
@@ -177,12 +180,6 @@ allow system_app cache_recovery_file:file create_file_perms;
 binder_call( system_app, update_engine )
 
 hal_client_domain(system_app, hal_perf)
-
-#allow only system_app with userdebug to access ioctl
-userdebug_or_eng(`
-  allowxperm system_app self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
-  allow system_app self:{ socket qipcrtr_socket } create_socket_perms;
-')
 
 #allow system app to interact with the esepowermanager
 hal_client_domain(system_app, hal_esepowermanager)

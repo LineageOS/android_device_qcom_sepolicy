@@ -53,6 +53,8 @@ allow hal_sensors input_device:chr_file r_file_perms;
 #following to set the ssr
 allow hal_sensors_default sysfs_slpi:dir search;
 allow hal_sensors_default sysfs_slpi:file w_file_perms;
+allow hal_sensors_default sysfs_adsp:dir search;
+allow hal_sensors_default sysfs_adsp:file w_file_perms;
 
 allow hal_sensors_default sensors_persist_file:file create_file_perms;
 allow hal_sensors_default sensors_persist_file:dir create_dir_perms;

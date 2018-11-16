@@ -24,6 +24,10 @@ allow qti self:socket ioctl;
 allowxperm qti self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 allow qti { vendor_shell_exec system_file }:file rx_file_perms;
 
+#Allow qti to create qti socket
+allow qti dataqti_socket:sock_file create_file_perms;
+allow qti dataqti_socket:dir w_dir_perms;
+
 allow qti sysfs_data:file r_file_perms;
 
 # Allow write permissions for log file

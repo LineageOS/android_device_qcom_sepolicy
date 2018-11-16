@@ -38,3 +38,6 @@ r_dir_file(rmt_storage, sysfs_uio_file)
 
 #sysfs_ssr
 r_dir_file(rmt_storage, sysfs_ssr)
+
+#sysfs_data
+r_dir_file(rmt_storage, sysfs_data)

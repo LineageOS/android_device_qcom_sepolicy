@@ -31,8 +31,8 @@ user=_app seinfo=platform name=com.qualcomm.qti.pdrtesttool levelfrom=all domain
 user=_app seinfo=platform name=com.qualcomm.qti.magcaltool levelfrom=all domain=location_app type=app_data_file
 
 #Add new domain for QSEE sample services
-user=system seinfo=platform name=com.qualcomm.qti.auth.securesampleauthservice domain=qsee_svc_app type=qsee_svc_app_data_file
-user=system seinfo=platform name=com.qualcomm.qti.auth.secureextauthservice domain=qsee_svc_app type=qsee_svc_app_data_file
+user=system seinfo=platform name=com.qualcomm.qti.auth.securesampleauthservice domain=qsee_svc_app type=system_app_data_file
+user=system seinfo=platform name=com.qualcomm.qti.auth.secureextauthservice domain=qsee_svc_app type=system_app_data_file
 
 #Add new domain for pdt apps
 user=system seinfo=platform name=.pdtapps domain=pdt_app type=system_app_data_file
@@ -45,3 +45,6 @@ user=_app seinfo=platform name=com.qti.vtloopback domain=vtloopback_app type=app
 
 #Add new domain for sysmon app
 user=_app seinfo=platform name=com.qualcomm.qti.sysmonappExternal domain=sysmon_app type=app_data_file levelFrom=all
+
+#Add new domain for usta app
+user=system seinfo=platform name=com.qualcomm.qti.usta domain=usta_app type=system_app_data_file

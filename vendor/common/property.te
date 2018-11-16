@@ -23,7 +23,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # property for uicc_daemon
-type uicc_prop, property_type;
 type qcom_ims_prop, property_type;
 type ctl_vendor_qmuxd_prop, property_type;
 type ctl_vendor_netmgrd_prop, property_type;
@@ -31,6 +30,7 @@ type ctl_vendor_port-bridge_prop, property_type;
 type ctl_qcrild_prop, property_type;
 type vendor_tee_listener_prop, property_type;
 type ctl_vendor_rild_prop, property_type;
+type vendor_disable_spu_prop, property_type;
 
 # property for LKCore ctl start
 type ctl_LKCore_prop, property_type;
@@ -39,7 +39,7 @@ type ctl_LKCore_prop, property_type;
 type usf_prop, property_type;
 
 type freq_prop, property_type;
-type vm_bms_prop, property_type; #To start vm_bms
+type vendor_vm_bms_prop, property_type; #To start vm_bms
 type vendor_dataqti_prop, property_type;
 type vendor_dataadpl_prop, property_type;
 type vendor_dataqdp_prop, property_type;
@@ -124,6 +124,9 @@ type vendor_system_prop, property_type;
 # Bluetooth props
 type vendor_bluetooth_prop, property_type;
 
+#Console configuration to enable
+type console_silent_prop, property_type;
+
 # HBTP
 type ctl_vendor_hbtp_prop, property_type;
 
@@ -167,6 +170,9 @@ type vendor_qdcmss_prop, property_type;
 
 # Wifi Softap
 type vendor_softap_prop, property_type;
+
+#wlan-vendor prop
+type vendor_wifi_prop, property_type;
 #mm-parser
 type mm_parser_prop, property_type;
 
@@ -182,3 +188,11 @@ type ctl_vendor_rmt_storage_prop, property_type;
 type vendor_gpu_prop, property_type;
 
 type vendor_data_ko_prop, property_type;
+
+#hvdcp_opti
+type hvdcp_opti_prop, property_type;
+#adsprpc props
+type adsprpc_prop, property_type;
+
+#qvr property
+type qvr_prop, property_type;

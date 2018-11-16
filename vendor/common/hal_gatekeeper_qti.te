@@ -46,3 +46,5 @@ allow hal_gatekeeper_qti sp_keymaster_device:chr_file rw_file_perms;
 allow hal_gatekeeper_qti sp_ssr_device:chr_file rw_file_perms;
 
 get_prop(hal_gatekeeper_qti, spcomlib_prop)
+
+get_prop(hal_gatekeeper_qti, vendor_disable_spu_prop)

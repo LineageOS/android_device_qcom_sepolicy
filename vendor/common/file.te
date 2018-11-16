@@ -10,6 +10,12 @@ type qmuxd_socket, file_type;
 #Define the netmgrd socket type
 type netmgrd_socket, file_type;
 
+#Define the qti socket type
+type dataqti_socket, file_type;
+
+#Define the adpl socket type
+type dataadpl_socket, file_type;
+
 #QTI file types
 type vendor_qti_data_file, file_type, data_file_type;
 
@@ -61,6 +67,9 @@ type msm_irqbalance_socket, file_type;
 type sensors_socket, file_type;
 type sensors_persist_file, file_type, vendor_persist_type;
 type sysfs_sensors, sysfs_type, fs_type;
+
+#Memory offlining file types
+type sysfs_memory_offline, sysfs_type, fs_type;
 
 #VirtualKeys file type
 type sysfs_virtualkeys, sysfs_type, fs_type;
@@ -157,9 +166,6 @@ type sysfs_hsic_host_rdy, sysfs_type, fs_type;
 # Files accessed by qcom-system-daemon
 type sysfs_socinfo, fs_type, sysfs_type;
 
-#Define the sysfs files for usb_uicc_daemon
-type sysfs_usb_uicc, sysfs_type, fs_type;
-
 type qlogd_socket, file_type, mlstrustedobject;
 #Defines the files (configs, dumps, etc) used by display processes
 type display_vendor_data_file, file_type, data_file_type;
@@ -199,9 +205,6 @@ type persist_usf_file, file_type, vendor_persist_type;
 #qfp-daemon
 type qfp-daemon_data_file, file_type, data_file_type;
 type persist_qti_fp_file, file_type, vendor_persist_type;
-
-#qsee_svc_app file types
-type qsee_svc_app_data_file, file_type, data_file_type;
 
 # imshelper_app file types
 type imshelper_app_data_file, file_type, data_file_type;
@@ -254,6 +257,8 @@ type nfc_vendor_data_file, file_type, data_file_type;
 # kgsl file type for sysfs access
 type sysfs_kgsl, sysfs_type, fs_type;
 type sysfs_kgsl_proc, sysfs_type, fs_type;
+type sysfs_kgsl_gpuclk, sysfs_type, fs_type;
+
 # kgsl snapshot file type for sysfs access
 type sysfs_kgsl_snapshot, sysfs_type, fs_type;
 
@@ -321,6 +326,7 @@ type sysfs_fm, sysfs_type, fs_type;
 
 # for adsp to load /sys/kernel/b ot_adsp/boot
 type sysfs_boot_adsp, sysfs_type, fs_type;
+type sysfs_adsp, sysfs_type, fs_type;
 
 # SFS listener data file
 type data_tzstorage_file, file_type, data_file_type;
@@ -370,3 +376,9 @@ type sysfs_usb_controller, sysfs_type, fs_type;
 
 # time data files
 type time_data_file, file_type, data_file_type, core_data_file_type;
+
+#qvrservice sysfs files
+type sysfs_qvr_external_sensor, sysfs_type, fs_type;
+
+#kgsl
+type kgsl_debugfs, debugfs_type, fs_type;

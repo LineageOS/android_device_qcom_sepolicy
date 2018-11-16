@@ -103,3 +103,5 @@ hal_client_domain(hal_graphics_composer_default, hal_perf)
 # Access /dev/graphics/fb0.
 allow hal_graphics_composer graphics_device:chr_file rw_file_perms;
 allow hal_graphics_composer graphics_device:dir r_dir_perms;
+
+allow hal_graphics_composer_default sysfs_jpeg:file r_file_perms;

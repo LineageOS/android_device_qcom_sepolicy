@@ -29,7 +29,6 @@ vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
 #vendor.qcom.bluetooth.     u:object_r:vendor_bluetooth_prop:s0
 #ro.vendor.bt.              u:object_r:vendor_bluetooth_prop:s0
 ro.vendor.bluetooth.       u:object_r:vendor_bluetooth_prop:s0
-sys.usb_uicc.              u:object_r:uicc_prop:s0
 vendor.ims.                u:object_r:qcom_ims_prop:s0
 persist.vendor.ims.disabled       u:object_r:qcom_ims_prop:s0
 vendor.service.qti.ims.enabled    u:object_r:qcom_ims_prop:s0
@@ -54,7 +53,7 @@ persist.vendor.cne.feature        u:object_r:cnd_vendor_prop:s0
 persist.vendor.cne.logging.qxdm   u:object_r:cnd_vendor_prop:s0
 persist.vendor.cnd.        u:object_r:cnd_vendor_prop:s0
 persist.vendor.cnd.wqe     u:object_r:cnd_vendor_prop:s0
-ctl.vm_bms                 u:object_r:vm_bms_prop:s0
+ctl.vendor.vm_bms                 u:object_r:vendor_vm_bms_prop:s0
 ro.vendor.qualcomm.bluetooth.        u:object_r:vendor_bluetooth_prop:s0
 ctl.vendor.ipacm           u:object_r:vendor_ipacm_prop:s0
 ctl.vendor.ipacm-diag      u:object_r:vendor_ipacm-diag_prop:s0
@@ -89,13 +88,14 @@ vendor.perf.gestureflingboost.enable  u:object_r:vendor_scroll_prop:s0
 vendor.qti.izat.           u:object_r:location_prop:s0
 vendor.usb.                u:object_r:vendor_usb_prop:s0
 persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
-ro.vendor.dbg.coresight.cfg_file     u:object_r:vendor_coresight_prop:s0
+ro.vendor.dbg.coresight.   u:object_r:vendor_coresight_prop:s0
 vendor.audio.              u:object_r:vendor_audio_prop:s0
 vendor.voice.              u:object_r:vendor_audio_prop:s0
 persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
 ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
 vendor.audio.debug.        u:object_r:vendor_audio_debug_prop:s0
 ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
+ro.boot.alarmboot          u:object_r:vendor_alarm_boot_prop:s0
 persist.vendor.net.doxlat  u:object_r:vendor_xlat_prop:s0
 persist.vendor.data.dont_use_epc  u:object_r:vendor_dataqdp_prop:s0
 persist.vendor.data.dont_use_npflag  u:object_r:vendor_dataqdp_prop:s0
@@ -103,7 +103,6 @@ persist.vendor.data.profile_update  u:object_r:vendor_dataqdp_prop:s0
 vendor.gralloc.            u:object_r:vendor_gralloc_prop:s0
 vendor.wifi.ftmd.                 u:object_r:vendor_wifi_ftmd_prop:s0
 ro.fota.oem                u:object_r:vendor_default_prop:s0
-ro.build.software.version  u:object_r:vendor_default_prop:s0
 
 # WIGIG
 persist.vendor.wigig.       u:object_r:wigig_prop:s0
@@ -121,7 +120,13 @@ ro.vendor.qti.sys.fw.      u:object_r:vendor_am_prop:s0
 ro.vendor.graphics.memory  u:object_r:public_vendor_default_prop:s0
 vendor.debug.egl.changepixelformat  u:object_r:public_vendor_default_prop:s0
 vendor.debug.prerotation.disable  u:object_r:public_vendor_default_prop:s0
+vendor.dump.gpu.output  u:object_r:public_vendor_default_prop:s0
+vendor.debug.egl.swapinterval  u:object_r:public_vendor_default_prop:s0
+vendor.debug.egl.profiler  u:object_r:public_vendor_default_prop:s0
 vendor.debug.rs.           u:object_r:public_vendor_default_prop:s0
+
+#Console configuration to enable
+persist.vendor.console.silent.config u:object_r:console_silent_prop:s0
 
 # cgroup follow
 ro.vendor.qti.cgroup_follow.enable u:object_r:vendor_cgroup_follow_prop:s0
@@ -134,8 +139,6 @@ ro.vendor.qti.am.reschedule_service u:object_r:reschedule_service_prop:s0
 persist.vendor.graphics.vulkan.disable     u:object_r:graphics_vulkan_prop:s0
 #boot mode property
 vendor.sys.boot_mode              u:object_r:vendor_boot_mode_prop:s0
-# GPU
-ro.vendor.gpu.available_frequencies u:object_r:freq_prop:s0
 # NFC
 vendor.qti.nfc.            u:object_r:nfc_nq_prop:s0
 # LKCore start
@@ -156,6 +159,9 @@ vendor.qti.qdma.        u:object_r:vendor_qdma_prop:s0
 
 #Needed by qsee need to rename this
 vendor.sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
+
+#Disable SPU property
+vendor.gatekeeper.disable_spu u:object_r:vendor_disable_spu_prop:s0
 
 #WiFi Display
 vendor.wfdservice          u:object_r:wfd_service_prop:s0
@@ -195,6 +201,10 @@ vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0
 
 # Wifi Softap
 persist.vendor.wifi.softap.        u:object_r:vendor_softap_prop:s0
+
+#vendor-wlan
+vendor.wlan.  u:object_r:vendor_wifi_prop:s0
+
 #mm-parser
 vendor.mm.enable.qcom_parser       u:object_r:mm_parser_prop:s0
 vendor.qcom_parser.                u:object_r:mm_parser_prop:s0
@@ -227,3 +237,24 @@ vendor.gpu.available_frequencies u:object_r:vendor_gpu_prop:s0
 
 persist.vendor.data.shs_ko_load u:object_r:vendor_data_ko_prop:s0
 persist.vendor.data.perf_ko_load u:object_r:vendor_data_ko_prop:s0
+
+#hvdcp_opti
+persist.vendor.bms               u:object_r:hvdcp_opti_prop:s0
+persist.vendor.chg               u:object_r:hvdcp_opti_prop:s0
+persist.vendor.chg_plcy_mgr      u:object_r:hvdcp_opti_prop:s0
+persist.vendor.cp                u:object_r:hvdcp_opti_prop:s0
+persist.vendor.ctm               u:object_r:hvdcp_opti_prop:s0
+persist.vendor.hvdcp2            u:object_r:hvdcp_opti_prop:s0
+persist.vendor.hvdcp_opti        u:object_r:hvdcp_opti_prop:s0
+persist.vendor.hvdcp             u:object_r:hvdcp_opti_prop:s0
+persist.vendor.pps               u:object_r:hvdcp_opti_prop:s0
+persist.vendor.std-pd            u:object_r:hvdcp_opti_prop:s0
+persist.vendor.tb                u:object_r:hvdcp_opti_prop:s0
+persist.vendor.vin               u:object_r:hvdcp_opti_prop:s0
+persist.vendor.qg                u:object_r:hvdcp_opti_prop:s0
+persist.vendor.soh               u:object_r:hvdcp_opti_prop:s0
+#adsprpc
+vendor.fastrpc.                  u:object_r:adsprpc_prop:s0
+
+#qvr properties
+vendor.qvr                       u:object_r:qvr_prop:s0

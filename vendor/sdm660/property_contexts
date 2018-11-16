@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ctl.vendor.cdsprpcd         u:object_r:vendor_cdsprpcd_prop:s0
+vendor.media.sdm660.version      u:object_r:vendor_media_sdm660_version_prop:s0
