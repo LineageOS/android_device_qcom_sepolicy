@@ -101,6 +101,9 @@ userdebug_or_eng(`
   diag_use(qdmastatsd)
 ')
 
+# for logcat
+unix_socket_connect(qdmastatsd, logdr, logd);
+
 # for dmesg
 #read_logd(qdmastatsd);
 
