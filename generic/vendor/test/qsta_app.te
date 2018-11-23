@@ -1,5 +1,5 @@
 # Copyright (c) 2018, The Linux Foundation. All rights reserved.
-
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
@@ -25,13 +25,26 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_sensorscalibrate_qti_default, domain;
-hal_server_domain(hal_sensorscalibrate_qti_default, hal_sensorscalibrate_qti)
+## qsta_app
+##
+## This file defines the permissions that qsta_apps can carry
 
-type hal_sensorscalibrate_qti_default_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_sensorscalibrate_qti_default)
-r_dir_file(hal_sensorscalibrate_qti_default, mnt_vendor_file)
+type qsta_app, domain;
+app_domain(qsta_app)
+hal_client_domain(qsta_app, hal_perf)
+r_dir_file(qsta_app, persist_sensors_file)
 
-allow hal_sensorscalibrate_qti sysfs_data:file r_file_perms;
-allow hal_sensorscalibrate_qti self:{ socket qipcrtr_socket } create_socket_perms;
-allowxperm hal_sensorscalibrate_qti self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+allow qsta_app {
+  app_api_service
+  surfaceflinger_service
+  audioserver_service
+  mediaserver_service
+}:service_manager find;
+
+userdebug_or_eng(`
+  allow qsta_app diag_device:chr_file { read write open ioctl };
+')
+
+allow qsta_app mnt_vendor_file:dir r_dir_perms;
+allow qsta_app system_app_data_file:dir create_dir_perms;
+allow qsta_app system_app_data_file:file create_file_perms;
