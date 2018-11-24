@@ -26,10 +26,13 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow vendor_init {
+    audio_data_file
     bluetooth_data_file
     camera_data_file
     dhcp_data_file
     media_rw_data_file
+    nfc_data_file
+    radio_data_file
     system_data_file
     tombstone_data_file
 }:dir create_dir_perms;
