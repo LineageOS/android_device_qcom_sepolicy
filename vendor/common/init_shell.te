@@ -257,3 +257,6 @@ allow qti_init_shell hvdcp_opti_prop:file r_file_perms;
 
 #Console configuration to enable
 set_prop(qti_init_shell, console_silent_prop)
+
+# Public readable properties
+get_prop(domain, exported2_default_prop)
