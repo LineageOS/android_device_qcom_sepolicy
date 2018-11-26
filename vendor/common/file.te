@@ -275,7 +275,7 @@ type sysfs_laser, fs_type, sysfs_type;
 
 # QDMA data files
 type vendor_qdma_data_file, file_type, data_file_type;
-type qdma_socket, file_type;
+type qdma_socket, file_type, mlstrustedobject;
 
 # path to debugfs use this whic should be only used
 # in debug builds
