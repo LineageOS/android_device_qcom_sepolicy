@@ -28,6 +28,7 @@ type ctl_vendor_qmuxd_prop, property_type;
 type ctl_vendor_netmgrd_prop, property_type;
 type ctl_vendor_port-bridge_prop, property_type;
 type ctl_qcrild_prop, property_type;
+type ctl_atfwd_prop, property_type;
 type vendor_tee_listener_prop, property_type;
 type ctl_vendor_rild_prop, property_type;
 type vendor_disable_spu_prop, property_type;
