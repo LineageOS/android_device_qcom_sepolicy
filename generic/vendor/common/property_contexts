@@ -24,12 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-persist.vendor.service.bdroid.      u:object_r:vendor_bluetooth_prop:s0
-persist.vendor.bluetooth.  u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.service.bdroid.       u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bluetooth.            u:object_r:vendor_bluetooth_prop:s0
+ro.vendor.bluetooth.                 u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bluetooth.a2dp.       u:object_r:vendor_bluetooth_prop:s0
 vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
-vendor.bluetooth.          u:object_r:vendor_bluetooth_prop:s0
-vendor.bt.                 u:object_r:vendor_bluetooth_prop:s0
-persist.vendor.bt.         u:object_r:vendor_bluetooth_prop:s0
 ctl.vendor.msm_irqbalance  u:object_r:msm_irqbalance_prop:s0
 ctl.vendor.netmgrd         u:object_r:ctl_netmgrd_prop:s0
 ctl.vendor.port-bridge     u:object_r:ctl_port-bridge_prop:s0

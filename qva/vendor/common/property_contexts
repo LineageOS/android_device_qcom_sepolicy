@@ -28,9 +28,6 @@
 ctl.vendor.dataadpl                          u:object_r:vendor_dataadpl_prop:s0
 vendor.spcom.                                u:object_r:spcomlib_prop:s0
 persist.vendor.bt.soc.scram_freqs            u:object_r:vendor_bluetooth_prop:s0
-persist.vendor.bluetooth.a2dp.               u:object_r:vendor_bluetooth_prop:s0
-ro.vendor.bluetooth.                         u:object_r:vendor_bluetooth_prop:s0
-ro.vendor.qualcomm.bluetooth.                u:object_r:vendor_bluetooth_prop:s0
 
 # qdma property
 vendor.qti.qdma.                             u:object_r:vendor_qdma_prop:s0
