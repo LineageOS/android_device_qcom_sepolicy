@@ -40,8 +40,6 @@ r_dir_file(qvrd, sysfs_kgsl)
 # Allow access to ADSP & SLPI
 allow qvrd { ion_device qdsp_device dsp_device xdsp_device }:chr_file r_file_perms;
 
-# Allow access to adsprpcd
-r_dir_file(qvrd, adsprpcd_file);
 get_prop(qvrd, adsprpc_prop)
 
 #

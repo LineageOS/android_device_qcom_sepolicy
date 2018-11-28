@@ -24,8 +24,6 @@ r_dir_file(mediaserver, sysfs_thermal);
 
 binder_call(mediaserver, wfdservice)
 
-#allow mediaserver to access adsprpcd
-r_dir_file(mediaserver, adsprpcd_file);
 #allow mediaserver to access adsprpc_prop
 get_prop(mediaserver, adsprpc_prop)
 

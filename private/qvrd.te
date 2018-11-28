@@ -48,12 +48,6 @@ get_prop(qvrd, hwservicemanager_prop)
 # Allow access to our socket
 allow qvrd qvrd_socket:sock_file rw_file_perms;
 
-#
-# Sensors
-#
-
-# Allow access to adsprpcd
-allow qvrd system_file:dir read;
 
 # Allow access to sensor1 API
 allow qvrd self:socket create_socket_perms_no_ioctl;

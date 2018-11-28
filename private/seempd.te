@@ -36,9 +36,6 @@ allow seempd seemplog_device:chr_file rw_file_perms;
 allow seempd seemp_data_file:dir create_dir_perms;
 allow seempd seemp_data_file:{ file fifo_file } create_file_perms;
 
-# allow seempd to load firmware images
-#r_dir_file(seempd, firmware_file)
-
 #allow access to packages.list
 allow seempd system_data_file:file r_file_perms;
 

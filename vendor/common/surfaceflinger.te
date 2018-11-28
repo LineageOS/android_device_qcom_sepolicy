@@ -7,11 +7,6 @@ binder_call(surfaceflinger, poweroffhandler);
 binder_call(surfaceflinger, location)
 binder_call(surfaceflinger, tee)
 
-# Allows access to dpps daemon in calibration mode
-#unix_socket_connect(surfaceflinger, pps, mm-pp-daemon)
-
-r_dir_file(surfaceflinger, firmware_file)
-
 #Allow access to fastmmi
 binder_call(surfaceflinger, vendor_mmi)
 
