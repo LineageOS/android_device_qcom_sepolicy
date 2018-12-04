@@ -70,3 +70,5 @@ allow hal_audio sysfs_audio:file rw_file_perms;
 allow hal_audio sysfs_audio:dir r_dir_perms;
 
 wakelock_use(hal_audio)
+#Rule to enable sys_nice capability to run FFV thread with real time priority
+allow hal_audio self:capability sys_nice;
