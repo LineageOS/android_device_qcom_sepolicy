@@ -21,7 +21,7 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
     $(LOCAL_PATH)/qva/private
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/genric/vendor/test
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/generic/vendor/test
 endif
 
 endif
