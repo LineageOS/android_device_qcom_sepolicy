@@ -27,6 +27,7 @@
 # for diag over socket
 userdebug_or_eng(`
   allow kernel self:socket create;
+  allow kernel self:qipcrtr_socket create;
   allow kernel debugfs_wlan:dir search;
   allow kernel debugfs_ipc:dir search;
 ')
