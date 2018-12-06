@@ -382,6 +382,3 @@ type sysfs_qvr_external_sensor, sysfs_type, fs_type;
 
 # vservices sysfs files
 type sysfs_vservices, sysfs_type, fs_type;
-
-# vendor biometricsface data file
-type vendor_biometricsface_data_file, file_type, data_file_type;
