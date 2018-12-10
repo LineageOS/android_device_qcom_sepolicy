@@ -37,4 +37,6 @@ permissive pdt_app;
 dontaudit pdt_app service_manager_type:service_manager *;
 dontaudit pdt_app hwservice_manager_type:hwservice_manager *;
 dontaudit pdt_app file_type:dir_file_class_set *;
+allow pdt_app sysfs_battery_supply:dir search;
+allow pdt_app sysfs_battery_supply:lnk_file read;
 ')

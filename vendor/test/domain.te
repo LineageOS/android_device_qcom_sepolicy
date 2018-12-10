@@ -29,7 +29,10 @@ dontaudit {
     system_server
     surfaceflinger
     bootanim
-} vendor_gles_data_file:dir search;
+    system_app
+    platform_app
+    priv_app
+ } vendor_gles_data_file:dir search;
 
 #allow all gpu clients to access configuration settings
 userdebug_or_eng(`
@@ -45,29 +48,39 @@ allow {system_server
  system_app
  mediaserver
  cameraserver
- surfaceflinger} sysfs_kgsl:dir search;
+ surfaceflinger
+ platform_app
+ priv_app} sysfs_kgsl:dir search;
 
 r_dir_file({system_server
  system_app
  mediaserver
  cameraserver
- surfaceflinger}, sysfs_kgsl_snapshot);
+ surfaceflinger
+ platform_app
+ priv_app}, sysfs_kgsl_snapshot);
 
 r_dir_file({system_server
  system_app
  mediaserver
  cameraserver
- surfaceflinger}, system_gles_data_file);
+ surfaceflinger
+ platform_app
+ priv_app}, system_gles_data_file);
 
 allow {system_server
  system_app
  mediaserver
  cameraserver
- surfaceflinger} system_gles_data_file:dir create_dir_perms;
+ surfaceflinger
+ platform_app
+ priv_app} system_gles_data_file:dir create_dir_perms;
 
 allow {system_server
  system_app
  mediaserver
  cameraserver
- surfaceflinger} system_gles_data_file:file create_file_perms;
+ surfaceflinger
+ platform_app
+ priv_app} system_gles_data_file:file create_file_perms;
 ')
