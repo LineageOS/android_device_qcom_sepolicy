@@ -16,9 +16,6 @@ allowxperm system_server self:socket ioctl msm_sock_ipc_ioctls;
 allow system_server sysfs_sensors:dir search;
 allow system_server sysfs_sensors:file rw_file_perms;
 
-#access to gamed
-#unix_socket_connect(system_server, gamed, gamed)
-
 allow system_server {
     # For wifistatemachine
     wbc_service
