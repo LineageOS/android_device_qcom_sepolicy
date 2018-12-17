@@ -52,7 +52,7 @@ allow vendor_scve dsp_device:chr_file rw_file_perms;
 allow vendor_scve gpu_device:chr_file rw_file_perms;
 
 #  Access for sdcard
-userdebug_or_eng('
+userdebug_or_eng(`
 allow vendor_scve sdcard_type:dir rw_dir_perms;
 allow vendor_scve sdcard_type:file create_file_perms;
 ')
