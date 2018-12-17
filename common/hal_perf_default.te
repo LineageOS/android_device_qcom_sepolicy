@@ -68,7 +68,6 @@ allow hal_perf sysfs_kgsl_proc:file r_file_perms;
 allow hal_perf {
     sysfs_devices_system_cpu
     sysfs_mpdecision
-    cpuctl_device
     sysfs_devfreq
     sysfs_mmc_host
     sysfs_scsi_host
@@ -86,7 +85,6 @@ allow hal_perf {
 allow hal_perf {
     sysfs_devices_system_cpu
     sysfs_mpdecision
-    cpuctl_device
     sysfs_kgsl
     sysfs_cpu_boost
     sysfs_msm_perf
