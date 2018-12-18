@@ -44,9 +44,12 @@ r_dir_file(vendor_scve, adsprpcd_file)
 #  Access for ion memory
 allow vendor_scve ion_device:chr_file rw_file_perms;
 
-#  Access for DSP/QDSP device
+#  Access for  DSP/QDSP device
 allow vendor_scve qdsp_device:chr_file rw_file_perms;
 allow vendor_scve dsp_device:chr_file rw_file_perms;
+
+#  Access for adsprpc_prop
+get_prop(vendor_scve, adsprpc_prop)
 
 #  Access for GPU
 allow vendor_scve gpu_device:chr_file rw_file_perms;
