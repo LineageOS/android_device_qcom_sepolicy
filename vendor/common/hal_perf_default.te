@@ -53,7 +53,6 @@ r_dir_file(hal_perf_default, appdomain);
 allow hal_perf {
     sysfs_devices_system_cpu
     sysfs_mpdecision
-    cpuctl_device
     sysfs_devfreq
     sysfs_mmc_host
     sysfs_scsi_host
@@ -71,7 +70,6 @@ allow hal_perf {
 allow hal_perf {
     sysfs_devices_system_cpu
     sysfs_mpdecision
-    cpuctl_device
     sysfs_kgsl
     sysfs_cpu_boost
     sysfs_msm_perf
