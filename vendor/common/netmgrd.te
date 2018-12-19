@@ -47,9 +47,6 @@ qmux_socket(netmgrd);
 #Allow writing of ipv6 network properties
 allow netmgrd { proc_net }:file rw_file_perms;
 
-#Allow execution of commands in shell
-allow netmgrd system_file:file x_file_perms;
-
 allow netmgrd self:socket create_socket_perms;
 
 #Allow communication with netd
