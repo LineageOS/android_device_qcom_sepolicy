@@ -30,4 +30,5 @@
 allow qti_init_shell {
     vendor_media_sm6150_version_prop
     vendor_media_sdmmagpie_version_prop
+    vendor_chre_enabled_prop
 }:property_service set;
