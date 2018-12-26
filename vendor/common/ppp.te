@@ -27,3 +27,7 @@
 
 # allow VPN connection via L2TP
 allow ppp mtp:unix_stream_socket rw_socket_perms;
+allow ppp mtp:pppox_socket rw_socket_perms;
+
+# ioctls needed for VPN
+allowxperm ppp mtp:pppox_socket ioctl ppp_ioctls;

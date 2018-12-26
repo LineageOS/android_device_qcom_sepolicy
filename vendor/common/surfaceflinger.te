@@ -20,6 +20,7 @@ allow surfaceflinger cameraserver_service:service_manager find;
 
 #Allow access to binder callback's to camera hal
 hal_client_domain(surfaceflinger, hal_camera)
+hal_client_domain(surfaceflinger, hal_perf)
 
 #diag
 userdebug_or_eng(`
@@ -29,4 +30,14 @@ userdebug_or_eng(`
 allow surfaceflinger {
     vendor_gralloc_prop
     vendor_display_prop
+    vendor_dolphin_prop
+    sysfs_kgsl
 }:file r_file_perms;
+
+allow surfaceflinger {
+    sysfs_kgsl
+}:dir r_dir_perms;
+
+allow surfaceflinger {
+    sysfs_kgsl
+}:lnk_file r_file_perms;

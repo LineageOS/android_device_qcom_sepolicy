@@ -90,6 +90,7 @@ allowxperm qdmastatsd self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 #access to qdma_socket
 allow qdmastatsd qdma_socket:dir rw_dir_perms;
 allow qdmastatsd qdma_socket:sock_file create_file_perms;
+allow qdmastatsd qdma_app:unix_stream_socket connectto;
 
 # access to /persist/hlos_rfs/shared
 allow qdmastatsd mnt_vendor_file:dir r_dir_perms;
@@ -100,6 +101,9 @@ allow qdmastatsd persist_rfs_shared_hlos_file:file create_file_perms;
 userdebug_or_eng(`
   diag_use(qdmastatsd)
 ')
+
+# for logcat
+unix_socket_connect(qdmastatsd, logdr, logd);
 
 # for dmesg
 #read_logd(qdmastatsd);

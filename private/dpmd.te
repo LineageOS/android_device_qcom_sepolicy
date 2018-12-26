@@ -49,7 +49,7 @@ allow dpmd self:capability {
     net_raw
     net_admin
 };
-
+allow dpmd netutils_wrapper:process sigkill;
 allow dpmd self:capability2 wake_alarm;
 
 r_dir_file(dpmd, appdomain)

@@ -27,3 +27,4 @@
 
 #for oemfs
 allow platform_app oemfs:lnk_file { read getattr };
+hal_client_domain(platform_app, hal_fingerprint);

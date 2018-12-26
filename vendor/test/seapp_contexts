@@ -48,3 +48,6 @@ user=_app seinfo=platform name=com.qualcomm.qti.sysmonappExternal domain=sysmon_
 
 #Add new domain for usta app
 user=system seinfo=platform name=com.qualcomm.qti.usta domain=usta_app type=system_app_data_file
+
+#Add new domain for qsta app
+user=system seinfo=platform name=com.qualcomm.qti.sensors.qsensortest domain=qsta_app type=system_app_data_file

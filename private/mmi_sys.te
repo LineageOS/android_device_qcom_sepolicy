@@ -42,3 +42,5 @@ allow vendor_mmi_sys kmsg_device:chr_file w_file_perms;
 allow vendor_mmi_sys surfaceflinger_service:service_manager find;
 hal_client_domain(vendor_mmi_sys, hal_graphics_allocator)
 allow vendor_mmi_sys vendor_mmi_sys_exec:file execute_no_trans;
+
+allow vendor_mmi_sys gpu_device:chr_file rw_file_perms;

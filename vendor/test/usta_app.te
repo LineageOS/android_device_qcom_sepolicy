@@ -40,6 +40,7 @@ userdebug_or_eng(`
   allow usta_app self:{ socket qipcrtr_socket } create_socket_perms;
   allow usta_app xdsp_device:chr_file r_file_perms;
   allow usta_app ssr_device:chr_file r_file_perms;
+  diag_use(usta_app)
 ')
 
 allow usta_app {

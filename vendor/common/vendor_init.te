@@ -97,3 +97,5 @@ set_prop(vendor_init, hvdcp_opti_prop)
 
 # Allow timezone to be overrided by vendor
 set_prop(vendor_init, exported_system_prop)
+
+allow vendor_init ipa_dev:file create_file_perms;

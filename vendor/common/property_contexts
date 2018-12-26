@@ -41,6 +41,7 @@ ctl.vendor.qmuxd                  u:object_r:ctl_vendor_qmuxd_prop:s0
 ctl.vendor.netmgrd                u:object_r:ctl_vendor_netmgrd_prop:s0
 ctl.vendor.port-bridge            u:object_r:ctl_vendor_port-bridge_prop:s0
 ctl.vendor.qcrild          u:object_r:ctl_qcrild_prop:s0
+ctl.vendor.atfwd           u:object_r:ctl_atfwd_prop:s0
 vendor.min_freq_0                 u:object_r:vendor_mpctl_prop:s0
 vendor.min_freq_4                 u:object_r:vendor_mpctl_prop:s0
 ro.vendor.qti.core_ctl_min_cpu    u:object_r:vendor_mpctl_prop:s0
@@ -85,6 +86,7 @@ vendor.perf.iop_v3.enable.debug u:object_r:vendor_iop_prop:s0
 vendor.iop.enable_prefetch_ofr   u:object_r:vendor_iop_prop:s0
 ro.vendor.scroll.preobtain.enable       u:object_r:vendor_scroll_prop:s0
 vendor.perf.gestureflingboost.enable  u:object_r:vendor_scroll_prop:s0
+vendor.perf.dolphin.enable      u:object_r:vendor_dolphin_prop:s0
 vendor.qti.izat.           u:object_r:location_prop:s0
 vendor.usb.                u:object_r:vendor_usb_prop:s0
 persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
@@ -258,3 +260,7 @@ vendor.fastrpc.                  u:object_r:adsprpc_prop:s0
 
 #qvr properties
 vendor.qvr                       u:object_r:qvr_prop:s0
+
+#seccam hal service
+vendor.seccam_hal_service  u:object_r:vendor_seccam_prop:s0
+vendor.hyp_core_ctl        u:object_r:vendor_core_ctl_prop:s0
