@@ -52,6 +52,8 @@ allow rild vendor_file:file lock;
 
 hal_server_domain(rild, hal_secure_element)
 
+add_hwservice(rild, hal_dataconnection_hwservice)
+
 get_prop(rild, exported3_radio_prop)
 set_prop(rild, vendor_xlat_prop)
 get_prop(rild, vendor_rild_libpath_prop)

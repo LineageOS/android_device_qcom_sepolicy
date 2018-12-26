@@ -60,3 +60,4 @@ allow init {
 }:{ blk_file lnk_file } relabelto;
 
 allow init mnt_vendor_file:lnk_file r_file_perms;
+allow init nativetest_data_file:dir r_dir_perms;

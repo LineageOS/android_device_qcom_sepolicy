@@ -27,3 +27,4 @@
 
 #sysfs emmc dload type
 type sysfs_emmc_dload, sysfs_type, fs_type;
+type sysfs_fps_attr, fs_type, sysfs_type;

@@ -173,6 +173,7 @@
 /(vendor|system/vendor)/bin/init\.qcom\.bt\.sh          u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.early_boot\.sh  u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.class_main\.sh        u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.class_late\.sh        u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.post_boot\.sh   u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sensors\.sh     u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.usb\.sh         u:object_r:qti_init_shell_exec:s0
@@ -334,6 +335,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.mlshal@1\.0-service       u:object_r:hal_mirrorlink_qti_exec:s0
 /(vendor|system/vendor)/bin/hdcp_srm               u:object_r:hdcp_srm_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.power\.pasrmanager\@1\.0-service u:object_r:hal_pasrmanager_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.seccam@1\.0-service-qti u:object_r:hal_seccam_qti_exec:s0
 
 ###################################
 # sysfs files
@@ -525,6 +527,7 @@
 /sys/module/vmpressure(/.*)?                                        u:object_r:sysfs_vmpressure:s0
 /sys/board_properties/virtualkeys.synaptics_dsx                     u:object_r:sysfs_virtualkeys:s0
 /sys/board_properties/virtualkeys.ft5x06_ts                         u:object_r:sysfs_virtualkeys:s0
+/sys/vservices(/.*)?                                                u:object_r:sysfs_vservices:s0
 
 ###################################
 # data files
@@ -718,9 +721,8 @@
 /(vendor|system/vendor)/lib(64)?/liblistenjni\.so          u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/liblistensoundmodel2\.so  u:object_r:same_process_hal_file:s0
 
-# npu files
+# libnpu
 /(vendor|system/vendor)/lib(64)?/libnpu\.so                u:object_r:same_process_hal_file:s0
-/(vendor|system/vendor)/lib(64)?/libaix\.so                u:object_r:same_process_hal_file:s0
 ###################################
 # firmware images
 #
