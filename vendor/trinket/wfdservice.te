@@ -27,4 +27,4 @@
 
 
 #Allow access to read property file
-get_prop(wfdservice,vendor_media_sdmmagpie_version_prop)
+get_prop(wfdservice,vendor_media_trinket_version_prop)
