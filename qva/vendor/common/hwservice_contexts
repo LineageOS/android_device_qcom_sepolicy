@@ -54,3 +54,4 @@ vendor.qti.hardware.soter::ISoter                            u:object_r:hal_sote
 vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_bluetooth_hwservice:s0
 vendor.qti.esepowermanager::IEsePowerManager                 u:object_r:hal_esepowermanager_hwservice:s0
 vendor.qti.hardware.wifi.supplicant::ISupplicantVendor       u:object_r:hal_wifi_supplicant_hwservice:s0
+vendor.qti.hardware.factory::IFactory                        u:object_r:vendor_hal_factory_qti_hwservice:s0

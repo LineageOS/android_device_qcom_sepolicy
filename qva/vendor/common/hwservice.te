@@ -40,3 +40,4 @@ type hal_latency_hwservice, hwservice_manager_type;
 type hal_scve_hwservice, hwservice_manager_type;
 type hal_soter_hwservice, hwservice_manager_type;
 type hal_esepowermanager_hwservice, hwservice_manager_type;
+type vendor_hal_factory_qti_hwservice, hwservice_manager_type;

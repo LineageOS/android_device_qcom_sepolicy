@@ -68,3 +68,7 @@ attribute hal_vpp_server;
 attribute hal_esepowermanager;
 attribute hal_esepowermanager_client;
 attribute hal_esepowermanager_server;
+
+attribute vendor_hal_factory_qti;
+attribute vendor_hal_factory_qti_client;
+attribute vendor_hal_factory_qti_server;

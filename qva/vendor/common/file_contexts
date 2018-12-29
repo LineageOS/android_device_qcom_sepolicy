@@ -37,6 +37,7 @@
 /dev/qbt1000                          u:object_r:qbt1000_device:s0
 /dev/esoc.*                           u:object_r:esoc_device:s0
 /dev/mhi_.*                           u:object_r:mhi_device:s0
+/dev/smem_log                         u:object_r:smem_log_device:s0
 
 ###################################
 # System files
@@ -73,6 +74,9 @@
 /(vendor|system/vendor)/bin/esepmdaemon                                            u:object_r:esepmdaemon_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper                                             u:object_r:mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/ks                                                     u:object_r:mdm_helper_exec:s0
+/(vendor|system/vendor)/bin/mmi                                                    u:object_r:vendor_mmi_exec:s0
+/(vendor|system/vendor)/bin/mmid                                                   u:object_r:vendor_mmi_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service         u:object_r:vendor_hal_factory_qti_default_exec:s0
 
 ###################################
 # data files
@@ -84,3 +88,9 @@
 #
 /mnt/vendor/persist/secnvm(/.*)?      u:object_r:persist_secnvm_file:s0
 /mnt/vendor/persist/qti_fp(/.*)?      u:object_r:persist_qti_fp_file:s0
+/mnt/vendor/persist/FTM_AP(/.*)?      u:object_r:vendor_persist_mmi_file:s0
+
+# same-process HAL files and their dependencies
+#
+# libmmi_jni
+/vendor/lib(64)?/libmmi_jni\.so             u:object_r:same_process_hal_file:s0

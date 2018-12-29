@@ -30,3 +30,12 @@ type spcomlib_prop, property_type;
 type vendor_qdma_prop, property_type;
 type vendor_mdm_helper_prop, property_type;
 type vendor_disable_spu_prop, property_type;
+
+# boot mode property
+type vendor_boot_mode_prop, property_type;
+
+# factory properties
+type ctl_vendor_mmid_prop, property_type;
+
+# mmi
+type vendor_mmi_prop, property_type;
