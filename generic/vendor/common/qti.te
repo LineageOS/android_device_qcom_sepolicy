@@ -33,7 +33,7 @@ net_domain(qti)
 allow qti smd_device:chr_file rw_file_perms;
 allow qti rmnet_device:chr_file rw_file_perms;
 
-allow qti self:socket create_socket_perms;
+allow qti self:{socket qipcrtr_socket} create_socket_perms_no_ioctl;
 allowxperm qti self:socket ioctl msm_sock_ipc_ioctls;
 allow qti { vendor_shell_exec }:file rx_file_perms;
 
