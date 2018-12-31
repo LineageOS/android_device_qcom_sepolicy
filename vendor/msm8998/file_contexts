@@ -94,3 +94,4 @@
 /sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input[0-9]/secure_touch_enable u:object_r:sysfs_securetouch:s0
 #/sys/devices/virtual/graphics/fb([0-3])+/msm_fb_persist_mode                    u:object_r:sysfs_graphics:s0
 /sys/devices/soc/caa0000.qcom,jpeg/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_jpeg:s0
+/sys/devices/soc/8c0000.qcom,msm-cam/video4linux/video[0-33]/name(/.*)?   u:object_r:sysfs_jpeg:s0
