@@ -26,3 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type netmgr_recovery_data_file, file_type, data_file_type;
+
+# secure element file type for data vendor access
+type secure_element_vendor_data_file, file_type, data_file_type;
