@@ -125,7 +125,7 @@ allow qti_init_shell sensors_device:chr_file r_file_perms;
 r_dir_file(qti_init_shell, mnt_vendor_file)
 r_dir_file(qti_init_shell, sensors_persist_file)
 r_dir_file(qti_init_shell, persist_bluetooth_file)
-allow qti_init_shell sensors_persist_file:file setattr;
+allow qti_init_shell sensors_persist_file:{ file fifo_file } { getattr setattr };
 allow qti_init_shell sensors_persist_file:dir setattr;
 
 # To start of selected USF based calculators
