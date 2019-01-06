@@ -130,6 +130,3 @@ persist.vendor.crash.detect        u:object_r:crash_prop:s0
 persist.vendor.mmi.        u:object_r:mmi_prop:s0
 
 ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
-
-wlan.driver.ath            u:object_r:wcnss_prop:s0
-wlan.driver.config         u:object_r:wcnss_prop:s0
