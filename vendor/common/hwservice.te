@@ -39,6 +39,7 @@ type hal_alarm_qti_hwservice, hwservice_manager_type;
 type hal_datafactory_hwservice, hwservice_manager_type;
 type hal_latency_hwservice, hwservice_manager_type;
 type hal_iwlan_hwservice, hwservice_manager_type;
+type hal_cacert_hwservice, hwservice_manager_type;
 type hal_imsrcsd_hwservice, hwservice_manager_type;
 type hal_ipacm_hwservice, hwservice_manager_type;
 type hal_vpp_hwservice, hwservice_manager_type;
