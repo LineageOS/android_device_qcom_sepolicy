@@ -196,6 +196,10 @@
 /vendor/lib(64)?/libhbtpdbgclientjni\.so    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libhbtpjni\.so             u:object_r:same_process_hal_file:s0
 
+# framework detect libs libvndfwk_detect_jni.qti and libqti_vndfwk_detect
+/vendor/lib(64)?/libvndfwk_detect_jni\.qti\.so             u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libqti_vndfwk_detect\.so             u:object_r:same_process_hal_file:s0
+
 # RenderScript dependencies.
 # To test: run cts -m CtsRenderscriptTestCases
 /vendor/lib(64)?/libRSDriver_adreno\.so     u:object_r:same_process_hal_file:s0
