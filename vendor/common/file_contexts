@@ -168,7 +168,8 @@
 /(vendor|system/vendor)/bin/irsc_util                           u:object_r:irsc_util_exec:s0
 /(vendor|system/vendor)/bin/qrtr-cfg                            u:object_r:qrtr_exec:s0
 /(vendor|system/vendor)/bin/qrtr-ns                             u:object_r:qrtr_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.sh              u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.sh               u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.manifest_sku\.sh  u:object_r:qti-manifest_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.class_core\.sh  u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.bt\.sh          u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.early_boot\.sh  u:object_r:qti_init_shell_exec:s0
