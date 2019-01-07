@@ -13,7 +13,7 @@ allow bluetooth_loader vendor_toolbox_exec:file execute_no_trans;
 
 # Set persist.service.bdroid.*, bluetooth.* and get wcnss property values
 set_prop(bluetooth_loader, bluetooth_prop)
-get_prop(bluetooth_loader, wcnss_prop)
+get_prop(bluetooth_loader, vendor_wifi_prop)
 
 # Access the serial device
 allow bluetooth_loader serial_device:chr_file rw_file_perms;
