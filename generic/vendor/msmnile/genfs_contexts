@@ -78,6 +78,7 @@ genfscon sysfs /devices/platform/soc/soc:qcom,wil6210/subsys9/name u:object_r:sy
 genfscon sysfs /devices/platform/soc/soc:qcom,mdm3/subsys9/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:bt_qca6174/extldo u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/platform/soc/soc:bt_qca6174/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,mdm3/esoc0 u:object_r:sysfs_esoc:s0
 
 #hvdcp
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,usb-pdphy@1700/usbpd/usbpd0 u:object_r:sysfs_usbpd_device:s0

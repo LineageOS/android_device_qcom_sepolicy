@@ -1,4 +1,4 @@
-# Copyright (c) 2016, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,9 +24,4 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-type mba_debug_dev, dev_type;
-type dip_device, dev_type;
-type efs_boot_dev, dev_type;
-type logdump_partition, dev_type;
-type rawdump_block_device, dev_type;
+type sensors_dbg_prop, property_type;

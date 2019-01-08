@@ -33,12 +33,16 @@ type usta_app, domain;
 
 app_domain(usta_app)
 hal_client_domain(usta_app, hal_perf)
+get_prop(usta_app, sensors_prop)
 
 #allow only usta_app with userdebug to access ioctl
 userdebug_or_eng(`
+  diag_use(usta_app)
+  get_prop(usta_app, sensors_dbg_prop)
   allowxperm usta_app self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
   allow usta_app self:{ socket qipcrtr_socket } create_socket_perms;
   allow usta_app xdsp_device:chr_file r_file_perms;
+  allow usta_app sysfs_timestamp_switch:file r_file_perms;
 ')
 
 allow usta_app {

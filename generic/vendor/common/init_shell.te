@@ -50,7 +50,7 @@ allow qti_init_shell mnt_vendor_file:file create_file_perms;
 allow qti_init_shell smd_device:chr_file rw_file_perms;
 
 # Run helpers from / or /system without changing domain.
-allow qti_init_shell { system_file rootfs vendor_shell_exec }:file execute_no_trans;
+allow qti_init_shell { rootfs vendor_shell_exec }:file execute_no_trans;
 
 allow qti_init_shell gpu_device:chr_file getattr;
 

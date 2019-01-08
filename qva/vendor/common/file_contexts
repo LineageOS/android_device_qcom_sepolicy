@@ -35,6 +35,8 @@
 /dev/cryptoapp                        u:object_r:cryptoapp_device:s0
 /dev/sec_nvm_.*                       u:object_r:sec_nvm_device:s0
 /dev/qbt1000                          u:object_r:qbt1000_device:s0
+/dev/esoc.*                           u:object_r:esoc_device:s0
+/dev/mhi_.*                           u:object_r:mhi_device:s0
 
 ###################################
 # System files
@@ -69,6 +71,8 @@
 /(vendor|system/vendor)/bin/adpl                                                   u:object_r:adpl_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service           u:object_r:hal_esepowermanager_qti_exec:s0
 /(vendor|system/vendor)/bin/esepmdaemon                                            u:object_r:esepmdaemon_exec:s0
+/(vendor|system/vendor)/bin/mdm_helper                                             u:object_r:mdm_helper_exec:s0
+/(vendor|system/vendor)/bin/ks                                                     u:object_r:mdm_helper_exec:s0
 
 ###################################
 # data files

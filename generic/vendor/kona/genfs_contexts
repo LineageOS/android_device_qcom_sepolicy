@@ -25,13 +25,12 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type init-qti-fbe-sh, domain;
-type init-qti-fbe-sh_exec, exec_type, file_type, vendor_file_type;
-
-init_daemon_domain(init-qti-fbe-sh)
-
-not_full_treble(`allow init-qti-fbe-sh shell_exec:file rx_file_perms;')
-full_treble_only(`allow init-qti-fbe-sh vendor_shell_exec:file rx_file_perms;')
-# execute toybox/toolbox
-not_full_treble(`allow init-qti-fbe-sh toolbox_exec:file rx_file_perms;')
-full_treble_only(`allow init-qti-fbe-sh vendor_toolbox_exec:file rx_file_perms;')
+# subsys nodes
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys1/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys2/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/subsys3/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys4/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys5/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys6/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/esoc0 u:object_r:sysfs_esoc:s0
