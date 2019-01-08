@@ -239,7 +239,7 @@
 /data/vendor/misc/qsee(/.*)?           u:object_r:data_qsee_file:s0
 /data/vendor/tui(/.*)?                 u:object_r:vendor_tui_data_file:s0
 /data/vendor/tzstorage(/.*)?           u:object_r:data_tzstorage_file:s0
-/data/vendor/tombstones/rfs(/.*)?       u:object_r:vendor_tombstone_data_file:s0
+/data/vendor/tombstones(/.*)?       u:object_r:vendor_tombstone_data_file:s0
 
 /data/vendor/mdmhelperdata(/.*)?       u:object_r:vendor_mdmhelperdata_data_file:s0
 /data/vendor/bluetooth(/.*)?           u:object_r:vendor_bt_data_file:s0
