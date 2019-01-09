@@ -190,6 +190,9 @@ get_prop(system_server, vendor_mirrorlink_prop)
 # allow system server to get vendor_audio_prop
 get_prop(system_server, vendor_audio_prop)
 
+# allow system server to get vendor_camera_prop
+get_prop(system_server, vendor_camera_prop)
+
 # allow system_server to access IWifiStats HAL service
 hal_client_domain(system_server, hal_wifilearner)
 
