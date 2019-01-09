@@ -52,4 +52,7 @@ get_prop(system_server, vendor_display_prop)
 # allow system_server to read/acess peripheral manager.
 get_prop(system_server, vendor_per_mgr_state_prop);
 
+# allow system server to get vendor_camera_prop
+get_prop(system_server, vendor_camera_prop)
+
 hal_client_domain(system_server, hal_dataconnection_qti)
