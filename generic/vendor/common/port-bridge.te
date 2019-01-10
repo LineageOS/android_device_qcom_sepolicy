@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -29,10 +29,24 @@ type port-bridge_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(port-bridge)
 
+userdebug_or_eng(`
+  domain_auto_trans(shell, port-bridge_exec, netmgrd)
+  #domain_auto_trans(adbd, port-bridge_exec, netmgrd)
+  diag_use(port-bridge)
+')
+
+# Allow operations on different types of sockets
+allow port-bridge port-bridge:netlink_kobject_uevent_socket { create bind read };
+
+allow port-bridge {
+    # Allow operations on mhi transport
+    mhi_device
+    # Allow operations on ATCoP g-link transport
+    at_device
+}:chr_file rw_file_perms;
+
 #access ipa sysfs node
 allow port-bridge sysfs_data:file r_file_perms;
-
-allow port-bridge at_device:chr_file rw_file_perms;
 
 allow port-bridge port_bridge_data_file:file create_file_perms;
 allow port-bridge port_bridge_data_file:dir w_dir_perms;
