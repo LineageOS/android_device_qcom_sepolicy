@@ -47,6 +47,7 @@ type msm_irqbl_sdm630_prop, property_type;
 type camera_prop, property_type;
 type spcomlib_prop, property_type;
 type sdm_idle_time_prop, property_type;
+type vendor_display_prop, property_type;
 type scr_enabled_prop, property_type;
 type bg_daemon_prop, property_type;
 type bg_boot_complete_prop, property_type;
