@@ -29,3 +29,4 @@ type vendor_dataadpl_prop, property_type;
 type spcomlib_prop, property_type;
 type vendor_qdma_prop, property_type;
 type vendor_mdm_helper_prop, property_type;
+type vendor_disable_spu_prop, property_type;
