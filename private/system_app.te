@@ -37,6 +37,8 @@ allow system_app color_service:service_manager add;
 get_prop(system_app, bluetooth_prop);
 # allow system_app access to Workload Classifier Property
 get_prop(system_app, vendor_wlc_prop);
+set_prop(system_app, vendor_wlc_prop);
+
 # allow system_app to interact with smcinvoke daemon
 binder_call(system_app, smcinvoke_daemon)
 
