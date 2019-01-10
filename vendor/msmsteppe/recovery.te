@@ -25,7 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type netmgr_recovery_data_file, file_type, data_file_type;
-
-# secure element file type for data vendor access
-type secure_element_vendor_data_file, file_type, data_file_type;
+recovery_only(`
+    domain_auto_trans(recovery, qrtr_exec, qrtr)
+    domain_auto_trans(recovery, rfs_access_exec, rfs_access)
+    domain_auto_trans(recovery, rmt_storage_exec, rmt_storage)
+')

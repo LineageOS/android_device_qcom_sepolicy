@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 get_prop(mediacodec, vendor_media_sm6150_version_prop)
-get_prop(mediacodec, vendor_media_sm7150_version_prop)
+get_prop(mediacodec, vendor_media_sdmmagpie_version_prop)
