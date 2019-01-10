@@ -42,3 +42,5 @@ binder_call(dataservice_app, hal_rcsservice)
 r_dir_file(dataservice_app, cnd_data_file)
 
 allow dataservice_app app_api_service:service_manager find;
+
+dontaudit dataservice_app runtime_event_log_tags_file:file map;
