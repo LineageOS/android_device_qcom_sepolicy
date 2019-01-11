@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,5 +25,11 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# qva/hal_gnss_qti.te - generic sepolicy rules for qti value added
+# location hidl
+
+userdebug_or_eng(`
+  get_prop(hal_gnss_qti, vendor_pd_locater_dbg_prop)
+')
+
 allow hal_gnss self:qipcrtr_socket create_socket_perms_no_ioctl;
-allowxperm hal_gnss self:qipcrtr_socket ioctl msm_sock_ipc_ioctls;

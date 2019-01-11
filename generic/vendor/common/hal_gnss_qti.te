@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,19 +24,17 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# generic/hal_gnss_qti.te - generic sepolicy rules for location hidl
+
 type hal_gnss_qti, domain;
 hal_server_domain(hal_gnss_qti, hal_gnss)
 
 type hal_gnss_qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_gnss_qti)
 
-allow hal_gnss sysfs:dir r_dir_perms;
-allow hal_gnss sysfs_data:file r_file_perms;
-
-vndbinder_use(hal_gnss_qti)
-
-binder_call(hal_gnss_qti, vendor_per_mgr)
-allow hal_gnss_qti vendor_per_mgr_service:service_manager find;
+# vendor binder
+use_vendor_per_mgr(hal_gnss_qti)
 
 # /data/vendor/location
 allow hal_gnss_qti location_data_file:fifo_file { open read setattr write };
@@ -46,18 +44,8 @@ allow hal_gnss_qti location_data_file:file create_file_perms;
 # /dev/socket/location
 allow hal_gnss_qti location_socket:sock_file create_file_perms;
 allow hal_gnss_qti location_socket:dir rw_dir_perms;
-
 allow hal_gnss_qti location:unix_stream_socket connectto;
 allow hal_gnss_qti location:unix_dgram_socket sendto;
-
-allow hal_gnss_qti self:socket create_socket_perms;
-allowxperm hal_gnss_qti self:socket ioctl msm_sock_ipc_ioctls;
-
-unix_socket_connect(hal_gnss_qti, netmgrd, netmgrd)
-allow hal_gnss_qti netmgrd_socket:dir search;
-
-allow hal_gnss_qti self:netlink_generic_socket { bind create read };
-allow hal_gnss_qti self:netlink_route_socket { bind create nlmsg_read read write };
 
 # Most HALs are not allowed to use network sockets. QTI library
 # libqdi is used across multiple processes which are clients of

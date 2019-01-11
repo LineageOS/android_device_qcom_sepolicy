@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,11 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type dpmd_socket, file_type, coredomain_socket;
-type dpmd_data_file, file_type, data_file_type, core_data_file_type;
-type dpmwrapper_socket, file_type, coredomain_socket, mlstrustedobject;
-type qvrd_data_file, file_type, data_file_type, core_data_file_type;
-type qvrd_socket, file_type, mlstrustedobject, coredomain_socket;
-type qvrd_hvx_socket, file_type, coredomain_socket;
-type mirrorlink_data_file, file_type, data_file_type, core_data_file_type;
-type mirrorlink_socket, file_type, coredomain_socket;
+# Add new domain for location test apps
+user=_app seinfo=platform name=com.qualcomm.qct.dlt levelfrom=all domain=location_app_test type=app_data_file
+user=_app seinfo=platform name=com.qualcomm.qti.qlogcat levelfrom=all domain=location_app_test type=app_data_file

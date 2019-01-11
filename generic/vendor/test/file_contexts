@@ -69,25 +69,13 @@
 /(vendor|system/vendor)/bin/sampleauthdaemon    u:object_r:fidotest_exec:s0
 /(vendor|system/vendor)/bin/qseeproxysampledaemon u:object_r:qseeproxysample_exec:s0
 
-#Context for location features
-/(vendor|system/vendor)/bin/sdp_test                            u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/icm_test                            u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/pf_test_app                         u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/quipc_ipe_test                      u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/ipead_test                          u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/quipc_iwmm_test                     u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/slimcw_test                         u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/lowi_test           u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/test-lowi-client                    u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/quipc_os_api_test_1                 u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/quipc_os_api_test_2                 u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/loc_api_v02_utt                     u:object_r:location_exec:s0
+#### Context for location test binaries
+/(vendor|system/vendor)/bin/lowi_test                           u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/test-version                        u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/test-pos-tx                         u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/xtwifi-upload-test                  u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/test-fake-ap                        u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/loc_api_app                         u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/test_loc_api_client                 u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/test-fdal                           u:object_r:location_exec:s0
 
 /(vendor|system/vendor)/bin/sns.*               u:object_r:sensors_test_exec:s0
 #for testscripts support

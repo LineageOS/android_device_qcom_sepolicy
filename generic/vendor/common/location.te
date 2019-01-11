@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,6 +24,9 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# generic/location.te - sepolicy rules for generic location modules
+
 # loc_launcher service
 # which launches various other services supporting GPS & Wifi-RTT (LOWI) location
 type location, domain;
@@ -31,37 +34,28 @@ type location_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(location)
 
-# STOPSHIP b/28340421
-# Temporarily grant this permission (for LOWI) and log its use.
-allow location self:capability { net_admin };
-
 allow location self:capability { setgid setuid };
 
 hwbinder_use(location)
+
 get_prop(location, hwservicemanager_prop)
+get_prop(location, cnd_prop)
+#xtra-daemon access to qdma properties
+get_prop(location, vendor_qdma_prop)
+
 allow location fwk_sensor_hwservice:hwservice_manager find;
 binder_call(location, system_server)
-allow location hal_wifi:unix_stream_socket { read write };
+binder_call(location, cnd)
 
 # Enable standard network access (for XTRA download)
 net_domain(location)
 
-# And some additional network access
-allow location self:netlink_generic_socket create_socket_perms_no_ioctl;
-allow location self:netlink_socket create_socket_perms_no_ioctl;
-allowxperm location self:udp_socket ioctl { SIOCGIFINDEX SIOCGIFHWADDR SIOCIWFIRSTPRIV_05 };
-
-allow location sysfs_data:file r_file_perms;
-
-allow location self:socket create_socket_perms;
-# whitelist socket ioctl commands
-allowxperm location self:socket ioctl msm_sock_ipc_ioctls;
+# required for xtra-daemon, slim-daemon.
+allow location self:qipcrtr_socket create_socket_perms_no_ioctl;
 
 dontaudit location kernel:system module_request;
 
-allow location proc_net:file r_file_perms;
-
-# execute /vendor/bin/lowi-server
+# execute permission for location daemons in /vendor/bin/
 allow location location_exec:file rx_file_perms;
 
 # /data/vendor/location
@@ -74,21 +68,25 @@ allow location location_socket:dir rw_dir_perms;
 
 allow location hal_gnss_qti:unix_dgram_socket sendto;
 
-# /data/vendor/wifi/wpa
-allow location wpa_data_file:dir rw_dir_perms;
-
-allow location wpa_data_file:sock_file create_file_perms;
-
-allow location hal_wifi_supplicant_default:unix_dgram_socket sendto;
-
+# permission for read execute location daemons in userdebug mode.
 userdebug_or_eng(`
-  allow location diag_device:chr_file rw_file_perms;
+  allow shell location_exec:file rx_file_perms;
 ')
 
-allow location hal_cne_hwservice:hwservice_manager find;
-binder_call(location, cnd)
+## lowi-server
+##############
+# need net_admin for now. Will be removed once FR51023 is complete.
+allow location self:capability { net_admin };
+# some additional network access
+allow location self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow location self:netlink_socket create_socket_perms_no_ioctl;
+allowxperm location self:udp_socket ioctl lowi_server_ioctls;
+allow location hal_wifi:unix_stream_socket { read write };
 
-allow location hal_cacert_hwservice:hwservice_manager find;
+## xtra-daemon
+##############
+allow location {hal_cacert_hwservice hal_datafactory_hwservice hal_cne_hwservice}:hwservice_manager find;
 binder_call(location, qtidataservices_app)
 
-get_prop(location, vendor_wifi_prop)
+# permission to read hosts file
+allow location system_file:file r_file_perms;
