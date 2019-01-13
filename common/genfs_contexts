@@ -18,4 +18,5 @@ genfscon sysfs /devices/soc/soc:qcom,mincpubw/devfreq u:object_r:sysfs_devfreq:s
 genfscon sysfs /kernel/wcd_cpe0 u:object_r:sysfs_audio:s0
 genfscon sysfs /devices/virtual/thermal u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/virtual/kgsl/kgsl/proc u:object_r:sysfs_kgsl_proc:s0
+genfscon sysfs /devices/virtual/net u:object_r:sysfs_net:s0
 genfscon debugfs /kgsl/proc     u:object_r:kgsl_debugfs:s0
