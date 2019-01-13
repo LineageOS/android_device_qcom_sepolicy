@@ -337,7 +337,7 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/[a-z0-9]+\.i2c:qcom,[a-z0-9]+@[a-z0-9]:qcom,smb[0-9]+-charger@[0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_usb_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+\.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,usb-pdphy@[0-9]+/usbpd/usbpd[0-9](/.*)?      u:object_r:sysfs_usbpd_device:s0
 /sys/devices/platform/battery_current_limit                         u:object_r:sysfs_thermal:s0
-/sys/devices/qpnp-charger.*/power_supply/battery(/.*)?             u:object_r:sysfs_battery_supply:s0
+/sys/devices/qpnp-charger.*/power_supply(/.*)?                      u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+\.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb[0-9]+/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+\.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smbcharger/power_supply/battery(/.*)?   u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+\.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qpnp,fg/power_supply/bms(/.*)?               u:object_r:sysfs_battery_supply:s0
