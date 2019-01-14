@@ -40,6 +40,10 @@
 /sys/devices/[0-9a-f]+\.qcom,mss/subsys[0-9]+/name                            u:object_r:sysfs_ssr:s0
 /sys/devices/[0-9a-f]+\.qcom,pronto/subsys[0-9]+/name                         u:object_r:sysfs_ssr:s0
 /sys/devices/[0-9a-f]+\.qcom,venus/subsys[0-9]+/name                          u:object_r:sysfs_ssr:s0
+/sys/devices/[0-9a-f]+\.qcom,lpass/subsys[0-9]+/restart_level                 u:object_r:sysfs_ssr_toggle:s0
+/sys/devices/[0-9a-f]+\.qcom,mss/subsys[0-9]+/restart_level                   u:object_r:sysfs_ssr_toggle:s0
+/sys/devices/[0-9a-f]+\.qcom,pronto/subsys[0-9]+/restart_level                u:object_r:sysfs_ssr_toggle:s0
+/sys/devices/[0-9a-f]+\.qcom,venus/subsys[0-9]+/restart_level                 u:object_r:sysfs_ssr_toggle:s0
 
 # Camera
 /data/fdAlbum                                                                 u:object_r:camera_data_file:s0
