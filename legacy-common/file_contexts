@@ -30,6 +30,7 @@
 /sys/devices(/platform)?/soc\.0/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?  u:object_r:sysfs_battery_supply:s0
 
 # Graphics
+/sys/devices/mdp\.0/qcom,mdss_fb_primary\.[a-z0-9]+/leds/lcd-backlight(/.*)?  u:object_r:sysfs_graphics:s0
 /sys/devices/mdp\.0/caps                                                      u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc\.0/[a-z0-9]+\.qcom,mdss_mdp/qcom,mdss_fb_primary\.[0-9]+/leds/lcd-backlight(/.*)?  u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc\.0/[a-z0-9]+\.qcom,mdss_mdp/caps                 u:object_r:sysfs_graphics:s0
