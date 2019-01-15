@@ -28,3 +28,4 @@
 #properites for init.qcom.sh script
 type vendor_media_sm6150_version_prop, property_type;
 type vendor_media_sdmmagpie_version_prop, property_type;
+type vendor_chre_enabled_prop, property_type;
