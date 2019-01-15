@@ -90,3 +90,4 @@
 
 # CPU/perf
 /sys/module/msm_pm/modes/cpu[0-9](/.*)?                                       u:object_r:sysfs_msm_perf:s0
+/sys/devices/qcom,cpubw\.[0-9]+/devfreq/qcom,cpubw\.[0-9]+/governor           u:object_r:sysfs_devfreq:s0
