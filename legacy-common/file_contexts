@@ -84,3 +84,6 @@
 
 # USB
 /sys/devices/msm_dwc3/[a-f0-9]+\.dwc3/gadget/lun[0-9]+(/.*)?                  u:object_r:sysfs_android_usb:s0
+
+# LEDs
+/sys/devices/leds-qpnp-[0-9]+/leds(/.*)?                                      u:object_r:sysfs_leds:s0
