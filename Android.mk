@@ -8,7 +8,8 @@ BOARD_SEPOLICY_DIRS := \
        $(LOCAL_PATH)/generic/vendor/common \
        $(LOCAL_PATH)/generic/vendor/$(TARGET_BOARD_PLATFORM) \
        $(LOCAL_PATH)/qva/vendor/$(TARGET_BOARD_PLATFORM) \
-       $(LOCAL_PATH)/qva/vendor/common
+       $(LOCAL_PATH)/qva/vendor/common \
+       $(LOCAL_PATH)/qva/vendor/ssg
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
     $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
