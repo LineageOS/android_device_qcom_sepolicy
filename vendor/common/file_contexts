@@ -673,6 +673,10 @@
 # libmmi_jni
 /vendor/lib(64)?/libmmi_jni\.so             u:object_r:same_process_hal_file:s0
 
+# libqti_vndfwk_detect libs
+/vendor/lib(64)?/libvndfwk_detect_jni\.qti\.so             u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libqti_vndfwk_detect\.so             u:object_r:same_process_hal_file:s0
+
 # Fastcv libs
 /vendor/lib(64)?/libfastcvdsp_stub\.so      u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libfastcvadsp_stub\.so     u:object_r:same_process_hal_file:s0
