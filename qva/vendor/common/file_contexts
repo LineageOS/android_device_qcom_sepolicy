@@ -28,6 +28,7 @@
 ###################################
 #Dev nodes
 #
+/dev/hsicctl.*                        u:object_r:hsic_device:s0
 /dev/sp_kernel                        u:object_r:skp_device:s0
 /dev/sp_keymaster                     u:object_r:sp_keymaster_device:s0
 /dev/sp_ssr                           u:object_r:sp_ssr_device:s0
@@ -68,6 +69,7 @@
 /(vendor|system/vendor)/bin/qrtr-ns                                                u:object_r:qrtr_exec:s0
 /(vendor|system/vendor)/bin/spdaemon                                               u:object_r:spdaemon_exec:s0
 /(vendor|system/vendor)/bin/sec_nvm                                                u:object_r:sec_nvm_exec:s0
+/(vendor|system/vendor)/bin/hostapd_cli                                            u:object_r:hostapd_exec:s0
 /(vendor|system/vendor)/bin/qcom-system-daemon                                     u:object_r:vendor_qcomsysd_exec:s0
 /(vendor|system/vendor)/bin/vppservice                                             u:object_r:vendor_vppservice_exec:s0
 /(vendor|system/vendor)/bin/wifidisplayhalservice                                  u:object_r:wifidisplayhalservice_qti_exec:s0
@@ -91,7 +93,12 @@
 ###################################
 # data files
 #
-/data/vendor/misc/qti_fp(/.*)?        u:object_r:qfp-daemon_data_file:s0
+/data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
+/data/vendor/wifi(/.*)?                                             u:object_r:wifi_vendor_data_file:s0
+/data/vendor/wifi/sockets(/.*)?                                     u:object_r:wifi_vendor_wpa_socket:s0
+/data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wifi_vendor_wpa_socket:s0
+/data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:wifi_vendor_wpa_socket:s0
+/data/vendor/dataqti(/.*)?                                          u:object_r:vendor_qti_data_file:s0
 
 ###################################
 # persist files

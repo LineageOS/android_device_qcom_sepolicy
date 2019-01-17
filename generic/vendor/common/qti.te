@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -30,11 +30,11 @@ type qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(qti)
 net_domain(qti)
 
+allow qti self:{ qipcrtr_socket } rw_socket_perms_no_ioctl;
+
 allow qti smd_device:chr_file rw_file_perms;
 allow qti rmnet_device:chr_file rw_file_perms;
 
-allow qti self:{socket qipcrtr_socket} create_socket_perms_no_ioctl;
-allowxperm qti self:socket ioctl msm_sock_ipc_ioctls;
 allow qti { vendor_shell_exec }:file rx_file_perms;
 
 #diag

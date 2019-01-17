@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,45 +24,31 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type hal_rcsservice, domain;
-type hal_rcsservice_exec, exec_type, vendor_file_type, file_type;
 
-# Started by init
-init_daemon_domain(hal_rcsservice)
-net_domain(hal_rcsservice)
+# userspace wifi access points
+type hostapd, domain;
+type hostapd_exec, exec_type, vendor_file_type, file_type;
 
-allow hal_rcsservice self:{ qipcrtr_socket } rw_socket_perms_no_ioctl;
-
-get_prop(hal_rcsservice, ims_prop)
-set_prop(hal_rcsservice, ims_prop)
-
-# To register imsrcsd to hwBinder
-hwbinder_use(hal_rcsservice)
-# add IUceSerive and IService to Hidl interface
-add_hwservice(hal_rcsservice, hal_imsrcsd_hwservice)
-add_hwservice(hal_rcsservice, hal_imscallinfo_hwservice)
-
-get_prop(hal_rcsservice, hwservicemanager_prop)
-
-allow hal_rcsservice sysfs_timestamp_switch:file r_file_perms;
-allow hal_rcsservice sysfs_data:file r_file_perms;
-
-#required for socket creation
-unix_socket_connect(hal_rcsservice, ims, ims)
-
-# imsrcsd to bind with UceShimService.apk
-binder_call(hal_rcsservice, dataservice_app)
-
-# imsrcsd needs read/write access to devpts
-allow hal_rcsservice devpts:chr_file rw_file_perms;
-
-# allow imsrcsd capabilities
-wakelock_use(hal_rcsservice)
-allow hal_rcsservice self:capability net_bind_service;
+binder_call(hostapd, cnd)
+unix_socket_connect(hostapd, cnd, cnd)
+unix_socket_send(hostapd, cnd, cnd)
+allow hostapd cnd:{
+          fifo_file
+          netlink_route_socket
+          netlink_tcpdiag_socket
+          unix_stream_socket
+          unix_dgram_socket} { read write };
+allow hostapd cnd:fifo_file r_file_perms;
+allow hostapd smem_log_device:chr_file rw_file_perms;
+allow hostapd wifi_vendor_data_file:dir w_dir_perms;
+allow hostapd wifi_vendor_data_file:file create_file_perms;
+allow hostapd hostapd_data_file:dir w_dir_perms;
+allow hostapd hostapd_data_file:sock_file create_file_perms;
+allow hostapd wifi_vendor_wpa_socket:dir r_dir_perms;
+allow hostapd wifi_vendor_wpa_socket:sock_file rw_file_perms;
 
 #diag
 userdebug_or_eng(`
-  diag_use(hal_rcsservice)
+    diag_use(hostapd)
+    unix_socket_send(hostapd, wifi_vendor_wpa, su)
 ')
-
-set_prop(hal_rcsservice, ctl_vendor_imsrcsservice_prop)

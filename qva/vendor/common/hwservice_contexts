@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -45,7 +45,6 @@ vendor.qti.hardware.sensorscalibrate::ISensorsCalibrate      u:object_r:hal_sens
 com.qualcomm.qti.imscmservice::IImsCmService                 u:object_r:hal_imsrcsd_hwservice:s0
 vendor.qti.hardware.fingerprint::IQtiExtendedFingerprint     u:object_r:hal_fingerprint_hwservice:s0
 vendor.qti.hardware.radio.qtiradio::IQtiRadio                u:object_r:hal_telephony_hwservice:s0
-vendor.qti.data.factory::IFactory                            u:object_r:hal_datafactory_hwservice:s0
 vendor.qti.hardware.data.latency::ILinkLatency               u:object_r:hal_latency_hwservice:s0
 vendor.qti.hardware.scve.objecttracker::IObjectTracker       u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.scve.panorama::IPanoramaStitching        u:object_r:hal_scve_hwservice:s0

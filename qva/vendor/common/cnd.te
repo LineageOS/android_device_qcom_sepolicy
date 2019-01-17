@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,45 +24,48 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type hal_rcsservice, domain;
-type hal_rcsservice_exec, exec_type, vendor_file_type, file_type;
 
-# Started by init
-init_daemon_domain(hal_rcsservice)
-net_domain(hal_rcsservice)
+set_prop(cnd, cnd_vendor_prop)
 
-allow hal_rcsservice self:{ qipcrtr_socket } rw_socket_perms_no_ioctl;
+net_domain(cnd)
 
-get_prop(hal_rcsservice, ims_prop)
-set_prop(hal_rcsservice, ims_prop)
+allow cnd smem_log_device:chr_file rw_file_perms;
 
-# To register imsrcsd to hwBinder
-hwbinder_use(hal_rcsservice)
-# add IUceSerive and IService to Hidl interface
-add_hwservice(hal_rcsservice, hal_imsrcsd_hwservice)
-add_hwservice(hal_rcsservice, hal_imscallinfo_hwservice)
+# allow cnd the following capability
+allow cnd self:capability {
+    net_admin
+};
 
-get_prop(hal_rcsservice, hwservicemanager_prop)
+allow cnd self:{
+    netlink_tcpdiag_socket
+    netlink_route_socket
+} create_socket_perms_no_ioctl;
 
-allow hal_rcsservice sysfs_timestamp_switch:file r_file_perms;
-allow hal_rcsservice sysfs_data:file r_file_perms;
+# allow cnd to access wpa_socket
+allow cnd wifi_vendor_data_file:dir r_dir_perms;
+allow cnd wifi_vendor_wpa_socket:sock_file write;
 
-#required for socket creation
-unix_socket_connect(hal_rcsservice, ims, ims)
+#allow cnd daemon to invoke hostapd_cli
+allow cnd vendor_shell_exec:file rx_file_perms;
+domain_auto_trans(cnd, hostapd_exec, hostapd)
+allow cnd hostapd_socket:dir r_dir_perms;
+unix_socket_send(cnd, hostapd, hostapd)
 
-# imsrcsd to bind with UceShimService.apk
-binder_call(hal_rcsservice, dataservice_app)
+# only allow getopt for appdomain
+allow appdomain zygote:unix_dgram_socket getopt;
+dontaudit { domain -appdomain } zygote:unix_dgram_socket getopt;
 
-# imsrcsd needs read/write access to devpts
-allow hal_rcsservice devpts:chr_file rw_file_perms;
+allow cnd self:socket create_socket_perms_no_ioctl;
 
-# allow imsrcsd capabilities
-wakelock_use(hal_rcsservice)
-allow hal_rcsservice self:capability net_bind_service;
+allowxperm cnd self:udp_socket ioctl wlan_sock_ioctls;
 
-#diag
+add_hwservice(cnd, hal_latency_hwservice)
+
+##############################################################
+#for using public interface vendor.qti.data.factory
+#client should add their domain to cnd.te
+##############################################################
 userdebug_or_eng(`
-  diag_use(hal_rcsservice)
+  binder_call(cnd, radio)
+  diag_use(cnd)
 ')
-
-set_prop(hal_rcsservice, ctl_vendor_imsrcsservice_prop)
