@@ -34,5 +34,64 @@ init_daemon_domain(mirrorlink)
 # Inherit a base set of permissions required for network access.
 net_domain(mirrorlink)
 
+# Allow socket permissions on netlink_kobject_uevent_socket.
+allow mirrorlink self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+# Allow socket permissions on udp_socket.
+allowxperm mirrorlink self:udp_socket ioctl priv_sock_ioctls;
+
+# Allow access to mirrorlink_data_file (/data/misc/mirrorlinkserver)
 allow mirrorlink mirrorlink_data_file:file create_file_perms;
 allow mirrorlink mirrorlink_data_file:dir create_dir_perms;
+
+# Allow read-write permissions to mirrorlink sockets under dev/socket/.
+allow mirrorlink mirrorlink_socket:sock_file { read write };
+
+# Allow local socket connection from mirrorlink domain to netd domain via netd_socket.
+unix_socket_connect(mirrorlink, netd, netd);
+
+# Allow read-write access to proc net device.
+allow mirrorlink proc_net:file rw_file_perms;
+
+# Allow read-only access to ion device.
+allow mirrorlink ion_device:chr_file r_file_perms;
+
+# Allow read-write access to gpu device.
+allow mirrorlink gpu_device:chr_file rw_file_perms;
+
+# Allow read-write access to uhid device for HID event injection.
+allow mirrorlink uhid_device:chr_file rw_file_perms;
+
+# Allow binder IPC with surfaceflinger, audioserver, mediametrics and system_app services.
+allow mirrorlink audioserver_service:service_manager find;
+allow mirrorlink surfaceflinger_service:service_manager find;
+allow mirrorlink mediametrics_service:service_manager find;
+binder_use(mirrorlink);
+binder_call(mirrorlink, surfaceflinger);
+binder_call(mirrorlink, audioserver);
+binder_call(mirrorlink, system_app);
+
+# Allow access to PCM sound card.
+allow mirrorlink audio_device:chr_file rw_file_perms;
+allow mirrorlink audio_device:dir r_dir_perms;
+
+# Allow a base set of permissions for mirrorlinkserver to be a client of graphics composer HAL.
+hal_client_domain(mirrorlink, hal_graphics_composer);
+
+# Allow a base set of permissions for mirrorlinkserver to be a client of graphics allocator HAL.
+hal_client_domain(mirrorlink, hal_graphics_allocator);
+
+# Allow RW access to USB properties.
+set_prop(mirrorlink, exported_system_radio_prop);
+
+# Allow access to usb ncm state from net
+r_dir_file(mirrorlink, sysfs_net);
+
+# Allow read access to EGL lib
+allow mirrorlink system_file:dir r_dir_perms;
+
+# Allow access to video encoder device.
+allow mirrorlink video_device:chr_file rw_file_perms;
+
+# Allow read access to mirrorlink specific property type.
+get_prop(mirrorlink, vendor_mirrorlink_prop);
