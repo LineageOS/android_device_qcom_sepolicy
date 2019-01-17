@@ -32,3 +32,50 @@ type qvrd_exec, exec_type, system_file_type, file_type;
 init_daemon_domain(qvrd)
 
 binder_call(qvrd, system_server);
+
+# Allow interracting with qvrd directory
+allow qvrd qvrd_data_file:dir create_dir_perms;
+allow qvrd qvrd_data_file:file create_file_perms;
+
+#Allow hardware binder use
+hwbinder_use(qvrd)
+get_prop(qvrd, hwservicemanager_prop)
+
+# Allow access to our socket
+allow qvrd qvrd_socket:sock_file rw_file_perms;
+
+
+# Allow access to sensor1 API
+allow qvrd self:socket create_socket_perms_no_ioctl;
+
+#
+# Display
+#
+
+# Allow access to /dev/graphics/fb0 for configuring vsync interrupts
+allow qvrd graphics_device:dir r_dir_perms;
+allow qvrd graphics_device:chr_file rw_file_perms;
+
+#
+# Graphics
+#
+
+#Allow hal graphics mapper permissions
+hal_client_domain(qvrd, hal_graphics_composer);
+
+#Allow hal graphics allocator permissions
+hal_client_domain(qvrd, hal_graphics_allocator);
+
+#
+# Scheduler
+#
+
+allow qvrd self:capability { sys_nice };
+userdebug_or_eng(`
+  allow qvrd su:process setsched;
+')
+allow qvrd appdomain:process setsched;
+
+# whitelisting ioctlcmd c302
+allowxperm qvrd self:socket ioctl msm_sock_ipc_ioctls_system;
+allow qvrd self:socket ioctl;

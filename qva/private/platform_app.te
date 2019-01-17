@@ -27,3 +27,15 @@
 
 #allow platform_app to read vendor_camera_prop
 get_prop(platform_app, persist_camera_prop)
+# Allow cneservice to be found
+allow platform_app cne_service:service_manager find;
+
+# Allow dpmservice to be found
+allow platform_app dpmservice:service_manager find;
+allow platform_app { dpmd_socket dpmtcm_socket dpmwrapper_socket }:sock_file w_file_perms;
+allow platform_app dpmd:unix_stream_socket connectto;
+userdebug_or_eng(`
+  r_dir_file(platform_app, seemp_data_file)
+  allow platform_app seemp_data_file: file w_file_perms;
+')
+allow platform_app color_service:service_manager find;
