@@ -27,3 +27,6 @@
 
 type persist_dpm_prop, property_type, extended_core_property_type;
 type persist_camera_prop, property_type, extended_core_property_type;
+
+#MirrorLink
+type vendor_mirrorlink_prop, property_type, extended_core_property_type;
