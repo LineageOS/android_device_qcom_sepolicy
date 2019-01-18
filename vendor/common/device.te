@@ -162,3 +162,6 @@ type npu_device, dev_type;
 
 #define qg char device
 type qg_device, dev_type;
+
+#define qvr external sensor device
+type qvr_external_sensor_device, dev_type;
