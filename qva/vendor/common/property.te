@@ -34,6 +34,9 @@ type vendor_disable_spu_prop, property_type;
 # boot mode property
 type vendor_boot_mode_prop, property_type;
 
+#properties for nfc
+type vendor_nfc_nq_prop, property_type;
+
 # factory properties
 type ctl_vendor_mmid_prop, property_type;
 

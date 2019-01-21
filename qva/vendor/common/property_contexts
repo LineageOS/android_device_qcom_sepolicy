@@ -33,6 +33,9 @@ ctl.vendor.mdm_helper                        u:object_r:vendor_mdm_helper_prop:s
 # qdma property
 vendor.qti.qdma.                             u:object_r:vendor_qdma_prop:s0
 
+# NFC
+vendor.qti.nfc.                              u:object_r:vendor_nfc_nq_prop:s0
+
 #Disable SPU property
 vendor.gatekeeper.disable_spu                u:object_r:vendor_disable_spu_prop:s0
 

@@ -1,4 +1,4 @@
-#Copyright (c) 2016, The Linux Foundation. All rights reserved.
+#Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 #Redistribution and use in source and binary forms, with or without
 #modification, are permitted provided that the following conditions are
@@ -25,13 +25,5 @@
 #OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 #IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type nqnfcinfo, domain;
-type nqnfcinfo_exec, exec_type, vendor_file_type, file_type;
-
-# Started by init
-init_daemon_domain(nqnfcinfo)
-
-set_prop(nqnfcinfo, vendor_nfc_nq_prop);
-
-# Access device nodes inside /dev/nq-nci
-allow nqnfcinfo nfc_device:chr_file rw_file_perms;
+# Get NFC properties
+get_prop(nfc, vendor_nfc_nq_prop)
