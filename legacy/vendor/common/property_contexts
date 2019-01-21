@@ -103,12 +103,10 @@ vendor.wifi.ftmd.                 u:object_r:vendor_wifi_ftmd_prop:s0
 ro.fota.oem                u:object_r:vendor_default_prop:s0
 
 # WIGIG
-persist.vendor.wigig.       u:object_r:wigig_prop:s0
-vendor.wigig.               u:object_r:wigig_prop:s0
-ctl.vendor.wigig_supplicant u:object_r:ctl_vendor_wigigsvc_prop:s0
-ctl.vendor.wigig_hostapd    u:object_r:ctl_vendor_wigigsvc_prop:s0
+vendor.wigig.                                u:object_r:vendor_wigig_prop:s0
+ctl.vendor.wigig_supplicant                  u:object_r:ctl_vendor_wigigsvc_prop:s0
+ctl.vendor.wigig_hostapd                     u:object_r:ctl_vendor_wigigsvc_prop:s0
 
-persist.vendor.fst.         u:object_r:fst_prop:s0
 #HWUI Property
 ro.vendor.hwui.texture_cache_size u:object_r:hwui_prop:s0
 # ActivityManager tuning properties

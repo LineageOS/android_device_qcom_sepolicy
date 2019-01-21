@@ -36,3 +36,10 @@ hal_client_domain(system_server, hal_iop)
 
 # allow system_server to access vendor display property.
 get_prop(system_server, vendor_iop_prop)
+
+# allow WIGIG framework hosted in system_server to access wigig_hal
+hal_client_domain(system_server, hal_wigig)
+# allow WIGIG framework to access network performance tuner
+hal_client_domain(system_server, hal_wigig_npt)
+# allow WIGIG framework access to wil6210 sysfs files like thermal_throttling
+allow system_server sysfs_wigig:file rw_file_perms;

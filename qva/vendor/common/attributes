@@ -84,3 +84,11 @@ attribute hal_cvp_server;
 attribute hal_fm;
 attribute hal_fm_client;
 attribute hal_fm_server;
+
+attribute hal_wigig;
+attribute hal_wigig_client;
+attribute hal_wigig_server;
+
+attribute hal_wigig_npt;
+attribute hal_wigig_npt_client;
+attribute hal_wigig_npt_server;

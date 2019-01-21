@@ -53,3 +53,6 @@ binder_call(system_server, wfdservice);
 userdebug_or_eng(`
   get_prop(system_server, wfd_sys_debug_prop)
 ')
+# Allow system server to access fst,wigig system properties
+get_prop(system_server, wigig_core_prop)
+set_prop(system_server, fst_prop)

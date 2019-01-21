@@ -137,11 +137,6 @@ allow system_server ctl_bootanim_prop:property_service set;
 # allow tethering to access dhcp leases
 r_dir_file(system_server, dhcp_data_file)
 
-# Allow system server to access fst,wigig system properties
-set_prop(system_server, fst_prop)
-get_prop(system_server, fst_prop)
-set_prop(system_server, wigig_prop)
-
 #allow access to fingerprintd data file
 allow system_server fingerprintd_data_file:file { r_file_perms unlink };
 allow system_server fingerprintd_data_file:dir { rw_dir_perms rmdir };

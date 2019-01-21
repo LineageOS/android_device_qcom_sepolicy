@@ -65,3 +65,8 @@ persist.vendor.mmi.                          u:object_r:vendor_mmi_prop:s0
 
 # izat location property
 vendor.qti.izat.                             u:object_r:location_prop:s0
+# WIGIG
+vendor.wigig.                                u:object_r:vendor_wigig_prop:s0
+ctl.vendor.wigig_supplicant                  u:object_r:ctl_vendor_wigigsvc_prop:s0
+ctl.vendor.wigig_hostapd                     u:object_r:ctl_vendor_wigigsvc_prop:s0
+

@@ -24,7 +24,18 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
 
 # Allow write to proc_net.
 allow hal_wifi_supplicant_default proc_net:file write;
-allow hal_wifi_supplicant_default wifi_vendor_data_file:dir rw_dir_perms;
+
+allow hal_wifi_supplicant wifi_vendor_data_file:dir create_dir_perms;
+allow hal_wifi_supplicant wifi_vendor_data_file:file create_file_perms;
+allow hal_wifi_supplicant wifi_vendor_wpa_socket:dir create_dir_perms;
+allow hal_wifi_supplicant wifi_vendor_wpa_socket:sock_file create_file_perms;
+allow hal_wifi_supplicant wigig_vendor_wpa_socket:sock_file rw_file_perms;
+
+allow hal_wifi_supplicant fstman:unix_dgram_socket sendto;
+allow hal_wifi_supplicant wigighalsvc:unix_dgram_socket sendto;
+
+type_transition hal_wifi_supplicant wifi_vendor_data_file:dir wifi_vendor_wpa_socket "wigig_sockets";
