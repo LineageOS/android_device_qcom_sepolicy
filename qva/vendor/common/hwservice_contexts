@@ -25,7 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-vendor.qti.hardware.iop::IIop                                u:object_r:hal_iop_hwservice:s0
 com.qualcomm.qti.wifidisplayhal::IHDCPSession                u:object_r:wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.iop::IIop                                u:object_r:hal_iop_hwservice:s0
 com.qualcomm.qti.wifidisplayhal::IDSManager                  u:object_r:wifidisplayhalservice_hwservice:s0
@@ -40,7 +39,6 @@ vendor.qti.hardware.mlshal::IMlsVnc                          u:object_r:hal_mirr
 vendor.qti.power.pasrmanager::IPasrManager                   u:object_r:hal_pasrmanager_hwservice:s0
 com.qualcomm.qti.bluetooth_audio::IBluetoothAudio            u:object_r:hal_audio_hwservice:s0
 vendor.qti.gnss::ILocHidlGnss                                u:object_r:hal_gnss_hwservice:s0
-vendor.qti.hardware.alarm::IAlarm                            u:object_r:hal_alarm_qti_hwservice:s0
 vendor.nxp.hardware.nfc::INqNfc                              u:object_r:hal_nfc_hwservice:s0
 vendor.qti.hardware.sensorscalibrate::ISensorsCalibrate      u:object_r:hal_sensorscalibrate_qti_hwservice:s0
 com.qualcomm.qti.imscmservice::IImsCmService                 u:object_r:hal_imsrcsd_hwservice:s0
