@@ -28,6 +28,9 @@
 /sys/devices(/platform)?/soc\.0/qpnp-smbcharger-[a-z0-9]+/power_supply/battery(/.*)?  u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc\.0/qpnp-smbcharger-[a-z0-9]+/power_supply/dc(/.*)?  u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc\.0/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?  u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc\.0/[a-f0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-f0-9]+/power_supply/battery(/.*)?  u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc\.0/[a-f0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-f0-9]+/power_supply/qpnp-dc(/.*)?  u:object_r:sysfs_usb_supply:s0
+/sys/devices(/platform)?/soc\.0/[a-f0-9]+\.usb/power_supply/usb(/.*)?         u:object_r:sysfs_usb_supply:s0
 
 # Graphics
 /sys/devices/mdp\.0/qcom,mdss_fb_primary\.[a-z0-9]+/leds/lcd-backlight(/.*)?  u:object_r:sysfs_graphics:s0
