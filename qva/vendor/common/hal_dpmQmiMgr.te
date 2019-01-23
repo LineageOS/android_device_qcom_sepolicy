@@ -1,4 +1,4 @@
-# Copyright (c) 2015, 2017, 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,21 +25,41 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# allow system_app to access netd
-unix_socket_connect(system_app, netd, netd)
-# access to seemp folder
-allow system_app seemp_data_file:dir r_dir_perms;
-allow system_app seemp_data_file:{ file fifo_file } rw_file_perms;
-binder_call(system_app, seempd)
+#dpmQmiMgr as domain
+type hal_dpmQmiMgr, domain;
+type hal_dpmQmiMgr_exec, exec_type, vendor_file_type, file_type;
 
-allow system_app dpmtcm_socket:sock_file w_file_perms;
-allow system_app dpmd:unix_stream_socket connectto;
-allow system_app color_service:service_manager add;
-get_prop(system_app, bluetooth_prop);
-# allow system_app to interact with smcinvoke daemon
-binder_call(system_app, smcinvoke_daemon)
+init_daemon_domain(hal_dpmQmiMgr)
 
-# allow system app to interact with mirrorlinkserver
-binder_call(system_app, mirrorlink);
-# allow system app to connect to mirrorlink_socket
-unix_socket_connect(system_app, mirrorlink, mirrorlink);
+net_domain(hal_dpmQmiMgr)
+
+#Add hal_dpmQMiMgr as hwservice
+add_hwservice(hal_dpmQmiMgr, hal_dpmqmi_hwservice)
+
+#Allow hwbinder usage
+hwbinder_use(hal_dpmQmiMgr)
+
+#Allow to get hwservice_prop
+get_prop(hal_dpmQmiMgr, hwservicemanager_prop)
+
+#Allow binder call from dpmd
+binder_call(hal_dpmQmiMgr,dpmd)
+
+#sysfs_data file permissions
+allow hal_dpmQmiMgr sysfs_data:file r_file_perms;
+
+#Allow reading proc/net entries
+r_dir_file(hal_dpmQmiMgr,proc_net)
+r_dir_file(hal_dpmQmiMgr,proc_net_tcp_udp)
+
+#Allow creating socket and IOCTLs
+allow hal_dpmQmiMgr self:{ socket qipcrtr_socket udp_socket } create_socket_perms_no_ioctl;
+
+#Rules below are needed to communicate with IPC_ROUTER for QMI
+allowxperm hal_dpmQmiMgr self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+allow hal_dpmQmiMgr self:capability net_bind_service;
+allowxperm hal_dpmQmiMgr self:udp_socket ioctl priv_sock_ioctls;
+
+userdebug_or_eng(`
+    diag_use(hal_dpmQmiMgr)
+')

@@ -27,3 +27,4 @@
 
 # Allow write to proc_net.
 allow hal_wifi_supplicant_default proc_net:file write;
+allow hal_wifi_supplicant_default wifi_vendor_data_file:dir rw_dir_perms;

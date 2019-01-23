@@ -1,4 +1,4 @@
-# Copyright (c) 2015, 2017, 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,21 +25,11 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# allow system_app to access netd
-unix_socket_connect(system_app, netd, netd)
-# access to seemp folder
-allow system_app seemp_data_file:dir r_dir_perms;
-allow system_app seemp_data_file:{ file fifo_file } rw_file_perms;
-binder_call(system_app, seempd)
 
-allow system_app dpmtcm_socket:sock_file w_file_perms;
-allow system_app dpmd:unix_stream_socket connectto;
-allow system_app color_service:service_manager add;
-get_prop(system_app, bluetooth_prop);
-# allow system_app to interact with smcinvoke daemon
-binder_call(system_app, smcinvoke_daemon)
-
-# allow system app to interact with mirrorlinkserver
-binder_call(system_app, mirrorlink);
-# allow system app to connect to mirrorlink_socket
-unix_socket_connect(system_app, mirrorlink, mirrorlink);
+add_service(dataservice_app, dpmservice)
+allow dataservice_app system_app_data_file:dir create_dir_perms;
+allow dataservice_app dpmd_socket:sock_file write;
+allow dataservice_app dpmd_data_file:dir rw_dir_perms;
+allow dataservice_app dpmd_data_file:file create_file_perms;
+unix_socket_connect(dataservice_app,dpmd,dpmd);
+set_prop(dataservice_app, persist_dpm_prop)

@@ -50,6 +50,8 @@
 ###################################
 # System files
 #
+
+/(vendor|system/vendor)/bin/dpmQmiMgr                                              u:object_r:hal_dpmQmiMgr_exec:s0
 /vendor/bin/hw/android\.hardware\.keymaster@4\.0-strongbox-service-qti             u:object_r:hal_keymaster_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.drm@1\.1-service.clearkey                        u:object_r:hal_drm_clearkey_exec:s0
 /vendor/bin/hw/vendor\.nxp\.hardware\.nfc@1\.1-service                             u:object_r:hal_nfc_default_exec:s0
