@@ -27,3 +27,6 @@
 
 # kgsl snapshot file type for sysfs access
 type sysfs_kgsl_snapshot, sysfs_type, fs_type;
+
+# path to debugfs. use this only in debug builds
+type qti_debugfs, fs_type, debugfs_type;
