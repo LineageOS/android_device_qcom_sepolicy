@@ -26,3 +26,8 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 hal_client_domain(priv_app, hal_perf)
+
+# TODO(b/123050471): this grants renderscript exec permissions to the
+# priv_app domain
+allow priv_app rs_exec:file rx_file_perms;
+
