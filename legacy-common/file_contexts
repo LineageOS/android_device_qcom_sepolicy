@@ -25,6 +25,7 @@
 # Battery
 /sys/devices(/platform)?/soc\.0/qpnp-fg-[a-z0-9]+/power_supply/bms(/.*)?      u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc\.0/qpnp-linear-charger-[a-z0-9]+/power_supply/battery(/.*)?  u:object_r:sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc\.0/qpnp-linear-charger-[a-z0-9]+/power_supply/usb-parallel(/.*)?  u:object_r:sysfs_usb_supply:s0
 /sys/devices(/platform)?/soc\.0/qpnp-smbcharger-[a-z0-9]+/power_supply/battery(/.*)?  u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc\.0/qpnp-smbcharger-[a-z0-9]+/power_supply/dc(/.*)?  u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc\.0/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?  u:object_r:sysfs_battery_supply:s0
