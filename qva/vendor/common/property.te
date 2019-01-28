@@ -39,3 +39,6 @@ type ctl_vendor_mmid_prop, property_type;
 
 # mmi
 type vendor_mmi_prop, property_type;
+
+# Audio debug props
+type vendor_audio_debug_prop, property_type;

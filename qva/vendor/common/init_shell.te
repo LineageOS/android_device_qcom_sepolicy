@@ -28,3 +28,8 @@
 allow qti_init_shell sysfs_npu:file rw_file_perms;
 set_prop(qti_init_shell, vendor_mdm_helper_prop)
 set_prop(qti_init_shell, vendor_mmi_prop)
+
+userdebug_or_eng(`
+# Needed for starting console in userdebug mode
+set_prop(qti_init_shell, vendor_audio_debug_prop)
+')

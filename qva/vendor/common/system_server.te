@@ -27,3 +27,5 @@
 
 hal_client_domain(system_server, hal_perf)
 hal_client_domain(system_server,hal_bluetooth)
+
+allow system_server proc_audiod:file r_file_perms;
