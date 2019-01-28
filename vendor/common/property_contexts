@@ -230,6 +230,7 @@ ro.vendor.mm-enable-accurate-seek  u:object_r:mm_video_prop:s0
 #vendor-camera
 vendor.camera.aux.packageblacklist u:object_r:vendor_camera_prop:s0
 vendor.camera.aux.packagelist      u:object_r:vendor_camera_prop:s0
+vendor.camera.hal1.packagelist     u:object_r:vendor_camera_prop:s0
 persist.vendor.camera.privapp.list u:object_r:vendor_camera_prop:s0
 
 #rmt_storage
