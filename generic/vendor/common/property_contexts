@@ -28,6 +28,7 @@ persist.vendor.service.bdroid.       u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bluetooth.            u:object_r:vendor_bluetooth_prop:s0
 ro.vendor.bluetooth.                 u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bluetooth.a2dp.       u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bt.a2dp_offload_cap   u:object_r:vendor_bluetooth_prop:s0
 vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
 ctl.vendor.msm_irqbalance  u:object_r:msm_irqbalance_prop:s0
 ctl.vendor.netmgrd         u:object_r:ctl_netmgrd_prop:s0

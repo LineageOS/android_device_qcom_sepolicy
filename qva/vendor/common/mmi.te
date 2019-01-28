@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,9 +25,45 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-hal_client_domain(priv_app, hal_perf)
+type vendor_mmi, domain;
+type vendor_mmi_exec, exec_type, vendor_file_type, file_type;
 
-# TODO(b/123050471): this grants renderscript exec permissions to the
-# priv_app domain
-allow priv_app rs_exec:file rx_file_perms;
+#started by init
+init_daemon_domain(vendor_mmi)
 
+#self capability
+allow vendor_mmi self:{ socket udp_socket } create_socket_perms_no_ioctl;
+allow vendor_mmi self:capability { fowner fsetid kill };
+
+#For various devices
+allow vendor_mmi {
+    sysfs_soc
+    sysfs_devices_system_cpu
+    sysfs_usb_supply
+    sysfs_battery_supply
+    sysfs_power
+    sysfs_graphics
+    sysfs_wake_lock
+}:file rw_file_perms;
+
+#socket
+allow vendor_mmi socket_device:dir w_dir_perms;
+allow vendor_mmi vendor_mmi_socket:sock_file create_file_perms;
+type_transition vendor_mmi socket_device:sock_file vendor_mmi_socket;
+
+allow vendor_mmi mnt_vendor_file:dir r_dir_perms;
+
+#Allow mmi operate on graphics
+hal_client_domain(vendor_mmi, hal_graphics_allocator);
+
+#mmi test case
+unix_socket_connect(vendor_mmi, cnd, cnd);
+unix_socket_connect(vendor_mmi, netmgrd, netmgrd);
+net_domain(vendor_mmi);
+allow vendor_mmi vendor_mmi_exec:file rx_file_perms;
+allow vendor_mmi proc:file r_file_perms;
+
+#diag
+userdebug_or_eng(`
+    diag_use(vendor_mmi)
+')

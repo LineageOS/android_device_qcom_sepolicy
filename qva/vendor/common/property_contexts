@@ -32,3 +32,15 @@ ctl.vendor.mdm_helper                        u:object_r:vendor_mdm_helper_prop:s
 
 # qdma property
 vendor.qti.qdma.                             u:object_r:vendor_qdma_prop:s0
+
+#Disable SPU property
+vendor.gatekeeper.disable_spu                u:object_r:vendor_disable_spu_prop:s0
+
+#boot mode property
+vendor.sys.boot_mode                         u:object_r:vendor_boot_mode_prop:s0
+
+# factory properties
+ctl.vendor.mmid                              u:object_r:ctl_vendor_mmid_prop:s0
+
+persist.vendor.mmi.                          u:object_r:vendor_mmi_prop:s0
+

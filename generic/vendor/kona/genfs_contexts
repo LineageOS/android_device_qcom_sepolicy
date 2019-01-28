@@ -34,3 +34,5 @@ genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys4/name u:object_r
 genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys5/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys6/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/esoc0 u:object_r:sysfs_esoc:s0
+genfscon sysfs /devices/platform/vendor/vendor:bt_qca6390/extldo u:object_r:sysfs_bluetooth_writable:s0
+genfscon sysfs /devices/platform/vendor/vendor:bt_qca6390/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0

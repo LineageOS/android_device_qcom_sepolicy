@@ -36,3 +36,6 @@ user=_app seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app t
 
 # AtFwd app
 user=_app seinfo=platform name=com.qualcomm.telephony domain=qtelephony type=app_data_file levelFrom=all
+
+#add new domain for qtidataservices
+user=radio seinfo=platform name=.qtidataservices domain=qtidataservices_app type=radio_data_file
