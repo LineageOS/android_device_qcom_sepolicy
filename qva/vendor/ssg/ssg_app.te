@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -25,27 +25,36 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type persist_secnvm_file, file_type , vendor_persist_type;
+## ssg_app
+##
+## This file defines the permissions that ssg_apps can carry
 
-#mink-lowi-interface-daemon (mlid) socket
-type mlid_socket, file_type, mlstrustedobject;
+type ssg_app, domain;
 
-#ssg qmi gateway daemon socket
-type ssgqmig_socket, file_type, mlstrustedobject;
+app_domain(ssg_app)
+net_domain(ssg_app)
 
-#ssg tz daemon socket
-type ssgtzd_socket, file_type, mlstrustedobject;
+# Allow access to sockets
+unix_socket_connect(ssg_app, mlid, mlid)
+unix_socket_connect(ssg_app, ssgqmig, ssgqmigd)
+unix_socket_connect(ssg_app, ssgtzd, ssgtzd)
 
-type qfp-daemon_data_file, file_type, data_file_type;
-type persist_qti_fp_file, file_type, vendor_persist_type;
+#access to qdma socket
+qdma_file_socket(ssg_app)
 
-# QDMA data files
-type vendor_qdma_data_file, file_type, data_file_type;
-type qdma_socket, file_type, mlstrustedobject;
+allow ssg_app radio_service:service_manager find;
+allow ssg_app surfaceflinger_service:service_manager find;
+allow ssg_app app_api_service:service_manager find;
 
-type sysfs_npu, fs_type, sysfs_type;
+# access to qipcrtr socket
+allow ssg_app self:qipcrtr_socket rw_socket_perms_no_ioctl;
 
-type vendor_persist_mmi_file, file_type, vendor_persist_type;
+# To get uuid and device info
+allow ssg_app proc_cpuinfo:file r_file_perms;
+allow ssg_app proc_meminfo:file r_file_perms;
 
-#File type by mmi
-type vendor_mmi_socket, file_type;
+# Note: implementation might have changed in the latest Android.
+# Uncomment below if see any denial.
+# unix_socket_connect(ssg_app,dpmtcm, dpmd);
+
+r_dir_file(ssg_app, proc)

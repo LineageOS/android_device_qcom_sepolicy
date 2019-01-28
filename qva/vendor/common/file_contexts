@@ -40,6 +40,12 @@
 /dev/smem_log                         u:object_r:smem_log_device:s0
 
 ###################################
+# Dev socket nodes
+#
+/dev/socket/ssgqmig                             u:object_r:ssgqmig_socket:s0
+/dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
+
+###################################
 # System files
 #
 /vendor/bin/hw/android\.hardware\.keymaster@4\.0-strongbox-service-qti             u:object_r:hal_keymaster_qti_exec:s0
