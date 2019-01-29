@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type sysfs_qdss_dev, sysfs_type, fs_type; 
+type sysfs_mhi, sysfs_type, fs_type;

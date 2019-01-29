@@ -82,3 +82,6 @@ genfscon sysfs /devices/platform/soc/soc:qcom,mdm3/esoc0 u:object_r:sysfs_esoc:s
 
 #hvdcp
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,usb-pdphy@1700/usbpd/usbpd0 u:object_r:sysfs_usbpd_device:s0
+
+#mhi sysfs
+genfscon sysfs /bus/mhi/devices/0304_00.01.00_QMI1/mhi_uci u:object_r:sysfs_mhi:s0
