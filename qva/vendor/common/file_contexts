@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -62,6 +62,7 @@
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator@1\.[0-2]-service                    u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.power\.pasrmanager\@1\.0-service       u:object_r:hal_pasrmanager_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.0-service            u:object_r:hal_secure_element_default_exec:s0
+/(vendor|system/vendor)/bin/mm-audio-ftm                                           u:object_r:vendor_audioftm_exec:s0
 /(vendor|system/vendor)/bin/qrtr-ns                                                u:object_r:qrtr_exec:s0
 /(vendor|system/vendor)/bin/spdaemon                                               u:object_r:spdaemon_exec:s0
 /(vendor|system/vendor)/bin/sec_nvm                                                u:object_r:sec_nvm_exec:s0
