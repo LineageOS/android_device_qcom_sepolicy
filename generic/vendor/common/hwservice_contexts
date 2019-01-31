@@ -54,5 +54,4 @@ vendor.qti.hardware.radio.uim_remote_server::IUimRemoteServiceServer u:object_r:
 vendor.qti.hardware.display.allocator::IQtiAllocator         u:object_r:hal_graphics_allocator_hwservice:s0
 vendor.qti.hardware.tui_comm::ITuiComm                       u:object_r:hal_tui_comm_hwservice:s0
 vendor.qti.hardware.qdutils_disp::IQdutilsDisp               u:object_r:hal_qdutils_disp_hwservice:s0
-hardware.google.media.c2::IConfigurable                         u:object_r:hal_codec2_hwservice:s0
-hardware.google.media.c2::IComponentStore                       u:object_r:hal_codec2_hwservice:s0
+android.hardware.media.c2::IConfigurable                     u:object_r:hal_codec2_hwservice:s0
