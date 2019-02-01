@@ -175,3 +175,6 @@ type sysfs_usb_controller, sysfs_type, fs_type;
 
 #for qdss
 type sysfs_qdss_dev, sysfs_type, fs_type;
+
+#Define the qdcmss socket type
+type qdcmsocket_socket, file_type;
