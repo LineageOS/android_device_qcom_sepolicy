@@ -142,6 +142,7 @@ persist.vendor.graphics.vulkan.disable     u:object_r:graphics_vulkan_prop:s0
 #boot mode property
 vendor.sys.boot_mode              u:object_r:vendor_boot_mode_prop:s0
 # NFC
+persist.nfc.hci_network_reset_req u:object_r:nfc_nq_prop:s0
 vendor.qti.nfc.            u:object_r:nfc_nq_prop:s0
 # LKCore start
 ctl.vendor.LKCore-dbg      u:object_r:ctl_LKCore_prop:s0
