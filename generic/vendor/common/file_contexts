@@ -146,7 +146,6 @@
 /vendor/bin/time_daemon         u:object_r:time_daemon_exec:s0
 /vendor/bin/imsrcsd             u:object_r:hal_rcsservice_exec:s0
 /vendor/bin/tloc_daemon         u:object_r:tlocd_exec:s0
-/vendor/bin/mm-pp-dpps          u:object_r:mm-pp-daemon_exec:s0
 /vendor/bin/hvdcp_opti          u:object_r:hvdcp_exec:s0
 
 /vendor/bin/hw/qcrild           u:object_r:rild_exec:s0

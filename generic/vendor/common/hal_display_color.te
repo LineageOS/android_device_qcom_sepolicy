@@ -38,13 +38,13 @@ binder_call(hal_display_color_client, hal_display_color_server)
 add_hwservice(hal_display_color_server, hal_display_color_hwservice)
 allow hal_display_color_client hal_display_color_hwservice:hwservice_manager find;
 
+# Rule for display color to access graphics composer process
+unix_socket_connect(hal_display_color, pps, hal_graphics_composer_default);
+
 # Rule for vndbinder usage
 allow hal_display_color qdisplay_service:service_manager find;
 vndbinder_use(hal_display_color);
 binder_call(hal_display_color, hal_graphics_composer)
-
-# Rule for pps socket usage
-unix_socket_connect(hal_display_color, pps, mm-pp-daemon)
 
 #Add rules for postproc hal
 add_hwservice(hal_display_color_server, hal_display_postproc_hwservice)

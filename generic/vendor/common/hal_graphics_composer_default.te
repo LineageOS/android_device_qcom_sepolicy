@@ -55,8 +55,6 @@ allow hal_graphics_composer_default graphics_device:chr_file rw_file_perms;
 # HWC_UeventThread
 allow hal_graphics_composer_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
-# Rule for pps socket usage
-unix_socket_connect(hal_graphics_composer_default, pps, mm-pp-daemon)
 # Allow ion_device read/write permission
 allow hal_graphics_composer_default ion_device:chr_file rw_file_perms;
 
@@ -70,6 +68,10 @@ userdebug_or_eng(`
         allow hal_graphics_composer_default debugfs_mdp:dir r_dir_perms;
         allow hal_graphics_composer_default debugfs_mdp:file r_file_perms;
 ')
+
+# Allow sensor service access
+allow hal_graphics_composer fwk_sensor_hwservice:hwservice_manager find;
+binder_call(hal_graphics_composer, system_server)
 
 # allow composer to register display config
 add_hwservice(hal_graphics_composer_server, hal_display_config_hwservice);
