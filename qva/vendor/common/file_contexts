@@ -42,6 +42,7 @@
 ###################################
 # Dev socket nodes
 #
+/dev/socket/mlid                                u:object_r:mlid_socket:s0
 /dev/socket/ssgqmig                             u:object_r:ssgqmig_socket:s0
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 
