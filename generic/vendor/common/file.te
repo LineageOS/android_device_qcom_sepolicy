@@ -167,3 +167,6 @@ type hal_neuralnetworks_data_file, file_type, data_file_type;
 type vendor_bt_data_file, file_type, data_file_type;
 
 type sysfs_usb_controller, sysfs_type, fs_type;
+
+#for qdss
+type sysfs_qdss_dev, sysfs_type, fs_type;
