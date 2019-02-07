@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -28,11 +28,6 @@ dontaudit surfaceflinger firmware_file:dir search;
 dontaudit surfaceflinger kernel:system module_request;
 
 allow surfaceflinger sysfs_graphics:file rw_file_perms;
-
-#diag
-userdebug_or_eng(`
-    diag_use(surfaceflinger)
-')
 
 get_prop(surfaceflinger, vendor_gralloc_prop)
 get_prop(surfaceflinger, vendor_display_prop)
