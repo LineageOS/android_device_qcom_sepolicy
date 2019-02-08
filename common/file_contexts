@@ -332,6 +332,7 @@
 /sys/devices/f9200000\.*/power_supply/usb(/.*)?                     u:object_r:sysfs_usb_supply:s0
 /sys/devices/msm_dwc3/power_supply/usb(/.*)?                        u:object_r:sysfs_usb_supply:s0
 /sys/devices/msm_otg/power_supply/usb(/.*)?                         u:object_r:sysfs_usb_supply:s0
+/sys/devices(/platform)?/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/mmc[0-9]:[a-f0-9]+/mmc[0-9]:[a-f0-9]+:[a-f0-9]+/net(/.*)?  u:object_r:sysfs_net:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+\.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb[0-9]+/power_supply/usb(/.*)?        u:object_r:sysfs_usb_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+\.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb[0-9]+/power_supply/pc_port(/.*)?    u:object_r:sysfs_usb_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/[a-z0-9]+\.i2c:qcom,[a-z0-9]+@[a-z0-9]:qcom,smb[0-9]+-charger@[0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_usb_supply:s0
