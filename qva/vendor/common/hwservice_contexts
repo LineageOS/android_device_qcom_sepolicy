@@ -49,7 +49,7 @@ vendor.qti.hardware.data.latency::ILinkLatency               u:object_r:hal_late
 vendor.qti.hardware.scve.objecttracker::IObjectTracker       u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.scve.panorama::IPanoramaStitching        u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.soter::ISoter                            u:object_r:hal_soter_hwservice:s0
-vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_bluetooth_hwservice:s0
+vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_fm_hwservice:s0
 vendor.qti.esepowermanager::IEsePowerManager                 u:object_r:hal_esepowermanager_hwservice:s0
 vendor.qti.hardware.wifi.supplicant::ISupplicantVendor       u:object_r:hal_wifi_supplicant_hwservice:s0
 vendor.qti.hardware.factory::IFactory                        u:object_r:vendor_hal_factory_qti_hwservice:s0
