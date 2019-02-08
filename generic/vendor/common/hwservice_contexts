@@ -39,6 +39,7 @@ vendor.display.config::IDisplayConfig                           u:object_r:hal_d
 vendor.display.color::IDisplayColor                             u:object_r:hal_display_color_hwservice:s0
 vendor.display.postproc::IDisplayPostproc                       u:object_r:hal_display_postproc_hwservice:s0
 vendor.qti.hardware.data.iwlan::IIWlan                          u:object_r:hal_iwlan_hwservice:s0
+vendor.qti.hardware.capabilityconfigstore::ICapabilityConfigStore     u:object_r:hal_capabilityconfigstore_qti_hwservice:s0
 vendor.qti.hardware.improvetouch.touchcompanion::ITouchCompanion       u:object_r:hal_hbtp_hwservice:s0
 vendor.qti.hardware.improvetouch.gesturemanager::IGestureManager       u:object_r:hal_hbtp_hwservice:s0
 vendor.qti.hardware.improvetouch.blobmanager::IBlobManager             u:object_r:hal_hbtp_hwservice:s0
