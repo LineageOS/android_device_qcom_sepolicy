@@ -57,6 +57,8 @@ allow hal_graphics_composer_default self:netlink_kobject_uevent_socket create_so
 
 # Rule for pps socket usage
 unix_socket_connect(hal_graphics_composer_default, pps, mm-pp-daemon)
+# Allow ion_device read/write permission
+allow hal_graphics_composer_default ion_device:chr_file rw_file_perms;
 
 # Access /sys/devices/virtual/graphics/fb0
 r_dir_file(hal_graphics_composer_default, sysfs_type)
