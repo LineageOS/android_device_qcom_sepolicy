@@ -25,10 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type netmgr_recovery_data_file, file_type, data_file_type;
+# allow configstore client to find display config service.
+allow hal_configstore_default hal_display_config_hwservice:hwservice_manager find;
 
-# secure element file type for data vendor access
-type secure_element_vendor_data_file, file_type, data_file_type;
-
-# vendor biometricsface data file
-type vendor_biometricsface_data_file, file_type, data_file_type;
+binder_call(hal_configstore_default, hal_graphics_composer_default)

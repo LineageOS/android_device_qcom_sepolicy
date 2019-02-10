@@ -33,6 +33,7 @@
 
 # UFS Devices
 /dev/block/platform/soc/4804000.ufshc/by-name/system                            u:object_r:system_block_device:s0
+/dev/block/platform/soc/4804000.ufshc/by-name/metadata                          u:object_r:metadata_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/userdata                          u:object_r:userdata_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/boot                              u:object_r:boot_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/logdump                           u:object_r:logdump_partition:s0
@@ -126,6 +127,7 @@
 
 #non A/B
 /dev/block/platform/soc/4744000.sdhci/by-name/system                            u:object_r:system_block_device:s0
+/dev/block/platform/soc/4744000.ufshc/by-name/metadata                          u:object_r:metadata_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/userdata                          u:object_r:userdata_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/boot                              u:object_r:boot_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/logdump                           u:object_r:logdump_partition:s0
@@ -143,6 +145,7 @@
 /dev/block/platform/soc/4744000.sdhci/by-name/mdtp                               u:object_r:mdtp_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/dip                                u:object_r:dip_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/storsec                            u:object_r:boot_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/persist                            u:object_r:persist_block_device:s0
 
 #rawdump partition
 /dev/block/platform/soc/4744000.sdhci/by-name/rawdump                            u:object_r:rawdump_block_device:s0
@@ -158,5 +161,5 @@
 
 #FPC
 /sys/devices/platform/soc/soc:fpc1020(/.*?) u:object_r:sysfs_fps_attr:s0
-/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi632@3:qcom,leds@d000/modalias u:object_r:sysfs_fps_attr:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-03/c440000.qcom,spmi:qcom,pmi632@3:qcom,leds@d000/leds/modalias u:object_r:sysfs_fps_attr:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-fpc u:object_r:hal_fingerprint_fpc_exec:s0

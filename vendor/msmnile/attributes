@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,6 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-vendor.media.sm6150.version      u:object_r:vendor_media_sm6150_version_prop:s0
-vendor.media.sdmmagpie.version      u:object_r:vendor_media_sdmmagpie_version_prop:s0
-vendor.chre.enabled              u:object_r:vendor_chre_enabled_prop:s0
+attribute hal_biometricsface;
+attribute hal_biometricsface_client;
+attribute hal_biometricsface_server;

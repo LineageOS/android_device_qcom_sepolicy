@@ -1,5 +1,5 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
-
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
@@ -23,12 +23,8 @@
 # BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
-# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
 
-type netmgr_recovery_data_file, file_type, data_file_type;
-
-# secure element file type for data vendor access
-type secure_element_vendor_data_file, file_type, data_file_type;
-
-# vendor biometricsface data file
-type vendor_biometricsface_data_file, file_type, data_file_type;
+type qti-manifest, domain;
+type qti-manifest_exec, exec_type,vendor_file_type,file_type;
+init_daemon_domain(qti-manifest)

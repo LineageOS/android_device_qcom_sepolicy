@@ -25,6 +25,37 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-vendor.media.sm6150.version      u:object_r:vendor_media_sm6150_version_prop:s0
-vendor.media.sdmmagpie.version      u:object_r:vendor_media_sdmmagpie_version_prop:s0
-vendor.chre.enabled              u:object_r:vendor_chre_enabled_prop:s0
+type vendor_cvp, domain;
+type vendor_cvp_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_cvp)
+
+hal_server_domain(vendor_cvp, hal_cvp)
+
+add_hwservice(hal_cvp_server, hal_cvp_hwservice)
+
+allow hal_cvp_client hal_cvp_hwservice:hwservice_manager find;
+
+binder_call(hal_cvp_client, hal_cvp_server)
+binder_call(hal_cvp_server, hal_cvp_client)
+
+r_dir_file(vendor_cvp, adsprpcd_file)
+
+#  Access for ion memory
+allow vendor_cvp ion_device:chr_file rw_file_perms;
+
+#  Access for DSP/QDSP device
+allow vendor_cvp qdsp_device:chr_file rw_file_perms;
+allow vendor_cvp dsp_device:chr_file rw_file_perms;
+
+# Access for adsprpc_prop
+get_prop(hal_camera, adsprpc_prop)
+
+#  Access for sdcard
+userdebug_or_eng('
+allow vendor_cvp sdcard_type:dir rw_dir_perms;
+allow vendor_cvp sdcard_type:file create_file_perms;
+')
+
+# Access for video device
+allow vendor_cvp video_device:chr_file rw_file_perms;

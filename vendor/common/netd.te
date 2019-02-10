@@ -28,3 +28,4 @@ type_transition netd wifi_data_file:dir wpa_socket "sockets";
 # the kernel might generate a false report of a create
 # denial. Silence these denials
 dontaudit netd system_file:dir write;
+dontaudit netd system_file:file create;

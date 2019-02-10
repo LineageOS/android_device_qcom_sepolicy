@@ -1,2 +1,5 @@
 # allow dnsmasq access to netd fifo_file
 allow dnsmasq netd:fifo_file getattr;
+
+# allow dnsmasq access to netd unix socket
+allow dnsmasq netd:unix_stream_socket getattr;

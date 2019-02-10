@@ -88,6 +88,8 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/xbl_config_[ab]   u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/imagefv_[ab]      u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/multiimgoem_[ab]  u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/vm-linux_[ab]     u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/vm-system_[ab]    u:object_r:custom_ab_block_device:s0
 
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/platform/soc/1d84000.ufshc/sd[ade]                   u:object_r:gpt_block_device:s0
@@ -168,3 +170,6 @@
 /dev/cam-hyp-intf-[0-9]+                                            u:object_r:video_device:s0
 
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.automotive\.audiocontrol@1\.0-service     u:object_r:hal_audiocontrol_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.biometrics\.face@1\.0-service    u:object_r:vendor_biometricsface_exec:s0
+
+/data/vendor/face3d_dir(/.*)?                                       u:object_r:vendor_biometricsface_data_file:s0
