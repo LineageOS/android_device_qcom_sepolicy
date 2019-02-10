@@ -34,3 +34,7 @@ get_prop(vendor_init, vendor_boot_mode_prop)
 get_prop(vendor_init, vendor_mmi_prop)
 
 set_prop(vendor_init, vendor_usb_prop)
+
+userdebug_or_eng(`
+  set_prop(vendor_init, vendor_audio_debug_prop)
+')

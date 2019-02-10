@@ -293,6 +293,7 @@
 
 
 /(vendor|system/vendor)/bin/hbtp_daemon                             u:object_r:hbtp_exec:s0
+/(vendor|system/vendor)/bin/sscrpcd                                 u:object_r:sensors_exec:s0
 
 # sysfs_graphics
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:sysfs_graphics:s0

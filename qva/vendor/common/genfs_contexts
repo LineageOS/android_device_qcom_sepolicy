@@ -26,3 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 genfscon sysfs /devices/virtual/npu/msm_npu/pwr u:object_r:sysfs_npu:s0
+genfscon proc /asound/card0/state u:object_r:proc_audiod:s0
+genfscon proc /asound/cards u:object_r:proc_audiod:s0
