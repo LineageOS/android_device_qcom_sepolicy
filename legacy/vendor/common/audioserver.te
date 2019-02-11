@@ -25,40 +25,22 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow platform apps to interact with dtseagleservice
-binder_call(platform_app, dtseagleservice)
+userdebug_or_eng(`
+allow audioserver qti_debugfs:dir r_dir_perms;
+allow audioserver qti_debugfs:file rw_file_perms;
+')
 
-# Allow platform apps to interact with fido daemon
-binder_call(platform_app, fidodaemon)
+# Allow audioserver to read soundcard state under /proc/asound
+allow audioserver proc_audiod:file r_file_perms;
 
-# Allow platform apps to interact with secota daemon
-allow platform_app secotad_service:service_manager find;
-binder_call(platform_app, secotad)
+# Allow audioserver to read sysfs dir and sysfs_thermal files for speaker protection
+allow audioserver sysfs_audio:dir r_dir_perms;
+allow audioserver sysfs_thermal:file r_file_perms;
 
-allow platform_app imsrcs_service:service_manager find;
-
-# Allow NFC service to be found
-allow platform_app nfc_service:service_manager find;
-
-#Allow platform apps to interact with seemp health daemon
-binder_call(platform_app, seemp_health_daemon)
-
-# Allow gba_auth_service to be found
-allow platform_app gba_auth_service:service_manager find;
-
-# Allow hbtp hal Service to be found
-hal_client_domain(platform_app, hal_hbtp)
-
-#get_prop(platform_app, vendor_bluetooth_prop)
-get_prop(platform_app, wigig_prop)
-
-#for perf-hal call
-hal_client_domain(platform_app, hal_perf)
-
-#allow embms app to access vendor radio property
-get_prop(platform_app, vendor_radio_prop)
-
-
-#allow scve hw service
-#allow platform_app hal_scve_hwservice:hwservice_manager find;
-hal_client_domain(platform_app, hal_scve)
+# Allow audioserver to access sysfs nodes
+allow audioserver sysfs_audio:file rw_file_perms;
+userdebug_or_eng(`
+  diag_use(audioserver)
+')
+# audio properties
+get_prop(audioserver, vendor_audio_prop)

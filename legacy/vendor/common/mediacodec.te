@@ -25,40 +25,31 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow platform apps to interact with dtseagleservice
-binder_call(platform_app, dtseagleservice)
+#mediacodec need intraction with audio device nodes
+allow mediacodec msm_aac_in_device:chr_file rw_file_perms;
 
-# Allow platform apps to interact with fido daemon
-binder_call(platform_app, fidodaemon)
+get_prop(mediacodec, adsprpc_prop)
 
-# Allow platform apps to interact with secota daemon
-allow platform_app secotad_service:service_manager find;
-binder_call(platform_app, secotad)
+#Allow mediacodec to access proc_net files
+allow mediacodec proc_net:file r_file_perms;
 
-allow platform_app imsrcs_service:service_manager find;
+allow mediacodec qdsp_device:chr_file r_file_perms;
+allow mediacodec xdsp_device:chr_file r_file_perms;
 
-# Allow NFC service to be found
-allow platform_app nfc_service:service_manager find;
+#Allow mediacodec to access service manager wfdnativemm_service
+allow mediacodec wfdnativemm_service:service_manager find;
+hal_client_domain(mediacodec, wifidisplayhalservice)
 
-#Allow platform apps to interact with seemp health daemon
-binder_call(platform_app, seemp_health_daemon)
+#Allow mediacodec to access vendor_media_data_file files
+allow mediacodec vendor_media_data_file:dir create_dir_perms;
+allow mediacodec vendor_media_data_file:file create_file_perms;
 
-# Allow gba_auth_service to be found
-allow platform_app gba_auth_service:service_manager find;
+vndbinder_use(mediacodec);
+hwbinder_use(mediacodec);
+hal_client_domain(mediacodec, hal_vpp)
+hal_client_domain(mediacodec, hal_perf)
 
-# Allow hbtp hal Service to be found
-hal_client_domain(platform_app, hal_hbtp)
-
-#get_prop(platform_app, vendor_bluetooth_prop)
-get_prop(platform_app, wigig_prop)
-
-#for perf-hal call
-hal_client_domain(platform_app, hal_perf)
-
-#allow embms app to access vendor radio property
-get_prop(platform_app, vendor_radio_prop)
-
-
-#allow scve hw service
-#allow platform_app hal_scve_hwservice:hwservice_manager find;
-hal_client_domain(platform_app, hal_scve)
+get_prop(mediacodec, mm_video_prop)
+allow mediacodec hal_display_config_hwservice:hwservice_manager find;
+allow mediacodec hal_graphics_composer_default:binder call;
+allow mediacodec qdisplay_service:service_manager find;
