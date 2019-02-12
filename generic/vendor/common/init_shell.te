@@ -137,6 +137,9 @@ allow qti_init_shell sysfs:file r_file_perms;
 allow qti_init_shell radio_vendor_data_file:dir create_dir_perms;
 allow qti_init_shell radio_vendor_data_file:file create_file_perms;
 
+allow qti_init_shell vendor_mbn_data_file:dir create_dir_perms;
+allow qti_init_shell vendor_mbn_data_file:file create_file_perms;
+
 set_prop(qti_init_shell, ctl_vendor_hbtp_prop)
 
 # rules for vm_bms
