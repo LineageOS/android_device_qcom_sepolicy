@@ -25,11 +25,16 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type persist_dpm_prop, property_type, extended_core_property_type;
-type persist_camera_prop, property_type, extended_core_property_type;
+type dun-server_exec, system_file_type, exec_type, file_type;
+typeattribute  dun-server  bluetoothdomain;
+typeattribute dun-server coredomain;
 
-#MirrorLink
-type vendor_mirrorlink_prop, property_type, extended_core_property_type;
-# this is vendor defined property  and added with prefix vendor
-# which is going to be working from system
-type vendor_bt_prop, property_type, extended_core_property_type;
+allow bluetooth dun-server:unix_stream_socket connectto;
+allow dun-server {
+    serial_device
+    smd7_device
+}:chr_file rw_file_perms;
+
+init_daemon_domain(dun-server)
+
+bluetooth_domain(dun-server)

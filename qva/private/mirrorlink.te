@@ -38,12 +38,11 @@ net_domain(mirrorlink)
 allow mirrorlink self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
 # Allow socket permissions on udp_socket.
-allowxperm mirrorlink self:udp_socket ioctl priv_sock_ioctls;
+allowxperm mirrorlink self:udp_socket ioctl { SIOCGIFFLAGS SIOCSIFFLAGS SIOCGIFCONF SIOCGIFADDR SIOCGIFMTU };
 
 # Allow access to mirrorlink_data_file (/data/misc/mirrorlinkserver)
 allow mirrorlink mirrorlink_data_file:file create_file_perms;
 allow mirrorlink mirrorlink_data_file:dir create_dir_perms;
-
 # Allow read-write permissions to mirrorlink sockets under dev/socket/.
 allow mirrorlink mirrorlink_socket:sock_file { read write };
 
@@ -83,15 +82,11 @@ hal_client_domain(mirrorlink, hal_graphics_allocator);
 
 # Allow RW access to USB properties.
 set_prop(mirrorlink, exported_system_radio_prop);
+get_prop(mirrorlink, system_prop);
 
 # Allow access to usb ncm state from net
-r_dir_file(mirrorlink, sysfs_net);
+allow mirrorlink sysfs_net:dir r_dir_perms;
+allow mirrorlink sysfs_net:file r_file_perms;
 
 # Allow read access to EGL lib
 allow mirrorlink system_file:dir r_dir_perms;
-
-# Allow access to video encoder device.
-allow mirrorlink video_device:chr_file rw_file_perms;
-
-# Allow read access to mirrorlink specific property type.
-get_prop(mirrorlink, vendor_mirrorlink_prop);
