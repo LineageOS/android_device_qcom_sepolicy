@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -27,7 +27,8 @@
 
 # subsys nodes
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/name u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys1/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_uc/subsys1/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys2/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys2/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/subsys3/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys4/name u:object_r:sysfs_ssr:s0
