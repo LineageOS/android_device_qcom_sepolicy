@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -165,6 +165,9 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qdutils_disp@1\.0-service-qti u:object_r:hal_qdutils_disp_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@1\.0-service       u:object_r:hal_perf_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.capabilityconfigstore@1\.0-service u:object_r:hal_capabilityconfigstore_qti_default_exec:s0
+
+/(vendor|system/vendor)/bin/power_off_alarm        u:object_r:power_off_alarm_exec:s0
+
 /vendor/bin/hw/vendor\.display\.color@1\.0-service            u:object_r:hal_display_color_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.media\.c2@1\.0-service               u:object_r:mediacodec_exec:s0
 /vendor/bin/hw/hardware\.google\.media\.c2@1\.0-service-software u:object_r:mediacodec_exec:s0
@@ -293,6 +296,8 @@
 #persist_bluetooth_file
 /mnt/vendor/persist/bluetooth(/.*)?                                 u:object_r:persist_bluetooth_file:s0
 
+#power off alarm file
+/mnt/vendor/persist/alarm(/.*)?                                     u:object_r:persist_alarm_file:s0
 
 /(vendor|system/vendor)/bin/hbtp_daemon                             u:object_r:hbtp_exec:s0
 /(vendor|system/vendor)/bin/sscrpcd                                 u:object_r:sensors_exec:s0

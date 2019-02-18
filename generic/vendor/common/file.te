@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -111,6 +111,7 @@ type persist_sensors_file, file_type, vendor_persist_type;
 type persist_time_file, file_type, vendor_persist_type;
 type persist_audio_file, file_type, vendor_persist_type;
 type persist_bluetooth_file, file_type, vendor_persist_type;
+type persist_alarm_file, file_type, vendor_persist_type;
 
 type netmgr_data_file, file_type, data_file_type;
 type netmgr_recovery_data_file, file_type, data_file_type;

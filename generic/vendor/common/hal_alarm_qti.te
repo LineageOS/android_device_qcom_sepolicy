@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, 2019 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,17 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# A fallback in case tango_core is missing something critical that untrusted_app provides
-user=_app seinfo=tango name=com.google.tango:app domain=untrusted_app type=app_data_file levelFrom=user
 
-#Needed for time service apk
-user=_app seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file
 
-# AtFwd app
-user=_app seinfo=platform name=com.qualcomm.telephony domain=qtelephony type=app_data_file levelFrom=all
+binder_call(hal_alarm_qti_client, hal_alarm_qti_server)
+binder_call(hal_alarm_qti_server, hal_alarm_qti_client)
 
-#add new domain for qtidataservices
-user=radio seinfo=platform name=.qtidataservices domain=qtidataservices_app type=radio_data_file
+add_hwservice(hal_alarm_qti_server, hal_alarm_qti_hwservice)
 
-#Add new domain for power off alarm app
-user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=system_app_data_file
+allow hal_alarm_qti_client hal_alarm_qti_hwservice:hwservice_manager find;
