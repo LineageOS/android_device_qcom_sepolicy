@@ -1,4 +1,3 @@
-allow mediaserver tee_device:chr_file rw_file_perms;
 allow mediaserver qdsp_device:chr_file r_file_perms;
 allow mediaserver xdsp_device:chr_file r_file_perms;
 
