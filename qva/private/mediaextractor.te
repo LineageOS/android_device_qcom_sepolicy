@@ -1,4 +1,4 @@
-# Copyright (c) 2019 The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,11 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#mm-parser
-type mm_parser_prop, property_type, extended_core_property_type;
-#mm-osal
-type mm_osal_prop, property_type, extended_core_property_type;
-
-#WiFi Display
-type wfd_service_prop, property_type, extended_core_property_type;
-type wfd_sys_debug_prop, property_type, extended_core_property_type;
+get_prop(mediaextractor, mm_parser_prop);
+get_prop(mediaextractor, mm_osal_prop);

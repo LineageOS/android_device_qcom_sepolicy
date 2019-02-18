@@ -39,6 +39,12 @@ vendor.camera.aux.packagelist              u:object_r:persist_camera_prop:s0
 persist.vendor.camera.privapp.list         u:object_r:persist_camera_prop:s0
 vendor.mls.                                u:object_r:vendor_mirrorlink_prop:s0
 
+#mm-parser
+vendor.mm.enable.qcom_parser       u:object_r:mm_parser_prop:s0
+vendor.qcom_parser.                u:object_r:mm_parser_prop:s0
+#mm-osal
+vendor.debug.mmosal.config         u:object_r:mm_osal_prop:s0
+
 #Wifi Display
 vendor.wfdservice                          u:object_r:wfd_service_prop:s0
 persist.vendor.debug.wfd.wfdsvc            u:object_r:wfd_sys_debug_prop:s0
