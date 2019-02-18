@@ -40,9 +40,9 @@ genfscon sysfs /devices/platform/vendor/vendor:bt_qca6390/rfkill/rfkill0/state u
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-llcc-bw/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu-llcc-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,npu-npu-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,devfreq-l3:qcom,cpu0-cpu-l3-lat/devfreq u:object_r:sysfs_devfreq:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,devfreq-l3:qcom,cpu4-cpu-l3-lat/devfreq u:object_r:sysfs_devfreq:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,devfreq-l3:qcom,cpu7-cpu-l3-lat/devfreq u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/18590000.qcom,devfreq-l3:qcom,cpu0-cpu-l3-lat/devfreq u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/18590000.qcom,devfreq-l3:qcom,cpu4-cpu-l3-lat/devfreq u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/18590000.qcom,devfreq-l3:qcom,cpu7-cpu-l3-lat/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-llcc-lat/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-cpu-llcc-lat/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-llcc-ddr-lat/devfreq u:object_r:sysfs_devfreq:s0
