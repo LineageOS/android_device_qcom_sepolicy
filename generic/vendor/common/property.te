@@ -72,6 +72,9 @@ type vendor_ssr_prop, property_type;
 #ss-services (PD)
 type vendor_pd_locater_dbg_prop, property_type;
 
+#capabilityconfigstore hal (CCHAL)
+type vendor_cap_configstore_dbg_prop, property_type;
+
 #rmt_storage
 type ctl_vendor_rmt_storage_prop, property_type;
 

@@ -88,4 +88,7 @@ userdebug_or_eng(`
 allow location hal_cne_hwservice:hwservice_manager find;
 binder_call(location, cnd)
 
+allow location hal_cacert_hwservice:hwservice_manager find;
+binder_call(location, qtidataservices_app)
+
 get_prop(location, vendor_wifi_prop)

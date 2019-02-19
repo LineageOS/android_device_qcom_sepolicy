@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -31,7 +31,10 @@ type hal_rcsservice_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_rcsservice)
 net_domain(hal_rcsservice)
 
+allow hal_rcsservice self:{ qipcrtr_socket } rw_socket_perms_no_ioctl;
+
 get_prop(hal_rcsservice, ims_prop)
+set_prop(hal_rcsservice, ims_prop)
 
 # To register imsrcsd to hwBinder
 hwbinder_use(hal_rcsservice)
@@ -46,8 +49,6 @@ allow hal_rcsservice sysfs_data:file r_file_perms;
 
 #required for socket creation
 unix_socket_connect(hal_rcsservice, ims, ims)
-allow hal_rcsservice self:socket create_socket_perms;
-allowxperm hal_rcsservice self:socket ioctl msm_sock_ipc_ioctls ;
 
 # imsrcsd to bind with UceShimService.apk
 binder_call(hal_rcsservice, dataservice_app)

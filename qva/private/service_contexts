@@ -33,3 +33,5 @@ qti.ims.ext                                    u:object_r:radio_service:s0
 com.qualcomm.location.izat.IzatService         u:object_r:izat_service:s0
 qti.security.seempspa                          u:object_r:seemp_service:s0
 vendor.audio.vrservice                         u:object_r:audioserver_service:s0
+com.qti.snapdragon.sdk.display.IColorService   u:object_r:color_service:s0
+wfdservice                                     u:object_r:wfdservice_service:s0

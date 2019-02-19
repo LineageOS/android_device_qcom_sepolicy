@@ -94,6 +94,9 @@ persist.vendor.ssr.    u:object_r:vendor_ssr_prop:s0
 #ss-services (PD)
 persist.vendor.pd_locater_debug    u:object_r:vendor_pd_locater_dbg_prop:s0
 
+#capabilityconfigstore (CCHAL)
+persist.vendor.cap_configstore_debug    u:object_r:vendor_cap_configstore_dbg_prop:s0
+
 #rmt_storage
 ctl.vendor.rmt_storage     u:object_r:ctl_vendor_rmt_storage_prop:s0
 

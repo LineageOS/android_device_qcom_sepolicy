@@ -51,3 +51,7 @@ attribute hal_display_postproc_server;
 
 # All types in /mnt/vendor/persist
 attribute vendor_persist_type;
+
+attribute hal_capabilityconfigstore_qti;
+attribute hal_capabilityconfigstore_qti_client;
+attribute hal_capabilityconfigstore_qti_server;

@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -38,13 +38,13 @@ vendor.qti.hardware.mlshal::IMlsDap                          u:object_r:hal_mirr
 vendor.qti.hardware.mlshal::IMlsVnc                          u:object_r:hal_mirrorlink_hwservice:s0
 vendor.qti.power.pasrmanager::IPasrManager                   u:object_r:hal_pasrmanager_hwservice:s0
 com.qualcomm.qti.bluetooth_audio::IBluetoothAudio            u:object_r:hal_audio_hwservice:s0
+vendor.qti.hardware.audiohalext::IAudioHalExt                u:object_r:hal_audio_hwservice:s0
 vendor.qti.gnss::ILocHidlGnss                                u:object_r:hal_gnss_hwservice:s0
 vendor.nxp.hardware.nfc::INqNfc                              u:object_r:hal_nfc_hwservice:s0
 vendor.qti.hardware.sensorscalibrate::ISensorsCalibrate      u:object_r:hal_sensorscalibrate_qti_hwservice:s0
 com.qualcomm.qti.imscmservice::IImsCmService                 u:object_r:hal_imsrcsd_hwservice:s0
 vendor.qti.hardware.fingerprint::IQtiExtendedFingerprint     u:object_r:hal_fingerprint_hwservice:s0
 vendor.qti.hardware.radio.qtiradio::IQtiRadio                u:object_r:hal_telephony_hwservice:s0
-vendor.qti.data.factory::IFactory                            u:object_r:hal_datafactory_hwservice:s0
 vendor.qti.hardware.data.latency::ILinkLatency               u:object_r:hal_latency_hwservice:s0
 vendor.qti.hardware.scve.objecttracker::IObjectTracker       u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.scve.panorama::IPanoramaStitching        u:object_r:hal_scve_hwservice:s0

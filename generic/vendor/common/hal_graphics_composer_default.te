@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -31,6 +31,10 @@ allow hal_graphics_composer_default qdisplay_service:service_manager { add find 
 
 allow hal_graphics_composer_default persist_display_file:dir search;
 allow hal_graphics_composer_default persist_display_file:file r_file_perms;
+
+# Allow reading/writing to '/mnt/vendor/persist/display/*'
+allow hal_graphics_composer_default persist_display_file:dir rw_dir_perms;
+allow hal_graphics_composer_default persist_display_file:file create_file_perms;
 
 allow hal_graphics_composer sysfs_graphics:dir r_dir_perms;
 allow hal_graphics_composer sysfs_graphics:file rw_file_perms;
