@@ -105,6 +105,11 @@
 /(vendor|system/vendor)/bin/DR_AP_Service                                          u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/slim_daemon                                            u:object_r:location_exec:s0
 
+#perf
+/sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
+/sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
+/sys/module/process_reclaim(/.*)?                                   u:object_r:sysfs_process_reclaim:s0
+
 ###################################
 # data files
 #

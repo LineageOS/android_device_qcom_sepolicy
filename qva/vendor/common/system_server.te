@@ -24,11 +24,7 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-dontaudit surfaceflinger firmware_file:dir search;
-dontaudit surfaceflinger kernel:system module_request;
 
-allow surfaceflinger sysfs_graphics:file rw_file_perms;
-
-get_prop(surfaceflinger, vendor_gralloc_prop)
-get_prop(surfaceflinger, vendor_display_prop)
-get_prop(surfaceflinger, vendor_dolphin_prop)
+##for perf-hal/iop-hal call
+hal_client_domain(system_server, hal_perf)
+hal_client_domain(system_server, hal_iop)

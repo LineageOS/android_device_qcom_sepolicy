@@ -80,7 +80,7 @@ set_prop(qti_init_shell, vendor_alarm_boot_prop)
 set_prop(qti_init_shell, vendor_gralloc_prop)
 set_prop(qti_init_shell, vendor_usb_prop)
 set_prop(qti_init_shell, vendor_system_prop)
-set_prop(qti_init_shell, vendor_mpdecision_prop)
+set_prop(qti_init_shell, vendor_mpctl_prop)
 set_prop(qti_init_shell, vendor_radio_prop)
 set_prop(qti_init_shell, vendor_audio_prop)
 get_prop(qti_init_shell, exported3_radio_prop)
@@ -89,6 +89,8 @@ set_prop(qti_init_shell, vendor_gpu_prop)
 allow qti_init_shell {
     sysfs_devices_system_cpu
     sysfs_lowmemorykiller
+    sysfs_mmc_host
+    sysfs_process_reclaim
 }:file w_file_perms;
 
 r_dir_file(qti_init_shell, sysfs_type)

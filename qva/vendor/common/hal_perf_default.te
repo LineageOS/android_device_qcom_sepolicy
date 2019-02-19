@@ -40,38 +40,54 @@ allow hal_perf_client hal_perf_hwservice:hwservice_manager find;
 
 allow hal_perf_default cgroup:file r_file_perms;
 allow hal_perf_default proc:file rw_file_perms;
-get_prop(hal_perf, vendor_mpdecision_prop)
+allow hal_perf latency_device:chr_file rw_file_perms;
+get_prop(hal_perf, freq_prop)
+get_prop(hal_perf, vendor_mpctl_prop)
+allow hal_perf_default mpctl_data_file:dir rw_dir_perms;
+allow hal_perf_default mpctl_data_file:file create_file_perms;
+allow hal_perf_default lm_data_file:dir rw_dir_perms;
+allow hal_perf_default lm_data_file:file create_file_perms;
+allow hal_perf_default sysfs_lib:file w_file_perms;
+r_dir_file(hal_perf_default, appdomain);
 
 allow hal_perf {
-    sysfs_devices_system_cpu
-    sysfs_devfreq
-    sysfs_cpu_boost
-    sysfs_msm_perf
-    sysfs_msm_power
-    sysfs_mmc_host
-    sysfs_scsi_host
-    sysfs_kgsl
-    sysfs_graphics
-    sysfs
-    sysfs_battery_supply
+     sysfs_devices_system_cpu
+     sysfs_mpctl
+     sysfs_devfreq
+     sysfs_mmc_host
+     sysfs_scsi_host
+     sysfs_kgsl
+     sysfs_cpu_boost
+     sysfs_msm_perf
+     sysfs_memory
+     sysfs_graphics
+     sysfs
+     sysfs_msm_power
+     sysfs_battery_supply
+     sysfs_process_reclaim
 }:dir r_dir_perms;
 
 allow hal_perf {
-    sysfs_devices_system_cpu
-    sysfs_devfreq
-    sysfs_cpu_boost
-    sysfs_msm_perf
-    sysfs_msm_power
-    sysfs_mmc_host
-    sysfs_scsi_host
-    sysfs_kgsl
-    sysfs_graphics
-    sysfs_battery_supply
+     sysfs_devices_system_cpu
+     sysfs_mpctl
+     sysfs_cpu_boost
+     sysfs_msm_perf
+     sysfs_kgsl
+     sysfs_cpu_boost
+     sysfs_msm_perf
+     sysfs_memory
+     sysfs_graphics
+     sysfs_scsi_host
+     sysfs_devfreq
+     sysfs_mmc_host
+     sysfs_msm_power
+     sysfs_battery_supply
+     sysfs_process_reclaim
 }:file rw_file_perms;
 
 allow hal_perf {
     sysfs_devfreq
-    sysfs_kgsl
     sysfs_mmc_host
     sysfs_scsi_host
+    sysfs_kgsl
 }:lnk_file r_file_perms;

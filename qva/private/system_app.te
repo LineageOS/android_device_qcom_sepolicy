@@ -39,6 +39,9 @@ get_prop(system_app, bluetooth_prop);
 # allow system_app to interact with smcinvoke daemon
 binder_call(system_app, smcinvoke_daemon)
 
+# allow system_app access to Workload Classifier Property
+set_prop(system_app, vendor_wlc_prop);
+
 # allow system app to interact with mirrorlinkserver
 binder_call(system_app, mirrorlink);
 # allow system app to connect to mirrorlink_socket

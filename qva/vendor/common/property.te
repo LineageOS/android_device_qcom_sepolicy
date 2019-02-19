@@ -37,6 +37,16 @@ type vendor_disable_spu_prop, property_type;
 # boot mode property
 type vendor_boot_mode_prop, property_type;
 
+#mpctl
+type vendor_mpctl_prop, property_type;
+type freq_prop, property_type;
+
+#iop
+type vendor_iop_prop, property_type;
+
+#dolphin
+type vendor_dolphin_prop, property_type;
+
 #properties for nfc
 type vendor_nfc_nq_prop, property_type;
 

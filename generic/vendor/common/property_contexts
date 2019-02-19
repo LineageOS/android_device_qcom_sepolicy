@@ -74,10 +74,6 @@ persist.vendor.ims.        u:object_r:ims_prop:s0
 persist.vendor.qti.telephony.vt_cam_interface u:object_r:ims_prop:s0
 ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
 
-#mpdecision
-vendor.post_boot.parsed  u:object_r:vendor_mpdecision_prop:s0
-ro.vendor.perf.cores_online u:object_r:vendor_mpdecision_prop:s0
-
 # HBTP
 ctl.vendor.hbtp u:object_r:ctl_vendor_hbtp_prop:s0
 
