@@ -36,6 +36,7 @@ vendor.qti.hardware.qteeconnector::IAppConnector             u:object_r:hal_qtee
 vendor.qti.hardware.qteeconnector::IGPAppConnector           u:object_r:hal_qteeconnector_hwservice:s0
 vendor.qti.hardware.mlshal::IMlsDap                          u:object_r:hal_mirrorlink_hwservice:s0
 vendor.qti.hardware.mlshal::IMlsVnc                          u:object_r:hal_mirrorlink_hwservice:s0
+vendor.qti.hardware.mlshal::IMlsIon                          u:object_r:hal_mirrorlink_hwservice:s0
 vendor.qti.power.pasrmanager::IPasrManager                   u:object_r:hal_pasrmanager_hwservice:s0
 com.qualcomm.qti.bluetooth_audio::IBluetoothAudio            u:object_r:hal_audio_hwservice:s0
 vendor.qti.hardware.btconfigstore::IBTConfigStore            u:object_r:hal_bluetooth_hwservice:s0
