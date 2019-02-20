@@ -28,15 +28,28 @@
 # subsys nodes
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_uc/subsys1/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys10/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys2/name u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys2/name u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/subsys3/name u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys4/name u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys5/name u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys6/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/abb0000.qcom,cvpss/subsys3/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys4/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys5/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/subsys6/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys7/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys8/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys9/name u:object_r:sysfs_ssr:s0
+
+#subsys nodes WLAN
+genfscon sysfs /devices/platform/soc/a0000000.qcom,cnss-qca6390/subsys6/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/subsys7/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys8/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys9/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys10/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys11/name u:object_r:sysfs_ssr:s0
+
 genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/esoc0 u:object_r:sysfs_esoc:s0
 genfscon sysfs /devices/platform/vendor/vendor:bt_qca6390/extldo u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/platform/vendor/vendor:bt_qca6390/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
+
 # DCVS nodes
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-llcc-bw/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu-llcc-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
