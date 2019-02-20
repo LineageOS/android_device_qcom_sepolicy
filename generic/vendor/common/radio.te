@@ -49,6 +49,7 @@ binder_call(radio, hal_imsrtp)
 #diag
 userdebug_or_eng(`
     diag_use(radio)
+    r_dir_file(radio, vendor_mbn_data_file)
 ')
 
 get_prop(radio, vendor_radio_prop)

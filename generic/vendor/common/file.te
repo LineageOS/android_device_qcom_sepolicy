@@ -128,6 +128,7 @@ type port_bridge_data_file, file_type, data_file_type;
 type vendor_firmware_file, vendor_file_type, file_type;
 type bt_firmware_file, file_type, contextmount_type, vendor_file_type;
 type vendor_mdmhelperdata_data_file, file_type, data_file_type;
+type vendor_mbn_data_file, file_type, data_file_type;
 
 #vendor capability configstore hal
 type vendor_capabilityconfigstore_data_file, file_type, data_file_type;
