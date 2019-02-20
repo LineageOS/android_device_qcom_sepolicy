@@ -49,3 +49,7 @@ unix_socket_connect(netmgrd, cnd, cnd);
 allow netmgrd { wcnss_service_exec vendor_shell_exec }:file rx_file_perms;
 
 allowxperm netmgrd self:udp_socket ioctl rmnet_sock_ioctls;
+
+# Allow netmgrd to set vendor properties
+set_prop(netmgrd, vendor_data_ko_prop)
+allow netmgrd self:qipcrtr_socket create_socket_perms_no_ioctl;
