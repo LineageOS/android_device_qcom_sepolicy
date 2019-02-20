@@ -75,8 +75,10 @@ unix_socket_connect(wfdservice, property, init);
 allow wfdservice video_device:chr_file rw_file_perms;
 allow wfdservice video_device:dir r_dir_perms;
 
+#TODO: Need to check on how to address this
+# keeping this line commented to keep track
 #Allow access to tee device for HDCP sessions
-allow wfdservice tee_device:chr_file rw_file_perms;
+#allow wfdservice tee_device:chr_file rw_file_perms;
 
 #Allow access to uhid driver for HID event injection
 allow wfdservice uhid_device:chr_file rw_file_perms;
