@@ -1,3 +1,1 @@
 genfscon debugfs /rmt_storage u:object_r:debugfs_rmt:s0
-
-genfscon proc /device-tree/firmware/android u:object_r:sysfs_dt_firmware_android:s0
