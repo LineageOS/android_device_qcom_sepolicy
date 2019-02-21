@@ -13,4 +13,3 @@ type dtseagleservice_service,     service_manager_type;
 type gba_auth_service,            service_manager_type;
 type mdtpdaemon_service,          service_manager_type;
 type qtitetherservice_service,    service_manager_type;
-type qdisplay_service,            service_manager_type;

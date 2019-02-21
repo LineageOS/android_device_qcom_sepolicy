@@ -45,4 +45,3 @@ com.qualcomm.qti.uceservice                    u:object_r:imsrcs_service:s0
 # DOLBY_START
 media.dolby_memoryservice                      u:object_r:audioserver_service:s0
 # DOLBY_END
-display.qservice                               u:object_r:qdisplay_service:s0
