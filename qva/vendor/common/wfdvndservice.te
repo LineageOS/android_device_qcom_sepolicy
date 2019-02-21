@@ -1,0 +1,91 @@
+# Copyright (c) 2019 The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+#Define Domain
+type wfdvndservice, domain;
+type wfdvndservice_exec, exec_type, vendor_file_type, file_type;
+
+#Inherit base network permissions from netd
+net_domain(wfdvndservice)
+
+#Allow wifidisplayhalservice to use Vendor Binder IPC
+vndbinder_use(wfdvndservice)
+
+#Publish the wfdvndservice interface
+add_service(wfdvndservice, wfdvndservice_service)
+
+#Direct streaming native service
+add_service(wfdvndservice, wfdnativemm_service)
+
+#Allow access to firmware files for HDCP session
+r_dir_file(wfdvndservice, firmware_file)
+
+#Allow access to tee/ion device and tcp socket for HDCP sessions
+allow wfdvndservice tee_device:chr_file rw_file_perms;
+
+#Allow access to PCM sound card
+allow wfdvndservice audio_device:chr_file rw_file_perms;
+allow wfdvndservice audio_device:dir r_dir_perms;
+
+#Allow access to /dev/video/* devices for encoding/decoding
+allow wfdvndservice video_device:chr_file rw_file_perms;
+
+#Allow binder call to mediacodec from wifidisplayhalservice
+binder_call(wfdvndservice, mediacodec);
+
+#Allow udp socket ioctl
+allow wfdvndservice self:udp_socket create_socket_perms;
+# ioctlcmd=8bff,8912
+allowxperm wfdvndservice self:udp_socket ioctl priv_sock_ioctls;
+
+#Allow access to proc/net/arp
+allow wfdvndservice proc_net:file r_file_perms;
+
+# Add the rule for wfd to access /proc/asound/pcm file
+r_dir_file(wfdvndservice, proc_asound)
+
+#Allow hal graphics allocator permissions
+hal_client_domain(wfdvndservice, hal_graphics_allocator);
+
+#Allow hal graphics mapper permissions
+hal_client_domain(wfdvndservice, hal_graphics_composer);
+
+#Allow wfdvndservice to query interface name of network (p2p etc.)
+allow wfdvndservice self:netlink_generic_socket create_socket_perms_no_ioctl;
+
+#Allow communication with init over property server
+unix_socket_connect(wfdvndservice, property, init);
+
+binder_call(wfdvndservice, wifidisplayhalservice_qti);
+
+#Allow ion device access
+allow wfdvndservice ion_device:chr_file r_file_perms;
+
+#Allow for property access
+userdebug_or_eng(`
+  get_prop(wfdvndservice,wfd_vendor_debug_prop)
+')

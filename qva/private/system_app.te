@@ -46,3 +46,10 @@ unix_socket_connect(system_app, mirrorlink, mirrorlink);
 
 # allow system app to set mirrorlink prop
 set_prop(system_app, vendor_mirrorlink_prop);
+
+#WFD
+set_prop(system_app, wfd_service_prop);
+userdebug_or_eng(`
+    get_prop(system_app, wfd_sys_debug_prop);
+')
+binder_call(system_app, wfdservice)

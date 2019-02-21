@@ -46,3 +46,9 @@ allow system_server dpmd_data_file:file create_file_perms;
 #add_service(system_server, vendor_perf_service);
 allow system_server vendor_perf_service:service_manager find;
 binder_call(system_server,qvrd);
+
+#Allow for access to WFD specific debug properties
+binder_call(system_server, wfdservice);
+userdebug_or_eng(`
+  get_prop(system_server, wfd_sys_debug_prop)
+')
