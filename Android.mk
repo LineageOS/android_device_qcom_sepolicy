@@ -31,6 +31,7 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
 
     ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/generic/vendor/test
+    BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/qva/vendor/test
     endif
 endif
 

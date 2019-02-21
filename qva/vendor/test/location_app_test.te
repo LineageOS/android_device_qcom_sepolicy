@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,11 +25,23 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type dpmd_socket, file_type, coredomain_socket;
-type dpmd_data_file, file_type, data_file_type, core_data_file_type;
-type dpmwrapper_socket, file_type, coredomain_socket, mlstrustedobject;
-type qvrd_data_file, file_type, data_file_type, core_data_file_type;
-type qvrd_socket, file_type, mlstrustedobject, coredomain_socket;
-type qvrd_hvx_socket, file_type, coredomain_socket;
-type mirrorlink_data_file, file_type, data_file_type, core_data_file_type;
-type mirrorlink_socket, file_type, coredomain_socket;
+# qva/private/location_app_test.te - sepolicy rules for qti value added
+# location apps (internal) that will be part of system image. eg: ODLT, Qlogcat
+
+type location_app_test, domain;
+app_domain(location_app_test)
+
+userdebug_or_eng(`
+    binder_use(location_app_test)
+    hal_client_domain(location_app_test, hal_gnss)
+
+    allow location_app_test { adbd su }:unix_stream_socket connectto;
+
+    allow location_app_test app_api_service:service_manager find;
+    allow location_app_test cgroup:file {read write};
+
+    allow location_app_test anr_data_file:dir rw_dir_perms;
+    allow location_app_test anr_data_file:file rw_file_perms;
+
+    unix_socket_send(location_app_test, seempdw, seempd);
+')

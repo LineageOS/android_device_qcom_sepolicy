@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type dpmtcm_socket, file_type, coredomain_socket, mlstrustedobject;
+type seempdw_socket, file_type, mlstrustedobject, coredomain_socket;
