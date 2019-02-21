@@ -28,6 +28,7 @@
 # Allow access to create socket and ioctl.
 allow hal_wifi_supplicant_default self:socket create_socket_perms;
 allow hal_wifi_supplicant_default self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow hal_wifi_supplicant_default wifi_vendor_data_file:dir search;
 # ioctlcmd=c304, c302
 allowxperm hal_wifi_supplicant self:socket ioctl msm_sock_ipc_ioctls;
 # Allow write to proc_net.
