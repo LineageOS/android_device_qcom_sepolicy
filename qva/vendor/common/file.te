@@ -57,3 +57,4 @@ type vendor_mmi_socket, file_type;
 type wifi_vendor_data_file, file_type, data_file_type;
 type wifi_vendor_wpa_socket, file_type, data_file_type;
 type hostapd_socket, file_type, data_file_type;
+type wifi_vendor_hostapd_socket, file_type, data_file_type;
