@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2019 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,17 +24,27 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# A fallback in case tango_core is missing something critical that untrusted_app provides
-user=_app seinfo=tango name=com.google.tango:app domain=untrusted_app type=app_data_file levelFrom=user
 
-#Needed for time service apk
-user=_app seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file
+type poweroffalarm_app, domain;
+app_domain(poweroffalarm_app);
 
-# AtFwd app
-user=_app seinfo=platform name=com.qualcomm.telephony domain=qtelephony type=app_data_file levelFrom=all
+allow poweroffalarm_app app_api_service:service_manager find;
 
-#add new domain for qtidataservices
-user=radio seinfo=platform name=.qtidataservices domain=qtidataservices_app type=radio_data_file
+allow poweroffalarm_app mnt_vendor_file:dir r_dir_perms;
+allow poweroffalarm_app persist_alarm_file:dir rw_dir_perms;
+allow poweroffalarm_app persist_alarm_file:file create_file_perms;
 
-#Add new domain for power off alarm app
-user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=system_app_data_file
+hal_client_domain(poweroffalarm_app, hal_alarm_qti);
+
+binder_call(poweroffalarm_app, hal_alarm_qti_default);
+
+allow poweroffalarm_app system_app_data_file:dir create_dir_perms;
+#allow poweroffalarm_app system_app_data_file:{ file lnk_file } create_file_perms;
+
+allow poweroffalarm_app surfaceflinger_service:service_manager find;
+allow poweroffalarm_app audioserver_service:service_manager find;
+allow poweroffalarm_app mediaserver_service:service_manager find;
+
+get_prop(poweroffalarm_app, vendor_alarm_boot_prop);
+
+#get_prop(poweroffalarm_app, vendor_iop_prop)

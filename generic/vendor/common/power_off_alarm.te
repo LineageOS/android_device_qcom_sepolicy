@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2019 Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,17 +24,15 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# A fallback in case tango_core is missing something critical that untrusted_app provides
-user=_app seinfo=tango name=com.google.tango:app domain=untrusted_app type=app_data_file levelFrom=user
 
-#Needed for time service apk
-user=_app seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file
+type power_off_alarm, domain;
+type power_off_alarm_exec, exec_type, vendor_file_type, file_type;
 
-# AtFwd app
-user=_app seinfo=platform name=com.qualcomm.telephony domain=qtelephony type=app_data_file levelFrom=all
+init_daemon_domain(power_off_alarm)
 
-#add new domain for qtidataservices
-user=radio seinfo=platform name=.qtidataservices domain=qtidataservices_app type=radio_data_file
+allow power_off_alarm rtc_device:chr_file r_file_perms;
+allow power_off_alarm kmsg_device:chr_file w_file_perms;
 
-#Add new domain for power off alarm app
-user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=system_app_data_file
+allow power_off_alarm self:capability2 wake_alarm;
+
+set_prop(power_off_alarm, powerctl_prop)
