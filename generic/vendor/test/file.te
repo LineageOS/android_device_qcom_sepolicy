@@ -33,3 +33,6 @@ type sysfs_kgsl_snapshot, sysfs_type, fs_type;
 
 # path to debugfs. use this only in debug builds
 type qti_debugfs, fs_type, debugfs_type;
+
+# sensors data file type for script access by test apps
+type sensors_data_file, file_type, data_file_type, core_data_file_type;
