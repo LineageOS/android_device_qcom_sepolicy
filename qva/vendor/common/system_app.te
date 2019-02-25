@@ -27,3 +27,4 @@
 
 #allow system_app access factory
 hal_client_domain(system_app, vendor_hal_factory_qti);
+hal_client_domain(system_app, hal_fm);

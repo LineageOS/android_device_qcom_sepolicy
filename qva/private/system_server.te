@@ -37,7 +37,7 @@ unix_socket_send(system_server, seempdw, seempd)
 #Allow system server to get mirrorlink connection status prop
 get_prop(system_server, vendor_mirrorlink_prop)
 unix_socket_connect(system_server, dpmd, dpmd);
-allow system_server { dpmd_socket dpmtcm_socket dpmwrapper_socket }:sock_file w_file_perms;
+allow system_server { dpmd_socket dpmtcm_socket }:sock_file w_file_perms;
 
 allow system_server dpmd_data_file:dir create_dir_perms;
 allow system_server dpmd_data_file:file create_file_perms;
@@ -46,3 +46,9 @@ allow system_server dpmd_data_file:file create_file_perms;
 #add_service(system_server, vendor_perf_service);
 allow system_server vendor_perf_service:service_manager find;
 binder_call(system_server,qvrd);
+
+#Allow for access to WFD specific debug properties
+binder_call(system_server, wfdservice);
+userdebug_or_eng(`
+  get_prop(system_server, wfd_sys_debug_prop)
+')

@@ -38,6 +38,7 @@ vendor.qti.hardware.mlshal::IMlsDap                          u:object_r:hal_mirr
 vendor.qti.hardware.mlshal::IMlsVnc                          u:object_r:hal_mirrorlink_hwservice:s0
 vendor.qti.power.pasrmanager::IPasrManager                   u:object_r:hal_pasrmanager_hwservice:s0
 com.qualcomm.qti.bluetooth_audio::IBluetoothAudio            u:object_r:hal_audio_hwservice:s0
+com.qualcomm.qti.dpm.api::IdpmQmi                            u:object_r:hal_dpmqmi_hwservice:s0
 vendor.qti.hardware.audiohalext::IAudioHalExt                u:object_r:hal_audio_hwservice:s0
 vendor.qti.gnss::ILocHidlGnss                                u:object_r:hal_gnss_hwservice:s0
 vendor.nxp.hardware.nfc::INqNfc                              u:object_r:hal_nfc_hwservice:s0
@@ -49,9 +50,12 @@ vendor.qti.hardware.data.latency::ILinkLatency               u:object_r:hal_late
 vendor.qti.hardware.scve.objecttracker::IObjectTracker       u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.scve.panorama::IPanoramaStitching        u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.soter::ISoter                            u:object_r:hal_soter_hwservice:s0
-vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_bluetooth_hwservice:s0
+vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_fm_hwservice:s0
 vendor.qti.esepowermanager::IEsePowerManager                 u:object_r:hal_esepowermanager_hwservice:s0
 vendor.qti.hardware.wifi.supplicant::ISupplicantVendor       u:object_r:hal_wifi_supplicant_hwservice:s0
 vendor.qti.hardware.factory::IFactory                        u:object_r:vendor_hal_factory_qti_hwservice:s0
 vendor.qti.hardware.cvp::ICvp                                u:object_r:hal_cvp_hwservice:s0
-
+vendor.qti.hardware.bluetooth_sar::IBluetoothSar             u:object_r:hal_bluetooth_hwservice:s0
+vendor.qti.hardware.wifidisplaysession::IWifiDisplaySession  u:object_r:wifidisplayhalservice_hwservice:s0
+vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionVideoTrack    u:object_r:wifidisplayhalservice_hwservice:s0
+vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionAudioTrack    u:object_r:wifidisplayhalservice_hwservice:s0

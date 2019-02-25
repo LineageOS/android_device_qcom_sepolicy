@@ -48,3 +48,6 @@ type vendor_mmi_prop, property_type;
 
 # Audio debug props
 type vendor_audio_debug_prop, property_type;
+
+# property for location
+type location_prop, property_type;

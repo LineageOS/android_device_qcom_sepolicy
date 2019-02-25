@@ -29,3 +29,19 @@ type adpl, domain;
 type adpl_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(adpl)
 net_domain(adpl)
+
+allow adpl { rmnet_device mhi_device ipa_dev }:chr_file rw_file_perms;
+
+allow adpl self:{
+    socket
+    udp_socket
+    qipcrtr_socket
+} create_socket_perms_no_ioctl;
+
+set_prop(adpl, vendor_dataadpl_prop)
+
+#diag
+userdebug_or_eng(`
+    diag_use(adpl)
+    allow adpl sysfs_data:file r_file_perms;
+')

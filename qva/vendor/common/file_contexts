@@ -50,8 +50,11 @@
 ###################################
 # System files
 #
+
+/(vendor|system/vendor)/bin/dpmQmiMgr                                              u:object_r:hal_dpmQmiMgr_exec:s0
 /vendor/bin/hw/android\.hardware\.keymaster@4\.0-strongbox-service-qti             u:object_r:hal_keymaster_qti_exec:s0
-/vendor/bin/hw/android\.hardware\.drm@1\.1-service.clearkey                        u:object_r:hal_drm_clearkey_exec:s0
+/vendor/bin/hw/android\.hardware\.drm@1\.2-service.clearkey                        u:object_r:hal_drm_clearkey_exec:s0
+/vendor/bin/hw/android\.hardware\.drm@1\.2-service-lazy.clearkey                   u:object_r:hal_drm_clearkey_exec:s0
 /vendor/bin/hw/vendor\.nxp\.hardware\.nfc@1\.1-service                             u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service                           u:object_r:hal_alarm_qti_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.iop@2\.0-service                             u:object_r:hal_iop_default_exec:s0
@@ -89,6 +92,16 @@
 /(vendor|system/vendor)/bin/mmid                                                   u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service         u:object_r:vendor_hal_factory_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cvp@1\.0-service             u:object_r:vendor_cvp_exec:s0
+/(vendor|system/vendor)/bin/wfdvndservice                                          u:object_r:wfdvndservice_exec:s0
+
+#### Context for location features
+## location daemons and binaries
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@.*-service                        u:object_r:hal_gnss_qti_exec:s0
+/(vendor|system/vendor)/bin/xtwifi-inet-agent                                      u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/xtwifi-client                                          u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/garden_app                                             u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/DR_AP_Service                                          u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/slim_daemon                                            u:object_r:location_exec:s0
 
 ###################################
 # data files

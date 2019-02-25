@@ -30,7 +30,8 @@ type qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(qti)
 net_domain(qti)
 
-allow qti self:{ qipcrtr_socket } rw_socket_perms_no_ioctl;
+allow qti self:{ qipcrtr_socket } create_socket_perms_no_ioctl;
+allow qti vendor_qti_data_file:dir r_dir_perms;
 
 allow qti smd_device:chr_file rw_file_perms;
 allow qti rmnet_device:chr_file rw_file_perms;

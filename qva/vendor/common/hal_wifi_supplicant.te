@@ -25,10 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow access to create socket and ioctl.
-allow hal_wifi_supplicant_default self:socket create_socket_perms;
-allow hal_wifi_supplicant_default self:qipcrtr_socket create_socket_perms_no_ioctl;
-# ioctlcmd=c304, c302
-allowxperm hal_wifi_supplicant self:socket ioctl msm_sock_ipc_ioctls;
 # Allow write to proc_net.
 allow hal_wifi_supplicant_default proc_net:file write;
+allow hal_wifi_supplicant_default wifi_vendor_data_file:dir rw_dir_perms;

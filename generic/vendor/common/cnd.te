@@ -41,11 +41,11 @@ allow cnd wpa_data_file:sock_file create_file_perms;
 allow cnd self:capability2 block_suspend;
 
 allow cnd self:udp_socket create_socket_perms;
-allow cnd self:qipcrtr_socket rw_socket_perms_no_ioctl;
 allow cnd self:{
     # Allow receiving NETLINK responses from WLAN driver.
     netlink_socket
     netlink_generic_socket
+    qipcrtr_socket
 } create_socket_perms_no_ioctl;
 
 allowxperm cnd self:udp_socket ioctl SIOCGIFMTU;

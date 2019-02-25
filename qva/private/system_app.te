@@ -33,7 +33,6 @@ allow system_app seemp_data_file:{ file fifo_file } rw_file_perms;
 binder_call(system_app, seempd)
 
 allow system_app dpmtcm_socket:sock_file w_file_perms;
-allow system_app dpmwrapper_socket:sock_file w_file_perms;
 allow system_app dpmd:unix_stream_socket connectto;
 allow system_app color_service:service_manager add;
 get_prop(system_app, bluetooth_prop);
@@ -47,3 +46,10 @@ unix_socket_connect(system_app, mirrorlink, mirrorlink);
 
 # allow system app to set mirrorlink prop
 set_prop(system_app, vendor_mirrorlink_prop);
+
+#WFD
+set_prop(system_app, wfd_service_prop);
+userdebug_or_eng(`
+    get_prop(system_app, wfd_sys_debug_prop);
+')
+binder_call(system_app, wfdservice)
