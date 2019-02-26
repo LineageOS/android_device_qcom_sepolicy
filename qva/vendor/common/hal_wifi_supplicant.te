@@ -26,6 +26,9 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+# Allow access to create socket and ioctl.
+allow hal_wifi_supplicant_default self:qipcrtr_socket create_socket_perms_no_ioctl;
+
 # Allow write to proc_net.
 allow hal_wifi_supplicant_default proc_net:file write;
 
