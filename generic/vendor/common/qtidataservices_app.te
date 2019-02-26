@@ -31,17 +31,16 @@ app_domain(qtidataservices_app);
 add_hwservice(qtidataservices_app, hal_cacert_hwservice)
 hwbinder_use(qtidataservices_app)
 
-get_prop(qtidataservices_app, cnd_prop)
-
 allow qtidataservices_app { app_api_service activity_service }:service_manager find;
 allow qtidataservices_app self:qipcrtr_socket create_socket_perms_no_ioctl;
 allow qtidataservices_app radio_data_file:dir r_dir_perms;
 
 allow qtidataservices_app hal_datafactory_hwservice:hwservice_manager find;
+allow qtidataservices_app hal_iwlan_hwservice:hwservice_manager find;
 allow qtidataservices_app radio_service:service_manager find;
 
 allow qtidataservices_app sysfs_data:file r_file_perms;
 
-binder_call(qtidataservices_app, cnd)
+binder_call(qtidataservices_app, rild)
 
 net_domain(qtidataservices_app)
