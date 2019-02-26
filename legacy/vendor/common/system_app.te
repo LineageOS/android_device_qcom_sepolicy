@@ -183,7 +183,6 @@ get_prop(system_app, fm_prop)
 hal_client_domain(system_app, vendor_hal_factory_qti);
 
 #Wi-Fi Display
-set_prop(system_app, wfd_service_prop);
 userdebug_or_eng(`
 get_prop(system_app, wfd_debug_prop)
 ')

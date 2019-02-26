@@ -28,22 +28,4 @@
 # generic/location_app.te - sepolicy rules for qti value added location apps
 # that will be part of system image. Eg: XT app.
 
-app_domain(location_app)
-binder_use(location_app)
-hal_client_domain(location_app, hal_gnss)
-
-net_domain(location_app)
-
-#Permissions for JDWP
-userdebug_or_eng(`
-  allow location_app { adbd su }:unix_stream_socket connectto;
-')
-
-allow location_app app_api_service:service_manager find;
-
-allow location_app system_app_data_file:dir create_dir_perms;
-allow location_app system_app_data_file:file create_file_perms;
-
-allow location_app cgroup:file {read write};
-
-unix_socket_send(location_app, seempdw, seempd);
+type location_app, domain;

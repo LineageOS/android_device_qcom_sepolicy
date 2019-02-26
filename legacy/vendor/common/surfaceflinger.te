@@ -25,7 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-typeattribute surfaceflinger system_writes_vendor_properties_violators;
 allow surfaceflinger sysfs_graphics:file rw_file_perms;
 
 # Use open file provided by poweroffhandler
