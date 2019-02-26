@@ -37,3 +37,4 @@ ro.vendor.btstack.         u:object_r:bluetooth_prop:s0
 vendor.bluetooth.          u:object_r:bluetooth_prop:s0
 persist.vendor.bt_logger.  u:object_r:bluetooth_prop:s0
 vendor.perf.workloadclassifier.enable    u:object_r:vendor_wlc_prop:s0
+persist.vendor.build.date.utc    u:object_r:vendor_wlc_prop:s0
