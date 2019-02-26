@@ -73,10 +73,3 @@ allow hal_bluetooth_qti qti_debugfs:file r_file_perms;
 allow hal_bluetooth_qti qti_debugfs:dir rw_dir_perms;
 allow hal_bluetooth_qti self:{ socket qipcrtr_socket } create_socket_perms_no_ioctl;
 ')
-
-#Blocked by hal_attribute_hwservice(hal_bluetooth, hal_bluetooth_hwservice)
-#allow system_app hal_bluetooth_hwservice :hwservice_manager find;
-
-#FM IPC with BT/FM hal daemon
-binder_call(system_app, hal_bluetooth);
-binder_call(hal_bluetooth, system_app);
