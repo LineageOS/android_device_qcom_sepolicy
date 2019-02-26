@@ -26,4 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 vendor.media.sm6150.version      u:object_r:vendor_media_sm6150_version_prop:s0
-vendor.media.sm7150.version      u:object_r:vendor_media_sm7150_version_prop:s0
+vendor.media.sdmmagpie.version      u:object_r:vendor_media_sdmmagpie_version_prop:s0
+vendor.chre.enabled              u:object_r:vendor_chre_enabled_prop:s0

@@ -203,7 +203,3 @@ hal_client_domain(system_app, hal_sensorscalibrate_qti);
 hal_client_domain(system_app, hal_soter);
 
 get_prop(system_app, vendor_radio_prop)
-
-#secure camera
-hal_client_domain(system_app, hal_seccam);
-set_prop(system_app, vendor_seccam_prop);

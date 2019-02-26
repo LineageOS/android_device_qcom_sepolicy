@@ -1,6 +1,9 @@
 #Add new domain for Location services
 user=system seinfo=platform name=com.qualcomm.location.XT isPrivApp=true domain=location_app type=system_app_data_file
 
+#Add new domain for secure camera service app
+user=system seinfo=platform name=com.qualcomm.qti.seccamservice:remote domain=seccam_app type=system_app_data_file
+
 #Add new domain for QSEE services
 user=system seinfo=platform name=com.qualcomm.qti.auth.fidocryptoservice domain=qsee_svc_app type=system_app_data_file
 

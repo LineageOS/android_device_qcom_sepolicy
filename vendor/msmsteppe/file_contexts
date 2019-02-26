@@ -33,6 +33,7 @@
 
 # UFS Devices
 /dev/block/platform/soc/1d84000.ufshc/by-name/system                            u:object_r:system_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/metadata                            u:object_r:metadata_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/userdata                          u:object_r:userdata_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/boot                              u:object_r:boot_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/logdump                           u:object_r:logdump_partition:s0
@@ -126,6 +127,7 @@
 
 #non A/B
 /dev/block/platform/soc/7c4000.sdhci/by-name/system                            u:object_r:system_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/metadata                            u:object_r:metadata_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/userdata                          u:object_r:userdata_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/boot                              u:object_r:boot_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/logdump                           u:object_r:logdump_partition:s0
@@ -162,3 +164,6 @@
 /sys/devices/platform/soc/soc:fpc1020(/.*?) u:object_r:sysfs_fps_attr:s0
 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi632@3:qcom,leds@d000/modalias u:object_r:sysfs_fps_attr:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-fpc u:object_r:hal_fingerprint_fpc_exec:s0
+
+# data files
+/data/vendor/secure_element(/.*)?                                   u:object_r:secure_element_vendor_data_file:s0
