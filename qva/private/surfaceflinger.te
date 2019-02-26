@@ -27,3 +27,4 @@
 
 #Allow surfaceflinger to interact with mirrorlinkserver
 binder_call(surfaceflinger, mirrorlink);
+binder_call(surfaceflinger, wfdservice);
