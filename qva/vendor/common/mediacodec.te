@@ -29,3 +29,5 @@
 #Allow mediacodec to access service manager wfdnativemm_service
 allow mediacodec wfdnativemm_service:service_manager find;
 binder_call(mediacodec, wifidisplayhalservice_qti);
+
+get_prop(mediacodec, vendor_video_prop)

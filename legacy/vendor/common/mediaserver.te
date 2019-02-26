@@ -61,5 +61,4 @@ get_prop(mediaserver, vendor_audio_prop)
 allow mediaserver surfaceflinger:unix_stream_socket rw_socket_perms;
 
 hal_client_domain(mediaserver, hal_graphics_composer)
-get_prop(mediaserver, mm_video_prop)
 #binder_call(mediaserver, hal_display_config);
