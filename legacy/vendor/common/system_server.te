@@ -102,7 +102,7 @@ allow system_server {
 allow system_server usf:process signal;
 #allow system_server usf:unix_stream_socket connectto;
 
-get_prop(system_server, vendor_xlat_prop)
+hal_client_domain(system_server, hal_dataconnection_qti)
 
 #Allow access to netmgrd socket
 #netmgr_socket(system_server);
