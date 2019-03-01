@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b27916ee_d3955d98",
+        "filename": "vendor/common/hal_cvp.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2019-03-01T06:55:15Z",
+      "side": 1,
+      "message": "device/qcom/sepolicy/vendor/common/hal_cvp.te:55:WARNING \u0027unrecognized character\u0027at token \u0027\u0027\u0027 on line 33683:\n#  Access for sdcard\n\u0027\ndevice/qcom/sepolicy/vendor/common/hal_cvp.te:55:WARNING \u0027unrecognized character\u0027at token \u0027\u0027\u0027 on line 33689:\n#line 55\n\u0027\ndevice/qcom/sepolicy/vendor/common/hal_cvp.te:55:WARNING \u0027unrecognized character\u0027at token \u0027\u0027\u0027 on line 33683:\n\u0027\n#  Access for sdcard\ndevice/qcom/sepolicy/vendor/common/hal_cvp.te:55:WARNING \u0027unrecognized character\u0027at token \u0027\u0027\u0027 on line 33689:\n\u0027\n#line 55\n\nChange \u0027 to `",
+      "range": {
+        "startLine": 55,
+        "startChar": 17,
+        "endLine": 55,
+        "endChar": 18
+      },
+      "revId": "daf0af4207722c77827f27a1421a6add20078eac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
