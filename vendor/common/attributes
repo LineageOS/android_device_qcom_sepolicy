@@ -123,3 +123,7 @@ attribute hal_fm_server;
 attribute hal_btconfigstore;
 attribute hal_btconfigstore_client;
 attribute hal_btconfigstore_server;
+
+attribute hal_dataconnection_qti;
+attribute hal_dataconnection_qti_client;
+attribute hal_dataconnection_qti_server;
