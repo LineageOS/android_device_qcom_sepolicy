@@ -22,6 +22,30 @@
       "revId": "daf0af4207722c77827f27a1421a6add20078eac",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d5a272ef_3c109750",
+        "filename": "vendor/common/hal_cvp.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-03-01T10:16:57Z",
+      "side": 1,
+      "message": "I am not sure if we\u0027re supposed to fix stuff like this in a merge commit. One thing is doing it for merge conflicts, but this is not the case.",
+      "parentUuid": "b27916ee_d3955d98",
+      "range": {
+        "startLine": 55,
+        "startChar": 17,
+        "endLine": 55,
+        "endChar": 18
+      },
+      "revId": "daf0af4207722c77827f27a1421a6add20078eac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
