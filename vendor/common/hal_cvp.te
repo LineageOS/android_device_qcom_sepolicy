@@ -52,7 +52,7 @@ allow vendor_cvp dsp_device:chr_file rw_file_perms;
 get_prop(hal_camera, adsprpc_prop)
 
 #  Access for sdcard
-userdebug_or_eng('
+userdebug_or_eng(`
 allow vendor_cvp sdcard_type:dir rw_dir_perms;
 allow vendor_cvp sdcard_type:file create_file_perms;
 ')
