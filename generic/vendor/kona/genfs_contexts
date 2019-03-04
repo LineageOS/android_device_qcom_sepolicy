@@ -62,3 +62,6 @@ genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-cpu-llcc-lat/devfreq u:object
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-llcc-ddr-lat/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-llcc-ddr-lat/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-cpu-ddr-latfloor/devfreq u:object_r:sysfs_devfreq:s0
+#mhi sysfs
+genfscon sysfs /bus/mhi/devices/0306_02.01.00_QMI1/mhi_uci u:object_r:sysfs_mhi:s0
+
