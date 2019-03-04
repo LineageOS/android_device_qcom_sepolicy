@@ -254,6 +254,7 @@
 /(vendor|system/vendor)/bin/ipacm                               u:object_r:ipacm_exec:s0
 /(vendor|system/vendor)/bin/ipacm-diag          u:object_r:ipacm-diag_exec:s0
 /(vendor|system/vendor)/bin/dpmQmiMgr           u:object_r:hal_dpmQmiMgr_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.0-service            u:object_r:hal_perf_default_exec:s0
 #/(vendor|system/vendor)/bin/dpmd                                u:object_r:dpmd_exec:s0
 /(vendor|system/vendor)/bin/ssr_setup           u:object_r:vendor_ssr_setup_exec:s0
 /(vendor|system/vendor)/bin/subsystem_ramdump   u:object_r:vendor_subsystem_ramdump_exec:s0
@@ -669,6 +670,7 @@
 /vendor/lib(64)?/libgrallocutils\.so       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libgralloccore\.so        u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libExtendedExtractor.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor\.qti\.hardware\.perf@2\.0\.so    u:object_r:same_process_hal_file:s0
 # RenderScript dependencies.
 # To test: run cts -m CtsRenderscriptTestCases
 /vendor/lib(64)?/libRSDriver_adreno\.so     u:object_r:same_process_hal_file:s0
