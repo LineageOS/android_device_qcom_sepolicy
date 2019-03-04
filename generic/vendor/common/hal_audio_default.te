@@ -56,6 +56,3 @@ allow hal_audio sysfs_audio:dir r_dir_perms ;
 
 # audio properties
 get_prop(hal_audio, vendor_audio_prop)
-
-# bluetooth properties
-get_prop(hal_audio, vendor_bluetooth_prop)
