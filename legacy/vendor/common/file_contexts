@@ -302,7 +302,6 @@
 /(vendor|system/vendor)/bin/btnvtool            u:object_r:btnvtool_exec:s0
 /(vendor|system/vendor)/bin/btsnoop                             u:object_r:btsnoop_exec:s0
 /(vendor|system/vendor)/bin/wifidisplayhalservice               u:object_r:wifidisplayhalservice_qti_exec:s0
-/(vendor|system/vendor)/bin/wcnss_filter        u:object_r:wcnss_filter_exec:s0
 /(vendor|system/vendor)/bin/fmhal_service                       u:object_r:fmhal_service_exec:s0
 /(vendor|system/vendor)/bin/usf_epos            u:object_r:usf_exec:s0
 /(vendor|system/vendor)/bin/usf_gesture         u:object_r:usf_exec:s0
