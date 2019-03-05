@@ -73,3 +73,5 @@ allow hal_bluetooth_qti qti_debugfs:file r_file_perms;
 allow hal_bluetooth_qti qti_debugfs:dir rw_dir_perms;
 allow hal_bluetooth_qti self:{ socket qipcrtr_socket } create_socket_perms_no_ioctl;
 ')
+
+hal_server_domain(hal_bluetooth_qti, hal_fm)
