@@ -57,10 +57,6 @@ allow rfs_access persist_rfs_file:file create_file_perms;
 allow rfs_access persist_rfs_shared_hlos_file:dir create_dir_perms;
 allow rfs_access persist_rfs_shared_hlos_file:file create_file_perms;
 
-#For system folder entries
-r_dir_file(rfs_access, rfs_system_file)
-allow rfs_access rfs_system_file:lnk_file r_file_perms;
-
 # RFS vendor data
 allow rfs_access rfs_file:dir create_dir_perms;
 allow rfs_access rfs_file:file create_file_perms;

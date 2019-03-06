@@ -227,7 +227,6 @@
 /(vendor|system/vendor)/bin/mm-qcamera-daemon   u:object_r:mm-qcamerad_exec:s0
 /(vendor|system/vendor)/bin/qfp-daemon          u:object_r:qfp-daemon_exec:s0
 /(vendor|system/vendor)/bin/qvop-daemon         u:object_r:qvop-daemon_exec:s0
-/system/rfs.*                                   u:object_r:rfs_system_file:s0
 /(vendor|system/vendor)/bin/time_daemon         u:object_r:time_daemon_exec:s0
 /(vendor|system/vendor)/bin/rmt_storage         u:object_r:rmt_storage_exec:s0
 /(vendor|system/vendor)/bin/rfs_access          u:object_r:rfs_access_exec:s0
