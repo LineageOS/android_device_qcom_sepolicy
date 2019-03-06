@@ -39,5 +39,6 @@
 /dev/block/platform/msm_sdcc\.1/by-name/userdata              u:object_r:userdata_block_device:s0
 /dev/block/platform/msm_sdcc\.1/by-name/cache                 u:object_r:cache_block_device:s0
 /dev/block/platform/msm_sdcc\.1/by-name/logdump               u:object_r:logdump_partition:s0
+/dev/block/platform/msm_sdcc\.1/by-name/persist               u:object_r:persist_block_device:s0
 /dev/block/mmcblk0                                            u:object_r:root_block_device:s0
 /dev/block/mmcblk0rpmb                                        u:object_r:rpmb_device:s0
