@@ -35,7 +35,7 @@
 /dev/spdaemon_ssr                     u:object_r:spdaemon_ssr_device:s0
 /dev/cryptoapp                        u:object_r:cryptoapp_device:s0
 /dev/sec_nvm_.*                       u:object_r:sec_nvm_device:s0
-/dev/qbt1000                          u:object_r:qbt1000_device:s0
+/dev/qbt.*                            u:object_r:qbt_device:s0
 /dev/esoc.*                           u:object_r:esoc_device:s0
 /dev/mhi_.*                           u:object_r:mhi_device:s0
 /dev/smem_log                         u:object_r:smem_log_device:s0
