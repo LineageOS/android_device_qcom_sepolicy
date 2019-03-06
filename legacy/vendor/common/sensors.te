@@ -95,7 +95,6 @@ userdebug_or_eng(`
 #binder_call(sensors, servicemanager)
 binder_call(sensors, vendor_per_mgr)
 
-allow sensors sysfs:dir r_dir_perms;
 allow sensors sysfs_socinfo:file w_file_perms;
 allow sensors sysfs_data:file r_file_perms;
 

@@ -61,7 +61,6 @@ allow hal_perf {
      sysfs_msm_perf
      sysfs_memory
      sysfs_graphics
-     sysfs
      sysfs_msm_power
      sysfs_battery_supply
      sysfs_process_reclaim
