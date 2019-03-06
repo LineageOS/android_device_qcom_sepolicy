@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,11 +25,36 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type perfservice_exec, exec_type, system_file_type, file_type;
+type perfdump_app, domain;
+app_domain(perfdump_app)
 
-init_daemon_domain(perfservice)
+# systrace support
+allow perfdump_app debugfs_tracing:dir r_dir_perms;
+allow perfdump_app debugfs_tracing:file rw_file_perms;
 
-add_service(perfservice, vendor_perf_service);
-binder_use(perfservice);
-binder_call(perfservice, system_server);
-binder_service(perfservice);
+userdebug_or_eng(`
+  allow perfdump_app debugfs_tracing_debug:dir r_dir_perms;
+  allow perfdump_app debugfs_tracing_debug:file rw_file_perms;
+')
+
+allow perfdump_app debugfs_trace_marker:file getattr;
+
+# perfdump sets debug.atrace.* properties
+set_prop(perfdump_app, debug_prop)
+
+# pokes binder-enabled processes
+binder_use(perfdump_app)
+allow perfdump_app servicemanager:service_manager list;
+allow perfdump_app hwservicemanager:hwservice_manager list;
+allow perfdump_app app_api_service:service_manager find;
+allow perfdump_app surfaceflinger_service:service_manager find;
+allow perfdump_app audioserver_service:service_manager find;
+allow perfdump_app mediaserver_service:service_manager find;
+binder_call(perfdump_app, system_server)
+
+# dumpstate
+set_prop(perfdump_app, ctl_dumpstate_prop)
+unix_socket_connect(perfdump_app, dumpstate, dumpstate)
+
+dontaudit perfdump_app service_manager_type:service_manager *;
+dontaudit perfdump_app hwservice_manager_type:hwservice_manager *;

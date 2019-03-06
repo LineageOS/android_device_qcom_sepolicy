@@ -45,6 +45,10 @@ vendor.qcom_parser.                u:object_r:mm_parser_prop:s0
 #mm-osal
 vendor.debug.mmosal.config         u:object_r:mm_osal_prop:s0
 
+#perf
+vendor.perf.workloadclassifier.enable      u:object_r:vendor_wlc_prop:s0
+persist.vendor.build.date.utc              u:object_r:vendor_wlc_prop:s0
+
 #Wifi Display
 vendor.wfdservice                          u:object_r:wfd_service_prop:s0
 persist.vendor.debug.wfd.wfdsvc            u:object_r:wfd_sys_debug_prop:s0

@@ -39,6 +39,10 @@ ctl.vendor.mdm_helper                        u:object_r:vendor_mdm_helper_prop:s
 # qdma property
 vendor.qti.qdma.                             u:object_r:vendor_qdma_prop:s0
 
+#perf
+vendor.post_boot.parsed                u:object_r:vendor_mpctl_prop:s0
+vendor.perf.dolphin.enable             u:object_r:vendor_dolphin_prop:s0
+
 # NFC
 vendor.qti.nfc.                              u:object_r:vendor_nfc_nq_prop:s0
 
