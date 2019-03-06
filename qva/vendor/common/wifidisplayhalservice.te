@@ -32,17 +32,68 @@ type wifidisplayhalservice_qti_exec, exec_type, vendor_file_type, file_type;
 #Allow for transition from init domain to wifidisplayhalservice
 init_daemon_domain(wifidisplayhalservice_qti)
 
+#Inherit base network permissions from netd
+net_domain(wifidisplayhalservice_qti)
+
 #Allow wifidisplayhalservice to use Vendor Binder IPC
 vndbinder_use(wifidisplayhalservice)
 
-hal_server_domain(wifidisplayhalservice_qti,wifidisplayhalservice)
+hal_server_domain_bypass(wifidisplayhalservice_qti,wifidisplayhalservice)
 
 # Allow hwbinder call from hal client to server
 binder_call(wifidisplayhalservice_client, wifidisplayhalservice_server)
 binder_call(wifidisplayhalservice_server, wifidisplayhalservice_client)
 
-# Allow wifidisplayhalservice_qti to call into wfdvndservice
-binder_call(wifidisplayhalservice_qti, wfdvndservice)
-
 # Add hwservice related rules
 hal_attribute_hwservice(wifidisplayhalservice, wifidisplayhalservice_hwservice)
+
+#Direct streaming native service
+add_service(wifidisplayhalservice_qti, wfdnativemm_service)
+
+#Allow access to firmware files for HDCP session
+r_dir_file(wifidisplayhalservice_qti, firmware_file)
+
+#Allow access to tee/ion device and tcp socket for HDCP sessions
+allow wifidisplayhalservice_qti tee_device:chr_file rw_file_perms;
+
+#Allow access to PCM sound card
+allow wifidisplayhalservice_qti audio_device:chr_file rw_file_perms;
+allow wifidisplayhalservice_qti audio_device:dir r_dir_perms;
+
+#Allow access to /dev/video/* devices for encoding/decoding
+allow wifidisplayhalservice_qti video_device:chr_file rw_file_perms;
+
+#Allow binder call to mediacodec from wifidisplayhalservice
+binder_call(wifidisplayhalservice_qti, mediacodec);
+
+#Allow udp socket ioctl
+allow wifidisplayhalservice_qti self:udp_socket create_socket_perms;
+# ioctlcmd=8bff,8912
+allowxperm wifidisplayhalservice_qti self:udp_socket ioctl priv_sock_ioctls;
+
+#Allow access to proc/net/arp
+allow wifidisplayhalservice_qti proc_net:file r_file_perms;
+
+# Add the rule for wfd to access /proc/asound/pcm file
+r_dir_file(wifidisplayhalservice_qti, proc_asound)
+
+#Allow hal graphics allocator permissions
+hal_client_domain(wifidisplayhalservice_qti, hal_graphics_allocator);
+
+#Allow hal graphics mapper permissions
+hal_client_domain(wifidisplayhalservice_qti, hal_graphics_composer);
+
+#Allow wifidisplayhalservice_qti to query interface name of network (p2p etc.)
+allow wifidisplayhalservice_qti self:netlink_generic_socket create_socket_perms_no_ioctl;
+
+#Allow communication with init over property server
+unix_socket_connect(wifidisplayhalservice_qti, property, init);
+
+#Allow ion device access
+allow wifidisplayhalservice_qti ion_device:chr_file r_file_perms;
+
+#Allow for property access
+userdebug_or_eng(`
+  get_prop(wifidisplayhalservice_qti,wfd_vendor_debug_prop)
+')
+
