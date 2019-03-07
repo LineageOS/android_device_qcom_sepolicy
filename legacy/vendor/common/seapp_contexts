@@ -31,10 +31,6 @@ user=system seinfo=platform name=com.qualcomm.location.XT isPrivApp=true domain=
 #Add new domain for QSEE services
 user=system seinfo=platform name=com.qualcomm.qti.auth.fidocryptoservice domain=qsee_svc_app type=system_app_data_file
 
-#Add new domain for MDTP services
-user=system seinfo=platform name=com.qualcomm.qti.securemsm.mdtp.MdtpService domain=mdtpservice_app type=mdtp_svc_app_data_file
-
-
 # AtFwd app
 user=_app seinfo=platform name=com.qualcomm.telephony domain=qtelephony type=app_data_file levelFrom=all
 
