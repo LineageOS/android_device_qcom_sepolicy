@@ -43,7 +43,6 @@ allow qti_init_shell vendor_toolbox_exec:file  rx_file_perms;
 # For getting idle_time value
 # this is needed for dynamic_fps and bw_mode_bitmap
 allow qti_init_shell sysfs_graphics:file {rw_file_perms setattr};
-allow qti_init_shell sysfs:file setattr;
 
 allow qti_init_shell mnt_vendor_file:dir w_dir_perms;
 allow qti_init_shell mnt_vendor_file:file create_file_perms;
@@ -135,7 +134,6 @@ allow qti_init_shell sysfs_kgsl:file { r_file_perms setattr };
 
 allow qti_init_shell proc:file r_file_perms;
 allow qti_init_shell rootfs:file r_file_perms;
-allow qti_init_shell sysfs:file r_file_perms;
 
 allow qti_init_shell radio_vendor_data_file:dir create_dir_perms;
 allow qti_init_shell radio_vendor_data_file:file create_file_perms;

@@ -55,7 +55,6 @@ allow sensors sensors_vendor_data_file:file create_file_perms;
 allow sensors system_file:dir r_dir_perms;
 allow sensors sensors_device:chr_file rw_file_perms;
 
-allow sensors sysfs:dir r_dir_perms;
 allow sensors sysfs_soc:file w_file_perms;
 allow sensors sysfs_data:file r_file_perms;
 

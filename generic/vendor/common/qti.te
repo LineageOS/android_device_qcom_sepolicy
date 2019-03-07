@@ -44,4 +44,3 @@ userdebug_or_eng(`
     allow qti { sysfs_data sysfs_timestamp_switch} :file r_file_perms;
 ')
 allow qti mhi_device:chr_file rw_file_perms;
-allow qti sysfs:dir r_dir_perms;
