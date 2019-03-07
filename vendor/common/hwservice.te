@@ -58,4 +58,5 @@ type hal_pasrmanager_hwservice, hwservice_manager_type;
 type hal_wifilearner_hwservice, hwservice_manager_type;
 type hal_seccam_hwservice, hwservice_manager_type;
 type hal_cvp_hwservice, hwservice_manager_type;
+type hal_cne_hwservice, hwservice_manager_type;
 type nxpese_hwservice, hwservice_manager_type;

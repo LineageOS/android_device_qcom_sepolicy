@@ -43,3 +43,5 @@ allow dataservice_app cnd_data_file:file r_file_perms;
 allow dataservice_app cnd_data_file:dir search;
 
 allow dataservice_app app_api_service:service_manager find;
+
+allow dataservice_app hal_cne_hwservice:hwservice_manager find;
