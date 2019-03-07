@@ -25,15 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type location_app, domain;
-app_domain(location_app)
-binder_use(location_app)
-hal_client_domain(location_app, hal_gnss)
 hal_client_domain(location_app, hal_perf)
-
 qmux_socket(location_app)
-
-net_domain(location_app)
 
 #Permissions for JDWP
 userdebug_or_eng(`
@@ -46,14 +39,12 @@ userdebug_or_eng(`
 get_prop(location_app, vendor_mpctl_prop)
 get_prop(location_app, vendor_iop_prop)
 allow location_app mediametrics_service:service_manager find;
-allow location_app system_app_data_file:dir create_dir_perms;
-allow location_app system_app_data_file:file create_file_perms;
 allow location_app surfaceflinger_service:service_manager find;
 allow location_app location_data_file:dir rw_dir_perms;
 allow location_app self:socket create_socket_perms;
 allow location_app anr_data_file:dir rw_dir_perms;
 allow location_app anr_data_file:file rw_file_perms;
-allow location_app { app_api_service activity_service }:service_manager find;
+allow location_app activity_service:service_manager find;
 # ioctlcmd=c302
 allowxperm location_app self:socket ioctl msm_sock_ipc_ioctls;
 allow location_app self:qipcrtr_socket create_socket_perms_no_ioctl;

@@ -28,7 +28,6 @@
 # generic/location_app.te - sepolicy rules for qti value added location apps
 # that will be part of system image. Eg: XT app.
 
-type location_app, domain;
 app_domain(location_app)
 binder_use(location_app)
 hal_client_domain(location_app, hal_gnss)

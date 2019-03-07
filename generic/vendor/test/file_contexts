@@ -78,6 +78,8 @@
 /(vendor|system/vendor)/bin/test-fdal                           u:object_r:location_exec:s0
 
 /(vendor|system/vendor)/bin/sns.*               u:object_r:sensors_test_exec:s0
+# Sensors scripts for test app
+/data/sensors/scripts(/.*)?                                     u:object_r:sensors_data_file:s0
 #for testscripts support
 /(vendor|system/vendor)/bin/init\.qcom\.vendor\.testscripts\.sh u:object_r:vendor-qti-testscripts_exec:s0
 #TODO: coredump_file need have a attribute of data_file_type and

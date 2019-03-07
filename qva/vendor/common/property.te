@@ -51,3 +51,6 @@ type vendor_audio_debug_prop, property_type;
 
 # property for location
 type location_prop, property_type;
+
+# Netmgrd prop
+type vendor_data_ko_prop, property_type;

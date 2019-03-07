@@ -27,4 +27,3 @@
 
 allow mediaextractor sdcard_type:file { getattr read };
 get_prop(mediaextractor,  vendor_audio_prop)
-get_prop(mediaextractor, mm_parser_prop)
