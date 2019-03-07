@@ -30,3 +30,5 @@ hal_client_domain(hal_secure_element_default, hal_esepowermanager)
 
 #Allow access to the qteeconnector
 hal_client_domain(hal_secure_element_default, hal_qteeconnector)
+
+allow hal_secure_element_default nxpese_hwservice:hwservice_manager { add };
