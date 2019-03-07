@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,22 +24,29 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type time_daemon, domain;
+
+# Policies for time daemon
+type time_daemon, domain, mlstrustedsubject;
 type time_daemon_exec, exec_type, vendor_file_type, file_type;
 
+# Make transition to its own time_daemon domain from init
 init_daemon_domain(time_daemon)
+allow time_daemon smem_log_device:chr_file rw_file_perms;
 
-allow time_daemon self:capability { setgid setuid sys_time };
-
+# Add rules for access permissions
 allow time_daemon rtc_device:chr_file r_file_perms;
 
-allow time_daemon persist_time_file:dir w_dir_perms;
+allow time_daemon vendor_time_data_file:file create_file_perms;
+allow time_daemon vendor_time_data_file:dir w_dir_perms;
+allow time_daemon self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow time_daemon self:capability sys_time;
+
 allow time_daemon persist_time_file:file create_file_perms;
-allow time_daemon persist_time_file:dir search;
+allow time_daemon persist_time_file:dir w_dir_perms;
 
 allow time_daemon mnt_vendor_file:dir search;
 
-allow time_daemon self:socket create_socket_perms;
-allowxperm time_daemon self:socket ioctl msm_sock_ipc_ioctls;
-
+allow time_daemon sysfs_mhi:file r_file_perms;
 allow time_daemon sysfs_data:file r_file_perms;
+
+get_prop(time_daemon, vendor_time_service_prop);
