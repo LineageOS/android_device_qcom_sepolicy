@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Default type for anything under /firmware.
-type firmware_file, system_file_type, file_type, contextmount_type, vendor_file_type;
+type firmware_file,  file_type, contextmount_type, vendor_file_type;
 
 # All files under /vendor/firmware
 type vendor_firmware_file, vendor_file_type, file_type;
