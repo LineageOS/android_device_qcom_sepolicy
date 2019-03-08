@@ -48,6 +48,7 @@
 /dev/socket/ssgqmig                             u:object_r:ssgqmig_socket:s0
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 /dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
+/dev/socket/adpl_cmd_uds_file                   u:object_r:dataadpl_socket:s0
 
 ###################################
 # System files

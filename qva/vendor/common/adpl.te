@@ -45,3 +45,6 @@ userdebug_or_eng(`
     diag_use(adpl)
     allow adpl sysfs_data:file r_file_perms;
 ')
+
+#Allow adpl to create adpl socket
+allow adpl dataadpl_socket:sock_file rw_file_perms;
