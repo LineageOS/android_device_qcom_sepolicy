@@ -47,6 +47,7 @@
 /dev/socket/mlid                                u:object_r:mlid_socket:s0
 /dev/socket/ssgqmig                             u:object_r:ssgqmig_socket:s0
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
+/dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
 
 ###################################
 # System files
@@ -119,6 +120,8 @@
 /data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/dataqti(/.*)?                                          u:object_r:vendor_qti_data_file:s0
+/data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qdma_data_file:s0
+/data/vendor/qdma(/.*)?                                             u:object_r:vendor_qdma_data_file:s0
 
 ###################################
 # persist files
