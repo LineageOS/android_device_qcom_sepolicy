@@ -55,4 +55,8 @@ r_dir_file(hal_mirrorlink_qti, firmware_file);
 allow hal_mirrorlink_client hal_mirrorlink_hwservice:hwservice_manager find;
 
 #Allow access to gpu device
-#allow hal_mirrorlink_qti gpu_device:chr_file rw_file_perms;
+allow hal_mirrorlink_qti gpu_device:chr_file rw_file_perms;
+
+#Allow access to video encoder device
+allow hal_mirrorlink_qti video_device:chr_file rw_file_perms;
+
