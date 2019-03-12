@@ -59,6 +59,9 @@ vendor.video.disable.ubwc                    u:object_r:vendor_video_prop:s0
 # factory properties
 ctl.vendor.mmid                              u:object_r:ctl_vendor_mmid_prop:s0
 
+#seccam hal_service
+vendor.hyp_core_ctl                          u:object_r:vendor_core_ctl_prop:s0
+
 persist.vendor.mmi.                          u:object_r:vendor_mmi_prop:s0
 
 # izat location property

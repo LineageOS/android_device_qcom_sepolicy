@@ -62,6 +62,9 @@ type vendor_video_prop, property_type;
 # Audio debug props
 type vendor_audio_debug_prop, property_type;
 
+# Seccam Prop
+type vendor_core_ctl_prop, property_type;
+
 # property for location
 type location_prop, property_type;
 
