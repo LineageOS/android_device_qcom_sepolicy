@@ -31,7 +31,6 @@ type hal_rcsservice_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_rcsservice)
 net_domain(hal_rcsservice)
 
-allow hal_rcsservice self:{ qipcrtr_socket } rw_socket_perms_no_ioctl;
 
 get_prop(hal_rcsservice, ims_prop)
 set_prop(hal_rcsservice, ims_prop)
@@ -46,7 +45,7 @@ get_prop(hal_rcsservice, hwservicemanager_prop)
 
 allow hal_rcsservice sysfs_timestamp_switch:file r_file_perms;
 allow hal_rcsservice sysfs_data:file r_file_perms;
-
+allow hal_rcsservice self: { socket qipcrtr_socket } create_socket_perms_no_ioctl;
 #required for socket creation
 unix_socket_connect(hal_rcsservice, ims, ims)
 
