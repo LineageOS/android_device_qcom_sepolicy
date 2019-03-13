@@ -28,3 +28,5 @@
 ##for perf-hal/iop-hal call
 hal_client_domain(system_server, hal_perf)
 hal_client_domain(system_server, hal_iop)
+
+allow system_server proc_audiod:file r_file_perms;
