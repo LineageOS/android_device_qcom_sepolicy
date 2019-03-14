@@ -55,6 +55,7 @@ persist.vendor.debug.en.drpcrpt           u:object_r:mm_video_prop:s0
 persist.vendor.media.hls.                 u:object_r:mm_video_prop:s0
 persist.vendor.sys.media.rtp-ports        u:object_r:mm_video_prop:s0
 vendor.encoder.video.profile              u:object_r:mm_video_prop:s0
+vendor.sys.media.target.version           u:object_r:vendor_sys_video_prop:s0
 
 #Wifi Display
 vendor.wfdservice                          u:object_r:wfd_service_prop:s0
