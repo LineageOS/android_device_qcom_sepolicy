@@ -87,6 +87,3 @@ allow location hal_wifi:unix_stream_socket { read write };
 ##############
 allow location {hal_cacert_hwservice hal_datafactory_hwservice hal_cne_hwservice}:hwservice_manager find;
 binder_call(location, qtidataservices_app)
-
-# permission to read hosts file
-allow location system_file:file r_file_perms;
