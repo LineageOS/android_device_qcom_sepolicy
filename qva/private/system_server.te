@@ -27,7 +27,8 @@
 
 add_service(system_server, izat_service)
 
-
+# Ant ipc
+hal_client_domain(system_server,hal_bluetooth);
 
 allow system_server seempdw_socket:sock_file write;
 
