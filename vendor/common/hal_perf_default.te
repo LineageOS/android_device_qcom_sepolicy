@@ -41,6 +41,7 @@ allow hal_perf_client hal_perf_hwservice:hwservice_manager find;
 allow hal_perf cgroup:file r_file_perms;
 allow hal_perf_default proc:file rw_file_perms;
 allow hal_perf device_latency:chr_file rw_file_perms;
+allow hal_perf freq_prop:file r_file_perms;
 allow hal_perf vendor_mpctl_prop:file r_file_perms;
 allow hal_perf_default mpctl_data_file:dir rw_dir_perms;
 allow hal_perf_default mpctl_data_file:file create_file_perms;
@@ -50,9 +51,6 @@ allow hal_perf_default sysfs_lib:file w_file_perms;
 hal_client_domain(hal_perf_default, hal_graphics_composer);
 allow hal_perf_default qdisplay_service:service_manager find;
 r_dir_file(hal_perf_default, appdomain);
-
-# Allow perf HAL to set freq props
-set_prop(hal_perf_default, freq_prop)
 
 allow hal_perf {
     sysfs_devices_system_cpu
