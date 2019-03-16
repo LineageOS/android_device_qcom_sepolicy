@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d63b333a_9e47b987",
+        "filename": "vendor/common/hal_perf_default.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2019-03-16T20:26:09Z",
+      "side": 1,
+      "message": "get_prop(hal_perf_default, freq_prop)",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 43
+      },
+      "revId": "62fc3401a4d1c31c122a0383aff1cf7abd9798df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
