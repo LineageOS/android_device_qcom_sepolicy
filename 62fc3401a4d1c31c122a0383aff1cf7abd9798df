@@ -22,6 +22,30 @@
       "revId": "62fc3401a4d1c31c122a0383aff1cf7abd9798df",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d710e74e_07f500c1",
+        "filename": "vendor/common/hal_perf_default.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2019-03-17T03:03:35Z",
+      "side": 1,
+      "message": "This is CAF\u0027s original code, is it necessary to touch it?",
+      "parentUuid": "d63b333a_9e47b987",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 43
+      },
+      "revId": "62fc3401a4d1c31c122a0383aff1cf7abd9798df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
