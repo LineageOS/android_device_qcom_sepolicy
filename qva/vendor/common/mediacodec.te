@@ -28,6 +28,7 @@
 #WFD
 #Allow mediacodec to access service manager wfdnativemm_service
 allow mediacodec wfdnativemm_service:service_manager find;
+allow mediacodec audio_device:chr_file rw_file_perms;
 binder_call(mediacodec, wifidisplayhalservice_qti);
 
 get_prop(mediacodec, vendor_video_prop)
