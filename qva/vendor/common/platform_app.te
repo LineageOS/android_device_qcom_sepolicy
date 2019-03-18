@@ -28,3 +28,7 @@
 
 #perf
 hal_client_domain(platform_app, hal_perf)
+#cvp
+hal_client_domain(platform_app, hal_cvp)
+#scve
+hal_client_domain(platform_app, hal_scve)
