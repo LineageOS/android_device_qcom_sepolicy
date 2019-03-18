@@ -135,7 +135,7 @@
 /mnt/vendor/persist/qti_fp(/.*)?      u:object_r:persist_qti_fp_file:s0
 /mnt/vendor/persist/FTM_AP(/.*)?      u:object_r:vendor_persist_mmi_file:s0
 /mnt/vendor/persist/vpp(/.*)?         u:object_r:persist_vpp_file:s0
-
+/mnt/vendor/persist/hvdcp_opti(/.*)?  u:object_r:persist_hvdcp_file:s0
 
 # same-process HAL files and their dependencies
 #
