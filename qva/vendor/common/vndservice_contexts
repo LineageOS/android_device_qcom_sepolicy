@@ -27,4 +27,3 @@
 
 #WFD
 wfd.native.mm.service                          u:object_r:wfdnativemm_service:s0
-wfdvndservice                                  u:object_r:wfdvndservice_service:s0

@@ -39,6 +39,7 @@
 /dev/esoc.*                           u:object_r:esoc_device:s0
 /dev/mhi_.*                           u:object_r:mhi_device:s0
 /dev/smem_log                         u:object_r:smem_log_device:s0
+/dev/radio0                           u:object_r:fm_radio_device:s0
 
 ###################################
 # Dev socket nodes
@@ -46,6 +47,7 @@
 /dev/socket/mlid                                u:object_r:mlid_socket:s0
 /dev/socket/ssgqmig                             u:object_r:ssgqmig_socket:s0
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
+/dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
 
 ###################################
 # System files
@@ -56,6 +58,7 @@
 /vendor/bin/hw/android\.hardware\.drm@1\.2-service.clearkey                        u:object_r:hal_drm_clearkey_exec:s0
 /vendor/bin/hw/android\.hardware\.drm@1\.2-service-lazy.clearkey                   u:object_r:hal_drm_clearkey_exec:s0
 /vendor/bin/hw/vendor\.nxp\.hardware\.nfc@1\.1-service                             u:object_r:hal_nfc_default_exec:s0
+/vendor/bin/hw/vendor\.nxp\.hardware\.nfc@1\.2-service                             u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service                           u:object_r:hal_alarm_qti_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.iop@2\.0-service                             u:object_r:hal_iop_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.mlshal@1\.0-service                          u:object_r:hal_mirrorlink_qti_exec:s0
@@ -68,6 +71,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.power\.pasrmanager\@1\.0-service       u:object_r:hal_pasrmanager_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.mlshal@1\.0-service       u:object_r:hal_mirrorlink_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.0-service            u:object_r:hal_secure_element_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.0-service            u:object_r:hal_perf_default_exec:s0
 /(vendor|system/vendor)/bin/mm-audio-ftm                                           u:object_r:vendor_audioftm_exec:s0
 /(vendor|system/vendor)/bin/qrtr-ns                                                u:object_r:qrtr_exec:s0
 /(vendor|system/vendor)/bin/spdaemon                                               u:object_r:spdaemon_exec:s0
@@ -92,16 +96,21 @@
 /(vendor|system/vendor)/bin/mmid                                                   u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service         u:object_r:vendor_hal_factory_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cvp@1\.0-service             u:object_r:vendor_cvp_exec:s0
-/(vendor|system/vendor)/bin/wfdvndservice                                          u:object_r:wfdvndservice_exec:s0
 
 #### Context for location features
 ## location daemons and binaries
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@.*-service                        u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/xtwifi-inet-agent                                      u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/xtwifi-client                                          u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.seccam@1\.0-service-qti      u:object_r:hal_seccam_qti_exec:s0
 /(vendor|system/vendor)/bin/garden_app                                             u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/DR_AP_Service                                          u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/slim_daemon                                            u:object_r:location_exec:s0
+
+#perf
+/sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
+/sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
+/sys/module/process_reclaim(/.*)?                                   u:object_r:sysfs_process_reclaim:s0
 
 ###################################
 # data files
@@ -111,7 +120,10 @@
 /data/vendor/wifi/sockets(/.*)?                                     u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:wifi_vendor_wpa_socket:s0
+/dev/cam-hyp-intf-[0-9]+                                            u:object_r:video_device:s0
 /data/vendor/dataqti(/.*)?                                          u:object_r:vendor_qti_data_file:s0
+/data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qdma_data_file:s0
+/data/vendor/qdma(/.*)?                                             u:object_r:vendor_qdma_data_file:s0
 
 ###################################
 # persist files
@@ -124,3 +136,4 @@
 #
 # libmmi_jni
 /vendor/lib(64)?/libmmi_jni\.so             u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor\.qti\.hardware\.perf@2\.0\.so    u:object_r:same_process_hal_file:s0

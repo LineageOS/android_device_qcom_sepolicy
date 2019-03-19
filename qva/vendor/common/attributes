@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -52,6 +52,10 @@ attribute hal_pasrmanager_server;
 attribute hal_qteeconnector;
 attribute hal_qteeconnector_client;
 attribute hal_qteeconnector_server;
+
+attribute hal_seccam;
+attribute hal_seccam_client;
+attribute hal_seccam_server;
 
 attribute wifidisplayhalservice;
 attribute wifidisplayhalservice_client;

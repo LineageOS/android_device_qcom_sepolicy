@@ -46,6 +46,9 @@ allow radio avtimer_device:chr_file r_file_perms;
 
 binder_call(radio, hal_imsrtp)
 
+#perf
+hal_client_domain(radio, hal_perf)
+
 #diag
 userdebug_or_eng(`
     diag_use(radio)

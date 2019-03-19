@@ -22,12 +22,17 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
        $(BOARD_SEPOLICY_DIRS) \
        $(LOCAL_PATH) \
        $(LOCAL_PATH)/generic/vendor/common \
-       $(LOCAL_PATH)/generic/vendor/$(TARGET_BOARD_PLATFORM) \
        $(LOCAL_PATH)/qva/vendor/common/sysmonapp \
-       $(LOCAL_PATH)/qva/vendor/$(TARGET_BOARD_PLATFORM) \
        $(LOCAL_PATH)/qva/vendor/ssg \
        $(LOCAL_PATH)/qva/vendor/common
 
+    ifeq ($(TARGET_SEPOLICY_DIR),)
+      BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/generic/vendor/$(TARGET_BOARD_PLATFORM)
+      BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/qva/vendor/$(TARGET_BOARD_PLATFORM)
+    else
+      BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/generic/vendor/$(TARGET_SEPOLICY_DIR)
+      BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/qva/vendor/$(TARGET_SEPOLICY_DIR)
+    endif
 
     ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/generic/vendor/test
@@ -40,10 +45,14 @@ ifneq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
                  $(BOARD_SEPOLICY_DIRS) \
                  $(LOCAL_PATH) \
                  $(LOCAL_PATH)/legacy/vendor/common/sysmonapp \
-                 $(LOCAL_PATH)/legacy/vendor/$(TARGET_BOARD_PLATFORM) \
                  $(LOCAL_PATH)/legacy/vendor/ssg \
                  $(LOCAL_PATH)/legacy/vendor/common
 
+    ifeq ($(TARGET_SEPOLICY_DIR),)
+      BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/legacy/vendor/$(TARGET_BOARD_PLATFORM)
+    else
+      BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/legacy/vendor/$(TARGET_SEPOLICY_DIR)
+    endif
     ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/legacy/vendor/test
     endif

@@ -54,13 +54,12 @@ allow thermal-engine socket_device:dir w_dir_perms;
 
 # This is required for thermal sysfs access
 r_dir_file(thermal-engine, sysfs_thermal)
-allow thermal-engine { sysfs_thermal sysfs }:file w_file_perms;
+allow thermal-engine sysfs_thermal:file w_file_perms;
 
 # This is required for qmi access
 qmux_socket(thermal-engine);
 allow thermal-engine sysfs_mpdecision:file rw_file_perms;
 
-r_dir_file(thermal-engine, sysfs)
 r_dir_file(thermal-engine, sysfs_leds)
 
 # This is required for wake alarm access

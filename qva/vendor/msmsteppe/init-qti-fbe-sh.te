@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,50 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type mdtpdaemon, domain;
-type mdtpdaemon_exec, exec_type, vendor_file_type, file_type;
+type init-qti-fbe-sh, domain;
+type init-qti-fbe-sh_exec, exec_type, file_type, vendor_file_type;
 
-allow mdtpdaemon self:capability {
-    setuid
-    setgid
-};
+init_daemon_domain(init-qti-fbe-sh)
 
-userdebug_or_eng(`
-    #Needed for kill(pid, 0) existance test
-    allow mdtpdaemon su:process signull;
-    allow mdtpdaemon self:capability kill;
-    diag_use(mdtpdaemon)
-')
+allow init-qti-fbe-sh vendor_shell_exec:file rx_file_perms;
 
-#Allow for transition from init domain to mdtpdaemon
-init_daemon_domain(mdtpdaemon)
-
-#Allow apps to interact with mdtpdaemon
-binder_call(mdtpdaemon, platform_app)
-
-#Allow access to firmware
-r_dir_file(mdtpdaemon, firmware_file)
-
-#Allow access to tee device
-allow mdtpdaemon tee_device:chr_file rw_file_perms;
-
-# Provide access to block devices
-allow mdtpdaemon block_device:dir r_dir_perms;
-allow mdtpdaemon mdtp_device:blk_file rw_file_perms;
-allow mdtpdaemon system_block_device:blk_file r_file_perms;
-
-# Provide access to QTI Crypto driver for MDTP
-# allow mdtpdaemon qce_device:chr_file rw_file_perms;
-
-# Provide read access to all /system files for MDTP file-to-block-mapping
-r_dir_file(mdtpdaemon, exec_type)
-
-# Provide mdtpd ability to access QMUXD/IPCRouter for QMI
-qmux_socket(mdtpdaemon);
-allow mdtpdaemon self:socket create_socket_perms;
-allowxperm mdtpdaemon self:socket ioctl msm_sock_ipc_ioctls;
-
-# Provide tee ability to run executables in rootfs for MDTP
-allow mdtpdaemon rootfs:file x_file_perms;
-allow mdtpdaemon ion_device:chr_file r_file_perms;
-allow mdtpdaemon sysfs_data:file r_file_perms;
+# execute toybox/toolbox
+allow init-qti-fbe-sh vendor_toolbox_exec:file rx_file_perms;
+get_prop(init-qti-fbe-sh, vendor_tee_listener_prop)

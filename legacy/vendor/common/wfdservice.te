@@ -50,7 +50,6 @@ userdebug_or_eng(`
 get_prop(wfdservice, wfd_debug_prop)
 ')
 get_prop(wfdservice, vendor_gralloc_prop)
-get_prop(wfdservice, mm_video_prop)
 
 # Add the rule for wfd to access /proc/asound/pcm file
 r_dir_file(wfdservice, proc_asound)

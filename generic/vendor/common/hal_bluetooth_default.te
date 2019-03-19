@@ -26,8 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 allow hal_bluetooth_default bt_device:chr_file rw_file_perms;
 
-allow hal_bluetooth_default wcnss_filter:unix_stream_socket connectto;
-
 # talk to system_server to set priority
 allow hal_bluetooth fwk_scheduler_hwservice:hwservice_manager find;
 allow hal_bluetooth system_server:binder call;
@@ -40,8 +38,11 @@ r_dir_file(hal_bluetooth_default, bt_firmware_file)
 
 allow hal_bluetooth_default persist_bluetooth_file:dir r_dir_perms;
 allow hal_bluetooth_default persist_bluetooth_file:file r_file_perms;
+#For QMI socket
+allow hal_bluetooth_default self:{ qipcrtr_socket } create_socket_perms_no_ioctl;
 
 userdebug_or_eng(`
+diag_use(hal_bluetooth)
 allow hal_bluetooth_default ramdump_vendor_data_file:file create_file_perms;
 allow hal_bluetooth_default ramdump_vendor_data_file:dir create_dir_perms;
 
@@ -51,6 +52,7 @@ allow hal_bluetooth_default debugfs_ipc:file rw_file_perms;
 allow hal_bluetooth_default debugfs_ipc:dir  rw_dir_perms;
 allow hal_bluetooth_default vendor_bt_data_file:dir ra_dir_perms;
 allow hal_bluetooth_default vendor_bt_data_file:file create_file_perms;
+allow hal_bluetooth_default self:{ socket } create_socket_perms_no_ioctl;
 ')
 
 r_dir_file(hal_bluetooth_default, mnt_vendor_file)

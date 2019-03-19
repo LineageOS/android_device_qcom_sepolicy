@@ -32,7 +32,6 @@ type spdaemon_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(spdaemon)
 allow spdaemon spcom_device:chr_file { getattr rw_file_perms };
-r_dir_file(spdaemon, sysfs)
 allow spdaemon skp_device:chr_file { getattr rw_file_perms };
 # Need to check if really needed
 set_prop(spdaemon, spcomlib_prop)

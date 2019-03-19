@@ -89,7 +89,6 @@ set_prop(vendor_init, vendor_rild_libpath_prop)
 #allow vendor_init vendor_toolbox_exec:file rx_file_perms;
 
 set_prop(vendor_init, cnd_vendor_prop)
-set_prop(vendor_init, mm_video_prop)
 
 #Access vendor gpu freq properties
 set_prop(vendor_init, vendor_gpu_prop)

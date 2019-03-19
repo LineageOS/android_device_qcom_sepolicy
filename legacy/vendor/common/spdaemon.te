@@ -54,8 +54,6 @@ allow spdaemon ion_device:chr_file rw_file_perms;
 # Allow to load SPSS firmware images
 r_dir_file(spdaemon, firmware_file);
 
-# Allow get system info
-r_dir_file(spdaemon, sysfs)
 
 # Allow SPSS-PIL via Peripheral Manager
 #binder_use(spdaemon)

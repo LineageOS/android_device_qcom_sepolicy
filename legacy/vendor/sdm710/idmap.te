@@ -27,4 +27,3 @@
 
 #for oemfs
 r_dir_file(idmap, oemfs);
-r_dir_file(idmap, vendor_carrier_file);

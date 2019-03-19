@@ -67,8 +67,6 @@ allow init sysfs_boot_adsp:file write;
 allow init sysfs_slpi:file write;
 allow init sysfs_graphics:file setattr;
 
-#dontaudit non configfs usb denials
-dontaudit init sysfs:dir write;
 
 #load /vendor/lib/modules/qca_cld3/qca_cld3_wlan.ko
 #load /vendor/lib/modules/wil6210.ko

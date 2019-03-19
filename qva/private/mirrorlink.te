@@ -52,12 +52,6 @@ unix_socket_connect(mirrorlink, netd, netd);
 # Allow read-write access to proc net device.
 allow mirrorlink proc_net:file rw_file_perms;
 
-# Allow read-only access to ion device.
-allow mirrorlink ion_device:chr_file r_file_perms;
-
-# Allow read-write access to gpu device.
-allow mirrorlink gpu_device:chr_file rw_file_perms;
-
 # Allow read-write access to uhid device for HID event injection.
 allow mirrorlink uhid_device:chr_file rw_file_perms;
 

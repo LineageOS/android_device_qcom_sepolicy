@@ -39,6 +39,10 @@ ctl.vendor.mdm_helper                        u:object_r:vendor_mdm_helper_prop:s
 # qdma property
 vendor.qti.qdma.                             u:object_r:vendor_qdma_prop:s0
 
+#perf
+vendor.post_boot.parsed                u:object_r:vendor_mpctl_prop:s0
+vendor.perf.dolphin.enable             u:object_r:vendor_dolphin_prop:s0
+
 # NFC
 vendor.qti.nfc.                              u:object_r:vendor_nfc_nq_prop:s0
 
@@ -48,8 +52,15 @@ vendor.gatekeeper.disable_spu                u:object_r:vendor_disable_spu_prop:
 #boot mode property
 vendor.sys.boot_mode                         u:object_r:vendor_boot_mode_prop:s0
 
+#mm-video
+vendor.media.target.version                  u:object_r:vendor_video_prop:s0
+vendor.video.disable.ubwc                    u:object_r:vendor_video_prop:s0
+
 # factory properties
 ctl.vendor.mmid                              u:object_r:ctl_vendor_mmid_prop:s0
+
+#seccam hal_service
+vendor.hyp_core_ctl                          u:object_r:vendor_core_ctl_prop:s0
 
 persist.vendor.mmi.                          u:object_r:vendor_mmi_prop:s0
 

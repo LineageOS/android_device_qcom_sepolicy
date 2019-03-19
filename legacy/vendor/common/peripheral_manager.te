@@ -47,7 +47,6 @@ allow vendor_per_mgr ssr_device:chr_file r_file_perms;
 
 # Needed by libmdmdetect to get subsystem info and to check their states
 r_dir_file(vendor_per_mgr, firmware_file)
-r_dir_file(vendor_per_mgr, sysfs)
 allow vendor_per_mgr sysfs_data:file r_file_perms;
 
 # Set the peripheral state property

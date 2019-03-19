@@ -30,6 +30,8 @@ type mm_parser_prop, property_type, extended_core_property_type;
 #mm-osal
 type mm_osal_prop, property_type, extended_core_property_type;
 
+type mm_video_prop, property_type, extended_core_property_type;
+
 #WiFi Display
 type wfd_service_prop, property_type, extended_core_property_type;
 type wfd_sys_debug_prop, property_type, extended_core_property_type;

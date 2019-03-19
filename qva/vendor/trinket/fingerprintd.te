@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,53 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_perf_default, domain;
-hal_server_domain_bypass(hal_perf_default, hal_perf)
-
-type hal_perf_default_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_perf_default)
-
-# Allow hwbinder call from hal client to server
-binder_call(hal_perf_client, hal_perf_server)
-
-# Add hwservice related rules
-add_hwservice(hal_perf_server, hal_perf_hwservice)
-allow hal_perf_client hal_perf_hwservice:hwservice_manager find;
-
-allow hal_perf_default cgroup:file r_file_perms;
-allow hal_perf_default proc:file rw_file_perms;
-get_prop(hal_perf, vendor_mpdecision_prop)
-
-allow hal_perf {
-    sysfs_devices_system_cpu
-    sysfs_devfreq
-    sysfs_cpu_boost
-    sysfs_msm_perf
-    sysfs_msm_power
-    sysfs_mmc_host
-    sysfs_scsi_host
-    sysfs_kgsl
-    sysfs_graphics
-    sysfs
-    sysfs_battery_supply
-}:dir r_dir_perms;
-
-allow hal_perf {
-    sysfs_devices_system_cpu
-    sysfs_devfreq
-    sysfs_cpu_boost
-    sysfs_msm_perf
-    sysfs_msm_power
-    sysfs_mmc_host
-    sysfs_scsi_host
-    sysfs_kgsl
-    sysfs_graphics
-    sysfs_battery_supply
-}:file rw_file_perms;
-
-allow hal_perf {
-    sysfs_devfreq
-    sysfs_kgsl
-    sysfs_mmc_host
-    sysfs_scsi_host
-}:lnk_file r_file_perms;
+allow hal_fingerprint input_device:dir r_dir_perms;
+allow hal_fingerprint sysfs_fps_attr:file rw_file_perms;
+allow hal_fingerprint uhid_device:chr_file rw_file_perms;
+r_dir_file(hal_fingerprint, firmware_file);
+r_dir_file(hal_fingerprint, sysfs_leds);

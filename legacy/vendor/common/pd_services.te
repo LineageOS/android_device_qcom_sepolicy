@@ -41,7 +41,6 @@ allow vendor_pd_mapper self:capability { setpcap setuid setgid net_bind_service 
 allow vendor_pd_mapper smem_log_device:chr_file rw_file_perms;
 qmux_socket(vendor_pd_mapper);
 
-allow vendor_pd_mapper sysfs:file r_file_perms;
 allow vendor_pd_mapper sysfs_data:file r_file_perms;
 
 #Allow pd-mapper to write error strings from non-hlos side to kmsg

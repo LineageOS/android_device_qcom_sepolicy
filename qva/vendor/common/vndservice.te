@@ -27,4 +27,3 @@
 
 type esepmdaemon_service, vndservice_manager_type;
 type wfdnativemm_service, vndservice_manager_type;
-type wfdvndservice_service, vndservice_manager_type;

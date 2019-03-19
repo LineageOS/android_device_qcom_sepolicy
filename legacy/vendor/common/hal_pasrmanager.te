@@ -36,6 +36,5 @@ binder_call(hal_pasrmanager_client, hal_pasrmanager_server)
 add_hwservice(hal_pasrmanager_server, hal_pasrmanager_hwservice)
 allow hal_pasrmanager_client hal_pasrmanager_hwservice:hwservice_manager find;
 
-allow hal_pasrmanager_qti sysfs:dir r_dir_perms;
 allow hal_pasrmanager_qti sysfs_memory_offline:file rw_file_perms;
 allow hal_pasrmanager_qti sysfs_memory_offline:dir r_dir_perms;

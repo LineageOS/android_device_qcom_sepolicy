@@ -188,17 +188,8 @@ vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0
 persist.vendor.wifi.softap.        u:object_r:vendor_softap_prop:s0
 
 #mm-video
-vendor.encoder.video.profile       u:object_r:mm_video_prop:s0
-vendor.video.disable.ubwc          u:object_r:mm_video_prop:s0
-persist.vendor.debug.av.logs.lvl   u:object_r:debug_prop:s0
-persist.vendor.debug.en.drpcrpt   u:object_r:debug_prop:s0
-vendor.debug.vidc.enc.sup_bframe    u:object_r:debug_prop:s0
-persist.vendor.media.hls.          u:object_r:mm_video_prop:s0
-vendor.av.dbg.disable.pers.cache   u:object_r:mm_video_prop:s0
-persist.vendor.sys.media.rtp-ports u:object_r:mm_video_prop:s0
-vendor.mm.en.sec.smoothstreaming   u:object_r:mm_video_prop:s0
-vendor.hevc.mux.print.codec.cfg    u:object_r:mm_video_prop:s0
-ro.vendor.mm-enable-accurate-seek  u:object_r:mm_video_prop:s0
+vendor.media.target.version        u:object_r:vendor_video_prop:s0
+vendor.video.disable.ubwc          u:object_r:vendor_video_prop:s0
 
 #rmt_storage
 ctl.vendor.rmt_storage     u:object_r:ctl_vendor_rmt_storage_prop:s0

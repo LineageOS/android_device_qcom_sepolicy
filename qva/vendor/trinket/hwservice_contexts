@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,13 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type mdtpservice_app, domain;
-app_domain(mdtpservice_app)
-binder_use(mdtpservice_app)
-
-# allow mdtpservice_app to interact with proxy daemon
-binder_call(mdtpservice_app, mdtpdaemon_service)
-
-# file permissions
-allow mdtpservice_app mdtp_svc_app_data_file:dir create_dir_perms;
-allow mdtpservice_app mdtp_svc_app_data_file:file create_file_perms;
+com.fingerprints.extension::IFingerprintEngineering u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintAuthenticator u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintNavigation u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintSensorTest u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintCalibration u:object_r:hal_fingerprint_hwservice:s0

@@ -29,7 +29,7 @@ persist.vendor.dpm.                        u:object_r:persist_dpm_prop:s0
 persist.vendor.btstack                     u:object_r:bluetooth_prop:s0
 persist.vendor.bluetooth.emailaccountcount u:object_r:bluetooth_prop:s0
 persist.vendor.bt.a2dp                     u:object_r:bluetooth_prop:s0
-
+persist.vendor.bt_logger.                  u:object_r:bluetooth_prop:s0
 persist.vendor.service.bt.                 u:object_r:bluetooth_prop:s0
 ro.vendor.btstack.                         u:object_r:bluetooth_prop:s0
 vendor.pts.                                u:object_r:bluetooth_prop:s0
@@ -44,6 +44,17 @@ vendor.mm.enable.qcom_parser       u:object_r:mm_parser_prop:s0
 vendor.qcom_parser.                u:object_r:mm_parser_prop:s0
 #mm-osal
 vendor.debug.mmosal.config         u:object_r:mm_osal_prop:s0
+
+#perf
+vendor.perf.workloadclassifier.enable      u:object_r:vendor_wlc_prop:s0
+persist.vendor.build.date.utc              u:object_r:vendor_wlc_prop:s0
+
+#mm-video
+persist.vendor.debug.av.logs.lvl          u:object_r:mm_video_prop:s0
+persist.vendor.debug.en.drpcrpt           u:object_r:mm_video_prop:s0
+persist.vendor.media.hls.                 u:object_r:mm_video_prop:s0
+persist.vendor.sys.media.rtp-ports        u:object_r:mm_video_prop:s0
+vendor.encoder.video.profile              u:object_r:mm_video_prop:s0
 
 #Wifi Display
 vendor.wfdservice                          u:object_r:wfd_service_prop:s0

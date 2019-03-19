@@ -29,6 +29,7 @@ type perfservice_exec, exec_type, system_file_type, file_type;
 
 init_daemon_domain(perfservice)
 
+add_service(perfservice, vendor_perf_service);
 binder_use(perfservice);
 binder_call(perfservice, system_server);
 binder_service(perfservice);

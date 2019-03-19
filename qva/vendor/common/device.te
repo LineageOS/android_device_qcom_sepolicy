@@ -37,3 +37,4 @@ type esoc_device, dev_type;
 type mhi_device, dev_type;
 type efs_boot_dev, dev_type;
 type smem_log_device, dev_type;
+type fm_radio_device, dev_type;

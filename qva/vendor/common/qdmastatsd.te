@@ -29,3 +29,39 @@ type qdmastatsd, domain, mlstrustedsubject;
 type qdmastatsd_exec, file_type, vendor_file_type, exec_type;
 
 init_daemon_domain(qdmastatsd)
+
+allow qdmastatsd vendor_qdma_data_file:file create_file_perms;
+allow qdmastatsd vendor_qdma_data_file:dir create_dir_perms;
+
+# access to /dev/ramdump_microdump_modem
+allow qdmastatsd ramdump_device:chr_file r_file_perms;
+
+# access to /sys/class/power_supply/bms/charge_counter
+# access to /sys/class/power_supply/battery/capacity
+# access to /sys/class/power_supply/battery/status
+allow qdmastatsd sysfs_battery_supply:{file lnk_file} r_file_perms;
+allow qdmastatsd sysfs_battery_supply:dir r_dir_perms;
+
+# /sys/class/leds/lcd-backlight/brightness
+allow qdmastatsd sysfs_leds:{file lnk_file} r_file_perms;
+allow qdmastatsd sysfs_leds:dir r_dir_perms;
+
+# access to /proc/stat
+allow qdmastatsd proc_stat:file r_file_perms;
+allow qdmastatsd proc_stat:dir r_dir_perms;
+
+# access to /proc/<pid>/
+r_dir_file(qdmastatsd, domain);
+
+#access to qdma_socket
+allow qdmastatsd qdma_socket:dir rw_dir_perms;
+allow qdmastatsd qdma_socket:sock_file create_file_perms;
+
+# for logcat
+unix_socket_connect(qdmastatsd, logdr, logd);
+
+# for dmesg
+read_logd(qdmastatsd);
+
+# allow qdma_prop
+set_prop(qdmastatsd, vendor_qdma_prop);
