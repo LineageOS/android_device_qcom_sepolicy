@@ -44,9 +44,6 @@ type freq_prop, property_type;
 #iop
 type vendor_iop_prop, property_type;
 
-#dolphin
-type vendor_dolphin_prop, property_type;
-
 #properties for nfc
 type vendor_nfc_nq_prop, property_type;
 
