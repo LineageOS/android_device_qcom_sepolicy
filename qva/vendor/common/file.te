@@ -66,6 +66,10 @@ type sysfs_mpctl, fs_type, sysfs_type;
 type mpctl_socket, file_type, mlstrustedobject;
 type mpctl_data_file, file_type, data_file_type;
 
+#IOP
+type iop_socket, file_type;
+type iop_data_file, file_type, data_file_type;
+
 #Define the files used by lm
 type lm_data_file, file_type, data_file_type;
 

@@ -25,14 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-##for perf-hal/iop-hal call
-hal_client_domain(system_server, hal_perf)
-hal_client_domain(system_server, hal_iop)
-
-allow system_server proc_audiod:file r_file_perms;
-
-# allow system_server to access IOP HAL service
-hal_client_domain(system_server, hal_iop)
-
-# allow system_server to access vendor display property.
-get_prop(system_server, vendor_iop_prop)
+#Add app permissions for iop property access
+get_prop(appdomain, vendor_iop_prop)
