@@ -26,6 +26,7 @@ dontaudit domain persist_dpm_prop:file r_file_perms;
 neverallow {
     coredomain
     -init
+    -recovery
     -ueventd
     -vold
 } vendor_persist_type: { dir file } *;
