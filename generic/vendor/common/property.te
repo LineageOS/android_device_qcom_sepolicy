@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -84,3 +84,6 @@ type vendor_alarm_boot_prop, property_type;
 
 #wlan-vendor prop
 type vendor_wifi_prop, property_type;
+
+#qdcmss property
+type vendor_qdcmss_prop, property_type;
