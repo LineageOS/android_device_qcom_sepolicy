@@ -121,6 +121,7 @@
 /data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:wifi_vendor_wpa_socket:s0
 /dev/cam-hyp-intf-[0-9]+                                            u:object_r:video_device:s0
+/data/vendor/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
 /data/vendor/dataqti(/.*)?                                          u:object_r:vendor_qti_data_file:s0
 /data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qdma_data_file:s0
 /data/vendor/qdma(/.*)?                                             u:object_r:vendor_qdma_data_file:s0
