@@ -134,8 +134,6 @@ type ctl_vendor_mmid_prop, property_type;
 #qdma property
 type vendor_qdma_prop, property_type;
 
-type wfd_debug_prop, property_type;
-
 #imsrcsservice
 type ctl_vendor_imsrcsservice_prop, property_type;
 
