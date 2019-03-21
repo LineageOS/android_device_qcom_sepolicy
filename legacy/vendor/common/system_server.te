@@ -94,9 +94,6 @@ allow system_server proc_audiod:file r_file_perms;
 allow system_server {
     serial_device
     smd_device
-    # graphics_device, audio_device, tee_device is for WFD
-    graphics_device
-    audio_device
     #allow access to power control ANT chip
     bt_device
 }:chr_file rw_file_perms;
@@ -106,12 +103,6 @@ allow system_server usf:process signal;
 #allow system_server usf:unix_stream_socket connectto;
 
 get_prop(system_server, vendor_xlat_prop)
-
-# For WFD
-allow system_server graphics_device:dir r_dir_perms;
-userdebug_or_eng(`
-get_prop(system_server, wfd_debug_prop)
-')
 
 #Allow access to netmgrd socket
 #netmgr_socket(system_server);
