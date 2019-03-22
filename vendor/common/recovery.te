@@ -24,4 +24,9 @@ recovery_only(`
     allow recovery configfs:dir rw_dir_perms;
     set_prop(recovery, ffs_prop)
     get_prop(recovery, vendor_boot_mode_prop)
+
+    # Read time
+    r_dir_file(recovery, time_data_file)
+    r_dir_file(recovery, vendor_time_data_file)
+    r_dir_file(recovery, persist_time_file)
 ')
