@@ -24,4 +24,14 @@ recovery_only(`
     allow recovery configfs:dir rw_dir_perms;
     set_prop(recovery, ffs_prop)
     get_prop(recovery, vendor_boot_mode_prop)
+
+    # Mount /mnt/vendor/persist to read time
+    typeattribute recovery system_writes_mnt_vendor_violators;
+    allow recovery mnt_vendor_file:dir mounton;
+
+    # Read time
+    r_dir_file(recovery, time_data_file)
+    r_dir_file(recovery, vendor_time_data_file)
+    r_dir_file(recovery, persist_time_file)
+    allow recovery mnt_vendor_file:dir search;
 ')
