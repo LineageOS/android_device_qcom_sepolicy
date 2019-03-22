@@ -68,6 +68,9 @@ binder_call(mirrorlink, system_app);
 allow mirrorlink audio_device:chr_file rw_file_perms;
 allow mirrorlink audio_device:dir r_dir_perms;
 
+# Allow access to /proc/asound/pcm file
+r_dir_file(mirrorlink, proc_asound)
+
 # Allow a base set of permissions for mirrorlinkserver to be a client of graphics composer HAL.
 hal_client_domain(mirrorlink, hal_graphics_composer);
 
@@ -84,6 +87,9 @@ allow mirrorlink sysfs_net:file r_file_perms;
 
 # Allow read access to EGL lib
 allow mirrorlink system_file:dir r_dir_perms;
+
+# Allow read-write access to gpu device.
+allow mirrorlink gpu_device:chr_file rw_file_perms;
 
 # Allow access to video encoder device.
 allow mirrorlink video_device:chr_file rw_file_perms;
