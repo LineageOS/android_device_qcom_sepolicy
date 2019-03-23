@@ -83,6 +83,9 @@ type qmuxd_socket, file_type;
 type netmgrd_socket, file_type;
 type thermal_socket, file_type;
 
+#Define the qti socket type
+type dataqti_socket, file_type;
+
 type ims_socket, file_type;
 type ipacm_socket, file_type;
 type cnd_socket, file_type;
