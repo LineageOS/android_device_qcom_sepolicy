@@ -66,6 +66,7 @@
 /dev/citadel0                                   u:object_r:citadel_device:s0
 /dev/jdi-bu21150                                u:object_r:bu21150_device:s0
 /dev/usb_ext_chg                                u:object_r:hvdcp_device:s0
+/dev/synx_device                                u:object_r:synx_device:s0
 
 # dev socket nodes
 /dev/socket/chre                                u:object_r:chre_socket:s0
