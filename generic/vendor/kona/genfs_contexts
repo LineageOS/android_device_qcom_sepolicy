@@ -39,7 +39,7 @@ genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys3/name u:object_r
 genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys5/name u:object_r:sysfs_ssr:s0
 
 #subsys nodes WLAN
-genfscon sysfs /devices/platform/soc/a0000000.qcom,cnss-qca6390/subsys10/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6390/subsys10/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/subsys11/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/subsys7/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys8/name u:object_r:sysfs_ssr:s0
