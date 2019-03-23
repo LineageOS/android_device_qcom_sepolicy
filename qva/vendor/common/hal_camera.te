@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -27,3 +27,5 @@
 
 allow hal_camera self:qipcrtr_socket create_socket_perms;
 allowxperm hal_camera self:qipcrtr_socket ioctl msm_sock_ipc_ioctls;
+
+hal_client_domain(hal_camera_default, hal_vpp)

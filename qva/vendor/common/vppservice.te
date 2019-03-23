@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -33,8 +33,31 @@ init_daemon_domain(vendor_vppservice)
 
 hal_server_domain(vendor_vppservice, hal_vpp)
 
-add_hwservice(vendor_vppservice, hal_vpp_hwservice)
+hal_attribute_hwservice(hal_vpp, hal_vpp_hwservice)
 
-allow hal_vpp_client hal_vpp_hwservice:hwservice_manager find;
 binder_call(hal_vpp_client, hal_vpp_server)
 binder_call(hal_vpp_server, hal_vpp_client)
+
+# allow vppservice to access adsprpcd
+r_dir_file(vendor_vppservice, adsprpcd_file);
+#get_prop(vendor_vppservice, adsprpc_prop)
+
+r_dir_file(vendor_vppservice, firmware_file);
+
+# allow access to vppservice (/data/vendor/vpp)
+allow vendor_vppservice vendor_vpp_data_file:dir create_dir_perms;
+allow vendor_vppservice vendor_vpp_data_file:file create_file_perms;
+
+# allow access to vppservice (/persist/vpp)
+r_dir_file(vendor_vppservice, persist_vpp_file)
+allow vendor_vppservice mnt_vendor_file:dir search;
+
+# allow vppservice to access ion, video device & qdsp_device
+allow vendor_vppservice ion_device:chr_file rw_file_perms;
+allow vendor_vppservice video_device:chr_file rw_file_perms;
+allow vendor_vppservice qdsp_device:chr_file r_file_perms;
+allow vendor_vppservice xdsp_device:chr_file r_file_perms;
+allow vendor_vppservice gpu_device:chr_file rw_file_perms;
+
+hal_client_domain(vendor_vppservice, hal_graphics_allocator)
+hal_client_domain(vendor_vppservice, hal_capabilityconfigstore_qti)
