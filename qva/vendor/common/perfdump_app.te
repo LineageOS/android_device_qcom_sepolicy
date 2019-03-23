@@ -28,6 +28,10 @@
 type perfdump_app, domain;
 app_domain(perfdump_app)
 
+# shared_prefs in /data/data/com.qualcomm.qti.perfdump
+allow perfdump_app system_app_data_file:dir create_dir_perms;
+allow perfdump_app system_app_data_file:file create_file_perms;
+
 # systrace support
 allow perfdump_app debugfs_tracing:dir r_dir_perms;
 allow perfdump_app debugfs_tracing:file rw_file_perms;
