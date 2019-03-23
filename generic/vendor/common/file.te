@@ -137,6 +137,9 @@ type vendor_capabilityconfigstore_data_file, file_type, data_file_type;
 #widevine data file
 type mediadrm_vendor_data_file, file_type, data_file_type;
 
+#time-services data file
+type vendor_time_data_file, file_type, data_file_type;
+
 #data sysfs files
 type sysfs_data, fs_type, sysfs_type;
 
