@@ -149,6 +149,7 @@
 /vendor/bin/tloc_daemon         u:object_r:tlocd_exec:s0
 /vendor/bin/mm-pp-dpps          u:object_r:mm-pp-daemon_exec:s0
 /vendor/bin/hvdcp_opti          u:object_r:hvdcp_exec:s0
+/vendor/bin/init.qti.charger.sh u:object_r:qti_init_shell_exec:s0
 
 /vendor/bin/hw/qcrild           u:object_r:rild_exec:s0
 /vendor/bin/hw/android\.hardware\.drm@1\.0-service.widevine          u:object_r:hal_drm_widevine_exec:s0
