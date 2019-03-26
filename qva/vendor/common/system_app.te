@@ -31,6 +31,7 @@ hal_client_domain(system_app, hal_fingerprint)
 #allow system_app access factory
 hal_client_domain(system_app, vendor_hal_factory_qti);
 hal_client_domain(system_app, hal_fm);
+
 # fm_radio app needes  open read on fm_radio_device
 allow system_app fm_radio_device:chr_file r_file_perms;
 
@@ -42,3 +43,5 @@ hal_client_domain(system_app, hal_perf)
 
 #allow system app access display color for qdcm
 hal_client_domain(system_app, hal_display_color);
+# allow system_app to interact with light hal
+hal_client_domain(system_app, hal_light);
