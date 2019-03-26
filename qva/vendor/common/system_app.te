@@ -34,6 +34,9 @@ hal_client_domain(system_app, hal_fm);
 # fm_radio app needes  open read on fm_radio_device
 allow system_app fm_radio_device:chr_file r_file_perms;
 
+#allow system_app access sensorscalibration service
+hal_client_domain(system_app, hal_sensorscalibrate_qti);
+
 #perf
 hal_client_domain(system_app, hal_perf)
 
