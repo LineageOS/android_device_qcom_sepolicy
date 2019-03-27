@@ -78,5 +78,4 @@ allow hal_bluetooth_qti self:{ socket qipcrtr_socket } create_socket_perms_no_io
 #allow system_app hal_bluetooth_hwservice :hwservice_manager find;
 
 #FM IPC with BT/FM hal daemon
-binder_call(system_app, hal_bluetooth);
-binder_call(hal_bluetooth, system_app);
+hal_server_domain(hal_bluetooth_qti, hal_fm)

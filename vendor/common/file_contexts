@@ -291,7 +291,6 @@
 /(vendor|system/vendor)/bin/fstman              u:object_r:fstman_exec:s0
 /(vendor|system/vendor)/bin/wigighalsvc         u:object_r:wigighalsvc_exec:s0
 /(vendor|system/vendor)/bin/wigignpt            u:object_r:wigignpt_exec:s0
-/(vendor|system/vendor)/bin/mdtpd               u:object_r:mdtpdaemon_exec:s0
 /(vendor|system/vendor)/bin/wifi_ftmd           u:object_r:wifi_ftmd_exec:s0
 /(vendor|system/vendor)/bin/fingerprint.qcom    u:object_r:fps_hal_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service-qti u:object_r:hal_keymaster_qti_exec:s0
@@ -300,6 +299,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service-qti u:object_r:hal_gatekeeper_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.0-service     u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.1-service     u:object_r:hal_nfc_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.2-service     u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/qdmastatsd          u:object_r:qdmastatsd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service      u:object_r:hal_alarm_qti_default_exec:s0
 /(vendor|system/vendor)/bin/imsrcsd             u:object_r:hal_rcsservice_exec:s0
@@ -652,6 +652,7 @@
 /vendor/lib(64)?/libqti-perfd-client\.so    u:object_r:same_process_hal_file:s0
 # perf-hal client lib (included by libqti-perfd-client.so)
 /vendor/lib(64)?/vendor\.qti\.hardware\.perf@1\.0\.so    u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor\.qti\.hardware\.perf@2\.0\.so    u:object_r:same_process_hal_file:s0
 
 # libGLESv2_adreno depends on this
 /vendor/lib(64)?/libllvm-glnext\.so         u:object_r:same_process_hal_file:s0

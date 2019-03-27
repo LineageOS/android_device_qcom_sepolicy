@@ -33,7 +33,6 @@ allow qmuxd {
 allow qmuxd {
     sysfs_smd_open_timeout
     #Allow qmuxd to write in hsic specific transport
-    sysfs
     sysfs_hsic_modem_wait
 }:file w_file_perms;
 
