@@ -107,3 +107,6 @@ genfscon sysfs /bus/mhi/devices/0304_00.01.00_QMI1/mhi_uci u:object_r:sysfs_mhi:
 genfscon sysfs /bus/mhi/devices/0306_00.01.00_QMI1/mhi_uci u:object_r:sysfs_mhi:s0
 genfscon sysfs /devices/platform/soc/1c08000.qcom,pcie/pci0001:00/0001:00:00.0/0001:01:00.0/0306_01.01.00_QMI0 u:object_r:sysfs_mhi:s0
 genfscon sysfs /devices/platform/soc/1c08000.qcom,pcie/pci0001:00/0001:00:00.0/0001:01:00.0/0306_01.01.00_QMI1 u:object_r:sysfs_mhi:s0
+
+#net sysfs
+genfscon sysfs /devices/platform/soc/1c08000.qcom,pcie/pci0001:00/0001:00:00.0/0001:01:00.0/0306_01.01.00_IP_HW0/net u:object_r:sysfs_net:s0
