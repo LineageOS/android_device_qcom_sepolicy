@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,29 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# spdaemon service
-type spdaemon, domain;
-
-type spdaemon_exec, exec_type, vendor_file_type, file_type;
-
-init_daemon_domain(spdaemon)
-allow spdaemon spcom_device:chr_file { getattr rw_file_perms };
-allow spdaemon skp_device:chr_file { getattr rw_file_perms };
-# Need to check if really needed
-set_prop(spdaemon, spcomlib_prop)
-allow spdaemon spdaemon_ssr_device:chr_file rw_file_perms;
-allow spdaemon sp_ssr_device:chr_file rw_file_perms;
-allow spdaemon sp_keymaster_device:chr_file rw_file_perms;
-allow spdaemon cryptoapp_device:chr_file rw_file_perms;
-allow spdaemon ion_device:chr_file rw_file_perms;
-r_dir_file(spdaemon, firmware_file);
-use_vendor_per_mgr(spdaemon)
-
-allow spdaemon sysfs_data:file r_file_perms;
-
-allow spdaemon sysfs_spdaemon:file r_file_perms;
-
-userdebug_or_eng(`
-allow spdaemon debugfs_ipc:file rw_file_perms;
-allow spdaemon debugfs_ipc:dir r_dir_perms;
-')
+# spdaemon sysfs
+genfscon sysfs /firmware/devicetree/base/soc/qcom,spmi@c440000/qcom,pm8150b@2/vadc@3100/vph_pwr@83/name u:object_r:sysfs_spdaemon:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,spss_utils/firmware_name u:object_r:sysfs_spdaemon:s0
