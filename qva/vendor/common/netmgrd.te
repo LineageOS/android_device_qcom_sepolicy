@@ -53,3 +53,7 @@ allowxperm netmgrd self:udp_socket ioctl rmnet_sock_ioctls;
 # Allow netmgrd to set vendor properties
 set_prop(netmgrd, vendor_data_ko_prop)
 allow netmgrd self:qipcrtr_socket create_socket_perms_no_ioctl;
+
+#Allow netmgrd to set rmnet module parameters
+allow netmgrd sysfs_rmnet:dir r_dir_perms;
+allow netmgrd sysfs_rmnet:file rw_file_perms;
