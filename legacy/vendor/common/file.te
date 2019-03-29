@@ -403,3 +403,6 @@ type sysfs_qvr_external_sensor, sysfs_type, fs_type;
 
 # /dev/msm_aac_in
 type msm_aac_in_device, dev_type;
+
+# sysfs mhi file
+type sysfs_mhi, sysfs_type, fs_type;

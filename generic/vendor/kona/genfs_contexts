@@ -70,6 +70,18 @@ genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-cpu-ddr-latfloor/devfreq u:ob
 #mhi sysfs
 genfscon sysfs /devices/platform/soc/1c10000.qcom,pcie/pci0002:00/0002:00:00.0/0002:01:00.0/0306_02.01.00_QMI0 u:object_r:sysfs_mhi:s0
 genfscon sysfs /devices/platform/soc/1c10000.qcom,pcie/pci0002:00/0002:00:00.0/0002:01:00.0/0306_02.01.00_QMI1  u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/0306_00.01.00/time u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/0306_01.01.00/time u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/0306_02.01.00/time u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/1101_00.01.00/time u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/1101_01.01.00/time u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/1101_02.01.00/time u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/0306_00.01.00/time_us u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/0306_01.01.00/time_us u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/0306_02.01.00/time_us u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/1101_00.01.00/time_us u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/1101_01.01.00/time_us u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/1101_02.01.00/time_us u:object_r:sysfs_mhi:s0
 
 # Power supply device nodes
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,qpnp-smb5/power_supply/battery u:object_r:sysfs_battery_supply:s0
