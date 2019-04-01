@@ -70,3 +70,6 @@ type vendor_data_ko_prop, property_type;
 # WIGIG
 type vendor_wigig_prop, property_type;
 type ctl_vendor_wigigsvc_prop, property_type;
+
+# hvdcp_opti prop
+type vendor_hvdcp_opti_prop, property_type;
