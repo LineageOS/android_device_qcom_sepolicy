@@ -44,6 +44,7 @@
 ###################################
 # Dev socket nodes
 #
+/dev/socket/iop                                 u:object_r:iop_socket:s0
 /dev/socket/mlid                                u:object_r:mlid_socket:s0
 /dev/socket/ssgqmig                             u:object_r:ssgqmig_socket:s0
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
@@ -116,6 +117,7 @@
 ###################################
 # data files
 #
+/data/vendor/iop(/.*)?                                              u:object_r:iop_data_file:s0
 /data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
 /data/vendor/wifi(/.*)?                                             u:object_r:wifi_vendor_data_file:s0
 /data/vendor/wifi/sockets(/.*)?                                     u:object_r:wifi_vendor_wpa_socket:s0
