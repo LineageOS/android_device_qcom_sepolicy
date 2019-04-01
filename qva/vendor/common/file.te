@@ -49,6 +49,7 @@ type qdma_socket, file_type, mlstrustedobject;
 type sysfs_npu, fs_type, sysfs_type;
 
 type vendor_persist_mmi_file, file_type, vendor_persist_type;
+type persist_hvdcp_file, file_type, vendor_persist_type;
 
 #File type by mmi
 type vendor_mmi_socket, file_type;

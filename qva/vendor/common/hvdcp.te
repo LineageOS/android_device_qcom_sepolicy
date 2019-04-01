@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -56,12 +56,12 @@ allow hvdcp {
     sysfs_spmi_dev
 }:lnk_file r_file_perms;
 
-allow hvdcp self:capability { setgid setuid };
 allow hvdcp self:capability2 wake_alarm;
-allow hvdcp kmsg_device:chr_file rw_file_perms;
-allow hvdcp cgroup:dir { create add_name };
+userdebug_or_eng(`allow hvdcp kmsg_device:chr_file rw_file_perms;')
 allow hvdcp self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
-allow hvdcp sysfs_battery_supply:file setattr;
-allow hvdcp sysfs_usb_supply:file setattr;
-allow hvdcp sysfs_usbpd_device:file setattr;
+
+allow hvdcp mnt_vendor_file:dir search;
+allow hvdcp persist_hvdcp_file:dir rw_dir_perms;
+allow hvdcp persist_hvdcp_file:file create_file_perms;
+
 wakelock_use(hvdcp)
