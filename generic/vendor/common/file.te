@@ -94,6 +94,9 @@ type hal_bootctl_socket, file_type;
 type location_socket, file_type;
 type pps_socket, file_type;
 
+# imshelper_app file types
+type imshelper_app_data_file, file_type, data_file_type;
+
 type firmware_file, file_type, contextmount_type, vendor_file_type;
 
 type cnd_data_file, file_type, data_file_type;
