@@ -68,3 +68,5 @@ allow fstman wigig_vendor_wpa_socket:sock_file rw_file_perms;
 # hostapd global socket
 allow fstman hostapd_data_file:dir rw_dir_perms;
 allow fstman hostapd_data_file:sock_file create_file_perms;
+# access capability config store
+hal_client_domain(fstman, hal_capabilityconfigstore_qti);
