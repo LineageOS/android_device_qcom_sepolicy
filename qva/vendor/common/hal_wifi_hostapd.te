@@ -32,5 +32,17 @@ allow hal_wifi_hostapd_default hostapd_data_file:file create_file_perms;
 # Allow hostapd to create control socket under its data folder
 allow hal_wifi_hostapd_default hostapd_data_file:sock_file create_file_perms;
 
+# Allow hostapd to connect to fstman using control socket
+allow hal_wifi_hostapd_default fstman:unix_dgram_socket sendto;
+# wigig_hostapd has its own directory for sockets,
+# in order to prevent conflicts with wifi hostapd
+# allow wigig_hostapd to create the directory holding its control socket
+allow hal_wifi_hostapd_default wigig_hostapd_socket:dir create_dir_perms;
+# wigig_hostapd needs to create, bind to, read and write its control socket
+allow hal_wifi_hostapd_default wigig_hostapd_socket:sock_file create_file_perms;
+# allow wigig_hostapd to send replies to wigighalsvc
+allow hal_wifi_hostapd_default wigighalsvc:unix_dgram_socket sendto;
+# allow hostapd to attach to fstman socket
 allow hal_wifi_hostapd_default wifi_vendor_wpa_socket:dir r_dir_perms;
 allow hal_wifi_hostapd_default wifi_vendor_wpa_socket:sock_file rw_file_perms;
+allow hal_wifi_hostapd_default wigig_vendor_wpa_socket:sock_file rw_file_perms;

@@ -85,3 +85,10 @@ type persist_vpp_file, file_type, vendor_persist_type;
 
 # Spdaemon file
 type sysfs_spdaemon, fs_type, sysfs_type;
+
+# wigig, fstman
+type sysfs_wigig, fs_type, sysfs_type;
+type wigignpt_socket, file_type;
+type wigig_vendor_wpa_socket, file_type;
+# wigig_hostapd
+type wigig_hostapd_socket, file_type, data_file_type;

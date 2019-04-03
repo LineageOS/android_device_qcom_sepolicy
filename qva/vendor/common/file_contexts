@@ -50,6 +50,9 @@
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 /dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
 /dev/socket/adpl_cmd_uds_file                   u:object_r:dataadpl_socket:s0
+/dev/socket/wigig/wpa_wigig[0-9]                u:object_r:wigig_vendor_wpa_socket:s0
+/dev/socket/wigig/vendor_wpa_wlan[0-9]          u:object_r:wigig_vendor_wpa_socket:s0
+/dev/socket/wigig/wigignpt                      u:object_r:wigignpt_socket:s0
 
 ###################################
 # System files
@@ -98,6 +101,9 @@
 /(vendor|system/vendor)/bin/mmid                                                   u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service         u:object_r:vendor_hal_factory_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cvp@1\.0-service             u:object_r:vendor_cvp_exec:s0
+/(vendor|system/vendor)/bin/fstman                                                 u:object_r:fstman_exec:s0
+/(vendor|system/vendor)/bin/wigighalsvc                                            u:object_r:wigighalsvc_exec:s0
+/(vendor|system/vendor)/bin/wigignpt                                               u:object_r:wigignpt_exec:s0
 
 #### Context for location features
 ## location daemons and binaries
@@ -115,6 +121,18 @@
 /sys/module/process_reclaim(/.*)?                                   u:object_r:sysfs_process_reclaim:s0
 
 ###################################
+# sysfs files
+#
+/sys/devices/virtual/net/bond0/bonding/queue_id                     u:object_r:sysfs_bond0:s0
+/sys/devices/virtual/net/bond0/queues/rx-0/rps_cpus                 u:object_r:sysfs_bond0:s0
+
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/fst_link_loss            u:object_r:sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/thermal_throttling       u:object_r:sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/snr_thresh               u:object_r:sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/queues/rx-0/rps_cpus  u:object_r:sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/gro_flush_timeout     u:object_r:sysfs_wigig:s0
+
+###################################
 # data files
 #
 /data/vendor/iop(/.*)?                                              u:object_r:iop_data_file:s0
@@ -129,6 +147,7 @@
 /data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qdma_data_file:s0
 /data/vendor/qdma(/.*)?                                             u:object_r:vendor_qdma_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
+/data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
 
 ###################################
 # persist files

@@ -1,4 +1,4 @@
-# Copyright (c) 2019 The Linux Foundation. All rights reserved.
+# Copyright (c) 2017,2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,17 +25,31 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#mm-parser
-type mm_parser_prop, property_type, extended_core_property_type;
-#mm-osal
-type mm_osal_prop, property_type, extended_core_property_type;
+type wigignpt, domain;
+type wigignpt_exec, exec_type, vendor_file_type, file_type;
 
-type mm_video_prop, property_type, extended_core_property_type;
+init_daemon_domain(wigignpt)
+#use bypass because net_admin capability is needed
+hal_server_domain_bypass(wigignpt, hal_wigig_npt)
 
-#WiFi Display
-type wfd_service_prop, property_type, extended_core_property_type;
-type wfd_sys_debug_prop, property_type, extended_core_property_type;
-# WIGIG
-type wigig_core_prop, property_type, extended_core_property_type;
-type fst_prop, property_type, extended_core_property_type;
+#allows calls between client and server and vice-versa
+binder_call(hal_wigig_npt_client, hal_wigig_npt_server)
+binder_call(hal_wigig_npt_server, hal_wigig_npt_client)
 
+#register hal service, allow hal clients to find the service
+hal_attribute_hwservice(hal_wigig_npt, hal_wigig_npt_hwservice)
+
+#allow updating network stack parameters under /proc/sys/net
+#this also requires net_admin capability
+allow hal_wigig_npt proc_net:file rw_file_perms;
+allow hal_wigig_npt self:capability net_admin;
+
+#update wigig0 network parameters like rps_cpus and gro_flush_timeout
+allow hal_wigig_npt sysfs_net:dir search;
+allow hal_wigig_npt sysfs_wigig:file rw_file_perms;
+
+#update bond0 rps_cpus (FST)
+allow hal_wigig_npt sysfs_bond0:file rw_file_perms;
+
+#listen on /dev/socket/wigignpt
+allow hal_wigig_npt hal_wigig_npt:unix_stream_socket { listen accept read write };

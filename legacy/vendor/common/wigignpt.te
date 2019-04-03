@@ -42,9 +42,6 @@ allow hal_wigig_npt_client hal_wigig_npt_hwservice:hwservice_manager find;
 #register hal service
 add_hwservice(hal_wigig_npt, hal_wigig_npt_hwservice)
 
-# read wigig properties
-get_prop(hal_wigig_npt, wigig_prop);
-
 #allow updating network stack parameters under /proc/sys/net
 #this also requires net_admin capability
 allow hal_wigig_npt proc_net:file rw_file_perms;
