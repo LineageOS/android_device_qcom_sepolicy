@@ -44,6 +44,6 @@ allow location_app app_api_service:service_manager find;
 allow location_app system_app_data_file:dir create_dir_perms;
 allow location_app system_app_data_file:file create_file_perms;
 
-allow location_app cgroup:file {read write};
+allow location_app cgroup:file rw_file_perms;
 
 unix_socket_send(location_app, seempdw, seempd);

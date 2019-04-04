@@ -38,7 +38,7 @@ userdebug_or_eng(`
     allow location_app_test { adbd su }:unix_stream_socket connectto;
 
     allow location_app_test app_api_service:service_manager find;
-    allow location_app_test cgroup:file {read write};
+    allow location_app_test cgroup:file rw_file_perms;
 
     allow location_app_test anr_data_file:dir rw_dir_perms;
     allow location_app_test anr_data_file:file rw_file_perms;
