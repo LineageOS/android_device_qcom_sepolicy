@@ -46,5 +46,9 @@ hal_client_domain(system_app, hal_soter);
 
 #allow system app access display color for qdcm
 hal_client_domain(system_app, hal_display_color);
+
 # allow system_app to interact with light hal
 hal_client_domain(system_app, hal_light);
+
+#allow system app to access btconfigstore hal
+hal_client_domain(system_app, hal_btconfigstore);

@@ -119,3 +119,7 @@ attribute hal_wifilearner_server;
 attribute hal_fm;
 attribute hal_fm_client;
 attribute hal_fm_server;
+
+attribute hal_btconfigstore;
+attribute hal_btconfigstore_client;
+attribute hal_btconfigstore_server;
