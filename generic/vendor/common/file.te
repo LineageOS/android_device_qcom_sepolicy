@@ -50,6 +50,7 @@ type sysfs_sensors, sysfs_type, fs_type;
 type sysfs_sectouch, sysfs_type, fs_type;
 type sysfs_soc, sysfs_type, fs_type;
 type sysfs_scsi_host, fs_type, sysfs_type;
+type sysfs_scsi_target, fs_type, sysfs_type;
 type sysfs_slpi, fs_type, sysfs_type;
 type sysfs_spmi_dev, sysfs_type, fs_type;
 type sysfs_ssr, sysfs_type, fs_type;

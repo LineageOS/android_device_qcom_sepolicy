@@ -381,6 +381,7 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:sysfs_mmc_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/clkscale_enable        u:object_r:sysfs_scsi_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+/host0/scsi_host/host0(/.*)?  u:object_r:sysfs_scsi_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/host0/target0:0:0/0:0:0:[0-9]+/scsi_generic(/.*)?     u:object_r:sysfs_scsi_target:s0
 /data/vendor/media(/.*)?                                            u:object_r:vendor_media_data_file:s0
 /data/vendor/mediadrm(/.*)?                                         u:object_r:mediadrm_vendor_data_file:s0
 /data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
