@@ -85,6 +85,8 @@
 /(vendor|system/vendor)/bin/qcom-system-daemon                                     u:object_r:vendor_qcomsysd_exec:s0
 /(vendor|system/vendor)/bin/vppservice                                             u:object_r:vendor_vppservice_exec:s0
 /(vendor|system/vendor)/bin/wifidisplayhalservice                                  u:object_r:wifidisplayhalservice_qti_exec:s0
+/(vendor|system/vendor)/bin/wfdhdcphalservice                                      u:object_r:wfdhdcphalservice_qti_exec:s0
+/(vendor|system/vendor)/bin/wfdvndservice                                          u:object_r:wfdvndservice_exec:s0
 /(vendor|system/vendor)/bin/nqnfcinfo                                              u:object_r:nqnfcinfo_exec:s0
 /(vendor|system/vendor)/bin/ssgqmigd                                               u:object_r:ssgqmigd_exec:s0
 /(vendor|system/vendor)/bin/ssgtzd                                                 u:object_r:ssgtzd_exec:s0
