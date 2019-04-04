@@ -33,6 +33,17 @@ init_daemon_domain(hal_soter_qti)
 
 binder_call(hal_soter_client, hal_soter_server)
 binder_call(hal_soter_server, hal_soter_client)
-get_prop(hal_soter_qti, vendor_tee_listener_prop)
+
 add_hwservice(hal_soter_server, hal_soter_hwservice)
 allow hal_soter_client hal_soter_hwservice:hwservice_manager find;
+
+#Allow access to tee device
+allow hal_soter_qti tee_device:chr_file rw_file_perms;
+
+#Allow access to load firmware images
+r_dir_file(hal_soter_qti, firmware_file)
+
+#Allow access to interract with ion_device
+allow hal_soter_qti ion_device:chr_file r_file_perms;
+
+get_prop(hal_soter_qti, vendor_tee_listener_prop)
