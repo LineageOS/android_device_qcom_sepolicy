@@ -34,3 +34,5 @@ get_prop(mediacodec, vendor_video_prop)
 
 #Allow mediacodec to access vpp
 hal_client_domain(mediacodec, hal_vpp)
+allow mediacodec xdsp_device:chr_file r_file_perms;
+allow mediacodec qdsp_device:chr_file r_file_perms;
