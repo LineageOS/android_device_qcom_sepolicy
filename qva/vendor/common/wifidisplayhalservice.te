@@ -101,3 +101,6 @@ userdebug_or_eng(`
 #Allow to access logmask file in /data/vendor
   allow wifidisplayhalservice_qti vendor_data_file:file r_file_perms;
 ')
+
+#Allow source to access video SKU and UBWC property(for encoder config)
+get_prop(wifidisplayhalservice_qti, vendor_video_prop)

@@ -60,3 +60,6 @@ userdebug_or_eng(`
     allow system_app system_data_file:file r_file_perms;
 ')
 binder_call(system_app, wfdservice)
+
+# allow access to read video SKU property for WFD sink
+get_prop(system_app, vendor_sys_video_prop)
