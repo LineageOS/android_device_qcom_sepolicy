@@ -150,6 +150,7 @@ type sysfs_devfreq, fs_type, sysfs_type;
 type sysfs_devfreq_l3cdsp, fs_type, sysfs_type;
 type sysfs_mmc_host, fs_type, sysfs_type;
 type sysfs_scsi_host, fs_type, sysfs_type;
+type sysfs_scsi_target, fs_type, sysfs_type;
 type sysfs_cpu_boost, fs_type, sysfs_type;
 type sysfs_msm_perf, fs_type, sysfs_type;
 type sysfs_memory, fs_type, sysfs_type;

@@ -55,6 +55,9 @@ allow hal_bootctl sg_device:chr_file rw_file_perms;
 # does not result in a error
 dontaudit hal_bootctl self:capability sys_rawio;
 
+# Read the sysfs to lookup what /dev/sgN device
+# corresponds to the XBL partitions.
+allow hal_bootctl sysfs_scsi_target:dir r_dir_perms;
 
 # Write to the XBL devices.
 allow hal_bootctl xbl_block_device:blk_file rw_file_perms;
