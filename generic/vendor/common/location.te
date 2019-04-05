@@ -83,6 +83,14 @@ allow location self:netlink_socket create_socket_perms_no_ioctl;
 allowxperm location self:udp_socket ioctl lowi_server_ioctls;
 allow location hal_wifi:unix_stream_socket { read write };
 
+# /data/vendor/wifi
+allow location wifi_vendor_data_file:dir search;
+
+# /data/vendor/wifi/wpa
+allow location wpa_data_file:dir rw_dir_perms;
+allow location wpa_data_file:sock_file create_file_perms;
+allow location hal_wifi_supplicant_default:unix_dgram_socket sendto;
+
 ## xtra-daemon
 ##############
 allow location {hal_cacert_hwservice hal_datafactory_hwservice hal_cne_hwservice}:hwservice_manager find;
