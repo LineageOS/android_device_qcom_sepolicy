@@ -98,4 +98,6 @@ userdebug_or_eng(`
 #Allow to dump in /data/vendor/media/
   allow wifidisplayhalservice_qti vendor_media_data_file:dir w_dir_perms;
   allow wifidisplayhalservice_qti vendor_media_data_file:file create_file_perms;
+#Allow to access logmask file in /data/vendor
+  allow wifidisplayhalservice_qti vendor_data_file:file r_file_perms;
 ')
