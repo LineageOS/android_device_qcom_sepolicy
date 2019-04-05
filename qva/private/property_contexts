@@ -58,10 +58,14 @@ vendor.encoder.video.profile              u:object_r:mm_video_prop:s0
 vendor.sys.media.target.version           u:object_r:vendor_sys_video_prop:s0
 
 #Wifi Display
-vendor.wfdservice                          u:object_r:wfd_service_prop:s0
-persist.vendor.debug.wfd.wfdsvc            u:object_r:wfd_sys_debug_prop:s0
-persist.vendor.debug.wfdcdbg               u:object_r:wfd_sys_debug_prop:s0
-persist.vendor.debug.wfdcdbgv              u:object_r:wfd_sys_debug_prop:s0
+vendor.wfdservice                         u:object_r:wfd_service_prop:s0
+persist.vendor.debug.wfd.wfdsvc           u:object_r:wfd_sys_debug_prop:s0
+persist.vendor.debug.wfdcdbg              u:object_r:wfd_sys_debug_prop:s0
+persist.vendor.debug.wfdcdbgv             u:object_r:wfd_sys_debug_prop:s0
+persist.vendor.sys.debug.mux.             u:object_r:wfd_sys_debug_prop:s0
+persist.vendor.sys.debug.rtp.             u:object_r:wfd_sys_debug_prop:s0
+persist.vendor.sys.debug.wfd.             u:object_r:wfd_sys_debug_prop:s0
+
 # WIGIG
 persist.vendor.wigig.                      u:object_r:wigig_core_prop:s0
 persist.vendor.fst.                        u:object_r:fst_prop:s0

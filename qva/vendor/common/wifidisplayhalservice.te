@@ -92,8 +92,10 @@ unix_socket_connect(wifidisplayhalservice_qti, property, init);
 #Allow ion device access
 allow wifidisplayhalservice_qti ion_device:chr_file r_file_perms;
 
-#Allow for property access
 userdebug_or_eng(`
+#Allow for property access
   get_prop(wifidisplayhalservice_qti,wfd_vendor_debug_prop)
+#Allow to dump in /data/vendor/media/
+  allow wifidisplayhalservice_qti vendor_media_data_file:dir w_dir_perms;
+  allow wifidisplayhalservice_qti vendor_media_data_file:file create_file_perms;
 ')
-
