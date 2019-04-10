@@ -50,6 +50,9 @@ userdebug_or_eng(`
 # access hexagon
 allow hal_camera qdsp_device:chr_file r_file_perms;
 
+#Allow camera to access synx device
+allow hal_camera synx_device:chr_file rw_file_perms;
+
 #needed for full_treble
 hal_client_domain(hal_camera_default, hal_graphics_composer)
 

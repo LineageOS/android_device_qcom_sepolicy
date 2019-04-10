@@ -93,3 +93,6 @@ set_prop(vendor_init, public_vendor_default_prop)
 
 # Allow timezone to be overrided by vendor
 set_prop(vendor_init, exported_system_prop)
+
+#Access vendor bluetooth properties
+set_prop(vendor_init, vendor_bluetooth_prop)

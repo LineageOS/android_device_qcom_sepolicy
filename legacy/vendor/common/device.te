@@ -154,8 +154,8 @@ type system_health_monitor_device, dev_type;
 #Define usf device
 type usf_device, dev_type;
 
-#Define qbt1000 device - ultrasonic fingperprint sensor
-type qbt1000_device, dev_type;
+#Define qbt device - ultrasonic fingperprint sensor
+type qbt_device, dev_type;
 
 #Define avtimer device
 type avtimer_device, dev_type;

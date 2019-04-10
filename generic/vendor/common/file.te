@@ -83,6 +83,9 @@ type qmuxd_socket, file_type;
 type netmgrd_socket, file_type;
 type thermal_socket, file_type;
 
+#Define the qti socket type
+type dataqti_socket, file_type;
+
 type ims_socket, file_type;
 type ipacm_socket, file_type;
 type cnd_socket, file_type;
@@ -90,6 +93,9 @@ type chre_socket, file_type;
 type hal_bootctl_socket, file_type;
 type location_socket, file_type;
 type pps_socket, file_type;
+
+# imshelper_app file types
+type imshelper_app_data_file, file_type, data_file_type;
 
 type firmware_file, file_type, contextmount_type, vendor_file_type;
 
@@ -137,6 +143,9 @@ type vendor_capabilityconfigstore_data_file, file_type, data_file_type;
 #widevine data file
 type mediadrm_vendor_data_file, file_type, data_file_type;
 
+#time-services data file
+type vendor_time_data_file, file_type, data_file_type;
+
 #data sysfs files
 type sysfs_data, fs_type, sysfs_type;
 
@@ -178,3 +187,4 @@ type sysfs_qdss_dev, sysfs_type, fs_type;
 
 #Define the qdcmss socket type
 type qdcmsocket_socket, file_type;
+type sysfs_mhi, sysfs_type, fs_type;

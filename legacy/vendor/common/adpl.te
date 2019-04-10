@@ -56,3 +56,6 @@ set_prop(adpl, vendor_dataadpl_prop)
 userdebug_or_eng(`
     diag_use(adpl)
 ')
+
+#Allow adpl to create adpl socket
+allow adpl dataadpl_socket:sock_file rw_file_perms;

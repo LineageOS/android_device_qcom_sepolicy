@@ -65,3 +65,8 @@ read_logd(qdmastatsd);
 
 # allow qdma_prop
 set_prop(qdmastatsd, vendor_qdma_prop);
+
+# qmi
+qmux_socket(qdmastatsd);
+allow qdmastatsd self:{ socket qipcrtr_socket } create_socket_perms;
+allowxperm qdmastatsd self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;

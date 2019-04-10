@@ -61,3 +61,6 @@ allow qti vendor_qti_data_file:dir rw_dir_perms;
 userdebug_or_eng(`
     diag_use(qti)
 ')
+
+#Allow qti to create qti socket
+allow qti dataqti_socket:sock_file rw_file_perms;

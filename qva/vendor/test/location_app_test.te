@@ -44,4 +44,6 @@ userdebug_or_eng(`
     allow location_app_test anr_data_file:file rw_file_perms;
 
     unix_socket_send(location_app_test, seempdw, seempd);
+    #loc api access from ODLT
+    allow location_app_test self:qipcrtr_socket create_socket_perms_no_ioctl;
 ')

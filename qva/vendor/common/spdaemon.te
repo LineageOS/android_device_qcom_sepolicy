@@ -42,3 +42,12 @@ allow spdaemon cryptoapp_device:chr_file rw_file_perms;
 allow spdaemon ion_device:chr_file rw_file_perms;
 r_dir_file(spdaemon, firmware_file);
 use_vendor_per_mgr(spdaemon)
+
+allow spdaemon sysfs_data:file r_file_perms;
+
+allow spdaemon sysfs_spdaemon:file r_file_perms;
+
+userdebug_or_eng(`
+allow spdaemon debugfs_ipc:file rw_file_perms;
+allow spdaemon debugfs_ipc:dir r_dir_perms;
+')

@@ -32,7 +32,7 @@ type sp_ssr_device, dev_type;
 type spdaemon_ssr_device, dev_type;
 type cryptoapp_device, dev_type;
 type sec_nvm_device, dev_type;
-type qbt1000_device, dev_type;
+type qbt_device, dev_type;
 type esoc_device, dev_type;
 type mhi_device, dev_type;
 type efs_boot_dev, dev_type;

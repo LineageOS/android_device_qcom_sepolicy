@@ -43,7 +43,11 @@ allow radio {
 
 # IMS needs permission to use avtimer
 allow radio avtimer_device:chr_file r_file_perms;
-
+# permissions for RCS clients to communicate with RCS vendor service
+userdebug_or_eng(`
+  allow radio hal_imsrcsd_hwservice:hwservice_manager find;
+  binder_call(radio, hal_rcsservice);
+')
 binder_call(radio, hal_imsrtp)
 
 #perf

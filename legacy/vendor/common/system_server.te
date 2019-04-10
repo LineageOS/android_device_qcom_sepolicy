@@ -97,7 +97,6 @@ allow system_server {
     # graphics_device, audio_device, tee_device is for WFD
     graphics_device
     audio_device
-    tee_device
     #allow access to power control ANT chip
     bt_device
 }:chr_file rw_file_perms;

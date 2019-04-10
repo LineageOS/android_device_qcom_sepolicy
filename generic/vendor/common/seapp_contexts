@@ -28,13 +28,16 @@
 user=_app seinfo=tango name=com.google.tango:app domain=untrusted_app type=app_data_file levelFrom=user
 
 #Needed for time service apk
-user=_app seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file
+user=_app seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file levelFrom=all
 
 # AtFwd app
 user=_app seinfo=platform name=com.qualcomm.telephony domain=qtelephony type=app_data_file levelFrom=all
 
 #add new domain for qtidataservices
 user=radio seinfo=platform name=.qtidataservices domain=qtidataservices_app type=radio_data_file
+
+#Add new domain for imshelper service
+user=radio seinfo=platform name=.imshelperservice domain=imshelper_app type=imshelper_app_data_file
 
 #Add new domain for power off alarm app
 user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=system_app_data_file

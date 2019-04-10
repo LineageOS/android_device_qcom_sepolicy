@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -147,15 +147,18 @@ set_prop(qti_init_shell, ctl_vendor_hbtp_prop)
 allow qti_init_shell {
     sysfs_battery_supply
     sysfs_usb_supply
+    sysfs_usbpd_device
 }:dir r_dir_perms;
 
 allow qti_init_shell {
     sysfs_battery_supply
     sysfs_usb_supply
+    sysfs_usbpd_device
 }:file rw_file_perms;
 
 allow qti_init_shell sysfs_battery_supply:file setattr;
 allow qti_init_shell sysfs_usb_supply:file setattr;
+allow qti_init_shell sysfs_usbpd_device:file setattr;
 
 allow qti_init_shell sysfs_devices_system_cpu:file w_file_perms;
 

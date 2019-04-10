@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,44 +24,13 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# HVDVP quickcharge
-type hvdcp, domain;
-type hvdcp_exec, exec_type, vendor_file_type, file_type;
 
-# Make transition to its own HVDCP domain from init
-init_daemon_domain(hvdcp)
+type imshelper_app, domain;
+app_domain(imshelper_app);
+unix_socket_connect(imshelper_app, ims, ims)
+allow imshelper_app app_api_service:service_manager find;
 
-# Add rules for access permissions
-allow hvdcp hvdcp_device:chr_file rw_file_perms;
-allow hvdcp {
-    sysfs_battery_supply
-    sysfs_usb_supply
-    sysfs_usbpd_device
-    sysfs_vadc_dev
-    sysfs_spmi_dev
-}:dir r_dir_perms;
+#allow qsee_svc_app imshelper_app_data_file:dir create_dir_perms;
+#allow qsee_svc_app imshelper_app_data_file:file create_file_perms;
 
-allow hvdcp {
-    sysfs_battery_supply
-    sysfs_usb_supply
-    sysfs_usbpd_device
-    sysfs_vadc_dev
-    sysfs_spmi_dev
-}:file rw_file_perms;
-
-allow hvdcp {
-    sysfs_battery_supply
-    sysfs_usb_supply
-    sysfs_vadc_dev
-    sysfs_spmi_dev
-}:lnk_file r_file_perms;
-
-allow hvdcp self:capability { setgid setuid };
-allow hvdcp self:capability2 wake_alarm;
-allow hvdcp kmsg_device:chr_file rw_file_perms;
-allow hvdcp cgroup:dir { create add_name };
-allow hvdcp self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
-allow hvdcp sysfs_battery_supply:file setattr;
-allow hvdcp sysfs_usb_supply:file setattr;
-allow hvdcp sysfs_usbpd_device:file setattr;
-wakelock_use(hvdcp)
+allow imshelper_app system_app_data_file:dir { getattr search };
