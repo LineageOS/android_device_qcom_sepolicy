@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2019 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,32 +24,9 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+persist.vendor.debug.sensors.             u:object_r:sensors_dbg_prop:s0
 
-#mediacodec need intraction with audio device nodes
-allow mediacodec msm_aac_in_device:chr_file rw_file_perms;
-
-get_prop(mediacodec, adsprpc_prop)
-
-#Allow mediacodec to access proc_net files
-allow mediacodec proc_net:file r_file_perms;
-
-allow mediacodec qdsp_device:chr_file r_file_perms;
-allow mediacodec xdsp_device:chr_file r_file_perms;
-
-#Allow mediacodec to access service manager wfdnativemm_service
-allow mediacodec wfdnativemm_service:service_manager find;
-binder_call(mediacodec, wifidisplayhalservice_qti);
-
-#Allow mediacodec to access vendor_media_data_file files
-allow mediacodec vendor_media_data_file:dir create_dir_perms;
-allow mediacodec vendor_media_data_file:file create_file_perms;
-
-vndbinder_use(mediacodec);
-hwbinder_use(mediacodec);
-hal_client_domain(mediacodec, hal_vpp)
-hal_client_domain(mediacodec, hal_perf)
-
-get_prop(mediacodec, vendor_video_prop)
-allow mediacodec hal_display_config_hwservice:hwservice_manager find;
-allow mediacodec hal_graphics_composer_default:binder call;
-allow mediacodec qdisplay_service:service_manager find;
+#Wifi Display
+persist.vendor.debug.mux.                    u:object_r:wfd_vendor_debug_prop:s0
+persist.vendor.debug.rtp.                    u:object_r:wfd_vendor_debug_prop:s0
+persist.vendor.debug.wfd.                    u:object_r:wfd_vendor_debug_prop:s0
