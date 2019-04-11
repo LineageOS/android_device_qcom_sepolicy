@@ -75,8 +75,6 @@ userdebug_or_eng(`
 
 ## lowi-server
 ##############
-# need net_admin for now. Will be removed once FR51023 is complete.
-allow location self:capability { net_admin };
 # some additional network access
 allow location self:netlink_generic_socket create_socket_perms_no_ioctl;
 allow location self:netlink_socket create_socket_perms_no_ioctl;
