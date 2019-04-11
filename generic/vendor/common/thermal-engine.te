@@ -58,6 +58,7 @@ allow thermal-engine sysfs_graphics:file rw_file_perms;
 allow thermal-engine sysfs_graphics:lnk_file r_file_perms;
 
 r_dir_file(thermal-engine, sysfs_leds)
+r_dir_file(thermal-engine, adsprpcd_file);
 
 allow thermal-engine audio_device:chr_file rw_file_perms;
 

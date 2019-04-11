@@ -36,3 +36,6 @@ allow cameraserver system_server:unix_stream_socket { read write };
 
 # TODO (b/37688918) Verify that this is actually needed and not a violation of treble
 binder_call(cameraserver, mediacodec)
+
+#allow cameraserver to read adsprpc_prop
+get_prop(cameraserver, vendor_adsprpc_prop)

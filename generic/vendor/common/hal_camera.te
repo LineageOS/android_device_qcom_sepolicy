@@ -57,3 +57,8 @@ allow hal_camera synx_device:chr_file rw_file_perms;
 hal_client_domain(hal_camera_default, hal_graphics_composer)
 
 r_dir_file(hal_camera_default, sysfs_graphics)
+
+#allow camera to access /dsp
+r_dir_file(hal_camera, adsprpcd_file);
+#allow camera to access adsprpc_prop
+get_prop(hal_camera, vendor_adsprpc_prop)

@@ -35,3 +35,5 @@ allow mediacodec vendor_media_data_file:file create_file_perms;
 
 #Allow mediacodec to access configstore
 hal_client_domain(mediacodec, hal_capabilityconfigstore_qti)
+#allow mediacodec to read adsprpc_prop
+get_prop(mediacodec, vendor_adsprpc_prop)
