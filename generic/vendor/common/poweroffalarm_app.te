@@ -39,7 +39,7 @@ hal_client_domain(poweroffalarm_app, hal_alarm_qti);
 binder_call(poweroffalarm_app, hal_alarm_qti_default);
 
 allow poweroffalarm_app system_app_data_file:dir create_dir_perms;
-#allow poweroffalarm_app system_app_data_file:{ file lnk_file } create_file_perms;
+allow poweroffalarm_app system_app_data_file:{ file lnk_file } create_file_perms;
 
 allow poweroffalarm_app surfaceflinger_service:service_manager find;
 allow poweroffalarm_app audioserver_service:service_manager find;
