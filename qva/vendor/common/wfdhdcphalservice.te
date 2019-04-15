@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,21 +24,22 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
 
-# Allow access to create socket and ioctl.
-allow hal_wifi_supplicant_default self:qipcrtr_socket create_socket_perms_no_ioctl;
+#Define Domain
+type wfdhdcphalservice_qti, domain;
+type wfdhdcphalservice_qti_exec, exec_type, vendor_file_type, file_type;
 
-# Allow write to proc_net.
-allow hal_wifi_supplicant_default proc_net:file write;
+hal_server_domain(wfdhdcphalservice_qti, hal_drm)
+init_daemon_domain(wfdhdcphalservice_qti)
 
-allow hal_wifi_supplicant wifi_vendor_data_file:dir create_dir_perms;
-allow hal_wifi_supplicant wifi_vendor_data_file:file create_file_perms;
-allow hal_wifi_supplicant wifi_vendor_wpa_socket:dir create_dir_perms;
-allow hal_wifi_supplicant wifi_vendor_wpa_socket:sock_file create_file_perms;
-allow hal_wifi_supplicant wigig_vendor_wpa_socket:sock_file rw_file_perms;
+#Allow to call wfdhdcpvndservice
+vndbinder_use(wfdhdcphalservice_qti)
+allow wfdhdcphalservice_qti wfdhdcpvndservice_service:service_manager find;
+binder_call(wfdhdcphalservice_qti, wfdvndservice);
 
-allow hal_wifi_supplicant fstman:unix_dgram_socket sendto;
-allow hal_wifi_supplicant wigighalsvc:unix_dgram_socket sendto;
+#Allow access to display config hal
+hal_client_domain(wfdhdcphalservice_qti, hal_graphics_composer)
 
-type_transition hal_wifi_supplicant wifi_vendor_data_file:dir wifi_vendor_wpa_socket "wigig_sockets";
+#Allow to use fd from mediacodec and wfd app
+allow wfdhdcphalservice_qti { mediacodec system_app }:fd use;
+

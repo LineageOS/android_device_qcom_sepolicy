@@ -35,3 +35,7 @@ type mm_video_prop, property_type, extended_core_property_type;
 #WiFi Display
 type wfd_service_prop, property_type, extended_core_property_type;
 type wfd_sys_debug_prop, property_type, extended_core_property_type;
+# WIGIG
+type wigig_core_prop, property_type, extended_core_property_type;
+type fst_prop, property_type, extended_core_property_type;
+

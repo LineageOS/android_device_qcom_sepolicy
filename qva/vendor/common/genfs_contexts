@@ -35,3 +35,5 @@ genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/cable.
 
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon1/name u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon1/cable.0/ u:object_r:sysfs_graphics:s0
+
+genfscon sysfs /module/rmnet_perf/parameters u:object_r:sysfs_rmnet:s0
