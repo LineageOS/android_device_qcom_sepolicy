@@ -60,9 +60,6 @@ allow qdmastatsd qdma_socket:sock_file create_file_perms;
 # for logcat
 unix_socket_connect(qdmastatsd, logdr, logd);
 
-# for dmesg
-read_logd(qdmastatsd);
-
 # allow qdma_prop
 set_prop(qdmastatsd, vendor_qdma_prop);
 
