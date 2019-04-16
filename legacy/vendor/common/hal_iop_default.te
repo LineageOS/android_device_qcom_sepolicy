@@ -49,3 +49,4 @@ allow hal_iop_default proc:file rw_file_perms;
 #Allow Access for /data/vendor/iop
 allow hal_iop iop_data_file:dir rw_dir_perms;
 allow hal_iop iop_data_file:file create_file_perms;
+hal_client_domain(hal_iop_default, hal_perf)
