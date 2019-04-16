@@ -54,5 +54,12 @@ set_prop(system_app, vendor_mirrorlink_prop);
 set_prop(system_app, wfd_service_prop);
 userdebug_or_eng(`
     get_prop(system_app, wfd_sys_debug_prop);
+#Access to MM-OSAL debug prop for parser debugging on WFD sink
+    get_prop(system_app, mm_osal_prop);
+#Allow access to logmask file in /data/
+    allow system_app system_data_file:file r_file_perms;
 ')
 binder_call(system_app, wfdservice)
+
+# allow access to read video SKU property for WFD sink
+get_prop(system_app, vendor_sys_video_prop)
