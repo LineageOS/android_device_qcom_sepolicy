@@ -44,3 +44,5 @@ allow tee qfp-daemon_data_file:dir create_dir_perms;
 allow tee qfp-daemon_data_file:file create_file_perms;
 allow tee persist_qti_fp_file:dir create_dir_perms;
 allow tee persist_qti_fp_file:file create_file_perms;
+
+allowxperm tee rpmb_device:blk_file ioctl { MMC_IOC_CMD };
