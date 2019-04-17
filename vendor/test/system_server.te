@@ -1,4 +1,4 @@
-# Copyright (c) 2016, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,32 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type wcnss_filter, domain;
-type wcnss_filter_exec, exec_type, vendor_file_type, file_type;
-
-init_daemon_domain(wcnss_filter)
-net_domain(wcnss_filter)
-
-userdebug_or_eng(`
-allow wcnss_filter proc_sysrq:file { open write };
-')
-allow wcnss_filter sysfs_msmuart_file:file rw_file_perms;
-allow wcnss_filter {
-    serial_device
-}:chr_file rw_file_perms;
-
-#wakelock policy
-wakelock_use(wcnss_filter);
-set_prop(wcnss_filter, vendor_bluetooth_prop);
-
-#For bluetooth firmware
-r_dir_file(wcnss_filter, bt_firmware_file)
-
-allow wcnss_filter persist_bluetooth_file:dir r_dir_perms;
-allow wcnss_filter persist_bluetooth_file:file r_file_perms;
-allow wcnss_filter mnt_vendor_file:dir r_dir_perms;
-
-#diag
-userdebug_or_eng(`
-    diag_use(wcnss_filter)
-')
+allow system_server binder_state:file r_file_perms;

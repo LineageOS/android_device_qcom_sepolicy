@@ -90,5 +90,9 @@ get_prop(location, cnd_vendor_prop)
 #Allow access to wake alarm
 allow location self:capability2 wake_alarm;
 
+#Aloow access to qtidataservice-app
+allow location hal_cacert_hwservice:hwservice_manager find;
+binder_call(location, qtidataservices_app)
+
 #allow qdma prop
 get_prop(location, vendor_qdma_prop);

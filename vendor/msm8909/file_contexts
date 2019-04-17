@@ -81,11 +81,6 @@
 /sys/devices/virtual/input/input[0-9]/akm8963-mag(/.*)?                                                  u:object_r:sysfs_sensors:s0
 
 ##################################
-# non-hlos mount points
-/firmware                  u:object_r:firmware_file:s0
-/bt_firmware               u:object_r:bt_firmware_file:s0
-
-##################################
 # A/B partitions.
 #EMMC
 /dev/block/platform/soc/7824900.sdhci/by-name/aboot_[ab]            u:object_r:custom_ab_block_device:s0

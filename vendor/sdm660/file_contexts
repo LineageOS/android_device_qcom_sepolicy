@@ -82,11 +82,6 @@
 /(vendor|system/vendor)/bin/init.qti.qseecomd.sh				u:object_r:init-qti-fbe-sh_exec:s0
 
 ##################################
-# non-hlos mount points
-/firmware                  u:object_r:firmware_file:s0
-/bt_firmware               u:object_r:bt_firmware_file:s0
-
-##################################
 # A/B partitions.
 #EMMC
 /dev/block/platform/soc/c0c4000.sdhci/by-name/abl_[ab]          u:object_r:custom_ab_block_device:s0
