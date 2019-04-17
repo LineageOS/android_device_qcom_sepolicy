@@ -155,12 +155,6 @@ vendor.qti.qdma.        u:object_r:vendor_qdma_prop:s0
 #Needed by qsee need to rename this
 vendor.sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
 
-#WiFi Display
-persist.vendor.debug.mux.  u:object_r:wfd_debug_prop:s0
-persist.vendor.debug.rtp.  u:object_r:wfd_debug_prop:s0
-persist.vendor.debug.wfd.  u:object_r:wfd_debug_prop:s0
-vendor.debug.wfd.          u:object_r:wfd_debug_prop:s0
-
 ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
 
 persist.vendor.mmi.        u:object_r:vendor_mmi_prop:s0
