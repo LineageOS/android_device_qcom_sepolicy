@@ -97,3 +97,4 @@ vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_fm_h
 vendor.qti.hardware.wifidisplaysession::IWifiDisplaySession  u:object_r:wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionVideoTrack    u:object_r:wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionAudioTrack    u:object_r:wifidisplayhalservice_hwservice:s0
+vendor.qti.hardware.bluetooth_audio::IBluetoothAudioProvidersFactory u:object_r:hal_audio_hwservice:s0
