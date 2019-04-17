@@ -58,6 +58,7 @@ allow hal_rcsservice devpts:chr_file rw_file_perms;
 # allow imsrcsd capabilities
 wakelock_use(hal_rcsservice)
 allow hal_rcsservice self:capability net_bind_service;
+allow hal_rcsservice self:capability2 wake_alarm;
 
 #diag
 userdebug_or_eng(`
