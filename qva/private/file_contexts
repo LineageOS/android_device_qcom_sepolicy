@@ -56,3 +56,4 @@
 /data/dpm(/.*)?                                 u:object_r:dpmd_data_file:s0
 /data/misc/qvr(/.*)?                            u:object_r:qvrd_data_file:s0
 /data/misc/mirrorlinkserver(/.*)?               u:object_r:mirrorlink_data_file:s0
+/data/nfc(/.*)?                                 u:object_r:nfc_data_file:s0
