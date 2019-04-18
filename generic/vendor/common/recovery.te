@@ -29,4 +29,16 @@ recovery_only(`
  # Search and Read access for sysfs_graphics for backlight
  allow recovery sysfs_graphics:dir search;
  allow recovery sysfs_graphics:file rw_file_perms;
+ # Read files on /sdcard
+ allow recovery sdcard_type:dir r_dir_perms;
+ allow recovery sdcard_type:file r_file_perms;
+ allow recovery vfat:dir r_dir_perms;
+ allow recovery vfat:file create_file_perms;
+ allow recovery vfat:file rw_file_perms;
+ allow recovery system_data_file:file r_file_perms;
+ allow recovery system_data_file:dir r_dir_perms;
+ allow recovery cache_file:dir mounton;
+ allow recovery sg_device:chr_file rw_file_perms;
+ allow recovery self:capability sys_rawio;
+ allow recovery sg_device:chr_file ioctl;
 ')
