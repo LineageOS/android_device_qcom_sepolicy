@@ -45,3 +45,6 @@ hal_client_domain(system_server, hal_wigig_npt)
 hal_client_domain(system_server, hal_capabilityconfigstore_qti);
 # allow WIGIG framework access to wil6210 sysfs files like thermal_throttling
 allow system_server sysfs_wigig:file rw_file_perms;
+
+# allow system_server to access IWifiStats HAL service
+hal_client_domain(system_server, hal_wifilearner);
