@@ -115,6 +115,7 @@ hal_client_domain(tee, hal_graphics_composer);
 allow tee sysfs_sectouch:file rw_file_perms;
 allow tee vendor_tui_data_file:file rw_file_perms;
 allow tee vendor_tui_data_file:dir r_dir_perms;
+allow tee graphics_device:chr_file rw_file_perms;
 
 # Allow access to qsee data file
 allow tee data_qsee_file:dir create_dir_perms;
