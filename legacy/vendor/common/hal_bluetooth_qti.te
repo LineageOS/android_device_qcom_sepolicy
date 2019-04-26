@@ -75,3 +75,4 @@ allow hal_bluetooth_qti self:{ socket qipcrtr_socket } create_socket_perms_no_io
 ')
 
 hal_server_domain(hal_bluetooth_qti, hal_fm)
+hal_server_domain(hal_bluetooth_qti, hal_btconfigstore)

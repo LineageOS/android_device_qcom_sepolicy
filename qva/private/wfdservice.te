@@ -66,3 +66,6 @@ hal_client_domain(wfdservice, hal_graphics_composer);
 
 #Allow ion device access
 allow wfdservice ion_device:chr_file r_file_perms;
+
+#Allow source to access video UBWC property(for display config)
+get_prop(wfdservice, vendor_sys_video_prop)

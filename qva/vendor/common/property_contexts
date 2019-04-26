@@ -73,3 +73,19 @@ ctl.vendor.wigig_hostapd                     u:object_r:ctl_vendor_wigigsvc_prop
 # netmgrd ko loading
 persist.vendor.data.shs_ko_load u:object_r:vendor_data_ko_prop:s0
 persist.vendor.data.perf_ko_load u:object_r:vendor_data_ko_prop:s0
+
+# hvdcp_opti properties
+persist.vendor.bms.                          u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.chg.                          u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.chg_plcy_mgr.                 u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.cp.                           u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.ctm.                          u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.hvdcp2.                       u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.hvdcp_opti.                   u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.hvdcp.                        u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.pps.                          u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.std-pd.                       u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.tb.                           u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.vin.                          u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.qg.                           u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.soh.                          u:object_r:vendor_hvdcp_opti_prop:s0

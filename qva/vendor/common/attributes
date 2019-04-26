@@ -92,3 +92,7 @@ attribute hal_wigig_server;
 attribute hal_wigig_npt;
 attribute hal_wigig_npt_client;
 attribute hal_wigig_npt_server;
+
+attribute hal_btconfigstore;
+attribute hal_btconfigstore_client;
+attribute hal_btconfigstore_server;

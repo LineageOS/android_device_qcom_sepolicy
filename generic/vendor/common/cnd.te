@@ -77,6 +77,8 @@ binder_call(cnd, qtidataservices_app)
 binder_call(cnd, ims)
 binder_call(cnd, location)
 
+r_dir_file(cnd, sysfs_ssr)
+
 #diag
 userdebug_or_eng(`
     diag_use(cnd)

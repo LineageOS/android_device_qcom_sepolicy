@@ -42,3 +42,4 @@ allow qti vendor_shell_exec:file rx_file_perms;
 userdebug_or_eng(`
     allow qti vendor_qti_data_file:file create_file_perms;
 ')
+dontaudit qti shell_exec:file x_file_perms;

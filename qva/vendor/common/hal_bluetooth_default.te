@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 hal_server_domain(hal_bluetooth_default, hal_fm)
+hal_server_domain(hal_bluetooth_default, hal_btconfigstore)

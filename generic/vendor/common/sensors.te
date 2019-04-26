@@ -64,6 +64,8 @@ allow sensors xdsp_device:chr_file r_file_perms;
 
 # For reading dir/files on /dsp
 r_dir_file(sensors, adsprpcd_file)
+# For reading adsprpc_prop
+get_prop(sensors, vendor_adsprpc_prop)
 
 allow sensors persist_sensors_file:fifo_file create_file_perms;
 # Access to /persist/sensors

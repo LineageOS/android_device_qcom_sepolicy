@@ -82,3 +82,6 @@ allow bluetooth hal_audio_hwservice:hwservice_manager find;
 dontaudit bluetooth {
       netd_service
 }:service_manager find;
+
+#allow bluetooth to access btconfigstore hal
+hal_client_domain(bluetooth, hal_btconfigstore);

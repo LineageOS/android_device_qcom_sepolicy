@@ -75,13 +75,23 @@ userdebug_or_eng(`
 
 ## lowi-server
 ##############
-# need net_admin for now. Will be removed once FR51023 is complete.
-allow location self:capability { net_admin };
 # some additional network access
 allow location self:netlink_generic_socket create_socket_perms_no_ioctl;
 allow location self:netlink_socket create_socket_perms_no_ioctl;
 allowxperm location self:udp_socket ioctl lowi_server_ioctls;
 allow location hal_wifi:unix_stream_socket { read write };
+
+# /data/vendor/wifi
+allow location wifi_vendor_data_file:dir search;
+
+# /data/vendor/wifi/wpa
+allow location wpa_data_file:dir rw_dir_perms;
+allow location wpa_data_file:sock_file create_file_perms;
+allow location hal_wifi_supplicant_default:unix_dgram_socket sendto;
+
+# /dev/socket/wifihal
+allow location wifihal_socket:dir search;
+unix_socket_send(location, wifihal,  hal_wifi_default);
 
 ## xtra-daemon
 ##############

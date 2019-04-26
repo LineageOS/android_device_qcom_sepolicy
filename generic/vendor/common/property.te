@@ -90,3 +90,6 @@ type vendor_wifi_prop, property_type;
 
 #qdcmss property
 type vendor_qdcmss_prop, property_type;
+
+#adsprpc props
+type vendor_adsprpc_prop, property_type;
