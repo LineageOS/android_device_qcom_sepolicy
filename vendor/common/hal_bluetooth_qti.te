@@ -79,6 +79,8 @@ allow hal_bluetooth_qti self:{ socket qipcrtr_socket } create_socket_perms_no_io
 
 #FM IPC with BT/FM hal daemon
 hal_server_domain(hal_bluetooth_qti, hal_fm)
+set_prop(hal_bluetooth_qti, fm_prop)
+set_prop(hal_bluetooth_qti, ctl_fm_prop)
 
 #BT configstore IPC with ANT/BT/FM/BTConfigstore hal daemon
 hal_server_domain(hal_bluetooth_qti, hal_btconfigstore)
