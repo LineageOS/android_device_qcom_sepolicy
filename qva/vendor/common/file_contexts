@@ -106,6 +106,7 @@
 /(vendor|system/vendor)/bin/fstman                                                 u:object_r:fstman_exec:s0
 /(vendor|system/vendor)/bin/wigighalsvc                                            u:object_r:wigighalsvc_exec:s0
 /(vendor|system/vendor)/bin/wigignpt                                               u:object_r:wigignpt_exec:s0
+/vendor/bin/hw/android\.hardware\.usb\@1\.[0-2]-service-qti                        u:object_r:hal_usb_qti_exec:s0
 
 #### Context for location features
 ## location daemons and binaries
