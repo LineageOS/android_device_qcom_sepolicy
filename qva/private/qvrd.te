@@ -27,9 +27,13 @@
 
 typeattribute qvrd coredomain;
 typeattribute qvrd mlstrustedsubject;
-type qvrd_exec, exec_type, system_file_type, file_type;
+type qvrd_exec, system_file_type, exec_type, file_type;
 
 init_daemon_domain(qvrd)
+
+#
+# General
+#
 
 binder_call(qvrd, system_server);
 
@@ -37,12 +41,20 @@ binder_call(qvrd, system_server);
 allow qvrd qvrd_data_file:dir create_dir_perms;
 allow qvrd qvrd_data_file:file create_file_perms;
 
+#allow binder use for checking permissions
+binder_use(qvrd)
+allow qvrd permission_service:service_manager find;
+
 #Allow hardware binder use
 hwbinder_use(qvrd)
 get_prop(qvrd, hwservicemanager_prop)
 
 # Allow access to our socket
 allow qvrd qvrd_socket:sock_file rw_file_perms;
+
+#
+# Sensors
+#
 
 
 # Allow access to sensor1 API

@@ -76,3 +76,6 @@ type vendor_hvdcp_opti_prop, property_type;
 
 # property for xlat
 type vendor_xlat_prop, property_type;
+
+#qvr property
+type vendor_qvr_prop, property_type;

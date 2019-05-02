@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,22 +25,65 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hsic_device, dev_type;
-type skp_device, dev_type;
-type sp_keymaster_device, dev_type;
-type sp_ssr_device, dev_type;
-type spdaemon_ssr_device, dev_type;
-type cryptoapp_device, dev_type;
-type sec_nvm_device, dev_type;
-type qbt_device, dev_type;
-type esoc_device, dev_type;
-type mhi_device, dev_type;
-type efs_boot_dev, dev_type;
-type smem_log_device, dev_type;
-type fm_radio_device, dev_type;
+#
+# General
+#
 
-#define qg char device
-type qg_device, dev_type;
+userdebug_or_eng(` allow qvrd diag_device:chr_file rw_file_perms');
+#r_dir_file(qvrd, vendor_file)
+r_dir_file(qvrd, sysfs_kgsl)
 
-#define qvr external sensor device
-type qvr_external_sensor_device, dev_type;
+#
+# Sensors
+#
+
+# Allow access to ADSP & SLPI
+allow qvrd { ion_device qdsp_device dsp_device xdsp_device }:chr_file r_file_perms;
+
+
+#
+# Display
+#
+
+# Allow access to /sys/devices/virtual/graphics/fb* for lineptr interrupts
+allow qvrd sysfs_graphics:file r_file_perms;
+
+#
+# Camera
+#
+
+hal_client_domain(qvrd, hal_camera);
+
+# Allow access to camera HAL and UVC nodes
+allow qvrd device:dir r_dir_perms;
+allow qvrd { gpu_device video_device camera_device sensors_device }:chr_file r_file_perms;
+
+
+#
+# Perfd
+#
+
+hal_client_domain(qvrd, hal_perf)
+
+allow qvrd fwk_sensor_hwservice:hwservice_manager find;
+hal_client_domain(qvrd, hal_sensors)
+
+# QVRD
+userdebug_or_eng(`
+allow qvrd debugfs:dir r_dir_perms;
+allow qvrd qti_debugfs:dir r_dir_perms;
+allow qvrd qti_debugfs:file rw_file_perms;
+')
+
+# Allow access to kgsl sysfs nodes for performance optimization
+allow qvrd sysfs_kgsl:file r_file_perms;
+
+# Allow access to qvr_external_sensor sysfs nodes for external viewers
+allow qvrd sysfs_qvr_external_sensor:dir r_dir_perms;
+allow qvrd sysfs_qvr_external_sensor:file rw_file_perms;
+
+# Allow access to qvr_external_sensor device nodes for external viewers
+allow qvrd qvr_external_sensor_device:chr_file rw_file_perms;
+
+# qvr properties
+get_prop(qvrd, vendor_qvr_prop)
