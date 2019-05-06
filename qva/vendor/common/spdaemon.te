@@ -42,6 +42,7 @@ allow spdaemon cryptoapp_device:chr_file rw_file_perms;
 allow spdaemon ion_device:chr_file rw_file_perms;
 r_dir_file(spdaemon, firmware_file);
 use_vendor_per_mgr(spdaemon)
+hal_client_domain(spdaemon, hal_telephony)
 
 allow spdaemon sysfs_data:file r_file_perms;
 
