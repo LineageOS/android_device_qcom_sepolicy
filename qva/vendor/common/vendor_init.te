@@ -46,3 +46,5 @@ set_prop(vendor_init, vendor_wigig_prop)
 userdebug_or_eng(`
   set_prop(vendor_init, vendor_audio_debug_prop)
 ')
+
+set_prop(vendor_init, vendor_disable_spu_prop)
