@@ -45,3 +45,6 @@ allow system_server sysfs_graphics:file rw_file_perms;
 userdebug_or_eng(`
     diag_use(system_server)
 ')
+
+# allow system_server to access vendor display property.
+get_prop(system_server, vendor_display_prop)
