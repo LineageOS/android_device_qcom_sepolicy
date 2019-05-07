@@ -47,3 +47,4 @@ binder_call(qtidataservices_app, cnd)
 binder_call(qtidataservices_app, rild)
 
 net_domain(qtidataservices_app)
+hal_client_domain(qtidataservices_app, hal_perf)
