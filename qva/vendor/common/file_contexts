@@ -178,3 +178,6 @@
 # SVA files
 /vendor/lib(64)?/liblistenjni\.so          u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/liblistensoundmodel2\.so  u:object_r:same_process_hal_file:s0
+
+#wifilearner daemon
+/(vendor|system/vendor)/bin/wifilearner    u:object_r:wifilearnersvc_exec:s0
