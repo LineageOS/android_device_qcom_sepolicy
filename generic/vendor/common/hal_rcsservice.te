@@ -63,6 +63,7 @@ allow hal_rcsservice self:capability2 wake_alarm;
 #diag
 userdebug_or_eng(`
   diag_use(hal_rcsservice)
+  binder_call(hal_rcsservice, radio)
 ')
 
 set_prop(hal_rcsservice, ctl_vendor_imsrcsservice_prop)
