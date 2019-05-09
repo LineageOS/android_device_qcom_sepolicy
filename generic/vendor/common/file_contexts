@@ -290,9 +290,6 @@
 /mnt/vendor/persist/time(/.*)?       u:object_r:persist_time_file:s0
 /mnt/vendor/persist/audio(/.*)?      u:object_r:persist_audio_file:s0
 
-/metadata                 u:object_r:rootfs:s0
-/metadata/.*              u:object_r:vold_data_file:s0
-
 # graphics device
 /dev/mdss_rotator                               u:object_r:graphics_device:s0
 /dev/dri/card0                                  u:object_r:graphics_device:s0
