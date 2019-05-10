@@ -44,7 +44,6 @@
 /system/product/bin/dpmd                        u:object_r:dpmd_exec:s0
 /system/bin/dun-server                          u:object_r:dun-server_exec:s0
 /system/bin/bt_logger                           u:object_r:bt_logger_exec:s0
-/system/bin/smcinvoked                          u:object_r:smcinvoke_daemon_exec:s0
 /system/bin/qvrservice                          u:object_r:qvrd_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /system/bin/mmi                                 u:object_r:vendor_mmi_sys_exec:s0
