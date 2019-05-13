@@ -51,7 +51,7 @@ genfscon sysfs /bus/spmi/devices/spmi0-02/200f000.qcom,spmi:qcom,pmi8940@2:vadc@
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8937@2:qcom,qpnp-smbcharger/power_supply/battery u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8937@2:qcom,fg/power_supply/bms u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8937@2:qcom,qpnp-smbcharger/power_supply/usb u:object_r:sysfs_usb_supply:s0
-genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8937@3:qcom,haptic@c000/leds/vibrator u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8937@3:qcom,haptics@c000/leds/vibrator u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8937@2:qcom,qpnp-smbcharger/leds/red u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8937@2:qcom,leds@a100 u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8937@3:qcom,leds@d300/leds u:object_r:sysfs_leds:s0
