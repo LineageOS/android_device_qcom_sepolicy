@@ -28,3 +28,4 @@
 # Add new domain for location test apps
 user=_app seinfo=platform name=com.qualcomm.qct.dlt levelfrom=all domain=location_app_test type=app_data_file
 user=_app seinfo=platform name=com.qualcomm.qti.qlogcat levelfrom=all domain=location_app_test type=app_data_file
+user=system seinfo=platform name=.loopbackservice domain=qtiloopback_app type=system_app_data_file
