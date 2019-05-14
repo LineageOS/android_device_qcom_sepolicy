@@ -30,3 +30,4 @@ type qdisplay_service,                   vndservice_manager_type;
 type qseeproxy_service,                  vndservice_manager_type;
 type esepmdaemon_service,                vndservice_manager_type;
 type wfdnativemm_service,                vndservice_manager_type;
+type wfdhdcpvndservice_service,          vndservice_manager_type;
