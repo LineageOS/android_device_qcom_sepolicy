@@ -432,6 +432,7 @@
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_persist_mode        u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/config                     u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/rotator/mdss_rotator/caps                      u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/hdcp/msm_hdcp/min_level_change                 u:object_r:sysfs_graphics:s0
 
 /sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes        u:object_r:sysfs_graphics:s0
 /sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/mode         u:object_r:sysfs_graphics:s0
