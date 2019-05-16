@@ -40,6 +40,7 @@
 /dev/rmnet_ctrl.*                               u:object_r:rmnet_device:s0
 /dev/at_.*                                      u:object_r:at_device:s0
 /dev/video([0-9])+                              u:object_r:video_device:s0
+/dev/cvp*                                       u:object_r:video_device:s0
 /dev/media([0-9])+                              u:object_r:video_device:s0
 /dev/v4l-subdev.*                               u:object_r:video_device:s0
 /dev/qseecom                                    u:object_r:tee_device:s0
