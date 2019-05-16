@@ -49,4 +49,7 @@ userdebug_or_eng(`
 # allow system_server to access vendor display property.
 get_prop(system_server, vendor_display_prop)
 
+# allow system_server to read/acess peripheral manager.
+get_prop(system_server, vendor_per_mgr_state_prop);
+
 hal_client_domain(system_server, hal_dataconnection_qti)
