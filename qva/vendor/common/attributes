@@ -96,3 +96,7 @@ attribute hal_wigig_npt_server;
 attribute hal_btconfigstore;
 attribute hal_btconfigstore_client;
 attribute hal_btconfigstore_server;
+
+attribute hal_wifilearner;
+attribute hal_wifilearner_client;
+attribute hal_wifilearner_server;

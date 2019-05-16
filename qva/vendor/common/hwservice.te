@@ -46,3 +46,4 @@ type vendor_hal_factory_qti_hwservice, hwservice_manager_type;
 type hal_cvp_hwservice, hwservice_manager_type;
 type hal_fm_hwservice, hwservice_manager_type;
 type hal_btconfigstore_hwservice, hwservice_manager_type;
+type hal_wifilearner_hwservice, hwservice_manager_type;

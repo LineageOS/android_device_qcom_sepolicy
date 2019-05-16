@@ -26,3 +26,12 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow dumpstate binder_state:file r_file_perms;
+
+#Needed by CTS test case
+allow dumpstate adsprpcd_file:dir getattr;
+allow dumpstate bt_firmware_file:dir getattr;
+allow dumpstate bt_firmware_file:filesystem getattr;
+allow dumpstate firmware_file:dir getattr;
+allow dumpstate firmware_file:filesystem getattr;
+dontaudit dumpstate sysfs:file * ;
+

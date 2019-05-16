@@ -52,6 +52,7 @@ vendor.qti.hardware.radio.qtiradio::IQtiRadio                u:object_r:hal_tele
 vendor.qti.hardware.data.latency::ILinkLatency               u:object_r:hal_latency_hwservice:s0
 vendor.qti.hardware.scve.objecttracker::IObjectTracker       u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.scve.panorama::IPanoramaStitching        u:object_r:hal_scve_hwservice:s0
+vendor.qti.hardware.scve.panorama::IPanoramaTracking         u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.soter::ISoter                            u:object_r:hal_soter_hwservice:s0
 vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_fm_hwservice:s0
 vendor.qti.esepowermanager::IEsePowerManager                 u:object_r:hal_esepowermanager_hwservice:s0
@@ -62,5 +63,7 @@ vendor.qti.hardware.bluetooth_sar::IBluetoothSar             u:object_r:hal_blue
 vendor.qti.hardware.wifidisplaysession::IWifiDisplaySession  u:object_r:wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionVideoTrack    u:object_r:wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionAudioTrack    u:object_r:wifidisplayhalservice_hwservice:s0
+vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionImageTrack    u:object_r:wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.wifi.hostapd::IHostapdVendor             u:object_r:hal_wifi_hostapd_hwservice:s0
 vendor.qti.hardware.bluetooth_audio::IBluetoothAudioProvidersFactory  u:object_r:hal_audio_hwservice:s0
+vendor.qti.hardware.wifi.wifilearner::IWifiStats             u:object_r:hal_wifilearner_hwservice:s0

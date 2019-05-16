@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -25,54 +25,15 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type qcom_ims_prop, property_type;
-type vendor_dataadpl_prop, property_type;
-type vendor_ipacm-diag_prop, property_type;
-type cnd_vendor_prop, property_type;
-type spcomlib_prop, property_type;
-type vendor_qdma_prop, property_type;
-type vendor_mdm_helper_prop, property_type;
-type vendor_disable_spu_prop, property_type;
 
-# boot mode property
-type vendor_boot_mode_prop, property_type;
+# CTS test case  CtsSecurityHostTestCases#testNoBugreportDenials
+# tries to check the if there are any denials from
+# dumpstate. As per the b/131578979 discussion
+# adding dontaudit for now.
 
-#mpctl
-type vendor_mpctl_prop, property_type;
-type freq_prop, property_type;
-
-#iop
-type vendor_iop_prop, property_type;
-
-#properties for nfc
-type vendor_nfc_nq_prop, property_type;
-
-# factory properties
-type ctl_vendor_mmid_prop, property_type;
-
-# mmi
-type vendor_mmi_prop, property_type;
-
-#mm-video
-type vendor_video_prop, property_type;
-
-# Audio debug props
-type vendor_audio_debug_prop, property_type;
-
-# Seccam Prop
-type vendor_core_ctl_prop, property_type;
-
-# property for location
-type location_prop, property_type;
-
-# Netmgrd prop
-type vendor_data_ko_prop, property_type;
-# WIGIG
-type vendor_wigig_prop, property_type;
-type ctl_vendor_wigigsvc_prop, property_type;
-
-# hvdcp_opti prop
-type vendor_hvdcp_opti_prop, property_type;
-
-# property for xlat
-type vendor_xlat_prop, property_type;
+allow dumpstate adsprpcd_file:dir getattr;
+allow dumpstate bt_firmware_file:dir getattr;
+allow dumpstate bt_firmware_file:filesystem getattr;
+allow dumpstate firmware_file:dir getattr;
+allow dumpstate firmware_file:filesystem getattr;
+dontaudit dumpstate sysfs:file *;

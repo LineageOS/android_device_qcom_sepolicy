@@ -24,4 +24,6 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-allow hal_memtrack_default debugfs_kgsl:file r_file_perms;
+
+#Acess to kgsl memory /sys/class/kgsl/kgsl/proc/<pid>/mtrack
+r_dir_file(hal_memtrack_default, sysfs_kgsl_proc);
