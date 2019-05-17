@@ -45,5 +45,6 @@ allow qtidataservices_app sysfs_data:file r_file_perms;
 
 binder_call(qtidataservices_app, cnd)
 binder_call(qtidataservices_app, rild)
+binder_call(qtidataservices_app, location)
 
 net_domain(qtidataservices_app)
