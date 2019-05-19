@@ -242,6 +242,7 @@ set_prop(qti_init_shell, vendor_alarm_boot_prop)
 # allow rw create file access to fm patchdownloader
 allow qti_init_shell vendor_fm_data_file:file create_file_perms;
 allow qti_init_shell vendor_fm_data_file:dir ra_dir_perms;
+allow qti_init_shell self:socket create_socket_perms_no_ioctl;
 
 # For USB RNDIS configuration
 allow qti_init_shell sysfs_android_usb:dir r_dir_perms;
