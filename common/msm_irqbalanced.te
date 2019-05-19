@@ -6,4 +6,5 @@ init_daemon_domain(msm_irqbalanced)
 allow msm_irqbalanced cgroup:dir { create add_name };
 allow msm_irqbalanced { proc sysfs_devices_system_cpu }:file w_file_perms;
 allow msm_irqbalanced self:capability { setuid setgid dac_override };
+allow msm_irqbalanced { proc_stat proc_interrupts }:file r_file_perms;
 r_dir_file(msm_irqbalanced, sysfs_rqstats);
