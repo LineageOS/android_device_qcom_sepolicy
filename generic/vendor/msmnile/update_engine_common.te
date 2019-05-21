@@ -33,5 +33,8 @@ allow update_engine_common {
 	uefi_block_device
 	ssd_block_device
 	modem_block_device
+	recovery_block_device
 }:blk_file rw_file_perms;
+
+allow update_engine_common tmpfs:lnk_file r_file_perms;
 
