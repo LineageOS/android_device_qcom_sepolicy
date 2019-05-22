@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,10 +25,35 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Add new domain for location test apps
-user=_app seinfo=platform name=com.qualcomm.qct.dlt levelfrom=all domain=location_app_test type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.qti.qlogcat levelfrom=all domain=location_app_test type=app_data_file
-user=system seinfo=platform name=.loopbackservice domain=qtiloopback_app type=system_app_data_file
+type qdmautils_app, domain, mlstrustedsubject;
+app_domain(qdmautils_app)
+net_domain(qdmautils_app)
+binder_use(qdmautils_app)
 
-#Add new domain for QDMAUtils
-user=system seinfo=platform name=com.qualcomm.qti.qdmautils domain=qdmautils_app type=system_app_data_file
+# allow invoking activity and access app content
+allow qdmautils_app { activity_service content_service }:service_manager find;
+# allow display servicepp
+allow qdmautils_app { display_service }:service_manager find;
+# allow access to wifi and data network
+allow qdmautils_app { connectivity_service network_management_service }:service_manager find;
+# allow access telephony service info
+allow qdmautils_app { radio_service registry_service }:service_manager find;
+
+# for vendor_perf_service
+allow qdmautils_app app_api_service:service_manager find;
+
+# allow qdmautils_app to access system_app_data_file
+# necessary for read and write /data/data subdirectory
+allow qdmautils_app system_app_data_file:dir create_dir_perms;
+allow qdmautils_app system_app_data_file:file create_file_perms;
+allow qdmautils_app surfaceflinger_service:service_manager find;
+
+# allow access to qdma dropbox
+allow qdmautils_app vendor_qdma_data_file:dir create_dir_perms;
+allow qdmautils_app vendor_qdma_data_file:file create_file_perms;
+
+# for aws iot mqtt
+allow qdmautils_app self:{ socket udp_socket } create_socket_perms_no_ioctl;
+
+# allow qdma_prop
+set_prop(qdmautils_app, vendor_qdma_prop);
