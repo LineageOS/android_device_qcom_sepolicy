@@ -27,3 +27,5 @@
 
 # Get NFC properties
 get_prop(nfc, vendor_nfc_nq_prop)
+# allow nfc to access perf hal
+hal_client_domain(nfc, hal_perf)
