@@ -22,4 +22,6 @@ recovery_only(`
     allow recovery configfs:dir rw_dir_perms;
     set_prop(recovery, ffs_prop);
     get_prop(recovery, vendor_boot_mode_prop)
+    allow recovery sysfs_dm:dir r_dir_perms;
+    allow recovery sysfs_dm:file r_file_perms;
 ')
