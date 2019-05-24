@@ -38,5 +38,8 @@ binder_call(hal_audio,bluetooth)
 #to read bt props
 get_prop(hal_audio, vendor_bluetooth_prop)
 
+#to read qcv audio props
+get_prop(hal_audio, qcv_vendor_audio_prop)
+
 # Allow audio HAL to get updates from health hal
 hal_client_domain(hal_audio_default, hal_health)
