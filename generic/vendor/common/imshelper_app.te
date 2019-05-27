@@ -34,3 +34,4 @@ allow imshelper_app app_api_service:service_manager find;
 #allow qsee_svc_app imshelper_app_data_file:file create_file_perms;
 
 allow imshelper_app system_app_data_file:dir { getattr search };
+allow imshelper_app radio_data_file:dir { getattr search };
