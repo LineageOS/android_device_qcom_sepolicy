@@ -63,6 +63,8 @@ persist.vendor.data.profile_update u:object_r:vendor_dataqdp_prop:s0
 vendor.sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
 vendor.sys.modem.diag.     u:object_r:vendor_modem_diag_prop:s0
 vendor.usb.                u:object_r:vendor_usb_prop:s0
+vendor.wlan.driver.version       u:object_r:vendor_wifi_version:s0
+vendor.wlan.firmware.version     u:object_r:vendor_wifi_version:s0
 persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
 ro.vendor.usb.             u:object_r:vendor_usb_prop:s0
 vendor.display.               u:object_r:vendor_display_prop:s0

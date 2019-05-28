@@ -96,3 +96,6 @@ type vendor_adsprpc_prop, property_type;
 
 #sensors props
 type vendor_sensors_prop, property_type;
+
+# Wifi version recorder
+type vendor_wifi_version, property_type;
