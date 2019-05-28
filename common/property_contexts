@@ -128,6 +128,10 @@ vendor.qti.qdma.        u:object_r:qdma_prop:s0
 persist.vendor.crash.cnt         u:object_r:crash_prop:s0
 persist.vendor.crash.detect        u:object_r:crash_prop:s0
 
+# Wifi version recorder
+vendor.wlan.driver.version       u:object_r:vendor_wifi_version:s0
+vendor.wlan.firmware.version     u:object_r:vendor_wifi_version:s0
+
 persist.vendor.mmi.        u:object_r:mmi_prop:s0
 
 ctl.vendor.imsrcsservice   u:object_r:ctl_vendor_imsrcsservice_prop:s0
