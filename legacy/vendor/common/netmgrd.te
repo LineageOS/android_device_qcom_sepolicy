@@ -76,10 +76,6 @@ allow netmgrd { proc_net }:file rw_file_perms;
 
 allow netmgrd self:socket create_socket_perms;
 
-#Allow communication with netd
-#allow netmgrd netd_socket:sock_file w_file_perms;
-#r_dir_file(netmgrd, net_data_file)
-
 allow netmgrd sysfs_data:file r_file_perms;
 
 #Acquire lock on /system/etc/xtables.lock

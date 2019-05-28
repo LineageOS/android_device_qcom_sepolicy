@@ -30,9 +30,6 @@ type netmgrd_exec, exec_type, vendor_file_type, file_type;
 net_domain(netmgrd)
 init_daemon_domain(netmgrd)
 
-# communicate with netd
-unix_socket_connect(netmgrd, netd, netd)
-
 allow netmgrd netmgrd_socket:dir w_dir_perms;
 allow netmgrd netmgrd_socket:sock_file create_file_perms;
 allow netmgrd self:netlink_xfrm_socket { create_socket_perms_no_ioctl nlmsg_write };

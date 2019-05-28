@@ -33,8 +33,6 @@ allow netd qtitetherservice_service:service_manager find;
 
 allow netd netd:packet_socket create_socket_perms_no_ioctl;
 
-#unix_socket_connect(netd, cnd, cnd)
-
 allow netd wfdservice:fd use;
 #allow netd wfdservice:tcp_socket rw_socket_perms;
 hal_client_domain(netd, wifidisplayhalservice);
