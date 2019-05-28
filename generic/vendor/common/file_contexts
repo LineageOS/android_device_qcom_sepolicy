@@ -221,6 +221,12 @@
 /vendor/lib(64)?/libvndfwk_detect_jni\.qti\.so             u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libqti_vndfwk_detect\.so             u:object_r:same_process_hal_file:s0
 
+# NPU files
+/vendor/lib(64)?/libnpu\.so                           u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libhta_controller\.so                u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libhta_hexagon_runtime\.so           u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/unnhal-acc-hta\.so                   u:object_r:same_process_hal_file:s0
+
 # RenderScript dependencies.
 # To test: run cts -m CtsRenderscriptTestCases
 /vendor/lib(64)?/libRSDriver_adreno\.so     u:object_r:same_process_hal_file:s0
