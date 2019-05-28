@@ -37,6 +37,9 @@ allow hal_wifi_default location_data_file:dir search;
 allow hal_wifi_default location:unix_stream_socket connectto;
 allow hal_wifi_default location_socket:sock_file write;
 
+# Write wlan driver/fw version into property
+set_prop(hal_wifi_default, vendor_wifi_version)
+
 # allow hal_wifi to write into /data/vendor/tombstones/wifi
 userdebug_or_eng(`
   allow hal_wifi_server vendor_tombstone_data_file:dir rw_dir_perms;

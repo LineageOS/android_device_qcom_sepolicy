@@ -57,6 +57,9 @@ type mpdecision_prop, property_type;
 type gamed_prop, property_type;
 type vendor_mpctl_prop, property_type;
 
+# Wifi version recorder
+type vendor_wifi_version, property_type;
+
 #Needed for  ubwc support
 type debug_gralloc_prop, property_type;
 
