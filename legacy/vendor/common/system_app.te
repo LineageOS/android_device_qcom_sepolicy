@@ -134,9 +134,6 @@ allow system_app self:netlink_kobject_uevent_socket { read bind setopt create };
 allow system_app radio_data_file:dir rw_dir_perms;
 allow system_app radio_data_file:file create_file_perms;
 
-# allow system_app to access netd
-unix_socket_connect(system_app, netd, netd)
-
 # required for FM App to connectto wcnss_filter sockets
 # serial device ttyHS0 (transport layer for FM)
 allow system_app serial_device:chr_file rw_file_perms;
