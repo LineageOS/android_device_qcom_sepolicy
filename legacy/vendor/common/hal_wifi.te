@@ -46,6 +46,9 @@ allow hal_wifi proc_modules:file r_file_perms;
 r_dir_file(hal_wifi_default, proc_wifi_dbg)
 get_prop(hal_wifi_default, vendor_softap_prop)
 
+# Write wlan driver/fw version into property
+set_prop(hal_wifi_default, vendor_wifi_version)
+
 # allow hal_wifi to write into /data/vendor/tombstones/wifi
 userdebug_or_eng(`
   allow hal_wifi_server vendor_tombstone_data_file:dir rw_dir_perms;
