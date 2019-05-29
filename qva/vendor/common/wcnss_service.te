@@ -27,3 +27,6 @@
 
 # allow access to network performance tuner
 unix_socket_connect(wcnss_service, wigignpt, wigignpt)
+
+# allow net admin to cnss-daemon
+allow wcnss_service self:capability net_admin;
