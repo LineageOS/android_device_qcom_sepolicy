@@ -24,5 +24,9 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 #allow bluetooth to access btconfigstore hal
 hal_client_domain(bluetooth, hal_btconfigstore);
+
+#allow bluetooth to access perf hal
+hal_client_domain(bluetooth, hal_perf);
