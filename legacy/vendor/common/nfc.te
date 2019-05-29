@@ -30,3 +30,5 @@ get_prop(nfc, nfc_nq_prop)
 #qmux_socket(nfc);
 #allow nfc nfc_data_file:file x_file_perms;
 allow nfc self:socket create_socket_perms_no_ioctl;
+# allow nfc to access perf hal
+hal_client_domain(nfc, hal_perf)
