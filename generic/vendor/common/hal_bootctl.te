@@ -42,6 +42,7 @@ allow hal_bootctl xbl_block_device:blk_file getattr;
 allow hal_bootctl modem_block_device:blk_file getattr;
 allow hal_bootctl system_block_device:blk_file getattr;
 allow hal_bootctl custom_ab_block_device:blk_file getattr;
+allow hal_bootctl recovery_block_device:blk_file getattr;
 allow hal_bootctl mdtp_device:blk_file getattr;
 allow hal_bootctl_server misc_block_device:blk_file rw_file_perms;
 

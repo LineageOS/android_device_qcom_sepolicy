@@ -26,3 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 unix_socket_connect(untrusted_app_all, dpmtcm, dpmd)
+unix_socket_connect(untrusted_app_all, qvrd, qvrd)
+allow untrusted_app_all qvrd:fd use;

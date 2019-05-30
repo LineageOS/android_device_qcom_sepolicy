@@ -95,3 +95,6 @@ type wigig_hostapd_socket, file_type, data_file_type;
 
 #rmnet module files
 type sysfs_rmnet, fs_type, sysfs_type;
+
+#qvrservice sysfs files
+type sysfs_qvr_external_sensor, sysfs_type, fs_type;

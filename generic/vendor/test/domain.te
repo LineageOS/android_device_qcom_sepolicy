@@ -25,6 +25,16 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+dontaudit {
+    system_server
+    surfaceflinger
+    bootanim
+    system_app
+    platform_app
+    priv_app
+    radio
+    shell
+} vendor_gles_data_file:dir search;
 #allow all gpu clients to access configuration settings
 userdebug_or_eng(`
 allow domain sysfs_kgsl:dir search;

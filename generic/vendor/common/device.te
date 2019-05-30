@@ -59,3 +59,4 @@ type ssr_device, dev_type;
 type synx_device, dev_type;
 type wlan_device, dev_type;
 type xbl_block_device, dev_type;
+type uefi_block_device, dev_type;

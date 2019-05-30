@@ -46,6 +46,7 @@
 /dev/block/platform/soc/1d84000\.ufshc/by-name/trusty_[ab]     u:object_r:ab_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/tz_[ab]         u:object_r:ab_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/vbmeta_[ab]     u:object_r:ab_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/uefisecapp_[ab]       u:object_r:uefi_block_device:s0
 
 /dev/block/platform/soc/1d84000\.ufshc/by-name/boot_[ab]       u:object_r:boot_block_device:s0
 
@@ -81,6 +82,10 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/aop_[ab]          u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/qupfw_[ab]        u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/ImageFv_[ab]      u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/recovery_[ab]         u:object_r:recovery_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/vbmeta_system_[ab]    u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/vbmeta_product_[ab]    u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/super                 u:object_r:super_block_device:s0
 
 /dev/block/platform/soc/1d84000.ufshc/sd[ade]                   u:object_r:gpt_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/sd[bc]                    u:object_r:xbl_block_device:s0

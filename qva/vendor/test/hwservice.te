@@ -1,3 +1,4 @@
+
 # Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -25,6 +26,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# for system_server to access /sys/kernel/debug/binder/state
-/sys/kernel/debug/binder/state                                      u:object_r:binder_state:s0
-/vendor/bin/Loopback_native 	                                    u:object_r:qtiloopback_native_exec:s0
+type qtiloopback_hwservice , hwservice_manager_type;

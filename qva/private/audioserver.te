@@ -28,3 +28,6 @@
 # Allow audioserver to interact with mirrorlinkserver
 binder_call(audioserver, mirrorlink);
 binder_call(audioserver,wfdservice);
+
+#allow access to ALSA MMAP FDs for AAudio API
+allow audioserver audio_service:service_manager find;
