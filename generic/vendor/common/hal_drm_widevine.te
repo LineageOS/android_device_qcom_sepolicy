@@ -34,6 +34,7 @@ init_daemon_domain(hal_drm_widevine)
 
 allow hal_drm_widevine mediacodec:fd use;
 allow hal_drm_widevine { appdomain -isolated_app }:fd use;
+allow hal_drm_widevine qce_device:chr_file rw_file_perms;
 
 # The QTI DRM-HAL implementation uses a vendor-binder service provided
 # by the HWC HAL.
