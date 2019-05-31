@@ -36,3 +36,5 @@ allow fastbootd {
         mdtp_device
 }:blk_file { rw_file_perms };
 ')
+
+allow fastbootd tmpfs:lnk_file { getattr read };
