@@ -93,6 +93,7 @@
 /dev/socket/qmux_radio(/.*)?                    u:object_r:qmuxd_socket:s0
 /data/vendor/modem_config(/.*)?                 u:object_r:vendor_mbn_data_file:s0
 /dev/socket/qdcmsocket                          u:object_r:qdcmsocket_socket:s0
+/dev/qce                                        u:object_r:qce_device:s0
 
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/sda                                  u:object_r:gpt_block_device:s0
