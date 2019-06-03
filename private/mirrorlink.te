@@ -47,9 +47,6 @@ allow mirrorlink mirrorlink_data_file:dir create_dir_perms;
 # Allow read-write permissions to mirrorlink sockets under dev/socket/.
 allow mirrorlink mirrorlink_socket:sock_file { read write };
 
-# Allow local socket connection from mirrorlink domain to netd domain via netd_socket.
-unix_socket_connect(mirrorlink, netd, netd);
-
 # Allow read-write access to proc net device.
 allow mirrorlink proc_net:file rw_file_perms;
 
