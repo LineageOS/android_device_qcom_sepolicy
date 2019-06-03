@@ -34,4 +34,4 @@ allow dumpstate bt_firmware_file:filesystem getattr;
 allow dumpstate firmware_file:dir getattr;
 allow dumpstate firmware_file:filesystem getattr;
 dontaudit dumpstate sysfs:file * ;
-
+allow dumpstate debugfs_mmc:dir search;
