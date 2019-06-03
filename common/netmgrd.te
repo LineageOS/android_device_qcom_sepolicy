@@ -65,7 +65,6 @@ allow netmgrd self:socket create_socket_perms;
 allow netmgrd sysfs_esoc:dir r_dir_perms;
 
 #Allow communication with netd
-#allow netmgrd netd_socket:sock_file w_file_perms;
 #r_dir_file(netmgrd, net_data_file)
 
 #Allow nemtgrd to use esoc api's to determine target

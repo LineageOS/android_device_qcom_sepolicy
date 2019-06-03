@@ -55,7 +55,6 @@ r_dir_file(dataservice_app, appdomain)
 
 allow dataservice_app self:socket create_socket_perms;
 allowxperm dataservice_app self:socket ioctl msm_sock_ipc_ioctls_system;
-unix_socket_connect(dataservice_app, netd, netd);
 unix_socket_connect(dataservice_app,dpmd,dpmd);
 hwbinder_use(dataservice_app)
 set_prop(dataservice_app, persist_dpm_prop)
