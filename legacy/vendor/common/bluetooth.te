@@ -26,17 +26,12 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #Adding all bt related service to bt domains
-type sapd, bluetoothdomain;
-type sapd_exec, exec_type, vendor_file_type, file_type;
 
-type btsnoop, bluetoothdomain;
+type btsnoop, bluetoothdomain, domain;
 type btsnoop_exec, exec_type, vendor_file_type, file_type;
 
-type btnvtool, bluetoothdomain;
+type btnvtool, bluetoothdomain, domain;
 type btnvtool_exec, exec_type, vendor_file_type, file_type;
-
-type fmhal_service, bluetoothdomain;
-type fmhal_service_exec, exec_type, vendor_file_type, file_type;
 
 allow bluetooth sysfs_bluetooth_writable:file w_file_perms;
 

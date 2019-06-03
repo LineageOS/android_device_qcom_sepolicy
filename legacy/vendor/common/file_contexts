@@ -300,13 +300,11 @@
 /(vendor|system/vendor)/bin/hbtp_daemon         u:object_r:hbtp_exec:s0
 /(vendor|system/vendor)/bin/touch_fusion        u:object_r:touchfusion_exec:s0
 /(vendor|system/vendor)/bin/seemp_healthd       u:object_r:seemp_health_daemon_exec:s0
-/(vendor|system/vendor)/bin/sapd                                u:object_r:sapd_exec:s0
 /(vendor|system/vendor)/bin/btnvtool            u:object_r:btnvtool_exec:s0
 /(vendor|system/vendor)/bin/btsnoop                             u:object_r:btsnoop_exec:s0
 /(vendor|system/vendor)/bin/wifidisplayhalservice               u:object_r:wifidisplayhalservice_qti_exec:s0
 /(vendor|system/vendor)/bin/wfdhdcphalservice                   u:object_r:wfdhdcphalservice_qti_exec:s0
 /(vendor|system/vendor)/bin/wfdvndservice                       u:object_r:wfdvndservice_exec:s0
-/(vendor|system/vendor)/bin/fmhal_service                       u:object_r:fmhal_service_exec:s0
 /(vendor|system/vendor)/bin/usf_epos            u:object_r:usf_exec:s0
 /(vendor|system/vendor)/bin/usf_gesture         u:object_r:usf_exec:s0
 /(vendor|system/vendor)/bin/usf_hovering        u:object_r:usf_exec:s0
