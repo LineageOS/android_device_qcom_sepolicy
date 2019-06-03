@@ -44,3 +44,6 @@ userdebug_or_eng(`
 ')
 # audio properties
 get_prop(audioserver, vendor_audio_prop)
+
+#allow access to ALSA MMAP FDs for AAudio API
+allow audioserver audio_service:service_manager find;
