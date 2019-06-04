@@ -33,3 +33,4 @@ allow dumpstate firmware_file:filesystem getattr;
 # may be this need to be only restricted to user build
 # and allow in  userdebug ?
 dontaudit dumpstate sysfs:file * ;
+allow dumpstate debugfs_mmc:dir search;
