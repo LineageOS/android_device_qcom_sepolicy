@@ -35,6 +35,9 @@ init_daemon_domain(qfp-daemon)
 allow qfp-daemon qfp-daemon_data_file:dir { rw_dir_perms setattr };
 allow qfp-daemon qfp-daemon_data_file:file create_file_perms;
 
+allow qfp-daemon sysfs_touch_aoi:dir r_dir_perms;
+allow qfp-daemon sysfs_touch_aoi:file rw_file_perms;
+
 # Access to tee_device
 allow qfp-daemon tee_device:chr_file rw_file_perms;
 
