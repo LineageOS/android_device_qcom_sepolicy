@@ -48,4 +48,6 @@ userdebug_or_eng(`
     unix_socket_send(location_app_test, seempdw, seempd);
     #loc api access from ODLT
     allow location_app_test self:qipcrtr_socket create_socket_perms_no_ioctl;
+
+    allow location_app_test audioserver_service:service_manager find;
 ')
