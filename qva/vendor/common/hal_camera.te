@@ -31,3 +31,5 @@ allowxperm hal_camera self:qipcrtr_socket ioctl msm_sock_ipc_ioctls;
 hal_client_domain(hal_camera_default, hal_vpp)
 
 allow hal_camera gpu_device:chr_file rw_file_perms;
+
+allow hal_camera sysfs_jpeg:file r_file_perms;
