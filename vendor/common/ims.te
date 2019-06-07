@@ -28,9 +28,6 @@ allow ims {
     #wpa_exec
 }:file rx_file_perms;
 
-# Talk to netd via netd_socket
-unix_socket_connect(ims, netd, netd)
-
 # Talk to qumuxd via ims_socket
 unix_socket_connect(ims, ims, qmuxd)
 
