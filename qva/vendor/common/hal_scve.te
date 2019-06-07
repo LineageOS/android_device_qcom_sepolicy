@@ -31,5 +31,28 @@ type vendor_scve_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_scve)
 
 hal_server_domain(vendor_scve, hal_scve)
+
 add_hwservice(hal_scve_server, hal_scve_hwservice)
+
 allow hal_scve_client hal_scve_hwservice:hwservice_manager find;
+
+binder_call(hal_scve_client, hal_scve_server)
+binder_call(hal_scve_server, hal_scve_client)
+
+r_dir_file(vendor_scve, adsprpcd_file)
+
+#  Access for ion memory
+allow vendor_scve ion_device:chr_file rw_file_perms;
+
+#  Access for DSP/QDSP device
+allow vendor_scve qdsp_device:chr_file rw_file_perms;
+allow vendor_scve dsp_device:chr_file rw_file_perms;
+
+#  Access for GPU
+allow vendor_scve gpu_device:chr_file rw_file_perms;
+
+#  Access for sdcard
+userdebug_or_eng(`
+allow vendor_scve sdcard_type:dir rw_dir_perms;
+allow vendor_scve sdcard_type:file create_file_perms;
+')
