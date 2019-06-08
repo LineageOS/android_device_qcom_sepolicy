@@ -52,3 +52,6 @@ hal_client_domain(system_app, hal_light);
 
 #allow system app to access btconfigstore hal
 hal_client_domain(system_app, hal_btconfigstore);
+
+# update engine
+binder_call( system_app, update_engine )
