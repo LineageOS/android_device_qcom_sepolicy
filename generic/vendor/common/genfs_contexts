@@ -118,6 +118,8 @@ genfscon sysfs /firmware/devicetree/base/cpus u:object_r:sysfs_devices_system_cp
 
 genfscon sysfs /bus/spmi/devices u:object_r:sysfs_spmi_dev:s0
 
+genfscon sysfs /power/mem_sleep u:object_r:sysfs_suspend:s0
+
 genfscon debugfs /kgsl/proc                           u:object_r:debugfs_kgsl:s0
 genfscon debugfs /clk/debug_suspend                   u:object_r:debugfs_clk:s0
 genfscon debugfs /wlan0                               u:object_r:debugfs_wlan:s0

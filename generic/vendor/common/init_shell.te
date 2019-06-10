@@ -172,3 +172,5 @@ set_prop(qti_init_shell, vendor_wifi_prop)
 
 # To read /proc/meminfo
 allow qti_init_shell proc_meminfo:file r_file_perms;
+
+allow qti_init_shell sysfs_suspend:file w_file_perms;

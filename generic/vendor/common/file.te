@@ -191,3 +191,5 @@ type sysfs_qdss_dev, sysfs_type, fs_type;
 #Define the qdcmss socket type
 type qdcmsocket_socket, file_type;
 type sysfs_mhi, sysfs_type, fs_type;
+
+type sysfs_suspend, fs_type, sysfs_type;

@@ -47,6 +47,9 @@ allow hal_gnss_qti location_socket:dir rw_dir_perms;
 allow hal_gnss_qti location:unix_stream_socket connectto;
 allow hal_gnss_qti location:unix_dgram_socket sendto;
 
+# Allow Gnss HAL to get updates from health hal
+hal_client_domain(hal_gnss_qti, hal_health)
+
 # Most HALs are not allowed to use network sockets. QTI library
 # libqdi is used across multiple processes which are clients of
 # netmgrd including the GNSS HAL. libqdi first attempts to get the network

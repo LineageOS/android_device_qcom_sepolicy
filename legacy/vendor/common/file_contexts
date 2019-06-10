@@ -300,13 +300,11 @@
 /(vendor|system/vendor)/bin/hbtp_daemon         u:object_r:hbtp_exec:s0
 /(vendor|system/vendor)/bin/touch_fusion        u:object_r:touchfusion_exec:s0
 /(vendor|system/vendor)/bin/seemp_healthd       u:object_r:seemp_health_daemon_exec:s0
-/(vendor|system/vendor)/bin/sapd                                u:object_r:sapd_exec:s0
 /(vendor|system/vendor)/bin/btnvtool            u:object_r:btnvtool_exec:s0
 /(vendor|system/vendor)/bin/btsnoop                             u:object_r:btsnoop_exec:s0
 /(vendor|system/vendor)/bin/wifidisplayhalservice               u:object_r:wifidisplayhalservice_qti_exec:s0
 /(vendor|system/vendor)/bin/wfdhdcphalservice                   u:object_r:wfdhdcphalservice_qti_exec:s0
 /(vendor|system/vendor)/bin/wfdvndservice                       u:object_r:wfdvndservice_exec:s0
-/(vendor|system/vendor)/bin/fmhal_service                       u:object_r:fmhal_service_exec:s0
 /(vendor|system/vendor)/bin/usf_epos            u:object_r:usf_exec:s0
 /(vendor|system/vendor)/bin/usf_gesture         u:object_r:usf_exec:s0
 /(vendor|system/vendor)/bin/usf_hovering        u:object_r:usf_exec:s0
@@ -341,6 +339,7 @@
 /(vendor|system/vendor)/bin/tloc_daemon         u:object_r:tlocd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service      u:object_r:vendor_hal_factory_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.allocator@1\.0-service   u:object_r:hal_graphics_allocator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.allocator-service   u:object_r:hal_graphics_allocator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.tui_comm@1\.0-service-qti u:object_r:hal_tui_comm_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.soter@1\.0-service u:object_r:hal_soter_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qdutils_disp@1\.0-service-qti u:object_r:hal_qdutils_disp_qti_exec:s0
@@ -655,8 +654,12 @@
 /vendor/lib(64)?/hw/gralloc\.msm8998\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/android\.hardware\.graphics\.mapper@2\.0-impl-qti-display\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapper@1\.0\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libcamxexternalformatutils\.so                    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapper@1\.1\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapper@2\.0\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapperextensions@1\.0\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/android\.hardware\.graphics\.mapper@3\.0-impl-qti-display\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapper@3\.0\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libcamxexternalformatutils\.so                    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libqdMetaData\.so         u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libqservice\.so           u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libqdutils\.so            u:object_r:same_process_hal_file:s0

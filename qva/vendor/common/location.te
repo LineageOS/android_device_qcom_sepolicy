@@ -32,6 +32,7 @@
 wakelock_use(location)
 allow location self:capability2 wake_alarm;
 unix_socket_connect(location, property, init);
+allow location mnt_vendor_file:dir search;
 
 ## xtra-daemon
 ##############

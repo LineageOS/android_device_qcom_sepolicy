@@ -33,6 +33,8 @@ app_domain(location_app_test)
 
 userdebug_or_eng(`
     binder_use(location_app_test)
+    # allow location_app_test to access perf hal
+    hal_client_domain(location_app_test, hal_perf)
     hal_client_domain(location_app_test, hal_gnss)
 
     allow location_app_test { adbd su }:unix_stream_socket connectto;

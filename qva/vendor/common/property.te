@@ -79,3 +79,6 @@ type vendor_xlat_prop, property_type;
 
 #qvr property
 type vendor_qvr_prop, property_type;
+
+#qmuxd property
+type ctl_qmuxd_prop, property_type;

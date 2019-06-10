@@ -40,8 +40,6 @@ allow ims {
     wcnss_service_exec
 }:file rx_file_perms;
 
-# Talk to netd via netd_socket
-unix_socket_connect(ims, netd, netd)
 
 set_prop(ims, qcom_ims_prop)
 set_prop(ims, ctl_vendor_imsrcsservice_prop)

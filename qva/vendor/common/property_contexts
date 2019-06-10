@@ -95,3 +95,6 @@ persist.vendor.net.doxlat                    u:object_r:vendor_xlat_prop:s0
 
 #qvr properties
 vendor.qvr                       u:object_r:vendor_qvr_prop:s0
+
+#qmuxd property
+ctl.start$vendor.qmuxd                       u:object_r:ctl_qmuxd_prop:s0
