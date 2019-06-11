@@ -442,6 +442,9 @@
 
 /sys/devices/soc/qpnp-vadc-[0-9]+(/.*)? u:object_r:sysfs_vadc_dev:s0
 
+#Android NN Driver
+/vendor/bin/hw/android\.hardware\.neuralnetworks@1\.2-service-qti   u:object_r:hal_neuralnetworks_default_exec:s0
+
 /(vendor|system/vendor)/bin/init\.class_main\.sh        u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.crda\.sh              u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.mdm\.sh               u:object_r:qti_init_shell_exec:s0
