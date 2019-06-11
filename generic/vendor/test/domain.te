@@ -31,6 +31,10 @@ dontaudit {
     bootanim
     system_app
     platform_app
+    untrusted_app_27
+    zygote
+    location_app
+    location_app_test
     priv_app
     radio
     shell
