@@ -407,3 +407,6 @@ type msm_aac_in_device, dev_type;
 
 # sysfs mhi file
 type sysfs_mhi, sysfs_type, fs_type;
+
+#vendor capability configstore hal
+type vendor_capabilityconfigstore_data_file, file_type, data_file_type;

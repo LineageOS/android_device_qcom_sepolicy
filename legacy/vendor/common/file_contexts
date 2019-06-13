@@ -356,6 +356,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.mlshal@1\.0-service       u:object_r:hal_mirrorlink_qti_exec:s0
 /(vendor|system/vendor)/bin/hdcp_srm               u:object_r:hdcp_srm_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.power\.pasrmanager\@1\.0-service u:object_r:hal_pasrmanager_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.capabilityconfigstore@1\.0-service u:object_r:hal_capabilityconfigstore_qti_default_exec:s0
 
 ###################################
 # sysfs files
