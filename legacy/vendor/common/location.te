@@ -87,6 +87,18 @@ allow location persist_rfs_shared_hlos_file:file rw_file_perms;
 
 allow location hal_gnss_qti:unix_dgram_socket sendto;
 
+# /data/vendor/wifi
+allow location wifi_vendor_data_file:dir search;
+
+# /data/vendor/wifi/wpa
+allow location wpa_data_file:dir rw_dir_perms;
+allow location wpa_data_file:sock_file create_file_perms;
+allow location hal_wifi_supplicant_default:unix_dgram_socket sendto;
+
+# /dev/socket/wifihal
+allow location wifihal_socket:dir search;
+unix_socket_send(location, wifihal,  hal_wifi_default);
+
 #Allow access to netmgrd socket
 netmgr_socket(location);
 
