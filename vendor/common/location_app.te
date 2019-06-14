@@ -21,11 +21,13 @@ get_prop(location_app, vendor_iop_prop)
 allow location_app mediametrics_service:service_manager find;
 allow location_app system_app_data_file:dir create_dir_perms;
 allow location_app system_app_data_file:file create_file_perms;
+allow location_app system_app_data_file:lnk_file create_file_perms;
 allow location_app surfaceflinger_service:service_manager find;
 allow location_app location_data_file:dir rw_dir_perms;
 allow location_app self:socket create_socket_perms;
 allow location_app anr_data_file:dir rw_dir_perms;
 allow location_app anr_data_file:file rw_file_perms;
+allow location_app cgroup:file rw_file_perms;
 allow location_app { app_api_service activity_service }:service_manager find;
 # ioctlcmd=c302
 allowxperm location_app self:socket ioctl msm_sock_ipc_ioctls;
