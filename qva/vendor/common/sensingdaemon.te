@@ -32,3 +32,6 @@ init_daemon_domain(sensingdaemon)
 
 #listen on /dev/socket/sensingdaemon
 allow sensingdaemon self:unix_stream_socket { listen accept read write };
+
+# Allow access to create socket
+allow sensingdaemon self:qipcrtr_socket create_socket_perms_no_ioctl;
