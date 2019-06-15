@@ -33,6 +33,9 @@ wakelock_use(location)
 allow location self:capability2 wake_alarm;
 unix_socket_connect(location, property, init);
 allow location mnt_vendor_file:dir search;
+# access to /persist/hlos_rfs/shared
+allow location persist_rfs_shared_hlos_file:dir r_dir_perms;
+allow location persist_rfs_shared_hlos_file:file rw_file_perms;
 
 ## xtra-daemon
 ##############

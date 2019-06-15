@@ -18,20 +18,12 @@
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
 # BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# # CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
 # SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
 # BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow dumpstate binder_state:file r_file_perms;
-
-#Needed by CTS test case
-allow dumpstate adsprpcd_file:dir getattr;
-allow dumpstate bt_firmware_file:dir getattr;
-allow dumpstate bt_firmware_file:filesystem getattr;
-allow dumpstate firmware_file:dir getattr;
-allow dumpstate firmware_file:filesystem getattr;
-dontaudit dumpstate sysfs:file * ;
-allow dumpstate debugfs_mmc:dir search;
+# Allow qtelephony to access perf hal
+hal_client_domain(qtelephony, hal_perf);

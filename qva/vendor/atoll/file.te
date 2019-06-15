@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,12 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type timeservice_app, domain;
-app_domain(timeservice_app);
+type sysfs_fps_attr, fs_type, sysfs_type;
 
-allow timeservice_app app_api_service:service_manager find;
-allow timeservice_app time_daemon:unix_stream_socket connectto;
-#allow timeservice to access perf hal
-hal_client_domain(timeservice_app, hal_perf);
-
-get_prop(timeservice_app, vendor_mpctl_prop)
+# secure element file type for data vendor access
+type secure_element_vendor_data_file, file_type, data_file_type;
