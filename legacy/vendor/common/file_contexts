@@ -155,12 +155,12 @@
 /dev/socket/ssgqmig                             u:object_r:ssgqmig_socket:s0
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
-/dev/socket/wpa_wigig[0-9]                      u:object_r:wifi_vendor_wpa_socket:s0
-/dev/socket/vendor_wpa_wlan[0-9]                u:object_r:wifi_vendor_wpa_socket:s0
+/dev/socket/wigig/wpa_wigig[0-9]                u:object_r:wifi_vendor_wpa_socket:s0
+/dev/socket/wigig/vendor_wpa_wlan[0-9]          u:object_r:wifi_vendor_wpa_socket:s0
 /dev/socket/mmi                                 u:object_r:vendor_mmi_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:location_socket:s0
 /dev/socket/wifihal(/.*)?                       u:object_r:wifihal_socket:s0
-/dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
+/dev/socket/wigig/wigignpt                      u:object_r:wigignpt_socket:s0
 /dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
 
 ###################################
