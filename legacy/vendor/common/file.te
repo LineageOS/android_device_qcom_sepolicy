@@ -410,3 +410,6 @@ type sysfs_mhi, sysfs_type, fs_type;
 
 #vendor capability configstore hal
 type vendor_capabilityconfigstore_data_file, file_type, data_file_type;
+
+#sensor log files
+type vendor_sensors_data_file, file_type, data_file_type;
