@@ -123,3 +123,5 @@ genfscon sysfs /devices/1101_02.01.00/time_us u:object_r:sysfs_mhi:s0
 
 #net sysfs
 genfscon sysfs /devices/platform/soc/1c08000.qcom,pcie/pci0001:00/0001:00:00.0/0001:01:00.0/0306_01.01.00_IP_HW0/net u:object_r:sysfs_net:s0
+#/sys/class/rtc
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm8150@0:qcom,pm8150_rtc/rtc u:object_r:sysfs_rtc:s0
