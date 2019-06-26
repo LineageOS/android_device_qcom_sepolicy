@@ -74,3 +74,5 @@ vendor.qti.hardware.qdutils_disp::IQdutilsDisp               u:object_r:hal_qdut
 vendor.qti.hardware.factory::IFactory                        u:object_r:hal_factory_qti_hwservice:s0
 vendor.qti.hardware.sensorscalibrate::ISensorsCalibrate       u:object_r:hal_sensorscalibrate_qti_hwservice:s0
 vendor.qti.hardware.limits::IThermal                         u:object_r:hal_thermal_hwservice:s0
+
+vendor.qti.hardware.cryptfshw::ICryptfsHw                    u:object_r:hal_keymaster_hwservice:s0
