@@ -69,6 +69,7 @@ vendor.qti.izat.                             u:object_r:location_prop:s0
 vendor.wigig.                                u:object_r:vendor_wigig_prop:s0
 ctl.vendor.wigig_supplicant                  u:object_r:ctl_vendor_wigigsvc_prop:s0
 ctl.vendor.wigig_hostapd                     u:object_r:ctl_vendor_wigigsvc_prop:s0
+ctl.vendor.sensingdaemon                     u:object_r:ctl_vendor_wigigsvc_prop:s0
 
 # netmgrd ko loading
 persist.vendor.data.shs_ko_load u:object_r:vendor_data_ko_prop:s0
