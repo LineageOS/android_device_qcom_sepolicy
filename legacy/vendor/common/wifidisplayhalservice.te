@@ -77,6 +77,9 @@ allow wifidisplayhalservice_qti proc_net:file r_file_perms;
 # Add the rule for wfd to access /proc/asound/pcm file
 r_dir_file(wifidisplayhalservice_qti, proc_asound)
 
+# Add the rule for wfd to access /proc/asound/card0/state file
+r_dir_file(wifidisplayhalservice_qti, proc_audiod)
+
 #Allow hal graphics allocator permissions
 hal_client_domain(wifidisplayhalservice_qti, hal_graphics_allocator);
 
