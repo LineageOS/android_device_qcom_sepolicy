@@ -243,3 +243,6 @@ vendor.fastrpc.                  u:object_r:adsprpc_prop:s0
 
 #qvr properties
 vendor.qvr                       u:object_r:qvr_prop:s0
+
+#Lazy hal property for BT
+ro.vendor.bt.enablelazyhal       u:object_r:bluetooth_prop:s0 exact bool
