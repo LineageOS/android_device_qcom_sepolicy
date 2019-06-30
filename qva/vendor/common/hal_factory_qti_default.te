@@ -39,3 +39,6 @@ allow vendor_hal_factory_qti vendor_mmi:unix_stream_socket connectto;
 allow vendor_hal_factory_qti_default mnt_vendor_file:dir search;
 allow vendor_hal_factory_qti_default vendor_persist_mmi_file:dir rw_dir_perms;
 allow vendor_hal_factory_qti_default vendor_persist_mmi_file:file create_file_perms;
+
+# Allow set vendor.sys.boot_mode property
+set_prop(vendor_hal_factory_qti_default, vendor_boot_mode_prop);

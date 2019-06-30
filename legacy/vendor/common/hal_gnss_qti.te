@@ -31,6 +31,8 @@ type hal_gnss_qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_gnss_qti)
 
 hal_server_domain(hal_gnss_qti, hal_gnss)
+# Allow Gnss HAL to get updates from health hal
+hal_client_domain(hal_gnss_qti, hal_health)
 
 allow hal_gnss_qti location_data_file:dir r_dir_perms;
 allow hal_gnss location_data_file:file create_file_perms;

@@ -39,6 +39,7 @@ allow spdaemon spdaemon_ssr_device:chr_file rw_file_perms;
 allow spdaemon sp_ssr_device:chr_file rw_file_perms;
 allow spdaemon sp_keymaster_device:chr_file rw_file_perms;
 allow spdaemon cryptoapp_device:chr_file rw_file_perms;
+allow spdaemon iuicc_device:chr_file rw_file_perms;
 allow spdaemon ion_device:chr_file rw_file_perms;
 r_dir_file(spdaemon, firmware_file);
 use_vendor_per_mgr(spdaemon)

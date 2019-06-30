@@ -26,3 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 get_prop(vold, vendor_tee_listener_prop)
 
+# Based on the comment from b/111409607 FITRIM might
+# be needed
+allow vold mnt_vendor_file:dir { open read ioctl };

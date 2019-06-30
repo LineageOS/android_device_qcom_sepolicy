@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -25,13 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow hal_camera self:qipcrtr_socket create_socket_perms;
-allowxperm hal_camera self:qipcrtr_socket ioctl msm_sock_ipc_ioctls;
+type hal_audiocontrol_qti, domain;
+hal_server_domain(hal_audiocontrol_qti, hal_audiocontrol)
 
-hal_client_domain(hal_camera_default, hal_vpp)
-
-allow hal_camera gpu_device:chr_file rw_file_perms;
-
-allow hal_camera sysfs_jpeg:file r_file_perms;
-
-allow hal_camera qdisplay_service:service_manager find;
+type hal_audiocontrol_qti_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_audiocontrol_qti)

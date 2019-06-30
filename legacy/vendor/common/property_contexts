@@ -195,6 +195,9 @@ vendor.gpu.available_frequencies u:object_r:vendor_gpu_prop:s0
 persist.vendor.data.shs_ko_load u:object_r:vendor_data_ko_prop:s0
 persist.vendor.data.perf_ko_load u:object_r:vendor_data_ko_prop:s0
 
+#capabilityconfigstore (CCHAL)
+persist.vendor.cap_configstore_debug u:object_r:vendor_cap_configstore_dbg_prop:s0
+
 #hvdcp_opti
 persist.vendor.bms               u:object_r:hvdcp_opti_prop:s0
 persist.vendor.chg               u:object_r:hvdcp_opti_prop:s0
@@ -215,3 +218,6 @@ vendor.fastrpc.                  u:object_r:adsprpc_prop:s0
 
 #qvr properties
 vendor.qvr                       u:object_r:qvr_prop:s0
+
+#bt lazyhal property
+ro.vendor.bt.enablelazyhal       u:object_r:bluetooth_prop:s0 exact bool

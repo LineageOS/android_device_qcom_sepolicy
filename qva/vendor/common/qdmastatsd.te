@@ -36,26 +36,49 @@ allow qdmastatsd vendor_qdma_data_file:dir create_dir_perms;
 # access to /dev/ramdump_microdump_modem
 allow qdmastatsd ramdump_device:chr_file r_file_perms;
 
+# cpustats
 # access to /sys/class/power_supply/bms/charge_counter
 # access to /sys/class/power_supply/battery/capacity
 # access to /sys/class/power_supply/battery/status
 allow qdmastatsd sysfs_battery_supply:{file lnk_file} r_file_perms;
 allow qdmastatsd sysfs_battery_supply:dir r_dir_perms;
 
-# /sys/class/leds/lcd-backlight/brightness
+# gpustats
+# /sys/class/kgsl/kgsl-3d0/gpu_busy_percentage
+# /sys/class/kgsl/kgsl-3d0/gpuclk
+# /sys/class/kgsl/kgsl-3d0/gpu_clock_stats
+# /sys/class/kgsl/kgsl-3d0/num_pwrlevels
+# /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies
+allow qdmastatsd sysfs_kgsl:{file lnk_file} r_file_perms;
+allow qdmastatsd sysfs_kgsl:dir r_dir_perms;
+
+# cpustats /sys/class/leds/lcd-backlight/brightness
 allow qdmastatsd sysfs_leds:{file lnk_file} r_file_perms;
 allow qdmastatsd sysfs_leds:dir r_dir_perms;
 
-# access to /proc/stat
+# cpustats /sys/class/backlight/panel0-backlight/brightness
+allow qdmastatsd sysfs_graphics:{file lnk_file} r_file_perms;
+allow qdmastatsd sysfs_graphics:dir r_dir_perms;
+
+# cpustats /sys/class/thermal/thermal_zone%d
+allow qdmastatsd sysfs_thermal:{file lnk_file} r_file_perms;
+allow qdmastatsd sysfs_thermal:dir r_dir_perms;
+
+# cpustats /proc/stat
 allow qdmastatsd proc_stat:file r_file_perms;
 allow qdmastatsd proc_stat:dir r_dir_perms;
 
-# access to /proc/<pid>/
+# cpustats /proc/<pid>/
 r_dir_file(qdmastatsd, domain);
 
-#access to qdma_socket
+# lmtp qdma_socket
 allow qdmastatsd qdma_socket:dir rw_dir_perms;
 allow qdmastatsd qdma_socket:sock_file create_file_perms;
+
+# mps /persist/hlos_rfs/shared
+allow qdmastatsd mnt_vendor_file:dir r_dir_perms;
+allow qdmastatsd persist_rfs_shared_hlos_file:dir rw_dir_perms;
+allow qdmastatsd persist_rfs_shared_hlos_file:file create_file_perms;
 
 # for logcat
 unix_socket_connect(qdmastatsd, logdr, logd);

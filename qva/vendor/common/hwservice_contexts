@@ -54,6 +54,7 @@ vendor.qti.hardware.scve.objecttracker::IObjectTracker       u:object_r:hal_scve
 vendor.qti.hardware.scve.panorama::IPanoramaStitching        u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.scve.panorama::IPanoramaTracking         u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.soter::ISoter                            u:object_r:hal_soter_hwservice:s0
+vendor.qti.hardware.servicetracker::IServicetracker          u:object_r:hal_srvctracker_hwservice:s0
 vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_fm_hwservice:s0
 vendor.qti.esepowermanager::IEsePowerManager                 u:object_r:hal_esepowermanager_hwservice:s0
 vendor.qti.hardware.wifi.supplicant::ISupplicantVendor       u:object_r:hal_wifi_supplicant_hwservice:s0

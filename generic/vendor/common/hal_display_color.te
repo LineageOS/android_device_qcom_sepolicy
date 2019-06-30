@@ -33,10 +33,12 @@ init_daemon_domain(hal_display_color_default)
 
 # Allow hwbinder call from hal client to server
 binder_call(hal_display_color_client, hal_display_color_server)
+binder_call(platform_app, hal_display_color_server)
 
 # Add hwservice related rules
 add_hwservice(hal_display_color_server, hal_display_color_hwservice)
 allow hal_display_color_client hal_display_color_hwservice:hwservice_manager find;
+allow platform_app hal_display_color_hwservice:hwservice_manager find;
 
 # Rule for display color to access graphics composer process
 unix_socket_connect(hal_display_color, pps, hal_graphics_composer_default);

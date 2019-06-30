@@ -74,3 +74,15 @@ genfscon sysfs /kernel/qvr_external_sensor u:object_r:sysfs_qvr_external_sensor:
 genfscon sysfs /devices/virtual/xt_hardidletimer/timers u:object_r:sysfs_data:s0
 genfscon sysfs /devices/virtual/xt_idletimer/timers u:object_r:sysfs_data:s0
 
+genfscon sysfs /devices/0306_00.01.00/time u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/0306_01.01.00/time u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/0306_02.01.00/time u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/1101_00.01.00/time u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/1101_01.01.00/time u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/1101_02.01.00/time u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/0306_00.01.00/time_us u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/0306_01.01.00/time_us u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/0306_02.01.00/time_us u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/1101_00.01.00/time_us u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/1101_01.01.00/time_us u:object_r:sysfs_mhi:s0
+genfscon sysfs /devices/1101_02.01.00/time_us u:object_r:sysfs_mhi:s0

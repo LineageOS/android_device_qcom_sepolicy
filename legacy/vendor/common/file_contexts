@@ -155,11 +155,12 @@
 /dev/socket/ssgqmig                             u:object_r:ssgqmig_socket:s0
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
-/dev/socket/wpa_wigig[0-9]                      u:object_r:wifi_vendor_wpa_socket:s0
+/dev/socket/wigig/wpa_wigig[0-9]                u:object_r:wifi_vendor_wpa_socket:s0
 /dev/socket/vendor_wpa_wlan[0-9]                u:object_r:wifi_vendor_wpa_socket:s0
 /dev/socket/mmi                                 u:object_r:vendor_mmi_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:location_socket:s0
-/dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
+/dev/socket/wifihal(/.*)?                       u:object_r:wifihal_socket:s0
+/dev/socket/wigig/wigignpt                      u:object_r:wigignpt_socket:s0
 /dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
 
 ###################################
@@ -325,6 +326,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service-qti u:object_r:hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-service-qti u:object_r:hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-strongbox-service-qti u:object_r:hal_keymaster_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cryptfshw@1\.0-service-qti       u:object_r:hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service-qti u:object_r:hal_gatekeeper_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.0-service     u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.1-service     u:object_r:hal_nfc_default_exec:s0
@@ -340,6 +342,8 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service      u:object_r:vendor_hal_factory_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.allocator@1\.0-service   u:object_r:hal_graphics_allocator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.allocator-service   u:object_r:hal_graphics_allocator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.composer@1\.0-service   u:object_r:hal_graphics_composer_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.composer-service   u:object_r:hal_graphics_composer_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.tui_comm@1\.0-service-qti u:object_r:hal_tui_comm_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.soter@1\.0-service u:object_r:hal_soter_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qdutils_disp@1\.0-service-qti u:object_r:hal_qdutils_disp_qti_exec:s0
@@ -352,6 +356,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.mlshal@1\.0-service       u:object_r:hal_mirrorlink_qti_exec:s0
 /(vendor|system/vendor)/bin/hdcp_srm               u:object_r:hdcp_srm_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.power\.pasrmanager\@1\.0-service u:object_r:hal_pasrmanager_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.capabilityconfigstore@1\.0-service u:object_r:hal_capabilityconfigstore_qti_default_exec:s0
 
 ###################################
 # sysfs files

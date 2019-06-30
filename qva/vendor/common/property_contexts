@@ -69,6 +69,7 @@ vendor.qti.izat.                             u:object_r:location_prop:s0
 vendor.wigig.                                u:object_r:vendor_wigig_prop:s0
 ctl.vendor.wigig_supplicant                  u:object_r:ctl_vendor_wigigsvc_prop:s0
 ctl.vendor.wigig_hostapd                     u:object_r:ctl_vendor_wigigsvc_prop:s0
+ctl.vendor.sensingdaemon                     u:object_r:ctl_vendor_wigigsvc_prop:s0
 
 # netmgrd ko loading
 persist.vendor.data.shs_ko_load u:object_r:vendor_data_ko_prop:s0
@@ -98,3 +99,6 @@ vendor.qvr                       u:object_r:vendor_qvr_prop:s0
 
 #qmuxd property
 ctl.start$vendor.qmuxd                       u:object_r:ctl_qmuxd_prop:s0
+
+#bluetooth property
+ro.vendor.bt.enablelazyhal                   u:object_r:bluetooth_prop:s0 exact bool

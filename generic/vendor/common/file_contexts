@@ -167,6 +167,8 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.2-service-lazy.widevine    u:object_r:hal_drm_widevine_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.allocator@1\.0-service   u:object_r:hal_graphics_allocator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.allocator-service   u:object_r:hal_graphics_allocator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.composer@1\.0-service   u:object_r:hal_graphics_composer_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.composer-service   u:object_r:hal_graphics_composer_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.tui_comm@1\.0-service-qti u:object_r:hal_tui_comm_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qdutils_disp@1\.0-service-qti u:object_r:hal_qdutils_disp_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.capabilityconfigstore@1\.0-service u:object_r:hal_capabilityconfigstore_qti_default_exec:s0
@@ -440,6 +442,9 @@
 /sys/devices/soc/[a-f0-9]+.i2c/i2c-[0-9]/[0-9]-[a-f0-9]+/power_supply/parallel(/.*)?    u:object_r:sysfs_battery_supply:s0
 
 /sys/devices/soc/qpnp-vadc-[0-9]+(/.*)? u:object_r:sysfs_vadc_dev:s0
+
+#Android NN Driver
+/vendor/bin/hw/android\.hardware\.neuralnetworks@1\.2-service-qti   u:object_r:hal_neuralnetworks_default_exec:s0
 
 /(vendor|system/vendor)/bin/init\.class_main\.sh        u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.crda\.sh              u:object_r:qti_init_shell_exec:s0

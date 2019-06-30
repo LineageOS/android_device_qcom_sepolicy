@@ -27,3 +27,6 @@
 
 hal_client_domain(hal_secure_element_default, hal_qteeconnector)
 hal_client_domain(hal_secure_element_default, hal_esepowermanager)
+
+allow hal_secure_element_default secure_element_vendor_data_file:dir rw_dir_perms;
+allow hal_secure_element_default secure_element_vendor_data_file:file create_file_perms;

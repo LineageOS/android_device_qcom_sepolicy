@@ -41,3 +41,6 @@ add_service(seempd, seemp_service)
 
 allow seempd self:binder call;
 allow seempd ion_device:chr_file r_file_perms;
+
+#Allow search access in seemp_data_file
+allow seempd seemp_data_file:dir search;

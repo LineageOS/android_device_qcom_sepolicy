@@ -36,6 +36,9 @@ allow hal_drm_widevine mediacodec:fd use;
 allow hal_drm_widevine { appdomain -isolated_app }:fd use;
 allow hal_drm_widevine qce_device:chr_file rw_file_perms;
 
+#Allow access to smcinvoke device
+allow hal_drm_widevine smcinvoke_device:chr_file rw_file_perms;
+
 # The QTI DRM-HAL implementation uses a vendor-binder service provided
 # by the HWC HAL.
 vndbinder_use(hal_drm_widevine);
