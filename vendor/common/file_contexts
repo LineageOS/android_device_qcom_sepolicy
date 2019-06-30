@@ -132,6 +132,7 @@
 /dev/socket/vendor_wpa_wlan[0-9]                u:object_r:wifi_vendor_wpa_socket:s0
 /dev/socket/mmi                                 u:object_r:vendor_mmi_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:location_socket:s0
+/dev/socket/wifihal(/.*)?                       u:object_r:wifihal_socket:s0
 /dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
 /dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
 
@@ -295,6 +296,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@3\.0-service-qti u:object_r:hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-service-qti u:object_r:hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-strongbox-service-qti u:object_r:hal_keymaster_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cryptfshw@1\.0-service-qti       u:object_r:hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service-qti u:object_r:hal_gatekeeper_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.0-service     u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.1-service     u:object_r:hal_nfc_default_exec:s0
