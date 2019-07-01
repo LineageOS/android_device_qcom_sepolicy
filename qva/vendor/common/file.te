@@ -100,6 +100,7 @@ type wigig_vendor_wpa_socket, file_type;
 # wigig_hostapd
 type wigig_hostapd_socket, file_type, data_file_type;
 type sensingdaemon_socket, file_type;
+type sensing_vendor_data_file, file_type, data_file_type;
 
 #rmnet module files
 type sysfs_rmnet, fs_type, sysfs_type;

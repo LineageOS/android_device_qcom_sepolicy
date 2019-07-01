@@ -165,6 +165,7 @@
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
 /data/vendor/lm(/.*)?                                               u:object_r:lm_data_file:s0
 /data/vendor/secure_element(/.*)?                                   u:object_r:secure_element_vendor_data_file:s0
+/data/vendor/sensing(/.*)?                                          u:object_r:sensing_vendor_data_file:s0
 
 ###################################
 # persist files
