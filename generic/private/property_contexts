@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ro.vendor.qti.va_aosp.support       u:object_r:vendor_exported_system_prop:s0 exact bool
+ro.vendor.qti.va_odm.support       u:object_r:vendor_exported_odm_prop:s0 exact bool
