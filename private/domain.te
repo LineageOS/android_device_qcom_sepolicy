@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 get_prop(domain, vendor_exported_system_prop)
+get_prop(domain, vendor_exported_odm_prop)
