@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,6 +25,18 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#Define Domain
+type hal_srvctracker_default, domain;
+type hal_srvctracker_default_exec, exec_type, vendor_file_type, file_type;
+hal_server_domain(hal_srvctracker_default, hal_srvctracker)
+init_daemon_domain(hal_srvctracker_default)
 
-#Allow access to read property file
-get_prop(wfdservice,vendor_media_trinket_version_prop)
+binder_call(hal_srvctracker_client, hal_srvctracker_server)
+binder_call(hal_srvctracker_server, hal_srvctracker_client)
+
+add_hwservice(hal_srvctracker, hal_srvctracker_hwservice)
+
+allow hal_srvctracker_client hal_srvctracker_hwservice:hwservice_manager find;
+allow hal_srvctracker hwservicemanager:binder call;
+
+get_prop(hal_srvctracker_default, hwservicemanager_prop)

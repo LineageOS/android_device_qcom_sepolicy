@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,7 +24,32 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# media_trinket_version_prop - to choose target version specific media_codecs.xml
-allow qti_init_shell {
-    vendor_media_trinket_version_prop
-}:property_service set;
+
+type esgda_app, domain, mlstrustedsubject;
+app_domain(esgda_app)
+net_domain(esgda_app)
+binder_use(esgda_app)
+
+# allow invoking activity and access app content to esgda_app
+allow esgda_app { activity_service content_service }:service_manager find;
+# allow display service to esgda_app
+allow esgda_app { display_service }:service_manager find;
+# allow access to wifi and data network to esgda_app
+allow esgda_app { connectivity_service network_management_service }:service_manager find;
+
+# for vendor_perf_service
+allow esgda_app app_api_service:service_manager find;
+allow esgda_app user_service:service_manager find;
+
+# allow esgda_app to access system_app_data_file
+# necessary for read and write /data/data subdirectory.
+allow esgda_app system_app_data_file:dir create_dir_perms;
+allow esgda_app system_app_data_file:file create_file_perms;
+allow esgda_app surfaceflinger_service:service_manager find;
+
+# for vendor_perf_service
+allow esgda_app app_api_service:service_manager find;
+
+# allow access to qdma dropbox
+allow esgda_app vendor_qdma_data_file:dir create_dir_perms;
+allow esgda_app vendor_qdma_data_file:file create_file_perms;

@@ -70,3 +70,6 @@ allow seempd proc_net:file r_file_perms;
 
 #for read of network statistics data
 allow seempd proc_qtaguid_stat:file r_file_perms;
+
+#to write to pipes for process requesting dumps (dumpstate)
+allow seempd dumpstate:fifo_file write;
