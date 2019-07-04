@@ -38,6 +38,7 @@
 /(vendor|system/vendor)/bin/ParserApp                           u:object_r:sectest_exec:s0
 /(vendor|system/vendor)/bin/StoreKeybox         u:object_r:sectest_exec:s0
 /(vendor|system/vendor)/bin/InstallKeybox                       u:object_r:sectest_exec:s0
+/(vendor|system/vendor)/bin/uevent-listener    u:object_r:uevent-listener_exec:s0
 
 #Authentication and FIDO
 /(vendor|system/vendor)/bin/sampleauthdaemon    u:object_r:fidotest_exec:s0

@@ -51,3 +51,6 @@ user=system seinfo=platform name=com.qualcomm.qti.usta domain=usta_app type=syst
 
 #Add new domain for qsta app
 user=system seinfo=platform name=com.qualcomm.qti.sensors.qsensortest domain=qsta_app type=system_app_data_file
+
+#Add new domain for esgda app
+user=system seinfo=platform name=com.qti.dragonboat domain=esgda_app type=system_app_data_file

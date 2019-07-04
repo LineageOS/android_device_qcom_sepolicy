@@ -43,9 +43,9 @@ r_dir_file(tee, firmware_file)
 # allow qseecom access to time domain
 allow tee time_daemon:unix_stream_socket connectto;
 
-# allow tee access for secure UI to work
+# allow tee access for secure UI & ops listener to work
 allow tee graphics_device:dir r_dir_perms;
-allow tee graphics_device:chr_file r_file_perms;
+allow tee graphics_device:chr_file rw_file_perms;
 
 #allow tee access for secure touch to work
 allow tee sysfs_securetouch:file rw_file_perms;

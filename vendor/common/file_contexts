@@ -84,6 +84,7 @@
 /dev/ipa_odl_ctl                                u:object_r:ipa_dev:s0
 /dev/ipa_adpl                                   u:object_r:ipa_dev:s0
 /dev/qvr_external_sensor_ioctl                  u:object_r:qvr_external_sensor_device:s0
+/dev/synx_device                                u:object_r:synx_device:s0
 
 ###################################
 # Dev block nodes
@@ -172,6 +173,7 @@
 /(vendor|system/vendor)/bin/qrtr-ns                             u:object_r:qrtr_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sh               u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.manifest_sku\.sh  u:object_r:qti-manifest_exec:s0
+/(vendor|system/vendor)/bin/init\.mlvm_boot\.sh         u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.class_core\.sh  u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.bt\.sh          u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.early_boot\.sh  u:object_r:qti_init_shell_exec:s0
@@ -325,6 +327,7 @@
 /(vendor|system/vendor)/bin/chre                u:object_r:chre_exec:s0
 /(vendor|system/vendor)/bin/tloc_daemon         u:object_r:tlocd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service      u:object_r:vendor_hal_factory_qti_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetracker@1\.0-service u:object_r:hal_srvctracker_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.display\.allocator@1\.0-service   u:object_r:hal_graphics_allocator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.tui_comm@1\.0-service-qti u:object_r:hal_tui_comm_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.soter@1\.0-service u:object_r:hal_soter_qti_exec:s0
@@ -341,6 +344,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.seccam@1\.0-service-qti u:object_r:hal_seccam_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cvp@1\.0-service u:object_r:vendor_cvp_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.2-service          u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/init.qti.charger.sh     u:object_r:qti_init_shell_exec:s0
 
 ###################################
 # sysfs files
@@ -436,6 +440,7 @@
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_persist_mode        u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/config                     u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/rotator/mdss_rotator/caps                      u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/[a-f0-9]+.qfprom/qfprom0/nvmem            u:object_r:sysfs_qfprom:s0
 
 /sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes        u:object_r:sysfs_graphics:s0
 /sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/mode         u:object_r:sysfs_graphics:s0
@@ -453,6 +458,7 @@
 /sys/devices(/platform)?/soc/[0-9a-f]+.qcom,spmi/spmi-[0-9]+/spmi[0-9]+-[0-9]+/[0-9a-z]+.qcom,spmi:qcom,pmi[0-9]+@[0-9]+:qcom,leds@[a-z0-9]+(/.*)? u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-f0-9]+.qcom,spmi/spmi-0/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,haptics@c000/leds/vibrator(/.*)?   u:object_r:sysfs_leds:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/5e00000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/switch/hdmi(/.*)?                              u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/[a-f0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary.+[a-z0-9]/leds/lcd-backlight(/.*)?   u:object_r:sysfs_graphics:s0
@@ -468,6 +474,8 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_rotator/caps       u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,vidc/video4linux/video[0-9]+/name(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,cci/[a-z0-9]+.qcom,cci:qcom,camera@[0-2]/video4linux/video[0-9]+/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/soc:qcom,cam-req-mgr/video4linux/video[0-9]+/name(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices/platform/cam_sync/video4linux/video[0-9]+/name(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/bus/platform/drivers/xhci_msm_hsic(/.*)?                       u:object_r:sysfs_hsic:s0
 /sys/devices/msm_hsic_host/host_ready                               u:object_r:sysfs_hsic_host_rdy:s0
 /sys/bus/esoc(/.*)?                                                 u:object_r:sysfs_esoc:s0
@@ -486,6 +494,8 @@
 /sys/firmware/devicetree/base/cpus(/.*)?                            u:object_r:sysfs_devices_system_cpu:s0
 /sys/devices/vendor/vendor:bt_wcn3990/extldo                        u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/vendor/vendor:bt_wcn3990/rfkill/rfkill0/state          u:object_r:sysfs_bluetooth_writable:s0
+/sys/devices/vendor/vendor:bt_qca6174/extldo                        u:object_r:sysfs_bluetooth_writable:s0
+/sys/devices/vendor/vendor:bt_qca6174/rfkill/rfkill0/state          u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/bt_qca6174/extldo                                      u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/bt_qca6174/rfkill/rfkill0/state                        u:object_r:sysfs_bluetooth_writable:s0
 /sys/module/diagchar(/.*)?                                          u:object_r:sysfs_diag:s0
@@ -538,6 +548,7 @@
 /data/time(/.*)?                                                    u:object_r:time_data_file:s0
 /data/vendor/nfc(/.*)?                                              u:object_r:nfc_vendor_data_file:s0
 /data/vendor/audio(/.*)?                                            u:object_r:vendor_audio_data_file:s0
+/data/vendor/misc/audio(/.*)?                                       u:object_r:vendor_audio_data_file:s0
 /data/vendor/connectivity(/.*)?                                     u:object_r:cnd_data_file:s0
 /data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
 /data/vendor/time(/.*)?                                             u:object_r:vendor_time_data_file:s0
@@ -581,8 +592,6 @@
 /data/vendor/ramdump(/.*)?                                          u:object_r:vendor_ramdump_data_file:s0
 /data/vendor/mdmhelperdata(/.*)?                                    u:object_r:vendor_mdmhelperdata_data_file:s0
 /sys/kernel/debug/ipc_logging(/.*)?                                 u:object_r:qti_debugfs:s0
-/sys/kernel/debug/clk(/.*)?                                         u:object_r:qti_debugfs:s0
-/sys/kernel/debug/regulator(/.*)?                                   u:object_r:qti_debugfs:s0
 /data/vendor/misc/qsee(/.*)?                                        u:object_r:data_qsee_file:s0
 /data/vendor/tui(/.*)?                                              u:object_r:vendor_tui_data_file:s0
 /data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
@@ -662,6 +671,7 @@
 
 # same-process HAL files and their dependencies
 #
+/(vendor|system/vendor)/lib(64)?/hw/gralloc\.msm8998\.so   u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/hw/android\.hardware\.graphics\.mapper@2\.0-impl-qti-display\.so   u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.display\.mapper@1\.0\.so   u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libqdMetaData\.so         u:object_r:same_process_hal_file:s0
@@ -670,6 +680,8 @@
 /(vendor|system/vendor)/lib(64)?/libadreno_utils\.so       u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libgsl\.so                u:object_r:same_process_hal_file:s0
 
+/(vendor|system/vendor)/lib(64)?/hw/vulkan\.msm8998\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/vulkan\.adreno\.so     u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libEGL_adreno\.so         u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libGLESv1_CM_adreno\.so   u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libGLESv2_adreno\.so      u:object_r:same_process_hal_file:s0
@@ -726,8 +738,11 @@
 /(vendor|system/vendor)/lib(64)?/liblistenjni\.so          u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/liblistensoundmodel2\.so  u:object_r:same_process_hal_file:s0
 
-# libnpu
+# NPU files
 /(vendor|system/vendor)/lib(64)?/libnpu\.so                u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libhta_controller\.so     u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libhta_hexagon_runtime\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/unnhal-acc-hta\.so        u:object_r:same_process_hal_file:s0
 ###################################
 # firmware images
 #

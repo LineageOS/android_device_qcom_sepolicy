@@ -100,6 +100,13 @@ genfscon  sysfs /devices/soc/c200000.qcom,lpass/subsys2/name  u:object_r:sysfs_s
 genfscon  sysfs /devices/soc/a21b000.qcom,pronto/subsys3/name u:object_r:sysfs_ssr:s0
 genfscon  sysfs /devices/soc/4080000.qcom,mss/subsys4/name    u:object_r:sysfs_ssr:s0
 
+#SSR nodes for sdm439 64 bit
+#For 64bit build the paths are different so adding them
+genfscon  sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys1/name   u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/platform/soc/c200000.qcom,lpass/subsys2/name  u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/platform/soc/a21b000.qcom,pronto/subsys3/name u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/platform/soc/4080000.qcom,mss/subsys4/name    u:object_r:sysfs_ssr:s0
+
 #FPC
 genfscon  sysfs /devices/platform/soc/soc:fpc1020 u:object_r:sysfs_fps_attr:s0
 genfscon  sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi632@3:qcom,leds@d000/modalias u:object_r:sysfs_fps_attr:s0

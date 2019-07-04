@@ -1,0 +1,1 @@
+vendor.notify_after_powerup.subsys     u:object_r:subsystem_uevent_listener_prop:s0

@@ -131,6 +131,7 @@ type sysfs_lib, fs_type, sysfs_type;
 type sysfs_slpi, fs_type, sysfs_type;
 type sysfs_process_reclaim, fs_type, sysfs_type;
 type sysfs_vmpressure, fs_type, sysfs_type;
+type sysfs_qfprom, fs_type, sysfs_type;
 
 #define the files writer during the operation of app state changes
 type gamed_socket, file_type;
