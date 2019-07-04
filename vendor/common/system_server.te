@@ -165,6 +165,9 @@ hal_client_domain(system_server,hal_bluetooth);
 
 hal_client_domain(system_server, hal_perf)
 hal_client_domain(system_server, hal_sensors)
+hal_client_domain(system_server, hal_srvctracker)
+
+allow system_server hal_srvctracker_default:binder call;
 
 # allow WIGIG framework hosted in system_server to access wigig_hal
 hal_client_domain(system_server, hal_wigig)

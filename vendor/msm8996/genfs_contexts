@@ -36,3 +36,15 @@ genfscon sysfs /devices/soc/9300000.qcom,lpass/subsys4/name            u:object_
 genfscon sysfs /devices/soc/2080000.qcom,mss/subsys5/name              u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/soc/2080000.qcom,mss/subsys6/name              u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/soc/ce0000.qcom,venus/subsys0/name             u:object_r:sysfs_ssr:s0
+
+# PMIC sysfs nodes
+genfscon sysfs /devices/soc/400f000.qcom,spmi/spmi-0/spmi0-02/400f000.qcom,spmi:qcom,pmi8994@2:qcom,qpnp-smbcharger/power_supply/battery u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/400f000.qcom,spmi/spmi-0/spmi0-02/400f000.qcom,spmi:qcom,pmi8994@2:qcom,fg/power_supply/bms u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/400f000.qcom,spmi/spmi-0/spmi0-02/400f000.qcom,spmi:qcom,pmi8994@2:qcom,qpnp-smbcharger/power_supply/usb u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,haptics@c000/leds/vibrator u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,leds@d000/leds/red u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,leds@d000/leds/green u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,leds@d000/leds/blue u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,leds@d300/leds u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,leds@d800/leds/wleds u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc/75b5000.i2c/i2c-7/7-001d/power_supply/parallel u:object_r:sysfs_battery_supply:s0

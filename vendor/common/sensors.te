@@ -61,7 +61,7 @@ userdebug_or_eng(`
   allow sensors storage_file:lnk_file read;
 
   # For Reading/creating/opening named pipe for diag flush
-  allow sensors sensors_persist_file:fifo_file { create open read };
+  allow sensors sensors_persist_file:fifo_file { create open read write};
 ')
 
 #binder_use(sensors)

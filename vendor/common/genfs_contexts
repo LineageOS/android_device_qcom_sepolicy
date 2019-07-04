@@ -50,3 +50,6 @@ genfscon sysfs /kernel/qvr_external_sensor u:object_r:sysfs_qvr_external_sensor:
 
 genfscon sysfs /devices/virtual/xt_hardidletimer/timers u:object_r:sysfs_data:s0
 genfscon sysfs /devices/virtual/xt_idletimer/timers u:object_r:sysfs_data:s0
+
+genfscon debugfs /clk u:object_r:qti_debugfs:s0
+genfscon debugfs /regulator u:object_r:qti_debugfs:s0

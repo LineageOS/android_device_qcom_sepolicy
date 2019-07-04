@@ -47,9 +47,14 @@ allow hal_perf_default mpctl_data_file:file create_file_perms;
 allow hal_perf_default lm_data_file:dir rw_dir_perms;
 allow hal_perf_default lm_data_file:file create_file_perms;
 allow hal_perf_default sysfs_lib:file w_file_perms;
+allow hal_perf_default proc_meminfo:file r_file_perms;
+allow hal_perf_default self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow hal_perf_default {appdomain}:process getpgid;
+hal_client_domain(hal_perf_default, hal_iop);
 hal_client_domain(hal_perf_default, hal_graphics_composer);
 allow hal_perf_default qdisplay_service:service_manager find;
 r_dir_file(hal_perf_default, appdomain);
+hal_client_domain(hal_perf_default, hal_srvctracker);
 
 # Allow perf HAL to set freq props
 set_prop(hal_perf_default, freq_prop)
@@ -62,6 +67,7 @@ allow hal_perf {
     sysfs_mmc_host
     sysfs_scsi_host
     sysfs_kgsl
+    sysfs_kgsl_proc
     sysfs_cpu_boost
     sysfs_msm_perf
     sysfs_memory
@@ -70,6 +76,7 @@ allow hal_perf {
     sysfs_msm_power
     sysfs_battery_supply
     sysfs_process_reclaim
+    sysfs_qfprom
 }:dir r_dir_perms;
 
 allow hal_perf {
@@ -87,6 +94,7 @@ allow hal_perf {
     sysfs_msm_power
     sysfs_battery_supply
     sysfs_process_reclaim
+    sysfs_qfprom
 }:file rw_file_perms;
 
 allow hal_perf {
@@ -95,3 +103,6 @@ allow hal_perf {
     sysfs_scsi_host
     sysfs_kgsl
 }:lnk_file r_file_perms;
+
+# Allow to self kill capability
+allow hal_perf_default self:capability { kill };

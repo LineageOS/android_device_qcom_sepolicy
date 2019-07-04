@@ -160,6 +160,9 @@ type persist_block_device, dev_type;
 #Define npu device
 type npu_device, dev_type;
 
+#Define synx device
+type synx_device, dev_type;
+
 #define qg char device
 type qg_device, dev_type;
 

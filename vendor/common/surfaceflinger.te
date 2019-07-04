@@ -32,6 +32,7 @@ allow surfaceflinger {
     vendor_display_prop
     vendor_dolphin_prop
     sysfs_kgsl
+    sysfs_qfprom
 }:file r_file_perms;
 
 allow surfaceflinger {

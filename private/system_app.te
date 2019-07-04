@@ -46,3 +46,10 @@ binder_call(system_app, smcinvoke_daemon)
 binder_call(system_app, mirrorlink);
 # allow system app to connect to mirrorlink_socket
 unix_socket_connect(system_app, mirrorlink, mirrorlink);
+
+# As part of ashmem movement tmpfs access to restricted to
+# its own domnan but appdomain ( which include system_app)
+# need access to the system_server_tmpfs based on the change
+# 9f5d0d90a3a5b479c19fda7b528471f16b773546 we are adding
+# this rule
+allow system_app system_server_tmpfs:file { getattr map read write };
