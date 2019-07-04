@@ -40,6 +40,7 @@ vendor.qti.hardware.mlshal::IMlsIon                          u:object_r:hal_mirr
 vendor.qti.power.pasrmanager::IPasrManager                   u:object_r:hal_pasrmanager_hwservice:s0
 com.qualcomm.qti.bluetooth_audio::IBluetoothAudio            u:object_r:hal_audio_hwservice:s0
 vendor.qti.hardware.btconfigstore::IBTConfigStore            u:object_r:hal_btconfigstore_hwservice:s0
+vendor.qti.hardware.bluetooth_dun::IBluetoothDunServer       u:object_r:hal_bluetooth_dun_hwservice:s0
 com.qualcomm.qti.dpm.api::IdpmQmi                            u:object_r:hal_dpmqmi_hwservice:s0
 vendor.qti.hardware.audiohalext::IAudioHalExt                u:object_r:hal_audio_hwservice:s0
 vendor.qti.hardware.seccam::ISecCam                          u:object_r:hal_seccam_hwservice:s0
