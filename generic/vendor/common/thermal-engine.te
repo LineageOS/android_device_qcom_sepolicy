@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -29,16 +29,39 @@ type thermal-engine_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(thermal-engine)
 
-allow thermal-engine self:capability2 block_suspend;
-
 # to read /sys/devices
 allow thermal-engine sysfs:dir r_dir_perms;
 
+allow thermal-engine self:capability {
+    fsetid
+    sys_boot
+};
+
+allow thermal-engine self:{ socket qipcrtr_socket } create_socket_perms;
+# ioctlcmd=c304
+allowxperm thermal-engine self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+
+# This is required to access thermal sockets
+allow thermal-engine thermal_socket:dir w_dir_perms;
+allow thermal-engine thermal_socket:sock_file create_file_perms;
+allow thermal-engine socket_device:dir w_dir_perms;
+
 # This is required for thermal sysfs access
+r_dir_file(thermal-engine, sysfs_thermal)
 allow thermal-engine sysfs_thermal:file w_file_perms;
+allow thermal-engine sysfs_thermal:lnk_file r_file_perms;
 
 # Allow to read and write cpufreq sysfs
 allow thermal-engine sysfs_devices_system_cpu:file rw_file_perms;
+# This is required for qmi access
+qmux_socket(thermal-engine);
+
+#This is to allow access to uio device
+allow thermal-engine uio_device:chr_file rw_file_perms;
+
+userdebug_or_eng(`
+  diag_use(thermal-engine)
+')
 
 # To search, read and write kgsl sysfs
 allow thermal-engine sysfs_kgsl:dir r_dir_perms;
@@ -58,15 +81,23 @@ allow thermal-engine sysfs_graphics:file rw_file_perms;
 allow thermal-engine sysfs_graphics:lnk_file r_file_perms;
 
 r_dir_file(thermal-engine, sysfs_leds)
-r_dir_file(thermal-engine, adsprpcd_file);
-
 allow thermal-engine audio_device:chr_file rw_file_perms;
-
-allow thermal-engine self:socket create_socket_perms;
-allowxperm thermal-engine self:socket ioctl msm_sock_ipc_ioctls;
 
 # reboot/shutdown for thermal limits exceeded
 set_prop(thermal-engine, powerctl_prop)
 
+#sysfs_uio
+r_dir_file(thermal-engine, sysfs_uio)
+r_dir_file(thermal-engine, sysfs_uio_file)
+
 # netlink access
 allow thermal-engine self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+#This is required to enable thermal-engine dsprpc communication
+r_dir_file(thermal-engine, adsprpcd_file);
+allow thermal-engine qdsp_device:chr_file r_file_perms;
+allow thermal-engine ion_device:chr_file r_file_perms;
+
+# This is required to read devfreq  sysfs
+allow thermal-engine sysfs_devfreq:dir r_dir_perms;
+allow thermal-engine sysfs_devfreq:file r_file_perms;
+allow thermal-engine sysfs_devfreq:lnk_file r_file_perms;
