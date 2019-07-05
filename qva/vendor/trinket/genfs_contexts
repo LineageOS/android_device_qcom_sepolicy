@@ -65,3 +65,6 @@ genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/sde-crtc-1/
 genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/sde-crtc-1/fps_periodicity_ms u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/fps_periodicity_ms u:object_r:sysfs_graphics:s0
+
+#net sysfs
+genfscon sysfs /devices/platform/soc/18800000.qcom,icnss/net u:object_r:sysfs_net:s0
