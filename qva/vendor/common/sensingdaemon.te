@@ -35,3 +35,7 @@ allow sensingdaemon self:unix_stream_socket { listen accept read write };
 
 # Allow access to create socket
 allow sensingdaemon self:qipcrtr_socket create_socket_perms_no_ioctl;
+
+# Allow access to create data output files
+allow sensingdaemon sensing_vendor_data_file:dir rw_dir_perms;
+allow sensingdaemon sensing_vendor_data_file:file create_file_perms;

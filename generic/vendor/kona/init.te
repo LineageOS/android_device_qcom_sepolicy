@@ -25,5 +25,18 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-ro.vendor.qti.va_aosp.support       u:object_r:vendor_exported_system_prop:s0 exact bool
-ro.vendor.qti.va_odm.support       u:object_r:vendor_exported_odm_prop:s0 exact bool
+# Allow init to read/write/ioctl for mounting overlayfs
+# with kernel 4.19.  At the point of overlayfs mount
+# SELinux is initialized but labels tmpfs has not yet
+# been relabeled.
+#
+# This is only used for userdebug/eng in adb remount
+# scenario
+#
+# Temporary change
+userdebug_or_eng(`
+  allow init tmpfs:blk_file { ioctl read write open getattr };
+')
+
+allow init firmware_file:filesystem getattr;
+allow init bt_firmware_file:filesystem getattr;

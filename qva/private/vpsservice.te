@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,21 +25,21 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-userdebug_or_eng(`
-  diag_use(hal_audio)
-  #Allow access to debug fs
-  allow hal_audio_default qti_debugfs:dir r_dir_perms;
-  allow hal_audio_default qti_debugfs:file rw_file_perms;
-')
+typeattribute vpsservice coredomain;
+type vpsservice_exec, system_file_type, exec_type, file_type;
 
-#Split A2dp specific
-binder_call(hal_audio,bluetooth)
+init_daemon_domain(vpsservice)
 
-#to read bt props
-get_prop(hal_audio, vendor_bluetooth_prop)
+add_service(vpsservice, vendor_vps_service)
+binder_use(vpsservice);
+binder_call(vpsservice, system_server);
+binder_service(vpsservice);
 
-#to read qcv audio props
-get_prop(hal_audio, qcv_vendor_audio_prop)
-
-# Allow audio HAL to get updates from health hal
-hal_client_domain(hal_audio_default, hal_health)
+hal_client_domain(vpsservice, hal_graphics_composer)
+hal_client_domain(vpsservice, hal_graphics_allocator)
+allow vpsservice surfaceflinger:binder call;
+allow vpsservice surfaceflinger:fd use;
+allow vpsservice ion_device:chr_file { open read };
+allow vpsservice media_rw_data_file:dir create_dir_perms;
+allow vpsservice media_rw_data_file:file create_file_perms;
+allow vpsservice gpu_device:chr_file rw_file_perms;

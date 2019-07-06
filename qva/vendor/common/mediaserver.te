@@ -26,3 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 hal_client_domain(mediaserver, hal_audio)
+
+#to read audio props
+get_prop(mediaserver, vendor_audio_prop)

@@ -41,6 +41,10 @@ allow sensors self:capability {
 userdebug_or_eng(`
   diag_use(sensors)
   get_prop(sensors, sensors_dbg_prop)
+
+  #allow starting of diag_mdlog
+  allow sensors qlogd_exec:file rx_file_perms;
+  allow sensors vendor_shell_exec:file rx_file_perms;
 ')
 
 allow sensors self:{ socket qipcrtr_socket } create_socket_perms;

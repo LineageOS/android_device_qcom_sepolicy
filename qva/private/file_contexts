@@ -50,6 +50,7 @@
 /system/bin/mmi_diag                            u:object_r:vendor_mmi_sys_exec:s0
 /system/bin/perfservice                         u:object_r:perfservice_exec:s0
 /system/bin/mirrorlinkserver                    u:object_r:mirrorlink_exec:s0
+/system/bin/vpsservice                          u:object_r:vpsservice_exec:s0
 
 ####### data files ################
 /data/dpm(/.*)?                                 u:object_r:dpmd_data_file:s0
