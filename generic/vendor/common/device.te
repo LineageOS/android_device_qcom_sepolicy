@@ -61,3 +61,4 @@ type wlan_device, dev_type;
 type xbl_block_device, dev_type;
 type uefi_block_device, dev_type;
 type qce_device, dev_type;
+type npu_device, dev_type;
