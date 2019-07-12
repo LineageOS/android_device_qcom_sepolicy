@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "117209f6_f160fe21",
+        "filename": "vendor/common/time_daemon.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2019-07-12T02:12:37Z",
+      "side": 0,
+      "message": "-\u003e #_announcements",
+      "revId": "b1db6370f5434f777506e6e06b484c21d3865599",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
