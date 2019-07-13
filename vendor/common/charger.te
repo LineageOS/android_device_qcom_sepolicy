@@ -24,6 +24,14 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+allow charger self:capability2 wake_alarm;
+r_dir_file(charger, sysfs_battery_supply)
+r_dir_file(charger, sysfs_usb_supply)
 
-get_prop(domain, vendor_exported_system_prop)
-get_prop(domain, vendor_exported_odm_prop)
+allow charger {
+    sysfs_battery_supply
+    sysfs_usb_supply
+}:file w_file_perms;
+
+dontaudit charger device:dir r_dir_perms;
+dontaudit charger self:capability sys_admin;
