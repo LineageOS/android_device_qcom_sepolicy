@@ -84,6 +84,7 @@
 /dev/socket/thermal-recv-passive-client         u:object_r:thermal_socket:s0
 /dev/socket/thermal-send-rule                   u:object_r:thermal_socket:s0
 /dev/socket/netmgr(/.*)?                        u:object_r:netmgrd_socket:s0
+/dev/socket/port-bridge(/.*)?                   u:object_r:port-bridge_socket:s0
 /dev/socket/qti_dpm_uds_file                    u:object_r:dataqti_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:location_socket:s0
 /dev/socket/wifihal(/.*)?                       u:object_r:wifihal_socket:s0

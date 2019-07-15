@@ -128,6 +128,7 @@
 /dev/socket/qmux_radio(/.*)?                    u:object_r:qmuxd_socket:s0
 /dev/socket/qmux_nfc(/.*)?                      u:object_r:qmuxd_socket:s0
 /dev/socket/netmgr(/.*)?                        u:object_r:netmgrd_socket:s0
+/dev/socket/port-bridge(/.*)?                   u:object_r:port-bridge_socket:s0
 /dev/socket/qti_dpm_uds_file                    u:object_r:dataqti_socket:s0
 /dev/socket/adpl_cmd_uds_file                   u:object_r:dataadpl_socket:s0
 /dev/socket/sensor_ctl_socket                   u:object_r:sensors_socket:s0
