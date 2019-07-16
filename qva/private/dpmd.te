@@ -70,3 +70,5 @@ dpmd_socket_perm(untrusted_app_25)
 dpmd_socket_perm(platform_app)
 #allow dpmd to write to /proc/net/sys
 allow dpmd proc_net:file write;
+#self kill rule to kill dpmd child process which executes iptable commands
+allow dpmd self:capability kill;
