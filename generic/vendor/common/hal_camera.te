@@ -65,3 +65,6 @@ get_prop(hal_camera, vendor_adsprpc_prop)
 
 # This is needed to access GPU
 allow hal_camera_default gpu_device:chr_file rw_file_perms;
+
+# Postproc Service
+hal_attribute_hwservice(hal_camera, hal_camera_postproc_hwservice);
