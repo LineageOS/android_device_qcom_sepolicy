@@ -33,6 +33,14 @@ allow feature_enabler_client tee_device:chr_file rw_file_perms;
 allow feature_enabler_client ion_device:chr_file rw_file_perms;
 unix_socket_connect(feature_enabler_client , ssgtzd, ssgtzd)
 
+
+# Allow read permission to /mnt/vendor/persist/feature_enabler_client/*
 allow feature_enabler_client mnt_vendor_file:dir search;
-allow feature_enabler_client persist_feature_enabler_file:dir r_dir_perms;
-allow feature_enabler_client persist_feature_enabler_file:file r_file_perms;
+r_dir_file(feature_enabler_client, persist_feature_enabler_file)
+
+# Allow read permission to /mnt/vendor/persist/data/*
+r_dir_file(feature_enabler_client, persist_data_file)
+
+# Binder access for featenab_client.service
+vndbinder_use(feature_enabler_client)
+allow feature_enabler_client qfeatenab_client_service:service_manager { add find };
