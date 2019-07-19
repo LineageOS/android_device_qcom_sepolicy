@@ -51,3 +51,7 @@ allow wfdvndservice { mediacodec system_app wfdhdcphalservice_qti}:fd use;
 #Allow access to tee/ion device
 allow wfdvndservice tee_device:chr_file rw_file_perms;
 allow wfdvndservice ion_device:chr_file r_file_perms;
+
+#Allow access to graphics_composer and qdisplay_service
+hal_client_domain(wfdvndservice, hal_graphics_composer);
+allow wfdvndservice qdisplay_service:service_manager find;
