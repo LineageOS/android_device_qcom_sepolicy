@@ -38,6 +38,7 @@ dontaudit {
     radio
     shell
     zygote
+    mediaswcodec
 } vendor_gles_data_file:dir search;
 #allow all gpu clients to access configuration settings
 userdebug_or_eng(`
