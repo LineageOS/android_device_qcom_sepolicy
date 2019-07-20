@@ -91,3 +91,6 @@ allow hal_perf {
     sysfs_scsi_host
     sysfs_kgsl
 }:lnk_file r_file_perms;
+
+# Allow to self kill capability
+allow hal_perf_default self:capability { kill };
