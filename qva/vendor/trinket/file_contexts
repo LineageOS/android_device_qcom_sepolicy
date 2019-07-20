@@ -83,6 +83,7 @@
 /dev/block/platform/soc/4804000.ufshc/by-name/xbl_config_[ab]   u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/imagefv_[ab]      u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/uefisecapp_[ab]   u:object_r:uefi_block_device:s0
+/dev/block/platform/soc/4804000.ufshc/by-name/super             u:object_r:super_block_device:s0
 
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/platform/soc/4804000.ufshc/sd[ade]                   u:object_r:gpt_block_device:s0
@@ -146,6 +147,7 @@
 /dev/block/platform/soc/4744000.sdhci/by-name/dip                                u:object_r:dip_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/storsec                            u:object_r:boot_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/persist                            u:object_r:persist_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/super                              u:object_r:super_block_device:s0
 
 # Camera
 /sys/devices/platform/soc/5ca0000.qcom,jpeg/video4linux/video[0-33]/name(/.*)?    u:object_r:sysfs_jpeg:s0
