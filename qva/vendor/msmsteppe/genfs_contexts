@@ -98,3 +98,6 @@ genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-2/
 #subsys nodes
 genfscon sysfs /devices/platform/soc/soc:bt_qca6174/extldo u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/platform/soc/soc:bt_qca6174/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
+
+#net sysfs
+genfscon sysfs /devices/platform/soc/18800000.qcom,icnss/net u:object_r:sysfs_net:s0

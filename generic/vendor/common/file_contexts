@@ -30,6 +30,7 @@
 /dev/kgsl-3d0                                   u:object_r:gpu_device:s0
 /dev/rtc0                                       u:object_r:rtc_device:s0
 /dev/smd.*                                      u:object_r:smd_device:s0
+/dev/msm_npu                                    u:object_r:npu_device:s0
 # TODO: does ttyMSM0 need to be more specific
 /dev/ttyMSM0                                    u:object_r:tty_device:s0
 /dev/ipa                                        u:object_r:ipa_dev:s0

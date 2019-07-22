@@ -32,6 +32,8 @@ hal_client_domain(platform_app, hal_perf)
 hal_client_domain(platform_app, hal_cvp)
 #scve
 hal_client_domain(platform_app, hal_scve)
-
 #allow platform_app to read vendor_mpctl_prop
 get_prop(platform_app, vendor_mpctl_prop)
+#qspmhal
+hal_client_domain(platform_app, hal_qspmhal)
+

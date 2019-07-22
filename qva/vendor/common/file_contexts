@@ -113,6 +113,8 @@
 /(vendor|system/vendor)/bin/wigignpt                                               u:object_r:wigignpt_exec:s0
 /(vendor|system/vendor)/bin/sensingdaemon                                          u:object_r:sensingdaemon_exec:s0
 /vendor/bin/hw/android\.hardware\.usb\@1\.[0-2]-service-qti                        u:object_r:hal_usb_qti_exec:s0
+/vendor/bin/vendor\.qti\.qspmhal@1\.0-service                                      u:object_r:hal_qspmhal_default_exec:s0
+
 
 #### Context for location features
 ## location daemons and binaries
@@ -166,6 +168,7 @@
 /data/vendor/lm(/.*)?                                               u:object_r:lm_data_file:s0
 /data/vendor/secure_element(/.*)?                                   u:object_r:secure_element_vendor_data_file:s0
 /data/vendor/sensing(/.*)?                                          u:object_r:sensing_vendor_data_file:s0
+/data/vendor/gaming(/.*)?                                           u:object_r:vendor_qspmhal_data_file:s0
 
 ###################################
 # persist files
@@ -185,6 +188,7 @@
 # SVA files
 /vendor/lib(64)?/liblistenjni\.so          u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/liblistensoundmodel2\.so  u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor.qti.qspmhal@1.0\.so  u:object_r:same_process_hal_file:s0
 
 #wifilearner daemon
 /(vendor|system/vendor)/bin/wifilearner    u:object_r:wifilearnersvc_exec:s0
