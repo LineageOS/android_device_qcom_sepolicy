@@ -83,6 +83,7 @@ type proc_audiod, fs_type, proc_type;
 
 type qmuxd_socket, file_type;
 type netmgrd_socket, file_type;
+type port-bridge_socket, file_type;
 type thermal_socket, file_type;
 
 #Define the qti socket type
