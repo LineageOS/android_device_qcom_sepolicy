@@ -44,6 +44,7 @@
 /dev/qg                               u:object_r:qg_device:s0
 /dev/qg_battery                       u:object_r:qg_device:s0
 /dev/qvr_external_sensor_ioctl        u:object_r:qvr_external_sensor_device:s0
+/dev/spss_utils                       u:object_r:spss_utils_device:s0
 ###################################
 # Dev socket nodes
 #
@@ -147,6 +148,8 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/queues/rx-0/rps_cpus  u:object_r:sysfs_wigig:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/gro_flush_timeout     u:object_r:sysfs_wigig:s0
 
+/sys/devices(/platform)?/soc/soc:qcom,spss_utils(/.*)?             u:object_r:sysfs_spss:s0
+
 /sys/devices(/platform)?/soc/soc:qcom,gpubw/devfreq/soc:qcom,gpubw(/.*)? u:object_r:sysfs_devfreq:s0
 
 ###################################
@@ -178,6 +181,12 @@
 /mnt/vendor/persist/FTM_AP(/.*)?      u:object_r:vendor_persist_mmi_file:s0
 /mnt/vendor/persist/vpp(/.*)?         u:object_r:persist_vpp_file:s0
 /mnt/vendor/persist/hvdcp_opti(/.*)?  u:object_r:persist_hvdcp_file:s0
+/mnt/vendor/persist/iar_db(/.*)?      u:object_r:persist_iar_db_file:s0
+
+###################################
+# spunvm partition
+#
+/mnt/vendor/spunvm(/.*)?              u:object_r:spunvm_file:s0
 
 # same-process HAL files and their dependencies
 #
