@@ -110,6 +110,9 @@ type wcnss_device, dev_type;
 # Define spcom device
 type spcom_device, dev_type;
 
+# Define spss_utils device
+type spss_utils_device, dev_type;
+
 # Define skp device
 type skp_device, dev_type;
 
