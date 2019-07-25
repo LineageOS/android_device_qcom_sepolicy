@@ -40,6 +40,10 @@ dontaudit {
     zygote
     mediaswcodec
 } vendor_gles_data_file:dir search;
+
+dontaudit {
+    system_app
+} vendor_gles_data_file:file *;
 #allow all gpu clients to access configuration settings
 userdebug_or_eng(`
 allow domain sysfs_kgsl:dir search;
