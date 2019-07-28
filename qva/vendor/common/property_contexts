@@ -31,11 +31,6 @@ ctl.vendor.cnd                    u:object_r:cnd_vendor_prop:s0
 persist.vendor.cne.               u:object_r:cnd_vendor_prop:s0
 persist.vendor.cnd.               u:object_r:cnd_vendor_prop:s0
 
-persist.speaker.prot.enable                 u:object_r:qcv_vendor_audio_prop:s0
-audio.volume.listener.dump                  u:object_r:qcv_vendor_audio_prop:s0
-audio.volume.headset.gain.depcal            u:object_r:qcv_vendor_audio_prop:s0
-persist.audio.dualmic.config                u:object_r:qcv_vendor_audio_prop:s0
-
 ctl.vendor.dataadpl                          u:object_r:vendor_dataadpl_prop:s0
 vendor.spcom.                                u:object_r:spcomlib_prop:s0
 persist.vendor.bt.soc.scram_freqs            u:object_r:vendor_bluetooth_prop:s0
