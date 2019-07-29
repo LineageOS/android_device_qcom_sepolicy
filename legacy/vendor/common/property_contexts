@@ -33,7 +33,7 @@ vendor.qcom.bluetooth.              u:object_r:vendor_bluetooth_prop:s0
 vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
 ro.vendor.bluetooth.       u:object_r:vendor_bluetooth_prop:s0
 vendor.ims.                u:object_r:qcom_ims_prop:s0
-ro.build.software.version  u:object_r:qcom_ims_prop:s0
+ro.vendor.build.software.version  u:object_r:qcom_ims_prop:s0
 persist.vendor.ims.disabled       u:object_r:qcom_ims_prop:s0
 vendor.service.qti.ims.enabled    u:object_r:qcom_ims_prop:s0
 persist.vendor.ims.        u:object_r:qcom_ims_prop:s0
@@ -101,7 +101,6 @@ persist.vendor.data.dont_use_npflag  u:object_r:vendor_dataqdp_prop:s0
 persist.vendor.data.profile_update  u:object_r:vendor_dataqdp_prop:s0
 vendor.gralloc.            u:object_r:vendor_gralloc_prop:s0
 vendor.wifi.ftmd.                 u:object_r:vendor_wifi_ftmd_prop:s0
-ro.fota.oem                u:object_r:vendor_default_prop:s0
 
 # WIGIG
 vendor.wigig.                                u:object_r:vendor_wigig_prop:s0
