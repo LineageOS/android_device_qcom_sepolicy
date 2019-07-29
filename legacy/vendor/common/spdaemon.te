@@ -35,9 +35,6 @@ init_daemon_domain(spdaemon)
 # Allow access to spcom device
 allow spdaemon spcom_device:chr_file rw_file_perms;
 
-# Allow access to spss_utils device
-allow spdaemon spss_utils_device:chr_file rw_file_perms;
-
 # Allow access to skp device
 allow spdaemon skp_device:chr_file rw_file_perms;
 
@@ -55,17 +52,7 @@ allow spdaemon cryptoapp_device:chr_file rw_file_perms;
 allow spdaemon ion_device:chr_file rw_file_perms;
 
 # Allow to load SPSS firmware images
-r_dir_file(spdaemon, firmware_file)
-
-# Allow to access IAR-DB at /mnt/vendor/persist/iar_db
-allow spdaemon persist_iar_db_file:dir rw_dir_perms;
-allow spdaemon persist_iar_db_file:file rw_file_perms;
-allow spdaemon mnt_vendor_file:dir rw_dir_perms;
-allow spdaemon mnt_vendor_file:file rw_file_perms;
-
-# Allow to access IAR-DB at /mnt/vendor/spunvm/iar_db
-allow spdaemon spunvm_file:dir rw_dir_perms;
-allow spdaemon spunvm_file:file rw_file_perms;
+r_dir_file(spdaemon, firmware_file);
 
 
 # Allow SPSS-PIL via Peripheral Manager
@@ -75,9 +62,4 @@ use_vendor_per_mgr(spdaemon)
 # Allow set/get prop to set/check if app is loaded
 set_prop(spdaemon, spcomlib_prop)
 
-# allow access to sysfs
 allow spdaemon sysfs_data:file r_file_perms;
-
-# allow access to spss_utils sysfs for IAR (device attributes)
-allow spdaemon sysfs_spss:file rw_file_perms;
-# End-Of-File

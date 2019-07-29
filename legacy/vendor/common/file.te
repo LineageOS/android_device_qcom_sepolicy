@@ -84,7 +84,6 @@ type vendor_persist_mmi_file, file_type, vendor_persist_type;
 type persist_misc_file, file_type , vendor_persist_type;
 type persist_bms_file, file_type , vendor_persist_type;
 type persist_secnvm_file, file_type , vendor_persist_type;
-type persist_iar_db_file, file_type , vendor_persist_type;
 type persist_hvdcp_file, file_type , vendor_persist_type;
 
 #file type for restricting proc read by audiod
@@ -217,11 +216,6 @@ type port_bridge_data_file, file_type, data_file_type;
 #bluetooth firmware file types
 type bt_firmware_file, file_type, contextmount_type, vendor_file_type;
 
-#spunvm file types
-# files under /vendor/ must be associated with the "vendor_file_type" attribute
-#type spunvm_file, file_type, vendor_file_type;
-type spunvm_file, file_type;
-
 #needed by vold
 type  proc_dirty_ratio, fs_type, proc_type;
 
@@ -292,9 +286,6 @@ type sysfs_kgsl, sysfs_type, fs_type;
 type sysfs_kgsl_proc, sysfs_type, fs_type;
 # kgsl snapshot file type for sysfs access
 type sysfs_kgsl_snapshot, sysfs_type, fs_type;
-
-#spss sysfs files
-type sysfs_spss, fs_type, sysfs_type;
 
 # secure touch files
 type sysfs_securetouch, fs_type, sysfs_type;

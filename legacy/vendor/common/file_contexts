@@ -47,7 +47,6 @@
 /dev/nq-nci                                     u:object_r:nfc_device:s0
 /dev/qseecom                                    u:object_r:tee_device:s0
 /dev/spcom                                      u:object_r:spcom_device:s0
-/dev/spss_utils                                 u:object_r:spss_utils_device:s0
 /dev/sp_kernel                                  u:object_r:skp_device:s0
 /dev/sp_ssr                                     u:object_r:sp_ssr_device:s0
 /dev/sec_nvm_.*                                 u:object_r:sec_nvm_device:s0
@@ -606,7 +605,6 @@
 /mnt/vendor/persist/FTM_AP(/.*)?                                    u:object_r:vendor_persist_mmi_file:s0
 /mnt/vendor/persist/hvdcp_opti(/.*)?                                u:object_r:persist_hvdcp_file:s0
 
-/mnt/vendor/persist/iar_db(/.*)?                                    u:object_r:persist_iar_db_file:s0
 ###################################
 # etc files
 #
@@ -617,11 +615,6 @@
 #
 /(vendor|system/vendor)/dsp(/.*)?                                   u:object_r:adsprpcd_file:s0
 /dsp(/.*)?                                                          u:object_r:adsprpcd_file:s0
-
-###################################
-# spunvm IAR files
-#
-/mnt/vendor/spunvm(/.*)?                                            u:object_r:spunvm_file:s0
 
 ###################################
 # cache files
