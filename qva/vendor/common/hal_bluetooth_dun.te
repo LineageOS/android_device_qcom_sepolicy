@@ -25,11 +25,14 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#allow bluetooth to access btconfigstore hal
-hal_client_domain(bluetooth, hal_btconfigstore);
+type hal_bluetooth_dun_qti, domain;
+hal_server_domain(hal_bluetooth_dun_qti, hal_bluetooth_dun)
 
-#allow bluetooth to access perf hal
-hal_client_domain(bluetooth, hal_perf);
+type hal_bluetooth_dun_qti_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_bluetooth_dun_qti)
 
-#allow bluetooth to access bluetooth_dun hal
-hal_client_domain(bluetooth, hal_bluetooth_dun);
+binder_call(hal_bluetooth_dun_client, hal_bluetooth_dun_server)
+binder_call(hal_bluetooth_dun_server, hal_bluetooth_dun_client)
+hal_attribute_hwservice(hal_bluetooth_dun, hal_bluetooth_dun_hwservice)
+
+portbridge_socket(hal_bluetooth_dun_qti)
