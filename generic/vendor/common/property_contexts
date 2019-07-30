@@ -123,6 +123,3 @@ vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0
 
 #vendor-adsprpc
 vendor.fastrpc.                  u:object_r:vendor_adsprpc_prop:s0
-
-#vendor-sensors
-init.svc.vendor.sensors          u:object_r:vendor_sensors_prop:s0
