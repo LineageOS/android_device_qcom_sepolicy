@@ -43,6 +43,8 @@ set_prop(vendor_init, vendor_sys_video_prop)
 
 set_prop(vendor_init, vendor_wigig_prop)
 
+set_prop(vendor_init, vendor_qspm_prop)
+
 userdebug_or_eng(`
   set_prop(vendor_init, vendor_audio_debug_prop)
 ')
