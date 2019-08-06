@@ -94,6 +94,8 @@ persist.vendor.soh.                          u:object_r:vendor_hvdcp_opti_prop:s
 # XLAT property
 persist.vendor.net.doxlat                    u:object_r:vendor_xlat_prop:s0
 
+ro.vendor.qspm.enable            u:object_r:vendor_qspm_prop:s0 exact bool
+
 #qvr properties
 vendor.qvr                       u:object_r:vendor_qvr_prop:s0
 
