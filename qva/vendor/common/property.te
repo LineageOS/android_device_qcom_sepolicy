@@ -82,6 +82,3 @@ type vendor_qvr_prop, property_type;
 
 #qmuxd property
 type ctl_qmuxd_prop, property_type;
-
-#qcv audio property
-type qcv_vendor_audio_prop, property_type;
