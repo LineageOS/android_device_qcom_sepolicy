@@ -61,3 +61,6 @@ binder_call(system_app, wfdservice)
 
 # allow access to read video SKU property for WFD sink
 get_prop(system_app, vendor_sys_video_prop)
+
+# allow system_app access to wigig Property
+get_prop(system_app, wigig_core_prop);
