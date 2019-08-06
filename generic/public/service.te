@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,7 +24,4 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-qti.ims.ext                                          u:object_r:radio_service:s0
-cneservice                                           u:object_r:cne_service:s0
-uce                                                  u:object_r:uce_service:s0
-com.qualcomm.qti.ustaservice.USTAServiceImpl         u:object_r:usta_app_service:s0
+type usta_app_service,        app_api_service, system_api_service, service_manager_type;
