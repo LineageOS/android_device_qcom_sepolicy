@@ -22,7 +22,6 @@ allow platform_app gba_auth_service:service_manager find;
 # Allow hbtp hal Service to be found
 hal_client_domain(platform_app, hal_hbtp)
 
-#get_prop(platform_app, vendor_bluetooth_prop)
 get_prop(platform_app, wigig_prop)
 
 #for perf-hal call

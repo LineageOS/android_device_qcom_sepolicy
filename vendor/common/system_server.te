@@ -24,11 +24,6 @@ allow system_server {
 
 allow system_server qtitetherservice_service:service_manager find;
 
-#For ANT tty communication and to set wc_transport prop
-allow system_server {
-    vendor_bluetooth_prop
-}:property_service set;
-
 # required for ANT App to connectto wcnss_filter sockets
 allow system_server bluetooth:unix_stream_socket connectto;
 # access to iop
