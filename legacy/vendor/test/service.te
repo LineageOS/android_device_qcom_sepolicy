@@ -27,4 +27,3 @@
 
 type fidotest_service,        service_manager_type;
 type qseeproxysample_service, service_manager_type;
-
