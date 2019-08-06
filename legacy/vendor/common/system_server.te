@@ -81,7 +81,6 @@ type_transition system_server location_data_file:sock_file location_socket "alar
 #For wifistatemachine
 allow system_server kernel:key search;
 allow system_server wlan_device:chr_file rw_file_perms;
-set_prop(system_server, vendor_softap_prop)
 get_prop(system_server, vendor_softap_prop)
 
 #For ssr

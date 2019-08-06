@@ -59,7 +59,6 @@ allow system_app bluetooth:unix_stream_socket ioctl;
 hal_client_domain(system_app, hal_hbtp)
 
 #access to wifi_ftmd
-allow system_app vendor_wifi_ftmd_prop:property_service set;
 #unix_socket_send(system_app, wififtmd, wifi_ftmd)
 
 # allow system_app to interact with dtseagleservice
