@@ -47,16 +47,10 @@ allow system_server {
     # For wifistatemachine
     wbc_service
     # Allow system_server to add digital pen system service
-    usf_service
     #dpmservice
 }:service_manager add;
 
 allow system_server qtitetherservice_service:service_manager find;
-
-#For ANT tty communication and to set wc_transport prop
-allow system_server {
-    usf_prop
-}:property_service set;
 
 # required for ANT App to connectto wcnss_filter sockets
 allow system_server bluetooth:unix_stream_socket connectto;
@@ -95,10 +89,6 @@ allow system_server {
     #allow access to power control ANT chip
     bt_device
 }:chr_file rw_file_perms;
-
-# Allow system server access to usf resources
-allow system_server usf:process signal;
-#allow system_server usf:unix_stream_socket connectto;
 
 hal_client_domain(system_server, hal_dataconnection_qti)
 
