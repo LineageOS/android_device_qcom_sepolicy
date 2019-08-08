@@ -29,7 +29,6 @@ r_dir_file(system_app, bluetooth_data_file);
 
 allow system_app {
     fm_prop
-    usf_prop
 }:property_service set;
 
 allow system_app {

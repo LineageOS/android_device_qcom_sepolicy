@@ -33,7 +33,6 @@ binder_use(qti_logkit_app)
 # allow set prop to start lkcore
 set_prop(qti_logkit_app, ctl_LKCore_prop)
 set_prop(qti_logkit_app, fm_prop)
-set_prop(qti_logkit_app, usf_prop)
 allow qti_logkit_app app_api_service:service_manager find;
 allow qti_logkit_app surfaceflinger_service:service_manager find;
 
