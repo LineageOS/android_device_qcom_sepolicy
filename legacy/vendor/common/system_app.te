@@ -25,7 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-typeattribute system_app system_writes_vendor_properties_violators;
 allow system_app fm_radio_device:chr_file r_file_perms;
 r_dir_file(system_app, bluetooth_data_file);
 
