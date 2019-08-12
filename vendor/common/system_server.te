@@ -1,4 +1,3 @@
-typeattribute system_server system_writes_vendor_properties_violators;
 allow system_server self:capability sys_module;
 
 # allow system_server to communicate with cnd process over cnd_socket
