@@ -48,3 +48,6 @@ vendor.debug.wfd.              u:object_r:wfd_debug_prop:s0
 
 persist.vendor.debug.wfdcdbg   u:object_r:wfd_debug_prop:s0
 persist.vendor.debug.wfdcdbgv  u:object_r:wfd_debug_prop:s0
+
+persist.vendor.wigig.                u:object_r:wigig_core_prop:s0
+persist.vendor.fst.                  u:object_r:fst_prop:s0

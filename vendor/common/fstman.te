@@ -53,9 +53,6 @@ allow fstman sysfs_bond0:file rw_file_perms;
 # need access to wigig sysfs in order to control fst_link_loss
 allow fstman sysfs_wigig:file rw_file_perms;
 
-#allow fstman to read FST properties
-get_prop(fstman, fst_prop);
-
 # create/read fstman configuration file (/data/vendor/wifi/fstman.ini)
 r_dir_file(fstman, wifi_vendor_data_file)
 allow fstman wifi_vendor_data_file:dir rw_dir_perms;

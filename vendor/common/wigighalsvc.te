@@ -44,10 +44,6 @@ add_hwservice(hal_wigig, hal_wigig_hwservice)
 # allow start/stop services via ctl.start and ctl.stop
 set_prop(hal_wigig, ctl_vendor_wigigsvc_prop)
 
-# access wigig properties
-# need to write vendor.wigig.driver.status
-set_prop(hal_wigig, wigig_prop);
-
 # access wifi vendor data files
 r_dir_file(hal_wigig, wifi_vendor_data_file)
 allow hal_wigig wifi_vendor_data_file:dir rw_dir_perms;
