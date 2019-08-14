@@ -28,6 +28,8 @@
 #allow priv_app clients to access configuration settings
 userdebug_or_eng(`
 allow priv_app sysfs_kgsl:dir search;
+dontaudit priv_app sysfs_kgsl:dir read;
+dontaudit priv_app sysfs_kgsl:file read;
 r_dir_file(priv_app, sysfs_kgsl_snapshot);
 r_dir_file(priv_app, vendor_gles_data_file);
 allow priv_app vendor_gles_data_file:dir rw_dir_perms;
