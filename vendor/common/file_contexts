@@ -13,7 +13,6 @@
 /dev/msm_aac_in                                 u:object_r:msm_aac_in_device:s0
 /dev/wcd_dsp0_control                           u:object_r:audio_device:s0
 /dev/wcd-dsp-glink                              u:object_r:audio_device:s0
-/dev/usf1                                       u:object_r:usf_device:s0
 /dev/msm_dsps                                   u:object_r:sensors_device:s0
 /dev/msm_thermal_query                          u:object_r:thermal_device:s0
 /dev/nfc-nci                                    u:object_r:nfc_device:s0
@@ -276,15 +275,6 @@
 /(vendor|system/vendor)/bin/btnvtool            u:object_r:btnvtool_exec:s0
 /(vendor|system/vendor)/bin/btsnoop                             u:object_r:btsnoop_exec:s0
 /(vendor|system/vendor)/bin/wifidisplayhalservice               u:object_r:wifidisplayhalservice_qti_exec:s0
-/(vendor|system/vendor)/bin/usf_epos            u:object_r:usf_exec:s0
-/(vendor|system/vendor)/bin/usf_gesture         u:object_r:usf_exec:s0
-/(vendor|system/vendor)/bin/usf_hovering        u:object_r:usf_exec:s0
-/(vendor|system/vendor)/bin/usf_p2p             u:object_r:usf_exec:s0
-/(vendor|system/vendor)/bin/usf_proximity       u:object_r:usf_exec:s0
-/(vendor|system/vendor)/bin/usf_sync_gesture    u:object_r:usf_exec:s0
-/(vendor|system/vendor)/bin/usf_sw_calib        u:object_r:usf_exec:s0
-/(vendor|system/vendor)/bin/usf_pairing         u:object_r:usf_exec:s0
-/(vendor|system/vendor)/bin/usf_tester          u:object_r:usf_exec:s0
 /(vendor|system/vendor)/bin/LKCore              u:object_r:qti_logkit_exec:s0
 /(vendor|system/vendor)/bin/tbaseLoader         u:object_r:tbaseLoader_exec:s0
 /(vendor|system/vendor)/bin/mcStarter           u:object_r:mcStarter_exec:s0
@@ -561,7 +551,6 @@
 /mnt/vendor/persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
 /mnt/vendor/persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
 /mnt/vendor/persist/qti_fp(/.*)?                                               u:object_r:persist_qti_fp_file:s0
-/mnt/vendor/persist/usf(/.*)?                                                  u:object_r:persist_usf_file:s0
 /mnt/vendor/persist/hlos_rfs(/.*)?                                             u:object_r:persist_rfs_shared_hlos_file:s0
 /mnt/vendor/persist/display(/.*)?                                              u:object_r:persist_display_file:s0
 /mnt/vendor/persist/rfs.*                                                      u:object_r:persist_rfs_file:s0
@@ -585,7 +574,6 @@
 /persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
 /persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
 /persist/qti_fp(/.*)?                                               u:object_r:persist_qti_fp_file:s0
-/persist/usf(/.*)?                                                  u:object_r:persist_usf_file:s0
 /persist/hlos_rfs(/.*)?                                             u:object_r:persist_rfs_shared_hlos_file:s0
 /persist/display(/.*)?                                              u:object_r:persist_display_file:s0
 /persist/rfs.*                                                      u:object_r:persist_rfs_file:s0

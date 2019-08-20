@@ -1,6 +1,5 @@
 type vendor_mmi, domain;
 type vendor_mmi_exec, exec_type, vendor_file_type, file_type;
-typeattribute vendor_mmi  system_writes_vendor_properties_violators;
 #started by init
 init_daemon_domain(vendor_mmi)
 
@@ -42,9 +41,6 @@ unix_socket_connect(vendor_mmi, netmgrd, netmgrd);
 net_domain(vendor_mmi);
 allow vendor_mmi vendor_mmi_exec:file execute_no_trans;
 allow vendor_mmi proc:file r_file_perms;
-
-#allow mmi access boot mode switch
-set_prop(vendor_mmi, vendor_boot_mode_prop)
 
 #diag
 userdebug_or_eng(`

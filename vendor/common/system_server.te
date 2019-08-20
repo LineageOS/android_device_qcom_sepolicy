@@ -19,18 +19,10 @@ allow system_server sysfs_sensors:file rw_file_perms;
 allow system_server {
     # For wifistatemachine
     wbc_service
-    # Allow system_server to add digital pen system service
-    usf_service
     #dpmservice
 }:service_manager add;
 
 allow system_server qtitetherservice_service:service_manager find;
-
-#For ANT tty communication and to set wc_transport prop
-allow system_server {
-    vendor_bluetooth_prop
-    usf_prop
-}:property_service set;
 
 # required for ANT App to connectto wcnss_filter sockets
 allow system_server bluetooth:unix_stream_socket connectto;
@@ -54,7 +46,6 @@ type_transition system_server location_data_file:sock_file location_socket "alar
 #For wifistatemachine
 allow system_server kernel:key search;
 allow system_server wlan_device:chr_file rw_file_perms;
-set_prop(system_server, vendor_softap_prop)
 get_prop(system_server, vendor_softap_prop)
 
 #For ssr
@@ -74,9 +65,6 @@ allow system_server {
     bt_device
 }:chr_file rw_file_perms;
 
-# Allow system server access to usf resources
-allow system_server usf:process signal;
-#allow system_server usf:unix_stream_socket connectto;
 
 hal_client_domain(system_server, hal_dataconnection_qti)
 

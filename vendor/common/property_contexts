@@ -35,8 +35,6 @@ vendor.service.qti.ims.enabled    u:object_r:qcom_ims_prop:s0
 persist.vendor.ims.        u:object_r:qcom_ims_prop:s0
 persist.vendor.qti.telephony.vt_cam_interface u:object_r:qcom_ims_prop:s0
 vendor.hw.fm.                     u:object_r:fm_prop:s0
-sys.usf.                   u:object_r:usf_prop:s0
-ro.qc.sdk.us.                 u:object_r:usf_prop:s0
 ctl.vendor.qmuxd                  u:object_r:ctl_vendor_qmuxd_prop:s0
 ctl.vendor.netmgrd                u:object_r:ctl_vendor_netmgrd_prop:s0
 ctl.vendor.port-bridge            u:object_r:ctl_vendor_port-bridge_prop:s0
@@ -82,6 +80,8 @@ vendor.iop.enable_prefetch_ofr   u:object_r:vendor_iop_prop:s0
 vendor.perf.gestureflingboost.enable  u:object_r:vendor_scroll_prop:s0
 vendor.qti.izat.           u:object_r:location_prop:s0
 vendor.usb.                u:object_r:vendor_usb_prop:s0
+vendor.wlan.driver.version       u:object_r:vendor_wifi_version:s0
+vendor.wlan.firmware.version     u:object_r:vendor_wifi_version:s0
 persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
 ro.vendor.dbg.coresight.cfg_file     u:object_r:vendor_coresight_prop:s0
 vendor.audio.              u:object_r:vendor_audio_prop:s0
