@@ -106,3 +106,6 @@ set_prop(vendor_init, exported_system_prop)
 
 #Acess vendor bluetooth properties
 set_prop(vendor_init, vendor_bluetooth_prop)
+userdebug_or_eng(`
+  allow vendor_init proc_security:file rw_file_perms;
+')

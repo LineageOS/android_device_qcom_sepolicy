@@ -71,7 +71,6 @@ set_prop(qti_init_shell, scr_enabled_prop)
 set_prop(qti_init_shell, vendor_opengles_prop)
 set_prop(qti_init_shell, vendor_mdm_helper_prop)
 set_prop(qti_init_shell, fm_prop)
-set_prop(qti_init_shell, usf_prop)
 set_prop(qti_init_shell, vendor_alarm_boot_prop)
 set_prop(qti_init_shell, vendor_gralloc_prop)
 set_prop(qti_init_shell, vendor_audio_prop)
@@ -126,10 +125,6 @@ r_dir_file(qti_init_shell, sensors_persist_file)
 r_dir_file(qti_init_shell, persist_bluetooth_file)
 allow qti_init_shell sensors_persist_file:file setattr;
 allow qti_init_shell sensors_persist_file:dir setattr;
-
-# To start of selected USF based calculators
-r_dir_file(qti_init_shell, persist_usf_file)
-allow qti_init_shell persist_usf_file:dir w_dir_perms;
 
 # To check if /system/bin/msm_irqbalance is persent in the device
 allow qti_init_shell msm_irqbalanced_exec:file getattr;
