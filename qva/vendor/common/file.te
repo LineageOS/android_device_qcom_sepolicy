@@ -113,3 +113,5 @@ type vendor_qspmhal_data_file, file_type, data_file_type;
 
 #Memory offlining file types
 type sysfs_memory_offline, sysfs_type, fs_type;
+
+type sysfs_qfprom, fs_type, sysfs_type;
