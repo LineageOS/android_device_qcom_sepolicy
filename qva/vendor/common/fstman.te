@@ -31,6 +31,16 @@ type fstman_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(fstman)
 net_domain(fstman)
 
+#use bypass because net_admin capability is needed
+hal_server_domain_bypass(fstman, hal_fstman)
+
+#allows calls between client and server and vice-versa
+binder_call(hal_fstman_client, hal_fstman_server)
+binder_call(hal_fstman_server, hal_fstman_client)
+
+#register hal service, allow hal clients to find the service
+hal_attribute_hwservice(hal_fstman, hal_fstman_hwservice)
+
 # fstman requires special network privileges.
 # access traffic control (TC) for marking packets to identify from
 # which slave interface they arrive, drop multicast packets and
