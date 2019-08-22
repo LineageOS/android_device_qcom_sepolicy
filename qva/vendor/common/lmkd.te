@@ -28,4 +28,5 @@
 allow lmkd hal_perf_hwservice:hwservice_manager find;
 allow lmkd hal_perf_default:binder call;
 allow lmkd hwservicemanager:binder call;
+allow lmkd kmsg_device:chr_file rw_file_perms;
 get_prop(lmkd, hwservicemanager_prop);
