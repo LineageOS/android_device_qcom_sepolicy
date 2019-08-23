@@ -107,3 +107,6 @@ userdebug_or_eng(`
 
 #Allow source to access video SKU and UBWC property(for encoder config)
 get_prop(wifidisplayhalservice_qti, vendor_video_prop)
+
+#Allow access to uhid driver for HID event injection
+allow wifidisplayhalservice_qti uhid_device:chr_file rw_file_perms;

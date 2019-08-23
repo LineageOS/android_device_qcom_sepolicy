@@ -41,6 +41,7 @@ type vendor_boot_mode_prop, property_type;
 type vendor_mpctl_prop, property_type;
 type freq_prop, property_type;
 
+type vendor_qspm_prop, property_type;
 #iop
 type vendor_iop_prop, property_type;
 
@@ -82,6 +83,3 @@ type vendor_qvr_prop, property_type;
 
 #qmuxd property
 type ctl_qmuxd_prop, property_type;
-
-#qcv audio property
-type qcv_vendor_audio_prop, property_type;

@@ -49,6 +49,18 @@ unix_socket_connect($1, netmgrd, netmgrd)
 allow $1 netmgrd_socket:sock_file { read getattr write };
 ')
 
+#####################################
+# portbridge_socket(clientdomain)
+# Allow client domain to connecto and send
+# via a local socket to the port-bridge domain.
+# Also allow the client domain to remove
+# its own socket.
+define(`portbridge_socket', `
+allow $1 port-bridge_socket:dir r_dir_perms;
+unix_socket_connect($1, port-bridge, port-bridge)
+allow $1 port-bridge_socket:sock_file { read write };
+')
+
 ########################################
 # peripheral_manager
 # Allow clients to interact with peripheral

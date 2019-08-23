@@ -25,26 +25,14 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Policy for usf daemons
-type usf, domain;
-type usf_exec, exec_type, vendor_file_type, file_type;
+type hal_bluetooth_dun_qti, domain;
+hal_server_domain(hal_bluetooth_dun_qti, hal_bluetooth_dun)
 
-# Started by init
-init_daemon_domain(usf)
-net_domain(usf)
+type hal_bluetooth_dun_qti_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_bluetooth_dun_qti)
 
-# Ultrasound device
-allow usf usf_device:chr_file rw_file_perms;
+binder_call(hal_bluetooth_dun_client, hal_bluetooth_dun_server)
+binder_call(hal_bluetooth_dun_server, hal_bluetooth_dun_client)
+hal_attribute_hwservice(hal_bluetooth_dun, hal_bluetooth_dun_hwservice)
 
-# Audio
-#allow usf mediaserver:unix_stream_socket connectto;
-allow usf audio_device:chr_file rw_file_perms;
-allow usf proc_audiod:file r_file_perms;
-allow usf audio_device:dir r_dir_perms;
-
-# Data files and persist storage
-r_dir_file(usf, mnt_vendor_file)
-r_dir_file(usf, persist_usf_file)
-
-# Properties
-set_prop(usf, usf_prop)
+portbridge_socket(hal_bluetooth_dun_qti)

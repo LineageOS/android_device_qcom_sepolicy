@@ -25,11 +25,16 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#allow bluetooth to access btconfigstore hal
-hal_client_domain(bluetooth, hal_btconfigstore);
+# Allow update_engine and update_engine_sideload (recovery) read/write on the
+# device-specific partitions it should update.
+allow update_engine_common {
+	custom_ab_block_device
+	xbl_block_device
+	uefi_block_device
+	ssd_block_device
+	modem_block_device
+	recovery_block_device
+}:blk_file rw_file_perms;
 
-#allow bluetooth to access perf hal
-hal_client_domain(bluetooth, hal_perf);
+allow update_engine_common tmpfs:lnk_file r_file_perms;
 
-#allow bluetooth to access bluetooth_dun hal
-hal_client_domain(bluetooth, hal_bluetooth_dun);

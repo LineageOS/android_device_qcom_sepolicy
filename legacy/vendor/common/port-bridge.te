@@ -53,3 +53,6 @@ allow port-bridge port_bridge_data_file:dir w_dir_perms;
 
 #access ipa sysfs node
 allow port-bridge sysfs_data:file r_file_perms;
+
+allow port-bridge port-bridge_socket:dir w_dir_perms;
+allow port-bridge port-bridge_socket:sock_file create_file_perms;

@@ -84,6 +84,7 @@
 /dev/socket/thermal-recv-passive-client         u:object_r:thermal_socket:s0
 /dev/socket/thermal-send-rule                   u:object_r:thermal_socket:s0
 /dev/socket/netmgr(/.*)?                        u:object_r:netmgrd_socket:s0
+/dev/socket/port-bridge(/.*)?                   u:object_r:port-bridge_socket:s0
 /dev/socket/qti_dpm_uds_file                    u:object_r:dataqti_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:location_socket:s0
 /dev/socket/wifihal(/.*)?                       u:object_r:wifihal_socket:s0
@@ -193,6 +194,7 @@
 /vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapper@1\.1\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapper@2\.0\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapperextensions@1\.0\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapperextensions@1\.1\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/android\.hardware\.graphics\.mapper@3\.0-impl-qti-display\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/vendor\.qti\.hardware\.display\.mapper@3\.0\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libcamxexternalformatutils\.so                    u:object_r:same_process_hal_file:s0
@@ -204,10 +206,11 @@
 /vendor/lib(64)?/libadreno_utils\.so       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libgsl\.so                u:object_r:same_process_hal_file:s0
 
-/vendor/lib(64)?/hw/vulkan\.adreno\.so     u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libEGL_adreno\.so         u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libGLESv1_CM_adreno\.so   u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libGLESv2_adreno\.so      u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/vulkan\.adreno\.so         u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libEGL_adreno\.so             u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libGLESv1_CM_adreno\.so       u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libGLESv2_adreno\.so          u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libadreno_app_profiles\.so    u:object_r:same_process_hal_file:s0
 
 /vendor/lib(64)?/libdrmutils\.so           u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libdrm\.so                u:object_r:same_process_hal_file:s0
@@ -308,6 +311,7 @@
 /mnt/vendor/persist/sensors(/.*)?    u:object_r:persist_sensors_file:s0
 /mnt/vendor/persist/time(/.*)?       u:object_r:persist_time_file:s0
 /mnt/vendor/persist/audio(/.*)?      u:object_r:persist_audio_file:s0
+/mnt/vendor/persist/feature_enabler_client(/.*)? u:object_r:persist_feature_enabler_file:s0
 
 # graphics device
 /dev/mdss_rotator                               u:object_r:graphics_device:s0

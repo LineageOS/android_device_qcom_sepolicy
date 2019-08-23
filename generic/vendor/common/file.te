@@ -83,6 +83,7 @@ type proc_audiod, fs_type, proc_type;
 
 type qmuxd_socket, file_type;
 type netmgrd_socket, file_type;
+type port-bridge_socket, file_type;
 type thermal_socket, file_type;
 
 #Define the qti socket type
@@ -121,6 +122,7 @@ type persist_time_file, file_type, vendor_persist_type;
 type persist_audio_file, file_type, vendor_persist_type;
 type persist_bluetooth_file, file_type, vendor_persist_type;
 type persist_alarm_file, file_type, vendor_persist_type;
+type persist_feature_enabler_file, file_type, vendor_persist_type;
 
 type netmgr_data_file, file_type, data_file_type;
 type netmgr_recovery_data_file, file_type, data_file_type;

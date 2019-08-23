@@ -46,8 +46,8 @@ allow ssg_app radio_service:service_manager find;
 allow ssg_app surfaceflinger_service:service_manager find;
 allow ssg_app app_api_service:service_manager find;
 
-# access to qipcrtr socket
-allow ssg_app self:qipcrtr_socket rw_socket_perms_no_ioctl;
+# access to qipcrtr socket (allow creating needed by qmi_cci_xprt_qrtr_supported)
+allow ssg_app self:qipcrtr_socket create_socket_perms_no_ioctl;
 
 # To get uuid and device info
 allow ssg_app proc_cpuinfo:file r_file_perms;
@@ -56,3 +56,6 @@ allow ssg_app proc_meminfo:file r_file_perms;
 unix_socket_connect(ssg_app,dpmtcm, dpmd);
 
 r_dir_file(ssg_app, proc)
+
+# Fix the permission error for lib resource link.
+allow ssg_app app_data_file:lnk_file read;
