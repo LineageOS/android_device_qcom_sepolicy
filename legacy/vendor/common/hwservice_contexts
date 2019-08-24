@@ -35,6 +35,7 @@ vendor.qti.hardware.radio.lpa::IUimLpa                       u:object_r:hal_tele
 vendor.qti.hardware.radio.uim_remote_client::IUimRemoteServiceClient    u:object_r:hal_telephony_hwservice:s0
 vendor.qti.hardware.radio.uim_remote_server::IUimRemoteServiceServer    u:object_r:hal_telephony_hwservice:s0
 vendor.qti.hardware.radio.uim::IUim                          u:object_r:hal_telephony_hwservice:s0
+vendor.qti.hardware.radio.internal.deviceinfo::IDeviceInfo   u:object_r:hal_telephony_hwservice:s0
 vendor.qti.hardware.radio.atcmdfwd::IAtCmdFwd                u:object_r:hal_atfwd_hwservice:s0
 vendor.display.color::IDisplayColor                          u:object_r:hal_display_color_hwservice:s0
 vendor.display.config::IDisplayConfig                        u:object_r:hal_display_config_hwservice:s0
