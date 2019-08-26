@@ -65,6 +65,7 @@ genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys2/name            u:
 genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys4/name            u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys5/name            u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys6/name           u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys4/name           u:object_r:sysfs_ssr:s0
 
 # We see this combo set also so adding this also
 genfscon sysfs  /devices/platform/soc/4080000.qcom,mss/subsys0/name           u:object_r:sysfs_ssr:s0
