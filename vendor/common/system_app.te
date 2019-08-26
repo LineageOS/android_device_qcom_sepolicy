@@ -183,3 +183,6 @@ hal_client_domain(system_app, hal_fm);
 
 #allow system app to access btconfigstore hal
 hal_client_domain(system_app, hal_btconfigstore)
+
+#allow system app to access capabilityconfigstore hal
+hal_client_domain(system_app, hal_capabilityconfigstore_qti);
