@@ -108,3 +108,5 @@ hal_client_domain(hal_perf_default, hal_qspmhal);
 
 #Allow Display Config access
 hal_client_domain(hal_perf_default, hal_graphics_composer);
+# Allow connecting to thermal_socket
+unix_socket_connect(hal_perf_default, thermal, thermal-engine)
