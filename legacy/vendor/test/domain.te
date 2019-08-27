@@ -34,6 +34,8 @@ allow {domain - coredomain - hal_configstore_default} vendor_gles_data_file:dir 
 allow {domain - coredomain - hal_configstore_default} vendor_gles_data_file:file create_file_perms;
 ')
 
+allow ephemeral_app vendor_gles_data_file:dir search;
+
 userdebug_or_eng(`
 allow {system_server
  system_app
