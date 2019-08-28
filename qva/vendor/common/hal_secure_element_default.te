@@ -30,3 +30,6 @@ hal_client_domain(hal_secure_element_default, hal_esepowermanager)
 
 allow hal_secure_element_default secure_element_vendor_data_file:dir rw_dir_perms;
 allow hal_secure_element_default secure_element_vendor_data_file:file create_file_perms;
+
+#Allow access to nfc device
+allow hal_secure_element_default nfc_device:chr_file rw_file_perms;
