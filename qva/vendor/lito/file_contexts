@@ -93,6 +93,10 @@
 # Block devices for the drive that holds the xbl_a and xbl_b partitions.
 /dev/block/platform/soc/1d84000.ufshc/sd[bc]                 u:object_r:xbl_block_device:s0
 
+# limits Partitions
+/dev/block/platform/soc/1d84000.ufshc/by-name/limits            u:object_r:limits_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/limits-cdsp       u:object_r:limits_block_device:s0
+
 ##################################
 # non-hlos mount points
 /firmware                  u:object_r:firmware_file:s0
@@ -153,6 +157,10 @@
 
 #rawdump partition
 /dev/block/platform/soc/7c4000.sdhci/by-name/rawdump                            u:object_r:rawdump_block_device:s0
+
+# limits Partitions
+/dev/block/platform/soc/7c4000.sdhci/by-name/limits                             u:object_r:limits_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/limits-cdsp                        u:object_r:limits_block_device:s0
 
 # FBE
 /(vendor|system/vendor)/bin/init.qti.qseecomd.sh                                u:object_r:init-qti-fbe-sh_exec:s0

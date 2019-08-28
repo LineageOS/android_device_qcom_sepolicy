@@ -473,3 +473,6 @@
 /(vendor|system/vendor)/bin/init\.qcom\.wifi\.sh        u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.ims\.sh          u:object_r:init-qti-ims-sh_exec:s0
 /(vendor|system/vendor)/bin/qca6234-service.sh          u:object_r:qti_init_shell_exec:s0
+
+#Limits sysfs node
+/sys/module/msm_isense_cdsp/data                        u:object_r:sysfs_thermal:s0
