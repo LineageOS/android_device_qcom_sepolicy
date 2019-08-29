@@ -26,6 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type hsic_device, dev_type;
+type spss_utils_device, dev_type;
 type skp_device, dev_type;
 type sp_keymaster_device, dev_type;
 type sp_ssr_device, dev_type;
