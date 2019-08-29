@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,30 +24,5 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# For setting up various WIGIG files
-allow ueventd sysfs_bond0:file rw_file_perms;
 
-allow ueventd sysfs_usb_c:file w_file_perms;
-
-allow ueventd {
-    { sysfs_type - usermodehelper }
-      sysfs_battery_supply
-      sysfs_data
-      sysfs_graphics
-      sysfs_kgsl
-      sysfs_leds
-      sysfs_net
-      sysfs_scsi_host
-      sysfs_usbpd_device
-      sysfs_usb_supply
-}:file w_file_perms;
-
-allow ueventd firmware_file:dir search;
-allow ueventd firmware_file:file r_file_perms;
-allow ueventd tmpfs:blk_file getattr;
-allow ueventd persist_file:dir search;
-allow ueventd persist_file:file r_file_perms;
-
-# For wifi to access  mnt_vendor_file
-r_dir_file(ueventd, mnt_vendor_file)
-allow ueventd metadata_file:dir search;
+allow vendor_modprobe debugfs_ipc:dir search;
