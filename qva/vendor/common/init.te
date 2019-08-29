@@ -29,4 +29,4 @@ allow init sysfs_graphics:file setattr;
 
 # allow init to mount spunvm partition
 allow init spunvm_file:dir mounton;
-allow init spunvm_file:filesystem { relabelto mount };
+allow init spunvm_file:filesystem { relabelto relabelfrom mount };
