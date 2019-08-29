@@ -109,6 +109,8 @@ attribute hal_qspmhal;
 attribute hal_qspmhal_client;
 attribute hal_qspmhal_server;
 
+attribute spunvm_file_type;
+
 attribute hal_bluetooth_dun;
 attribute hal_bluetooth_dun_client;
 attribute hal_bluetooth_dun_server;

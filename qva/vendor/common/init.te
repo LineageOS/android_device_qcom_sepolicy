@@ -26,3 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow init sysfs_graphics:file setattr;
+
+# allow init to mount spunvm partition
+allow init spunvm_file:dir mounton;
+allow init spunvm_file:filesystem { relabelto mount };
