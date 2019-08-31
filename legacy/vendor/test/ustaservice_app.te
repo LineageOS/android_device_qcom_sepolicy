@@ -1,5 +1,5 @@
 # Copyright (c) 2019, The Linux Foundation. All rights reserved.
-
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
@@ -24,14 +24,22 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+type ustaservice_app, domain;
+app_domain(ustaservice_app)
 
-#allow priv_app clients to access configuration settings
+allow ustaservice_app usta_app_service:service_manager add;
+allow ustaservice_app usta_app_service:service_manager find;
+allow ustaservice_app activity_service:service_manager find;
+
 userdebug_or_eng(`
-allow priv_app sysfs_kgsl:dir search;
-dontaudit priv_app sysfs_kgsl:dir read;
-dontaudit priv_app sysfs_kgsl:file read;
-r_dir_file(priv_app, sysfs_kgsl_snapshot);
-r_dir_file(priv_app, vendor_gles_data_file);
-allow priv_app vendor_gles_data_file:dir rw_dir_perms;
-allow priv_app vendor_gles_data_file:file rw_file_perms;
+  allowxperm ustaservice_app self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+  allow ustaservice_app self:{ socket qipcrtr_socket } create_socket_perms;
+  allow ustaservice_app xdsp_device:chr_file r_file_perms;
+  allow ustaservice_app ssr_device:chr_file r_file_perms;
+')
+
+hwbinder_use(ustaservice_app)
+
+userdebug_or_eng(`
+   diag_use(ustaservice_app)
 ')
