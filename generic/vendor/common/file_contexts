@@ -56,6 +56,7 @@
 /dev/wcd-spi-ac-client                          u:object_r:audio_device:s0
 /dev/msm_.*                                     u:object_r:audio_device:s0
 /dev/avtimer                                    u:object_r:avtimer_device:s0
+/dev/aud_pasthru_adsp                           u:object_r:audio_device:s0
 /dev/subsys_.*                                  u:object_r:ssr_device:s0
 /dev/ramdump_.*                                 u:object_r:ramdump_device:s0
 /dev/hbtp_input                                 u:object_r:hbtp_device:s0
