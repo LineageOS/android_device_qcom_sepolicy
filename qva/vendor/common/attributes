@@ -53,6 +53,10 @@ attribute hal_qteeconnector;
 attribute hal_qteeconnector_client;
 attribute hal_qteeconnector_server;
 
+attribute hal_secureprocessor;
+attribute hal_secureprocessor_client;
+attribute hal_secureprocessor_server;
+
 attribute hal_seccam;
 attribute hal_seccam_client;
 attribute hal_seccam_server;

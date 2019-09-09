@@ -113,6 +113,7 @@
 /(vendor|system/vendor)/bin/sensingdaemon                                          u:object_r:sensingdaemon_exec:s0
 /vendor/bin/hw/android\.hardware\.usb\@1\.[0-2]-service-qti                        u:object_r:hal_usb_qti_exec:s0
 /vendor/bin/vendor\.qti\.qspmhal@1\.0-service                                      u:object_r:hal_qspmhal_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.secureprocessor@1\.0-seccam-tee-qti      u:object_r:hal_secureprocessor_qti_exec:s0
 
 
 #### Context for location features
