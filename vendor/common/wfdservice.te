@@ -19,9 +19,6 @@ hal_client_domain(wfdservice, wifidisplayhalservice);
 allow wfdservice wifidisplayhalservice_hwservice:hwservice_manager find;
 
 #Allow for property access
-userdebug_or_eng(`
-get_prop(wfdservice, wfd_debug_prop)
-')
 get_prop(wfdservice, vendor_gralloc_prop)
 get_prop(wfdservice, mm_video_prop)
 

@@ -23,7 +23,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # fm_radio app needes  open read write on fm_radio_device
-typeattribute system_app system_writes_vendor_properties_violators;
 allow system_app fm_radio_device:chr_file r_file_perms;
 r_dir_file(system_app, bluetooth_data_file);
 
@@ -169,15 +168,6 @@ get_prop(system_app, fm_prop)
 
 #allow system_app access factory
 hal_client_domain(system_app, vendor_hal_factory_qti);
-
-#Wi-Fi Display
-set_prop(system_app, wfd_service_prop);
-userdebug_or_eng(`
-get_prop(system_app, wfd_debug_prop)
-')
-
-# allow system app to set mirrorlink prop
-set_prop(system_app, vendor_mirrorlink_prop);
 
 #secureUI
 hal_client_domain(system_app, hal_qdutils_disp);

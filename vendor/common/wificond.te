@@ -28,6 +28,3 @@
 # allow wificond proc:file r_file_perms;
 # allow create/remove bridge interface and read mac addr ioctl privilege
 allowxperm wificond self:udp_socket ioctl { SIOCBRADDBR SIOCBRDELBR SIOCGIFHWADDR };
-
-#allow wificond to read FST properties
-get_prop(wificond, fst_prop);

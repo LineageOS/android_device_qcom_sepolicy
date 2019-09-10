@@ -102,12 +102,9 @@ ctl.start$fm               u:object_r:ctl_fm_prop:s0
 ctl.stop$fm                u:object_r:ctl_fm_prop:s0
 
 # WIGIG
-persist.vendor.wigig.       u:object_r:wigig_prop:s0
-vendor.wigig.               u:object_r:wigig_prop:s0
 ctl.vendor.wigig_supplicant u:object_r:ctl_vendor_wigigsvc_prop:s0
 ctl.vendor.wigig_hostapd    u:object_r:ctl_vendor_wigigsvc_prop:s0
 
-persist.vendor.fst.         u:object_r:fst_prop:s0
 #HWUI Property
 ro.vendor.hwui.texture_cache_size u:object_r:hwui_prop:s0
 # ActivityManager tuning properties
@@ -155,16 +152,6 @@ vendor.qti.qdma.        u:object_r:vendor_qdma_prop:s0
 
 #Needed by qsee need to rename this
 vendor.sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
-
-#WiFi Display
-vendor.wfdservice          u:object_r:wfd_service_prop:s0
-persist.vendor.debug.mux.  u:object_r:wfd_debug_prop:s0
-persist.vendor.debug.rtp.  u:object_r:wfd_debug_prop:s0
-persist.vendor.debug.wfd.  u:object_r:wfd_debug_prop:s0
-vendor.debug.wfd.          u:object_r:wfd_debug_prop:s0
-
-persist.vendor.debug.wfdcdbg  u:object_r:wfd_debug_prop:s0
-persist.vendor.debug.wfdcdbgv u:object_r:wfd_debug_prop:s0
 
 #MirrorLink
 vendor.mls.                u:object_r:vendor_mirrorlink_prop:s0

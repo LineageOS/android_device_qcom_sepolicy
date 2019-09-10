@@ -88,8 +88,6 @@ type vendor_alarm_boot_prop, property_type;
 type vendor_wifi_ftmd_prop, property_type;
 
 # WIGIG
-type wigig_prop, property_type;
-type fst_prop, property_type;
 type ctl_vendor_wigigsvc_prop, property_type;
 
 #HWUI property
@@ -129,10 +127,6 @@ type ctl_vendor_mmid_prop, property_type;
 
 #qdma property
 type vendor_qdma_prop, property_type;
-
-#WiFi Display
-type wfd_service_prop, property_type;
-type wfd_debug_prop, property_type;
 
 #MirrorLink
 type vendor_mirrorlink_prop, property_type;
