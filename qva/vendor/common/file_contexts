@@ -74,7 +74,6 @@
 /vendor/bin/hw/vendor\.nxp\.hardware\.nfc@1\.2-service                             u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service                           u:object_r:hal_alarm_qti_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.iop@2\.0-service                             u:object_r:hal_iop_default_exec:s0
-/vendor/bin/hw/vendor\.qti\.hardware\.mlshal@1\.0-service                          u:object_r:hal_mirrorlink_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.qseecom@1\.0-service                         u:object_r:hal_qseecom_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service                   u:object_r:hal_qteeconnector_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.scve\.objecttracker@1\.0-service             u:object_r:vendor_scve_exec:s0
@@ -83,7 +82,6 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.soter@1\.0-service           u:object_r:hal_soter_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator@1\.[0-2]-service                    u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.power\.pasrmanager\@1\.0-service       u:object_r:hal_pasrmanager_qti_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.mlshal@1\.0-service       u:object_r:hal_mirrorlink_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.0-service            u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.0-service            u:object_r:hal_perf_default_exec:s0
 /(vendor|system/vendor)/bin/mm-audio-ftm                                           u:object_r:vendor_audioftm_exec:s0
