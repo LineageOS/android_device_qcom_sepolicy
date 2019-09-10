@@ -26,8 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #dpmQmiMgr as domain
-type hal_dpmQmiMgr, domain;
-
 type hal_dpmQmiMgr_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(hal_dpmQmiMgr)

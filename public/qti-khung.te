@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type qti-khung, domain;
-type qti-khung_exec, exec_type, file_type;
+type qti-khung_exec, system_file_type, exec_type, file_type;

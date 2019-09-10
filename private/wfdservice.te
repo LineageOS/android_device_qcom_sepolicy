@@ -73,7 +73,7 @@ allow wfdservice video_device:chr_file rw_file_perms;
 allow wfdservice video_device:dir r_dir_perms;
 
 #Allow access to tee device for HDCP sessions
-allow wfdservice tee_device:chr_file rw_file_perms;
+# allow wfdservice tee_device:chr_file rw_file_perms;
 
 #Allow access to uhid driver for HID event injection
 allow wfdservice uhid_device:chr_file rw_file_perms;
@@ -107,7 +107,7 @@ allow wfdservice {audioserver_service permission_service surfaceflinger_service 
 allow wfdservice self:capability net_admin;
 
 #allow binder call to mediacodec from wfdservice
-binder_call(wfdservice, mediacodec);
+# binder_call(wfdservice, mediacodec);
 
 #Allow wfdservice to query interface name of network (p2p etc.)
 allow wfdservice self:netlink_socket create_socket_perms_no_ioctl;

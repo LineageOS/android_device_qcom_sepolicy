@@ -29,7 +29,7 @@
 typeattribute dpmd coredomain;
 typeattribute dpmd mlstrustedsubject;
 typeattribute dpmd system_writes_vendor_properties_violators;
-type dpmd_exec, exec_type, file_type;
+type dpmd_exec, system_file_type, exec_type, file_type;
 
 init_daemon_domain(dpmd)
 
@@ -70,3 +70,6 @@ dpmd_socket_perm(untrusted_app_25)
 dpmd_socket_perm(platform_app)
 #allow dpmd to write to /proc/net/sys
 allow dpmd proc_net:file write;
+
+allow dpmd hal_dpmqmi_hwservice:hwservice_manager find;
+binder_call(dpmd,hal_dpmQmiMgr)

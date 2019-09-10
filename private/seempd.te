@@ -26,11 +26,11 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type seempd, domain, mlstrustedsubject, coredomain;
-type seempd_exec, exec_type, file_type;
+type seempd_exec, system_file_type, exec_type, file_type;
 
 init_daemon_domain(seempd)
 
-allow seempd tee_device:chr_file rw_file_perms;
+# allow seempd tee_device:chr_file rw_file_perms;
 allow seempd seemplog_device:chr_file rw_file_perms;
 #TODO: create the dir from init.rc instead.
 allow seempd seemp_data_file:dir create_dir_perms;

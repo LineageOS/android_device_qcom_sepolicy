@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 typeattribute vendor_mmi_sys coredomain;
-type vendor_mmi_sys_exec, exec_type, file_type;
+type vendor_mmi_sys_exec, system_file_type, exec_type, file_type;
 typeattribute vendor_mmi_sys  system_writes_vendor_properties_violators;
 
 #init
