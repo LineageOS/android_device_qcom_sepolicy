@@ -165,9 +165,6 @@ get_prop(system_app, fm_prop)
 #allow system_app access factory
 hal_client_domain(system_app, vendor_hal_factory_qti);
 
-# allow system app to set mirrorlink prop
-set_prop(system_app, vendor_mirrorlink_prop);
-
 #secureUI
 hal_client_domain(system_app, hal_qdutils_disp);
 hal_client_domain(system_app, hal_tui_comm);
