@@ -25,6 +25,7 @@
 persist.vendor.service.bdroid.      u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bt.soc.scram_freqs   u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bluetooth.a2dp.      u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bluetooth.a4wp       u:object_r:vendor_bluetooth_prop:s0
 vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
 #vendor.qcom.bluetooth.     u:object_r:vendor_bluetooth_prop:s0
 #ro.vendor.bt.              u:object_r:vendor_bluetooth_prop:s0
