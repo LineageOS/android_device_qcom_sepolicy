@@ -53,3 +53,6 @@ get_prop(system_server, wfd_debug_prop)
 # Allow system server to access fst,wigig system properties
 set_prop(system_server, wigig_core_prop)
 set_prop(system_server, fst_prop)
+
+# Allow system server to access for dpm
+get_prop(system_server, persist_dpm_prop)
