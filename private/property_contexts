@@ -39,6 +39,9 @@ ro.vendor.qti.va_odm.support       u:object_r:vendor_exported_odm_prop:s0 exact 
 vendor.camera.aux.packagelist        u:object_r:persist_camera_prop:s0
 persist.vendor.camera.privapp.list   u:object_r:persist_camera_prop:s0
 
+#perf
+persist.vendor.build.date.utc              u:object_r:vendor_wlc_prop:s0
+
 #WiFi Display
 vendor.wfdservice              u:object_r:wfd_service_prop:s0
 persist.vendor.debug.mux.      u:object_r:wfd_debug_prop:s0
