@@ -81,6 +81,7 @@ type vendor_debugfs_icnss, debugfs_type, fs_type;
 # /proc
 type vendor_proc_wifi_dbg, fs_type, proc_type;
 type vendor_proc_audiod, fs_type, proc_type;
+type vendor_proc_shs, fs_type, proc_type;
 
 type vendor_qmuxd_socket, file_type;
 type vendor_netmgrd_socket, file_type;
@@ -130,6 +131,7 @@ type vendor_netmgr_data_file, file_type, data_file_type;
 type vendor_netmgr_recovery_data_file, file_type, data_file_type;
 type vendor_qmipriod_data_file, file_type, data_file_type;
 type vendor_ipa_vendor_data_file, file_type, data_file_type;
+type vendor_shsusr_data_file, file_type, data_file_type;
 
 type vendor_tombstone_data_file, file_type, data_file_type;
 type vendor_camera_data_file, file_type, data_file_type;
