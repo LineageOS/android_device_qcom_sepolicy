@@ -61,3 +61,4 @@ allow usta_app persist_sensors_file:file create_file_perms;
 allow usta_app mnt_vendor_file:dir create_dir_perms;
 
 dontaudit usta_app system_data_file:file open;
+allow usta_app cgroup:file w_file_perms;
