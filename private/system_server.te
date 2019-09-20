@@ -1,4 +1,4 @@
-# Copyright (c) 2015, 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2015, 2017, 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -44,3 +44,12 @@ add_service(system_server, regionalization_service);
 #add_service(system_server, vendor_perf_service);
 allow system_server vendor_perf_service:service_manager find;
 binder_call(system_server,qvrd);
+
+#Allow Cast Settings to access WFD prop
+userdebug_or_eng(`
+get_prop(system_server, wfd_debug_prop)
+')
+
+# Allow system server to access fst,wigig system properties
+set_prop(system_server, wigig_core_prop)
+set_prop(system_server, fst_prop)

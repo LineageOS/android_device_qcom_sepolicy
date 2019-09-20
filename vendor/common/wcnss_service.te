@@ -65,8 +65,5 @@ get_prop(wcnss_service, hwservicemanager_prop)
 #access to perflock
 hal_client_domain(wcnss_service, hal_perf)
 
-# read persist.vendor.wigig.npt.enable
-get_prop(wcnss_service, wigig_prop);
-
 # allow to read /sys/class/net file
 r_dir_file(wcnss_service, sysfs_net);

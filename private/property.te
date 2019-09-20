@@ -29,3 +29,10 @@
 # and vendor_exported_odm_prop
 type vendor_exported_system_prop, property_type;
 type vendor_exported_odm_prop, property_type;
+
+#WFD
+type wfd_service_prop, property_type, extended_core_property_type;
+type wfd_debug_prop, property_type, extended_core_property_type;
+# WIGIG system properties
+type wigig_core_prop, property_type, extended_core_property_type;
+type fst_prop, property_type, extended_core_property_type;

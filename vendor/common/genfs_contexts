@@ -28,6 +28,9 @@ genfscon sysfs /kernel/wcd_cpe0 u:object_r:sysfs_audio:s0
 genfscon sysfs /devices/virtual/thermal u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/virtual/kgsl/kgsl/proc u:object_r:sysfs_kgsl_proc:s0
 
+#net sysfs
+genfscon sysfs /devices/soc/18800000.qcom,icnss/net u:object_r:sysfs_net:s0
+
 genfscon sysfs /module/qpnp_rtc/parameters/poweron_alarm u:object_r:sysfs_poweron_alarm:s0
 
 genfscon sysfs /devices/platform/cam_sync/video4linux/video0/name u:object_r:sysfs_graphics:s0

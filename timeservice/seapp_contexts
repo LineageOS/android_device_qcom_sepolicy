@@ -1,4 +1,4 @@
-# Copyright (c) 2017, 2019 The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,29 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-persist.vendor.dpm.        u:object_r:persist_dpm_prop:s0
-persist.vendor.btstack      u:object_r:bluetooth_prop:s0
-persist.vendor.bluetooth.emailaccountcount u:object_r:bluetooth_prop:s0
-persist.vendor.bt.a2dp.    u:object_r:bluetooth_prop:s0
-persist.vendor.bt_logger.  u:object_r:bluetooth_prop:s0
-vendor.bt.pts.             u:object_r:bluetooth_prop:s0
-persist.vendor.service.bt. u:object_r:bluetooth_prop:s0
-ro.vendor.btstack.         u:object_r:bluetooth_prop:s0
-vendor.bluetooth.          u:object_r:bluetooth_prop:s0
-ro.vendor.qti.va_aosp.support       u:object_r:vendor_exported_system_prop:s0 exact bool
-ro.vendor.qti.va_odm.support       u:object_r:vendor_exported_odm_prop:s0 exact bool
-vendor.camera.aux.packagelist        u:object_r:persist_camera_prop:s0
-persist.vendor.camera.privapp.list   u:object_r:persist_camera_prop:s0
+# Needed for time service apk
+user=_app seinfo=timeserviceapp name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file levelFrom=all
 
-#WiFi Display
-vendor.wfdservice              u:object_r:wfd_service_prop:s0
-persist.vendor.debug.mux.      u:object_r:wfd_debug_prop:s0
-persist.vendor.debug.rtp.      u:object_r:wfd_debug_prop:s0
-persist.vendor.debug.wfd.      u:object_r:wfd_debug_prop:s0
-vendor.debug.wfd.              u:object_r:wfd_debug_prop:s0
-
-persist.vendor.debug.wfdcdbg   u:object_r:wfd_debug_prop:s0
-persist.vendor.debug.wfdcdbgv  u:object_r:wfd_debug_prop:s0
-
-persist.vendor.wigig.                u:object_r:wigig_core_prop:s0
-persist.vendor.fst.                  u:object_r:fst_prop:s0

@@ -6,6 +6,7 @@ BOARD_SEPOLICY_DIRS := \
        $(LOCAL_PATH) \
        $(LOCAL_PATH)/vendor/common \
        $(LOCAL_PATH)/vendor/ssg \
+       $(LOCAL_PATH)/timeservice \
        $(LOCAL_PATH)/vendor/common/sysmonapp
 
 ifeq ($(TARGET_SEPOLICY_DIR),)
