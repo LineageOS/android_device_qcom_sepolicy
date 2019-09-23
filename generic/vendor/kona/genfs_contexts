@@ -31,8 +31,8 @@ genfscon sysfs /devices/platform/soc/soc:qcom,ipa_uc/subsys1/name u:object_r:sys
 genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys8/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys4/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/abb0000.qcom,cvpss/subsys6/name u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys7/name u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys9/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys11/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys8/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/subsys10/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys2/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys3/name u:object_r:sysfs_ssr:s0
@@ -40,13 +40,11 @@ genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys5/name u:object_r:s
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3 u:object_r:sysfs_usb_controller:s0
 
 #subsys nodes WLAN
-genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6390/subsys10/name u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/subsys11/name u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/subsys7/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6390/subsys9/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys8/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys9/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys10/name u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys11/name u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys7/name u:object_r:sysfs_ssr:s0
 
 genfscon sysfs /devices/platform/soc/soc:qcom,wil6210/subsys12/name u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/esoc0 u:object_r:sysfs_esoc:s0
@@ -125,4 +123,16 @@ genfscon sysfs /devices/platform/soc/1c10000.qcom,pcie/pci0002:00/0002:00:00.0/0
 
 
 #restart_level
-genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/subsys11/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_uc/subsys1/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6390/subsys9/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,mdm0/subsys10/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,wil6210/subsys12/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys2/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys3/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys4/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys5/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/abb0000.qcom,cvpss/subsys6/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys11/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys7/restart_level u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys8/restart_level u:object_r:sysfs_ssr_toggle:s0

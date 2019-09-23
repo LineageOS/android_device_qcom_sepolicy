@@ -37,8 +37,12 @@ allow system_server proc_audiod:file r_file_perms;
 # allow system_server to access IOP HAL service
 hal_client_domain(system_server, hal_iop)
 
-# allow system_server to access vendor display property.
+# allow system_server to access vendor perf properties
 get_prop(system_server, vendor_iop_prop)
+get_prop(system_server, bservice_prop)
+get_prop(system_server, reschedule_service_prop)
+get_prop(system_server, vendor_cgroup_follow_prop)
+get_prop(system_server, vendor_scroll_prop)
 
 # allow WIGIG framework hosted in system_server to access wigig_hal
 hal_client_domain(system_server, hal_wigig)

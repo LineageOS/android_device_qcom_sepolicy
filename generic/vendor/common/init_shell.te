@@ -84,6 +84,7 @@ set_prop(qti_init_shell, vendor_radio_prop)
 set_prop(qti_init_shell, vendor_audio_prop)
 get_prop(qti_init_shell, exported3_radio_prop)
 set_prop(qti_init_shell, vendor_gpu_prop)
+set_prop(qti_init_shell, sensors_prop)
 
 allow qti_init_shell {
     sysfs_devices_system_cpu
@@ -122,8 +123,8 @@ allow qti_init_shell block_device:dir r_dir_perms;
 allow qti_init_shell swap_block_device:blk_file rw_file_perms;
 
 #For configfs permission
-allow qti_init_shell configfs:dir r_dir_perms;
-allow qti_init_shell configfs:file rw_file_perms;
+allow qti_init_shell configfs:dir rw_dir_perms;
+allow qti_init_shell configfs:file { rw_file_perms create };
 
 #Allow /sys access to write zram disksize
 allow qti_init_shell sysfs_zram:dir r_dir_perms;

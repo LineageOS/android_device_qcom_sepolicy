@@ -59,3 +59,4 @@ attribute hal_capabilityconfigstore_qti_server;
 attribute hal_dataconnection_qti;
 attribute hal_dataconnection_qti_client;
 attribute hal_dataconnection_qti_server;
+

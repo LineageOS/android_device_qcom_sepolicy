@@ -86,8 +86,13 @@ set_prop(vendor_init, public_vendor_default_prop)
 # Allow timezone to be overrided by vendor
 set_prop(vendor_init, exported_system_prop)
 
+# Access vendor sensor properties
+set_prop(vendor_init, sensors_prop)
+
 #Access vendor bluetooth properties
 set_prop(vendor_init, vendor_bluetooth_prop)
 userdebug_or_eng(`
   allow vendor_init proc_security:file rw_file_perms;
 ')
+# this is for ramdump
+allow vendor_init block_device:lnk_file setattr;

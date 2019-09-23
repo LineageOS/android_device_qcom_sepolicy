@@ -60,6 +60,7 @@ vendor.sys.video.disable.ubwc             u:object_r:vendor_sys_video_prop:s0
 
 #Wifi Display
 vendor.wfdservice                         u:object_r:wfd_service_prop:s0
+vendor.sys.debug.wfd.                     u:object_r:wfd_sys_debug_prop:s0
 persist.vendor.debug.wfd.wfdsvc           u:object_r:wfd_sys_debug_prop:s0
 persist.vendor.debug.wfdcdbg              u:object_r:wfd_sys_debug_prop:s0
 persist.vendor.debug.wfdcdbgv             u:object_r:wfd_sys_debug_prop:s0

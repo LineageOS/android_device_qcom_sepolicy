@@ -34,9 +34,6 @@ binder_call(system_server, hal_graphics_composer)
 # location
 binder_call(system_server, location);
 
-allow system_server persist_file:dir search;
-allow system_server persist_sensors_file:dir search;
-allow system_server persist_sensors_file:file r_file_perms;
 allow system_server wlan_device:chr_file rw_file_perms;
 allow system_server hal_audio_default:file w_file_perms;
 

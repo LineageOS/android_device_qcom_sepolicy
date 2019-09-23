@@ -50,3 +50,5 @@ allowxperm location_app self:socket ioctl msm_sock_ipc_ioctls;
 allow location_app self:qipcrtr_socket create_socket_perms_no_ioctl;
 allow location_app sysfs_data:file r_file_perms;
 unix_socket_connect(location_app, dpmtcm, dpmd)
+
+allow location_app sysfs_kgsl_gpu_model:file r_file_perms;
