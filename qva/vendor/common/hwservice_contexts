@@ -71,3 +71,4 @@ vendor.qti.hardware.bluetooth_audio::IBluetoothAudioProvidersFactory  u:object_r
 vendor.qti.hardware.wifi.wifilearner::IWifiStats             u:object_r:hal_wifilearner_hwservice:s0
 vendor.qti.hardware.cryptfshw::ICryptfsHw                    u:object_r:hal_keymaster_hwservice:s0
 vendor.qti.hardware.qseecom::IQSEECom                        u:object_r:hal_qseecom_hwservice:s0
+vendor.qti.qspmhal::IQspmhal                                 u:object_r:hal_qspmhal_hwservice:s0
