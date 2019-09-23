@@ -51,6 +51,7 @@
 /system/bin/perfservice                         u:object_r:perfservice_exec:s0
 /system/bin/mirrorlinkserver                    u:object_r:mirrorlink_exec:s0
 /system/bin/vpsservice                          u:object_r:vpsservice_exec:s0
+/system/bin/qspmsvc                             u:object_r:qspmsvc_exec:s0
 /system/bin/sigma_miracasthalservice            u:object_r:sigmahal_qti_exec:s0
 
 ####### data files ################
