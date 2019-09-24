@@ -58,3 +58,4 @@ vendor.qti.hardware.tui_comm::ITuiComm                       u:object_r:hal_tui_
 vendor.qti.hardware.qdutils_disp::IQdutilsDisp               u:object_r:hal_qdutils_disp_hwservice:s0
 android.hardware.media.c2::IConfigurable                     u:object_r:hal_codec2_hwservice:s0
 vendor.qti.hardware.display.mapper::IQtiMapper               u:object_r:hal_graphics_mapper_hwservice:s0
+vendor.qti.hardware.camera.postproc::IPostProcService        u:object_r:hal_camera_postproc_hwservice:s0
