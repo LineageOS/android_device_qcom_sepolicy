@@ -50,3 +50,9 @@ dontaudit domain kernel:system module_request;
 # For compliance testing test suite reads vendor_security_path_level
 # Which is the public readable property “ ro.vendor.build.security_patch
 get_prop(domain, vendor_security_patch_level_prop)
+neverallow {
+     coredomain
+     -init
+     -ueventd
+     -vold
+     } vendor_persist_type: { dir file } *;
