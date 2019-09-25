@@ -377,3 +377,6 @@ type msm_aac_in_device, dev_type;
 
 #vendor capability configstore hal
 type vendor_capabilityconfigstore_data_file, file_type, data_file_type;
+
+# kgsl gpu model file type for sysfs access
+type sysfs_kgsl_gpu_model, sysfs_type, fs_type;
