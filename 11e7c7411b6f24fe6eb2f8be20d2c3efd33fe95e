@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7594058b_3d85abd9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-09-25T14:38:13Z",
+      "side": 1,
+      "message": "Maybe we need to adapt this commit message now.",
+      "revId": "11e7c7411b6f24fe6eb2f8be20d2c3efd33fe95e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
