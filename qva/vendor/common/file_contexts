@@ -52,6 +52,7 @@
 #
 /dev/socket/iop                                 u:object_r:iop_socket:s0
 /dev/socket/mlid                                u:object_r:mlid_socket:s0
+/dev/socket/qwes_ipc                            u:object_r:qwesd_socket:s0
 /dev/socket/ssgqmig                             u:object_r:ssgqmig_socket:s0
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 /dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
@@ -97,6 +98,7 @@
 /(vendor|system/vendor)/bin/nqnfcinfo                                              u:object_r:nqnfcinfo_exec:s0
 /(vendor|system/vendor)/bin/ssgqmigd                                               u:object_r:ssgqmigd_exec:s0
 /(vendor|system/vendor)/bin/ssgtzd                                                 u:object_r:ssgtzd_exec:s0
+/(vendor|system/vendor)/bin/qwesd                                                  u:object_r:qwesd_exec:s0
 /(vendor|system/vendor)/bin/mlid                                                   u:object_r:mlid_exec:s0
 /(vendor|system/vendor)/bin/qdmastatsd                                             u:object_r:qdmastatsd_exec:s0
 /(vendor|system/vendor)/bin/seemp_healthd                                          u:object_r:seemp_health_daemon_exec:s0
@@ -172,6 +174,7 @@
 /data/vendor/dataqti(/.*)?                                          u:object_r:vendor_qti_data_file:s0
 /data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qdma_data_file:s0
 /data/vendor/qdma(/.*)?                                             u:object_r:vendor_qdma_data_file:s0
+/data/vendor/qwes(/.*)?                                             u:object_r:vendor_qwes_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
 /data/vendor/lm(/.*)?                                               u:object_r:lm_data_file:s0
