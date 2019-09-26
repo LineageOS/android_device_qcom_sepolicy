@@ -33,6 +33,7 @@ type qsta_app, domain;
 app_domain(qsta_app)
 hal_client_domain(qsta_app, hal_perf)
 r_dir_file(qsta_app, persist_sensors_file)
+get_prop(qsta_app, sensors_prop)
 
 allow qsta_app {
   app_api_service
