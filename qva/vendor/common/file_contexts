@@ -140,6 +140,7 @@
 /sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
 /sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
 /sys/module/process_reclaim(/.*)?                                   u:object_r:sysfs_process_reclaim:s0
+/sys/module/vmpressure(/.*)?                                        u:object_r:sysfs_vmpressure:s0
 
 ###################################
 # sysfs files
