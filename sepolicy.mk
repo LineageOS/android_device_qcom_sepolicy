@@ -11,7 +11,7 @@ BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
     device/qcom/sepolicy/qva/private
 
-ifneq (,$(filter $(UM_4_14_FAMILY), $(TARGET_BOARD_PLATFORM)))
+ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
     BOARD_SEPOLICY_DIRS += \
         device/qcom/sepolicy/generic/vendor/common \
         device/qcom/sepolicy/qva/vendor/common/sysmonapp \
@@ -31,7 +31,9 @@ ifneq (,$(filter $(UM_4_14_FAMILY), $(TARGET_BOARD_PLATFORM)))
       BOARD_SEPOLICY_DIRS += device/qcom/sepolicy/generic/vendor/test
       BOARD_SEPOLICY_DIRS += device/qcom/sepolicy/qva/vendor/test
     endif
-else
+endif
+
+ifneq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
     BOARD_SEPOLICY_DIRS += \
         device/qcom/sepolicy/legacy/vendor/common/sysmonapp \
         device/qcom/sepolicy/legacy/vendor/ssg \
