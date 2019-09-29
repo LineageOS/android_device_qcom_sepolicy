@@ -75,3 +75,5 @@ allow sensors persist_sensors_file:fifo_file create_file_perms;
 # Access to /persist/sensors
 allow sensors persist_sensors_file:dir create_dir_perms;
 allow sensors persist_sensors_file:file create_file_perms;
+# Access to wakelock sysfs
+wakelock_use(sensors)
