@@ -32,6 +32,9 @@ allow { domain - coredomain } mnt_vendor_file:lnk_file r_file_perms;
 
 allowxperm domain domain:icmp_socket ioctl { unpriv_sock_ioctls unpriv_tty_ioctls };
 
+# allow all context to read gpu model
+allow { domain - isolated_app } sysfs_kgsl_gpu_model:file r_file_perms;
+
 # For compliance testing test suite reads vendor_security_path_level
 # Which is the public readable property “ ro.vendor.build.security_patch
 get_prop(domain, vendor_security_patch_level_prop)
