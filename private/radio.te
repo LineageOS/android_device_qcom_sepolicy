@@ -25,11 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# permissions for PresenceTestApp
-userdebug_or_eng(`
-  allow radio uce_service:service_manager find;
-')
-
 userdebug_or_eng(`
   unix_socket_send(radio,seempdw, seempd)
 ')
