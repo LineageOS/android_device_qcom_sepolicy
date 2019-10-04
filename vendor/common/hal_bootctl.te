@@ -60,3 +60,7 @@ dontaudit hal_bootctl self:capability sys_rawio;
 
 # Allow boot_control_hal to write to the XBL devices.
 allow hal_bootctl xbl_block_device:blk_file rw_file_perms;
+
+# Read the sysfs to lookup what /dev/sgN device
+# corresponds to the XBL partitions.
+allow hal_bootctl sysfs_scsi_target:dir r_dir_perms;

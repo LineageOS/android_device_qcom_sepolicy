@@ -98,9 +98,8 @@ persist.vendor.data.dont_use_npflag  u:object_r:vendor_dataqdp_prop:s0
 persist.vendor.data.profile_update  u:object_r:vendor_dataqdp_prop:s0
 vendor.gralloc.            u:object_r:vendor_gralloc_prop:s0
 vendor.wifi.ftmd.                 u:object_r:vendor_wifi_ftmd_prop:s0
-ro.fota.oem                u:object_r:vendor_default_prop:s0
-ctl.start$fm               u:object_r:ctl_fm_prop:s0
-ctl.stop$fm                u:object_r:ctl_fm_prop:s0
+ctl.start$vendor.fm               u:object_r:ctl_fm_prop:s0
+ctl.stop$vendor.fm                u:object_r:ctl_fm_prop:s0
 
 # WIGIG
 ctl.vendor.wigig_supplicant u:object_r:ctl_vendor_wigigsvc_prop:s0

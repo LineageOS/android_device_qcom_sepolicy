@@ -85,11 +85,15 @@ genfscon  sysfs /devices/platform/soc/4080000.qcom,mss/subsys4/name    u:object_
 
 #PMI path
 genfscon sysfs /devices/soc/qpnp-smbcharger-16/power_supply/battery u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/qpnp-smbcharger-18/power_supply/battery u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/soc/qpnp-fg-17/power_supply/bms u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/qpnp-fg-19/power_supply/bms u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/soc/78db000.usb/power_supply/usb u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /devices/soc/7000000.usb/power_supply/usb u:object_r:sysfs_usb_supply:s0
 genfscon sysfs /devices/soc/qpnp-smbcharger-16/leds/red u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/soc/leds-qpnp-19/leds/ u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/soc/qpnp-flash-led-23/leds/ u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/soc/qpnp-wled-22/leds/ u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/soc/qpnp-haptic-24/leds/vibrator u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/soc/qpnp-vadc-14/usbin u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/qpnp-typec-9/power_supply/typec u:object_r:sysfs_battery_supply:s0
