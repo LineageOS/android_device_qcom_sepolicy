@@ -61,3 +61,6 @@ neverallow {
 
 # allow all context to read gpu model
 allow { domain - isolated_app } sysfs_kgsl_gpu_model:file r_file_perms;
+
+dontaudit untrusted_app_25 sysfs_kgsl:dir search;
+dontaudit untrusted_app_27 sysfs_kgsl:dir search;
