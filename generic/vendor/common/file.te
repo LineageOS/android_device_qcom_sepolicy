@@ -194,3 +194,5 @@ type qdcmsocket_socket, file_type;
 type sysfs_mhi, sysfs_type, fs_type;
 
 type sysfs_suspend, fs_type, sysfs_type;
+
+type sensors_socket, file_type;
