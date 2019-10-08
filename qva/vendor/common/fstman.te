@@ -44,7 +44,7 @@ allow fstman self:capability { net_admin net_raw };
 allow fstman self:netlink_route_socket nlmsg_write;
 
 # allow privileged socket operations: interface up/down, bond interface management
-allowxperm fstman self:udp_socket ioctl { SIOCGIFFLAGS SIOCSIFFLAGS SIOCSIFTXQLEN SIOCBONDENSLAVE SIOCBONDRELEASE SIOCETHTOOL};
+allowxperm fstman self:udp_socket ioctl { SIOCGIFFLAGS SIOCSIFFLAGS SIOCSIFTXQLEN SIOCBONDENSLAVE SIOCBONDRELEASE SIOCETHTOOL SIOCSIFHWADDR };
 
 # need access to bond0 sysfs in order to manage attached interfaces
 allow fstman sysfs_net:dir r_dir_perms;
