@@ -27,6 +27,7 @@
 type ctl_netmgrd_prop, property_type;
 type ctl_port-bridge_prop, property_type;
 type ctl_qcrild_prop, property_type;
+type camera_prop, property_type;
 type vendor_camera_prop, property_type;
 type cnd_prop, property_type;
 type crash_cnt_prop, property_type;
