@@ -25,5 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#Add new domain for qti value added Location apps
-user=system seinfo=platform name=com.qualcomm.location.XT isPrivApp=true domain=location_app type=system_app_data_file
+allow dataservice_app hal_slmadapter_hwservice:hwservice_manager find;
