@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -25,8 +25,29 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.face@1\.0-service    u:object_r:vendor_biometricsface_exec:s0
+type hal_embmssl_qti, domain;
+type hal_embmssl_qti_exec, exec_type, vendor_file_type, file_type;
 
-/data/vendor/face3d_dir(/.*)?                                       u:object_r:vendor_biometricsface_data_file:s0
+init_daemon_domain(hal_embmssl_qti)
+hal_server_domain(hal_embmssl_qti, hal_embmssl)
 
-/vendor/bin/embmsslServer       u:object_r:hal_embmssl_qti_exec:s0
+# Allow hwbinder call from hal client to server
+binder_call(hal_embmssl_client, hal_embmssl_server)
+binder_call(hal_embmssl_server, hal_embmssl_client)
+
+binder_call(platform_app, hal_embmssl_server)
+
+# Add hwservice related rules
+add_hwservice(hal_embmssl_server, hal_embmssl_hwservice)
+
+allow hal_embmssl_client hal_embmssl_hwservice:hwservice_manager find;
+allow platform_app hal_embmssl_hwservice:hwservice_manager find;
+
+allow hal_embmssl_qti platform_app:binder call;
+allow hal_embmssl_qti self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow hal_embmssl_qti time_daemon:unix_stream_socket connectto;
+
+allow hal_embmssl_qti netmgrd_socket:dir search;
+unix_socket_connect(hal_embmssl_qti, netmgrd, netmgrd)
+
+allow hal_embmssl_qti self:netlink_generic_socket create_socket_perms_no_ioctl;

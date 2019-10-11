@@ -52,3 +52,4 @@ type hal_qspmhal_hwservice, untrusted_app_visible_hwservice_violators, hwservice
 type hal_bluetooth_dun_hwservice, hwservice_manager_type;
 type hal_qseecom_hwservice, hwservice_manager_type;
 type hal_spu_hwservice, hwservice_manager_type;
+type hal_embmssl_hwservice, hwservice_manager_type;
