@@ -46,3 +46,5 @@ hal_client_domain(platform_app, vendor_hal_fm);
 allow platform_app vendor_fm_radio_device:chr_file r_file_perms;
 #allow platform_app to access btconfigstore hal
 hal_client_domain(platform_app, vendor_hal_btconfigstore);
+#allow platform_app to access embmssl hal
+hal_client_domain(platform_app, vendor_hal_embmssl)

@@ -203,3 +203,5 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-fpc u:object_r:vendor_hal_fingerprint_fpc_exec:s0
 
 /sys/devices/platform/soc/780000.qfprom/qfprom0/feat_conf10             u:object_r:vendor_sysfs_qfprom:s0
+
+/vendor/bin/embmsslServer       u:object_r:vendor_hal_embmssl_qti_exec:s0

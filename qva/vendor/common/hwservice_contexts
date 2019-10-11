@@ -70,3 +70,4 @@ vendor.qti.hardware.wifi.wifilearner::IWifiStats             u:object_r:vendor_h
 vendor.qti.qspmhal::IQspmhal                                 u:object_r:vendor_hal_qspmhal_hwservice:s0
 vendor.qti.hardware.secureprocessor.device::ISecureProcessor    u:object_r:vendor_hal_secureprocessor_hwservice:s0
 vendor.qti.hardware.cryptfshw::ICryptfsHw                    u:object_r:hal_keymaster_hwservice:s0
+vendor.qti.hardware.embmssl::IEmbms                          u:object_r:vendor_hal_embmssl_hwservice:s0

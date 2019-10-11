@@ -116,3 +116,7 @@ attribute vendor_hal_qspmhal_server;
 attribute vendor_hal_bluetooth_dun;
 attribute vendor_hal_bluetooth_dun_client;
 attribute vendor_hal_bluetooth_dun_server;
+
+attribute vendor_hal_embmssl;
+attribute vendor_hal_embmssl_client;
+attribute vendor_hal_embmssl_server;
