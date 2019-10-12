@@ -30,6 +30,7 @@
 #
 /dev/hsicctl.*                        u:object_r:hsic_device:s0
 /dev/sp_kernel                        u:object_r:skp_device:s0
+/dev/sp_nvm                           u:object_r:sp_nvm_device:s0
 /dev/sp_keymaster                     u:object_r:sp_keymaster_device:s0
 /dev/sp_ssr                           u:object_r:sp_ssr_device:s0
 /dev/spdaemon_ssr                     u:object_r:spdaemon_ssr_device:s0
