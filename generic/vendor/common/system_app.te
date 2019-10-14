@@ -37,3 +37,5 @@ hal_client_domain(system_app, hal_tui_comm);
 
 get_prop(system_app, vendor_radio_prop)
 hal_client_domain(system_app, hal_capabilityconfigstore_qti);
+
+dontaudit system_app sysfs_kgsl:dir search;
