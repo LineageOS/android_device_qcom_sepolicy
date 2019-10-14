@@ -676,7 +676,7 @@
 /vendor/firmware(/.*)?                                              u:object_r:firmware_file:s0
 /system/etc/firmware(/.*)?                                          u:object_r:firmware_file:s0
 /system/vendor/firmware(/.*)?                                       u:object_r:firmware_file:s0
-/firmware/image(/.*)?                                               u:object_r:firmware_file:s0
+/firmware(/.*)?                                                     u:object_r:firmware_file:s0
 
 /(vendor|system/vendor)/bin/grep                                    u:object_r:vendor_toolbox_exec:s0
 ##################################
