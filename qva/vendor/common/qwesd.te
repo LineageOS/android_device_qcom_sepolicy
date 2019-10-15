@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,38 +25,26 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-## ssg_app
-##
-## This file defines the permissions that ssg_apps can carry
+# qwesd - Wireless Edge Service Daemon
+type qwesd, domain, mlstrustedsubject;
+type qwesd_exec, exec_type, vendor_file_type, file_type;
 
-type ssg_app, domain;
+init_daemon_domain(qwesd)
 
-app_domain(ssg_app)
-net_domain(ssg_app)
+# Allow access to smcinvoke device
+allow qwesd smcinvoke_device:chr_file rw_file_perms;
 
-# Allow access to sockets
-unix_socket_connect(ssg_app, mlid, mlid)
-unix_socket_connect(ssg_app, ssgqmig, ssgqmigd)
-unix_socket_connect(ssg_app, ssgtzd, ssgtzd)
-unix_socket_connect(ssg_app, qwesd, qwesd)
+# Allow qwesd to create sockets for HTTP
+allow qwesd self:udp_socket create_socket_perms;
 
-#access to qdma socket
-qdma_file_socket(ssg_app)
+# Allow read-only access to firmware/image
+allow qwesd vendor_firmware_file:dir r_dir_perms;
+allow qwesd vendor_firmware_file:file r_file_perms;
 
-allow ssg_app radio_service:service_manager find;
-allow ssg_app surfaceflinger_service:service_manager find;
-allow ssg_app app_api_service:service_manager find;
+# Allow qwesd to write state information to /data/vendor/qwes/qwesd.conf
+allow qwesd vendor_qwes_data_file:dir rw_dir_perms;
+allow qwesd vendor_qwes_data_file:file rw_file_perms;
 
-# access to qipcrtr socket (allow creating needed by qmi_cci_xprt_qrtr_supported)
-allow ssg_app self:qipcrtr_socket create_socket_perms_no_ioctl;
-
-# To get uuid and device info
-allow ssg_app proc_cpuinfo:file r_file_perms;
-allow ssg_app proc_meminfo:file r_file_perms;
-
-unix_socket_connect(ssg_app,dpmtcm, dpmd);
-
-r_dir_file(ssg_app, proc)
-
-# Fix the permission error for lib resource link.
-allow ssg_app app_data_file:lnk_file read;
+# Allow access to qipcrtr_socket
+# Remove this when QMI service moves to pfmd
+allow qwesd self:qipcrtr_socket create_socket_perms_no_ioctl;

@@ -34,6 +34,7 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
        $(LOCAL_PATH)/qva/vendor/common/sysmonapp \
        $(LOCAL_PATH)/qva/vendor/ssg \
        $(LOCAL_PATH)/timeservice \
+       $(LOCAL_PATH)/qva/vendor/qwesas \
        $(LOCAL_PATH)/qva/vendor/common
 
     ifeq ($(TARGET_SEPOLICY_DIR),)
