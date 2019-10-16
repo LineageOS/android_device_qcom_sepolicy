@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -25,26 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow qti_init_shell sysfs_npu:file rw_file_perms;
-set_prop(qti_init_shell, vendor_mdm_helper_prop)
-set_prop(qti_init_shell, vendor_mmi_prop)
-
-set_prop(qti_init_shell, vendor_video_prop)
-
-set_prop(qti_init_shell, vendor_dataadpl_prop)
-
-#perf
-set_prop(qti_init_shell, vendor_mpctl_prop)
-
-# hvdcp_opti property
-set_prop(qti_init_shell, vendor_hvdcp_opti_prop)
-
-# To write to /data/vendor/perfd
-allow qti_init_shell mpctl_data_file:dir w_dir_perms;
-allow qti_init_shell mpctl_data_file:file { write getattr unlink };
-allow qti_init_shell sysfs_vmpressure:file w_file_perms;
-
-userdebug_or_eng(`
-# Needed for starting console in userdebug mode
-set_prop(qti_init_shell, vendor_audio_debug_prop)
-')
+type logdump_partition, dev_type;
+type mba_debug_dev, dev_type;
+type dip_device, dev_type;
+type rawdump_block_device, dev_type;

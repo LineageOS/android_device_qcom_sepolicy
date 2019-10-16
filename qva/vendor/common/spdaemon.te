@@ -51,7 +51,7 @@ hal_client_domain(spdaemon, hal_telephony)
 
 # Allow to access IAR-DB at /mnt/vendor/persist/iar_db
 allow spdaemon persist_iar_db_file:dir rw_dir_perms;
-allow spdaemon persist_iar_db_file:file rw_file_perms;
+allow spdaemon persist_iar_db_file:file create_file_perms;
 
 r_dir_file(spdaemon, mnt_vendor_file)
 
@@ -62,7 +62,6 @@ allow spdaemon spunvm_file:filesystem remount;
 
 # Allow to access IAR-DB at /mnt/vendor/spunvm
 allow spdaemon spunvm_file:dir rw_dir_perms;
-allow spdaemon spunvm_file:file rw_file_perms;
 allow spdaemon spunvm_file:file create_file_perms;
 
 # allow read access to sysfs
