@@ -38,6 +38,8 @@ allow qti rmnet_device:chr_file rw_file_perms;
 
 allow qti { vendor_shell_exec }:file rx_file_perms;
 
+allowxperm qti self:udp_socket ioctl RMNET_IOCTL_EXTENDED;
+
 #diag
 userdebug_or_eng(`
     diag_use(qti)
