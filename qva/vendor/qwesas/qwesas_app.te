@@ -35,14 +35,4 @@ type qwesas_app, domain;
 app_domain(qwesas_app)
 net_domain(qwesas_app)
 
-# Allow access to qwesd socket
-unix_socket_connect(qwesas_app, qwesd, qwesd)
-
-# allow qwesas_app radio_service:service_manager find;
-# allow qwesas_app surfaceflinger_service:service_manager find;
 allow qwesas_app app_api_service:service_manager find;
-
-# To get uuid and device info
-allow qwesas_app proc_cpuinfo:file r_file_perms;
-allow qwesas_app proc_meminfo:file r_file_perms;
-r_dir_file(qwesas_app, proc)
