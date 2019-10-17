@@ -59,3 +59,6 @@ allow init rawdump_block_device:blk_file setattr;
 
 #cpu.rt_period_us and _runtime_us need this
 allow init cgroup:file create;
+
+# Allow init to bind mount loader config for media swcodec
+allow init system_file:file mounton;
