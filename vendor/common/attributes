@@ -127,3 +127,11 @@ attribute hal_btconfigstore_server;
 attribute hal_dataconnection_qti;
 attribute hal_dataconnection_qti_client;
 attribute hal_dataconnection_qti_server;
+
+attribute hal_capabilityconfigstore_qti;
+attribute hal_capabilityconfigstore_qti_client;
+attribute hal_capabilityconfigstore_qti_server;
+
+attribute hal_srvctracker;
+attribute hal_srvctracker_client;
+attribute hal_srvctracker_server;

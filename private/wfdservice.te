@@ -126,3 +126,6 @@ allow wfdservice proc_net:file r_file_perms;
 userdebug_or_eng(`
 get_prop(wfdservice, wfd_debug_prop)
 ')
+
+#Allow the interaction with sigmahal_qti
+binder_call(wfdservice,sigmahal_qti)

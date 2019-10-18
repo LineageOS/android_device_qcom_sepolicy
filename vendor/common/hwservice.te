@@ -60,3 +60,5 @@ type hal_pasrmanager_hwservice, hwservice_manager_type;
 type hal_wifilearner_hwservice, hwservice_manager_type;
 type hal_fm_hwservice, hwservice_manager_type;
 type hal_btconfigstore_hwservice, hwservice_manager_type;
+type hal_capabilityconfigstore_qti_hwservice, hwservice_manager_type;
+type hal_srvctracker_hwservice, hwservice_manager_type;
