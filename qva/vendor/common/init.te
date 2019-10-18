@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -26,3 +26,8 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow init sysfs_graphics:file setattr;
+
+# allow init to mount spunvm partition
+allow init spunvm_file:dir mounton;
+allow init spunvm_file:filesystem { relabelto relabelfrom mount };
+allow init sysfs_qvr_external_sensor:file setattr;

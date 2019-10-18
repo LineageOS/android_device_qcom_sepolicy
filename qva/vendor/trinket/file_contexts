@@ -177,3 +177,5 @@
 /sys/devices/platform/soc/soc:fpc1020(/.*?) u:object_r:sysfs_fps_attr:s0
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-03/c440000.qcom,spmi:qcom,pmi632@3:qcom,leds@d000/leds/modalias u:object_r:sysfs_fps_attr:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-fpc u:object_r:hal_fingerprint_fpc_exec:s0
+
+/sys/devices/platform/soc/1b46018.qfprom/qfprom0/nvmem                  u:object_r:sysfs_qfprom:s0

@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,40 +24,5 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-userdebug_or_eng(`
-  allow domain diag_device:chr_file rw_file_perms;
-')
 
-# In order for /sys/kernel/debug/kgsl/proc/<pid>/mem
-# to be created for memory tracking, the domain of
-# the tracked process must have permission to search
-# in /sys/kernel/debug/kgsl
-allow domain debugfs_kgsl:dir search;
-
-allow domain debugfs_ion:dir search;
-
-get_prop(domain, vendor_gralloc_prop)
-
-r_dir_file({domain - isolated_app}, sysfs_soc);
-r_dir_file({domain - isolated_app}, sysfs_esoc);
-r_dir_file({domain - isolated_app}, sysfs_ssr);
-r_dir_file({domain - isolated_app}, sysfs_thermal);
-
-get_prop(domain, public_vendor_default_prop)
-
-dontaudit domain kernel:system module_request;
-
-# For compliance testing test suite reads vendor_security_path_level
-# Which is the public readable property “ ro.vendor.build.security_patch
-get_prop(domain, vendor_security_patch_level_prop)
-
-neverallow {
-     coredomain
-     -init
-     -ueventd
-     -vold
-     -kernel
-     } vendor_persist_type: { dir file } *;
-
-# allow all context to read gpu model
-allow { domain - isolated_app } sysfs_kgsl_gpu_model:file r_file_perms;
+allow vendor_modprobe debugfs_ipc:dir search;

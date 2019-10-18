@@ -57,6 +57,8 @@ binder_call(mediaserver, bootanim);
 
 get_prop(mediaserver, vendor_audio_prop)
 
+get_prop(mediaserver, vendor_video_prop)
+
 allow mediaserver surfaceflinger:unix_stream_socket rw_socket_perms;
 
 hal_client_domain(mediaserver, hal_graphics_composer)

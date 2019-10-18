@@ -33,7 +33,10 @@
 /dev/sp_keymaster                     u:object_r:sp_keymaster_device:s0
 /dev/sp_ssr                           u:object_r:sp_ssr_device:s0
 /dev/spdaemon_ssr                     u:object_r:spdaemon_ssr_device:s0
+/dev/spss_utils                       u:object_r:spss_utils_device:s0
 /dev/iuicc                            u:object_r:iuicc_device:s0
+/dev/iuicc0                           u:object_r:iuicc_device:s0
+/dev/iuicc1                           u:object_r:iuicc_device:s0
 /dev/cryptoapp                        u:object_r:cryptoapp_device:s0
 /dev/sec_nvm_.*                       u:object_r:sec_nvm_device:s0
 /dev/qbt.*                            u:object_r:qbt_device:s0
@@ -54,7 +57,7 @@
 /dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
 /dev/socket/adpl_cmd_uds_file                   u:object_r:dataadpl_socket:s0
 /dev/socket/wigig/wpa_wigig[0-9]                u:object_r:wigig_vendor_wpa_socket:s0
-/dev/socket/wigig/vendor_wpa_wlan[0-9]          u:object_r:wigig_vendor_wpa_socket:s0
+/dev/socket/vendor_wpa_wlan[0-9]                u:object_r:wifi_vendor_wpa_socket:s0
 /dev/socket/wigig/wigignpt                      u:object_r:wigignpt_socket:s0
 /dev/socket/wigig/sensingdaemon                 u:object_r:sensingdaemon_socket:s0
 
@@ -115,6 +118,8 @@
 /(vendor|system/vendor)/bin/wigignpt                                               u:object_r:wigignpt_exec:s0
 /(vendor|system/vendor)/bin/sensingdaemon                                          u:object_r:sensingdaemon_exec:s0
 /vendor/bin/hw/android\.hardware\.usb\@1\.[0-2]-service-qti                        u:object_r:hal_usb_qti_exec:s0
+/vendor/bin/vendor\.qti\.qspmhal@1\.0-service                                      u:object_r:hal_qspmhal_default_exec:s0
+
 
 #### Context for location features
 ## location daemons and binaries
@@ -152,6 +157,8 @@
 
 /sys/devices(/platform)?/soc/soc:qcom,gpubw/devfreq/soc:qcom,gpubw(/.*)? u:object_r:sysfs_devfreq:s0
 
+/sys/devices(/platform)?/soc/soc:qcom,spss_utils(/.*)?             u:object_r:sysfs_spss:s0
+
 ###################################
 # data files
 #
@@ -171,15 +178,20 @@
 /data/vendor/lm(/.*)?                                               u:object_r:lm_data_file:s0
 /data/vendor/secure_element(/.*)?                                   u:object_r:secure_element_vendor_data_file:s0
 /data/vendor/sensing(/.*)?                                          u:object_r:sensing_vendor_data_file:s0
+/data/vendor/gaming(/.*)?                                           u:object_r:vendor_qspmhal_data_file:s0
 
 ###################################
 # persist files
 #
 /mnt/vendor/persist/secnvm(/.*)?      u:object_r:persist_secnvm_file:s0
+/mnt/vendor/persist/iar_db(/.*)?      u:object_r:persist_iar_db_file:s0
 /mnt/vendor/persist/qti_fp(/.*)?      u:object_r:persist_qti_fp_file:s0
 /mnt/vendor/persist/FTM_AP(/.*)?      u:object_r:vendor_persist_mmi_file:s0
 /mnt/vendor/persist/vpp(/.*)?         u:object_r:persist_vpp_file:s0
 /mnt/vendor/persist/hvdcp_opti(/.*)?  u:object_r:persist_hvdcp_file:s0
+
+# spunvm partition
+/mnt/vendor/spunvm(/.*)?              u:object_r:spunvm_file:s0
 
 # same-process HAL files and their dependencies
 #
@@ -190,6 +202,7 @@
 # SVA files
 /vendor/lib(64)?/liblistenjni\.so          u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/liblistensoundmodel2\.so  u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor.qti.qspmhal@1.0\.so  u:object_r:same_process_hal_file:s0
 
 #wifilearner daemon
 /(vendor|system/vendor)/bin/wifilearner    u:object_r:wifilearnersvc_exec:s0

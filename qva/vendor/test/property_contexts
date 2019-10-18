@@ -1,3 +1,4 @@
+
 # Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -25,5 +26,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-[@TIMESERVICE]
-ALL : device/qcom/sepolicy/generic/vendor/timeservice/timeservice_app_cert.x509.pem
+#qspm debug prop
+vendor.debug.qspm u:object_r:vendor_qspm_dbg_prop:s0

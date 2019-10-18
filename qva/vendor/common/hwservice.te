@@ -48,5 +48,6 @@ type hal_fm_hwservice, hwservice_manager_type;
 type hal_btconfigstore_hwservice, hwservice_manager_type;
 type hal_wifilearner_hwservice, hwservice_manager_type;
 type hal_srvctracker_hwservice, hwservice_manager_type;
+type hal_qspmhal_hwservice, untrusted_app_visible_hwservice_violators, hwservice_manager_type;
 type hal_bluetooth_dun_hwservice, hwservice_manager_type;
 type hal_qseecom_hwservice, hwservice_manager_type;

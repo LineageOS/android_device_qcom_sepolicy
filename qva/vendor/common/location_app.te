@@ -30,3 +30,6 @@
 
 # allow location_app to access perf hal
 hal_client_domain(location_app, hal_perf)
+
+# allow location_app to access gpu_model
+allow location_app sysfs_kgsl_gpu_model:file r_file_perms;

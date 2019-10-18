@@ -29,3 +29,6 @@ hal_client_domain(mediaserver, hal_audio)
 
 #to read audio props
 get_prop(mediaserver, vendor_audio_prop)
+
+#to read video props
+get_prop(mediaserver, vendor_video_prop)
