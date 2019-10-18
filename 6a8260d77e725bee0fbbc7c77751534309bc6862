@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f1e8ac61_5958c2dd",
+        "filename": "common/file_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 18205
+      },
+      "writtenOn": "2019-10-18T23:34:39Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 319,
+        "startChar": 59,
+        "endLine": 319,
+        "endChar": 78
+      },
+      "revId": "6a8260d77e725bee0fbbc7c77751534309bc6862",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
