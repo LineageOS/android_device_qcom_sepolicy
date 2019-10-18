@@ -2,6 +2,7 @@
 BOARD_SEPOLICY_DIRS += \
     device/qcom/sepolicy-legacy-um/vendor/common \
     device/qcom/sepolicy-legacy-um/vendor/ssg \
+    device/qcom/sepolicy-legacy-um/timeservice \
     device/qcom/sepolicy-legacy-um/vendor/common/sysmonapp
 
 ifeq ($(TARGET_SEPOLICY_DIR),)

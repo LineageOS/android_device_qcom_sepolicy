@@ -23,6 +23,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 persist.vendor.service.bdroid.      u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bluetooth.           u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bt.soc.scram_freqs   u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bluetooth.a2dp.      u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.qcom.bluetooth.      u:object_r:vendor_bluetooth_prop:s0
@@ -97,9 +98,8 @@ persist.vendor.data.dont_use_npflag  u:object_r:vendor_dataqdp_prop:s0
 persist.vendor.data.profile_update  u:object_r:vendor_dataqdp_prop:s0
 vendor.gralloc.            u:object_r:vendor_gralloc_prop:s0
 vendor.wifi.ftmd.                 u:object_r:vendor_wifi_ftmd_prop:s0
-ro.fota.oem                u:object_r:vendor_default_prop:s0
-ctl.start$fm               u:object_r:ctl_fm_prop:s0
-ctl.stop$fm                u:object_r:ctl_fm_prop:s0
+ctl.start$vendor.fm               u:object_r:ctl_fm_prop:s0
+ctl.stop$vendor.fm                u:object_r:ctl_fm_prop:s0
 
 # WIGIG
 ctl.vendor.wigig_supplicant u:object_r:ctl_vendor_wigigsvc_prop:s0
@@ -209,6 +209,9 @@ vendor.gpu.available_frequencies u:object_r:vendor_gpu_prop:s0
 
 persist.vendor.data.shs_ko_load u:object_r:vendor_data_ko_prop:s0
 persist.vendor.data.perf_ko_load u:object_r:vendor_data_ko_prop:s0
+
+#capabilityconfigstore (CCHAL)
+persist.vendor.cap_configstore_debug u:object_r:vendor_cap_configstore_dbg_prop:s0
 
 #hvdcp_opti
 persist.vendor.bms               u:object_r:hvdcp_opti_prop:s0

@@ -26,3 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 unix_socket_send(zygote, seempdw, seempd)
+
+get_prop(zygote, persist_dpm_prop)

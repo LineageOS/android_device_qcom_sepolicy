@@ -131,6 +131,9 @@ type sysfs_slpi, fs_type, sysfs_type;
 type sysfs_process_reclaim, fs_type, sysfs_type;
 type sysfs_vmpressure, fs_type, sysfs_type;
 
+#sysfs scsi target type
+type sysfs_scsi_target, fs_type, sysfs_type;
+
 #define the files writter during the operatio of iop
 type iop_socket, file_type;
 type iop_data_file, file_type, data_file_type;
@@ -374,3 +377,9 @@ type sysfs_qvr_external_sensor, sysfs_type, fs_type;
 
 # /dev/msm_aac_in
 type msm_aac_in_device, dev_type;
+
+#vendor capability configstore hal
+type vendor_capabilityconfigstore_data_file, file_type, data_file_type;
+
+# kgsl gpu model file type for sysfs access
+type sysfs_kgsl_gpu_model, sysfs_type, fs_type;
