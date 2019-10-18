@@ -109,6 +109,9 @@ type vendor_audio_data_file, file_type, data_file_type;
 type vendor_radio_data_file, file_type, data_file_type;
 type wifi_vendor_log_data_file, file_type, data_file_type;
 
+#for mount of /persist
+typeattribute mnt_vendor_file vendor_persist_type;
+
 type persist_file, file_type, vendor_persist_type;
 type persist_data_file, file_type , vendor_persist_type;
 type persist_display_file, file_type;
@@ -195,3 +198,6 @@ type qdcmsocket_socket, file_type;
 type sysfs_mhi, sysfs_type, fs_type;
 
 type sysfs_suspend, fs_type, sysfs_type;
+
+# kgsl gpu model file type for sysfs access
+type sysfs_kgsl_gpu_model, sysfs_type, fs_type;

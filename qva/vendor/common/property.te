@@ -40,6 +40,11 @@ type vendor_boot_mode_prop, property_type;
 #mpctl
 type vendor_mpctl_prop, property_type;
 type freq_prop, property_type;
+#service opts
+type bservice_prop, property_type;
+type reschedule_service_prop, property_type;
+type vendor_cgroup_follow_prop, property_type;
+type vendor_scroll_prop, property_type;
 
 type vendor_qspm_prop, property_type;
 #iop

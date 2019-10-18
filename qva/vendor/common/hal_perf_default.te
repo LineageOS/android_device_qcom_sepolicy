@@ -71,6 +71,7 @@ allow hal_perf {
      sysfs_msm_power
      sysfs_battery_supply
      sysfs_process_reclaim
+     sysfs_qfprom
 }:dir r_dir_perms;
 
 allow hal_perf {
@@ -89,6 +90,7 @@ allow hal_perf {
      sysfs_msm_power
      sysfs_battery_supply
      sysfs_process_reclaim
+     sysfs_qfprom
 }:file rw_file_perms;
 
 allow hal_perf {
@@ -100,3 +102,11 @@ allow hal_perf {
 
 # Allow to self kill capability
 allow hal_perf_default self:capability { kill };
+
+# Allow QSPM access
+hal_client_domain(hal_perf_default, hal_qspmhal);
+
+#Allow Display Config access
+hal_client_domain(hal_perf_default, hal_graphics_composer);
+# Allow connecting to thermal_socket
+unix_socket_connect(hal_perf_default, thermal, thermal-engine)

@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -65,6 +65,7 @@ genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys2/name            u:
 genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys4/name            u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys5/name            u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys6/name           u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys4/name           u:object_r:sysfs_ssr:s0
 
 # We see this combo set also so adding this also
 genfscon sysfs  /devices/platform/soc/4080000.qcom,mss/subsys0/name           u:object_r:sysfs_ssr:s0
@@ -77,11 +78,11 @@ genfscon sysfs  /devices/platform/soc/aae0000.qcom,venus/subsys4/name         u:
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3 u:object_r:sysfs_usb_controller:s0
 
 #qdss sysfs-node
-genfscon sysfs /devices/platform/soc/6047000.tmc/coresight-tmc-etf u:object_r:sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/6b05000.tmc/coresight-tmc-etf u:object_r:sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/6048000.tmc/coresight-tmc-etr u:object_r:sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/6002000.stm/coresight-stm u:object_r:sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/91866f0.hwevent/coresight-hwevent u:object_r:sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/6b0e000.csr/coresight-swao-csr u:object_r:sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/soc:hwevent/coresight-hwevent u:object_r:sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/6b0c000.csr/coresight-swao-csr u:object_r:sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-llcc-bw/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu-llcc-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-l3-lat/devfreq u:object_r:sysfs_devfreq:s0

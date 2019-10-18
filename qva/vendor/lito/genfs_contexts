@@ -44,21 +44,6 @@ genfscon sysfs /devices/platform/soc/soc:hwevent/coresight-hwevent u:object_r:sy
 genfscon sysfs /devices/platform/soc/6b0c000.csr/coresight-swao-csr u:object_r:sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/soc:dummy_source/coresight-modem-diag u:object_r:sysfs_qdss_dev:s0
 
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys0/name         u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/3000000.qcom,lpass/subsys1/name       u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys2/name      u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/aae0000.qcom,venus/subsys3/name       u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys4/name         u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys5/name         u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys6/name        u:object_r:sysfs_ssr:s0
-
-
-#It seem some change in the subsystem numbering adding the new list also
-genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys3/name        u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys4/name        u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys5/name       u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/aae0000.qcom,venus/subsys6/name      u:object_r:sysfs_ssr:s0
-
 # PMIC UI peripherals
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm8150@0:qcom,pm8150_rtc/rtc u:object_r:sysfs_rtc:s0
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-03/c440000.qcom,spmi:qcom,pm7250b@3:qcom,vibrator@5300/leds/vibrator u:object_r:sysfs_leds:s0
@@ -70,7 +55,8 @@ genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.q
 # DCVS nodes
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-llcc-bw/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu-llcc-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,npu-npu-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,npu-npu-llcc-bw/devfreq u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,npu-llcc-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,npudsp-npu-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/18321000.qcom,devfreq-l3/18321000.qcom,devfreq-l3:qcom,cpu0-cpu-l3-lat/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/18321000.qcom,devfreq-l3/18321000.qcom,devfreq-l3:qcom,cpu6-cpu-l3-lat/devfreq u:object_r:sysfs_devfreq:s0

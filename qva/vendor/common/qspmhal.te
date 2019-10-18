@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,37 +25,23 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+type hal_qspmhal_default, domain;
+type hal_qspmhal_default_exec, exec_type, vendor_file_type, file_type;
+typeattribute hal_qspmhal_default untrusted_app_visible_halserver_violators;
 
-#allow system_app access factory
-hal_client_domain(system_app, vendor_hal_factory_qti);
-hal_client_domain(system_app, hal_fm);
+init_daemon_domain(hal_qspmhal_default)
 
-# fm_radio app needes  open read on fm_radio_device
-allow system_app fm_radio_device:chr_file r_file_perms;
+hal_server_domain(hal_qspmhal_default, hal_qspmhal)
+hal_client_domain(hal_qspmhal_default, hal_allocator)
 
-#allow system_app access sensorscalibration service
-hal_client_domain(system_app, hal_sensorscalibrate_qti);
+binder_call(hal_qspmhal_client, hal_qspmhal_server)
+binder_call(hal_qspmhal_server, hal_qspmhal_client)
 
-#perf
-hal_client_domain(system_app, hal_perf)
+# Add hwservice related rules
+hal_attribute_hwservice(hal_qspmhal, hal_qspmhal_hwservice)
 
-#allow system_app to interact with soter hal
-hal_client_domain(system_app, hal_soter);
+allow hal_qspmhal vendor_qspmhal_data_file:dir r_dir_perms;
+allow hal_qspmhal vendor_qspmhal_data_file:file r_file_perms;
 
-#allow system app access display color for qdcm
-hal_client_domain(system_app, hal_display_color);
-
-# allow system_app to interact with light hal
-hal_client_domain(system_app, hal_light);
-
-#allow system app to access btconfigstore hal
-hal_client_domain(system_app, hal_btconfigstore);
-
-# update engine
-binder_call( system_app, update_engine )
-
-#allow system app to access hal_qspmhal
-hal_client_domain(system_app, hal_qspmhal);
-
-# allow system_app to interact with pasr hal
-hal_client_domain(system_app, hal_pasrmanager)
+#getprop rule for qspm debug prop
+userdebug_or_eng(`get_prop(hal_qspmhal_default, vendor_qspm_dbg_prop)')

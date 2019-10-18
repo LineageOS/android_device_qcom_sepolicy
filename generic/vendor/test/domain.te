@@ -26,23 +26,13 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 dontaudit {
-    system_server
-    surfaceflinger
-    bootanim
-    system_app
-    platform_app
-    zygote
-    location_app
-    location_app_test
-    priv_app
-    radio
-    shell
-    zygote
-    mediaswcodec
+    coredomain
+    appdomain
 } vendor_gles_data_file:dir search;
 
 dontaudit {
-    system_app
+    coredomain
+    appdomain
 } vendor_gles_data_file:file *;
 #allow all gpu clients to access configuration settings
 userdebug_or_eng(`

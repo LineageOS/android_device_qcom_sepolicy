@@ -60,3 +60,10 @@ userdebug_or_eng(`
 # Allow system server to access fst,wigig system properties
 set_prop(system_server, wigig_core_prop)
 set_prop(system_server, fst_prop)
+
+#Allow system_server to add and find qspmsvc service
+allow system_server qspmsvc_service:service_manager find;
+
+# Allow system server to access for dpm
+get_prop(system_server, persist_dpm_prop)
+

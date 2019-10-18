@@ -92,3 +92,6 @@ allow hal_perf {
 
 # Allow to self kill capability
 allow hal_perf_default self:capability { kill };
+
+# Allow connecting to thermal_socket
+unix_socket_connect(hal_perf_default, thermal, thermal-engine)

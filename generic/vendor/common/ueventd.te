@@ -50,3 +50,4 @@ allow ueventd persist_file:file r_file_perms;
 
 # For wifi to access  mnt_vendor_file
 r_dir_file(ueventd, mnt_vendor_file)
+allow ueventd metadata_file:dir search;

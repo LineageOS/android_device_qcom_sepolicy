@@ -35,3 +35,5 @@ type wfdservice_service,          service_manager_type;
 type wigigp2p_service,            app_api_service, system_server_service, service_manager_type;
 type wigig_service,               app_api_service, system_server_service, service_manager_type;
 type vendor_vps_service,          app_api_service, service_manager_type;
+type qspmsvc_service,             app_api_service, service_manager_type;
+
