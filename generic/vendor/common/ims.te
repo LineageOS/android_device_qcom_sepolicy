@@ -35,7 +35,6 @@ set_prop(ims, ims_prop)
 get_prop(ims, ims_prop)
 get_prop(ims, cnd_prop)
 
-allow ims sysfs_timestamp_switch:file r_file_perms;
 allow ims sysfs_data:file r_file_perms;
 
 allow ims self:capability net_bind_service;

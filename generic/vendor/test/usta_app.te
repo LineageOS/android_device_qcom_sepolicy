@@ -42,7 +42,6 @@ userdebug_or_eng(`
   allowxperm usta_app self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
   allow usta_app self:{ socket qipcrtr_socket } create_socket_perms;
   allow usta_app xdsp_device:chr_file r_file_perms;
-  allow usta_app sysfs_timestamp_switch:file r_file_perms;
 ')
 
 allow usta_app {
