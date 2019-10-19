@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "20a7f7ed_50c18de8",
+        "filename": "common/vendor_init.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 16208
+      },
+      "writtenOn": "2019-10-19T05:34:22Z",
+      "side": 1,
+      "message": "rw_file_perms?",
+      "revId": "bb10896d3a5834989159e3ce094781e704145213",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
