@@ -59,3 +59,6 @@ hal_client_domain(system_app, hal_qspmhal);
 
 # allow system_app to interact with pasr hal
 hal_client_domain(system_app, hal_pasrmanager)
+
+# allow system app to interact with hal_qteeconnector
+hal_client_domain(system_app, hal_qteeconnector);
