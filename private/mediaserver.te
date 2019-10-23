@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 unix_socket_send(mediaserver, seempdw, seempd)
+get_prop(mediaserver, vendor_sys_video_prop)
