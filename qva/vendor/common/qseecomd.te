@@ -46,3 +46,4 @@ allow tee persist_qti_fp_file:dir create_dir_perms;
 allow tee persist_qti_fp_file:file create_file_perms;
 
 allowxperm tee rpmb_device:blk_file ioctl { MMC_IOC_CMD };
+allowxperm tee rpmb_device:chr_file ioctl {MMC_IOC_MULTI_CMD};
