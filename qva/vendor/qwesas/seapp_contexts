@@ -1,0 +1,3 @@
+# SSG apps for Connection Security
+user=_app seinfo=qwesasapp domain=qwesas_app name=com.qualcomm.qti.qwes.AndroidService type=app_data_file levelFrom=all
+user=_app seinfo=qwesasapp domain=qwesas_app name=com.qualcomm.qti.qwes.AndroidService.QWESAS type=app_data_file levelFrom=all

@@ -91,3 +91,4 @@
 # Console via JTAG - debug only
 /dev/hvc0							u:object_r:console_device:s0
 /data/vendor/gpu(/.*)? u:object_r:vendor_gles_data_file:s0
+/data/vendor/ts_loopback(/.*)?                                  u:object_r:vendor_tui_data_file:s0

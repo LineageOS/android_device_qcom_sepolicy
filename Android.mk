@@ -17,6 +17,15 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
     $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
     $(LOCAL_PATH)/qva/private
 
+# sepolicy rules for product images
+PRODUCT_PUBLIC_SEPOLICY_DIRS := \
+    $(PRODUCT_PUBLIC_SEPOLICY_DIRS) \
+     $(LOCAL_PATH)/product/public
+
+PRODUCT_PRIVATE_SEPOLICY_DIRS := \
+    $(PRODUCT_PRIVATE_SEPOLICY_DIRS) \
+     $(LOCAL_PATH)/product/private
+
 ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
     BOARD_SEPOLICY_DIRS := \
        $(BOARD_SEPOLICY_DIRS) \
@@ -25,6 +34,7 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
        $(LOCAL_PATH)/qva/vendor/common/sysmonapp \
        $(LOCAL_PATH)/qva/vendor/ssg \
        $(LOCAL_PATH)/timeservice \
+       $(LOCAL_PATH)/qva/vendor/qwesas \
        $(LOCAL_PATH)/qva/vendor/common
 
     ifeq ($(TARGET_SEPOLICY_DIR),)

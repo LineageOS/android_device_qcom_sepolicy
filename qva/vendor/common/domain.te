@@ -35,4 +35,5 @@ neverallow {
   -init
   -ueventd
   -spdaemon
+  -hal_authsecret_qti
 } spunvm_file_type: { dir file } *;

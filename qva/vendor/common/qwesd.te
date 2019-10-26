@@ -1,4 +1,4 @@
-# Copyright (c) 2016-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,42 +25,26 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-attribute hal_hbtp;
-attribute hal_hbtp_client;
-attribute hal_hbtp_server;
+# qwesd - Wireless Edge Service Daemon
+type qwesd, domain, mlstrustedsubject;
+type qwesd_exec, exec_type, vendor_file_type, file_type;
 
-attribute hal_perf;
-attribute hal_perf_client;
-attribute hal_perf_server;
+init_daemon_domain(qwesd)
 
-attribute hal_qdutils_disp;
-attribute hal_qdutils_disp_client;
-attribute hal_qdutils_disp_server;
+# Allow access to smcinvoke device
+allow qwesd smcinvoke_device:chr_file rw_file_perms;
 
-attribute hal_trustedui;
-attribute hal_trustedui_client;
-attribute hal_trustedui_server;
+# Allow qwesd to create sockets for HTTP
+allow qwesd self:udp_socket create_socket_perms;
 
-attribute hal_tui_comm;
-attribute hal_tui_comm_client;
-attribute hal_tui_comm_server;
+# Allow read-only access to firmware/image
+allow qwesd vendor_firmware_file:dir r_dir_perms;
+allow qwesd vendor_firmware_file:file r_file_perms;
 
-attribute hal_display_color;
-attribute hal_display_color_client;
-attribute hal_display_color_server;
+# Allow qwesd to write state information to /data/vendor/qwes/qwesd.conf
+allow qwesd vendor_qwes_data_file:dir rw_dir_perms;
+allow qwesd vendor_qwes_data_file:file rw_file_perms;
 
-attribute hal_display_postproc;
-attribute hal_display_postproc_client;
-attribute hal_display_postproc_server;
-
-# All types in /mnt/vendor/persist
-attribute vendor_persist_type;
-
-attribute hal_capabilityconfigstore_qti;
-attribute hal_capabilityconfigstore_qti_client;
-attribute hal_capabilityconfigstore_qti_server;
-
-attribute hal_dataconnection_qti;
-attribute hal_dataconnection_qti_client;
-attribute hal_dataconnection_qti_server;
-
+# Allow access to qipcrtr_socket
+# Remove this when QMI service moves to pfmd
+allow qwesd self:qipcrtr_socket create_socket_perms_no_ioctl;
