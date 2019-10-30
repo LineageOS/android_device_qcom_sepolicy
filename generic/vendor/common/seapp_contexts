@@ -1,4 +1,4 @@
-#Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -38,3 +38,9 @@ user=radio seinfo=platform name=.imshelperservice domain=vendor_imshelper_app ty
 
 #Add new domain for power off alarm app
 user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=vendor_poweroffalarm_app type=system_app_data_file
+
+#Add new domain for ims app
+user=_app seinfo=platform name=org.codeaurora.ims isPrivApp=true domain=vendor_qtelephony type=app_data_file levelFrom=all
+
+#Add DeviceInfoHidlClient to vendor_qtelephony
+user=_app seinfo=platform name=com.qualcomm.qti.devicestatisticsservice domain=vendor_qtelephony type=app_data_file levelFrom=all
