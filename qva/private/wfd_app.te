@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,8 +25,30 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#Add new domain for qti value added Location apps
-user=_app seinfo=platform name=com.qualcomm.location.XT isPrivApp=true domain=vendor_location_app type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.location isPrivApp=true domain=vendor_location_app type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.wfd.service:wfd_service domain=vendor_wfd_app type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.wfd.client domain=vendor_wfd_app type=app_data_file
+typeattribute vendor_wfd_app coredomain;
+
+app_domain(vendor_wfd_app)
+
+net_domain(vendor_wfd_app)
+
+set_prop(vendor_wfd_app, vendor_wfd_service_prop);
+userdebug_or_eng(`
+    get_prop(vendor_wfd_app, vendor_wfd_sys_debug_prop);
+#Access to MM-OSAL debug prop for parser debugging on WFD sink
+    get_prop(vendor_wfd_app, vendor_mm_osal_prop);
+#Allow access to logmask file in /data/
+    allow vendor_wfd_app system_data_file:file r_file_perms;
+')
+binder_call(vendor_wfd_app, vendor_wfdservice)
+
+# allow access to read video SKU property for WFD sink
+get_prop(vendor_wfd_app, vendor_sys_video_prop)
+
+allow vendor_wfd_app vendor_wfdservice_service:service_manager find;
+allow vendor_wfd_app audioserver_service:service_manager find;
+allow vendor_wfd_app mediaserver_service:service_manager find;
+allow vendor_wfd_app mediadrmserver_service:service_manager find;
+
+# Access to /data/media for debug dump
+allow vendor_wfd_app media_rw_data_file:dir create_dir_perms;
+allow vendor_wfd_app media_rw_data_file:file create_file_perms;
