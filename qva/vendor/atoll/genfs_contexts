@@ -55,6 +55,9 @@ genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.q
 #entry for usb controller
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3 u:object_r:sysfs_usb_controller:s0
 
+#net sysfs
+genfscon sysfs /devices/platform/soc/18800000.qcom,icnss/net u:object_r:sysfs_net:s0
+
 #qdss sysfs-node
 genfscon sysfs /devices/platform/soc/6b05000.tmc/coresight-tmc-etf u:object_r:sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/6048000.tmc/coresight-tmc-etr u:object_r:sysfs_qdss_dev:s0
