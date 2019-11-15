@@ -67,3 +67,6 @@ allow system_server qspmsvc_service:service_manager find;
 # Allow system server to access for dpm
 get_prop(system_server, persist_dpm_prop)
 
+# Allow system server to get vendor_camera_prop
+get_prop(system_server, vendor_camera_prop)
+
