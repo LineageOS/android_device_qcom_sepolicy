@@ -49,3 +49,5 @@ allow usta_app {
 
 allow usta_app system_app_data_file:dir create_dir_perms;
 allow usta_app system_app_data_file:file create_file_perms;
+
+dontaudit usta_app system_data_file:file open;
