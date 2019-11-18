@@ -56,10 +56,6 @@ allow spdaemon persist_iar_db_file:file create_file_perms;
 
 r_dir_file(spdaemon, mnt_vendor_file)
 
-# Allow to mount spunvm partition
-allow spdaemon spunvm_file:dir mounton;
-allow spdaemon spunvm_file:filesystem mount;
-
 # Allow to access IAR-DB at /mnt/vendor/spunvm
 allow spdaemon spunvm_file:dir rw_dir_perms;
 allow spdaemon spunvm_file:file create_file_perms;

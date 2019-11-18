@@ -43,7 +43,6 @@ add_hwservice(hal_rcsservice, hal_imscallinfo_hwservice)
 
 get_prop(hal_rcsservice, hwservicemanager_prop)
 
-allow hal_rcsservice sysfs_timestamp_switch:file r_file_perms;
 allow hal_rcsservice sysfs_data:file r_file_perms;
 allow hal_rcsservice self: { socket qipcrtr_socket } create_socket_perms_no_ioctl;
 #required for socket creation

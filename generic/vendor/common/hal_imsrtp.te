@@ -39,11 +39,8 @@ add_hwservice(hal_imsrtp, hal_imsrtp_hwservice)
 allow hal_imsrtp self: qipcrtr_socket  create_socket_perms_no_ioctl;
 unix_socket_connect(hal_imsrtp, ims, ims)
 
-allow hal_imsrtp sysfs_timestamp_switch:file r_file_perms;
-
 allow hal_imsrtp self:capability net_bind_service;
 
-allow hal_imsrtp sysfs_timestamp_switch:file r_file_perms;
 allow hal_imsrtp ion_device:chr_file r_file_perms;
 allow hal_imsrtp sysfs_data:file r_file_perms;
 r_dir_file(hal_imsrtp, sysfs_diag)

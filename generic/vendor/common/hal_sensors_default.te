@@ -33,7 +33,6 @@ get_prop(hal_sensors_default, sensors_prop)
 userdebug_or_eng(`
   diag_use(hal_sensors_default)
   get_prop(hal_sensors_default, sensors_dbg_prop)
-  allow hal_sensors_default sysfs_timestamp_switch:file r_file_perms;
 ')
 
 allow hal_sensors_default qdsp_device:chr_file r_file_perms;
