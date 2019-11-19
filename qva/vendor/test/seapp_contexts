@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -29,6 +29,3 @@
 user=_app seinfo=platform name=com.qualcomm.qct.dlt levelfrom=all domain=vendor_location_app_test type=app_data_file
 user=_app seinfo=platform name=com.qualcomm.qti.qlogcat levelfrom=all domain=vendor_location_app_test type=app_data_file
 user=system seinfo=platform name=.loopbackservice domain=vendor_qtiloopback_app type=system_app_data_file
-
-#Add new domain for QDMAUtils
-user=system seinfo=platform name=com.qualcomm.qti.qdmautils domain=vendor_qdmautils_app type=system_app_data_file

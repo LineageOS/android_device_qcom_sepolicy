@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -25,10 +25,25 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-attribute vendor_sigmahal;
-attribute vendor_sigmahal_server;
-attribute vendor_sigmahal_client;
+type vendor_hal_qccvndhal_qti, domain;
+type vendor_hal_qccvndhal_qti_exec, exec_type, vendor_file_type, file_type;
 
-attribute vendor_qccsyshal;
-attribute vendor_qccsyshal_server;
-attribute vendor_qccsyshal_client;
+hal_server_domain(vendor_hal_qccvndhal_qti, vendor_hal_qccvndhal)
+
+#Allow for transition from init domain to vendor_hal_qccvndhal
+init_daemon_domain(vendor_hal_qccvndhal_qti)
+
+#Allow vendor_hal_qccvndhal to use Vendor Binder IPC
+vndbinder_use(vendor_hal_qccvndhal)
+
+#Allow hwbinder call from hal client to server
+binder_call(vendor_hal_qccvndhal_client, vendor_hal_qccvndhal_server)
+binder_call(vendor_hal_qccvndhal_server, vendor_hal_qccvndhal_client)
+
+#Add hwservice related rules
+#add_hwservice(vendor_hal_qccvndhal_server, vendor_hal_qccvndhal_hwservice)
+#allow vendor_hal_qccvndhal_client vendor_hal_qccvndhal_hwservice:hwservice_manager find;
+hal_attribute_hwservice(vendor_hal_qccvndhal, vendor_hal_qccvndhal_hwservice)
+
+allow vendor_hal_qccvndhal_qti vendor_qcc_trd_data_file:file create_file_perms;
+allow vendor_hal_qccvndhal_qti vendor_qcc_trd_data_file:dir create_dir_perms;

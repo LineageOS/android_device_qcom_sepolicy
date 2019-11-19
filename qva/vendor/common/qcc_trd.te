@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,23 +25,24 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type vendor_qdmastatsd, domain, mlstrustedsubject;
-type vendor_qdmastatsd_exec, file_type, vendor_file_type, exec_type;
+type vendor_qcc_trd_exec, file_type, vendor_file_type, exec_type;
 
-init_daemon_domain(vendor_qdmastatsd)
+init_daemon_domain(vendor_qcc_trd)
 
-allow vendor_qdmastatsd vendor_qdma_data_file:file create_file_perms;
-allow vendor_qdmastatsd vendor_qdma_data_file:dir create_dir_perms;
+vndbinder_use(vendor_qcc_trd)
+
+allow vendor_qcc_trd vendor_qcc_trd_data_file:file create_file_perms;
+allow vendor_qcc_trd vendor_qcc_trd_data_file:dir create_dir_perms;
 
 # access to /dev/ramdump_microdump_modem
-allow vendor_qdmastatsd vendor_ramdump_device:chr_file r_file_perms;
+allow vendor_qcc_trd vendor_ramdump_microdump_modem_device:chr_file r_file_perms;
 
 # cpustats
 # access to /sys/class/power_supply/bms/charge_counter
 # access to /sys/class/power_supply/battery/capacity
 # access to /sys/class/power_supply/battery/status
-allow vendor_qdmastatsd vendor_sysfs_battery_supply:{file lnk_file} r_file_perms;
-allow vendor_qdmastatsd vendor_sysfs_battery_supply:dir r_dir_perms;
+allow vendor_qcc_trd vendor_sysfs_battery_supply:{file lnk_file} r_file_perms;
+allow vendor_qcc_trd vendor_sysfs_battery_supply:dir r_dir_perms;
 
 # gpustats
 # /sys/class/kgsl/kgsl-3d0/gpu_busy_percentage
@@ -49,44 +50,43 @@ allow vendor_qdmastatsd vendor_sysfs_battery_supply:dir r_dir_perms;
 # /sys/class/kgsl/kgsl-3d0/gpu_clock_stats
 # /sys/class/kgsl/kgsl-3d0/num_pwrlevels
 # /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies
-allow vendor_qdmastatsd vendor_sysfs_kgsl:{file lnk_file} r_file_perms;
-allow vendor_qdmastatsd vendor_sysfs_kgsl:dir r_dir_perms;
+allow vendor_qcc_trd vendor_sysfs_kgsl:{file lnk_file} r_file_perms;
+allow vendor_qcc_trd vendor_sysfs_kgsl:dir r_dir_perms;
 
 # cpustats /sys/class/leds/lcd-backlight/brightness
-allow vendor_qdmastatsd sysfs_leds:{file lnk_file} r_file_perms;
-allow vendor_qdmastatsd sysfs_leds:dir r_dir_perms;
+allow vendor_qcc_trd sysfs_leds:{file lnk_file} r_file_perms;
+allow vendor_qcc_trd sysfs_leds:dir r_dir_perms;
 
 # cpustats /sys/class/backlight/panel0-backlight/brightness
-allow vendor_qdmastatsd vendor_sysfs_graphics:{file lnk_file} r_file_perms;
-allow vendor_qdmastatsd vendor_sysfs_graphics:dir r_dir_perms;
+allow vendor_qcc_trd vendor_sysfs_graphics:{file lnk_file} r_file_perms;
+allow vendor_qcc_trd vendor_sysfs_graphics:dir r_dir_perms;
 
 # cpustats /sys/class/thermal/thermal_zone%d
-allow vendor_qdmastatsd sysfs_thermal:{file lnk_file} r_file_perms;
-allow vendor_qdmastatsd sysfs_thermal:dir r_dir_perms;
+allow vendor_qcc_trd sysfs_thermal:{file lnk_file} r_file_perms;
+allow vendor_qcc_trd sysfs_thermal:dir r_dir_perms;
 
 # cpustats /proc/stat
-allow vendor_qdmastatsd proc_stat:file r_file_perms;
-allow vendor_qdmastatsd proc_stat:dir r_dir_perms;
+allow vendor_qcc_trd proc_stat:file r_file_perms;
+allow vendor_qcc_trd proc_stat:dir r_dir_perms;
 
-# cpustats /proc/<pid>/
-r_dir_file(vendor_qdmastatsd, domain);
-
-# lmtp qdma_socket
-allow vendor_qdmastatsd vendor_qdma_socket:dir rw_dir_perms;
-allow vendor_qdmastatsd vendor_qdma_socket:sock_file create_file_perms;
+# cpustats /proc/<pid>/ - todo find alternative sln
+#r_dir_file(vendor_qcc_trd, domain);
 
 # mps /persist/hlos_rfs/shared
-allow vendor_qdmastatsd mnt_vendor_file:dir r_dir_perms;
-allow vendor_qdmastatsd vendor_persist_rfs_shared_hlos_file:dir rw_dir_perms;
-allow vendor_qdmastatsd vendor_persist_rfs_shared_hlos_file:file create_file_perms;
+allow vendor_qcc_trd mnt_vendor_file:dir r_dir_perms;
+allow vendor_qcc_trd vendor_persist_rfs_shared_hlos_file:dir rw_dir_perms;
+allow vendor_qcc_trd vendor_persist_rfs_shared_hlos_file:file create_file_perms;
 
 # for logcat
-unix_socket_connect(vendor_qdmastatsd, logdr, logd);
+unix_socket_connect(vendor_qcc_trd, logdr, logd);
 
-# allow qdma_prop
-set_prop(vendor_qdmastatsd, vendor_qdma_prop);
+# allow qcc_prop
+set_prop(vendor_qcc_trd, vendor_qcc_prop);
 
 # qmi
-qmux_socket(vendor_qdmastatsd);
-allow vendor_qdmastatsd self:{ socket qipcrtr_socket } create_socket_perms;
-allowxperm vendor_qdmastatsd self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+qmux_socket(vendor_qcc_trd);
+allow vendor_qcc_trd self:{ qipcrtr_socket } create_socket_perms_no_ioctl;
+
+# read ver_info.txt
+allow vendor_qcc_trd vendor_firmware_file:dir r_dir_perms;
+allow vendor_qcc_trd vendor_firmware_file:file r_file_perms;

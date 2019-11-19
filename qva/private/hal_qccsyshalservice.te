@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -25,10 +25,31 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-attribute vendor_sigmahal;
-attribute vendor_sigmahal_server;
-attribute vendor_sigmahal_client;
+type vendor_qccsyshal_qti, domain, coredomain;
+type vendor_qccsyshal_qti_exec, system_file_type , exec_type, file_type;
 
-attribute vendor_qccsyshal;
-attribute vendor_qccsyshal_server;
-attribute vendor_qccsyshal_client;
+hal_server_domain(vendor_qccsyshal_qti, vendor_qccsyshal);
+
+#Add hwservice related rules
+hal_attribute_hwservice(vendor_qccsyshal, vendor_qccsyshal_hwservice);
+
+#Allow for transition from init domain to qccsyshal
+init_daemon_domain(vendor_qccsyshal_qti)
+
+#Allow the interaction with servicemanager
+binder_use(vendor_qccsyshal_qti)
+
+#Allow hwbinder call from hal client to server
+binder_call(vendor_qccsyshal_client, vendor_qccsyshal_server)
+binder_call(vendor_qccsyshal_server, vendor_qccsyshal_client)
+
+allow vendor_qccsyshal_client vendor_qccsyshal_hwservice:hwservice_manager find;
+
+# allow access to qdma dropbox (/data/misc/qdma)
+allow vendor_qccsyshal_qti vendor_qcc_data_file:dir create_dir_perms;
+allow vendor_qccsyshal_qti vendor_qcc_data_file:file create_file_perms;
+
+# allow access to vendor_qcc_app_socket
+unix_socket_connect(vendor_qccsyshal_qti, vendor_qcc_app, vendor_qcc_app)
+allow vendor_qccsyshal_qti vendor_qcc_app_socket:dir r_dir_perms;
+allow vendor_qccsyshal_qti vendor_qcc_app_socket:sock_file rw_file_perms;

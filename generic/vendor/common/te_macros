@@ -125,16 +125,6 @@ typeattribute $1 $2;
 ')
 
 #####################################
-# qdma_file_socket(clientdomain)
-# Allow client domain to connecto and send
-# via a local socket to the qdma domain.
-define(`qdma_file_socket', `
-allow $1 vendor_qdma_socket:dir r_dir_perms;
-allow $1 vendor_qdma_socket:sock_file { read getattr write };
-allow $1 vendor_qdma_app:unix_stream_socket { connectto };
-')
-
-#####################################
 # coredata_datavendor_migration(domain, old_data_label, data_vendor_label)
 # Allow a base set of permissions required for a sh  to copy data from /data to /data/vendor
 #

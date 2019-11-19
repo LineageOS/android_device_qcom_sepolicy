@@ -51,7 +51,6 @@
 /dev/socket/mlid                                u:object_r:vendor_mlid_socket:s0
 /dev/socket/ssgqmig                             u:object_r:vendor_ssgqmig_socket:s0
 /dev/socket/ssgtzd                              u:object_r:vendor_ssgtzd_socket:s0
-/dev/socket/qdma(/.*)?                          u:object_r:vendor_qdma_socket:s0
 /dev/socket/adpl_cmd_uds_file                   u:object_r:vendor_dataadpl_socket:s0
 /dev/socket/vendor_wpa_wlan[0-9]                u:object_r:vendor_wifi_vendor_wpa_socket:s0
 /dev/socket/wigig/wpa_wigig[0-9]                u:object_r:vendor_wigig_vendor_wpa_socket:s0
@@ -95,7 +94,7 @@
 /(vendor|system/vendor)/bin/ssgqmigd                                               u:object_r:vendor_ssgqmigd_exec:s0
 /(vendor|system/vendor)/bin/ssgtzd                                                 u:object_r:vendor_ssgtzd_exec:s0
 /(vendor|system/vendor)/bin/mlid                                                   u:object_r:vendor_mlid_exec:s0
-/(vendor|system/vendor)/bin/qdmastatsd                                             u:object_r:vendor_qdmastatsd_exec:s0
+/(vendor|system/vendor)/bin/qdmastatsd                                             u:object_r:vendor_qcc_trd_exec:s0
 /(vendor|system/vendor)/bin/seemp_healthd                                          u:object_r:vendor_seemp_health_daemon_exec:s0
 /(vendor|system/vendor)/bin/qfp-daemon                                             u:object_r:vendor_qfp-daemon_exec:s0
 /(vendor|system/vendor)/bin/adpl                                                   u:object_r:vendor_adpl_exec:s0
@@ -119,6 +118,7 @@
 /vendor/bin/vendor\.qti\.qspmhal@1\.0-service                                      u:object_r:vendor_hal_qspmhal_default_exec:s0
 /(vendor|system/vendor)/bin/mutualex                                               u:object_r:vendor_mutualex_exec:s0
 
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qccvndhal@1\.0-service       u:object_r:vendor_hal_qccvndhal_qti_exec:s0
 
 #### Context for location features
 ## location daemons and binaries
@@ -171,8 +171,8 @@
 /dev/cam-hyp-intf-[0-9]+                                            u:object_r:video_device:s0
 /data/vendor/perfd(/.*)?                                            u:object_r:vendor_mpctl_data_file:s0
 /data/vendor/dataqti(/.*)?                                          u:object_r:vendor_qti_data_file:s0
-/data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qdma_data_file:s0
-/data/vendor/qdma(/.*)?                                             u:object_r:vendor_qdma_data_file:s0
+/data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qcc_trd_data_file:s0
+/data/vendor/qdma(/.*)?                                             u:object_r:vendor_qcc_trd_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:vendor_wigig_hostapd_socket:s0
 /data/vendor/lm(/.*)?                                               u:object_r:vendor_lm_data_file:s0

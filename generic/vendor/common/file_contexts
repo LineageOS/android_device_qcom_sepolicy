@@ -59,6 +59,7 @@
 /dev/avtimer                                    u:object_r:vendor_avtimer_device:s0
 /dev/subsys_.*                                  u:object_r:vendor_ssr_device:s0
 /dev/ramdump_.*                                 u:object_r:vendor_ramdump_device:s0
+/dev/ramdump_microdump_modem                    u:object_r:vendor_ramdump_microdump_modem_device:s0
 /dev/hbtp_input                                 u:object_r:vendor_hbtp_device:s0
 /dev/hbtp_vm                                    u:object_r:vendor_hbtp_device:s0
 /dev/sg[0-9]+                                   u:object_r:vendor_sg_device:s0

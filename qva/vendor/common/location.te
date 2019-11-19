@@ -39,5 +39,4 @@ allow vendor_location vendor_persist_rfs_shared_hlos_file:file rw_file_perms;
 
 ## xtra-daemon
 ##############
-#access to qdma socket
-qdma_file_socket(vendor_location);
+hal_client_domain(vendor_location, vendor_qccsyshal);
