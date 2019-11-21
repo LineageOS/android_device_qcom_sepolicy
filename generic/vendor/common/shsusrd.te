@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,37 +24,14 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# read factory calibration and sensor configuration data
-allow hal_sensors_default mnt_vendor_file:dir search;
-r_dir_file(hal_sensors_default, persist_sensors_file)
-get_prop(hal_sensors_default, sensors_prop)
+type shsusrd, domain;
+type shsusrd_exec, exec_type, vendor_file_type, file_type;
 
-# Access to tests from userdebug/eng builds
-userdebug_or_eng(`
-  diag_use(hal_sensors_default)
-  get_prop(hal_sensors_default, sensors_dbg_prop)
-')
+init_daemon_domain(shsusrd)
 
-allow hal_sensors_default qdsp_device:chr_file r_file_perms;
-allow hal_sensors_default xdsp_device:chr_file r_file_perms;
+allow shsusrd proc_shs:file rw_file_perms;
+allow shsusrd proc_shs:dir r_dir_perms;
+allow shsusrd self:netlink_generic_socket create_socket_perms_no_ioctl;
 
-allow hal_sensors sysfs_data:file r_file_perms;
-allow hal_sensors sysfs_sensors:dir r_dir_perms;
-allow hal_sensors sysfs_sensors:file rw_file_perms;
-allow hal_sensors sysfs_sensors:lnk_file read;
-
-#following to set the ssr
-allow hal_sensors_default sysfs_slpi:dir search;
-allow hal_sensors_default sysfs_slpi:file w_file_perms;
-allow hal_sensors_default sysfs_adsp_ssr:file w_file_perms;
-
-allow hal_sensors_default persist_sensors_file:dir rw_dir_perms;
-allow hal_sensors_default persist_sensors_file:file create_file_perms;
-allow hal_sensors_default mnt_vendor_file:dir rw_dir_perms;
-allow hal_sensors_default mnt_vendor_file:file create_file_perms;
-
-#interact with the sensors low power island (SLPI) CPU
-allow hal_sensors_default self:{ socket qipcrtr_socket } create_socket_perms;
-allowxperm hal_sensors_default self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
-
-allow hal_sensors_default system_server:fd use;
+allow shsusrd shsusr_data_file:dir rw_dir_perms;
+allow shsusrd shsusr_data_file:file create_file_perms;

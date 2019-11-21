@@ -80,6 +80,7 @@
 /vendor/bin/hw/vendor\.qti\.hardware\.qseecom@1\.0-service                         u:object_r:hal_qseecom_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service                   u:object_r:hal_qteeconnector_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.scve\.objecttracker@1\.0-service             u:object_r:vendor_scve_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.spu@1\.0-service                       u:object_r:hal_spu_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.scve\.panorama@1\.0-service  u:object_r:vendor_scve_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service                u:object_r:hal_sensorscalibrate_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.soter@1\.0-service           u:object_r:hal_soter_qti_exec:s0
