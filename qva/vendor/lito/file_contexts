@@ -28,7 +28,7 @@
 # Dev block nodes
 
 #Primary storage device nodes
-/dev/block/mmcblk0rpmb                                                          u:object_r:rpmb_device:s0
+/dev/mmcblk0rpmb                                                                u:object_r:rpmb_device:s0
 /dev/block/mmcblk0                                                              u:object_r:root_block_device:s0
 
 # UFS Devices

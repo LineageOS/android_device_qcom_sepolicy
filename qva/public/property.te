@@ -28,8 +28,6 @@
 type persist_dpm_prop, property_type, extended_core_property_type;
 type persist_camera_prop, property_type, extended_core_property_type;
 
-#MirrorLink
-type vendor_mirrorlink_prop, property_type, extended_core_property_type;
 # this is vendor defined property  and added with prefix vendor
 # which is going to be working from system
 type vendor_bt_prop, property_type, extended_core_property_type;

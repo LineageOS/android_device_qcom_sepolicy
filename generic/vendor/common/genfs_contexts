@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -70,7 +70,7 @@ genfscon sysfs /class/thermal                                           u:object
 genfscon sysfs /class/lcd_bias                                          u:object_r:sysfs_lcd:s0
 genfscon sysfs /module/msm_thermal                                      u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/platform/battery_current_limit                  u:object_r:sysfs_thermal:s0
-genfscon sysfs /module/diagchar/parameters/timestamp_switch             u:object_r:sysfs_timestamp_switch:s0
+genfscon sysfs /module/diagchar/parameters/timestamp_switch             u:object_r:sysfs_diag:s0
 genfscon sysfs /module/msm_performance                                  u:object_r:sysfs_msm_perf:s0
 genfscon sysfs /module/lpm_levels                                       u:object_r:sysfs_msm_power:s0
 genfscon sysfs /module/lpm_stats                                        u:object_r:sysfs_msm_stats:s0

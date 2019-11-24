@@ -40,6 +40,7 @@ ctl.vendor.ipacm-diag      u:object_r:ipacm-diag_prop:s0
 ctl.vendor.dataqti         u:object_r:vendor_dataqti_prop:s0
 ctl.vendor.sensors         u:object_r:sensors_prop:s0
 persist.vendor.sensors.    u:object_r:sensors_prop:s0
+ro.vendor.sensors.         u:object_r:sensors_prop:s0
 vendor.audio.              u:object_r:vendor_audio_prop:s0
 vendor.voice.              u:object_r:vendor_audio_prop:s0
 persist.vendor.audio.      u:object_r:vendor_audio_prop:s0

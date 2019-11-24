@@ -38,10 +38,11 @@ allow qti rmnet_device:chr_file rw_file_perms;
 
 allow qti { vendor_shell_exec }:file rx_file_perms;
 
+allowxperm qti self:udp_socket ioctl RMNET_IOCTL_EXTENDED;
+
 #diag
 userdebug_or_eng(`
     diag_use(qti)
-    allow qti { sysfs_data sysfs_timestamp_switch} :file r_file_perms;
 ')
 allow qti mhi_device:chr_file rw_file_perms;
 allow qti sysfs_mhi:dir r_dir_perms;
