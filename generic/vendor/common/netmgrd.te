@@ -66,6 +66,9 @@ allow netmgrd netmgr_recovery_data_file:file create_file_perms;
 allow netmgrd netmgr_recovery_data_file:dir rw_dir_perms;
 
 get_prop(netmgrd, hwservicemanager_prop)
+# Allow netmgrd to set vendor properties
+set_prop(netmgrd, vendor_data_shsusr_prop)
+
 hwbinder_use(netmgrd)
 binder_call(netmgrd, netd)
 allow netmgrd system_net_netd_hwservice:hwservice_manager find;
