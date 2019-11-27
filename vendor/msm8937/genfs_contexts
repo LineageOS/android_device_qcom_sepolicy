@@ -113,3 +113,6 @@ genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.q
 #SMB1360 FILES
 genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-0014/power_supply/battery u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-0014/power_supply/usb u:object_r:sysfs_usb_supply:s0
+
+#net sysfs
+genfscon sysfs /devices/platform/soc/a000000.qcom,wcnss-wlan/net u:object_r:sysfs_net:s0
