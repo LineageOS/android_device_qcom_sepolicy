@@ -62,3 +62,4 @@ type hal_fm_hwservice, hwservice_manager_type;
 type hal_btconfigstore_hwservice, hwservice_manager_type;
 type hal_capabilityconfigstore_qti_hwservice, hwservice_manager_type;
 type hal_srvctracker_hwservice, hwservice_manager_type;
+type hal_qseecom_hwservice, hwservice_manager_type;
