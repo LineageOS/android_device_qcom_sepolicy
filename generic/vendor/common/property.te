@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -66,6 +66,9 @@ vendor_internal_prop(vendor_time_service_prop);
 
 # Audio props
 vendor_restricted_prop(vendor_audio_prop);
+
+# shsusrd props
+vendor_restricted_prop(vendor_data_shsusr_prop);
 
 #ss-restart
 vendor_internal_prop(vendor_ssr_prop);
