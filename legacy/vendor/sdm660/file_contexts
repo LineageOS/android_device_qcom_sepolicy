@@ -160,3 +160,5 @@
 /sys/devices(/platform)?/soc/ca00000.qcom,msm-cam/video4linux/video[0-9]+/name(/.*)?  u:object_r:sysfs_jpeg:s0
 #sysfs graphics
 /sys/devices/virtual/graphics/fb0/supported_bitclk                  u:object_r:sysfs_graphics:s0
+
+/sys/devices/soc/780000.qcom,msm-core/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
