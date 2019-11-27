@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -53,8 +53,8 @@
 /dev/socket/ssgtzd                              u:object_r:vendor_ssgtzd_socket:s0
 /dev/socket/qdma(/.*)?                          u:object_r:vendor_qdma_socket:s0
 /dev/socket/adpl_cmd_uds_file                   u:object_r:vendor_dataadpl_socket:s0
+/dev/socket/vendor_wpa_wlan[0-9]                u:object_r:vendor_wifi_vendor_wpa_socket:s0
 /dev/socket/wigig/wpa_wigig[0-9]                u:object_r:vendor_wigig_vendor_wpa_socket:s0
-/dev/socket/wigig/vendor_wpa_wlan[0-9]          u:object_r:vendor_wigig_vendor_wpa_socket:s0
 /dev/socket/wigig/wigignpt                      u:object_r:vendor_wigignpt_socket:s0
 /dev/socket/wigig/sensingdaemon                 u:object_r:vendor_sensingdaemon_socket:s0
 
@@ -115,6 +115,7 @@
 /(vendor|system/vendor)/bin/sensingdaemon                                          u:object_r:vendor_sensingdaemon_exec:s0
 /vendor/bin/hw/android\.hardware\.usb\@1\.[0-2]-service-qti                        u:object_r:vendor_hal_usb_qti_exec:s0
 /vendor/bin/vendor\.qti\.qspmhal@1\.0-service                                      u:object_r:vendor_hal_qspmhal_default_exec:s0
+/(vendor|system/vendor)/bin/mutualex                                               u:object_r:vendor_mutualex_exec:s0
 
 
 #### Context for location features
