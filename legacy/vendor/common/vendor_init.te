@@ -117,3 +117,5 @@ set_prop(vendor_init, vendor_wigig_prop)
 userdebug_or_eng(`
   allow vendor_init proc_security:file rw_file_perms;
 ')
+
+set_prop(vendor_init, vendor_time_service_prop)
