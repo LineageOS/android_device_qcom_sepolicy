@@ -125,3 +125,5 @@ userdebug_or_eng(`
 
 allow vendor_init tee_device:chr_file getattr;
 allow vendor_init block_device:lnk_file setattr;
+
+set_prop(vendor_init, vendor_time_service_prop)
