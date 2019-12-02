@@ -34,6 +34,7 @@
 /dev/sp_keymaster                     u:object_r:sp_keymaster_device:s0
 /dev/sp_ssr                           u:object_r:sp_ssr_device:s0
 /dev/spdaemon_ssr                     u:object_r:spdaemon_ssr_device:s0
+/dev/spu_hal_ssr                      u:object_r:spu_hal_ssr_device:s0
 /dev/spss_utils                       u:object_r:spss_utils_device:s0
 /dev/iuicc                            u:object_r:iuicc_device:s0
 /dev/iuicc0                           u:object_r:iuicc_device:s0
