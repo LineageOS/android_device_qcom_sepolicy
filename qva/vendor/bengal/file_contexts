@@ -152,11 +152,15 @@
 /sys/devices/platform/soc/5ab0000.qcom,venus/subsys[0-9]/name   u:object_r:sysfs_ssr:s0
 /sys/devices/platform/soc/b300000.qcom,turing/subsys[0-9]/name  u:object_r:sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]/name     u:object_r:sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]/name    u:object_r:sysfs_ssr:s0
+/sys/devices/platform/soc/6080000.qcom,mss/subsys[0-9]/name     u:object_r:sysfs_ssr:s0
 
 /sys/devices/platform/soc/ab00000.qcom,lpass/subsys[0-9]/restart_level  u:object_r:sysfs_ssr_toggle:s0
 /sys/devices/platform/soc/5ab0000.qcom,venus/subsys[0-9]/restart_level  u:object_r:sysfs_ssr_toggle:s0
 /sys/devices/platform/soc/b300000.qcom,turing/subsys[0-9]/restart_level u:object_r:sysfs_ssr_toggle:s0
 /sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]/restart_level    u:object_r:sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]/restart_level   u:object_r:sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/6080000.qcom,mss/subsys[0-9]/restart_level    u:object_r:sysfs_ssr_toggle:s0
 
 # FBE
 /vendor/bin/init.qti.qseecomd.sh                                u:object_r:init-qti-fbe-sh_exec:s0
