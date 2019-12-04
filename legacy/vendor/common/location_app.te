@@ -38,6 +38,10 @@ userdebug_or_eng(`
 
 get_prop(vendor_location_app, vendor_mpctl_prop)
 get_prop(vendor_location_app, vendor_iop_prop)
+
+#allow location_app to access gnss hal
+hal_client_domain(vendor_location_app, hal_gnss)
+
 allow vendor_location_app mediametrics_service:service_manager find;
 allow vendor_location_app surfaceflinger_service:service_manager find;
 allow vendor_location_app location_data_file:dir rw_dir_perms;
@@ -45,6 +49,7 @@ allow vendor_location_app self:socket create_socket_perms;
 allow vendor_location_app anr_data_file:dir rw_dir_perms;
 allow vendor_location_app anr_data_file:file rw_file_perms;
 allow vendor_location_app activity_service:service_manager find;
+allow vendor_location_app radio_service:service_manager find;
 # ioctlcmd=c302
 allowxperm vendor_location_app self:socket ioctl msm_sock_ipc_ioctls;
 allow vendor_location_app self:qipcrtr_socket create_socket_perms_no_ioctl;
