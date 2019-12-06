@@ -91,6 +91,11 @@ genfscon  sysfs /devices/platform/soc/c200000.qcom,lpass/subsys2/name  u:object_
 genfscon  sysfs /devices/platform/soc/a21b000.qcom,pronto/subsys3/name u:object_r:sysfs_ssr:s0
 genfscon  sysfs /devices/platform/soc/4080000.qcom,mss/subsys4/name    u:object_r:sysfs_ssr:s0
 
+#SSR nodes for msm8937 64 bit has different path
+genfscon  sysfs /devices/soc/c200000.qcom,lpass/subsys1/name  u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/soc/a21b000.qcom,pronto/subsys2/name u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/soc/4080000.qcom,mss/subsys3/name    u:object_r:sysfs_ssr:s0
+
 #SSR nodes for 32 bit has diffrent path
 genfscon  sysfs /devices/soc/1de0000.qcom,venus/subsys0/name  u:object_r:sysfs_ssr:s0
 genfscon  sysfs /devices/soc/soc:qcom,kgsl-hyp/subsys1/name   u:object_r:sysfs_ssr:s0

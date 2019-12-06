@@ -70,6 +70,9 @@ allowxperm netmgrd self:socket ioctl msm_sock_ipc_ioctls;
 
 #Allow netmgrd to use netd HAL via HIDL
 get_prop(netmgrd, hwservicemanager_prop)
+# Allow netmgrd to set vendor properties
+set_prop(netmgrd, vendor_data_shsusr_prop)
+
 hwbinder_use(netmgrd)
 binder_call(netmgrd, netd)
 allow netmgrd system_net_netd_hwservice:hwservice_manager find;
