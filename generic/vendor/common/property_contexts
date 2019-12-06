@@ -121,6 +121,9 @@ persist.vendor.data.shsusr_load u:object_r:vendor_data_shsusr_prop:s0
 #vendor-wlan
 vendor.wlan.  u:object_r:vendor_wifi_prop:s0
 
+#debuglog prop
+vendor.zeroth.debuglog.logmask     u:object_r:vendor_debuglog_prop:s0
+
 #qdcm socket service
 vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0
 
