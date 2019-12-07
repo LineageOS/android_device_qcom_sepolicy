@@ -59,3 +59,4 @@ allow hal_sensors_default self:{ socket qipcrtr_socket } create_socket_perms;
 allowxperm hal_sensors_default self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 
 allow hal_sensors_default system_server:fd use;
+hal_client_domain(hal_sensors_default, hal_graphics_allocator)
