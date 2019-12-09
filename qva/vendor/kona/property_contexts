@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #face3d
-persist.vendor.biometricsface.pr u:object_r:face3d_producer_prop:s0
+persist.vendor.biometricsface.pr u:object_r:vendor_face3d_producer_prop:s0

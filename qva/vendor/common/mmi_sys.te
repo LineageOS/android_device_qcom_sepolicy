@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #mmi_sys basic
-r_dir_file(vendor_mmi_sys, sysfs_graphics)
+r_dir_file(vendor_mmi_sys, vendor_sysfs_graphics)
 
 hal_client_domain(vendor_mmi_sys, vendor_hal_factory_qti);
 

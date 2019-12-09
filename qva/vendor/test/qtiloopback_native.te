@@ -26,19 +26,19 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type qtiloopback_native, domain;
-type qtiloopback_native_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(qtiloopback_native)
-vndbinder_use(qtiloopback)
+type vendor_qtiloopback_native, domain;
+type vendor_qtiloopback_native_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_qtiloopback_native)
+vndbinder_use(vendor_qtiloopback)
 userdebug_or_eng(`
 
-hal_server_domain_bypass(qtiloopback_native,qtiloopback)
-binder_call(qtiloopback_client,qtiloopback_server)
-binder_call(qtiloopback_server,qtiloopback_client)
-hal_attribute_hwservice(qtiloopback, qtiloopback_hwservice)
+hal_server_domain_bypass(vendor_qtiloopback_native,vendor_qtiloopback)
+binder_call(vendor_qtiloopback_client,vendor_qtiloopback_server)
+binder_call(vendor_qtiloopback_server,vendor_qtiloopback_client)
+hal_attribute_hwservice(vendor_qtiloopback, vendor_qtiloopback_hwservice)
 
-netmgr_socket(qtiloopback_native)
-allow qtiloopback_native self:{
+netmgr_socket(vendor_qtiloopback_native)
+allow vendor_qtiloopback_native self:{
     # Allow receiving NETLINK responses from WLAN driver.
     netlink_socket
     netlink_generic_socket
@@ -46,9 +46,9 @@ allow qtiloopback_native self:{
     netlink_route_socket
 } create_socket_perms_no_ioctl;
 
-allow qtiloopback_native sysfs_diag:dir search;
-allow qtiloopback_native sysfs_timestamp_switch:file { open read };
-allow qtiloopback_native self:netlink_route_socket nlmsg_read;
-allow qtiloopback_native self:udp_socket { create ioctl };
+allow vendor_qtiloopback_native vendor_sysfs_diag:dir search;
+allow vendor_qtiloopback_native vendor_sysfs_timestamp_switch:file { open read };
+allow vendor_qtiloopback_native self:netlink_route_socket nlmsg_read;
+allow vendor_qtiloopback_native self:udp_socket { create ioctl };
 
 ')

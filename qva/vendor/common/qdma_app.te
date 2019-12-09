@@ -25,52 +25,52 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type qdma_app, domain, mlstrustedsubject;
-app_domain(qdma_app)
-net_domain(qdma_app)
-binder_use(qdma_app)
+type vendor_qdma_app, domain, mlstrustedsubject;
+app_domain(vendor_qdma_app)
+net_domain(vendor_qdma_app)
+binder_use(vendor_qdma_app)
 
-# allow invoking activity and access app content to qdma_app
-allow qdma_app { activity_service content_service }:service_manager find;
-# allow display service to qdma_app
-allow qdma_app { display_service }:service_manager find;
-# allow access to wifi and data network to qdma_app
-allow qdma_app { connectivity_service network_management_service }:service_manager find;
-# allow access telephony service info to qdma_app
-allow qdma_app { radio_service registry_service }:service_manager find;
-# allow acquire wakelock to qdma_app
-allow qdma_app { power_service }:service_manager find;
+# allow invoking activity and access app content to vendor_qdma_app
+allow vendor_qdma_app { activity_service content_service }:service_manager find;
+# allow display service to vendor_qdma_app
+allow vendor_qdma_app { display_service }:service_manager find;
+# allow access to wifi and data network to vendor_qdma_app
+allow vendor_qdma_app { connectivity_service network_management_service }:service_manager find;
+# allow access telephony service info to vendor_qdma_app
+allow vendor_qdma_app { radio_service registry_service }:service_manager find;
+# allow acquire wakelock to vendor_qdma_app
+allow vendor_qdma_app { power_service }:service_manager find;
 # allow to load native library
-allow qdma_app { mount_service }:service_manager find;
+allow vendor_qdma_app { mount_service }:service_manager find;
 # for vendor_perf_service
-allow qdma_app app_api_service:service_manager find;
+allow vendor_qdma_app app_api_service:service_manager find;
 
 # allow access to qdma dropbox
-allow qdma_app vendor_qdma_data_file:dir create_dir_perms;
-allow qdma_app vendor_qdma_data_file:file create_file_perms;
+allow vendor_qdma_app vendor_qdma_data_file:dir create_dir_perms;
+allow vendor_qdma_app vendor_qdma_data_file:file create_file_perms;
 
-allow qdma_app user_service:service_manager find;
+allow vendor_qdma_app user_service:service_manager find;
 
 # allow access to socket
-unix_socket_connect(qdma_app, dpmtcm, dpmd)
+unix_socket_connect(vendor_qdma_app, dpmtcm, dpmd)
 
 # allow qdma_socket
-allow qdma_app qdma_socket:dir w_dir_perms;
-allow qdma_app qdma_socket:sock_file create_file_perms;
+allow vendor_qdma_app vendor_qdma_socket:dir w_dir_perms;
+allow vendor_qdma_app vendor_qdma_socket:sock_file create_file_perms;
 
 # for /dev/socket/qdma/qdma-campmgr-s
-unix_socket_connect(qdma_app, qdma, qdmastatsd)
+unix_socket_connect(vendor_qdma_app, vendor_qdma, vendor_qdmastatsd)
 
 # allow access to mediadrmserver for qdmastats/wvstats
-allow qdma_app mediadrmserver_service:service_manager find;
+allow vendor_qdma_app mediadrmserver_service:service_manager find;
 
-# allow qdma_app to access system_app_data_file
+# allow vendor_qdma_app to access system_app_data_file
 # necessary for read and write /data/data subdirectory.
-allow qdma_app system_app_data_file:dir create_dir_perms;
-allow qdma_app system_app_data_file:file create_file_perms;
+allow vendor_qdma_app system_app_data_file:dir create_dir_perms;
+allow vendor_qdma_app system_app_data_file:file create_file_perms;
 
 # allow qdma_prop
-set_prop(qdma_app, vendor_qdma_prop);
+set_prop(vendor_qdma_app, vendor_qdma_prop);
 
 # allow cgroup access
-allow qdma_app cgroup:file rw_file_perms;
+allow vendor_qdma_app cgroup:file rw_file_perms;

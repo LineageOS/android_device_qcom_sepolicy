@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+#Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -31,10 +31,10 @@ user=_app seinfo=tango name=com.google.tango:app domain=untrusted_app type=app_d
 user=_app seinfo=platform name=com.qualcomm.telephony domain=qtelephony type=app_data_file levelFrom=all
 
 #add new domain for qtidataservices
-user=radio seinfo=platform name=.qtidataservices domain=qtidataservices_app type=radio_data_file
+user=radio seinfo=platform name=.qtidataservices domain=vendor_qtidataservices_app type=radio_data_file
 
 #Add new domain for imshelper service
-user=radio seinfo=platform name=.imshelperservice domain=imshelper_app type=imshelper_app_data_file
+user=radio seinfo=platform name=.imshelperservice domain=vendor_imshelper_app type=vendor_imshelper_app_data_file
 
 #Add new domain for power off alarm app
-user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=system_app_data_file
+user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=vendor_poweroffalarm_app type=system_app_data_file

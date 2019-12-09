@@ -37,12 +37,12 @@ allow vendor_mmi self:capability { fowner fsetid kill };
 
 #For various devices
 allow vendor_mmi {
-    sysfs_soc
+    vendor_sysfs_soc
     sysfs_devices_system_cpu
-    sysfs_usb_supply
-    sysfs_battery_supply
+    vendor_sysfs_usb_supply
+    vendor_sysfs_battery_supply
     sysfs_power
-    sysfs_graphics
+    vendor_sysfs_graphics
     sysfs_wake_lock
 }:file rw_file_perms;
 
@@ -57,8 +57,8 @@ allow vendor_mmi mnt_vendor_file:dir r_dir_perms;
 hal_client_domain(vendor_mmi, hal_graphics_allocator);
 
 #mmi test case
-unix_socket_connect(vendor_mmi, cnd, cnd);
-unix_socket_connect(vendor_mmi, netmgrd, netmgrd);
+unix_socket_connect(vendor_mmi, vendor_cnd, vendor_cnd);
+unix_socket_connect(vendor_mmi, vendor_netmgrd, vendor_netmgrd);
 net_domain(vendor_mmi);
 allow vendor_mmi vendor_mmi_exec:file rx_file_perms;
 allow vendor_mmi proc:file r_file_perms;

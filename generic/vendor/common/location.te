@@ -25,75 +25,75 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# generic/location.te - sepolicy rules for generic location modules
+# generic/vendor_location.te - sepolicy rules for generic vendor_location modules
 
 # loc_launcher service
-# which launches various other services supporting GPS & Wifi-RTT (LOWI) location
-type location, domain;
-type location_exec, exec_type, vendor_file_type, file_type;
+# which launches various other services supporting GPS & Wifi-RTT (LOWI) vendor_location
+type vendor_location, domain;
+type vendor_location_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(location)
+init_daemon_domain(vendor_location)
 
-allow location self:capability { setgid setuid };
+allow vendor_location self:capability { setgid setuid };
 
-hwbinder_use(location)
+hwbinder_use(vendor_location)
 
-get_prop(location, hwservicemanager_prop)
-get_prop(location, cnd_prop)
+get_prop(vendor_location, hwservicemanager_prop)
+get_prop(vendor_location, vendor_cnd_prop)
 #xtra-daemon access to qdma properties
-get_prop(location, vendor_qdma_prop)
+get_prop(vendor_location, vendor_qdma_prop)
 
-allow location fwk_sensor_hwservice:hwservice_manager find;
-binder_call(location, system_server)
-binder_call(location, cnd)
+allow vendor_location fwk_sensor_hwservice:hwservice_manager find;
+binder_call(vendor_location, system_server)
+binder_call(vendor_location, vendor_cnd)
 
 # Enable standard network access (for XTRA download)
-net_domain(location)
+net_domain(vendor_location)
 
 # required for xtra-daemon, slim-daemon.
-allow location self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow vendor_location self:qipcrtr_socket create_socket_perms_no_ioctl;
 
-dontaudit location kernel:system module_request;
+dontaudit vendor_location kernel:system module_request;
 
-# execute permission for location daemons in /vendor/bin/
-allow location location_exec:file rx_file_perms;
+# execute permission for vendor_location daemons in /vendor/bin/
+allow vendor_location vendor_location_exec:file rx_file_perms;
 
-# /data/vendor/location
-allow location location_data_file:dir create_dir_perms;
-allow location location_data_file:file create_file_perms;
+# /data/vendor/vendor_location
+allow vendor_location vendor_location_data_file:dir create_dir_perms;
+allow vendor_location vendor_location_data_file:file create_file_perms;
 
-# /dev/socket/location
-allow location location_socket:sock_file create_file_perms;
-allow location location_socket:dir rw_dir_perms;
+# /dev/socket/vendor_location
+allow vendor_location vendor_location_socket:sock_file create_file_perms;
+allow vendor_location vendor_location_socket:dir rw_dir_perms;
 
-allow location hal_gnss_qti:unix_dgram_socket sendto;
+allow vendor_location vendor_hal_gnss_qti:unix_dgram_socket sendto;
 
-# permission for read execute location daemons in userdebug mode.
+# permission for read execute vendor_location daemons in userdebug mode.
 userdebug_or_eng(`
-  allow shell location_exec:file rx_file_perms;
+  allow shell vendor_location_exec:file rx_file_perms;
 ')
 
 ## lowi-server
 ##############
 # some additional network access
-allow location self:netlink_generic_socket create_socket_perms_no_ioctl;
-allow location self:netlink_socket create_socket_perms_no_ioctl;
-allowxperm location self:udp_socket ioctl lowi_server_ioctls;
-allow location hal_wifi:unix_stream_socket { read write };
+allow vendor_location self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow vendor_location self:netlink_socket create_socket_perms_no_ioctl;
+allowxperm vendor_location self:udp_socket ioctl lowi_server_ioctls;
+allow vendor_location hal_wifi:unix_stream_socket { read write };
 
 # /data/vendor/wifi
-allow location wifi_vendor_data_file:dir search;
+allow vendor_location vendor_wifi_vendor_data_file:dir search;
 
 # /data/vendor/wifi/wpa
-allow location wpa_data_file:dir rw_dir_perms;
-allow location wpa_data_file:sock_file create_file_perms;
-allow location hal_wifi_supplicant_default:unix_dgram_socket sendto;
+allow vendor_location wpa_data_file:dir rw_dir_perms;
+allow vendor_location wpa_data_file:sock_file create_file_perms;
+allow vendor_location hal_wifi_supplicant_default:unix_dgram_socket sendto;
 
 # /dev/socket/wifihal
-allow location wifihal_socket:dir search;
-unix_socket_send(location, wifihal,  hal_wifi_default);
+allow vendor_location vendor_wifihal_socket:dir search;
+unix_socket_send(vendor_location, vendor_wifihal,  hal_wifi_default);
 
 ## xtra-daemon
 ##############
-allow location {hal_cacert_hwservice hal_datafactory_hwservice hal_cne_hwservice}:hwservice_manager find;
-binder_call(location, qtidataservices_app)
+allow vendor_location {vendor_hal_cacert_hwservice vendor_hal_datafactory_hwservice vendor_hal_cne_hwservice}:hwservice_manager find;
+binder_call(vendor_location, vendor_qtidataservices_app)

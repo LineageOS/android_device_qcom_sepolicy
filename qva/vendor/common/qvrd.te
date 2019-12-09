@@ -29,16 +29,16 @@
 # General
 #
 
-userdebug_or_eng(` allow qvrd diag_device:chr_file rw_file_perms');
+userdebug_or_eng(` allow qvrd vendor_diag_device:chr_file rw_file_perms');
 #r_dir_file(qvrd, vendor_file)
-r_dir_file(qvrd, sysfs_kgsl)
+r_dir_file(qvrd, vendor_sysfs_kgsl)
 
 #
 # Sensors
 #
 
 # Allow access to ADSP & SLPI
-allow qvrd { ion_device qdsp_device dsp_device xdsp_device }:chr_file r_file_perms;
+allow qvrd { ion_device vendor_qdsp_device vendor_dsp_device vendor_xdsp_device }:chr_file r_file_perms;
 
 
 #
@@ -46,7 +46,7 @@ allow qvrd { ion_device qdsp_device dsp_device xdsp_device }:chr_file r_file_per
 #
 
 # Allow access to /sys/devices/virtual/graphics/fb* for lineptr interrupts
-allow qvrd sysfs_graphics:file r_file_perms;
+allow qvrd vendor_sysfs_graphics:file r_file_perms;
 
 #
 # Camera
@@ -63,7 +63,7 @@ allow qvrd { gpu_device video_device camera_device sensors_device }:chr_file r_f
 # Perfd
 #
 
-hal_client_domain(qvrd, hal_perf)
+hal_client_domain(qvrd, vendor_hal_perf)
 
 allow qvrd fwk_sensor_hwservice:hwservice_manager find;
 hal_client_domain(qvrd, hal_sensors)
@@ -71,19 +71,19 @@ hal_client_domain(qvrd, hal_sensors)
 # QVRD
 userdebug_or_eng(`
 allow qvrd debugfs:dir r_dir_perms;
-allow qvrd qti_debugfs:dir r_dir_perms;
-allow qvrd qti_debugfs:file rw_file_perms;
+allow qvrd vendor_qti_debugfs:dir r_dir_perms;
+allow qvrd vendor_qti_debugfs:file rw_file_perms;
 ')
 
 # Allow access to kgsl sysfs nodes for performance optimization
-allow qvrd sysfs_kgsl:file r_file_perms;
+allow qvrd vendor_sysfs_kgsl:file r_file_perms;
 
 # Allow access to qvr_external_sensor sysfs nodes for external viewers
-allow qvrd sysfs_qvr_external_sensor:dir r_dir_perms;
-allow qvrd sysfs_qvr_external_sensor:file rw_file_perms;
+allow qvrd vendor_sysfs_qvr_external_sensor:dir r_dir_perms;
+allow qvrd vendor_sysfs_qvr_external_sensor:file rw_file_perms;
 
 # Allow access to qvr_external_sensor device nodes for external viewers
-allow qvrd qvr_external_sensor_device:chr_file rw_file_perms;
+allow qvrd vendor_qvr_external_sensor_device:chr_file rw_file_perms;
 
 # qvr properties
 get_prop(qvrd, vendor_qvr_prop)

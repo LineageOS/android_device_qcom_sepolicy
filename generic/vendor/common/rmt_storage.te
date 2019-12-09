@@ -24,35 +24,35 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type rmt_storage, domain;
-type rmt_storage_exec, exec_type, vendor_file_type, file_type;
+type vendor_rmt_storage, domain;
+type vendor_rmt_storage_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(rmt_storage)
+init_daemon_domain(vendor_rmt_storage)
 
-wakelock_use(rmt_storage)
+wakelock_use(vendor_rmt_storage)
 
-allow rmt_storage self:capability { net_bind_service setgid setpcap setuid };
+allow vendor_rmt_storage self:capability { net_bind_service setgid setpcap setuid };
 
-set_prop(rmt_storage, ctl_vendor_rmt_storage_prop)
+set_prop(vendor_rmt_storage, vendor_ctl_vendor_rmt_storage_prop)
 
-allow rmt_storage cgroup:dir create_dir_perms;
-allow rmt_storage uio_device:chr_file rw_file_perms;
+allow vendor_rmt_storage cgroup:dir create_dir_perms;
+allow vendor_rmt_storage uio_device:chr_file rw_file_perms;
 
-allow rmt_storage self:{ socket qipcrtr_socket } create_socket_perms;
-allowxperm rmt_storage self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+allow vendor_rmt_storage self:{ socket qipcrtr_socket } create_socket_perms;
+allowxperm vendor_rmt_storage self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 
-allow rmt_storage kmsg_device:chr_file w_file_perms;
+allow vendor_rmt_storage kmsg_device:chr_file w_file_perms;
 
-r_dir_file(rmt_storage, sysfs_uio)
-r_dir_file(rmt_storage, sysfs_uio_file)
+r_dir_file(vendor_rmt_storage, sysfs_uio)
+r_dir_file(vendor_rmt_storage, vendor_sysfs_uio_file)
 
-allow rmt_storage block_device:dir r_dir_perms;
+allow vendor_rmt_storage block_device:dir r_dir_perms;
 
-allow rmt_storage {
-    modem_efs_partition_device
-    ssd_block_device
+allow vendor_rmt_storage {
+    vendor_modem_efs_partition_device
+    vendor_ssd_block_device
 }:blk_file rw_file_perms;
 
-r_dir_file(rmt_storage, sysfs_ssr)
-r_dir_file(rmt_storage, sysfs_data)
-set_prop(rmt_storage, ctl_vendor_rmt_storage_prop)
+r_dir_file(vendor_rmt_storage, vendor_sysfs_ssr)
+r_dir_file(vendor_rmt_storage, vendor_sysfs_data)
+set_prop(vendor_rmt_storage, vendor_ctl_vendor_rmt_storage_prop)

@@ -25,17 +25,17 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-## qsta_app
+## vendor_qsta_app
 ##
-## This file defines the permissions that qsta_apps can carry
+## This file defines the permissions that vendor_qsta_apps can carry
 
-type qsta_app, domain;
-app_domain(qsta_app)
-hal_client_domain(qsta_app, hal_perf)
-r_dir_file(qsta_app, persist_sensors_file)
-get_prop(qsta_app, sensors_prop)
+type vendor_qsta_app, domain;
+app_domain(vendor_qsta_app)
+hal_client_domain(vendor_qsta_app, vendor_hal_perf)
+r_dir_file(vendor_qsta_app, vendor_persist_sensors_file)
+get_prop(vendor_qsta_app, vendor_sensors_prop)
 
-allow qsta_app {
+allow vendor_qsta_app {
   app_api_service
   surfaceflinger_service
   audioserver_service
@@ -43,13 +43,13 @@ allow qsta_app {
   mediametrics_service
 }:service_manager find;
 
-dontaudit qsta_app gpu_service:service_manager find;
-dontaudit qsta_app hal_qspmhal_hwservice:hwservice_manager find;
+dontaudit vendor_qsta_app gpu_service:service_manager find;
+dontaudit vendor_qsta_app vendor_hal_qspmhal_hwservice:hwservice_manager find;
 
 userdebug_or_eng(`
-  allow qsta_app diag_device:chr_file { read write open ioctl };
+  allow vendor_qsta_app vendor_diag_device:chr_file { read write open ioctl };
 ')
 
-allow qsta_app mnt_vendor_file:dir r_dir_perms;
-allow qsta_app system_app_data_file:dir create_dir_perms;
-allow qsta_app system_app_data_file:file create_file_perms;
+allow vendor_qsta_app mnt_vendor_file:dir r_dir_perms;
+allow vendor_qsta_app system_app_data_file:dir create_dir_perms;
+allow vendor_qsta_app system_app_data_file:file create_file_perms;

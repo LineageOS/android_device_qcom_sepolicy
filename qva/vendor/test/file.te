@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # /sys/kernel/debug/binder/state file
-type binder_state, file_type, debugfs_type;
+type vendor_binder_state, file_type, debugfs_type;

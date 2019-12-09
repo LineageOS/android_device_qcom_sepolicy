@@ -25,14 +25,14 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type init-qcom-wifi-sh, domain;
-type init-qcom-wifi-sh_exec, exec_type, vendor_file_type, file_type;
+type vendor_init-qcom-wifi-sh, domain;
+type vendor_init-qcom-wifi-sh_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(init-qcom-wifi-sh)
+init_daemon_domain(vendor_init-qcom-wifi-sh)
 
 # WLAN dynamic detect
 # - allow exec lspci: access /sys/bus/pci/devices & /sys/devices/platform/soc
 # - set wlan prop
-allow init-qcom-wifi-sh vendor_toolbox_exec:file rx_file_perms;
-r_dir_file(init-qcom-wifi-sh, sysfs_type)
-set_prop(init-qcom-wifi-sh, qcom_wlan_prop);
+allow vendor_init-qcom-wifi-sh vendor_toolbox_exec:file rx_file_perms;
+r_dir_file(vendor_init-qcom-wifi-sh, sysfs_type)
+set_prop(vendor_init-qcom-wifi-sh, vendor_qcom_wlan_prop);

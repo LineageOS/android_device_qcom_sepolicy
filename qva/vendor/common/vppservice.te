@@ -31,12 +31,12 @@ type vendor_vppservice_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(vendor_vppservice)
 
-hal_server_domain(vendor_vppservice, hal_vpp)
+hal_server_domain(vendor_vppservice, vendor_hal_vpp)
 
-hal_attribute_hwservice(hal_vpp, hal_vpp_hwservice)
+hal_attribute_hwservice(vendor_hal_vpp, vendor_hal_vpp_hwservice)
 
-binder_call(hal_vpp_client, hal_vpp_server)
-binder_call(hal_vpp_server, hal_vpp_client)
+binder_call(vendor_hal_vpp_client, vendor_hal_vpp_server)
+binder_call(vendor_hal_vpp_server, vendor_hal_vpp_client)
 
 # allow vppservice to access adsprpcd
 r_dir_file(vendor_vppservice, adsprpcd_file);
@@ -49,15 +49,15 @@ allow vendor_vppservice vendor_vpp_data_file:dir create_dir_perms;
 allow vendor_vppservice vendor_vpp_data_file:file create_file_perms;
 
 # allow access to vppservice (/persist/vpp)
-r_dir_file(vendor_vppservice, persist_vpp_file)
+r_dir_file(vendor_vppservice, vendor_persist_vpp_file)
 allow vendor_vppservice mnt_vendor_file:dir search;
 
 # allow vppservice to access ion, video device & qdsp_device
 allow vendor_vppservice ion_device:chr_file rw_file_perms;
 allow vendor_vppservice video_device:chr_file rw_file_perms;
-allow vendor_vppservice qdsp_device:chr_file r_file_perms;
-allow vendor_vppservice xdsp_device:chr_file r_file_perms;
+allow vendor_vppservice vendor_qdsp_device:chr_file r_file_perms;
+allow vendor_vppservice vendor_xdsp_device:chr_file r_file_perms;
 allow vendor_vppservice gpu_device:chr_file rw_file_perms;
 
 hal_client_domain(vendor_vppservice, hal_graphics_allocator)
-hal_client_domain(vendor_vppservice, hal_capabilityconfigstore_qti)
+hal_client_domain(vendor_vppservice, vendor_hal_capabilityconfigstore_qti)

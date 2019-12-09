@@ -26,17 +26,17 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #Define Domain
-type hal_srvctracker_default, domain;
-type hal_srvctracker_default_exec, exec_type, vendor_file_type, file_type;
-hal_server_domain(hal_srvctracker_default, hal_srvctracker)
-init_daemon_domain(hal_srvctracker_default)
+type vendor_hal_srvctracker_default, domain;
+type vendor_hal_srvctracker_default_exec, exec_type, vendor_file_type, file_type;
+hal_server_domain(vendor_hal_srvctracker_default, vendor_hal_srvctracker)
+init_daemon_domain(vendor_hal_srvctracker_default)
 
-binder_call(hal_srvctracker_client, hal_srvctracker_server)
-binder_call(hal_srvctracker_server, hal_srvctracker_client)
+binder_call(vendor_hal_srvctracker_client, vendor_hal_srvctracker_server)
+binder_call(vendor_hal_srvctracker_server, vendor_hal_srvctracker_client)
 
-add_hwservice(hal_srvctracker, hal_srvctracker_hwservice)
+add_hwservice(vendor_hal_srvctracker, vendor_hal_srvctracker_hwservice)
 
-allow hal_srvctracker_client hal_srvctracker_hwservice:hwservice_manager find;
-allow hal_srvctracker hwservicemanager:binder call;
+allow vendor_hal_srvctracker_client vendor_hal_srvctracker_hwservice:hwservice_manager find;
+allow vendor_hal_srvctracker hwservicemanager:binder call;
 
-get_prop(hal_srvctracker_default, hwservicemanager_prop)
+get_prop(vendor_hal_srvctracker_default, hwservicemanager_prop)

@@ -25,40 +25,40 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-## usta_app
+## vendor_usta_app
 ##
-## This file defines the permissions that usta_apps can carry
+## This file defines the permissions that vendor_usta_apps can carry
 
-type usta_app, domain;
+type vendor_usta_app, domain;
 
-app_domain(usta_app)
-hal_client_domain(usta_app, hal_perf)
-get_prop(usta_app, sensors_prop)
+app_domain(vendor_usta_app)
+hal_client_domain(vendor_usta_app, vendor_hal_perf)
+get_prop(vendor_usta_app, vendor_sensors_prop)
 
-#allow only usta_app with userdebug to access ioctl
+#allow only vendor_usta_app with userdebug to access ioctl
 userdebug_or_eng(`
-  diag_use(usta_app)
-  get_prop(usta_app, sensors_dbg_prop)
-  allowxperm usta_app self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
-  allow usta_app self:{ socket qipcrtr_socket } create_socket_perms;
-  allow usta_app xdsp_device:chr_file r_file_perms;
-  allow usta_app sysfs_timestamp_switch:file r_file_perms;
+  diag_use(vendor_usta_app)
+  get_prop(vendor_usta_app, vendor_sensors_dbg_prop)
+  allowxperm vendor_usta_app self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+  allow vendor_usta_app self:{ socket qipcrtr_socket } create_socket_perms;
+  allow vendor_usta_app vendor_xdsp_device:chr_file r_file_perms;
+  allow vendor_usta_app vendor_sysfs_timestamp_switch:file r_file_perms;
 ')
 
-allow usta_app {
+allow vendor_usta_app {
   app_api_service
   surfaceflinger_service
 }:service_manager find;
 
-allow usta_app system_app_data_file:dir create_dir_perms;
-allow usta_app system_app_data_file:file create_file_perms;
+allow vendor_usta_app system_app_data_file:dir create_dir_perms;
+allow vendor_usta_app system_app_data_file:file create_file_perms;
 
-allow usta_app sensors_data_file:dir create_dir_perms;
-allow usta_app sensors_data_file:file create_file_perms;
+allow vendor_usta_app vendor_sensors_data_file:dir create_dir_perms;
+allow vendor_usta_app vendor_sensors_data_file:file create_file_perms;
 
-allow usta_app persist_sensors_file:dir create_dir_perms;
-allow usta_app persist_sensors_file:file create_file_perms;
-allow usta_app mnt_vendor_file:dir create_dir_perms;
+allow vendor_usta_app vendor_persist_sensors_file:dir create_dir_perms;
+allow vendor_usta_app vendor_persist_sensors_file:file create_file_perms;
+allow vendor_usta_app mnt_vendor_file:dir create_dir_perms;
 
-dontaudit usta_app system_data_file:file open;
-allow usta_app cgroup:file w_file_perms;
+dontaudit vendor_usta_app system_data_file:file open;
+allow vendor_usta_app cgroup:file w_file_perms;

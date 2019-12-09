@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_audiocontrol_qti, domain;
-hal_server_domain(hal_audiocontrol_qti, hal_audiocontrol)
+type vendor_hal_audiocontrol_qti, domain;
+hal_server_domain(vendor_hal_audiocontrol_qti, hal_audiocontrol)
 
-type hal_audiocontrol_qti_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_audiocontrol_qti)
+type vendor_hal_audiocontrol_qti_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_audiocontrol_qti)

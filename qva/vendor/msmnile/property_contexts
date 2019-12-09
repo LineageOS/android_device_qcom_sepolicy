@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # WLAN dynamic detect
-ro.vendor.wlan.chip        u:object_r:qcom_wlan_prop:s0
+ro.vendor.wlan.chip        u:object_r:vendor_qcom_wlan_prop:s0

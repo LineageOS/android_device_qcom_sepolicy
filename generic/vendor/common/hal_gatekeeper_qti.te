@@ -24,12 +24,12 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type hal_gatekeeper_qti, domain;
-hal_server_domain(hal_gatekeeper_qti, hal_gatekeeper)
+type vendor_hal_gatekeeper_qti, domain;
+hal_server_domain(vendor_hal_gatekeeper_qti, hal_gatekeeper)
 
-type hal_gatekeeper_qti_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_gatekeeper_qti)
+type vendor_hal_gatekeeper_qti_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_gatekeeper_qti)
 
-dontaudit hal_gatekeeper_qti firmware_file:dir search;
+dontaudit vendor_hal_gatekeeper_qti firmware_file:dir search;
 
-get_prop(hal_gatekeeper_qti, vendor_tee_listener_prop)
+get_prop(vendor_hal_gatekeeper_qti, vendor_tee_listener_prop)

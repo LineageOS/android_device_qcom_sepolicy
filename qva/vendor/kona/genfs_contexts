@@ -26,5 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # spdaemon sysfs
-genfscon sysfs /firmware/devicetree/base/soc/qcom,spmi@c440000/qcom,pm8150b@2/vadc@3100/vph_pwr@83/name u:object_r:sysfs_spdaemon:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,spss_utils/firmware_name u:object_r:sysfs_spdaemon:s0
+genfscon sysfs /firmware/devicetree/base/soc/qcom,spmi@c440000/qcom,pm8150b@2/vadc@3100/vph_pwr@83/name u:object_r:vendor_sysfs_spdaemon:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,spss_utils/firmware_name u:object_r:vendor_sysfs_spdaemon:s0

@@ -25,33 +25,33 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_esepowermanager_qti, domain;
-hal_server_domain(hal_esepowermanager_qti, hal_esepowermanager)
+type vendor_hal_esepowermanager_qti, domain;
+hal_server_domain(vendor_hal_esepowermanager_qti, vendor_hal_esepowermanager)
 
-type hal_esepowermanager_qti_exec, exec_type, file_type, vendor_file_type;
-init_daemon_domain(hal_esepowermanager_qti)
+type vendor_hal_esepowermanager_qti_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(vendor_hal_esepowermanager_qti)
 
-hwbinder_use(hal_esepowermanager_qti)
-add_hwservice(hal_esepowermanager_qti, hal_esepowermanager_hwservice)
+hwbinder_use(vendor_hal_esepowermanager_qti)
+add_hwservice(vendor_hal_esepowermanager_qti, vendor_hal_esepowermanager_hwservice)
 
-hal_client_domain(hal_esepowermanager_qti, hal_allocator)
+hal_client_domain(vendor_hal_esepowermanager_qti, hal_allocator)
 
 #Allow access to nfc device
-allow hal_esepowermanager_qti {
+allow vendor_hal_esepowermanager_qti {
     nfc_device
 }:chr_file rw_file_perms;
 
 # allow esepmdaemon to load firmware images
-r_dir_file(hal_esepowermanager_qti, firmware_file)
+r_dir_file(vendor_hal_esepowermanager_qti, firmware_file)
 
 # Allow esepmdaemon to interract with ion_device
-allow hal_esepowermanager_qti ion_device:chr_file r_file_perms;
+allow vendor_hal_esepowermanager_qti ion_device:chr_file r_file_perms;
 
 # Allow esepmdaemon to interract with qseecom
-allow hal_esepowermanager_qti tee_device:chr_file rw_file_perms;
+allow vendor_hal_esepowermanager_qti tee_device:chr_file rw_file_perms;
 
 #Allow hal_esepowermanager_client client domain apps to find hwservice
-binder_call(hal_esepowermanager_client, hal_esepowermanager_server)
-binder_call(hal_esepowermanager_server, hal_esepowermanager_client)
+binder_call(vendor_hal_esepowermanager_client, vendor_hal_esepowermanager_server)
+binder_call(vendor_hal_esepowermanager_server, vendor_hal_esepowermanager_client)
 
-allow hal_esepowermanager_client hal_esepowermanager_hwservice:hwservice_manager find;
+allow vendor_hal_esepowermanager_client vendor_hal_esepowermanager_hwservice:hwservice_manager find;

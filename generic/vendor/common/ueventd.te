@@ -25,28 +25,28 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # For setting up various WIGIG files
-allow ueventd sysfs_bond0:file rw_file_perms;
+allow ueventd vendor_sysfs_bond0:file rw_file_perms;
 
-allow ueventd sysfs_usb_c:file w_file_perms;
+allow ueventd vendor_sysfs_usb_c:file w_file_perms;
 
 allow ueventd {
     { sysfs_type - usermodehelper }
-      sysfs_battery_supply
-      sysfs_data
-      sysfs_graphics
-      sysfs_kgsl
+      vendor_sysfs_battery_supply
+      vendor_sysfs_data
+      vendor_sysfs_graphics
+      vendor_sysfs_kgsl
       sysfs_leds
       sysfs_net
-      sysfs_scsi_host
-      sysfs_usbpd_device
-      sysfs_usb_supply
+      vendor_sysfs_scsi_host
+      vendor_sysfs_usbpd_device
+      vendor_sysfs_usb_supply
 }:file w_file_perms;
 
 allow ueventd firmware_file:dir search;
 allow ueventd firmware_file:file r_file_perms;
 allow ueventd tmpfs:blk_file getattr;
-allow ueventd persist_file:dir search;
-allow ueventd persist_file:file r_file_perms;
+allow ueventd vendor_persist_file:dir search;
+allow ueventd vendor_persist_file:file r_file_perms;
 
 # For wifi to access  mnt_vendor_file
 r_dir_file(ueventd, mnt_vendor_file)

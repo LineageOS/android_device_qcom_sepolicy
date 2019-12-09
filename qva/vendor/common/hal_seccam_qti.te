@@ -25,18 +25,18 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_seccam_qti, domain;
+type vendor_hal_seccam_qti, domain;
 
-type hal_seccam_qti_exec, exec_type, file_type, vendor_file_type;
-init_daemon_domain(hal_seccam_qti)
-hal_server_domain(hal_seccam_qti, hal_seccam)
+type vendor_hal_seccam_qti_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(vendor_hal_seccam_qti)
+hal_server_domain(vendor_hal_seccam_qti, vendor_hal_seccam)
 
-binder_call(hal_seccam_client, hal_seccam_server)
-binder_call(hal_seccam_server, hal_seccam_client)
+binder_call(vendor_hal_seccam_client, vendor_hal_seccam_server)
+binder_call(vendor_hal_seccam_server, vendor_hal_seccam_client)
 
-add_hwservice(hal_seccam_server, hal_seccam_hwservice)
+add_hwservice(vendor_hal_seccam_server, vendor_hal_seccam_hwservice)
 
-allow hal_seccam_qti video_device:chr_file rw_file_perms;
-hal_client_domain(hal_seccam_qti, hal_graphics_allocator)
-hal_client_domain(hal_seccam_qti, hal_perf)
-set_prop(hal_seccam_qti, vendor_core_ctl_prop);
+allow vendor_hal_seccam_qti video_device:chr_file rw_file_perms;
+hal_client_domain(vendor_hal_seccam_qti, hal_graphics_allocator)
+hal_client_domain(vendor_hal_seccam_qti, vendor_hal_perf)
+set_prop(vendor_hal_seccam_qti, vendor_core_ctl_prop);

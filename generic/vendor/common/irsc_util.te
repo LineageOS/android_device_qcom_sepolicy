@@ -24,10 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type irsc_util, domain;
-type irsc_util_exec, exec_type, vendor_file_type, file_type;
+type vendor_irsc_util, domain;
+type vendor_irsc_util_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(irsc_util)
+init_daemon_domain(vendor_irsc_util)
 
-allow irsc_util self:socket create_socket_perms;
-allowxperm irsc_util self:socket ioctl msm_sock_ipc_ioctls;
+allow vendor_irsc_util self:socket create_socket_perms;
+allowxperm vendor_irsc_util self:socket ioctl msm_sock_ipc_ioctls;

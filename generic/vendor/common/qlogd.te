@@ -24,18 +24,18 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type qlogd, domain;
-type qlogd_exec, exec_type, vendor_file_type, file_type;
+type vendor_qlogd, domain;
+type vendor_qlogd_exec, exec_type, vendor_file_type, file_type;
 
 userdebug_or_eng(`
   # make transition from init to its domain
-  init_daemon_domain(qlogd)
+  init_daemon_domain(vendor_qlogd)
 
-  allow qlogd diag_device:chr_file rw_file_perms;
-  allow qlogd qlogd_exec:file rx_file_perms;
+  allow vendor_qlogd vendor_diag_device:chr_file rw_file_perms;
+  allow vendor_qlogd vendor_qlogd_exec:file rx_file_perms;
 
-  allow qlogd radio_vendor_data_file:file create_file_perms;
-  allow qlogd radio_vendor_data_file:dir create_dir_perms;
+  allow vendor_qlogd vendor_radio_vendor_data_file:file create_file_perms;
+  allow vendor_qlogd vendor_radio_vendor_data_file:dir create_dir_perms;
 
-  set_prop(qlogd, vendor_modem_diag_prop)
+  set_prop(vendor_qlogd, vendor_modem_diag_prop)
 ')

@@ -26,15 +26,15 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # kgsl snapshot file type for sysfs access
-type sysfs_kgsl_snapshot, sysfs_type, fs_type;
+type vendor_sysfs_kgsl_snapshot, sysfs_type, fs_type;
 
 # path to debugfs. use this only in debug builds
-type qti_debugfs, fs_type, debugfs_type;
+type vendor_qti_debugfs, fs_type, debugfs_type;
 
 # path to display related debugfs. use this only in debug builds
-type qti_display_debugfs, fs_type, debugfs_type;
+type vendor_qti_display_debugfs, fs_type, debugfs_type;
 
 # sensors data file type for script access by test apps
-type sensors_data_file, file_type, data_file_type, core_data_file_type;
+type vendor_sensors_data_file, file_type, data_file_type, core_data_file_type;
 
 type vendor_gles_data_file, file_type, data_file_type;

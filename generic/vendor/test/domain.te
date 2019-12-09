@@ -36,8 +36,8 @@ dontaudit {
 } vendor_gles_data_file:file *;
 #allow all gpu clients to access configuration settings
 userdebug_or_eng(`
-allow domain sysfs_kgsl:dir search;
-r_dir_file({domain - isolated_app}, sysfs_kgsl_snapshot);
+allow domain vendor_sysfs_kgsl:dir search;
+r_dir_file({domain - isolated_app}, vendor_sysfs_kgsl_snapshot);
 allow domain coredump_file:dir create_dir_perms;
 allow domain coredump_file:file create_file_perms;
 allow domain coredump_file:dir rw_dir_perms;

@@ -25,4 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-binder_call(systemhelper_app, hal_trustedui_qti)
+binder_call(systemhelper_app, vendor_hal_trustedui_qti)

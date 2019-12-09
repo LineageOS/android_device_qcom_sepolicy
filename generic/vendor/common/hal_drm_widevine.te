@@ -26,24 +26,24 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # define SELinux domain
-type hal_drm_widevine, domain;
-hal_server_domain(hal_drm_widevine, hal_drm)
+type vendor_hal_drm_widevine, domain;
+hal_server_domain(vendor_hal_drm_widevine, hal_drm)
 
-type hal_drm_widevine_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_drm_widevine)
+type vendor_hal_drm_widevine_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_drm_widevine)
 
-allow hal_drm_widevine mediacodec:fd use;
-allow hal_drm_widevine { appdomain -isolated_app }:fd use;
-allow hal_drm_widevine qce_device:chr_file rw_file_perms;
+allow vendor_hal_drm_widevine mediacodec:fd use;
+allow vendor_hal_drm_widevine { appdomain -isolated_app }:fd use;
+allow vendor_hal_drm_widevine vendor_qce_device:chr_file rw_file_perms;
 
 #Allow access to smcinvoke device
-allow hal_drm_widevine smcinvoke_device:chr_file rw_file_perms;
+allow vendor_hal_drm_widevine smcinvoke_device:chr_file rw_file_perms;
 
 # The QTI DRM-HAL implementation uses a vendor-binder service provided
 # by the HWC HAL.
-vndbinder_use(hal_drm_widevine);
-allow hal_drm_widevine qdisplay_service:service_manager { find };
-#binder_call(hal_drm_widevine, hal_graphics_composer)
-hal_client_domain(hal_drm_widevine, hal_graphics_composer);
-allow hal_drm_widevine mediadrm_vendor_data_file:dir create_dir_perms;
-allow hal_drm_widevine mediadrm_vendor_data_file:file create_file_perms;
+vndbinder_use(vendor_hal_drm_widevine);
+allow vendor_hal_drm_widevine vendor_qdisplay_service:service_manager { find };
+#binder_call(vendor_hal_drm_widevine, hal_graphics_composer)
+hal_client_domain(vendor_hal_drm_widevine, hal_graphics_composer);
+allow vendor_hal_drm_widevine vendor_mediadrm_vendor_data_file:dir create_dir_perms;
+allow vendor_hal_drm_widevine vendor_mediadrm_vendor_data_file:file create_file_perms;

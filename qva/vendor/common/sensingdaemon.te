@@ -25,17 +25,17 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type sensingdaemon, domain;
-type sensingdaemon_exec, exec_type, vendor_file_type, file_type;
+type vendor_sensingdaemon, domain;
+type vendor_sensingdaemon_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(sensingdaemon)
+init_daemon_domain(vendor_sensingdaemon)
 
-#listen on /dev/socket/sensingdaemon
-allow sensingdaemon self:unix_stream_socket { listen accept read write };
+#listen on /dev/socket/vendor_sensingdaemon
+allow vendor_sensingdaemon self:unix_stream_socket { listen accept read write };
 
 # Allow access to create socket
-allow sensingdaemon self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow vendor_sensingdaemon self:qipcrtr_socket create_socket_perms_no_ioctl;
 
 # Allow access to create data output files
-allow sensingdaemon sensing_vendor_data_file:dir rw_dir_perms;
-allow sensingdaemon sensing_vendor_data_file:file create_file_perms;
+allow vendor_sensingdaemon vendor_sensing_vendor_data_file:dir rw_dir_perms;
+allow vendor_sensingdaemon vendor_sensing_vendor_data_file:file create_file_perms;

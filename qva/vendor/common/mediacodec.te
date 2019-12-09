@@ -27,13 +27,13 @@
 
 #WFD
 #Allow mediacodec to access service manager wfdnativemm_service
-allow mediacodec wfdnativemm_service:service_manager find;
+allow mediacodec vendor_wfdnativemm_service:service_manager find;
 allow mediacodec audio_device:chr_file rw_file_perms;
-binder_call(mediacodec, wifidisplayhalservice_qti);
+binder_call(mediacodec, vendor_wifidisplayhalservice_qti);
 
 get_prop(mediacodec, vendor_video_prop)
 
 #Allow mediacodec to access vpp
-hal_client_domain(mediacodec, hal_vpp)
-allow mediacodec xdsp_device:chr_file r_file_perms;
-allow mediacodec qdsp_device:chr_file r_file_perms;
+hal_client_domain(mediacodec, vendor_hal_vpp)
+allow mediacodec vendor_xdsp_device:chr_file r_file_perms;
+allow mediacodec vendor_qdsp_device:chr_file r_file_perms;

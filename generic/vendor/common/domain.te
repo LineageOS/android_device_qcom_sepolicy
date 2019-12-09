@@ -25,25 +25,25 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 userdebug_or_eng(`
-  allow domain diag_device:chr_file rw_file_perms;
+  allow domain vendor_diag_device:chr_file rw_file_perms;
 ')
 
 # In order for /sys/kernel/debug/kgsl/proc/<pid>/mem
 # to be created for memory tracking, the domain of
 # the tracked process must have permission to search
 # in /sys/kernel/debug/kgsl
-allow domain debugfs_kgsl:dir search;
+allow domain vendor_debugfs_kgsl:dir search;
 
-allow domain debugfs_ion:dir search;
+allow domain vendor_debugfs_ion:dir search;
 
 get_prop(domain, vendor_gralloc_prop)
 
-r_dir_file({domain - isolated_app}, sysfs_soc);
-r_dir_file({domain - isolated_app}, sysfs_esoc);
-r_dir_file({domain - isolated_app}, sysfs_ssr);
+r_dir_file({domain - isolated_app}, vendor_sysfs_soc);
+r_dir_file({domain - isolated_app}, vendor_sysfs_esoc);
+r_dir_file({domain - isolated_app}, vendor_sysfs_ssr);
 r_dir_file({domain - isolated_app}, sysfs_thermal);
 
-get_prop(domain, public_vendor_default_prop)
+get_prop(domain, vendor_public_vendor_default_prop)
 
 dontaudit domain kernel:system module_request;
 

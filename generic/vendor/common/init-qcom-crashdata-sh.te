@@ -25,13 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type init-qcom-crashdata-sh, domain;
-type init-qcom-crashdata-sh_exec, exec_type, vendor_file_type, file_type;
+type vendor_init-qcom-crashdata-sh, domain;
+type vendor_init-qcom-crashdata-sh_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(init-qcom-crashdata-sh)
+init_daemon_domain(vendor_init-qcom-crashdata-sh)
 
-allow init-qcom-crashdata-sh vendor_shell_exec:file rx_file_perms;
-allow init-qcom-crashdata-sh vendor_toolbox_exec:file rx_file_perms;
+allow vendor_init-qcom-crashdata-sh vendor_shell_exec:file rx_file_perms;
+allow vendor_init-qcom-crashdata-sh vendor_toolbox_exec:file rx_file_perms;
 
-set_prop(init-qcom-crashdata-sh, crash_cnt_prop)
-set_prop(init-qcom-crashdata-sh, crash_detect_prop)
+set_prop(vendor_init-qcom-crashdata-sh, vendor_crash_cnt_prop)
+set_prop(vendor_init-qcom-crashdata-sh, vendor_crash_detect_prop)

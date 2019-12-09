@@ -25,23 +25,23 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow qti {
-    smem_log_device
-    mhi_device
+allow vendor_qti {
+    vendor_smem_log_device
+    vendor_mhi_device
     userdebug_or_eng(`kmsg_device')
 }:chr_file rw_file_perms;
 
-allow qti self:{
+allow vendor_qti self:{
     netlink_socket
     udp_socket
 } create_socket_perms_no_ioctl;
 
-allow qti self:udp_socket ioctl;
+allow vendor_qti self:udp_socket ioctl;
 
-allow qti vendor_shell_exec:file rx_file_perms;
+allow vendor_qti vendor_shell_exec:file rx_file_perms;
 
 # Allow write permissions for log file
 userdebug_or_eng(`
-    allow qti vendor_qti_data_file:file create_file_perms;
+    allow vendor_qti vendor_qti_data_file:file create_file_perms;
 ')
-dontaudit qti shell_exec:file x_file_perms;
+dontaudit vendor_qti vendor_shell_exec:file x_file_perms;

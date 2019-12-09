@@ -25,11 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type qcom_ims_prop, property_type;
+type vendor_qcom_ims_prop, property_type;
 type vendor_dataadpl_prop, property_type;
-type vendor_ipacm-diag_prop, property_type;
-type cnd_vendor_prop, property_type;
-type spcomlib_prop, property_type;
+type vendor_cnd_vendor_prop, property_type;
+type vendor_spcomlib_prop, property_type;
 type vendor_qdma_prop, property_type;
 type vendor_mdm_helper_prop, property_type;
 type vendor_disable_spu_prop, property_type;
@@ -39,10 +38,10 @@ type vendor_boot_mode_prop, property_type;
 
 #mpctl
 type vendor_mpctl_prop, property_type;
-type freq_prop, property_type;
+type vendor_freq_prop, property_type;
 #service opts
-type bservice_prop, property_type;
-type reschedule_service_prop, property_type;
+type vendor_bservice_prop, property_type;
+type vendor_reschedule_service_prop, property_type;
 type vendor_cgroup_follow_prop, property_type;
 type vendor_scroll_prop, property_type;
 
@@ -54,7 +53,7 @@ type vendor_iop_prop, property_type;
 type vendor_nfc_nq_prop, property_type;
 
 # factory properties
-type ctl_vendor_mmid_prop, property_type;
+type vendor_ctl_vendor_mmid_prop, property_type;
 
 # mmi
 type vendor_mmi_prop, property_type;
@@ -68,14 +67,14 @@ type vendor_audio_debug_prop, property_type;
 # Seccam Prop
 type vendor_core_ctl_prop, property_type;
 
-# property for location
-type location_prop, property_type;
+# property for vendor_location
+type vendor_location_prop, property_type;
 
 # Netmgrd prop
 type vendor_data_ko_prop, property_type;
 # WIGIG
 type vendor_wigig_prop, property_type;
-type ctl_vendor_wigigsvc_prop, property_type;
+type vendor_ctl_vendor_wigigsvc_prop, property_type;
 
 # hvdcp_opti prop
 type vendor_hvdcp_opti_prop, property_type;
@@ -87,4 +86,4 @@ type vendor_xlat_prop, property_type;
 type vendor_qvr_prop, property_type;
 
 #qmuxd property
-type ctl_qmuxd_prop, property_type;
+type vendor_ctl_qmuxd_prop, property_type;

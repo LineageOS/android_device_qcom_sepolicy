@@ -25,4 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-com.qualcomm.qti.loopbackhal::Iloopback                      u:object_r:qtiloopback_hwservice:s0
+com.qualcomm.qti.loopbackhal::Iloopback                      u:object_r:vendor_qtiloopback_hwservice:s0

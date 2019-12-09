@@ -26,5 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-binder_call(atfwd, qtelephony);
-allow atfwd hal_atfwd_hwservice:hwservice_manager find;
+binder_call(vendor_atfwd, qtelephony);
+allow vendor_atfwd hal_atfwd_hwservice:hwservice_manager find;

@@ -25,14 +25,14 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type power_off_alarm, domain;
-type power_off_alarm_exec, exec_type, vendor_file_type, file_type;
+type vendor_power_off_alarm, domain;
+type vendor_power_off_alarm_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(power_off_alarm)
+init_daemon_domain(vendor_power_off_alarm)
 
-allow power_off_alarm rtc_device:chr_file r_file_perms;
-allow power_off_alarm kmsg_device:chr_file w_file_perms;
+allow vendor_power_off_alarm rtc_device:chr_file r_file_perms;
+allow vendor_power_off_alarm kmsg_device:chr_file w_file_perms;
 
-allow power_off_alarm self:capability2 wake_alarm;
+allow vendor_power_off_alarm self:capability2 wake_alarm;
 
-set_prop(power_off_alarm, powerctl_prop)
+set_prop(vendor_power_off_alarm, powerctl_prop)

@@ -25,12 +25,12 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# mlid - Mink-Lowi Interface daemon
-type mlid, domain, mlstrustedsubject;
-type mlid_exec, exec_type, vendor_file_type, file_type;
+# vendor_mlid - Mink-Lowi Interface daemon
+type vendor_mlid, domain, mlstrustedsubject;
+type vendor_mlid_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(mlid)
+init_daemon_domain(vendor_mlid)
 
 # Allow access to location socket
-allow mlid self:netlink_generic_socket create_socket_perms_no_ioctl;
-unix_socket_connect(mlid, location, location)
+allow vendor_mlid self:netlink_generic_socket create_socket_perms_no_ioctl;
+unix_socket_connect(vendor_mlid, vendor_location, vendor_location)

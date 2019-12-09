@@ -28,163 +28,162 @@
 ###################################
 #Dev nodes
 #
-/dev/hsicctl.*                        u:object_r:hsic_device:s0
-/dev/sp_kernel                        u:object_r:skp_device:s0
-/dev/sp_keymaster                     u:object_r:sp_keymaster_device:s0
-/dev/sp_ssr                           u:object_r:sp_ssr_device:s0
-/dev/spdaemon_ssr                     u:object_r:spdaemon_ssr_device:s0
-/dev/iuicc                            u:object_r:iuicc_device:s0
-/dev/cryptoapp                        u:object_r:cryptoapp_device:s0
-/dev/sec_nvm_.*                       u:object_r:sec_nvm_device:s0
-/dev/qbt.*                            u:object_r:qbt_device:s0
-/dev/esoc.*                           u:object_r:esoc_device:s0
-/dev/mhi_.*                           u:object_r:mhi_device:s0
-/dev/smem_log                         u:object_r:smem_log_device:s0
-/dev/radio0                           u:object_r:fm_radio_device:s0
-/dev/qg                               u:object_r:qg_device:s0
-/dev/qg_battery                       u:object_r:qg_device:s0
-/dev/qvr_external_sensor_ioctl        u:object_r:qvr_external_sensor_device:s0
+/dev/hsicctl.*                        u:object_r:vendor_hsic_device:s0
+/dev/sp_kernel                        u:object_r:vendor_skp_device:s0
+/dev/sp_keymaster                     u:object_r:vendor_sp_keymaster_device:s0
+/dev/sp_ssr                           u:object_r:vendor_sp_ssr_device:s0
+/dev/spdaemon_ssr                     u:object_r:vendor_spdaemon_ssr_device:s0
+/dev/iuicc                            u:object_r:vendor_iuicc_device:s0
+/dev/cryptoapp                        u:object_r:vendor_cryptoapp_device:s0
+/dev/sec_nvm_.*                       u:object_r:vendor_sec_nvm_device:s0
+/dev/qbt.*                            u:object_r:vendor_qbt_device:s0
+/dev/esoc.*                           u:object_r:vendor_esoc_device:s0
+/dev/mhi_.*                           u:object_r:vendor_mhi_device:s0
+/dev/smem_log                         u:object_r:vendor_smem_log_device:s0
+/dev/radio0                           u:object_r:vendor_fm_radio_device:s0
+/dev/qg                               u:object_r:vendor_qg_device:s0
+/dev/qg_battery                       u:object_r:vendor_qg_device:s0
+/dev/qvr_external_sensor_ioctl        u:object_r:vendor_qvr_external_sensor_device:s0
 ###################################
 # Dev socket nodes
 #
-/dev/socket/iop                                 u:object_r:iop_socket:s0
-/dev/socket/mlid                                u:object_r:mlid_socket:s0
-/dev/socket/ssgqmig                             u:object_r:ssgqmig_socket:s0
-/dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
-/dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
-/dev/socket/adpl_cmd_uds_file                   u:object_r:dataadpl_socket:s0
-/dev/socket/wigig/wpa_wigig[0-9]                u:object_r:wigig_vendor_wpa_socket:s0
-/dev/socket/vendor_wpa_wlan[0-9]                u:object_r:wifi_vendor_wpa_socket:s0
-/dev/socket/wigig/wigignpt                      u:object_r:wigignpt_socket:s0
-/dev/socket/wigig/sensingdaemon                 u:object_r:sensingdaemon_socket:s0
+/dev/socket/iop                                 u:object_r:vendor_iop_socket:s0
+/dev/socket/mlid                                u:object_r:vendor_mlid_socket:s0
+/dev/socket/ssgqmig                             u:object_r:vendor_ssgqmig_socket:s0
+/dev/socket/ssgtzd                              u:object_r:vendor_ssgtzd_socket:s0
+/dev/socket/qdma(/.*)?                          u:object_r:vendor_qdma_socket:s0
+/dev/socket/adpl_cmd_uds_file                   u:object_r:vendor_dataadpl_socket:s0
+/dev/socket/wigig/wpa_wigig[0-9]                u:object_r:vendor_wigig_vendor_wpa_socket:s0
+/dev/socket/wigig/vendor_wpa_wlan[0-9]          u:object_r:vendor_wigig_vendor_wpa_socket:s0
+/dev/socket/wigig/wigignpt                      u:object_r:vendor_wigignpt_socket:s0
+/dev/socket/wigig/sensingdaemon                 u:object_r:vendor_sensingdaemon_socket:s0
 
 ###################################
 # System files
 #
 
-/(vendor|system/vendor)/bin/dpmQmiMgr                                              u:object_r:hal_dpmQmiMgr_exec:s0
-/vendor/bin/hw/android\.hardware\.keymaster@4\.0-strongbox-service-qti             u:object_r:hal_keymaster_qti_exec:s0
-/vendor/bin/hw/vendor\.qti\.hardware\.cryptfshw@1\.0-service-qti                   u:object_r:hal_keymaster_qti_exec:s0
-/vendor/bin/hw/android\.hardware\.drm@1\.2-service.clearkey                        u:object_r:hal_drm_clearkey_exec:s0
-/vendor/bin/hw/android\.hardware\.drm@1\.2-service-lazy.clearkey                   u:object_r:hal_drm_clearkey_exec:s0
+/(vendor|system/vendor)/bin/dpmQmiMgr                                              u:object_r:vendor_hal_dpmQmiMgr_exec:s0
+/vendor/bin/hw/android\.hardware\.keymaster@4\.0-strongbox-service-qti             u:object_r:vendor_hal_keymaster_qti_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.cryptfshw@1\.0-service-qti                   u:object_r:vendor_hal_keymaster_qti_exec:s0
+/vendor/bin/hw/android\.hardware\.drm@1\.2-service.clearkey                        u:object_r:vendor_hal_drm_clearkey_exec:s0
+/vendor/bin/hw/android\.hardware\.drm@1\.2-service-lazy.clearkey                   u:object_r:vendor_hal_drm_clearkey_exec:s0
 /vendor/bin/hw/vendor\.nxp\.hardware\.nfc@1\.1-service                             u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/vendor\.nxp\.hardware\.nfc@1\.2-service                             u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/vendor\.nxp\.hardware\.nfc@1\.3-service                             u:object_r:hal_nfc_default_exec:s0
-/vendor/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service                           u:object_r:hal_alarm_qti_default_exec:s0
-/vendor/bin/hw/vendor\.qti\.hardware\.iop@2\.0-service                             u:object_r:hal_iop_default_exec:s0
-/vendor/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service                   u:object_r:hal_qteeconnector_qti_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service                           u:object_r:vendor_hal_alarm_qti_default_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.iop@2\.0-service                             u:object_r:vendor_hal_iop_default_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service                   u:object_r:vendor_hal_qteeconnector_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.scve\.objecttracker@1\.0-service             u:object_r:vendor_scve_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.scve\.panorama@1\.0-service  u:object_r:vendor_scve_exec:s0
-/vendor/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service                u:object_r:hal_sensorscalibrate_qti_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.soter@1\.0-service           u:object_r:hal_soter_qti_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service                u:object_r:vendor_hal_sensorscalibrate_qti_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.soter@1\.0-service           u:object_r:vendor_hal_soter_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator@1\.[0-2]-service                    u:object_r:hal_vibrator_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.power\.pasrmanager\@1\.0-service       u:object_r:hal_pasrmanager_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.power\.pasrmanager\@1\.0-service       u:object_r:vendor_hal_pasrmanager_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.0-service            u:object_r:hal_secure_element_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.0-service            u:object_r:hal_perf_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.0-service            u:object_r:vendor_hal_perf_default_exec:s0
 /(vendor|system/vendor)/bin/mm-audio-ftm                                           u:object_r:vendor_audioftm_exec:s0
-/(vendor|system/vendor)/bin/qrtr-ns                                                u:object_r:qrtr_exec:s0
-/(vendor|system/vendor)/bin/spdaemon                                               u:object_r:spdaemon_exec:s0
-/(vendor|system/vendor)/bin/sec_nvm                                                u:object_r:sec_nvm_exec:s0
-/(vendor|system/vendor)/bin/hostapd_cli                                            u:object_r:hostapd_exec:s0
+/(vendor|system/vendor)/bin/qrtr-ns                                                u:object_r:vendor_qrtr_exec:s0
+/(vendor|system/vendor)/bin/spdaemon                                               u:object_r:vendor_spdaemon_exec:s0
+/(vendor|system/vendor)/bin/sec_nvm                                                u:object_r:vendor_sec_nvm_exec:s0
+/(vendor|system/vendor)/bin/hostapd_cli                                            u:object_r:vendor_hostapd_exec:s0
 /(vendor|system/vendor)/bin/qcom-system-daemon                                     u:object_r:vendor_qcomsysd_exec:s0
 /(vendor|system/vendor)/bin/vppservice                                             u:object_r:vendor_vppservice_exec:s0
-/(vendor|system/vendor)/bin/wifidisplayhalservice                                  u:object_r:wifidisplayhalservice_qti_exec:s0
-/(vendor|system/vendor)/bin/wfdhdcphalservice                                      u:object_r:wfdhdcphalservice_qti_exec:s0
-/(vendor|system/vendor)/bin/wfdvndservice                                          u:object_r:wfdvndservice_exec:s0
-/(vendor|system/vendor)/bin/nqnfcinfo                                              u:object_r:nqnfcinfo_exec:s0
-/(vendor|system/vendor)/bin/ssgqmigd                                               u:object_r:ssgqmigd_exec:s0
-/(vendor|system/vendor)/bin/ssgtzd                                                 u:object_r:ssgtzd_exec:s0
-/(vendor|system/vendor)/bin/mlid                                                   u:object_r:mlid_exec:s0
-/(vendor|system/vendor)/bin/qdmastatsd                                             u:object_r:qdmastatsd_exec:s0
-/(vendor|system/vendor)/bin/seemp_healthd                                          u:object_r:seemp_health_daemon_exec:s0
-/(vendor|system/vendor)/bin/qfp-daemon                                             u:object_r:qfp-daemon_exec:s0
-/(vendor|system/vendor)/bin/adpl                                                   u:object_r:adpl_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service           u:object_r:hal_esepowermanager_qti_exec:s0
-/(vendor|system/vendor)/bin/esepmdaemon                                            u:object_r:esepmdaemon_exec:s0
-/(vendor|system/vendor)/bin/mdm_helper                                             u:object_r:mdm_helper_exec:s0
-/(vendor|system/vendor)/bin/ks                                                     u:object_r:mdm_helper_exec:s0
+/(vendor|system/vendor)/bin/wifidisplayhalservice                                  u:object_r:vendor_wifidisplayhalservice_qti_exec:s0
+/(vendor|system/vendor)/bin/wfdhdcphalservice                                      u:object_r:vendor_wfdhdcphalservice_qti_exec:s0
+/(vendor|system/vendor)/bin/wfdvndservice                                          u:object_r:vendor_wfdvndservice_exec:s0
+/(vendor|system/vendor)/bin/nqnfcinfo                                              u:object_r:vendor_nqnfcinfo_exec:s0
+/(vendor|system/vendor)/bin/ssgqmigd                                               u:object_r:vendor_ssgqmigd_exec:s0
+/(vendor|system/vendor)/bin/ssgtzd                                                 u:object_r:vendor_ssgtzd_exec:s0
+/(vendor|system/vendor)/bin/mlid                                                   u:object_r:vendor_mlid_exec:s0
+/(vendor|system/vendor)/bin/qdmastatsd                                             u:object_r:vendor_qdmastatsd_exec:s0
+/(vendor|system/vendor)/bin/seemp_healthd                                          u:object_r:vendor_seemp_health_daemon_exec:s0
+/(vendor|system/vendor)/bin/qfp-daemon                                             u:object_r:vendor_qfp-daemon_exec:s0
+/(vendor|system/vendor)/bin/adpl                                                   u:object_r:vendor_adpl_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service           u:object_r:vendor_hal_esepowermanager_qti_exec:s0
+/(vendor|system/vendor)/bin/esepmdaemon                                            u:object_r:vendor_esepmdaemon_exec:s0
+/(vendor|system/vendor)/bin/mdm_helper                                             u:object_r:vendor_mdm_helper_exec:s0
+/(vendor|system/vendor)/bin/ks                                                     u:object_r:vendor_mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/mmi                                                    u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/mmid                                                   u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service         u:object_r:vendor_hal_factory_qti_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetracker@1\.0-service u:object_r:hal_srvctracker_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetracker@1\.0-service u:object_r:vendor_hal_srvctracker_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cvp@1\.0-service             u:object_r:vendor_cvp_exec:s0
-/(vendor|system/vendor)/bin/fstman                                                 u:object_r:fstman_exec:s0
-/(vendor|system/vendor)/bin/wigighalsvc                                            u:object_r:wigighalsvc_exec:s0
-/(vendor|system/vendor)/bin/wigignpt                                               u:object_r:wigignpt_exec:s0
-/(vendor|system/vendor)/bin/sensingdaemon                                          u:object_r:sensingdaemon_exec:s0
-/vendor/bin/hw/android\.hardware\.usb\@1\.[0-2]-service-qti                        u:object_r:hal_usb_qti_exec:s0
-/vendor/bin/vendor\.qti\.qspmhal@1\.0-service                                      u:object_r:hal_qspmhal_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.secureprocessor@1\.0-seccam-tee-qti      u:object_r:hal_secureprocessor_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.secureprocessor@1\.0-seccam-tee-qti      u:object_r:vendor_hal_secureprocessor_qti_exec:s0
+/(vendor|system/vendor)/bin/fstman                                                 u:object_r:vendor_fstman_exec:s0
+/(vendor|system/vendor)/bin/wigighalsvc                                            u:object_r:vendor_wigighalsvc_exec:s0
+/(vendor|system/vendor)/bin/wigignpt                                               u:object_r:vendor_wigignpt_exec:s0
+/(vendor|system/vendor)/bin/sensingdaemon                                          u:object_r:vendor_sensingdaemon_exec:s0
+/vendor/bin/hw/android\.hardware\.usb\@1\.[0-2]-service-qti                        u:object_r:vendor_hal_usb_qti_exec:s0
+/vendor/bin/vendor\.qti\.qspmhal@1\.0-service                                      u:object_r:vendor_hal_qspmhal_default_exec:s0
 
 
 #### Context for location features
 ## location daemons and binaries
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@.*-service                        u:object_r:hal_gnss_qti_exec:s0
-/(vendor|system/vendor)/bin/xtwifi-inet-agent                                      u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/xtwifi-client                                          u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.seccam@1\.0-service-qti      u:object_r:hal_seccam_qti_exec:s0
-/(vendor|system/vendor)/bin/garden_app                                             u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/DR_AP_Service                                          u:object_r:location_exec:s0
-/(vendor|system/vendor)/bin/slim_daemon                                            u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@.*-service                        u:object_r:vendor_hal_gnss_qti_exec:s0
+/(vendor|system/vendor)/bin/xtwifi-inet-agent                                      u:object_r:vendor_location_exec:s0
+/(vendor|system/vendor)/bin/xtwifi-client                                          u:object_r:vendor_location_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.seccam@1\.0-service-qti      u:object_r:vendor_hal_seccam_qti_exec:s0
+/(vendor|system/vendor)/bin/garden_app                                             u:object_r:vendor_location_exec:s0
+/(vendor|system/vendor)/bin/DR_AP_Service                                          u:object_r:vendor_location_exec:s0
+/(vendor|system/vendor)/bin/slim_daemon                                            u:object_r:vendor_location_exec:s0
 
 #bluetooth
-/vendor/bin/hw/vendor\.qti\.hardware\.bluetooth_dun@1\.0-service                   u:object_r:hal_bluetooth_dun_qti_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.bluetooth_dun@1\.0-service                   u:object_r:vendor_hal_bluetooth_dun_qti_exec:s0
 
 #hvdcp
-/vendor/bin/hvdcp_opti                                                             u:object_r:hvdcp_exec:s0
-/vendor/bin/init.qti.chg_policy.sh                                                 u:object_r:qti_init_shell_exec:s0
+/vendor/bin/hvdcp_opti                                                             u:object_r:vendor_hvdcp_exec:s0
+/vendor/bin/init.qti.chg_policy.sh                                                 u:object_r:vendor_qti_init_shell_exec:s0
 
 #perf
-/sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
-/sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
-/sys/module/process_reclaim(/.*)?                                   u:object_r:sysfs_process_reclaim:s0
+/sys/module/cpu_boost(/.*)?                                         u:object_r:vendor_sysfs_cpu_boost:s0
+/sys/module/msm_performance(/.*)?                                   u:object_r:vendor_sysfs_msm_perf:s0
+/sys/module/process_reclaim(/.*)?                                   u:object_r:vendor_sysfs_process_reclaim:s0
 
 ###################################
 # sysfs files
 #
-/sys/devices/virtual/net/bond0/bonding/queue_id                     u:object_r:sysfs_bond0:s0
-/sys/devices/virtual/net/bond0/queues/rx-0/rps_cpus                 u:object_r:sysfs_bond0:s0
-/sys/devices/virtual/net/bond0/statistics/rx_bytes                  u:object_r:sysfs_bond0:s0
-/sys/devices/virtual/net/bond0/statistics/tx_bytes                  u:object_r:sysfs_bond0:s0
+/sys/devices/virtual/net/bond0/queues/rx-0/rps_cpus                 u:object_r:vendor_sysfs_bond0:s0
+/sys/devices/virtual/net/bond0/statistics/rx_bytes                  u:object_r:vendor_sysfs_bond0:s0
+/sys/devices/virtual/net/bond0/statistics/tx_bytes                  u:object_r:vendor_sysfs_bond0:s0
 
-/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/fst_link_loss            u:object_r:sysfs_wigig:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/thermal_throttling       u:object_r:sysfs_wigig:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/snr_thresh               u:object_r:sysfs_wigig:s0
-/sys/devices(/platform)?/soc/[a-f0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/fst_config               u:object_r:sysfs_wigig:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/queues/rx-0/rps_cpus  u:object_r:sysfs_wigig:s0
-/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/gro_flush_timeout     u:object_r:sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/fst_link_loss            u:object_r:vendor_sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/thermal_throttling       u:object_r:vendor_sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/snr_thresh               u:object_r:vendor_sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/fst_config               u:object_r:vendor_sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/queues/rx-0/rps_cpus  u:object_r:vendor_sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/gro_flush_timeout     u:object_r:vendor_sysfs_wigig:s0
 
-/sys/devices(/platform)?/soc/soc:qcom,gpubw/devfreq/soc:qcom,gpubw(/.*)? u:object_r:sysfs_devfreq:s0
+/sys/devices(/platform)?/soc/soc:qcom,gpubw/devfreq/soc:qcom,gpubw(/.*)? u:object_r:vendor_sysfs_devfreq:s0
 
 ###################################
 # data files
 #
-/data/vendor/iop(/.*)?                                              u:object_r:iop_data_file:s0
-/data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
-/data/vendor/wifi(/.*)?                                             u:object_r:wifi_vendor_data_file:s0
-/data/vendor/wifi/sockets(/.*)?                                     u:object_r:wifi_vendor_wpa_socket:s0
-/data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wifi_vendor_wpa_socket:s0
-/data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:wifi_vendor_wpa_socket:s0
+/data/vendor/iop(/.*)?                                              u:object_r:vendor_iop_data_file:s0
+/data/vendor/misc/qti_fp(/.*)?                                      u:object_r:vendor_qfp-daemon_data_file:s0
+/data/vendor/wifi(/.*)?                                             u:object_r:vendor_wifi_vendor_data_file:s0
+/data/vendor/wifi/sockets(/.*)?                                     u:object_r:vendor_wifi_vendor_wpa_socket:s0
+/data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:vendor_wifi_vendor_wpa_socket:s0
+/data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:vendor_wifi_vendor_wpa_socket:s0
 /dev/cam-hyp-intf-[0-9]+                                            u:object_r:video_device:s0
-/data/vendor/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
+/data/vendor/perfd(/.*)?                                            u:object_r:vendor_mpctl_data_file:s0
 /data/vendor/dataqti(/.*)?                                          u:object_r:vendor_qti_data_file:s0
 /data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qdma_data_file:s0
 /data/vendor/qdma(/.*)?                                             u:object_r:vendor_qdma_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
-/data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
-/data/vendor/lm(/.*)?                                               u:object_r:lm_data_file:s0
-/data/vendor/secure_element(/.*)?                                   u:object_r:secure_element_vendor_data_file:s0
-/data/vendor/sensing(/.*)?                                          u:object_r:sensing_vendor_data_file:s0
+/data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:vendor_wigig_hostapd_socket:s0
+/data/vendor/lm(/.*)?                                               u:object_r:vendor_lm_data_file:s0
+/data/vendor/secure_element(/.*)?                                   u:object_r:vendor_secure_element_vendor_data_file:s0
+/data/vendor/sensing(/.*)?                                          u:object_r:vendor_sensing_vendor_data_file:s0
 /data/vendor/gaming(/.*)?                                           u:object_r:vendor_qspmhal_data_file:s0
 
 ###################################
 # persist files
 #
-/mnt/vendor/persist/secnvm(/.*)?      u:object_r:persist_secnvm_file:s0
-/mnt/vendor/persist/qti_fp(/.*)?      u:object_r:persist_qti_fp_file:s0
+/mnt/vendor/persist/secnvm(/.*)?      u:object_r:vendor_persist_secnvm_file:s0
+/mnt/vendor/persist/qti_fp(/.*)?      u:object_r:vendor_persist_qti_fp_file:s0
 /mnt/vendor/persist/FTM_AP(/.*)?      u:object_r:vendor_persist_mmi_file:s0
-/mnt/vendor/persist/vpp(/.*)?         u:object_r:persist_vpp_file:s0
-/mnt/vendor/persist/hvdcp_opti(/.*)?  u:object_r:persist_hvdcp_file:s0
+/mnt/vendor/persist/vpp(/.*)?         u:object_r:vendor_persist_vpp_file:s0
+/mnt/vendor/persist/hvdcp_opti(/.*)?  u:object_r:vendor_persist_hvdcp_file:s0
 
 # same-process HAL files and their dependencies
 #
@@ -198,4 +197,4 @@
 /vendor/lib(64)?/vendor.qti.qspmhal@1.0\.so  u:object_r:same_process_hal_file:s0
 
 #wifilearner daemon
-/(vendor|system/vendor)/bin/wifilearner    u:object_r:wifilearnersvc_exec:s0
+/(vendor|system/vendor)/bin/wifilearner    u:object_r:vendor_wifilearnersvc_exec:s0

@@ -25,12 +25,12 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_alarm_qti_default, domain;
+type vendor_hal_alarm_qti_default, domain;
 
-hal_server_domain(hal_alarm_qti_default, hal_alarm_qti)
+hal_server_domain(vendor_hal_alarm_qti_default,  vendor_hal_alarm_qti)
 
-type hal_alarm_qti_default_exec, exec_type, vendor_file_type, file_type;
+type vendor_hal_alarm_qti_default_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(hal_alarm_qti_default)
+init_daemon_domain(vendor_hal_alarm_qti_default)
 
-allow hal_alarm_qti_default rtc_device:chr_file r_file_perms;
+allow vendor_hal_alarm_qti_default rtc_device:chr_file r_file_perms;

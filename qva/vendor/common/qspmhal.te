@@ -25,24 +25,24 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_qspmhal_default, domain;
-type hal_qspmhal_default_exec, exec_type, vendor_file_type, file_type;
-typeattribute hal_qspmhal_default untrusted_app_visible_halserver_violators;
+type vendor_hal_qspmhal_default, domain;
+type vendor_hal_qspmhal_default_exec, exec_type, vendor_file_type, file_type;
+typeattribute vendor_hal_qspmhal_default untrusted_app_visible_halserver_violators;
 
-init_daemon_domain(hal_qspmhal_default)
+init_daemon_domain(vendor_hal_qspmhal_default)
 
-hal_server_domain(hal_qspmhal_default, hal_qspmhal)
-hal_client_domain(hal_qspmhal_default, hal_allocator)
+hal_server_domain(vendor_hal_qspmhal_default, vendor_hal_qspmhal)
+hal_client_domain(vendor_hal_qspmhal_default, hal_allocator)
 
-binder_call(hal_qspmhal_client, hal_qspmhal_server)
-binder_call(hal_qspmhal_server, hal_qspmhal_client)
+binder_call(vendor_hal_qspmhal_client, vendor_hal_qspmhal_server)
+binder_call(vendor_hal_qspmhal_server, vendor_hal_qspmhal_client)
 
 # Add hwservice related rules
-hal_attribute_hwservice(hal_qspmhal, hal_qspmhal_hwservice)
+hal_attribute_hwservice(vendor_hal_qspmhal, vendor_hal_qspmhal_hwservice)
 
 #Add permission to create/write file
-allow hal_qspmhal_default vendor_qspmhal_data_file:file  create_file_perms;
-allow hal_qspmhal_default vendor_qspmhal_data_file:dir rw_dir_perms;
+allow vendor_hal_qspmhal_default vendor_qspmhal_data_file:file  create_file_perms;
+allow vendor_hal_qspmhal_default vendor_qspmhal_data_file:dir rw_dir_perms;
 
 #getprop rule for qspm debug prop
-userdebug_or_eng(`get_prop(hal_qspmhal_default, vendor_qspm_dbg_prop)')
+userdebug_or_eng(`get_prop(vendor_hal_qspmhal_default, vendor_qspm_dbg_prop)')

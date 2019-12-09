@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #Add new domain for perfdump app
-user=system seinfo=platform name=com.qualcomm.qti.perfdump domain=perfdump_app type=system_app_data_file
+user=system seinfo=platform name=com.qualcomm.qti.perfdump domain=vendor_perfdump_app type=system_app_data_file
 
 #Add new domain for QDMA
-user=system seinfo=platform name=com.qualcomm.qti.qdma domain=qdma_app type=system_app_data_file
+user=system seinfo=platform name=com.qualcomm.qti.qdma domain=vendor_qdma_app type=system_app_data_file

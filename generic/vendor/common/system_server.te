@@ -31,15 +31,15 @@ binder_call(system_server, hal_camera_default)
 
 binder_call(system_server, hal_graphics_composer)
 
-# location
-binder_call(system_server, location);
-allow system_server wlan_device:chr_file rw_file_perms;
+# vendor_location
+binder_call(system_server, vendor_location);
+allow system_server vendor_wlan_device:chr_file rw_file_perms;
 allow system_server hal_audio_default:file w_file_perms;
 
-allow system_server sysfs_sensors:dir search;
-allow system_server sysfs_sensors:file rw_file_perms;
+allow system_server vendor_sysfs_sensors:dir search;
+allow system_server vendor_sysfs_sensors:file rw_file_perms;
 # allow access to low persistence mode sysfs node
-allow system_server sysfs_graphics:file rw_file_perms;
+allow system_server vendor_sysfs_graphics:file rw_file_perms;
 
 userdebug_or_eng(`
     diag_use(system_server)
@@ -51,4 +51,4 @@ get_prop(system_server, vendor_display_prop)
 # allow system_server to read/acess peripheral manager.
 get_prop(system_server, vendor_per_mgr_state_prop);
 
-hal_client_domain(system_server, hal_dataconnection_qti)
+hal_client_domain(system_server, vendor_hal_dataconnection_qti)

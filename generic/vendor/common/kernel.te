@@ -28,8 +28,8 @@
 userdebug_or_eng(`
   allow kernel self:socket create;
   allow kernel self:qipcrtr_socket create;
-  allow kernel debugfs_wlan:dir search;
-  allow kernel debugfs_ipc:dir search;
+  allow kernel vendor_debugfs_wlan:dir search;
+  allow kernel vendor_debugfs_ipc:dir search;
 ')
 
 # Access firmware_file

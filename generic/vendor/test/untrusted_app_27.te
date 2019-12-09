@@ -27,10 +27,10 @@
 
 #allow untrusted_app_27 clients to access configuration settings
 userdebug_or_eng(`
-allow untrusted_app_27 sysfs_kgsl:dir search;
-dontaudit untrusted_app_27 sysfs_kgsl:dir read;
-dontaudit untrusted_app_27 sysfs_kgsl:file read;
-r_dir_file(untrusted_app_27, sysfs_kgsl_snapshot);
+allow untrusted_app_27 vendor_sysfs_kgsl:dir search;
+dontaudit untrusted_app_27 vendor_sysfs_kgsl:dir read;
+dontaudit untrusted_app_27 vendor_sysfs_kgsl:file read;
+r_dir_file(untrusted_app_27, vendor_sysfs_kgsl_snapshot);
 r_dir_file(untrusted_app_27, vendor_gles_data_file);
 allow untrusted_app_27 vendor_gles_data_file:dir rw_dir_perms;
 allow untrusted_app_27 vendor_gles_data_file:file rw_file_perms;

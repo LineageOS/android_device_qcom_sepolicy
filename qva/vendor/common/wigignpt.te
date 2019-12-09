@@ -25,31 +25,31 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type wigignpt, domain;
-type wigignpt_exec, exec_type, vendor_file_type, file_type;
+type vendor_wigignpt, domain;
+type vendor_wigignpt_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(wigignpt)
+init_daemon_domain(vendor_wigignpt)
 #use bypass because net_admin capability is needed
-hal_server_domain_bypass(wigignpt, hal_wigig_npt)
+hal_server_domain_bypass(vendor_wigignpt, vendor_hal_wigig_npt)
 
 #allows calls between client and server and vice-versa
-binder_call(hal_wigig_npt_client, hal_wigig_npt_server)
-binder_call(hal_wigig_npt_server, hal_wigig_npt_client)
+binder_call(vendor_hal_wigig_npt_client, vendor_hal_wigig_npt_server)
+binder_call(vendor_hal_wigig_npt_server, vendor_hal_wigig_npt_client)
 
 #register hal service, allow hal clients to find the service
-hal_attribute_hwservice(hal_wigig_npt, hal_wigig_npt_hwservice)
+hal_attribute_hwservice(vendor_hal_wigig_npt, vendor_hal_wigig_npt_hwservice)
 
 #allow updating network stack parameters under /proc/sys/net
 #this also requires net_admin capability
-allow hal_wigig_npt proc_net:file rw_file_perms;
-allow hal_wigig_npt self:capability net_admin;
+allow vendor_hal_wigig_npt proc_net:file rw_file_perms;
+allow vendor_hal_wigig_npt self:capability net_admin;
 
 #update wigig0 network parameters like rps_cpus and gro_flush_timeout
-allow hal_wigig_npt sysfs_net:dir search;
-allow hal_wigig_npt sysfs_wigig:file rw_file_perms;
+allow vendor_hal_wigig_npt sysfs_net:dir search;
+allow vendor_hal_wigig_npt vendor_sysfs_wigig:file rw_file_perms;
 
 #update bond0 rps_cpus (FST)
-allow hal_wigig_npt sysfs_bond0:file rw_file_perms;
+allow vendor_hal_wigig_npt vendor_sysfs_bond0:file rw_file_perms;
 
-#listen on /dev/socket/wigignpt
-allow hal_wigig_npt hal_wigig_npt:unix_stream_socket { listen accept read write };
+#listen on /dev/socket/vendor_wigignpt
+allow vendor_hal_wigig_npt vendor_hal_wigig_npt:unix_stream_socket { listen accept read write };

@@ -27,31 +27,31 @@
 
 
 #Define Domain
-type wfdvndservice, domain;
-type wfdvndservice_exec, exec_type, vendor_file_type, file_type;
+type vendor_wfdvndservice, domain;
+type vendor_wfdvndservice_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(wfdvndservice)
+init_daemon_domain(vendor_wfdvndservice)
 
 #Allow net for hdcp connection
-net_domain(wfdvndservice)
+net_domain(vendor_wfdvndservice)
 
 #Allow to use Vendor Binder IPC
-vndbinder_use(wfdvndservice)
+vndbinder_use(vendor_wfdvndservice)
 
 #Allow to host sink hdcp vnd service
-add_service(wfdvndservice, wfdhdcpvndservice_service)
-binder_call(wfdvndservice, wfdhdcphalservice_qti);
+add_service(vendor_wfdvndservice, vendor_wfdhdcpvndservice_service)
+binder_call(vendor_wfdvndservice, vendor_wfdhdcphalservice_qti);
 
 #Allow access to firmware files for HDCP session
-r_dir_file(wfdvndservice, firmware_file)
+r_dir_file(vendor_wfdvndservice, firmware_file)
 
 #Allow for using fds
-allow wfdvndservice { mediacodec system_app wfdhdcphalservice_qti}:fd use;
+allow vendor_wfdvndservice { mediacodec system_app vendor_wfdhdcphalservice_qti}:fd use;
 
 #Allow access to tee/ion device
-allow wfdvndservice tee_device:chr_file rw_file_perms;
-allow wfdvndservice ion_device:chr_file r_file_perms;
+allow vendor_wfdvndservice tee_device:chr_file rw_file_perms;
+allow vendor_wfdvndservice ion_device:chr_file r_file_perms;
 
 #Allow access to graphics_composer and qdisplay_service
-hal_client_domain(wfdvndservice, hal_graphics_composer);
-allow wfdvndservice qdisplay_service:service_manager find;
+hal_client_domain(vendor_wfdvndservice, hal_graphics_composer);
+allow vendor_wfdvndservice vendor_qdisplay_service:service_manager find;

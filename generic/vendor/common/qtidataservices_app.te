@@ -25,27 +25,27 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type qtidataservices_app, domain;
-app_domain(qtidataservices_app);
+type vendor_qtidataservices_app, domain;
+app_domain(vendor_qtidataservices_app);
 
-add_hwservice(qtidataservices_app, hal_cacert_hwservice)
-hwbinder_use(qtidataservices_app)
+add_hwservice(vendor_qtidataservices_app, vendor_hal_cacert_hwservice)
+hwbinder_use(vendor_qtidataservices_app)
 
-get_prop(qtidataservices_app, cnd_prop)
+get_prop(vendor_qtidataservices_app, vendor_cnd_prop)
 
-allow qtidataservices_app { app_api_service activity_service }:service_manager find;
-allow qtidataservices_app self:qipcrtr_socket create_socket_perms_no_ioctl;
-allow qtidataservices_app radio_data_file:dir r_dir_perms;
+allow vendor_qtidataservices_app { app_api_service activity_service }:service_manager find;
+allow vendor_qtidataservices_app self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow vendor_qtidataservices_app vendor_radio_data_file:dir r_dir_perms;
 
-allow qtidataservices_app hal_datafactory_hwservice:hwservice_manager find;
-allow qtidataservices_app hal_iwlan_hwservice:hwservice_manager find;
-allow qtidataservices_app radio_service:service_manager find;
+allow vendor_qtidataservices_app vendor_hal_datafactory_hwservice:hwservice_manager find;
+allow vendor_qtidataservices_app vendor_hal_iwlan_hwservice:hwservice_manager find;
+allow vendor_qtidataservices_app radio_service:service_manager find;
 
-allow qtidataservices_app sysfs_data:file r_file_perms;
+allow vendor_qtidataservices_app vendor_sysfs_data:file r_file_perms;
 
-binder_call(qtidataservices_app, cnd)
-binder_call(qtidataservices_app, rild)
-binder_call(qtidataservices_app, location)
+binder_call(vendor_qtidataservices_app, vendor_cnd)
+binder_call(vendor_qtidataservices_app, rild)
+binder_call(vendor_qtidataservices_app, vendor_location)
 
-net_domain(qtidataservices_app)
-hal_client_domain(qtidataservices_app, hal_perf)
+net_domain(vendor_qtidataservices_app)
+hal_client_domain(vendor_qtidataservices_app, vendor_hal_perf)

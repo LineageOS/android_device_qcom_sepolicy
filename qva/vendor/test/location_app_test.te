@@ -28,28 +28,28 @@
 # qva/private/location_app_test.te - sepolicy rules for qti value added
 # location apps (internal) that will be part of system image. eg: ODLT, Qlogcat
 
-type location_app_test, domain;
-app_domain(location_app_test)
+type vendor_location_app_test, domain;
+app_domain(vendor_location_app_test)
 
 userdebug_or_eng(`
-    binder_use(location_app_test)
-    # allow location_app_test to access perf hal
-    hal_client_domain(location_app_test, hal_perf)
-    hal_client_domain(location_app_test, hal_gnss)
+    binder_use(vendor_location_app_test)
+    # allow vendor_location_app_test to access perf hal
+    hal_client_domain(vendor_location_app_test, vendor_hal_perf)
+    hal_client_domain(vendor_location_app_test, hal_gnss)
 
-    allow location_app_test { adbd su }:unix_stream_socket connectto;
+    allow vendor_location_app_test { adbd su }:unix_stream_socket connectto;
 
-    allow location_app_test app_api_service:service_manager find;
-    allow location_app_test mediametrics_service:service_manager find;
+    allow vendor_location_app_test app_api_service:service_manager find;
+    allow vendor_location_app_test mediametrics_service:service_manager find;
 
-    allow location_app_test cgroup:file rw_file_perms;
+    allow vendor_location_app_test cgroup:file rw_file_perms;
 
-    allow location_app_test anr_data_file:dir rw_dir_perms;
-    allow location_app_test anr_data_file:file rw_file_perms;
+    allow vendor_location_app_test anr_data_file:dir rw_dir_perms;
+    allow vendor_location_app_test anr_data_file:file rw_file_perms;
 
-    unix_socket_send(location_app_test, seempdw, seempd);
+    unix_socket_send(vendor_location_app_test, seempdw, seempd);
     #loc api access from ODLT
-    allow location_app_test self:qipcrtr_socket create_socket_perms_no_ioctl;
+    allow vendor_location_app_test self:qipcrtr_socket create_socket_perms_no_ioctl;
 
-    allow location_app_test audioserver_service:service_manager find;
+    allow vendor_location_app_test audioserver_service:service_manager find;
 ')

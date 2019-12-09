@@ -24,84 +24,84 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type thermal-engine, domain;
-type thermal-engine_exec, exec_type, vendor_file_type, file_type;
+type vendor_thermal-engine, domain;
+type vendor_thermal-engine_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(thermal-engine)
+init_daemon_domain(vendor_thermal-engine)
 
 # to read /sys/devices
-allow thermal-engine sysfs:dir r_dir_perms;
+allow vendor_thermal-engine sysfs:dir r_dir_perms;
 
-allow thermal-engine self:capability {
+allow vendor_thermal-engine self:capability {
     fsetid
     sys_boot
 };
 
-allow thermal-engine self:{ socket qipcrtr_socket } create_socket_perms;
+allow vendor_thermal-engine self:{ socket qipcrtr_socket } create_socket_perms;
 # ioctlcmd=c304
-allowxperm thermal-engine self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+allowxperm vendor_thermal-engine self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 
 # This is required to access thermal sockets
-allow thermal-engine thermal_socket:dir w_dir_perms;
-allow thermal-engine thermal_socket:sock_file create_file_perms;
-allow thermal-engine socket_device:dir w_dir_perms;
+allow vendor_thermal-engine vendor_thermal_socket:dir w_dir_perms;
+allow vendor_thermal-engine vendor_thermal_socket:sock_file create_file_perms;
+allow vendor_thermal-engine socket_device:dir w_dir_perms;
 
 # This is required for thermal sysfs access
-r_dir_file(thermal-engine, sysfs_thermal)
-allow thermal-engine sysfs_thermal:file w_file_perms;
-allow thermal-engine sysfs_thermal:lnk_file r_file_perms;
+r_dir_file(vendor_thermal-engine, sysfs_thermal)
+allow vendor_thermal-engine sysfs_thermal:file w_file_perms;
+allow vendor_thermal-engine sysfs_thermal:lnk_file r_file_perms;
 
 # Allow to read and write cpufreq sysfs
-allow thermal-engine sysfs_devices_system_cpu:file rw_file_perms;
+allow vendor_thermal-engine sysfs_devices_system_cpu:file rw_file_perms;
 # This is required for qmi access
-qmux_socket(thermal-engine);
+qmux_socket(vendor_thermal-engine);
 
 #This is to allow access to uio device
-allow thermal-engine uio_device:chr_file rw_file_perms;
+allow vendor_thermal-engine uio_device:chr_file rw_file_perms;
 
 userdebug_or_eng(`
-  diag_use(thermal-engine)
+  diag_use(vendor_thermal-engine)
 ')
 
 # To search, read and write kgsl sysfs
-allow thermal-engine sysfs_kgsl:dir r_dir_perms;
-allow thermal-engine sysfs_kgsl:file rw_file_perms;
-allow thermal-engine sysfs_kgsl:lnk_file r_file_perms;
+allow vendor_thermal-engine vendor_sysfs_kgsl:dir r_dir_perms;
+allow vendor_thermal-engine vendor_sysfs_kgsl:file rw_file_perms;
+allow vendor_thermal-engine vendor_sysfs_kgsl:lnk_file r_file_perms;
 
-allow thermal-engine sysfs_data:file r_file_perms;
+allow vendor_thermal-engine vendor_sysfs_data:file r_file_perms;
 
 # This is required read and write battery power supply sysfs
-allow thermal-engine sysfs_battery_supply:dir r_dir_perms;
-allow thermal-engine sysfs_battery_supply:file rw_file_perms;
-allow thermal-engine sysfs_battery_supply:lnk_file r_file_perms;
+allow vendor_thermal-engine vendor_sysfs_battery_supply:dir r_dir_perms;
+allow vendor_thermal-engine vendor_sysfs_battery_supply:file rw_file_perms;
+allow vendor_thermal-engine vendor_sysfs_battery_supply:lnk_file r_file_perms;
 
 # This is required to read and write lcd-backlight sysfs
-allow thermal-engine sysfs_graphics:dir r_dir_perms;
-allow thermal-engine sysfs_graphics:file rw_file_perms;
-allow thermal-engine sysfs_graphics:lnk_file r_file_perms;
+allow vendor_thermal-engine vendor_sysfs_graphics:dir r_dir_perms;
+allow vendor_thermal-engine vendor_sysfs_graphics:file rw_file_perms;
+allow vendor_thermal-engine vendor_sysfs_graphics:lnk_file r_file_perms;
 
-r_dir_file(thermal-engine, sysfs_leds)
-allow thermal-engine audio_device:chr_file rw_file_perms;
+r_dir_file(vendor_thermal-engine, sysfs_leds)
+allow vendor_thermal-engine audio_device:chr_file rw_file_perms;
 
 # reboot/shutdown for thermal limits exceeded
-set_prop(thermal-engine, powerctl_prop)
+set_prop(vendor_thermal-engine, powerctl_prop)
 
 #sysfs_uio
-r_dir_file(thermal-engine, sysfs_uio)
-r_dir_file(thermal-engine, sysfs_uio_file)
+r_dir_file(vendor_thermal-engine, sysfs_uio)
+r_dir_file(vendor_thermal-engine, vendor_sysfs_uio_file)
 
 # netlink access
-allow thermal-engine self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
-#This is required to enable thermal-engine dsprpc communication
-r_dir_file(thermal-engine, adsprpcd_file);
-allow thermal-engine qdsp_device:chr_file r_file_perms;
-allow thermal-engine ion_device:chr_file r_file_perms;
+allow vendor_thermal-engine self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+#This is required to enable vendor_thermal-engine dsprpc communication
+r_dir_file(vendor_thermal-engine, adsprpcd_file);
+allow vendor_thermal-engine vendor_qdsp_device:chr_file r_file_perms;
+allow vendor_thermal-engine ion_device:chr_file r_file_perms;
 
 # This is required to read devfreq  sysfs
-allow thermal-engine sysfs_devfreq:dir r_dir_perms;
-allow thermal-engine sysfs_devfreq:file r_file_perms;
-allow thermal-engine sysfs_devfreq:lnk_file r_file_perms;
+allow vendor_thermal-engine vendor_sysfs_devfreq:dir r_dir_perms;
+allow vendor_thermal-engine vendor_sysfs_devfreq:file r_file_perms;
+allow vendor_thermal-engine vendor_sysfs_devfreq:lnk_file r_file_perms;
 
 #This is required to write into limits-cdsp partition
-allow thermal-engine block_device:dir r_dir_perms;
-allow thermal-engine limits_block_device:blk_file rw_file_perms;
+allow vendor_thermal-engine block_device:dir r_dir_perms;
+allow vendor_thermal-engine vendor_limits_block_device:blk_file rw_file_perms;

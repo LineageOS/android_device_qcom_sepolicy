@@ -26,21 +26,21 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #must be defined for file_contexts
 
-type qmi_test_service_exec, exec_type, vendor_file_type, file_type;
+type vendor_qmi_test_service_exec, exec_type, vendor_file_type, file_type;
 
 userdebug_or_eng(`
-  type qmi_test_service, domain;
-  domain_auto_trans(shell, qmi_test_service_exec, qmi_test_service)
-  #domain_auto_trans(adbd, qmi_test_service_exec, qmi_test_service)
+  type vendor_qmi_test_service, domain;
+  domain_auto_trans(shell, vendor_qmi_test_service_exec, vendor_qmi_test_service)
+  #domain_auto_trans(adbd, vendor_qmi_test_service_exec, vendor_qmi_test_service)
   #enable access to loader in 64 bit system
-  allow qmi_test_service shell:fd use;
+  allow vendor_qmi_test_service shell:fd use;
   #test is launched from pseudo terminal so output goes there
-  allow qmi_test_service devpts:chr_file {read write getattr ioctl};
+  allow vendor_qmi_test_service devpts:chr_file {read write getattr ioctl};
   #enable accessing the path where qmuxds named sockets are present
   #to interface with qmuxd through unix sockets
   #to access ipc router socket
-  allow qmi_test_service qmi_test_service:socket {create bind read write setopt};
+  allow vendor_qmi_test_service vendor_qmi_test_service:socket {create bind read write setopt};
   #enable running test as root user => privileged process
   #enable privileged processes to bypass permission checks
-  allow qmi_test_service qmi_test_service:capability {setgid setuid fsetid};
+  allow vendor_qmi_test_service vendor_qmi_test_service:capability {setgid setuid fsetid};
 ')

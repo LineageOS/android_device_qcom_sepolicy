@@ -25,26 +25,26 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type tlocd, domain;
-type tlocd_exec, exec_type, vendor_file_type, file_type;
+type vendor_tlocd, domain;
+type vendor_tlocd_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(tlocd)
+init_daemon_domain(vendor_tlocd)
 
-# Allow interracting with tlocd directory
-allow tlocd tlocd_data_file:dir create_dir_perms;
-allow tlocd tlocd_data_file:file create_file_perms;
+# Allow interracting with vendor_tlocd directory
+allow vendor_tlocd vendor_tlocd_data_file:dir create_dir_perms;
+allow vendor_tlocd vendor_tlocd_data_file:file create_file_perms;
 
 # Allow interracting with qseecom
-allow tlocd tee_device:chr_file rw_file_perms;
+allow vendor_tlocd tee_device:chr_file rw_file_perms;
 
 # Allow interracting with trust-zone
-r_dir_file(tlocd, firmware_file)
+r_dir_file(vendor_tlocd, firmware_file)
 
 # Allow interracting with nqs fifos
-allow tlocd tlocd_data_file:fifo_file create_file_perms;
+allow vendor_tlocd vendor_tlocd_data_file:fifo_file create_file_perms;
 
 #Allow access MODEM
-allow tlocd self:{ socket qipcrtr_socket } create_socket_perms;
-allowxperm tlocd self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+allow vendor_tlocd self:{ socket qipcrtr_socket } create_socket_perms;
+allowxperm vendor_tlocd self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 
-allow tlocd ion_device:chr_file rw_file_perms;
+allow vendor_tlocd ion_device:chr_file rw_file_perms;

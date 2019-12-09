@@ -25,16 +25,16 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type qrtr, domain;
-type qrtr_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(qrtr)
+type vendor_qrtr, domain;
+type vendor_qrtr_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_qrtr)
 
-allow qrtr self:{
+allow vendor_qrtr self:{
     socket
     qipcrtr_socket
 } create_socket_perms;
 
-allowxperm qrtr self:{ socket qipcrtr_socket } ioctl msm_sock_qrtr_ioctls;
-allow qrtr devpts:chr_file rw_file_perms;
+allowxperm vendor_qrtr self:{ socket qipcrtr_socket } ioctl msm_sock_qrtr_ioctls;
+allow vendor_qrtr devpts:chr_file rw_file_perms;
 
-allow qrtr self:capability { net_bind_service };
+allow vendor_qrtr self:capability { net_bind_service };

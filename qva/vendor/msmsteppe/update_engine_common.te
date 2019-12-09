@@ -28,11 +28,11 @@
 # Allow update_engine and update_engine_sideload (recovery) read/write on the
 # device-specific partitions it should update.
 allow update_engine_common {
-        custom_ab_block_device
-        xbl_block_device
-        uefi_block_device
-        ssd_block_device
-        modem_block_device
+        vendor_custom_ab_block_device
+        vendor_xbl_block_device
+        vendor_uefi_block_device
+        vendor_ssd_block_device
+        vendor_modem_block_device
         recovery_block_device
 }:blk_file rw_file_perms;
 allow update_engine_common tmpfs:lnk_file r_file_perms;

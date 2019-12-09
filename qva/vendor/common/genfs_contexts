@@ -25,19 +25,19 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-genfscon sysfs /devices/virtual/npu/msm_npu/pwr u:object_r:sysfs_npu:s0
-genfscon sysfs /devices/virtual/fts/touch_aoi       u:object_r:sysfs_touch_aoi:s0
-genfscon proc /asound/card0/state u:object_r:proc_audiod:s0
-genfscon proc /asound/cards u:object_r:proc_audiod:s0
-genfscon sysfs /module/msm_thermal/core_control/cpus_offlined           u:object_r:sysfs_mpctl:s0
+genfscon sysfs /devices/virtual/npu/msm_npu/pwr u:object_r:vendor_sysfs_npu:s0
+genfscon sysfs /devices/virtual/fts/touch_aoi       u:object_r:vendor_sysfs_touch_aoi:s0
+genfscon proc /asound/card0/state u:object_r:vendor_proc_audiod:s0
+genfscon proc /asound/cards u:object_r:vendor_proc_audiod:s0
+genfscon sysfs /module/msm_thermal/core_control/cpus_offlined           u:object_r:vendor_sysfs_mpctl:s0
 
-genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/name u:object_r:sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/cable.0/ u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/cable.0/ u:object_r:vendor_sysfs_graphics:s0
 
-genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon1/name u:object_r:sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon1/cable.0/ u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon1/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon1/cable.0/ u:object_r:vendor_sysfs_graphics:s0
 
-genfscon sysfs /module/rmnet_perf/parameters u:object_r:sysfs_rmnet:s0
+genfscon sysfs /module/rmnet_perf/parameters u:object_r:vendor_sysfs_rmnet:s0
 
-genfscon sysfs /kernel/qvr_external_sensor u:object_r:sysfs_qvr_external_sensor:s0
-genfscon sysfs /devices/system/memory/ u:object_r:sysfs_memory_offline:s0
+genfscon sysfs /kernel/qvr_external_sensor u:object_r:vendor_sysfs_qvr_external_sensor:s0
+genfscon sysfs /devices/system/memory/ u:object_r:vendor_sysfs_memory_offline:s0

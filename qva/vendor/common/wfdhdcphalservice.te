@@ -26,20 +26,20 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #Define Domain
-type wfdhdcphalservice_qti, domain;
-type wfdhdcphalservice_qti_exec, exec_type, vendor_file_type, file_type;
+type vendor_wfdhdcphalservice_qti, domain;
+type vendor_wfdhdcphalservice_qti_exec, exec_type, vendor_file_type, file_type;
 
-hal_server_domain(wfdhdcphalservice_qti, hal_drm)
-init_daemon_domain(wfdhdcphalservice_qti)
+hal_server_domain(vendor_wfdhdcphalservice_qti, hal_drm)
+init_daemon_domain(vendor_wfdhdcphalservice_qti)
 
 #Allow to call wfdhdcpvndservice
-vndbinder_use(wfdhdcphalservice_qti)
-allow wfdhdcphalservice_qti wfdhdcpvndservice_service:service_manager find;
-binder_call(wfdhdcphalservice_qti, wfdvndservice);
+vndbinder_use(vendor_wfdhdcphalservice_qti)
+allow vendor_wfdhdcphalservice_qti vendor_wfdhdcpvndservice_service:service_manager find;
+binder_call(vendor_wfdhdcphalservice_qti, vendor_wfdvndservice);
 
 #Allow access to display config hal
-hal_client_domain(wfdhdcphalservice_qti, hal_graphics_composer)
+hal_client_domain(vendor_wfdhdcphalservice_qti, hal_graphics_composer)
 
 #Allow to use fd from mediacodec and wfd app
-allow wfdhdcphalservice_qti { mediacodec system_app }:fd use;
+allow vendor_wfdhdcphalservice_qti { mediacodec system_app }:fd use;
 

@@ -25,74 +25,74 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_perf_default, domain, mlstrustedsubject;
-hal_server_domain_bypass(hal_perf_default, hal_perf)
+type vendor_hal_perf_default, domain, mlstrustedsubject;
+hal_server_domain_bypass(vendor_hal_perf_default, vendor_hal_perf)
 
-type hal_perf_default_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_perf_default)
+type vendor_hal_perf_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_perf_default)
 
 # Allow hwbinder call from hal client to server
-binder_call(hal_perf_client, hal_perf_server)
+binder_call(vendor_hal_perf_client, vendor_hal_perf_server)
 
 # Add hwservice related rules
-add_hwservice(hal_perf_server, hal_perf_hwservice)
-allow hal_perf_client hal_perf_hwservice:hwservice_manager find;
+add_hwservice(vendor_hal_perf_server, vendor_hal_perf_hwservice)
+allow vendor_hal_perf_client vendor_hal_perf_hwservice:hwservice_manager find;
 
-allow hal_perf_default cgroup:file r_file_perms;
-allow hal_perf_default proc:file rw_file_perms;
-allow hal_perf latency_device:chr_file rw_file_perms;
-get_prop(hal_perf, freq_prop)
-get_prop(hal_perf, vendor_mpctl_prop)
-allow hal_perf_default mpctl_data_file:dir rw_dir_perms;
-allow hal_perf_default mpctl_data_file:file create_file_perms;
-allow hal_perf_default lm_data_file:dir rw_dir_perms;
-allow hal_perf_default lm_data_file:file create_file_perms;
-allow hal_perf_default sysfs_lib:file w_file_perms;
-r_dir_file(hal_perf_default, appdomain);
-allow hal_perf_default {appdomain}:file rw_file_perms;
+allow vendor_hal_perf_default cgroup:file r_file_perms;
+allow vendor_hal_perf_default proc:file rw_file_perms;
+allow vendor_hal_perf vendor_latency_device:chr_file rw_file_perms;
+get_prop(vendor_hal_perf, vendor_freq_prop)
+get_prop(vendor_hal_perf, vendor_mpctl_prop)
+allow vendor_hal_perf_default vendor_mpctl_data_file:dir rw_dir_perms;
+allow vendor_hal_perf_default vendor_mpctl_data_file:file create_file_perms;
+allow vendor_hal_perf_default vendor_lm_data_file:dir rw_dir_perms;
+allow vendor_hal_perf_default vendor_lm_data_file:file create_file_perms;
+allow vendor_hal_perf_default vendor_sysfs_lib:file w_file_perms;
+r_dir_file(vendor_hal_perf_default, appdomain);
+allow vendor_hal_perf_default {appdomain}:file rw_file_perms;
 
-allow hal_perf {
+allow vendor_hal_perf {
      sysfs_devices_system_cpu
-     sysfs_mpctl
-     sysfs_devfreq
-     sysfs_mmc_host
-     sysfs_scsi_host
-     sysfs_kgsl
-     sysfs_cpu_boost
-     sysfs_msm_perf
-     sysfs_memory
-     sysfs_graphics
-     sysfs_msm_power
-     sysfs_battery_supply
-     sysfs_process_reclaim
-     sysfs_qfprom
+     vendor_sysfs_mpctl
+     vendor_sysfs_devfreq
+     vendor_sysfs_mmc_host
+     vendor_sysfs_scsi_host
+     vendor_sysfs_kgsl
+     vendor_sysfs_cpu_boost
+     vendor_sysfs_msm_perf
+     vendor_sysfs_memory
+     vendor_sysfs_graphics
+     vendor_sysfs_msm_power
+     vendor_sysfs_battery_supply
+     vendor_sysfs_process_reclaim
+     vendor_sysfs_qfprom
 }:dir r_dir_perms;
 
-allow hal_perf {
+allow vendor_hal_perf {
      sysfs_devices_system_cpu
-     sysfs_mpctl
-     sysfs_cpu_boost
-     sysfs_msm_perf
-     sysfs_kgsl
-     sysfs_cpu_boost
-     sysfs_msm_perf
-     sysfs_memory
-     sysfs_graphics
-     sysfs_scsi_host
-     sysfs_devfreq
-     sysfs_mmc_host
-     sysfs_msm_power
-     sysfs_battery_supply
-     sysfs_process_reclaim
-     sysfs_qfprom
+     vendor_sysfs_mpctl
+     vendor_sysfs_cpu_boost
+     vendor_sysfs_msm_perf
+     vendor_sysfs_kgsl
+     vendor_sysfs_cpu_boost
+     vendor_sysfs_msm_perf
+     vendor_sysfs_memory
+     vendor_sysfs_graphics
+     vendor_sysfs_scsi_host
+     vendor_sysfs_devfreq
+     vendor_sysfs_mmc_host
+     vendor_sysfs_msm_power
+     vendor_sysfs_battery_supply
+     vendor_sysfs_process_reclaim
+     vendor_sysfs_qfprom
 }:file rw_file_perms;
 
-allow hal_perf {
-    sysfs_devfreq
-    sysfs_mmc_host
-    sysfs_scsi_host
-    sysfs_kgsl
+allow vendor_hal_perf {
+    vendor_sysfs_devfreq
+    vendor_sysfs_mmc_host
+    vendor_sysfs_scsi_host
+    vendor_sysfs_kgsl
 }:lnk_file r_file_perms;
 
 # Allow to self kill capability
-allow hal_perf_default self:capability { kill };
+allow vendor_hal_perf_default self:capability { kill };

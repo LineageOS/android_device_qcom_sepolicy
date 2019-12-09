@@ -26,5 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # for system_server to access /sys/kernel/debug/binder/state
-/sys/kernel/debug/binder/state                                      u:object_r:binder_state:s0
-/vendor/bin/Loopback_native 	                                    u:object_r:qtiloopback_native_exec:s0
+/sys/kernel/debug/binder/state                                      u:object_r:vendor_binder_state:s0
+/vendor/bin/Loopback_native 	                                    u:object_r:vendor_qtiloopback_native_exec:s0

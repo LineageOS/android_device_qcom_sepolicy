@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Allow all apps to open and send ioctl to qdsp device
-allow appdomain qdsp_device:chr_file r_file_perms;
+allow appdomain vendor_qdsp_device:chr_file r_file_perms;
 
 # For the camera app
 get_prop(appdomain, vendor_camera_prop)
@@ -35,4 +35,4 @@ get_prop(appdomain, vendor_camera_prop)
 get_prop(appdomain, vendor_adsprpc_prop)
 
 # Allow all apps to open and send ioctl to npu device
-allow appdomain npu_device:chr_file r_file_perms;
+allow appdomain vendor_npu_device:chr_file r_file_perms;

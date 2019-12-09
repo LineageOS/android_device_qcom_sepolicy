@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Allow context hub HAL to communicate with daemon via socket
-unix_socket_connect(hal_contexthub, chre, chre)
+unix_socket_connect(hal_contexthub, vendor_chre, vendor_chre)

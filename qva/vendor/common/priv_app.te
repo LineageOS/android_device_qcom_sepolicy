@@ -26,6 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #allow priv_app to access hal_qspmhal
-hal_client_domain(priv_app, hal_qspmhal)
+hal_client_domain(priv_app, vendor_hal_qspmhal)
 
 

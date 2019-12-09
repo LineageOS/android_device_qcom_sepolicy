@@ -25,29 +25,29 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # General definitions
-type ipacm, domain;
-type ipacm-diag, domain;
-type ipacm_exec, exec_type, vendor_file_type, file_type;
-type ipacm-diag_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(ipacm)
-init_daemon_domain(ipacm-diag)
+type vendor_ipacm, domain;
+type vendor_ipacm-diag, domain;
+type vendor_ipacm_exec, exec_type, vendor_file_type, file_type;
+type vendor_ipacm-diag_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_ipacm)
+init_daemon_domain(vendor_ipacm-diag)
 
 # associate netdomain to use for accessing internet sockets
-net_domain(ipacm)
+net_domain(vendor_ipacm)
 
-hal_server_domain(ipacm, hal_tetheroffload)
+hal_server_domain(vendor_ipacm, hal_tetheroffload)
 
 userdebug_or_eng(`
-    # Allow using the logging file between ipacm and ipacm-diag
-    unix_socket_send(ipacm, ipacm, ipacm-diag)
+    # Allow using the logging file between vendor_ipacm and vendor_ipacm-diag
+    unix_socket_send(vendor_ipacm, vendor_ipacm, vendor_ipacm-diag)
 ')
 
 # Allow operations with /dev/ipa, /dev/wwan_ioctl and /dev/ipaNatTable
-allow hal_tetheroffload ipa_dev:chr_file rw_file_perms;
+allow hal_tetheroffload vendor_ipa_dev:chr_file rw_file_perms;
 
 # Allow UDP socket create and ioctl
 allow hal_tetheroffload self:udp_socket create_socket_perms;
-allowxperm ipacm self:udp_socket ioctl SIOCGIFNAME;
+allowxperm vendor_ipacm self:udp_socket ioctl SIOCGIFNAME;
 
 # Allow receiving NETLINK messages
 allow hal_tetheroffload self:netlink_route_socket { nlmsg_read create_socket_perms_no_ioctl };
@@ -61,9 +61,9 @@ allow hal_tetheroffload self:{
 } create_socket_perms_no_ioctl;
 
 # Allow creating and modifying the PID file
-allow hal_tetheroffload ipa_vendor_data_file:dir w_dir_perms;
-allow hal_tetheroffload ipa_vendor_data_file:file create_file_perms;
+allow hal_tetheroffload vendor_ipa_vendor_data_file:dir w_dir_perms;
+allow hal_tetheroffload vendor_ipa_vendor_data_file:file create_file_perms;
 
-# To register ipacm to hwbinder
-#add_hwservice(ipacm, hal_ipacm_hwservice)
-#binder_call(ipacm, system_server)
+# To register vendor_ipacm to hwbinder
+#add_hwservice(vendor_ipacm, hal_vendor_ipacm_hwservice)
+#binder_call(vendor_ipacm, system_server)

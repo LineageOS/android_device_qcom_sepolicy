@@ -26,6 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-attribute qtiloopback;
-attribute qtiloopback_server;
-attribute qtiloopback_client;
+attribute vendor_qtiloopback;
+attribute vendor_qtiloopback_server;
+attribute vendor_qtiloopback_client;

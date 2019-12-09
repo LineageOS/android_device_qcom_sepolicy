@@ -27,17 +27,17 @@
 # Binder access (for display.qservice)
 vndbinder_use(hal_graphics_composer_default)
 hal_client_domain(hal_graphics_composer_default, hal_graphics_allocator);
-allow hal_graphics_composer_default qdisplay_service:service_manager { add find };
+allow hal_graphics_composer_default vendor_qdisplay_service:service_manager { add find };
 
-allow hal_graphics_composer_default persist_display_file:dir search;
-allow hal_graphics_composer_default persist_display_file:file r_file_perms;
+allow hal_graphics_composer_default vendor_persist_display_file:dir search;
+allow hal_graphics_composer_default vendor_persist_display_file:file r_file_perms;
 
 # Allow reading/writing to '/mnt/vendor/persist/display/*'
-allow hal_graphics_composer_default persist_display_file:dir rw_dir_perms;
-allow hal_graphics_composer_default persist_display_file:file create_file_perms;
+allow hal_graphics_composer_default vendor_persist_display_file:dir rw_dir_perms;
+allow hal_graphics_composer_default vendor_persist_display_file:file create_file_perms;
 
-allow hal_graphics_composer sysfs_graphics:dir r_dir_perms;
-allow hal_graphics_composer sysfs_graphics:file rw_file_perms;
+allow hal_graphics_composer vendor_sysfs_graphics:dir r_dir_perms;
+allow hal_graphics_composer vendor_sysfs_graphics:file rw_file_perms;
 allow hal_graphics_composer_default mnt_vendor_file:dir search;
 
 allow hal_graphics_composer oemfs:dir r_dir_perms;
@@ -62,18 +62,18 @@ allow hal_graphics_composer_default ion_device:chr_file rw_file_perms;
 r_dir_file(hal_graphics_composer_default, sysfs_type)
 
 # Allow reading/writing to '/data/vendor/display/*'
-allow hal_graphics_composer_default display_vendor_data_file:dir create_dir_perms;
-allow hal_graphics_composer_default display_vendor_data_file:file create_file_perms;
+allow hal_graphics_composer_default vendor_display_vendor_data_file:dir create_dir_perms;
+allow hal_graphics_composer_default vendor_display_vendor_data_file:file create_file_perms;
 
 userdebug_or_eng(`
-        allow hal_graphics_composer_default debugfs_mdp:dir r_dir_perms;
-        allow hal_graphics_composer_default debugfs_mdp:file r_file_perms;
+        allow hal_graphics_composer_default vendor_debugfs_mdp:dir r_dir_perms;
+        allow hal_graphics_composer_default vendor_debugfs_mdp:file r_file_perms;
 ')
 
 userdebug_or_eng(`
     # Allow read to /sys/kernel/debug/*
-    allow hal_graphics_composer qti_display_debugfs:dir r_dir_perms;
-    allow hal_graphics_composer qti_display_debugfs:file r_file_perms;
+    allow hal_graphics_composer vendor_qti_display_debugfs:dir r_dir_perms;
+    allow hal_graphics_composer vendor_qti_display_debugfs:file r_file_perms;
 ')
 
 # Allow sensor service access
@@ -81,9 +81,9 @@ allow hal_graphics_composer fwk_sensor_hwservice:hwservice_manager find;
 binder_call(hal_graphics_composer, system_server)
 
 # allow composer to register display config
-add_hwservice(hal_graphics_composer_server, hal_display_config_hwservice);
+add_hwservice(hal_graphics_composer_server, vendor_hal_display_config_hwservice);
 # allow composer client to find display config service.
-allow hal_graphics_composer_client hal_display_config_hwservice:hwservice_manager find;
+allow hal_graphics_composer_client vendor_hal_display_config_hwservice:hwservice_manager find;
 
 # Allow qdcmss socket access
-unix_socket_connect(hal_graphics_composer_default, qdcmsocket, qdcm-ss)
+unix_socket_connect(hal_graphics_composer_default, vendor_qdcmsocket, vendor_qdcm-ss)

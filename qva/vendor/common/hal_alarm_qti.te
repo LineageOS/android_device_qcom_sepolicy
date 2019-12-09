@@ -26,9 +26,9 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-binder_call(hal_alarm_qti_client, hal_alarm_qti_server)
-binder_call(hal_alarm_qti_server, hal_alarm_qti_client)
+binder_call(vendor_hal_alarm_qti_client, vendor_hal_alarm_qti_server)
+binder_call(vendor_hal_alarm_qti_server, vendor_hal_alarm_qti_client)
 
-add_hwservice(hal_alarm_qti_server, hal_alarm_qti_hwservice)
+add_hwservice(vendor_hal_alarm_qti_server, vendor_hal_alarm_qti_hwservice)
 
-allow hal_alarm_qti_client hal_alarm_qti_hwservice:hwservice_manager find;
+allow vendor_hal_alarm_qti_client vendor_hal_alarm_qti_hwservice:hwservice_manager find;

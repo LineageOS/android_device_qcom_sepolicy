@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #face3d
-type face3d_producer_prop, property_type;
+type vendor_face3d_producer_prop, property_type;

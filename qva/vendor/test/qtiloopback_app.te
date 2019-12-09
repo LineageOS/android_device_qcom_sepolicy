@@ -25,14 +25,14 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type qtiloopback_app, domain;
-app_domain(qtiloopback_app)
+type vendor_qtiloopback_app, domain;
+app_domain(vendor_qtiloopback_app)
 userdebug_or_eng(`
-hal_client_domain(qtiloopback_app,qtiloopback)
+hal_client_domain(vendor_qtiloopback_app,vendor_qtiloopback)
 
-allow qtiloopback_app activity_service:service_manager find;
-allow qtiloopback_app cgroup:file rw_file_perms;
-allow qtiloopback_app system_app_data_file:dir r_dir_perms;
-allow qtiloopback_app app_api_service:service_manager find;
+allow vendor_qtiloopback_app activity_service:service_manager find;
+allow vendor_qtiloopback_app cgroup:file rw_file_perms;
+allow vendor_qtiloopback_app system_app_data_file:dir r_dir_perms;
+allow vendor_qtiloopback_app app_api_service:service_manager find;
 
 ')

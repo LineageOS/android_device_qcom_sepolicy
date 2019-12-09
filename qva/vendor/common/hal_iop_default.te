@@ -25,27 +25,27 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_iop_default, domain, mlstrustedsubject;
-hal_server_domain(hal_iop_default, hal_iop)
+type vendor_hal_iop_default, domain, mlstrustedsubject;
+hal_server_domain(vendor_hal_iop_default, vendor_hal_iop)
 
-type hal_iop_default_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_iop_default)
+type vendor_hal_iop_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_iop_default)
 
 # Allow hwbinder call from hal client to server
-binder_call(hal_iop_client, hal_iop_server)
+binder_call(vendor_hal_iop_client, vendor_hal_iop_server)
 # Add hwservice related rules
-add_hwservice(hal_iop_server, hal_iop_hwservice)
-allow hal_iop_client hal_iop_hwservice:hwservice_manager find;
-allow hal_iop_client hal_perf_hwservice:hwservice_manager find;
+add_hwservice(vendor_hal_iop_server, vendor_hal_iop_hwservice)
+allow vendor_hal_iop_client vendor_hal_iop_hwservice:hwservice_manager find;
+allow vendor_hal_iop_client vendor_hal_perf_hwservice:hwservice_manager find;
 
 #Allow access for vendor property
-get_prop(hal_iop, vendor_iop_prop)
-get_prop(hal_iop, vendor_mpctl_prop)
+get_prop(vendor_hal_iop, vendor_iop_prop)
+get_prop(vendor_hal_iop, vendor_mpctl_prop)
 
 # Allow access for /proc
-allow hal_iop_default proc:file r_file_perms;
+allow vendor_hal_iop_default proc:file r_file_perms;
 
 #Allow Access for /data/vendor/iop
-allow hal_iop iop_data_file:dir rw_dir_perms;
-allow hal_iop iop_data_file:file create_file_perms;
-hal_client_domain(hal_iop_default, hal_perf)
+allow vendor_hal_iop vendor_iop_data_file:dir rw_dir_perms;
+allow vendor_hal_iop vendor_iop_data_file:file create_file_perms;
+hal_client_domain(vendor_hal_iop_default, vendor_hal_perf)

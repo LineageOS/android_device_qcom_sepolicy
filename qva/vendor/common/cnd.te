@@ -25,47 +25,47 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-set_prop(cnd, cnd_vendor_prop)
+set_prop(vendor_cnd, vendor_cnd_vendor_prop)
 
-net_domain(cnd)
+net_domain(vendor_cnd)
 
-allow cnd smem_log_device:chr_file rw_file_perms;
+allow vendor_cnd vendor_smem_log_device:chr_file rw_file_perms;
 
-# allow cnd the following capability
-allow cnd self:capability {
+# allow vendor_cnd the following capability
+allow vendor_cnd self:capability {
     net_admin
 };
 
-allow cnd self:{
+allow vendor_cnd self:{
     netlink_tcpdiag_socket
     netlink_route_socket
 } create_socket_perms_no_ioctl;
 
-# allow cnd to access wpa_socket
-allow cnd wifi_vendor_data_file:dir r_dir_perms;
-allow cnd wifi_vendor_wpa_socket:sock_file write;
+# allow vendor_cnd to access wpa_socket
+allow vendor_cnd vendor_wifi_vendor_data_file:dir r_dir_perms;
+allow vendor_cnd vendor_wifi_vendor_wpa_socket:sock_file write;
 
-#allow cnd daemon to invoke hostapd_cli
-allow cnd vendor_shell_exec:file rx_file_perms;
-domain_auto_trans(cnd, hostapd_exec, hostapd)
-allow cnd hostapd_socket:dir r_dir_perms;
-unix_socket_send(cnd, hostapd, hostapd)
+#allow vendor_cnd daemon to invoke hostapd_cli
+allow vendor_cnd vendor_shell_exec:file rx_file_perms;
+domain_auto_trans(vendor_cnd, vendor_hostapd_exec, vendor_hostapd)
+allow vendor_cnd vendor_hostapd_socket:dir r_dir_perms;
+unix_socket_send(vendor_cnd, vendor_hostapd, vendor_hostapd)
 
 # only allow getopt for appdomain
 allow appdomain zygote:unix_dgram_socket getopt;
 dontaudit { domain -appdomain } zygote:unix_dgram_socket getopt;
 
-allow cnd self:socket create_socket_perms_no_ioctl;
+allow vendor_cnd self:socket create_socket_perms_no_ioctl;
 
-allowxperm cnd self:udp_socket ioctl wlan_sock_ioctls;
+allowxperm vendor_cnd self:udp_socket ioctl wlan_sock_ioctls;
 
-add_hwservice(cnd, hal_latency_hwservice)
+add_hwservice(vendor_cnd, vendor_hal_latency_hwservice)
 
 ##############################################################
 #for using public interface vendor.qti.data.factory
-#client should add their domain to cnd.te
+#client should add their domain to vendor_cnd.te
 ##############################################################
 userdebug_or_eng(`
-  binder_call(cnd, radio)
-  diag_use(cnd)
+  binder_call(vendor_cnd, radio)
+  diag_use(vendor_cnd)
 ')

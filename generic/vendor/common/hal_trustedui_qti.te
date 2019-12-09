@@ -25,27 +25,27 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_trustedui_qti, domain;
-hal_server_domain(hal_trustedui_qti, hal_trustedui)
+type vendor_hal_trustedui_qti, domain;
+hal_server_domain(vendor_hal_trustedui_qti, vendor_hal_trustedui)
 
-type hal_trustedui_qti_exec, exec_type, file_type, vendor_file_type;
-init_daemon_domain(hal_trustedui_qti)
+type vendor_hal_trustedui_qti_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(vendor_hal_trustedui_qti)
 
-binder_call(hal_trustedui_client, hal_trustedui_server)
-binder_call(hal_trustedui_server, hal_trustedui_client)
+binder_call(vendor_hal_trustedui_client, vendor_hal_trustedui_server)
+binder_call(vendor_hal_trustedui_server, vendor_hal_trustedui_client)
 
-hal_attribute_hwservice(hal_trustedui, hal_trustedui_hwservice)
+hal_attribute_hwservice(vendor_hal_trustedui, vendor_hal_trustedui_hwservice)
 
-hal_client_domain(hal_trustedui_qti, hal_graphics_allocator);
-hal_client_domain(hal_trustedui_qti, hal_graphics_composer);
-hal_client_domain(hal_trustedui_qti, hal_systemhelper);
+hal_client_domain(vendor_hal_trustedui_qti, hal_graphics_allocator);
+hal_client_domain(vendor_hal_trustedui_qti, hal_graphics_composer);
+hal_client_domain(vendor_hal_trustedui_qti, hal_systemhelper);
 
-allow hal_trustedui_qti sysfs_sectouch:file rw_file_perms;
-allow hal_trustedui_qti vendor_tui_data_file:file rw_file_perms;
-allow hal_trustedui_qti vendor_tui_data_file:dir r_dir_perms;
+allow vendor_hal_trustedui_qti vendor_sysfs_sectouch:file rw_file_perms;
+allow vendor_hal_trustedui_qti vendor_tui_data_file:file rw_file_perms;
+allow vendor_hal_trustedui_qti vendor_tui_data_file:dir r_dir_perms;
 
-allow hal_trustedui_qti ion_device:chr_file r_file_perms;
-allow hal_trustedui_qti surfaceflinger:fd use;
+allow vendor_hal_trustedui_qti ion_device:chr_file r_file_perms;
+allow vendor_hal_trustedui_qti surfaceflinger:fd use;
 
-allow hal_trustedui_qti tee_device:chr_file rw_file_perms;
-binder_call(hal_trustedui_qti, systemhelper_app)
+allow vendor_hal_trustedui_qti tee_device:chr_file rw_file_perms;
+binder_call(vendor_hal_trustedui_qti, systemhelper_app)

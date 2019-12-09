@@ -25,10 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type seemp_health_daemon, domain;
-type seemp_health_daemon_exec, exec_type, vendor_file_type, file_type;
+type vendor_seemp_health_daemon, domain;
+type vendor_seemp_health_daemon_exec, exec_type, vendor_file_type, file_type;
 
-#Allow for transition from init domain to seemp_health_daemon
-init_daemon_domain(seemp_health_daemon)
+#Allow for transition from init domain to vendor_seemp_health_daemon
+init_daemon_domain(vendor_seemp_health_daemon)
 #Allow access to tee device
-allow seemp_health_daemon tee_device:chr_file rw_file_perms;
+allow vendor_seemp_health_daemon tee_device:chr_file rw_file_perms;

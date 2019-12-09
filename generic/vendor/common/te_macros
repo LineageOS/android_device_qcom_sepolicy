@@ -31,9 +31,9 @@
 # Also allow the client domain to remove
 # its own socket.
 define(`qmux_socket', `
-allow $1 qmuxd_socket:dir create_dir_perms;
-unix_socket_connect($1, qmuxd, qmuxd)
-allow $1 qmuxd_socket:sock_file { read getattr write setattr create unlink };
+allow $1 vendor_qmuxd_socket:dir create_dir_perms;
+unix_socket_connect($1, vendor_qmuxd, vendor_qmuxd)
+allow $1 vendor_qmuxd_socket:sock_file { read getattr write setattr create unlink };
 ')
 
 #####################################
@@ -43,9 +43,9 @@ allow $1 qmuxd_socket:sock_file { read getattr write setattr create unlink };
 # Also allow the client domain to remove
 # its own socket.
 define(`netmgr_socket', `
-allow $1 netmgrd_socket:dir r_dir_perms;
-unix_socket_connect($1, netmgrd, netmgrd)
-allow $1 netmgrd_socket:sock_file { read getattr write };
+allow $1 vendor_netmgrd_socket:dir r_dir_perms;
+unix_socket_connect($1, vendor_netmgrd, vendor_netmgrd)
+allow $1 vendor_netmgrd_socket:sock_file { read getattr write };
 ')
 
 #####################################
@@ -55,9 +55,9 @@ allow $1 netmgrd_socket:sock_file { read getattr write };
 # Also allow the client domain to remove
 # its own socket.
 define(`portbridge_socket', `
-allow $1 port-bridge_socket:dir r_dir_perms;
-unix_socket_connect($1, port-bridge, port-bridge)
-allow $1 port-bridge_socket:sock_file { read write };
+allow $1 vendor_port-bridge_socket:dir r_dir_perms;
+unix_socket_connect($1, vendor_port-bridge, vendor_port-bridge)
+allow $1 vendor_port-bridge_socket:sock_file { read write };
 ')
 
 ########################################
@@ -74,21 +74,21 @@ get_prop($1, vendor_per_mgr_state_prop);
 
 #####################################
 # cnd_nims_socket_perm(clientdomain)
-# allow cnd to read /proc/pid/cmdline to get appname
-# allow cnd to use inet socket created by app.
+# allow vendor_cnd to read /proc/pid/cmdline to get appname
+# allow vendor_cnd to use inet socket created by app.
 define(`cnd_nims_socket_perm', `
-allow cnd $1:dir r_dir_perms;
-allow cnd $1:file r_file_perms;
-allow cnd $1:fd use;
-allow cnd $1:tcp_socket rw_socket_perms;
+allow vendor_cnd $1:dir r_dir_perms;
+allow vendor_cnd $1:file r_file_perms;
+allow vendor_cnd $1:fd use;
+allow vendor_cnd $1:tcp_socket rw_socket_perms;
 ')
 
 #####################################
 # diag_use(clientdomain)
 # allow clientdomain to read/write to diag
 define(`diag_use', `
-r_dir_file($1, sysfs_diag)
-allow $1 diag_device:chr_file rw_file_perms;
+r_dir_file($1, vendor_sysfs_diag)
+allow $1 vendor_diag_device:chr_file rw_file_perms;
 ')
 
 #####################################
@@ -129,9 +129,9 @@ typeattribute $1 $2;
 # Allow client domain to connecto and send
 # via a local socket to the qdma domain.
 define(`qdma_file_socket', `
-allow $1 qdma_socket:dir r_dir_perms;
-allow $1 qdma_socket:sock_file { read getattr write };
-allow $1 qdma_app:unix_stream_socket { connectto };
+allow $1 vendor_qdma_socket:dir r_dir_perms;
+allow $1 vendor_qdma_socket:sock_file { read getattr write };
+allow $1 vendor_qdma_app:unix_stream_socket { connectto };
 ')
 
 #####################################
@@ -150,8 +150,8 @@ type $1_exec, exec_type, file_type;
 init_daemon_domain($1);
 typeattribute $1 data_between_core_and_vendor_violators;
 typeattribute $1 coredomain;
-allow $1 shell_exec:file rx_file_perms;
-allow $1 toolbox_exec:file rx_file_perms;
+allow $1 vendor_shell_exec:file rx_file_perms;
+allow $1 vendor_toolbox_exec:file rx_file_perms;
 allow $1 file_contexts_file:file { read getattr open };
 allow $1 $2:file { getattr setattr relabelfrom rename };
 allow $1 $2:dir { reparent rename rmdir setattr rw_dir_perms relabelfrom };

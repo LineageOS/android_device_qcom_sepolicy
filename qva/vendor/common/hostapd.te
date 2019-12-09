@@ -26,29 +26,29 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # userspace wifi access points
-type hostapd, domain;
-type hostapd_exec, exec_type, vendor_file_type, file_type;
+type vendor_hostapd, domain;
+type vendor_hostapd_exec, exec_type, vendor_file_type, file_type;
 
-binder_call(hostapd, cnd)
-unix_socket_connect(hostapd, cnd, cnd)
-unix_socket_send(hostapd, cnd, cnd)
-allow hostapd cnd:{
+binder_call(vendor_hostapd, vendor_cnd)
+unix_socket_connect(vendor_hostapd, vendor_cnd, vendor_cnd)
+unix_socket_send(vendor_hostapd, vendor_cnd, vendor_cnd)
+allow vendor_hostapd vendor_cnd:{
           fifo_file
           netlink_route_socket
           netlink_tcpdiag_socket
           unix_stream_socket
           unix_dgram_socket} { read write };
-allow hostapd cnd:fifo_file r_file_perms;
-allow hostapd smem_log_device:chr_file rw_file_perms;
-allow hostapd wifi_vendor_data_file:dir w_dir_perms;
-allow hostapd wifi_vendor_data_file:file create_file_perms;
-allow hostapd hostapd_data_file:dir w_dir_perms;
-allow hostapd hostapd_data_file:sock_file create_file_perms;
-allow hostapd wifi_vendor_wpa_socket:dir r_dir_perms;
-allow hostapd wifi_vendor_wpa_socket:sock_file rw_file_perms;
+allow vendor_hostapd vendor_cnd:fifo_file r_file_perms;
+allow vendor_hostapd vendor_smem_log_device:chr_file rw_file_perms;
+allow vendor_hostapd vendor_wifi_vendor_data_file:dir w_dir_perms;
+allow vendor_hostapd vendor_wifi_vendor_data_file:file create_file_perms;
+allow vendor_hostapd hostapd_data_file:dir w_dir_perms;
+allow vendor_hostapd hostapd_data_file:sock_file create_file_perms;
+allow vendor_hostapd vendor_wifi_vendor_wpa_socket:dir r_dir_perms;
+allow vendor_hostapd vendor_wifi_vendor_wpa_socket:sock_file rw_file_perms;
 
 #diag
 userdebug_or_eng(`
-    diag_use(hostapd)
-    unix_socket_send(hostapd, wifi_vendor_wpa, su)
+    diag_use(vendor_hostapd)
+    unix_socket_send(vendor_hostapd, vendor_wifi_vendor_wpa, su)
 ')

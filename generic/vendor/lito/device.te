@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type logdump_partition, dev_type;
-type mba_debug_dev, dev_type;
-type dip_device, dev_type;
-type rawdump_block_device, dev_type;
+type vendor_logdump_partition, dev_type;
+type vendor_mba_debug_dev, dev_type;
+type vendor_dip_device, dev_type;
+type vendor_rawdump_block_device, dev_type;

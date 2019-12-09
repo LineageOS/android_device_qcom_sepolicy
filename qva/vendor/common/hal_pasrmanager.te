@@ -26,15 +26,15 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #Define Domain
-type hal_pasrmanager_qti, domain;
-type hal_pasrmanager_qti_exec, exec_type, vendor_file_type, file_type;
-hal_server_domain(hal_pasrmanager_qti, hal_pasrmanager)
-init_daemon_domain(hal_pasrmanager_qti)
-binder_call(hal_pasrmanager_client, hal_pasrmanager_server)
+type vendor_hal_pasrmanager_qti, domain;
+type vendor_hal_pasrmanager_qti_exec, exec_type, vendor_file_type, file_type;
+hal_server_domain(vendor_hal_pasrmanager_qti, vendor_hal_pasrmanager)
+init_daemon_domain(vendor_hal_pasrmanager_qti)
+binder_call(vendor_hal_pasrmanager_client, vendor_hal_pasrmanager_server)
 
-add_hwservice(hal_pasrmanager_server, hal_pasrmanager_hwservice)
-allow hal_pasrmanager_client hal_pasrmanager_hwservice:hwservice_manager find;
+add_hwservice(vendor_hal_pasrmanager_server, vendor_hal_pasrmanager_hwservice)
+allow vendor_hal_pasrmanager_client vendor_hal_pasrmanager_hwservice:hwservice_manager find;
 
-allow hal_pasrmanager_qti sysfs:dir r_dir_perms;
-allow hal_pasrmanager_qti sysfs_memory_offline:file rw_file_perms;
-allow hal_pasrmanager_qti sysfs_memory_offline:dir r_dir_perms;
+allow vendor_hal_pasrmanager_qti sysfs:dir r_dir_perms;
+allow vendor_hal_pasrmanager_qti vendor_sysfs_memory_offline:file rw_file_perms;
+allow vendor_hal_pasrmanager_qti vendor_sysfs_memory_offline:dir r_dir_perms;

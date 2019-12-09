@@ -29,4 +29,4 @@
 # that will be part of system image. Eg: XT app.
 
 # allow location_app to access perf hal
-hal_client_domain(location_app, hal_perf)
+hal_client_domain(location_app, vendor_hal_perf)

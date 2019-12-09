@@ -32,12 +32,12 @@ get_prop(dpmd, persist_dpm_prop)
 
 wakelock_use(dpmd)
 
-r_dir_file(dpmd, sysfs_data)
+r_dir_file(dpmd, vendor_sysfs_data)
 
 #Allow dpmd to connect to hal_dpmQMiMgr
-allow dpmd hal_dpmqmi_hwservice:hwservice_manager find;
+allow dpmd vendor_hal_dpmqmi_hwservice:hwservice_manager find;
 get_prop(dpmd, hwservicemanager_prop)
-binder_call(dpmd,hal_dpmQmiMgr)
+binder_call(dpmd,vendor_hal_dpmQmiMgr)
 hwbinder_use(dpmd)
 
 #diag

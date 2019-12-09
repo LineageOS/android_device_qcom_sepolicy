@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # allow access to network performance tuner
-unix_socket_connect(wcnss_service, wigignpt, wigignpt)
+unix_socket_connect(vendor_wcnss_service, vendor_wigignpt, vendor_wigignpt)
 
 # allow net admin to cnss-daemon
-allow wcnss_service self:capability net_admin;
+allow vendor_wcnss_service self:capability net_admin;

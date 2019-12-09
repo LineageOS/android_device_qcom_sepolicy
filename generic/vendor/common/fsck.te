@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-allow fsck persist_block_device:blk_file rw_file_perms;
+allow fsck vendor_persist_block_device:blk_file rw_file_perms;

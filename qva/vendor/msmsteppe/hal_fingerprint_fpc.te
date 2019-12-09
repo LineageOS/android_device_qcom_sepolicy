@@ -25,11 +25,11 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_fingerprint_fpc, domain;
-hal_server_domain(hal_fingerprint_fpc, hal_fingerprint)
+type vendor_hal_fingerprint_fpc, domain;
+hal_server_domain(vendor_hal_fingerprint_fpc, hal_fingerprint)
 
-type hal_fingerprint_fpc_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_fingerprint_fpc)
+type vendor_hal_fingerprint_fpc_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_fingerprint_fpc)
 
-allow hal_fingerprint_fpc input_device:chr_file r_file_perms;
-allow hal_fingerprint_fpc tee_device:chr_file rw_file_perms;
+allow vendor_hal_fingerprint_fpc input_device:chr_file r_file_perms;
+allow vendor_hal_fingerprint_fpc tee_device:chr_file rw_file_perms;

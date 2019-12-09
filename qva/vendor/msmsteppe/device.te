@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #logdump partition
-type logdump_partition, dev_type;
-type mba_debug_dev, dev_type;
-type dip_device, dev_type;
-type rawdump_block_device, dev_type;
+type vendor_logdump_partition, dev_type;
+type vendor_mba_debug_dev, dev_type;
+type vendor_dip_device, dev_type;
+type vendor_rawdump_block_device, dev_type;

@@ -25,10 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow vendor_init persist_block_device:{ blk_file lnk_file } relabelto;
+allow vendor_init vendor_persist_block_device:{ blk_file lnk_file } relabelto;
 allow vendor_init unlabeled:dir { r_dir_perms setattr relabelfrom };
 allow vendor_init unlabeled:file { r_file_perms setattr relabelfrom };
-allow vendor_init ipa_dev:chr_file w_file_perms;
+allow vendor_init vendor_ipa_dev:chr_file w_file_perms;
 allow vendor_init proc:file write;
 
 allow vendor_init self:capability sys_module;
@@ -41,7 +41,7 @@ allow vendor_init self:capability sys_module;
 allow vendor_init kmsg_device:chr_file write;
 
 #Allow triggering IPA FWs loading
-allow vendor_init ipa_dev:chr_file write;
+allow vendor_init vendor_ipa_dev:chr_file write;
 
 #For insmod to search module key for signature verification
 allow vendor_init kernel:key search;
@@ -51,11 +51,11 @@ allow vendor_init configfs:dir r_dir_perms;
 allow vendor_init configfs:file { rw_file_perms link };
 allow vendor_init configfs:lnk_file create_file_perms;
 
-allow vendor_init sysfs_ssr:file write;
+allow vendor_init vendor_sysfs_ssr:file write;
 
 allow vendor_init sysfs_android_usb:file rw_file_perms;
 
-allow vendor_init sysfs_slpi:file write;
+allow vendor_init vendor_sysfs_slpi:file write;
 
 allow vendor_init vendor_file:system module_load;
 
@@ -80,14 +80,14 @@ set_prop(vendor_init, vendor_gralloc_prop)
 #Access vendor gpu freq properties
 set_prop(vendor_init, vendor_gpu_prop)
 
-#Access public_vendor_default_prop
-set_prop(vendor_init, public_vendor_default_prop)
+#Access vendor_public_vendor_default_prop
+set_prop(vendor_init, vendor_public_vendor_default_prop)
 
 # Allow timezone to be overrided by vendor
 set_prop(vendor_init, exported_system_prop)
 
 # Access vendor sensor properties
-set_prop(vendor_init, sensors_prop)
+set_prop(vendor_init, vendor_sensors_prop)
 
 #Access vendor bluetooth properties
 set_prop(vendor_init, vendor_bluetooth_prop)

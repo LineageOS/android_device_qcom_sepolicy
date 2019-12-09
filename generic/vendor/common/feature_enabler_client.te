@@ -25,22 +25,22 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type feature_enabler_client, domain;
-type feature_enabler_client_exec, exec_type, vendor_file_type, file_type;
+type vendor_feature_enabler_client, domain;
+type vendor_feature_enabler_client_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(feature_enabler_client)
-allow feature_enabler_client tee_device:chr_file rw_file_perms;
-allow feature_enabler_client ion_device:chr_file rw_file_perms;
-unix_socket_connect(feature_enabler_client , ssgtzd, ssgtzd)
+init_daemon_domain(vendor_feature_enabler_client)
+allow vendor_feature_enabler_client tee_device:chr_file rw_file_perms;
+allow vendor_feature_enabler_client ion_device:chr_file rw_file_perms;
+unix_socket_connect(vendor_feature_enabler_client , vendor_ssgtzd, vendor_ssgtzd)
 
 
-# Allow read permission to /mnt/vendor/persist/feature_enabler_client/*
-allow feature_enabler_client mnt_vendor_file:dir search;
-r_dir_file(feature_enabler_client, persist_feature_enabler_file)
+# Allow read permission to /mnt/vendor/persist/vendor_feature_enabler_client/*
+allow vendor_feature_enabler_client mnt_vendor_file:dir search;
+r_dir_file(vendor_feature_enabler_client, vendor_persist_feature_enabler_file)
 
 # Allow read permission to /mnt/vendor/persist/data/*
-r_dir_file(feature_enabler_client, persist_data_file)
+r_dir_file(vendor_feature_enabler_client, vendor_persist_data_file)
 
 # Binder access for featenab_client.service
-vndbinder_use(feature_enabler_client)
-allow feature_enabler_client qfeatenab_client_service:service_manager { add find };
+vndbinder_use(vendor_feature_enabler_client)
+allow vendor_feature_enabler_client vendor_qfeatenab_client_service:service_manager { add find };

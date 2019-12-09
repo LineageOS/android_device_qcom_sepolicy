@@ -25,26 +25,26 @@
 #OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 #IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type adpl, domain;
-type adpl_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(adpl)
-net_domain(adpl)
+type vendor_adpl, domain;
+type vendor_adpl_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_adpl)
+net_domain(vendor_adpl)
 
-allow adpl { rmnet_device mhi_device ipa_dev }:chr_file rw_file_perms;
+allow vendor_adpl { vendor_rmnet_device vendor_mhi_device vendor_ipa_dev }:chr_file rw_file_perms;
 
-allow adpl self:{
+allow vendor_adpl self:{
     socket
     udp_socket
     qipcrtr_socket
 } create_socket_perms_no_ioctl;
 
-set_prop(adpl, vendor_dataadpl_prop)
+set_prop(vendor_adpl, vendor_dataadpl_prop)
 
 #diag
 userdebug_or_eng(`
-    diag_use(adpl)
-    allow adpl sysfs_data:file r_file_perms;
+    diag_use(vendor_adpl)
+    allow vendor_adpl vendor_sysfs_data:file r_file_perms;
 ')
 
-#Allow adpl to create adpl socket
-allow adpl dataadpl_socket:sock_file rw_file_perms;
+#Allow vendor_adpl to create vendor_adpl socket
+allow vendor_adpl vendor_dataadpl_socket:sock_file rw_file_perms;

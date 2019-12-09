@@ -25,16 +25,16 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type init-qti-ims-sh, domain;
-type init-qti-ims-sh_exec, exec_type, vendor_file_type, file_type;
+type vendor_init-qti-ims-sh, domain;
+type vendor_init-qti-ims-sh_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(init-qti-ims-sh)
+init_daemon_domain(vendor_init-qti-ims-sh)
 
-allow init-qti-ims-sh vendor_shell_exec:file rx_file_perms;
-allow init-qti-ims-sh vendor_toolbox_exec:file rx_file_perms;
+allow vendor_init-qti-ims-sh vendor_shell_exec:file rx_file_perms;
+allow vendor_init-qti-ims-sh vendor_toolbox_exec:file rx_file_perms;
 
-set_prop(init-qti-ims-sh, ims_prop)
-get_prop(init-qti-ims-sh, ims_prop)
+set_prop(vendor_init-qti-ims-sh, vendor_ims_prop)
+get_prop(vendor_init-qti-ims-sh, vendor_ims_prop)
 
 # for ro.build.product
-get_prop(init-qti-ims-sh, exported2_default_prop)
+get_prop(vendor_init-qti-ims-sh, exported2_default_prop)

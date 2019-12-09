@@ -32,7 +32,7 @@ allow hal_camera self:capability sys_nice;
 hal_client_domain(hal_camera_default, hal_graphics_allocator)
 
 # This is needed to get performance boost
-hal_client_domain(hal_camera_default, hal_perf)
+hal_client_domain(hal_camera_default, vendor_hal_perf)
 
 set_prop(hal_camera, vendor_camera_prop)
 
@@ -41,22 +41,22 @@ dontaudit hal_camera graphics_device:dir search;
 
 allow hal_camera vendor_camera_data_file:dir rw_dir_perms;
 allow hal_camera vendor_camera_data_file:file create_file_perms;
-unix_socket_connect(hal_camera, thermal, thermal-engine)
+unix_socket_connect(hal_camera, vendor_thermal, vendor_thermal-engine)
 
 userdebug_or_eng(`
-  allow hal_camera diag_device:chr_file rw_file_perms;
+  allow hal_camera vendor_diag_device:chr_file rw_file_perms;
 ')
 
 # access hexagon
-allow hal_camera qdsp_device:chr_file r_file_perms;
+allow hal_camera vendor_qdsp_device:chr_file r_file_perms;
 
 #Allow camera to access synx device
-allow hal_camera synx_device:chr_file rw_file_perms;
+allow hal_camera vendor_synx_device:chr_file rw_file_perms;
 
 #needed for full_treble
 hal_client_domain(hal_camera_default, hal_graphics_composer)
 
-r_dir_file(hal_camera_default, sysfs_graphics)
+r_dir_file(hal_camera_default, vendor_sysfs_graphics)
 
 #allow camera to access /dsp
 r_dir_file(hal_camera, adsprpcd_file);
@@ -67,4 +67,4 @@ get_prop(hal_camera, vendor_adsprpc_prop)
 allow hal_camera_default gpu_device:chr_file rw_file_perms;
 
 # Postproc Service
-hal_attribute_hwservice(hal_camera, hal_camera_postproc_hwservice);
+hal_attribute_hwservice(hal_camera, vendor_hal_camera_postproc_hwservice);

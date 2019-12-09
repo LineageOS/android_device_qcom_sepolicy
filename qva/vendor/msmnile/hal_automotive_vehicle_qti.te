@@ -25,12 +25,12 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_automotive_vehicle_qti, domain;
+type vendor_hal_automotive_vehicle_qti, domain;
 
-type hal_automotive_vehicle_qti_exec, exec_type, file_type, vendor_file_type;
-init_daemon_domain(hal_automotive_vehicle_qti)
+type vendor_hal_automotive_vehicle_qti_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(vendor_hal_automotive_vehicle_qti)
 
-hal_server_domain(hal_automotive_vehicle_qti, hal_vehicle);
+hal_server_domain(vendor_hal_automotive_vehicle_qti, hal_vehicle);
 
-allow hal_automotive_vehicle_qti self:can_socket create_socket_perms;
-allowxperm hal_automotive_vehicle_qti self:can_socket ioctl { unpriv_sock_ioctls priv_sock_ioctls };
+allow vendor_hal_automotive_vehicle_qti self:can_socket create_socket_perms;
+allowxperm vendor_hal_automotive_vehicle_qti self:can_socket ioctl { unpriv_sock_ioctls priv_sock_ioctls };

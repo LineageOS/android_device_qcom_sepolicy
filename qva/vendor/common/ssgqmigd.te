@@ -25,10 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# ssgqmigd - SSG QMI Gateway Daemon
-type ssgqmigd, domain, mlstrustedsubject;
-type ssgqmigd_exec, exec_type, vendor_file_type, file_type;
+# vendor_ssgqmigd - SSG QMI Gateway Daemon
+type vendor_ssgqmigd, domain, mlstrustedsubject;
+type vendor_ssgqmigd_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(ssgqmigd)
+init_daemon_domain(vendor_ssgqmigd)
 
-allow ssgqmigd self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow vendor_ssgqmigd self:qipcrtr_socket create_socket_perms_no_ioctl;

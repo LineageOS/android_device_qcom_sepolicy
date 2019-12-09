@@ -25,6 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type esepmdaemon_service, vndservice_manager_type;
-type wfdnativemm_service, vndservice_manager_type;
-type wfdhdcpvndservice_service, vndservice_manager_type;
+type vendor_esepmdaemon_service, vndservice_manager_type;
+type vendor_wfdnativemm_service, vndservice_manager_type;
+type vendor_wfdhdcpvndservice_service, vndservice_manager_type;

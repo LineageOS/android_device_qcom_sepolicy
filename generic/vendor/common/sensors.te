@@ -25,13 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # Policy for sensor daemon
-type sensors, domain;
-type sensors_exec, exec_type, vendor_file_type, file_type;
+type vendor_sensors, domain;
+type vendor_sensors_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(sensors)
-get_prop(sensors, sensors_prop)
+init_daemon_domain(vendor_sensors)
+get_prop(vendor_sensors, vendor_sensors_prop)
 
-allow sensors self:capability {
+allow vendor_sensors self:capability {
     setuid
     setgid
     net_bind_service
@@ -39,41 +39,41 @@ allow sensors self:capability {
 
 # Access to tests from userdebug/eng builds
 userdebug_or_eng(`
-  diag_use(sensors)
-  get_prop(sensors, sensors_dbg_prop)
+  diag_use(vendor_sensors)
+  get_prop(vendor_sensors, vendor_sensors_dbg_prop)
 
   #allow starting of diag_mdlog
-  allow sensors qlogd_exec:file rx_file_perms;
-  allow sensors vendor_shell_exec:file rx_file_perms;
+  allow vendor_sensors vendor_qlogd_exec:file rx_file_perms;
+  allow vendor_sensors vendor_shell_exec:file rx_file_perms;
 ')
 
-allow sensors self:{ socket qipcrtr_socket } create_socket_perms;
+allow vendor_sensors self:{ socket qipcrtr_socket } create_socket_perms;
 # ioctlcmd=c304
-allowxperm sensors self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+allowxperm vendor_sensors self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 
-allow sensors mnt_vendor_file:dir r_dir_perms;
+allow vendor_sensors mnt_vendor_file:dir r_dir_perms;
 
-allow sensors sensors_vendor_data_file:dir create_dir_perms;
-allow sensors sensors_vendor_data_file:file create_file_perms;
+allow vendor_sensors vendor_sensors_vendor_data_file:dir create_dir_perms;
+allow vendor_sensors vendor_sensors_vendor_data_file:file create_file_perms;
 
-allow sensors system_file:dir r_dir_perms;
-allow sensors sensors_device:chr_file rw_file_perms;
+allow vendor_sensors system_file:dir r_dir_perms;
+allow vendor_sensors sensors_device:chr_file rw_file_perms;
 
-allow sensors sysfs_soc:file w_file_perms;
-allow sensors sysfs_data:file r_file_perms;
+allow vendor_sensors vendor_sysfs_soc:file w_file_perms;
+allow vendor_sensors vendor_sysfs_data:file r_file_perms;
 
-allow sensors ion_device:chr_file r_file_perms;
-allow sensors qdsp_device:chr_file r_file_perms;
-allow sensors xdsp_device:chr_file r_file_perms;
+allow vendor_sensors ion_device:chr_file r_file_perms;
+allow vendor_sensors vendor_qdsp_device:chr_file r_file_perms;
+allow vendor_sensors vendor_xdsp_device:chr_file r_file_perms;
 
 # For reading dir/files on /dsp
-r_dir_file(sensors, adsprpcd_file)
+r_dir_file(vendor_sensors, adsprpcd_file)
 # For reading adsprpc_prop
-get_prop(sensors, vendor_adsprpc_prop)
+get_prop(vendor_sensors, vendor_adsprpc_prop)
 
-allow sensors persist_sensors_file:fifo_file create_file_perms;
-# Access to /persist/sensors
-allow sensors persist_sensors_file:dir create_dir_perms;
-allow sensors persist_sensors_file:file create_file_perms;
+allow vendor_sensors vendor_persist_sensors_file:fifo_file create_file_perms;
+# Access to /persist/vendor_sensors
+allow vendor_sensors vendor_persist_sensors_file:dir create_dir_perms;
+allow vendor_sensors vendor_persist_sensors_file:file create_file_perms;
 # Access to wakelock sysfs
-wakelock_use(sensors)
+wakelock_use(vendor_sensors)

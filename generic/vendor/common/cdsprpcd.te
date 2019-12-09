@@ -25,23 +25,23 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# cdsprpcd daemon
-type cdsprpcd, domain;
-type cdsprpcd_exec, exec_type, vendor_file_type, file_type;
+# vendor_cdsprpcd daemon
+type vendor_cdsprpcd, domain;
+type vendor_cdsprpcd_exec, exec_type, vendor_file_type, file_type;
 
 # Started by init
-init_daemon_domain(cdsprpcd)
+init_daemon_domain(vendor_cdsprpcd)
 
 # For reading dir/files on /dsp
-r_dir_file(cdsprpcd, adsprpcd_file)
+r_dir_file(vendor_cdsprpcd, adsprpcd_file)
 
 # For reading adsprpc_prop
-get_prop(cdsprpcd, vendor_adsprpc_prop)
+get_prop(vendor_cdsprpcd, vendor_adsprpc_prop)
 
-allow cdsprpcd qdsp_device:chr_file r_file_perms;
-allow cdsprpcd xdsp_device:chr_file r_file_perms;
-allow cdsprpcd ion_device:chr_file r_file_perms;
+allow vendor_cdsprpcd vendor_qdsp_device:chr_file r_file_perms;
+allow vendor_cdsprpcd vendor_xdsp_device:chr_file r_file_perms;
+allow vendor_cdsprpcd ion_device:chr_file r_file_perms;
 
-r_dir_file(cdsprpcd, sysfs_devfreq)
-allow cdsprpcd sysfs_devfreq_l3cdsp:dir r_dir_perms;
-allow cdsprpcd sysfs_devfreq_l3cdsp:file rw_file_perms;
+r_dir_file(vendor_cdsprpcd, vendor_sysfs_devfreq)
+allow vendor_cdsprpcd vendor_sysfs_devfreq_l3cdsp:dir r_dir_perms;
+allow vendor_cdsprpcd vendor_sysfs_devfreq_l3cdsp:file rw_file_perms;

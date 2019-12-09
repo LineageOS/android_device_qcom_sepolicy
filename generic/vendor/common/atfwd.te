@@ -24,20 +24,20 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type atfwd, domain;
-type atfwd_exec, exec_type, vendor_file_type, file_type;
+type vendor_atfwd, domain;
+type vendor_atfwd_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(atfwd)
+init_daemon_domain(vendor_atfwd)
 
-allow atfwd self:socket create_socket_perms;
-allow atfwd self:qipcrtr_socket create_socket_perms_no_ioctl;
-allowxperm atfwd self:socket ioctl msm_sock_ipc_ioctls;
+allow vendor_atfwd self:socket create_socket_perms;
+allow vendor_atfwd self:qipcrtr_socket create_socket_perms_no_ioctl;
+allowxperm vendor_atfwd self:socket ioctl msm_sock_ipc_ioctls;
 
-binder_call(atfwd, system_app);
+binder_call(vendor_atfwd, system_app);
 
-r_dir_file(atfwd, sysfs_data);
+r_dir_file(vendor_atfwd, vendor_sysfs_data);
 
-set_prop(atfwd, vendor_radio_prop)
+set_prop(vendor_atfwd, vendor_radio_prop)
 
-hwbinder_use(atfwd)
-get_prop(atfwd, hwservicemanager_prop)
+hwbinder_use(vendor_atfwd)
+get_prop(vendor_atfwd, hwservicemanager_prop)

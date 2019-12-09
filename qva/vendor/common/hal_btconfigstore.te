@@ -25,6 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-binder_call(hal_btconfigstore_client, hal_btconfigstore_server)
-binder_call(hal_btconfigstore_server, hal_btconfigstore_client)
-hal_attribute_hwservice(hal_btconfigstore, hal_btconfigstore_hwservice)
+binder_call(vendor_hal_btconfigstore_client, vendor_hal_btconfigstore_server)
+binder_call(vendor_hal_btconfigstore_server, vendor_hal_btconfigstore_client)
+hal_attribute_hwservice(vendor_hal_btconfigstore, vendor_hal_btconfigstore_hwservice)

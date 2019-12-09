@@ -25,29 +25,29 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type esepmdaemon, domain;
-type esepmdaemon_exec, exec_type, vendor_file_type, file_type;
+type vendor_esepmdaemon, domain;
+type vendor_esepmdaemon_exec, exec_type, vendor_file_type, file_type;
 
-#Allow for transition from init domain to esepmdaemon
-init_daemon_domain(esepmdaemon)
+#Allow for transition from init domain to vendor_esepmdaemon
+init_daemon_domain(vendor_esepmdaemon)
 
-#Allow esepmdaemon to use Binder IPC
-vndbinder_use(esepmdaemon)
+#Allow vendor_esepmdaemon to use Binder IPC
+vndbinder_use(vendor_esepmdaemon)
 
-#Allow apps to interact with esepmdaemon
-binder_call(esepmdaemon, system_app)
+#Allow apps to interact with vendor_esepmdaemon
+binder_call(vendor_esepmdaemon, system_app)
 
-#Allow esepmdaemon to be registered with service manager
-add_service(esepmdaemon, esepmdaemon_service)
+#Allow vendor_esepmdaemon to be registered with service manager
+add_service(vendor_esepmdaemon, vendor_esepmdaemon_service)
 
 #Allow access to nfc device
-allow esepmdaemon nfc_device:chr_file rw_file_perms;
+allow vendor_esepmdaemon nfc_device:chr_file rw_file_perms;
 
-# Allow esepmdaemon to load firmware images
-r_dir_file(esepmdaemon, firmware_file);
+# Allow vendor_esepmdaemon to load firmware images
+r_dir_file(vendor_esepmdaemon, firmware_file);
 
-# Allow esepmdaemon to interract with ion_device
-allow esepmdaemon ion_device:chr_file r_file_perms;
+# Allow vendor_esepmdaemon to interract with ion_device
+allow vendor_esepmdaemon ion_device:chr_file r_file_perms;
 
-# Allow esepmdaemon to interract with qseecom
-allow esepmdaemon tee_device:chr_file rw_file_perms;
+# Allow vendor_esepmdaemon to interract with qseecom
+allow vendor_esepmdaemon tee_device:chr_file rw_file_perms;

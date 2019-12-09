@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #qspm
-hal_client_domain(radio, hal_qspmhal)
+hal_client_domain(radio, vendor_hal_qspmhal)

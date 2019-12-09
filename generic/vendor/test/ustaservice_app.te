@@ -24,28 +24,28 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type ustaservice_app, domain;
-app_domain(ustaservice_app)
+type vendor_ustaservice_app, domain;
+app_domain(vendor_ustaservice_app)
 
 #TODO(b/142498985): Review sepolicy neverallow violation
-#allow ustaservice_app usta_app_service:service_manager add;
-allow ustaservice_app usta_app_service:service_manager find;
-allow ustaservice_app activity_service:service_manager find;
-allow ustaservice_app app_api_service:service_manager find;
+#allow vendor_ustaservice_app usta_app_service:service_manager add;
+allow vendor_ustaservice_app usta_app_service:service_manager find;
+allow vendor_ustaservice_app activity_service:service_manager find;
+allow vendor_ustaservice_app app_api_service:service_manager find;
 
 userdebug_or_eng(`
-  allowxperm ustaservice_app self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
-  allow ustaservice_app self:{ socket qipcrtr_socket } create_socket_perms;
-  allow ustaservice_app xdsp_device:chr_file r_file_perms;
-  allow ustaservice_app ssr_device:chr_file r_file_perms;
+  allowxperm vendor_ustaservice_app self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+  allow vendor_ustaservice_app self:{ socket qipcrtr_socket } create_socket_perms;
+  allow vendor_ustaservice_app vendor_xdsp_device:chr_file r_file_perms;
+  allow vendor_ustaservice_app vendor_ssr_device:chr_file r_file_perms;
 ')
 
-hwbinder_use(ustaservice_app)
+hwbinder_use(vendor_ustaservice_app)
 
 userdebug_or_eng(`
-   diag_use(ustaservice_app)
+   diag_use(vendor_ustaservice_app)
 ')
 
-allow ustaservice_app system_app_data_file:dir create_dir_perms;
-allow ustaservice_app system_app_data_file:file create_file_perms;
-allow ustaservice_app cgroup:file w_file_perms;
+allow vendor_ustaservice_app system_app_data_file:dir create_dir_perms;
+allow vendor_ustaservice_app system_app_data_file:file create_file_perms;
+allow vendor_ustaservice_app cgroup:file w_file_perms;

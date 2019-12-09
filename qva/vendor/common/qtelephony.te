@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Allow qtelephony to access perf hal
-hal_client_domain(qtelephony, hal_perf);
+hal_client_domain(qtelephony, vendor_hal_perf);

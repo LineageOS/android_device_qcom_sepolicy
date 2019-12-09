@@ -25,13 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hal_sensorscalibrate_qti_default, domain;
-hal_server_domain(hal_sensorscalibrate_qti_default, hal_sensorscalibrate_qti)
+type vendor_hal_sensorscalibrate_qti_default, domain;
+hal_server_domain(vendor_hal_sensorscalibrate_qti_default, vendor_hal_sensorscalibrate_qti)
 
-type hal_sensorscalibrate_qti_default_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_sensorscalibrate_qti_default)
-r_dir_file(hal_sensorscalibrate_qti_default, mnt_vendor_file)
+type vendor_hal_sensorscalibrate_qti_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_sensorscalibrate_qti_default)
+r_dir_file(vendor_hal_sensorscalibrate_qti_default, mnt_vendor_file)
 
-allow hal_sensorscalibrate_qti sysfs_data:file r_file_perms;
-allow hal_sensorscalibrate_qti self:{ socket qipcrtr_socket } create_socket_perms;
-allowxperm hal_sensorscalibrate_qti self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+allow vendor_hal_sensorscalibrate_qti vendor_sysfs_data:file r_file_perms;
+allow vendor_hal_sensorscalibrate_qti self:{ socket qipcrtr_socket } create_socket_perms;
+allowxperm vendor_hal_sensorscalibrate_qti self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;

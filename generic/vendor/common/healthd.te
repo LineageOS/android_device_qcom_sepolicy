@@ -25,11 +25,11 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 allow healthd self:capability2 wake_alarm;
-r_dir_file(healthd, sysfs_battery_supply)
-r_dir_file(healthd, sysfs_usb_supply)
+r_dir_file(healthd, vendor_sysfs_battery_supply)
+r_dir_file(healthd, vendor_sysfs_usb_supply)
 r_dir_file(healthd, sysfs_thermal);
 
 allow healthd {
-    sysfs_battery_supply
-    sysfs_usb_supply
+    vendor_sysfs_battery_supply
+    vendor_sysfs_usb_supply
 }:file rw_file_perms;

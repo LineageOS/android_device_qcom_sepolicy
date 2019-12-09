@@ -29,12 +29,12 @@
 # userdebug_or_eng macro
 
 userdebug_or_eng(`
-type pdt_app, domain;
-app_domain(pdt_app);
-net_domain(pdt_app)
-permissive pdt_app;
-# r_dir_file(pdt_app, domain)
-dontaudit pdt_app service_manager_type:service_manager *;
-dontaudit pdt_app hwservice_manager_type:hwservice_manager *;
-dontaudit pdt_app file_type:dir_file_class_set *;
+type vendor_pdt_app, domain;
+app_domain(vendor_pdt_app);
+net_domain(vendor_pdt_app)
+permissive vendor_pdt_app;
+# r_dir_file(vendor_pdt_app, domain)
+dontaudit vendor_pdt_app service_manager_type:service_manager *;
+dontaudit vendor_pdt_app hwservice_manager_type:hwservice_manager *;
+dontaudit vendor_pdt_app file_type:dir_file_class_set *;
 ')

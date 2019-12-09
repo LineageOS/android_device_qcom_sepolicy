@@ -25,5 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type fidotest_service,        service_manager_type;
-type qseeproxysample_service, service_manager_type;
+type vendor_fidotest_service,        service_manager_type;
+type vendor_qseeproxysample_service, service_manager_type;

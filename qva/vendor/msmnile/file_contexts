@@ -29,8 +29,8 @@
 #
 /dev/spidev2.0                                                                             u:object_r:audio_device:s0
 
-/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service          u:object_r:vendor_hal_automotive_vehicle_qti_exec:s0
 
-/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.audiocontrol@1.0-service     u:object_r:hal_audiocontrol_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.audiocontrol@1.0-service     u:object_r:vendor_hal_audiocontrol_qti_exec:s0
 # WLAN dynamic detect
-/(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:init-qcom-wifi-sh_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:vendor_init-qcom-wifi-sh_exec:s0

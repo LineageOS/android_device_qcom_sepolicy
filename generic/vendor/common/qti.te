@@ -24,27 +24,27 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type qti, domain;
-type qti_exec, exec_type, vendor_file_type, file_type;
+type vendor_qti, domain;
+type vendor_qti_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(qti)
-net_domain(qti)
+init_daemon_domain(vendor_qti)
+net_domain(vendor_qti)
 
-allow qti self:{ qipcrtr_socket } create_socket_perms_no_ioctl;
-allow qti vendor_qti_data_file:dir r_dir_perms;
+allow vendor_qti self:{ qipcrtr_socket } create_socket_perms_no_ioctl;
+allow vendor_qti vendor_qti_data_file:dir r_dir_perms;
 
-allow qti smd_device:chr_file rw_file_perms;
-allow qti rmnet_device:chr_file rw_file_perms;
+allow vendor_qti vendor_smd_device:chr_file rw_file_perms;
+allow vendor_qti vendor_rmnet_device:chr_file rw_file_perms;
 
-allow qti { vendor_shell_exec }:file rx_file_perms;
+allow vendor_qti { vendor_shell_exec }:file rx_file_perms;
 
 #diag
 userdebug_or_eng(`
-    diag_use(qti)
-    allow qti { sysfs_data sysfs_timestamp_switch} :file r_file_perms;
+    diag_use(vendor_qti)
+    allow vendor_qti { vendor_sysfs_data vendor_sysfs_timestamp_switch} :file r_file_perms;
 ')
-allow qti mhi_device:chr_file rw_file_perms;
-allow qti sysfs_mhi:dir r_dir_perms;
+allow vendor_qti vendor_mhi_device:chr_file rw_file_perms;
+allow vendor_qti vendor_sysfs_mhi:dir r_dir_perms;
 
-#Allow qti to create qti socket
-allow qti dataqti_socket:sock_file rw_file_perms;
+#Allow vendor_qti to create vendor_qti socket
+allow vendor_qti vendor_dataqti_socket:sock_file rw_file_perms;

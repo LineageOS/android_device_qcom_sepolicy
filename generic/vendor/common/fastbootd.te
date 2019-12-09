@@ -28,12 +28,12 @@
 #Allow fastbootd
 recovery_only(`
 allow fastbootd {
-	custom_ab_block_device
+	vendor_custom_ab_block_device
 	recovery_block_device
-	xbl_block_device
-	uefi_block_device
-	ssd_block_device
-	modem_block_device
-	mdtp_device
+	vendor_xbl_block_device
+	vendor_uefi_block_device
+	vendor_ssd_block_device
+	vendor_modem_block_device
+	vendor_mdtp_device
 }:blk_file { rw_file_perms };
 ')

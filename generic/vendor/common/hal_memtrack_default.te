@@ -26,6 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #Acess to kgsl memory /sys/class/kgsl/kgsl/proc/<pid>/mtrack
-r_dir_file(hal_memtrack_default, sysfs_kgsl_proc);
+r_dir_file(hal_memtrack_default, vendor_sysfs_kgsl_proc);
 
-allow hal_memtrack_default sysfs_kgsl:dir search;
+allow hal_memtrack_default vendor_sysfs_kgsl:dir search;

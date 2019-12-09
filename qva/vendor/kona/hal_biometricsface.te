@@ -41,8 +41,8 @@ allow vendor_biometricsface ion_device:chr_file rw_file_perms;
 allow vendor_biometricsface tee_device:chr_file rw_file_perms;
 
 #  Access for DSP/QDSP device
-allow vendor_biometricsface qdsp_device:chr_file rw_file_perms;
-allow vendor_biometricsface dsp_device:chr_file rw_file_perms;
+allow vendor_biometricsface vendor_qdsp_device:chr_file rw_file_perms;
+allow vendor_biometricsface vendor_dsp_device:chr_file rw_file_perms;
 
 #  Access for sdcard
 userdebug_or_eng('
@@ -58,7 +58,7 @@ allow vendor_biometricsface vendor_biometricsface_data_file:dir create_dir_perms
 allow vendor_biometricsface vendor_biometricsface_data_file:file create_file_perms;
 
 # Allow to read persist.biometrics.face3d.producer,adsprpc prop
-get_prop(vendor_biometricsface, face3d_producer_prop);
+get_prop(vendor_biometricsface, vendor_face3d_producer_prop);
 get_prop(vendor_biometricsface, vendor_adsprpc_prop);
 
 allow vendor_biometricsface fwk_camera_hwservice:hwservice_manager find;

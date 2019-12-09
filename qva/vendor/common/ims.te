@@ -26,32 +26,32 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Use generic netlink socket
-allow ims self:{
+allow vendor_ims self:{
     netlink_socket
     socket
     netlink_generic_socket
 } create_socket_perms_no_ioctl;
-allow ims self:{ qipcrtr_socket } rw_socket_perms_no_ioctl;
+allow vendor_ims self:{ qipcrtr_socket } rw_socket_perms_no_ioctl;
 
 # To run NDC command
-allow ims {
+allow vendor_ims {
     vendor_shell_exec
     # IMS route installation
-    wcnss_service_exec
+    vendor_wcnss_service_exec
 }:file rx_file_perms;
 
 
-set_prop(ims, qcom_ims_prop)
-set_prop(ims, ctl_vendor_imsrcsservice_prop)
+set_prop(vendor_ims, vendor_qcom_ims_prop)
+set_prop(vendor_ims, vendor_ctl_vendor_imsrcsservice_prop)
 
 # Inherit and use open files from radio.
-allow ims radio:fd use;
+allow vendor_ims radio:fd use;
 
-allow ims self:{ udp_socket } ioctl;
+allow vendor_ims self:{ udp_socket } ioctl;
 
 # ioctlcmd=89fd
-allowxperm ims self:udp_socket ioctl priv_sock_ioctls;
-allow ims sysfs_data:file r_file_perms;
+allowxperm vendor_ims self:udp_socket ioctl priv_sock_ioctls;
+allow vendor_ims vendor_sysfs_data:file r_file_perms;
 
-get_prop(ims, cnd_vendor_prop)
-allow ims hal_datafactory_hwservice:hwservice_manager find;
+get_prop(vendor_ims, vendor_cnd_vendor_prop)
+allow vendor_ims vendor_hal_datafactory_hwservice:hwservice_manager find;

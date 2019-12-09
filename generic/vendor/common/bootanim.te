@@ -32,4 +32,4 @@ allow bootanim hwservicemanager:binder call;
 # this denial on phones since this functionality is not used.
 dontaudit bootanim system_data_file:dir read;
 
-dontaudit bootanim hal_qspmhal_hwservice:hwservice_manager find;
+dontaudit bootanim vendor_hal_qspmhal_hwservice:hwservice_manager find;

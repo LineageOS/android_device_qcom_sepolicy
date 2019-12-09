@@ -25,6 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # media_trinket_version_prop - to choose target version specific media_codecs.xml
-allow qti_init_shell {
+allow vendor_qti_init_shell {
     vendor_media_trinket_version_prop
 }:property_service set;

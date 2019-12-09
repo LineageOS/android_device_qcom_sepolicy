@@ -27,14 +27,14 @@
 dontaudit surfaceflinger firmware_file:dir search;
 dontaudit surfaceflinger kernel:system module_request;
 
-allow surfaceflinger sysfs_graphics:file rw_file_perms;
+allow surfaceflinger vendor_sysfs_graphics:file rw_file_perms;
 
 get_prop(surfaceflinger, vendor_gralloc_prop)
 get_prop(surfaceflinger, vendor_display_prop)
 
 #Allow access to binder callback's to perf hal
-hal_client_domain(surfaceflinger, hal_perf)
+hal_client_domain(surfaceflinger, vendor_hal_perf)
 
-r_dir_file(surfaceflinger, sysfs_kgsl)
+r_dir_file(surfaceflinger, vendor_sysfs_kgsl)
 
-dontaudit surfaceflinger hal_qspmhal_hwservice:hwservice_manager find;
+dontaudit surfaceflinger vendor_hal_qspmhal_hwservice:hwservice_manager find;

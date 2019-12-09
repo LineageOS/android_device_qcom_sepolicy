@@ -25,41 +25,41 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-attribute hal_hbtp;
-attribute hal_hbtp_client;
-attribute hal_hbtp_server;
+attribute vendor_hal_hbtp;
+attribute vendor_hal_hbtp_client;
+attribute vendor_hal_hbtp_server;
 
-attribute hal_perf;
-attribute hal_perf_client;
-attribute hal_perf_server;
+attribute vendor_hal_perf;
+attribute vendor_hal_perf_client;
+attribute vendor_hal_perf_server;
 
-attribute hal_qdutils_disp;
-attribute hal_qdutils_disp_client;
-attribute hal_qdutils_disp_server;
+attribute vendor_hal_qdutils_disp;
+attribute vendor_hal_qdutils_disp_client;
+attribute vendor_hal_qdutils_disp_server;
 
-attribute hal_trustedui;
-attribute hal_trustedui_client;
-attribute hal_trustedui_server;
+attribute vendor_hal_trustedui;
+attribute vendor_hal_trustedui_client;
+attribute vendor_hal_trustedui_server;
 
-attribute hal_tui_comm;
-attribute hal_tui_comm_client;
-attribute hal_tui_comm_server;
+attribute vendor_hal_tui_comm;
+attribute vendor_hal_tui_comm_client;
+attribute vendor_hal_tui_comm_server;
 
-attribute hal_display_color;
-attribute hal_display_color_client;
-attribute hal_display_color_server;
+attribute vendor_hal_display_color;
+attribute vendor_hal_display_color_client;
+attribute vendor_hal_display_color_server;
 
-attribute hal_display_postproc;
-attribute hal_display_postproc_client;
-attribute hal_display_postproc_server;
+attribute vendor_hal_display_postproc;
+attribute vendor_hal_display_postproc_client;
+attribute vendor_hal_display_postproc_server;
 
 # All types in /mnt/vendor/persist
 attribute vendor_persist_type;
 
-attribute hal_capabilityconfigstore_qti;
-attribute hal_capabilityconfigstore_qti_client;
-attribute hal_capabilityconfigstore_qti_server;
+attribute vendor_hal_capabilityconfigstore_qti;
+attribute vendor_hal_capabilityconfigstore_qti_client;
+attribute vendor_hal_capabilityconfigstore_qti_server;
 
-attribute hal_dataconnection_qti;
-attribute hal_dataconnection_qti_client;
-attribute hal_dataconnection_qti_server;
+attribute vendor_hal_dataconnection_qti;
+attribute vendor_hal_dataconnection_qti_client;
+attribute vendor_hal_dataconnection_qti_server;

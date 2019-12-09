@@ -25,10 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type timeservice_app, domain;
-app_domain(timeservice_app);
+type vendor_timeservice_app, domain;
+app_domain(vendor_timeservice_app);
 
-allow timeservice_app app_api_service:service_manager find;
-allow timeservice_app time_daemon:unix_stream_socket connectto;
+allow vendor_timeservice_app app_api_service:service_manager find;
+allow vendor_timeservice_app vendor_time_daemon:unix_stream_socket connectto;
 #allow timeservice to access perf hal
-hal_client_domain(timeservice_app, hal_perf);
+hal_client_domain(vendor_timeservice_app, vendor_hal_perf);

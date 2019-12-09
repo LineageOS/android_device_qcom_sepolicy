@@ -26,6 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 hwbinder_use(vpsservice);
-hal_client_domain(vpsservice, hal_vpp)
-hal_client_domain(vpsservice, hal_iop)
+hal_client_domain(vpsservice, vendor_hal_vpp)
+hal_client_domain(vpsservice, vendor_hal_iop)
 get_prop(vpsservice, vendor_iop_prop)

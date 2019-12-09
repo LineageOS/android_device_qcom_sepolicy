@@ -24,39 +24,39 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type ims, domain;
-type ims_exec, exec_type, vendor_file_type, file_type;
+type vendor_ims, domain;
+type vendor_ims_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(ims)
-net_domain(ims)
+init_daemon_domain(vendor_ims)
+net_domain(vendor_ims)
 
-get_prop(ims, hwservicemanager_prop)
-set_prop(ims, ims_prop)
-get_prop(ims, ims_prop)
-get_prop(ims, cnd_prop)
+get_prop(vendor_ims, hwservicemanager_prop)
+set_prop(vendor_ims, vendor_ims_prop)
+get_prop(vendor_ims, vendor_ims_prop)
+get_prop(vendor_ims, vendor_cnd_prop)
 
-allow ims sysfs_timestamp_switch:file r_file_perms;
-allow ims sysfs_data:file r_file_perms;
+allow vendor_ims vendor_sysfs_timestamp_switch:file r_file_perms;
+allow vendor_ims vendor_sysfs_data:file r_file_perms;
 
-allow ims self:capability net_bind_service;
+allow vendor_ims self:capability net_bind_service;
 
-allow ims ion_device:chr_file r_file_perms;
+allow vendor_ims ion_device:chr_file r_file_perms;
 
-unix_socket_connect(ims, cnd, cnd)
+unix_socket_connect(vendor_ims, vendor_cnd, vendor_cnd)
 
-allow ims self:socket create_socket_perms_no_ioctl;
-allow ims ims_socket:sock_file write;
-allow ims self:{ qipcrtr_socket } create_socket_perms_no_ioctl;
-allow ims self:{ netlink_generic_socket } create_socket_perms_no_ioctl;
-netmgr_socket(ims);
-allowxperm ims self:udp_socket ioctl RMNET_IOCTL_EXTENDED;
+allow vendor_ims self:socket create_socket_perms_no_ioctl;
+allow vendor_ims vendor_ims_socket:sock_file write;
+allow vendor_ims self:{ qipcrtr_socket } create_socket_perms_no_ioctl;
+allow vendor_ims self:{ netlink_generic_socket } create_socket_perms_no_ioctl;
+netmgr_socket(vendor_ims);
+allowxperm vendor_ims self:udp_socket ioctl RMNET_IOCTL_EXTENDED;
 
 #diag
 userdebug_or_eng(`
-    diag_use(ims)
+    diag_use(vendor_ims)
 ')
 
-hwbinder_use(ims)
-allow ims hal_cne_hwservice:hwservice_manager find;
-allow ims hal_datafactory_hwservice:hwservice_manager find;
-binder_call(ims, cnd)
+hwbinder_use(vendor_ims)
+allow vendor_ims vendor_hal_cne_hwservice:hwservice_manager find;
+allow vendor_ims vendor_hal_datafactory_hwservice:hwservice_manager find;
+binder_call(vendor_ims, vendor_cnd)

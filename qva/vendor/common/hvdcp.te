@@ -25,45 +25,45 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # HVDVP quickcharge
-type hvdcp, domain;
-type hvdcp_exec, exec_type, vendor_file_type, file_type;
+type vendor_hvdcp, domain;
+type vendor_hvdcp_exec, exec_type, vendor_file_type, file_type;
 
 # Make transition to its own HVDCP domain from init
-init_daemon_domain(hvdcp)
+init_daemon_domain(vendor_hvdcp)
 
 # Add rules for access permissions
-allow hvdcp hvdcp_device:chr_file rw_file_perms;
-allow hvdcp qg_device:chr_file rw_file_perms;
-allow hvdcp {
-    sysfs_battery_supply
-    sysfs_usb_supply
-    sysfs_usbpd_device
-    sysfs_vadc_dev
-    sysfs_spmi_dev
+allow vendor_hvdcp vendor_hvdcp_device:chr_file rw_file_perms;
+allow vendor_hvdcp vendor_qg_device:chr_file rw_file_perms;
+allow vendor_hvdcp {
+    vendor_sysfs_battery_supply
+    vendor_sysfs_usb_supply
+    vendor_sysfs_usbpd_device
+    vendor_sysfs_vadc_dev
+    vendor_sysfs_spmi_dev
 }:dir r_dir_perms;
 
-allow hvdcp {
-    sysfs_battery_supply
-    sysfs_usb_supply
-    sysfs_usbpd_device
-    sysfs_vadc_dev
-    sysfs_spmi_dev
+allow vendor_hvdcp {
+    vendor_sysfs_battery_supply
+    vendor_sysfs_usb_supply
+    vendor_sysfs_usbpd_device
+    vendor_sysfs_vadc_dev
+    vendor_sysfs_spmi_dev
 }:file rw_file_perms;
 
-allow hvdcp {
-    sysfs_battery_supply
-    sysfs_usb_supply
-    sysfs_vadc_dev
-    sysfs_spmi_dev
+allow vendor_hvdcp {
+    vendor_sysfs_battery_supply
+    vendor_sysfs_usb_supply
+    vendor_sysfs_vadc_dev
+    vendor_sysfs_spmi_dev
 }:lnk_file r_file_perms;
 
-allow hvdcp self:capability2 wake_alarm;
-userdebug_or_eng(`allow hvdcp kmsg_device:chr_file rw_file_perms;')
-allow hvdcp self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow vendor_hvdcp self:capability2 wake_alarm;
+userdebug_or_eng(`allow vendor_hvdcp kmsg_device:chr_file rw_file_perms;')
+allow vendor_hvdcp self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
-allow hvdcp mnt_vendor_file:dir search;
-allow hvdcp persist_hvdcp_file:dir rw_dir_perms;
-allow hvdcp persist_hvdcp_file:file create_file_perms;
+allow vendor_hvdcp mnt_vendor_file:dir search;
+allow vendor_hvdcp vendor_persist_hvdcp_file:dir rw_dir_perms;
+allow vendor_hvdcp vendor_persist_hvdcp_file:file create_file_perms;
 
-set_prop(hvdcp, vendor_hvdcp_opti_prop)
-wakelock_use(hvdcp)
+set_prop(vendor_hvdcp, vendor_hvdcp_opti_prop)
+wakelock_use(vendor_hvdcp)

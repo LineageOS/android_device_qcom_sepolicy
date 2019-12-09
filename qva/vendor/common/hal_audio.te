@@ -28,8 +28,8 @@
 userdebug_or_eng(`
   diag_use(hal_audio)
   #Allow access to debug fs
-  allow hal_audio_default qti_debugfs:dir r_dir_perms;
-  allow hal_audio_default qti_debugfs:file rw_file_perms;
+  allow hal_audio_default vendor_qti_debugfs:dir r_dir_perms;
+  allow hal_audio_default vendor_qti_debugfs:file rw_file_perms;
 ')
 
 #Split A2dp specific

@@ -33,8 +33,8 @@ domain_auto_trans(vendor_mmi, vendor_audioftm_exec, vendor_audioftm)
 
 allow vendor_audioftm vendor_audioftm_exec:file { rx_file_perms entrypoint };
 
-allow vendor_audioftm proc_audiod:file r_file_perms;
-allow vendor_audioftm proc_audiod:dir search;
+allow vendor_audioftm vendor_proc_audiod:file r_file_perms;
+allow vendor_audioftm vendor_proc_audiod:dir search;
 
 allow vendor_audioftm proc_asound:dir search;
 

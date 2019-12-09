@@ -26,11 +26,11 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # allow access to /dev/spcom
 
-allow hal_keymaster_qti spcom_device:chr_file rw_file_perms;
+allow vendor_hal_keymaster_qti vendor_spcom_device:chr_file rw_file_perms;
 
 # allow access to skp
-allow hal_keymaster_qti skp_device:chr_file rw_file_perms;
+allow vendor_hal_keymaster_qti vendor_skp_device:chr_file rw_file_perms;
 
-allow hal_keymaster_qti sp_keymaster_device:chr_file rw_file_perms;
-allow hal_keymaster_qti sp_ssr_device:chr_file rw_file_perms;
-get_prop(hal_keymaster_qti, spcomlib_prop)
+allow vendor_hal_keymaster_qti vendor_sp_keymaster_device:chr_file rw_file_perms;
+allow vendor_hal_keymaster_qti vendor_sp_ssr_device:chr_file rw_file_perms;
+get_prop(vendor_hal_keymaster_qti, vendor_spcomlib_prop)

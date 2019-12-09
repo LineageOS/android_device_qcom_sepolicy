@@ -24,29 +24,29 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#ims rtp service
-type hal_imsrtp, domain;
-type hal_imsrtp_exec, exec_type, vendor_file_type, file_type;
+#vendor_ims rtp service
+type vendor_hal_imsrtp, domain;
+type vendor_hal_imsrtp_exec, exec_type, vendor_file_type, file_type;
 
 # Started by init
-init_daemon_domain(hal_imsrtp)
-net_domain(hal_imsrtp)
+init_daemon_domain(vendor_hal_imsrtp)
+net_domain(vendor_hal_imsrtp)
 
-hwbinder_use(hal_imsrtp)
-get_prop(hal_imsrtp, hwservicemanager_prop)
-add_hwservice(hal_imsrtp, hal_imsrtp_hwservice)
+hwbinder_use(vendor_hal_imsrtp)
+get_prop(vendor_hal_imsrtp, hwservicemanager_prop)
+add_hwservice(vendor_hal_imsrtp, vendor_hal_imsrtp_hwservice)
 
-allow hal_imsrtp self: qipcrtr_socket  create_socket_perms_no_ioctl;
-unix_socket_connect(hal_imsrtp, ims, ims)
+allow vendor_hal_imsrtp self: qipcrtr_socket  create_socket_perms_no_ioctl;
+unix_socket_connect(vendor_hal_imsrtp, vendor_ims, vendor_ims)
 
-allow hal_imsrtp sysfs_timestamp_switch:file r_file_perms;
+allow vendor_hal_imsrtp vendor_sysfs_timestamp_switch:file r_file_perms;
 
-allow hal_imsrtp self:capability net_bind_service;
+allow vendor_hal_imsrtp self:capability net_bind_service;
 
-allow hal_imsrtp sysfs_timestamp_switch:file r_file_perms;
-allow hal_imsrtp ion_device:chr_file r_file_perms;
-allow hal_imsrtp sysfs_data:file r_file_perms;
-r_dir_file(hal_imsrtp, sysfs_diag)
+allow vendor_hal_imsrtp vendor_sysfs_timestamp_switch:file r_file_perms;
+allow vendor_hal_imsrtp ion_device:chr_file r_file_perms;
+allow vendor_hal_imsrtp vendor_sysfs_data:file r_file_perms;
+r_dir_file(vendor_hal_imsrtp, vendor_sysfs_diag)
 
-get_prop(hal_imsrtp, ims_prop)
-binder_call(hal_imsrtp, radio)
+get_prop(vendor_hal_imsrtp, vendor_ims_prop)
+binder_call(vendor_hal_imsrtp, radio)

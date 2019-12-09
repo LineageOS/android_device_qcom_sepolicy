@@ -25,21 +25,21 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type fstman, domain;
-type fstman_exec, exec_type, vendor_file_type, file_type;
+type vendor_fstman, domain;
+type vendor_fstman_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(fstman)
-net_domain(fstman)
+init_daemon_domain(vendor_fstman)
+net_domain(vendor_fstman)
 
 #use bypass because net_admin capability is needed
-hal_server_domain_bypass(fstman, hal_fstman)
+hal_server_domain_bypass(vendor_fstman, vendor_hal_fstman)
 
 #allows calls between client and server and vice-versa
-binder_call(hal_fstman_client, hal_fstman_server)
-binder_call(hal_fstman_server, hal_fstman_client)
+binder_call(vendor_hal_fstman_client, vendor_hal_fstman_server)
+binder_call(vendor_hal_fstman_server, vendor_hal_fstman_client)
 
 #register hal service, allow hal clients to find the service
-hal_attribute_hwservice(hal_fstman, hal_fstman_hwservice)
+hal_attribute_hwservice(vendor_hal_fstman, vendor_hal_fstman_hwservice)
 
 # fstman requires special network privileges.
 # access traffic control (TC) for marking packets to identify from
@@ -48,35 +48,35 @@ hal_attribute_hwservice(hal_fstman, hal_fstman_hwservice)
 # network admin operations mainly on the bonding driver:
 # interface up/down, add/remove slave interfaces, set queue parameters
 # This requires the net_admin capability.
-allow fstman self:capability { net_admin net_raw };
+allow vendor_fstman self:capability { net_admin net_raw };
 
 # netlink socket is used to access traffic control (TC)
-allow fstman self:netlink_route_socket nlmsg_write;
+allow vendor_fstman self:netlink_route_socket nlmsg_write;
 
 # allow privileged socket operations: interface up/down, bond interface management
-allowxperm fstman self:udp_socket ioctl { SIOCGIFFLAGS SIOCSIFFLAGS SIOCSIFTXQLEN SIOCBONDENSLAVE SIOCBONDRELEASE SIOCETHTOOL SIOCSIFHWADDR };
+allowxperm vendor_fstman self:udp_socket ioctl { SIOCGIFFLAGS SIOCSIFFLAGS SIOCSIFTXQLEN SIOCBONDENSLAVE SIOCBONDRELEASE SIOCETHTOOL SIOCSIFHWADDR };
 
 # need access to bond0 sysfs in order to manage attached interfaces
-allow fstman sysfs_net:dir r_dir_perms;
-allow fstman sysfs_bond0:file rw_file_perms;
+allow vendor_fstman sysfs_net:dir r_dir_perms;
+allow vendor_fstman vendor_sysfs_bond0:file rw_file_perms;
 
 # need access to wigig sysfs in order to control fst_link_loss
-allow fstman sysfs_wigig:file rw_file_perms;
+allow vendor_fstman vendor_sysfs_wigig:file rw_file_perms;
 
-# create/read fstman configuration file (/data/vendor/wifi/fstman.ini)
-r_dir_file(fstman, wifi_vendor_data_file)
-allow fstman wifi_vendor_data_file:dir rw_dir_perms;
-allow fstman wifi_vendor_data_file:file create_file_perms;
+# create/read vendor_fstman configuration file (/data/vendor/wifi/vendor_fstman.ini)
+r_dir_file(vendor_fstman, vendor_wifi_vendor_data_file)
+allow vendor_fstman vendor_wifi_vendor_data_file:dir rw_dir_perms;
+allow vendor_fstman vendor_wifi_vendor_data_file:file create_file_perms;
 
-# fstman needs to communicate with wpa_supplicant and hostapd using socket
+# vendor_fstman needs to communicate with wpa_supplicant and hostapd using socket
 # for managing FST state
-allow fstman { hal_wifi_supplicant hal_wifi_hostapd_default }:unix_dgram_socket sendto;
+allow vendor_fstman { hal_wifi_supplicant hal_wifi_hostapd_default }:unix_dgram_socket sendto;
 # supplicant interface sockets
-allow fstman wifi_vendor_wpa_socket:dir rw_dir_perms;
-allow fstman wifi_vendor_wpa_socket:sock_file create_file_perms;
-allow fstman wigig_vendor_wpa_socket:sock_file rw_file_perms;
+allow vendor_fstman vendor_wifi_vendor_wpa_socket:dir rw_dir_perms;
+allow vendor_fstman vendor_wifi_vendor_wpa_socket:sock_file create_file_perms;
+allow vendor_fstman vendor_wigig_vendor_wpa_socket:sock_file rw_file_perms;
 # hostapd global socket
-allow fstman hostapd_data_file:dir rw_dir_perms;
-allow fstman hostapd_data_file:sock_file create_file_perms;
+allow vendor_fstman hostapd_data_file:dir rw_dir_perms;
+allow vendor_fstman hostapd_data_file:sock_file create_file_perms;
 # access capability config store
-hal_client_domain(fstman, hal_capabilityconfigstore_qti);
+hal_client_domain(vendor_fstman, vendor_hal_capabilityconfigstore_qti);

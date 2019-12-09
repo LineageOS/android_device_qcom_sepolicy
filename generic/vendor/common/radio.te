@@ -24,16 +24,16 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-get_prop(radio, ims_prop)
+get_prop(radio, vendor_ims_prop)
 
 allow radio vendor_file:lnk_file r_file_perms;
 allow radio vendor_framework_file:file r_file_perms;
 allow radio vendor_framework_file:dir search;
 
 hwbinder_use(radio)
-allow radio vnd_ims_radio_hwservice:hwservice_manager find;
-allow radio vnd_qcrilhook_hwservice:hwservice_manager find;
-allow radio hal_imsrtp_hwservice:hwservice_manager find;
+allow radio vendor_vnd_ims_radio_hwservice:hwservice_manager find;
+allow radio vendor_vnd_qcrilhook_hwservice:hwservice_manager find;
+allow radio vendor_hal_imsrtp_hwservice:hwservice_manager find;
 
 add_service(radio, radio_service)
 allow radio {
@@ -41,16 +41,16 @@ allow radio {
 }:service_manager find;
 
 # IMS needs permission to use avtimer
-allow radio avtimer_device:chr_file r_file_perms;
+allow radio vendor_avtimer_device:chr_file r_file_perms;
 # permissions for RCS clients to communicate with RCS vendor service
 userdebug_or_eng(`
-  allow radio hal_imsrcsd_hwservice:hwservice_manager find;
-  binder_call(radio, hal_rcsservice);
+  allow radio vendor_hal_imsrcsd_hwservice:hwservice_manager find;
+  binder_call(radio, vendor_hal_rcsservice);
 ')
-binder_call(radio, hal_imsrtp)
+binder_call(radio, vendor_hal_imsrtp)
 
 #perf
-hal_client_domain(radio, hal_perf)
+hal_client_domain(radio, vendor_hal_perf)
 
 #diag
 userdebug_or_eng(`

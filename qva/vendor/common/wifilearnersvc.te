@@ -25,17 +25,17 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type wifilearnersvc, domain;
-type wifilearnersvc_exec, exec_type, vendor_file_type, file_type;
+type vendor_wifilearnersvc, domain;
+type vendor_wifilearnersvc_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(wifilearnersvc)
-hal_server_domain(wifilearnersvc, hal_wifilearner)
+init_daemon_domain(vendor_wifilearnersvc)
+hal_server_domain(vendor_wifilearnersvc, vendor_hal_wifilearner)
 
 #allows calls between client and server and vice-versa
-binder_call(hal_wifilearner_client, hal_wifilearner_server)
-binder_call(hal_wifilearner_server, hal_wifilearner_client)
+binder_call(vendor_hal_wifilearner_client, vendor_hal_wifilearner_server)
+binder_call(vendor_hal_wifilearner_server, vendor_hal_wifilearner_client)
 
 #register hal service and allow hal clients to find the service
-hal_attribute_hwservice(hal_wifilearner, hal_wifilearner_hwservice)
+hal_attribute_hwservice(vendor_hal_wifilearner, vendor_hal_wifilearner_hwservice)
 
-allow hal_wifilearner self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow vendor_hal_wifilearner self:netlink_generic_socket create_socket_perms_no_ioctl;
