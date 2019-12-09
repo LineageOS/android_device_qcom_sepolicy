@@ -93,6 +93,10 @@ attribute hal_wigig_npt;
 attribute hal_wigig_npt_client;
 attribute hal_wigig_npt_server;
 
+attribute hal_fstman;
+attribute hal_fstman_client;
+attribute hal_fstman_server;
+
 attribute hal_btconfigstore;
 attribute hal_btconfigstore_client;
 attribute hal_btconfigstore_server;
@@ -118,3 +122,7 @@ attribute hal_bluetooth_dun_server;
 attribute hal_spu;
 attribute hal_spu_client;
 attribute hal_spu_server;
+
+attribute hal_embmssl;
+attribute hal_embmssl_client;
+attribute hal_embmssl_server;

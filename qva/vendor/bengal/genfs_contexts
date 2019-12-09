@@ -46,12 +46,11 @@ genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-03/1c40000.q
 # Power supply device nodes
 
 #qdss sysfs-node
-#genfscon sysfs /devices/platform/soc/6b05000.tmc/coresight-tmc-etf u:object_r:sysfs_qdss_dev:s0
-#genfscon sysfs /devices/platform/soc/6048000.tmc/coresight-tmc-etr u:object_r:sysfs_qdss_dev:s0
-#genfscon sysfs /devices/platform/soc/6002000.stm/coresight-stm u:object_r:sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/8047000.tmc/coresight-tmc-etf u:object_r:sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/8048000.tmc/coresight-tmc-etr u:object_r:sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/8002000.stm/coresight-stm u:object_r:sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/soc:hwevent/coresight-hwevent u:object_r:sysfs_qdss_dev:s0
-#genfscon sysfs /devices/platform/soc/6b0c000.csr/coresight-swao-csr u:object_r:sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/soc:dummy_source/coresight-modem-diag u:object_r:sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/8a03000.csr/coresight-swao-csr u:object_r:sysfs_qdss_dev:s0
 
 # PMIC UI peripherals
 
