@@ -36,3 +36,5 @@ get_prop(surfaceflinger, vendor_display_prop)
 hal_client_domain(surfaceflinger, hal_perf)
 
 r_dir_file(surfaceflinger, sysfs_kgsl)
+
+dontaudit surfaceflinger hal_qspmhal_hwservice:hwservice_manager find;
