@@ -48,3 +48,4 @@ userdebug_or_eng(`
 allow ustaservice_app system_app_data_file:dir create_dir_perms;
 allow ustaservice_app system_app_data_file:file create_file_perms;
 allow ustaservice_app cgroup:file w_file_perms;
+get_prop(ustaservice_app, sensors_prop)
