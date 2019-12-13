@@ -30,6 +30,10 @@ allow lmkd hal_perf_default:binder call;
 allow lmkd hal_iop_hwservice:hwservice_manager find;
 allow lmkd hal_iop_default:binder call;
 allow lmkd hwservicemanager:binder call;
+
+# Used by LMKD to work with EPOLLWAKEUP events.
+allow lmkd self:global_capability2_class_set block_suspend;
+
 userdebug_or_eng(`
   allow lmkd kmsg_device:chr_file rw_file_perms;
 ')
