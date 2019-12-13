@@ -33,7 +33,7 @@ allow rild netmgrd_socket:dir search;
 unix_socket_connect(rild, netmgrd, netmgrd)
 
 allow rild vendor_file:file { execute_no_trans lock ioctl };
-
+allow rild self:tipc_socket { create_socket_perms_no_ioctl };
 allow rild vendor_per_mgr_service:service_manager find;
 
 add_hwservice(rild, vnd_ims_radio_hwservice)

@@ -37,6 +37,8 @@ allow netmgrd self:netlink_generic_socket create_socket_perms_no_ioctl;
 allow netmgrd self:netlink_route_socket nlmsg_write;
 allow netmgrd self:netlink_socket create_socket_perms_no_ioctl;
 allow netmgrd self:socket create_socket_perms;
+allow netmgrd self:tipc_socket { create_socket_perms_no_ioctl };
+
 allowxperm netmgrd self:socket ioctl msm_sock_ipc_ioctls;
 allowxperm netmgrd self:udp_socket ioctl priv_sock_ioctls;
 
