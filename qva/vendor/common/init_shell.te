@@ -47,3 +47,7 @@ userdebug_or_eng(`
 # Needed for starting console in userdebug mode
 set_prop(vendor_qti_init_shell, vendor_audio_debug_prop)
 ')
+
+#allow configuring slub debug options
+allow vendor_qti_init_shell vendor_sysfs_slab_zshandle_storeuser:file w_file_perms;
+allow vendor_qti_init_shell vendor_sysfs_slab_zspage_storeuser:file w_file_perms;
