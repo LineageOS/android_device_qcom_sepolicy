@@ -27,5 +27,5 @@
 
 # QCV: define property type vendor_exported_system_prop
 # and vendor_exported_odm_prop
-type vendor_exported_system_prop, property_type;
-type vendor_exported_odm_prop, property_type;
+vendor_restricted_prop(vendor_exported_system_prop);
+vendor_restricted_prop(vendor_exported_odm_prop);

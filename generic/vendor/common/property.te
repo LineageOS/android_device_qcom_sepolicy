@@ -24,75 +24,76 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type vendor_ctl_netmgrd_prop, property_type;
-type vendor_ctl_port-bridge_prop, property_type;
-type vendor_ctl_qcrild_prop, property_type;
-type vendor_camera_prop, property_type;
-type vendor_cnd_prop, property_type;
-type vendor_crash_cnt_prop, property_type;
-type vendor_crash_detect_prop, property_type;
-type vendor_ims_prop, property_type;
-type vendor_ipacm_prop, property_type;
-type vendor_ipacm-diag_prop, property_type;
-type vendor_modem_diag_prop, property_type;
-type vendor_msm_irqbalance_prop, property_type;
-type vendor_per_mgr_state_prop, property_type;
-type vendor_dataqti_prop, property_type;
-type vendor_dataqdp_prop, property_type;
-type vendor_ramdump_prop, property_type;
-type vendor_sensors_prop, property_type;
-type vendor_tee_listener_prop, property_type;
-type vendor_display_prop, property_type;
-type vendor_usb_prop, property_type;
-type vendor_radio_prop, property_type;
 
-#Needed for  ubwc support
-type vendor_gralloc_prop, property_type;
+vendor_internal_prop(vendor_ctl_netmgrd_prop);
+vendor_internal_prop(vendor_ctl_port-bridge_prop);
+vendor_internal_prop(vendor_ctl_qcrild_prop);
+vendor_restricted_prop(vendor_camera_prop);
+vendor_restricted_prop(vendor_cnd_prop);
+vendor_internal_prop(vendor_crash_cnt_prop);
+vendor_internal_prop(vendor_crash_detect_prop);
+vendor_restricted_prop(vendor_ims_prop);
+vendor_internal_prop(vendor_ipacm_prop);
+vendor_internal_prop(vendor_ipacm-diag_prop);
+vendor_internal_prop(vendor_modem_diag_prop);
+vendor_internal_prop(vendor_msm_irqbalance_prop);
+vendor_restricted_prop(vendor_per_mgr_state_prop);
+vendor_internal_prop(vendor_dataqti_prop);
+vendor_internal_prop(vendor_dataqdp_prop);
+vendor_internal_prop(vendor_ramdump_prop);
+vendor_internal_prop(vendor_sensors_prop);
+vendor_restricted_prop(vendor_tee_listener_prop);
+vendor_restricted_prop(vendor_display_prop);
+vendor_internal_prop(vendor_usb_prop);
+vendor_restricted_prop(vendor_radio_prop);
 
-type vendor_system_prop, property_type;
+#Needed for ubwc support
+vendor_restricted_prop(vendor_gralloc_prop);
+
+vendor_internal_prop(vendor_system_prop);
 
 #imsrcsservice
-type vendor_ctl_vendor_imsrcsservice_prop, property_type;
+vendor_restricted_prop(vendor_ctl_vendor_imsrcsservice_prop);
 
 # HBTP
-type vendor_ctl_vendor_hbtp_prop, property_type;
+vendor_internal_prop(vendor_ctl_vendor_hbtp_prop);
 
 # Bluetooth props
-type vendor_bluetooth_prop, property_type;
+vendor_restricted_prop(vendor_bluetooth_prop);
 
 #time service
-type vendor_time_service_prop, property_type;
+vendor_internal_prop(vendor_time_service_prop);
 
 # Audio props
-type vendor_audio_prop, property_type;
+vendor_restricted_prop(vendor_audio_prop);
 
 #ss-restart
-type vendor_ssr_prop, property_type;
+vendor_internal_prop(vendor_ssr_prop);
 
 #ss-services (PD)
-type vendor_pd_locater_dbg_prop, property_type;
+vendor_internal_prop(vendor_pd_locater_dbg_prop);
 
 #capabilityconfigstore hal (CCHAL)
-type vendor_cap_configstore_dbg_prop, property_type;
+vendor_internal_prop(vendor_cap_configstore_dbg_prop);
 
 #rmt_storage
-type vendor_ctl_vendor_rmt_storage_prop, property_type;
+vendor_internal_prop(vendor_ctl_vendor_rmt_storage_prop);
 
-type vendor_gpu_prop, property_type;
+vendor_internal_prop(vendor_gpu_prop);
 
-type vendor_public_vendor_default_prop, property_type;
+vendor_restricted_prop(vendor_public_vendor_default_prop);
 
 # alarm property
-type vendor_alarm_boot_prop, property_type;
+vendor_restricted_prop(vendor_alarm_boot_prop);
 
 #wlan-vendor prop
-type vendor_wifi_prop, property_type;
+vendor_internal_prop(vendor_wifi_prop);
 
 #qdcmss property
-type vendor_qdcmss_prop, property_type;
+vendor_internal_prop(vendor_qdcmss_prop);
 
 #adsprpc props
-type vendor_adsprpc_prop, property_type;
+vendor_restricted_prop(vendor_adsprpc_prop);
 
 # Wifi version recorder
-type vendor_wifi_version, property_type;
+vendor_internal_prop(vendor_wifi_version);
