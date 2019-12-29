@@ -91,9 +91,6 @@ vendor.qti.hardware.scve.panorama::IPanoramaTracking            u:object_r:hal_s
 vendor.qti.hardware.scve.panorama::IPanoramaStitching           u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.scve.objecttracker::IObjectTracker          u:object_r:hal_scve_hwservice:s0
 vendor.qti.hardware.wifi.hostapd::IHostapdVendor             u:object_r:hal_wifi_hostapd_hwservice:s0
-vendor.qti.hardware.mlshal::IMlsDap                          u:object_r:hal_mirrorlink_hwservice:s0
-vendor.qti.hardware.mlshal::IMlsVnc                          u:object_r:hal_mirrorlink_hwservice:s0
-vendor.qti.hardware.mlshal::IMlsIon                          u:object_r:hal_mirrorlink_hwservice:s0
 vendor.qti.hardware.wifi.wifilearner::IWifiStats             u:object_r:hal_wifilearner_hwservice:s0
 vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_fm_hwservice:s0
 vendor.qti.hardware.wifidisplaysession::IWifiDisplaySession  u:object_r:wifidisplayhalservice_hwservice:s0
@@ -105,3 +102,4 @@ vendor.qti.hardware.display.mapper::IQtiMapper               u:object_r:hal_grap
 vendor.qti.hardware.cryptfshw::ICryptfsHw                    u:object_r:hal_keymaster_hwservice:s0
 vendor.qti.hardware.capabilityconfigstore::ICapabilityConfigStore u:object_r:hal_capabilityconfigstore_qti_hwservice:s0
 vendor.qti.hardware.bluetooth_sar::IBluetoothSar             u:object_r:hal_bluetooth_hwservice:s0
+vendor.qti.hardware.qseecom::IQSEECom                        u:object_r:hal_qseecom_hwservice:s0

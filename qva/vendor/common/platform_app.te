@@ -38,4 +38,5 @@ get_prop(platform_app, vendor_mpctl_prop)
 hal_client_domain(platform_app, hal_qspmhal)
 #fingerprint
 hal_client_domain(platform_app, hal_fingerprint)
-
+# allow platform_app to interact with pasr hal
+hal_client_domain(platform_app, hal_pasrmanager)

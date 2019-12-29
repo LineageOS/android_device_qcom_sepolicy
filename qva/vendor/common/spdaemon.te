@@ -41,6 +41,7 @@ allow spdaemon skp_device:chr_file { getattr rw_file_perms };
 set_prop(spdaemon, spcomlib_prop)
 allow spdaemon spdaemon_ssr_device:chr_file rw_file_perms;
 allow spdaemon sp_ssr_device:chr_file rw_file_perms;
+allow spdaemon sp_nvm_device:chr_file rw_file_perms;
 allow spdaemon sp_keymaster_device:chr_file rw_file_perms;
 allow spdaemon cryptoapp_device:chr_file rw_file_perms;
 allow spdaemon iuicc_device:chr_file rw_file_perms;
@@ -51,18 +52,12 @@ hal_client_domain(spdaemon, hal_telephony)
 
 # Allow to access IAR-DB at /mnt/vendor/persist/iar_db
 allow spdaemon persist_iar_db_file:dir rw_dir_perms;
-allow spdaemon persist_iar_db_file:file rw_file_perms;
+allow spdaemon persist_iar_db_file:file create_file_perms;
 
 r_dir_file(spdaemon, mnt_vendor_file)
 
-# Allow to mount spunvm partition
-allow spdaemon spunvm_file:dir mounton;
-allow spdaemon spunvm_file:filesystem mount;
-allow spdaemon spunvm_file:filesystem remount;
-
 # Allow to access IAR-DB at /mnt/vendor/spunvm
 allow spdaemon spunvm_file:dir rw_dir_perms;
-allow spdaemon spunvm_file:file rw_file_perms;
 allow spdaemon spunvm_file:file create_file_perms;
 
 # allow read access to sysfs
