@@ -65,6 +65,9 @@ get_prop(domain, vendor_security_patch_level_prop)
 get_prop(domain, public_vendor_default_prop)
 
 allow domain qti_debugfs:dir search;
+
+allow { domain - isolated_app } sysfs_kgsl_gpuclk:file r_file_perms;
+allow { domain - isolated_app } sysfs_kgsl_gpuclk:lnk_file r_file_perms;
 allow { domain -isolated_app -runas_app -untrusted_app_25 -untrusted_app_27 -ephemeral_app -mediaprovider -untrusted_app -perfprofd -vold -iorapd -installd } hal_perf_hwservice:hwservice_manager
  find;
 allow { domain -isolated_app -runas_app -untrusted_app_25 -untrusted_app_27 -ephemeral_app -mediaprovider -untrusted_app -perfprofd -vold -iorapd -installd } hal_perf_default:binder call;
@@ -72,3 +75,4 @@ allow { domain -isolated_app -runas_app -untrusted_app_25 -untrusted_app_27 -eph
 
 # allow all context to read gpu model
 allow { domain - isolated_app } sysfs_kgsl_gpu_model:file r_file_perms;
+allow { domain - isolated_app } sysfs_kgsl:dir search;

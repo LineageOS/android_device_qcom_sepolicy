@@ -36,8 +36,6 @@ allow qti self:{
     udp_socket
 } create_socket_perms_no_ioctl;
 
-allow qti self:udp_socket ioctl;
-
 allow qti vendor_shell_exec:file rx_file_perms;
 
 # Allow write permissions for log file

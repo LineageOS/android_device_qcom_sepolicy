@@ -38,6 +38,7 @@ net_domain(ssg_app)
 unix_socket_connect(ssg_app, mlid, mlid)
 unix_socket_connect(ssg_app, ssgqmig, ssgqmigd)
 unix_socket_connect(ssg_app, ssgtzd, ssgtzd)
+unix_socket_connect(ssg_app, qwesd, qwesd)
 
 #access to qdma socket
 qdma_file_socket(ssg_app)
