@@ -30,4 +30,4 @@ user=_app seinfo=sysmonapp domain=sysmonapp_app name=com.qualcomm.sysmonappInter
 user=_app seinfo=sysmonapp domain=sysmonapp_app name=com.qualcomm.qti.sysmonappExternal type=app_data_file levelFrom=all
 
 #Add new domain for secure camera service app
-user=system seinfo=platform name=com.qualcomm.qti.seccamservice:remote domain=seccam_app type=system_app_data_file
+user=_app seinfo=platform name=com.qualcomm.qti.seccamservice:remote domain=seccam_app type=app_data_file

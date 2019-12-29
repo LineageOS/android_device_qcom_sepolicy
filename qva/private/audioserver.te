@@ -25,8 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow audioserver to interact with mirrorlinkserver
-binder_call(audioserver, mirrorlink);
 binder_call(audioserver,wfdservice);
 
 #allow access to ALSA MMAP FDs for AAudio API

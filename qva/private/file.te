@@ -31,5 +31,3 @@ type dpmwrapper_socket, file_type, coredomain_socket, mlstrustedobject;
 type qvrd_data_file, file_type, data_file_type, core_data_file_type;
 type qvrd_socket, file_type, mlstrustedobject, coredomain_socket;
 type qvrd_hvx_socket, file_type, coredomain_socket;
-type mirrorlink_data_file, file_type, data_file_type, core_data_file_type;
-type mirrorlink_socket, file_type, coredomain_socket;
