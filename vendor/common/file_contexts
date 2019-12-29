@@ -321,7 +321,6 @@
 # sysfs files
 #
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:sysfs_graphics:s0
-/sys/class/kgsl(/.*)?                                               u:object_r:sysfs_kgsl:s0
 /sys/class/thermal(/.*)?                                            u:object_r:sysfs_thermal:s0
 /sys/class/sensors(/.*)?                                            u:object_r:sysfs_sensors:s0
 /sys/class/uio(/.*)?                                                u:object_r:sysfs_uio:s0
