@@ -33,3 +33,15 @@ hal_client_domain(vendor_fm_app, hal_fm);
 hal_client_domain(vendor_fm_app, hal_btconfigstore);
 get_prop(vendor_fm_app, vendor_bluetooth_prop)
 allow vendor_fm_app hal_perf_hwservice:hwservice_manager find;
+
+# required for FM App to connectto wcnss_filter sockets
+# serial device ttyHS0 (transport layer for FM)
+allow vendor_fm_app serial_device:chr_file rw_file_perms;
+# access unix sockets for fm application
+unix_socket_connect(vendor_fm_app,bluetooth, bluetooth)
+# access  wcnss_filter from fm app
+#allow vendor_fm_app wcnss_filter:unix_stream_socket connectto;
+allow vendor_fm_app fm_radio_device:chr_file r_file_perms;
+
+set_prop(vendor_fm_app, ctl_start_prop)
+set_prop(vendor_fm_app, ctl_stop_prop)
