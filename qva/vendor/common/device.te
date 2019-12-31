@@ -32,6 +32,7 @@ type sp_keymaster_device, dev_type;
 type sp_ssr_device, dev_type;
 type sp_nvm_device, dev_type;
 type spdaemon_ssr_device, dev_type;
+type spu_hal_ssr_device, dev_type;
 type iuicc_device, dev_type;
 type cryptoapp_device, dev_type;
 type sec_nvm_device, dev_type;
