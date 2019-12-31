@@ -12,3 +12,5 @@ unix_socket_connect(mediaserver, mpctl, mpdecision)
 unix_socket_connect(mediaserver, thermal, thermal-engine)
 
 allow mediaserver time_daemon:unix_stream_socket connectto;
+
+get_prop(mediaserver, exported_camera_prop)

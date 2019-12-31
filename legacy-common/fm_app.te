@@ -1,0 +1,12 @@
+allow vendor_fm_app fm_radio_device:chr_file r_file_perms;
+allow vendor_fm_app init:sock_file { read getattr write };
+allow vendor_fm_app init:unix_stream_socket connectto;
+allow vendor_fm_app property_socket:sock_file write;
+
+get_prop(vendor_fm_app, bluetooth_prop)
+
+get_prop(vendor_fm_app, fm_prop)
+set_prop(vendor_fm_app, fm_prop)
+
+set_prop(vendor_fm_app, ctl_start_prop)
+set_prop(vendor_fm_app, ctl_stop_prop)

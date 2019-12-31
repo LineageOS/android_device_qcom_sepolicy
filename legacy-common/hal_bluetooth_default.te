@@ -2,3 +2,6 @@ allow hal_bluetooth_default bluetooth_data_file:dir ra_dir_perms;
 allow hal_bluetooth_default bluetooth_data_file:file create_file_perms;
 
 allow hal_bluetooth_default wcnss_filter:unix_stream_socket connectto;
+
+# hal_bluetooth_default needs open read on fm_radio_device
+allow hal_bluetooth_default fm_radio_device:chr_file r_file_perms;

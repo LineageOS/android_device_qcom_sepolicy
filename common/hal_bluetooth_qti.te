@@ -75,3 +75,5 @@ allow system_app hal_bluetooth_hwservice :hwservice_manager find;
 #FM IPC with BT/FM hal daemon
 binder_call(system_app, hal_bluetooth);
 binder_call(hal_bluetooth, system_app);
+
+hal_server_domain(hal_bluetooth_qti, vendor_hal_fm)
