@@ -1,0 +1,3 @@
+attribute vendor_hal_fm;
+attribute vendor_hal_fm_client;
+attribute vendor_hal_fm_server;
