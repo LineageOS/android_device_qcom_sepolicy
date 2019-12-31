@@ -25,7 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow system_app fm_radio_device:chr_file r_file_perms;
 r_dir_file(system_app, bluetooth_data_file);
 
 allow system_app {
@@ -175,10 +174,7 @@ hal_client_domain(system_app, hal_soter);
 
 get_prop(system_app, vendor_radio_prop)
 
-hal_client_domain(system_app, hal_fm);
 
-#allow system app to access btconfigstore hal
-hal_client_domain(system_app, hal_btconfigstore);
 
 #allow system app to access capabilityconfigstore hal
 hal_client_domain(system_app, hal_capabilityconfigstore_qti);

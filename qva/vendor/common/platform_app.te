@@ -40,3 +40,9 @@ hal_client_domain(platform_app, hal_qspmhal)
 hal_client_domain(platform_app, hal_fingerprint)
 # allow platform_app to interact with pasr hal
 hal_client_domain(platform_app, hal_pasrmanager)
+#fm
+hal_client_domain(platform_app, hal_fm);
+# fm_radio app needes  open read on fm_radio_device
+allow platform_app fm_radio_device:chr_file r_file_perms;
+#allow platform_app to access btconfigstore hal
+hal_client_domain(platform_app, hal_btconfigstore);

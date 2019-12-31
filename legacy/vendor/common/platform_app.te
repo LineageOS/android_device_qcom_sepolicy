@@ -62,3 +62,8 @@ hal_client_domain(platform_app, hal_scve)
 
 #allow platform_app to read vendor_mpctl_prop
 get_prop(platform_app, vendor_mpctl_prop)
+#fm
+hal_client_domain(platform_app, hal_fm);
+allow platform_app fm_radio_device:chr_file r_file_perms;
+#allow platform app to access btconfigstore hal
+hal_client_domain(platform_app, hal_btconfigstore);
