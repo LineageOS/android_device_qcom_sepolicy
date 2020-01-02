@@ -1,0 +1,4 @@
+android_app_certificate {
+    name: "timeservice_app_cert",
+    certificate: "timeservice_app_cert",
+}
