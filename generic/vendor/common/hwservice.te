@@ -24,23 +24,23 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type hal_cne_hwservice, hwservice_manager_type;
-type hal_cacert_hwservice, hwservice_manager_type;
-type vnd_ims_radio_hwservice, hwservice_manager_type;
-type hal_dataconnection_hwservice, hwservice_manager_type;
-type vnd_qcrilhook_hwservice, hwservice_manager_type;
-type hal_iwlan_hwservice, hwservice_manager_type;
-type hal_display_config_hwservice, hwservice_manager_type;
-type hal_imsrcsd_hwservice, hwservice_manager_type;
-type hal_imsrtp_hwservice, hwservice_manager_type;
-type hal_imscallinfo_hwservice, hwservice_manager_type;
-type hal_ipacm_hwservice, hwservice_manager_type;
-type hal_hbtp_hwservice, hwservice_manager_type;
-type hal_perf_hwservice, hwservice_manager_type;
-type hal_tui_comm_hwservice, hwservice_manager_type;
-type hal_qdutils_disp_hwservice, hwservice_manager_type;
-type hal_trustedui_hwservice, hwservice_manager_type;
-type hal_display_color_hwservice, hwservice_manager_type;
-type hal_display_postproc_hwservice, hwservice_manager_type;
-type hal_capabilityconfigstore_qti_hwservice, hwservice_manager_type;
-type hal_camera_postproc_hwservice, hwservice_manager_type;
+type hal_cne_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_cacert_hwservice, hwservice_manager_type, protected_hwservice;
+type vnd_ims_radio_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_dataconnection_hwservice, hwservice_manager_type, protected_hwservice;
+type vnd_qcrilhook_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_iwlan_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_display_config_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_imsrcsd_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_imsrtp_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_imscallinfo_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_ipacm_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_hbtp_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_perf_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_tui_comm_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_qdutils_disp_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_trustedui_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_display_color_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_display_postproc_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_capabilityconfigstore_qti_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_camera_postproc_hwservice, hwservice_manager_type, protected_hwservice;
