@@ -90,7 +90,7 @@ type persist_hvdcp_file, file_type , vendor_persist_type;
 type proc_audiod, fs_type, proc_type;
 
 #file type for irqbalance socket
-type msm_irqbalance_socket, file_type;
+type vendor_msm_irqbalance_socket, file_type;
 
 # Sensor file types
 type sensors_socket, file_type;
@@ -315,7 +315,7 @@ type vendor_mbn_data_file, file_type, data_file_type;
 type sysfs_uio_file, fs_type, sysfs_type;
 
 #irq balance sysfs type
-type sysfs_irqbalance , sysfs_type, fs_type;
+type vendor_sysfs_irqbalance , sysfs_type, fs_type;
 
 # vpp files
 type vendor_vpp_data_file, file_type, data_file_type;

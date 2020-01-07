@@ -58,10 +58,10 @@ ctl.vendor.ipacm-diag      u:object_r:vendor_ipacm-diag_prop:s0
 ctl.vendor.dataqti         u:object_r:vendor_dataqti_prop:s0
 ctl.vendor.dataadpl         u:object_r:vendor_dataadpl_prop:s0
 ctl.vendor.sensors                u:object_r:sensors_prop:s0
-ctl.vendor.msm_irqbalance         u:object_r:msm_irqbalance_prop:s0
-ctl.vendor.msm_irqbl_sdm630       u:object_r:msm_irqbl_sdm630_prop:s0
+ctl.vendor.msm_irqbalance         u:object_r:vendor_msm_irqbalance_prop:s0
+ctl.vendor.msm_irqbl_sdm630       u:object_r:vendor_msm_irqbl_sdm630_prop:s0
 vendor.slpi.               u:object_r:slpi_prop:s0
-ctl.vendor.msm_irqbal_lb          u:object_r:msm_irqbalance_prop:s0
+ctl.vendor.msm_irqbal_lb          u:object_r:vendor_msm_irqbalance_prop:s0
 vendor.spcom.              u:object_r:spcomlib_prop:s0
 vendor.display.               u:object_r:vendor_display_prop:s0
 ro.vendor.display.            u:object_r:vendor_display_prop:s0

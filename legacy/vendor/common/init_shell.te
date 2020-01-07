@@ -81,8 +81,8 @@ set_prop(qti_init_shell, freq_prop)
 set_prop(qti_init_shell, vendor_mpctl_prop)
 set_prop(qti_init_shell, vendor_bluetooth_prop)
 set_prop(qti_init_shell, sensors_prop)
-set_prop(qti_init_shell, msm_irqbalance_prop)
-set_prop(qti_init_shell, msm_irqbl_sdm630_prop)
+set_prop(qti_init_shell, vendor_msm_irqbalance_prop)
+set_prop(qti_init_shell, vendor_msm_irqbl_sdm630_prop)
 set_prop(qti_init_shell, vendor_ipacm_prop)
 set_prop(qti_init_shell, vendor_ipacm-diag_prop)
 set_prop(qti_init_shell, vendor_dataqti_prop)
@@ -155,7 +155,7 @@ allow qti_init_shell sensors_persist_file:file setattr;
 allow qti_init_shell sensors_persist_file:dir setattr;
 
 # To check if /system/bin/msm_irqbalance is persent in the device
-allow qti_init_shell msm_irqbalanced_exec:file getattr;
+allow qti_init_shell vendor_msm_irqbalanced_exec:file getattr;
 
 # To write to /data/vendor/perfd
 allow qti_init_shell mpctl_data_file:dir w_dir_perms;

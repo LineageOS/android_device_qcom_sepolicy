@@ -25,18 +25,18 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type msm_irqbalanced, domain;
-type msm_irqbalanced_exec, exec_type, vendor_file_type, file_type;
+type vendor_msm_irqbalanced, domain;
+type vendor_msm_irqbalanced_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(msm_irqbalanced)
+init_daemon_domain(vendor_msm_irqbalanced)
 
-allow msm_irqbalanced cgroup:dir { create add_name };
-allow msm_irqbalanced { proc sysfs_devices_system_cpu }:file w_file_perms;
-r_dir_file(msm_irqbalanced, sysfs_rqstats);
+allow vendor_msm_irqbalanced cgroup:dir { create add_name };
+allow vendor_msm_irqbalanced { proc sysfs_devices_system_cpu }:file w_file_perms;
+r_dir_file(vendor_msm_irqbalanced, sysfs_rqstats);
 
 # access smp_affinity
-allow msm_irqbalanced proc:file r_file_perms;
-allow msm_irqbalanced proc_interrupts:file r_file_perms;
-allow msm_irqbalanced proc_stat:file r_file_perms;
+allow vendor_msm_irqbalanced proc:file r_file_perms;
+allow vendor_msm_irqbalanced proc_interrupts:file r_file_perms;
+allow vendor_msm_irqbalanced proc_stat:file r_file_perms;
 # irq_blacklist_on
-allow msm_irqbalanced sysfs_irqbalance:file r_file_perms;
+allow vendor_msm_irqbalanced vendor_sysfs_irqbalance:file r_file_perms;
