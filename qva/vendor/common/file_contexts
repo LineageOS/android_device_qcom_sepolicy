@@ -149,6 +149,7 @@
 /sys/module/process_reclaim(/.*)?                                   u:object_r:sysfs_process_reclaim:s0
 /sys/module/vmpressure(/.*)?                                        u:object_r:sysfs_vmpressure:s0
 /sys/devices/platform/soc/1d84000.ufshc/clkscale_enable             u:object_r:sysfs_scsi_host:s0
+/sys/devices/platform/soc/1d84000.ufshc/auto_hibern8                u:object_r:sysfs_scsi_host:s0
 
 ###################################
 # sysfs files
