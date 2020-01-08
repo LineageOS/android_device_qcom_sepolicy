@@ -32,6 +32,10 @@ allow hal_audio proc_audiod:file r_file_perms;
 allow hal_audio_default vendor_audio_data_file:dir rw_dir_perms;
 allow hal_audio_default vendor_audio_data_file:file create_file_perms;
 
+allow hal_audio_default persist_audio_file:dir rw_dir_perms;
+allow hal_audio_default persist_audio_file:file create_file_perms;
+allow hal_audio_default mnt_vendor_file:dir search;
+
 # Allow hal_audio_default to read sysfs_thermal dir/files for speaker protection
 r_dir_file(hal_audio_default, sysfs_thermal)
 

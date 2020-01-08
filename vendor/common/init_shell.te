@@ -74,6 +74,7 @@ set_prop(qti_init_shell, fm_prop)
 set_prop(qti_init_shell, vendor_alarm_boot_prop)
 set_prop(qti_init_shell, vendor_gralloc_prop)
 set_prop(qti_init_shell, vendor_audio_prop)
+set_prop(qti_init_shell, vendor_video_prop)
 userdebug_or_eng(`
 # Needed for starting console in userdebug mode
 set_prop(qti_init_shell, ctl_console_prop)
