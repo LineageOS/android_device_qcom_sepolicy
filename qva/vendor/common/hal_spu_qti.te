@@ -47,6 +47,7 @@ allow hal_spu_qti skp_device:chr_file rw_file_perms;
 allow hal_spu_qti sp_ssr_device:chr_file rw_file_perms;
 allow hal_spu_qti cryptoapp_device:chr_file rw_file_perms;
 allow hal_spu_qti iuicc_device:chr_file rw_file_perms;
+allow hal_spu_qti spu_hal_ssr_device:chr_file rw_file_perms;
 
 # Alloc acess to ion_device
 allow hal_spu_qti ion_device:chr_file rw_file_perms;

@@ -203,3 +203,6 @@ type sysfs_suspend, fs_type, sysfs_type;
 
 # kgsl gpu model file type for sysfs access
 type sysfs_kgsl_gpu_model, sysfs_type, fs_type;
+
+# kgsl_gpuclk file type for sysfs access
+type sysfs_kgsl_gpuclk, sysfs_type, fs_type;

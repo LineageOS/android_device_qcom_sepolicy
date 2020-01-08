@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,26 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type hsic_device, dev_type;
-type spss_utils_device, dev_type;
-type skp_device, dev_type;
-type sp_keymaster_device, dev_type;
-type sp_ssr_device, dev_type;
-type sp_nvm_device, dev_type;
-type spdaemon_ssr_device, dev_type;
-type spu_hal_ssr_device, dev_type;
-type iuicc_device, dev_type;
-type cryptoapp_device, dev_type;
-type sec_nvm_device, dev_type;
-type qbt_device, dev_type;
-type esoc_device, dev_type;
-type mhi_device, dev_type;
-type efs_boot_dev, dev_type;
-type smem_log_device, dev_type;
-type fm_radio_device, dev_type;
-
-#define qg char device
-type qg_device, dev_type;
-
-#define qvr external sensor device
-type qvr_external_sensor_device, dev_type;
+dontaudit mediaprovider hal_perf_hwservice:hwservice_manager find;

@@ -28,3 +28,6 @@
 get_prop(cameraserver, persist_camera_prop)
 #access to cameraservice apis by faceauth
 hal_client_domain(cameraserver, hal_face)
+
+get_prop(cameraserver, mm_video_prop);
+get_prop(cameraserver, vendor_sys_video_prop);

@@ -55,6 +55,11 @@ genfscon sysfs /devices/platform/soc/8a03000.csr/coresight-swao-csr u:object_r:s
 # PMIC UI peripherals
 
 # DCVS nodes
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-cpu-ddr-lat/devfreq u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-ddr-lat/devfreq u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-cpu-ddr-latfloor/devfreq u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-ddr-latfloor/devfreq u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
 
 #net sysfs
 
