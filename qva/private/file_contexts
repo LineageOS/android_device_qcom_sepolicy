@@ -40,8 +40,6 @@
 ####### system file ###############
 /system/bin/seempd                              u:object_r:vendor_seempd_exec:s0
 /(product|system/product)/bin/dpmd              u:object_r:vendor_dpmd_exec:s0
-/system/bin/dun-server                          u:object_r:vendor_dun-server_exec:s0
-/system/bin/bt_logger                           u:object_r:vendor_bt_logger_exec:s0
 /system/bin/qvrservice                          u:object_r:vendor_qvrd_exec:s0
 /system/bin/wfdservice                          u:object_r:vendor_wfdservice_exec:s0
 /system/bin/mmi                                 u:object_r:vendor_mmi_sys_exec:s0
@@ -50,6 +48,10 @@
 /system/bin/vpsservice                          u:object_r:vendor_vpsservice_exec:s0
 /system/bin/qspmsvc                             u:object_r:vendor_qspmsvc_exec:s0
 /system/bin/sigma_miracasthalservice            u:object_r:vendor_sigmahal_qti_exec:s0
+
+####### system_ext file ###############
+/(system_ext|system/system_ext)/bin/dun-server  u:object_r:vendor_dun-server_exec:s0
+/(system_ext|system/system_ext)/bin/bt_logger   u:object_r:vendor_bt_logger_exec:s0
 
 ####### data files ################
 /data/dpm(/.*)?                                 u:object_r:vendor_dpmd_data_file:s0
