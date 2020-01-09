@@ -29,16 +29,16 @@
 # General
 #
 
-userdebug_or_eng(` allow qvrd vendor_diag_device:chr_file rw_file_perms');
-#r_dir_file(qvrd, vendor_file)
-r_dir_file(qvrd, vendor_sysfs_kgsl)
+userdebug_or_eng(` allow vendor_qvrd vendor_diag_device:chr_file rw_file_perms');
+#r_dir_file(vendor_qvrd, vendor_file)
+r_dir_file(vendor_qvrd, vendor_sysfs_kgsl)
 
 #
 # Sensors
 #
 
 # Allow access to ADSP & SLPI
-allow qvrd { ion_device vendor_qdsp_device vendor_dsp_device vendor_xdsp_device }:chr_file r_file_perms;
+allow vendor_qvrd { ion_device vendor_qdsp_device vendor_dsp_device vendor_xdsp_device }:chr_file r_file_perms;
 
 
 #
@@ -46,45 +46,45 @@ allow qvrd { ion_device vendor_qdsp_device vendor_dsp_device vendor_xdsp_device 
 #
 
 # Allow access to /sys/devices/virtual/graphics/fb* for lineptr interrupts
-allow qvrd vendor_sysfs_graphics:file r_file_perms;
+allow vendor_qvrd vendor_sysfs_graphics:file r_file_perms;
 
 #
 # Camera
 #
 
-hal_client_domain(qvrd, hal_camera);
+hal_client_domain(vendor_qvrd, hal_camera);
 
 # Allow access to camera HAL and UVC nodes
-allow qvrd device:dir r_dir_perms;
-allow qvrd { gpu_device video_device camera_device sensors_device }:chr_file r_file_perms;
+allow vendor_qvrd device:dir r_dir_perms;
+allow vendor_qvrd { gpu_device video_device camera_device sensors_device }:chr_file r_file_perms;
 
 
 #
 # Perfd
 #
 
-hal_client_domain(qvrd, vendor_hal_perf)
+hal_client_domain(vendor_qvrd, vendor_hal_perf)
 
-allow qvrd fwk_sensor_hwservice:hwservice_manager find;
-hal_client_domain(qvrd, hal_sensors)
+allow vendor_qvrd fwk_sensor_hwservice:hwservice_manager find;
+hal_client_domain(vendor_qvrd, hal_sensors)
 
 # QVRD
 userdebug_or_eng(`
-allow qvrd debugfs:dir r_dir_perms;
-allow qvrd vendor_qti_debugfs:dir r_dir_perms;
-allow qvrd vendor_qti_debugfs:file rw_file_perms;
+allow vendor_qvrd debugfs:dir r_dir_perms;
+allow vendor_qvrd vendor_qti_debugfs:dir r_dir_perms;
+allow vendor_qvrd vendor_qti_debugfs:file rw_file_perms;
 ')
 
 # Allow access to kgsl sysfs nodes for performance optimization
-allow qvrd vendor_sysfs_kgsl:file r_file_perms;
+allow vendor_qvrd vendor_sysfs_kgsl:file r_file_perms;
 
 # Allow access to qvr_external_sensor sysfs nodes for external viewers
-allow qvrd vendor_sysfs_qvr_external_sensor:dir r_dir_perms;
-allow qvrd vendor_sysfs_qvr_external_sensor:file rw_file_perms;
+allow vendor_qvrd vendor_sysfs_qvr_external_sensor:dir r_dir_perms;
+allow vendor_qvrd vendor_sysfs_qvr_external_sensor:file rw_file_perms;
 
 # Allow access to qvr_external_sensor device nodes for external viewers
-allow qvrd vendor_qvr_external_sensor_device:chr_file rw_file_perms;
+allow vendor_qvrd vendor_qvr_external_sensor_device:chr_file rw_file_perms;
 
 # qvr properties
-get_prop(qvrd, vendor_qvr_prop)
-allow qvrd video_device:chr_file w_file_perms;
+get_prop(vendor_qvrd, vendor_qvr_prop)
+allow vendor_qvrd video_device:chr_file w_file_perms;

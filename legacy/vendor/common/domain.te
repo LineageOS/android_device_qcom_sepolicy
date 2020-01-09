@@ -46,7 +46,7 @@ allow domain vendor_configs_file:file r_file_perms;
 userdebug_or_eng(`
 allow domain hal_graphics_composer:fd use;
 ')
-dontaudit domain persist_dpm_prop:file r_file_perms;
+dontaudit domain vendor_persist_dpm_prop:file r_file_perms;
 
 neverallow {
     coredomain

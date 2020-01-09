@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #allow wificond to read FST properties
-get_prop(wificond, fst_prop);
+get_prop(wificond, vendor_fst_prop);

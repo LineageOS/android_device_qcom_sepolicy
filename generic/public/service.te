@@ -24,4 +24,4 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type usta_app_service,        app_api_service, system_api_service, service_manager_type;
+type vendor_usta_app_service,        app_api_service, system_api_service, service_manager_type;

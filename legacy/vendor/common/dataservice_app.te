@@ -25,20 +25,20 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-get_prop(dataservice_app, cnd_vendor_prop)
+get_prop(vendor_dataservice_app, cnd_vendor_prop)
 
-allow dataservice_app sysfs_data:file r_file_perms;
+allow vendor_dataservice_app sysfs_data:file r_file_perms;
 
 userdebug_or_eng(`
-  diag_use(dataservice_app)
+  diag_use(vendor_dataservice_app)
 ')
 
-allow dataservice_app hal_datafactory_hwservice:hwservice_manager find;
-binder_call(dataservice_app, cnd)
+allow vendor_dataservice_app hal_datafactory_hwservice:hwservice_manager find;
+binder_call(vendor_dataservice_app, cnd)
 
-allow dataservice_app hal_imsrcsd_hwservice:hwservice_manager find;
-binder_call(dataservice_app, hal_rcsservice)
+allow vendor_dataservice_app hal_imsrcsd_hwservice:hwservice_manager find;
+binder_call(vendor_dataservice_app, hal_rcsservice)
 
-r_dir_file(dataservice_app, cnd_data_file)
+r_dir_file(vendor_dataservice_app, cnd_data_file)
 
-allow dataservice_app app_api_service:service_manager find;
+allow vendor_dataservice_app app_api_service:service_manager find;

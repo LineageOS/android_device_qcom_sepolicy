@@ -27,4 +27,4 @@
 
 #Add new domain for DataServices
 # Needed for CNEService , uceShimService and other connectivity services
-user=radio seinfo=platform name=.dataservices domain=dataservice_app type=radio_data_file
+user=radio seinfo=platform name=.dataservices domain=vendor_dataservice_app type=radio_data_file

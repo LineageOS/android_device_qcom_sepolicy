@@ -72,7 +72,7 @@ allow vendor_cnd vendor_ipa_vendor_data_file:file r_file_perms;
 add_hwservice(vendor_cnd, vendor_hal_datafactory_hwservice)
 hwbinder_use(vendor_cnd)
 get_prop(vendor_cnd, hwservicemanager_prop)
-binder_call(vendor_cnd, dataservice_app)
+binder_call(vendor_cnd, vendor_dataservice_app)
 binder_call(vendor_cnd, vendor_qtidataservices_app)
 binder_call(vendor_cnd, vendor_ims)
 binder_call(vendor_cnd, vendor_location)

@@ -50,7 +50,7 @@ allow vendor_hal_rcsservice self: { socket qipcrtr_socket } create_socket_perms_
 unix_socket_connect(vendor_hal_rcsservice, vendor_ims, vendor_ims)
 
 # imsrcsd to bind with UceShimService.apk
-binder_call(vendor_hal_rcsservice, dataservice_app)
+binder_call(vendor_hal_rcsservice, vendor_dataservice_app)
 
 # imsrcsd needs read/write access to devpts
 allow vendor_hal_rcsservice devpts:chr_file rw_file_perms;

@@ -26,21 +26,21 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #Add netutils support to install iptables
-use_netutils(dpmd)
+use_netutils(vendor_dpmd)
 
-get_prop(dpmd, persist_dpm_prop)
+get_prop(vendor_dpmd, vendor_persist_dpm_prop)
 
-wakelock_use(dpmd)
+wakelock_use(vendor_dpmd)
 
-r_dir_file(dpmd, vendor_sysfs_data)
+r_dir_file(vendor_dpmd, vendor_sysfs_data)
 
-#Allow dpmd to connect to hal_dpmQMiMgr
-allow dpmd vendor_hal_dpmqmi_hwservice:hwservice_manager find;
-get_prop(dpmd, hwservicemanager_prop)
-binder_call(dpmd,vendor_hal_dpmQmiMgr)
-hwbinder_use(dpmd)
+#Allow vendor_dpmd to connect to hal_dpmQMiMgr
+allow vendor_dpmd vendor_hal_dpmqmi_hwservice:hwservice_manager find;
+get_prop(vendor_dpmd, hwservicemanager_prop)
+binder_call(vendor_dpmd,vendor_hal_dpmQmiMgr)
+hwbinder_use(vendor_dpmd)
 
 #diag
 userdebug_or_eng(`
-    diag_use(dpmd)
+    diag_use(vendor_dpmd)
 ')

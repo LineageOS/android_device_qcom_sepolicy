@@ -25,50 +25,50 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-typeattribute wfdservice coredomain;
-type wfdservice_exec, system_file_type , exec_type, file_type;
+typeattribute vendor_wfdservice coredomain;
+type vendor_wfdservice_exec, system_file_type , exec_type, file_type;
 
-#Allow for transition from init domain to wfdservice
-init_daemon_domain(wfdservice)
+#Allow for transition from init domain to vendor_wfdservice
+init_daemon_domain(vendor_wfdservice)
 
 #Inherit base socket permissions from netd domain
-net_domain(wfdservice)
+net_domain(vendor_wfdservice)
 
-#Allow wfdservice to use Binder IPC
-binder_use(wfdservice)
+#Allow vendor_wfdservice to use Binder IPC
+binder_use(vendor_wfdservice)
 
 #Allow for interaction with Display HAL
-binder_call(wfdservice, surfaceflinger)
+binder_call(vendor_wfdservice, surfaceflinger)
 
-#Allow apps to interact with wfdservice
-binder_call(wfdservice, system_app)
+#Allow apps to interact with vendor_wfdservice
+binder_call(vendor_wfdservice, system_app)
 
 #Allow access to Audio Flinger APIs
-binder_call(wfdservice, audioserver)
+binder_call(vendor_wfdservice, audioserver)
 
 #Allow access to Permission Controller in System Server
-binder_call(wfdservice, system_server)
+binder_call(vendor_wfdservice, system_server)
 
-#Allow wfdservice to be registered with service manager
-add_service(wfdservice, wfdservice_service)
+#Allow vendor_wfdservice to be registered with service manager
+add_service(vendor_wfdservice, vendor_wfdservice_service)
 
 #Allow access to read mmosal_logmask file in /data partition
 userdebug_or_eng(`
-  allow wfdservice system_data_file:file r_file_perms;
+  allow vendor_wfdservice system_data_file:file r_file_perms;
 ')
 
-# Allow access to mediaserver, surfaceflinger and permissionmanager for interaction of wfdservice
-allow wfdservice {audioserver_service permission_service surfaceflinger_service}: service_manager find;
+# Allow access to mediaserver, surfaceflinger and permissionmanager for interaction of vendor_wfdservice
+allow vendor_wfdservice {audioserver_service permission_service surfaceflinger_service}: service_manager find;
 
-hal_client_domain(wfdservice, hal_graphics_allocator);
+hal_client_domain(vendor_wfdservice, hal_graphics_allocator);
 
-hal_client_domain(wfdservice, hal_graphics_composer);
+hal_client_domain(vendor_wfdservice, hal_graphics_composer);
 
 #Allow ion device access
-allow wfdservice ion_device:chr_file r_file_perms;
+allow vendor_wfdservice ion_device:chr_file r_file_perms;
 
 #Allow source to access video UBWC property(for display config)
-get_prop(wfdservice, vendor_sys_video_prop)
+get_prop(vendor_wfdservice, vendor_sys_video_prop)
 
-#Allow the interaction with sigmahal_qti
-binder_call(wfdservice,sigmahal_qti);
+#Allow the interaction with vendor_sigmahal_qti
+binder_call(vendor_wfdservice,vendor_sigmahal_qti);

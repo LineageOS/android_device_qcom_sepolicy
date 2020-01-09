@@ -26,5 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 userdebug_or_eng(`
-  unix_socket_send(radio,seempdw, seempd)
+  unix_socket_send(radio,vendor_seempdw, vendor_seempd)
 ')

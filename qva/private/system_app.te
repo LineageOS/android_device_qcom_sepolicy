@@ -26,13 +26,13 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # access to seemp folder
-allow system_app seemp_data_file:dir r_dir_perms;
-allow system_app seemp_data_file:{ file fifo_file } rw_file_perms;
-binder_call(system_app, seempd)
+allow system_app vendor_seemp_data_file:dir r_dir_perms;
+allow system_app vendor_seemp_data_file:{ file fifo_file } rw_file_perms;
+binder_call(system_app, vendor_seempd)
 
-allow system_app dpmtcm_socket:sock_file w_file_perms;
-allow system_app dpmd:unix_stream_socket connectto;
-allow system_app color_service:service_manager add;
+allow system_app vendor_dpmtcm_socket:sock_file w_file_perms;
+allow system_app vendor_dpmd:unix_stream_socket connectto;
+allow system_app vendor_color_service:service_manager add;
 get_prop(system_app, bluetooth_prop);
 # allow system_app to interact with smcinvoke daemon
 #binder_call(system_app, smcinvoke_daemon)
@@ -41,18 +41,18 @@ get_prop(system_app, bluetooth_prop);
 set_prop(system_app, vendor_wlc_prop);
 
 #WFD
-set_prop(system_app, wfd_service_prop);
+set_prop(system_app, vendor_wfd_service_prop);
 userdebug_or_eng(`
-    get_prop(system_app, wfd_sys_debug_prop);
+    get_prop(system_app, vendor_wfd_sys_debug_prop);
 #Access to MM-OSAL debug prop for parser debugging on WFD sink
-    get_prop(system_app, mm_osal_prop);
+    get_prop(system_app, vendor_mm_osal_prop);
 #Allow access to logmask file in /data/
     allow system_app system_data_file:file r_file_perms;
 ')
-binder_call(system_app, wfdservice)
+binder_call(system_app, vendor_wfdservice)
 
 # allow access to read video SKU property for WFD sink
 get_prop(system_app, vendor_sys_video_prop)
 
 # allow system_app access to wigig Property
-get_prop(system_app, wigig_core_prop);
+get_prop(system_app, vendor_wigig_core_prop);

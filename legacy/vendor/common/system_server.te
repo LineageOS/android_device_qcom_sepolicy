@@ -130,7 +130,7 @@ userdebug_or_eng(`
 allow system_server sysfs_graphics:file rw_file_perms;
 
 # timerslack_ns
-allow system_server { location_app system_app } :file write;
+allow system_server { vendor_location_app system_app } :file write;
 
 #OpenGLES version
 get_prop(system_server, vendor_opengles_prop)

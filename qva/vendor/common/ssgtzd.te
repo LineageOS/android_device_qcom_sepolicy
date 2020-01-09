@@ -32,7 +32,7 @@ type vendor_ssgtzd_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_ssgtzd)
 
 #Allow access to smcinvoke device
-allow vendor_ssgtzd smcinvoke_device:chr_file rw_file_perms;
+allow vendor_ssgtzd vendor_smcinvoke_device:chr_file rw_file_perms;
 
 allow vendor_ssgtzd vendor_ssg_app:unix_stream_socket connectto;
 #Allow access to firmware/image

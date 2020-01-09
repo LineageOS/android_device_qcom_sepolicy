@@ -47,7 +47,7 @@ userdebug_or_eng(`
     allow vendor_location_app_test anr_data_file:dir rw_dir_perms;
     allow vendor_location_app_test anr_data_file:file rw_file_perms;
 
-    unix_socket_send(vendor_location_app_test, seempdw, seempd);
+    unix_socket_send(vendor_location_app_test, vendor_seempdw, vendor_seempd);
     #loc api access from ODLT
     allow vendor_location_app_test self:qipcrtr_socket create_socket_perms_no_ioctl;
 

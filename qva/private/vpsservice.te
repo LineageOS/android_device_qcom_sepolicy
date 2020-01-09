@@ -25,21 +25,21 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-typeattribute vpsservice coredomain;
-type vpsservice_exec, system_file_type, exec_type, file_type;
+typeattribute vendor_vpsservice coredomain;
+type vendor_vpsservice_exec, system_file_type, exec_type, file_type;
 
-init_daemon_domain(vpsservice)
+init_daemon_domain(vendor_vpsservice)
 
-add_service(vpsservice, vendor_vps_service)
-binder_use(vpsservice);
-binder_call(vpsservice, system_server);
-binder_service(vpsservice);
+add_service(vendor_vpsservice, vendor_vps_service)
+binder_use(vendor_vpsservice);
+binder_call(vendor_vpsservice, system_server);
+binder_service(vendor_vpsservice);
 
-hal_client_domain(vpsservice, hal_graphics_composer)
-hal_client_domain(vpsservice, hal_graphics_allocator)
-allow vpsservice surfaceflinger:binder call;
-allow vpsservice surfaceflinger:fd use;
-allow vpsservice ion_device:chr_file { open read };
-allow vpsservice media_rw_data_file:dir create_dir_perms;
-allow vpsservice media_rw_data_file:file create_file_perms;
-allow vpsservice gpu_device:chr_file rw_file_perms;
+hal_client_domain(vendor_vpsservice, hal_graphics_composer)
+hal_client_domain(vendor_vpsservice, hal_graphics_allocator)
+allow vendor_vpsservice surfaceflinger:binder call;
+allow vendor_vpsservice surfaceflinger:fd use;
+allow vendor_vpsservice ion_device:chr_file { open read };
+allow vendor_vpsservice media_rw_data_file:dir create_dir_perms;
+allow vendor_vpsservice media_rw_data_file:file create_file_perms;
+allow vendor_vpsservice gpu_device:chr_file rw_file_perms;

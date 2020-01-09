@@ -28,8 +28,8 @@ type vendor_ustaservice_app, domain;
 app_domain(vendor_ustaservice_app)
 
 #TODO(b/142498985): Review sepolicy neverallow violation
-#allow vendor_ustaservice_app usta_app_service:service_manager add;
-allow vendor_ustaservice_app usta_app_service:service_manager find;
+#allow vendor_ustaservice_app vendor_usta_app_service:service_manager add;
+allow vendor_ustaservice_app vendor_usta_app_service:service_manager find;
 allow vendor_ustaservice_app activity_service:service_manager find;
 allow vendor_ustaservice_app app_api_service:service_manager find;
 

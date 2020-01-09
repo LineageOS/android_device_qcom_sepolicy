@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-hwbinder_use(vpsservice);
-hal_client_domain(vpsservice, vendor_hal_vpp)
-hal_client_domain(vpsservice, vendor_hal_iop)
-get_prop(vpsservice, vendor_iop_prop)
+hwbinder_use(vendor_vpsservice);
+hal_client_domain(vendor_vpsservice, vendor_hal_vpp)
+hal_client_domain(vendor_vpsservice, vendor_hal_iop)
+get_prop(vendor_vpsservice, vendor_iop_prop)

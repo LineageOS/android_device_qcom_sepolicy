@@ -26,49 +26,49 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-typeattribute dpmd coredomain;
-typeattribute dpmd mlstrustedsubject;
-type dpmd_exec, exec_type, system_file_type, file_type;
+typeattribute vendor_dpmd coredomain;
+typeattribute vendor_dpmd mlstrustedsubject;
+type vendor_dpmd_exec, exec_type, system_file_type, file_type;
 
-init_daemon_domain(dpmd)
+init_daemon_domain(vendor_dpmd)
 
-net_domain(dpmd)
+net_domain(vendor_dpmd)
 
-allow dpmd {
-    dpmd_exec
+allow vendor_dpmd {
+    vendor_dpmd_exec
     system_file
 }:file x_file_perms;
 
-allow dpmd dpmd_data_file:file create_file_perms;
-allow dpmd dpmd_data_file:dir create_dir_perms;
-r_dir_file(dpmd,proc_net)
+allow vendor_dpmd vendor_dpmd_data_file:file create_file_perms;
+allow vendor_dpmd vendor_dpmd_data_file:dir create_dir_perms;
+r_dir_file(vendor_dpmd,proc_net)
 
-allow dpmd self:capability {
+allow vendor_dpmd self:capability {
     setuid
     net_raw
     net_admin
 };
 
-allow dpmd netutils_wrapper:process sigkill;
-allow dpmd self:capability2 wake_alarm;
+allow vendor_dpmd netutils_wrapper:process sigkill;
+allow vendor_dpmd self:capability2 wake_alarm;
 
-r_dir_file(dpmd, appdomain)
+r_dir_file(vendor_dpmd, appdomain)
 
-wakelock_use(dpmd)
-allow dpmd shell_exec:file rx_file_perms;
-dontaudit dpmd self:capability sys_module;
-set_prop(dpmd, persist_dpm_prop)
-get_prop(dpmd, persist_dpm_prop)
-#allow dpmd to create socket
-allow dpmd self:socket create_socket_perms_no_ioctl;
-allow dpmd self:{ netlink_socket netlink_generic_socket } create_socket_perms_no_ioctl;
-dpmd_socket_perm(priv_app)
-dpmd_socket_perm(system_server)
-dpmd_socket_perm(system_app)
-dpmd_socket_perm(untrusted_app)
-dpmd_socket_perm(untrusted_app_25)
-dpmd_socket_perm(platform_app)
-#allow dpmd to write to /proc/net/sys
-allow dpmd proc_net:file write;
-#self kill rule to kill dpmd child process which executes iptable commands
-allow dpmd self:capability kill;
+wakelock_use(vendor_dpmd)
+allow vendor_dpmd shell_exec:file rx_file_perms;
+dontaudit vendor_dpmd self:capability sys_module;
+set_prop(vendor_dpmd, vendor_persist_dpm_prop)
+get_prop(vendor_dpmd, vendor_persist_dpm_prop)
+#allow vendor_dpmd to create socket
+allow vendor_dpmd self:socket create_socket_perms_no_ioctl;
+allow vendor_dpmd self:{ netlink_socket netlink_generic_socket } create_socket_perms_no_ioctl;
+vendor_dpmd_socket_perm(priv_app)
+vendor_dpmd_socket_perm(system_server)
+vendor_dpmd_socket_perm(system_app)
+vendor_dpmd_socket_perm(untrusted_app)
+vendor_dpmd_socket_perm(untrusted_app_25)
+vendor_dpmd_socket_perm(platform_app)
+#allow vendor_dpmd to write to /proc/net/sys
+allow vendor_dpmd proc_net:file write;
+#self kill rule to kill vendor_dpmd child process which executes iptable commands
+allow vendor_dpmd self:capability kill;

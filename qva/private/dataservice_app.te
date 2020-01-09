@@ -26,10 +26,10 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-add_service(dataservice_app, dpmservice)
-allow dataservice_app system_app_data_file:dir create_dir_perms;
-allow dataservice_app dpmd_socket:sock_file write;
-allow dataservice_app dpmd_data_file:dir rw_dir_perms;
-allow dataservice_app dpmd_data_file:file create_file_perms;
-unix_socket_connect(dataservice_app,dpmd,dpmd);
-set_prop(dataservice_app, persist_dpm_prop)
+add_service(vendor_dataservice_app, vendor_dpmservice)
+allow vendor_dataservice_app system_app_data_file:dir create_dir_perms;
+allow vendor_dataservice_app vendor_dpmd_socket:sock_file write;
+allow vendor_dataservice_app vendor_dpmd_data_file:dir rw_dir_perms;
+allow vendor_dataservice_app vendor_dpmd_data_file:file create_file_perms;
+unix_socket_connect(vendor_dataservice_app,vendor_dpmd,vendor_dpmd);
+set_prop(vendor_dataservice_app, vendor_persist_dpm_prop)

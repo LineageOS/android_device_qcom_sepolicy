@@ -52,7 +52,7 @@ allow vendor_qdma_app vendor_qdma_data_file:file create_file_perms;
 allow vendor_qdma_app user_service:service_manager find;
 
 # allow access to socket
-unix_socket_connect(vendor_qdma_app, dpmtcm, dpmd)
+unix_socket_connect(vendor_qdma_app, vendor_dpmtcm, vendor_dpmd)
 
 # allow qdma_socket
 allow vendor_qdma_app vendor_qdma_socket:dir w_dir_perms;

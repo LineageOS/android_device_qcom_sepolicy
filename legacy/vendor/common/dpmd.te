@@ -26,30 +26,30 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #Add netutils support to install iptables
-use_netutils(dpmd)
+use_netutils(vendor_dpmd)
 
-get_prop(dpmd, persist_dpm_prop)
+get_prop(vendor_dpmd, vendor_persist_dpm_prop)
 
-allow dpmd sysfs_wake_lock:file rw_file_perms;
+allow vendor_dpmd sysfs_wake_lock:file rw_file_perms;
 
-allow dpmd sysfs_data:dir r_dir_perms;
+allow vendor_dpmd sysfs_data:dir r_dir_perms;
 
-allow dpmd sysfs_data:file r_file_perms;
+allow vendor_dpmd sysfs_data:file r_file_perms;
 
 
 #socket, self
-allow dpmd smem_log_device:chr_file rw_file_perms;
+allow vendor_dpmd smem_log_device:chr_file rw_file_perms;
 
-#Allow dpmd to acquire lock for iptables
-allow dpmd system_file:file lock;
+#Allow vendor_dpmd to acquire lock for iptables
+allow vendor_dpmd system_file:file lock;
 
-#Allow dpmd to connect to hal_dpmQMiMgr
-allow dpmd hal_dpmqmi_hwservice:hwservice_manager find;
-get_prop(dpmd, hwservicemanager_prop)
-binder_call(dpmd,hal_dpmQmiMgr)
-hwbinder_use(dpmd)
+#Allow vendor_dpmd to connect to hal_dpmQMiMgr
+allow vendor_dpmd hal_dpmqmi_hwservice:hwservice_manager find;
+get_prop(vendor_dpmd, hwservicemanager_prop)
+binder_call(vendor_dpmd,hal_dpmQmiMgr)
+hwbinder_use(vendor_dpmd)
 
 #diag
 userdebug_or_eng(`
-    diag_use(dpmd)
+    diag_use(vendor_dpmd)
 ')

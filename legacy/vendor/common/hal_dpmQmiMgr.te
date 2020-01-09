@@ -44,7 +44,7 @@ hwbinder_use(hal_dpmQmiMgr)
 get_prop(hal_dpmQmiMgr, hwservicemanager_prop)
 
 #Allow binder call from dpmd
-binder_call(hal_dpmQmiMgr,dpmd)
+binder_call(hal_dpmQmiMgr,vendor_dpmd)
 
 #sysfs_data file permissions
 allow hal_dpmQmiMgr sysfs_data:file r_file_perms;

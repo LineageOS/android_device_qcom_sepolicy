@@ -26,6 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 userdebug_or_eng(`
-    r_dir_file(platform_app, seemp_data_file)
-    allow platform_app seemp_data_file: file w_file_perms;
+    r_dir_file(platform_app, vendor_seemp_data_file)
+    allow platform_app vendor_seemp_data_file: file w_file_perms;
 ')

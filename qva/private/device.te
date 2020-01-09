@@ -27,4 +27,4 @@
 
 
 #Define smd7 device
-type smd7_device, dev_type;
+type vendor_smd7_device, dev_type;

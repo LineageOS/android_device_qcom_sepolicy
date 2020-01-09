@@ -53,6 +53,6 @@ allow ssg_app self:qipcrtr_socket create_socket_perms_no_ioctl;
 allow ssg_app proc_cpuinfo:file r_file_perms;
 allow ssg_app proc_meminfo:file r_file_perms;
 
-unix_socket_connect(ssg_app,dpmtcm, dpmd);
+unix_socket_connect(ssg_app,vendor_dpmtcm, vendor_dpmd);
 
 r_dir_file(ssg_app, proc)

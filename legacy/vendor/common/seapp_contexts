@@ -32,7 +32,7 @@ user=system seinfo=platform name=com.qualcomm.location.XT isPrivApp=true domain=
 user=system seinfo=platform name=com.qualcomm.qti.auth.fidocryptoservice domain=qsee_svc_app type=system_app_data_file
 
 # AtFwd app
-user=_app seinfo=platform name=com.qualcomm.telephony domain=qtelephony type=app_data_file levelFrom=all
+user=_app seinfo=platform name=com.qualcomm.telephony domain=vendor_qtelephony type=app_data_file levelFrom=all
 
 #Add new domain for QDMA
 user=system seinfo=platform name=com.qualcomm.qti.qdma domain=qdma_app type=system_app_data_file

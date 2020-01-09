@@ -48,7 +48,7 @@ binder_call(mediaserver, poweroffhandler);
 #This is required for thermal sysfs access
 r_dir_file(mediaserver, sysfs_thermal);
 
-binder_call(mediaserver, wfdservice)
+binder_call(mediaserver, vendor_wfdservice)
 
 #allow mediaserver to access adsprpc_prop
 get_prop(mediaserver, adsprpc_prop)

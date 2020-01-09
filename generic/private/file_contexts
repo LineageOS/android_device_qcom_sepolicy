@@ -24,7 +24,7 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-/data/misc/elabel(/.*)?         u:object_r:elabel_data_file:s0
-/data/misc/seemp(/.*)?          u:object_r:seemp_data_file:s0
+/data/misc/elabel(/.*)?         u:object_r:vendor_elabel_data_file:s0
+/data/misc/seemp(/.*)?          u:object_r:vendor_seemp_data_file:s0
 
 /system/etc/init\.qcom\.testscripts\.sh         u:object_r:qti-testscripts_exec:s0

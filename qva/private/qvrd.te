@@ -25,32 +25,32 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-typeattribute qvrd coredomain;
-typeattribute qvrd mlstrustedsubject;
-type qvrd_exec, system_file_type, exec_type, file_type;
+typeattribute vendor_qvrd coredomain;
+typeattribute vendor_qvrd mlstrustedsubject;
+type vendor_qvrd_exec, system_file_type, exec_type, file_type;
 
-init_daemon_domain(qvrd)
+init_daemon_domain(vendor_qvrd)
 
 #
 # General
 #
 
-binder_call(qvrd, system_server);
+binder_call(vendor_qvrd, system_server);
 
-# Allow interracting with qvrd directory
-allow qvrd qvrd_data_file:dir create_dir_perms;
-allow qvrd qvrd_data_file:file create_file_perms;
+# Allow interracting with vendor_qvrd directory
+allow vendor_qvrd vendor_qvrd_data_file:dir create_dir_perms;
+allow vendor_qvrd vendor_qvrd_data_file:file create_file_perms;
 
 #allow binder use for checking permissions
-binder_use(qvrd)
-allow qvrd permission_service:service_manager find;
+binder_use(vendor_qvrd)
+allow vendor_qvrd permission_service:service_manager find;
 
 #Allow hardware binder use
-hwbinder_use(qvrd)
-get_prop(qvrd, hwservicemanager_prop)
+hwbinder_use(vendor_qvrd)
+get_prop(vendor_qvrd, hwservicemanager_prop)
 
 # Allow access to our socket
-allow qvrd qvrd_socket:sock_file rw_file_perms;
+allow vendor_qvrd vendor_qvrd_socket:sock_file rw_file_perms;
 
 #
 # Sensors
@@ -58,36 +58,36 @@ allow qvrd qvrd_socket:sock_file rw_file_perms;
 
 
 # Allow access to sensor1 API
-allow qvrd self:socket create_socket_perms_no_ioctl;
+allow vendor_qvrd self:socket create_socket_perms_no_ioctl;
 
 #
 # Display
 #
 
 # Allow access to /dev/graphics/fb0 for configuring vsync interrupts
-allow qvrd graphics_device:dir r_dir_perms;
-allow qvrd graphics_device:chr_file rw_file_perms;
+allow vendor_qvrd graphics_device:dir r_dir_perms;
+allow vendor_qvrd graphics_device:chr_file rw_file_perms;
 
 #
 # Graphics
 #
 
 #Allow hal graphics mapper permissions
-hal_client_domain(qvrd, hal_graphics_composer);
+hal_client_domain(vendor_qvrd, hal_graphics_composer);
 
 #Allow hal graphics allocator permissions
-hal_client_domain(qvrd, hal_graphics_allocator);
+hal_client_domain(vendor_qvrd, hal_graphics_allocator);
 
 #
 # Scheduler
 #
 
-allow qvrd self:capability { sys_nice };
+allow vendor_qvrd self:capability { sys_nice };
 userdebug_or_eng(`
-  allow qvrd su:process setsched;
+  allow vendor_qvrd su:process setsched;
 ')
-allow qvrd appdomain:process setsched;
+allow vendor_qvrd appdomain:process setsched;
 
 # whitelisting ioctlcmd c302
-allowxperm qvrd self:socket ioctl msm_sock_ipc_ioctls_system;
-allow qvrd self:socket ioctl;
+allowxperm vendor_qvrd self:socket ioctl msm_sock_ipc_ioctls_system;
+allow vendor_qvrd self:socket ioctl;

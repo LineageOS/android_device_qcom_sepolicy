@@ -26,10 +26,10 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #####################################
-# dpmd_socket_perm(clientdomain)
-# allow dpmd to use inet socket created by app.
-define(`dpmd_socket_perm', `
-allow dpmd $1:fd use;
-allow dpmd $1:tcp_socket rw_socket_perms;
+# vendor_dpmd_socket_perm(clientdomain)
+# allow vendor_dpmd to use inet socket created by app.
+define(`vendor_dpmd_socket_perm', `
+allow vendor_dpmd $1:fd use;
+allow vendor_dpmd $1:tcp_socket rw_socket_perms;
 ')
 #####################################

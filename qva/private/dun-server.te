@@ -25,16 +25,16 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type dun-server_exec, system_file_type, exec_type, file_type;
-typeattribute  dun-server  bluetoothdomain;
-typeattribute dun-server coredomain;
+type vendor_dun-server_exec, system_file_type, exec_type, file_type;
+typeattribute  vendor_dun-server  bluetoothdomain;
+typeattribute vendor_dun-server coredomain;
 
-allow bluetooth dun-server:unix_stream_socket connectto;
-allow dun-server {
+allow bluetooth vendor_dun-server:unix_stream_socket connectto;
+allow vendor_dun-server {
     serial_device
-    smd7_device
+    vendor_smd7_device
 }:chr_file rw_file_perms;
 
-init_daemon_domain(dun-server)
+init_daemon_domain(vendor_dun-server)
 
-bluetooth_domain(dun-server)
+bluetooth_domain(vendor_dun-server)
