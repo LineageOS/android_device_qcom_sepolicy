@@ -44,7 +44,7 @@
 
 ####### system file ###############
 /system/bin/seempd                              u:object_r:seempd_exec:s0
-/system/product/bin/dpmd                        u:object_r:dpmd_exec:s0
+/(product|system/product)/bin/dpmd              u:object_r:dpmd_exec:s0
 /system/bin/dun-server                          u:object_r:dun-server_exec:s0
 /system/bin/bt_logger                           u:object_r:bt_logger_exec:s0
 /system/etc/init\.qcom\.testscripts\.sh         u:object_r:qti-testscripts_exec:s0
