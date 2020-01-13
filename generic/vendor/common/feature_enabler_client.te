@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019 - 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -31,6 +31,7 @@ type vendor_feature_enabler_client_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_feature_enabler_client)
 allow vendor_feature_enabler_client tee_device:chr_file rw_file_perms;
 allow vendor_feature_enabler_client ion_device:chr_file rw_file_perms;
+allow vendor_feature_enabler_client vendor_smcinvoke_device:chr_file rw_file_perms;
 unix_socket_connect(vendor_feature_enabler_client , vendor_ssgtzd, vendor_ssgtzd)
 
 
@@ -44,3 +45,8 @@ r_dir_file(vendor_feature_enabler_client, vendor_persist_data_file)
 # Binder access for featenab_client.service
 vndbinder_use(vendor_feature_enabler_client)
 allow vendor_feature_enabler_client vendor_qfeatenab_client_service:service_manager { add find };
+
+#Allow access to display services and graphics_device for DRM
+allow vendor_feature_enabler_client vendor_qdisplay_service:service_manager find;
+hal_client_domain(vendor_feature_enabler_client, hal_graphics_composer)
+allow vendor_feature_enabler_client graphics_device:chr_file rw_file_perms;
