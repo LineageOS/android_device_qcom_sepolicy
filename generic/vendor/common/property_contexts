@@ -123,3 +123,6 @@ vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0
 
 #vendor-adsprpc
 vendor.fastrpc.                  u:object_r:vendor_adsprpc_prop:s0
+
+# Property for storing soc_id
+ro.vendor.qti.soc       u:object_r:vendor_soc_prop:s0

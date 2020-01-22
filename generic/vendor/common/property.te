@@ -97,3 +97,6 @@ vendor_restricted_prop(vendor_adsprpc_prop);
 
 # Wifi version recorder
 vendor_internal_prop(vendor_wifi_version);
+
+# Property for storing soc_id
+vendor_internal_prop(vendor_soc_prop)

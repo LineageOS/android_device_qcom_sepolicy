@@ -175,3 +175,6 @@ set_prop(vendor_qti_init_shell, vendor_wifi_prop)
 allow vendor_qti_init_shell proc_meminfo:file r_file_perms;
 
 allow vendor_qti_init_shell vendor_sysfs_suspend:file w_file_perms;
+
+# Set ro.vendor.qti.soc to soc_id in init early boot script
+set_prop(vendor_qti_init_shell, vendor_soc_prop)
