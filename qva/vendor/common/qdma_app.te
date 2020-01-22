@@ -74,3 +74,6 @@ set_prop(vendor_qdma_app, vendor_qdma_prop);
 
 # allow cgroup access
 allow vendor_qdma_app cgroup:file rw_file_perms;
+
+#allow mediametrics_service
+allow vendor_qdma_app mediametrics_service:service_manager find;
