@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,7 +25,19 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# for system_server to access /sys/kernel/debug/binder/state
-/sys/kernel/debug/binder/state                                      u:object_r:vendor_binder_state:s0
-/vendor/bin/Loopback_native 	                                    u:object_r:vendor_qtiloopback_native_exec:s0
-/vendor/bin/qttestservice                                           u:object_r:vendor_qttestservice_exec:s0
+
+#Define Domain
+type vendor_qttestservice, domain;
+type vendor_qttestservice_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_qttestservice)
+
+#Allow to use Vendor Binder IPC
+vndbinder_use(vendor_qttestservice)
+
+#Allow to host qttestservice
+add_service(vendor_qttestservice, vendor_qutestservice_service)
+
+#allow load firmware
+r_dir_file(vendor_qttestservice, firmware_file)
+
