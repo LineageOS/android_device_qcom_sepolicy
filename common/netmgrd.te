@@ -94,6 +94,9 @@ allowxperm netmgrd self:socket ioctl msm_sock_ipc_ioctls;
 
 #Allow netmgrd to use netd HAL via HIDL
 get_prop(netmgrd, hwservicemanager_prop)
+binder_use(netmgrd)
 hwbinder_use(netmgrd)
 binder_call(netmgrd, netd)
 allow netmgrd system_net_netd_hwservice:hwservice_manager find;
+allow netmgrd netd_service:service_manager find;
+allow netmgrd dnsresolver_service:service_manager find;
