@@ -25,6 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 com.qualcomm.qti.ant::IAntHci                                   u:object_r:hal_bluetooth_hwservice:s0
+com.dsi.ant::IAnt                                               u:object_r:hal_bluetooth_hwservice:s0
 com.qualcomm.qti.ims.radio::IImsRadio                           u:object_r:vendor_vnd_ims_radio_hwservice:s0
 com.qualcomm.qti.qcril.qcrilhook::IQtiOemHook                   u:object_r:vendor_vnd_qcrilhook_hwservice:s0
 vendor.qti.hardware.data.iwlan::IIWlan                          u:object_r:vendor_hal_iwlan_hwservice:s0

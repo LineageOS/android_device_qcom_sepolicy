@@ -39,6 +39,7 @@ allow vendor_netmgrd self:netlink_socket create_socket_perms_no_ioctl;
 allow vendor_netmgrd self:socket create_socket_perms;
 allowxperm vendor_netmgrd self:socket ioctl msm_sock_ipc_ioctls;
 allowxperm vendor_netmgrd self:udp_socket ioctl priv_sock_ioctls;
+allow vendor_netmgrd self:tipc_socket { create_socket_perms_no_ioctl };
 
 allow vendor_netmgrd sysfs_net:dir r_dir_perms;
 allow vendor_netmgrd sysfs_net:file rw_file_perms;

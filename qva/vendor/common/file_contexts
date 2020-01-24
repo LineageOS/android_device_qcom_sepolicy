@@ -141,6 +141,7 @@
 ###################################
 # sysfs files
 #
+/sys/devices/virtual/net/bond0/bonding/queue_id                     u:object_r:vendor_sysfs_bond0:s0
 /sys/devices/virtual/net/bond0/queues/rx-0/rps_cpus                 u:object_r:vendor_sysfs_bond0:s0
 /sys/devices/virtual/net/bond0/statistics/rx_bytes                  u:object_r:vendor_sysfs_bond0:s0
 /sys/devices/virtual/net/bond0/statistics/tx_bytes                  u:object_r:vendor_sysfs_bond0:s0

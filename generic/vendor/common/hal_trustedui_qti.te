@@ -38,7 +38,7 @@ hal_attribute_hwservice(vendor_hal_trustedui, vendor_hal_trustedui_hwservice)
 
 hal_client_domain(vendor_hal_trustedui_qti, hal_graphics_allocator);
 hal_client_domain(vendor_hal_trustedui_qti, hal_graphics_composer);
-hal_client_domain(vendor_hal_trustedui_qti, hal_systemhelper);
+hal_client_domain(vendor_hal_trustedui_qti, vendor_hal_systemhelper);
 
 allow vendor_hal_trustedui_qti vendor_sysfs_sectouch:file rw_file_perms;
 allow vendor_hal_trustedui_qti vendor_tui_data_file:file rw_file_perms;
@@ -48,4 +48,4 @@ allow vendor_hal_trustedui_qti ion_device:chr_file r_file_perms;
 allow vendor_hal_trustedui_qti surfaceflinger:fd use;
 
 allow vendor_hal_trustedui_qti tee_device:chr_file rw_file_perms;
-binder_call(vendor_hal_trustedui_qti, systemhelper_app)
+binder_call(vendor_hal_trustedui_qti, vendor_systemhelper_app)

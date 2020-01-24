@@ -41,6 +41,7 @@ allow hal_bootctl vendor_ab_block_device:blk_file getattr;
 allow hal_bootctl vendor_xbl_block_device:blk_file getattr;
 allow hal_bootctl vendor_modem_block_device:blk_file getattr;
 allow hal_bootctl system_block_device:blk_file getattr;
+allow hal_bootctl vendor_custom_ab_block_device:blk_file getattr;
 allow hal_bootctl vendor_ab_block_device:blk_file getattr;
 allow hal_bootctl recovery_block_device:blk_file getattr;
 allow hal_bootctl vendor_mdtp_device:blk_file getattr;
