@@ -99,6 +99,7 @@
 /(vendor|system/vendor)/bin/qfp-daemon                                             u:object_r:vendor_qfp-daemon_exec:s0
 /(vendor|system/vendor)/bin/adpl                                                   u:object_r:vendor_adpl_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service           u:object_r:vendor_hal_esepowermanager_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.1-service           u:object_r:vendor_hal_esepowermanager_qti_exec:s0
 /(vendor|system/vendor)/bin/esepmdaemon                                            u:object_r:vendor_esepmdaemon_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper                                             u:object_r:vendor_mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/ks                                                     u:object_r:vendor_mdm_helper_exec:s0
