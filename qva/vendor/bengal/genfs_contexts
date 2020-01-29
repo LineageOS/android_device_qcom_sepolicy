@@ -62,6 +62,7 @@ genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-ddr-latfloor/devfreq u:ob
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
 
 #net sysfs
+genfscon sysfs /devices/platform/soc/c800000.qcom,icnss u:object_r:sysfs_net:s0
 
 #fps sysfs-node
 
