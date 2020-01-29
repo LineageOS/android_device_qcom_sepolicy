@@ -172,3 +172,9 @@
 
 # Bluetooth LAZY HAL
 /vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti-lazy        u:object_r:hal_bluetooth_default_exec:s0
+
+###################################
+# sysfs files
+#
+/sys/devices/virtual/block/dm-[0-6]/queue/read_ahead_kb                 u:object_r:sysfs_mmc_host:s0
+
