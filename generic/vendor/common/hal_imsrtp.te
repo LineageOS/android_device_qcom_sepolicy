@@ -47,3 +47,7 @@ r_dir_file(hal_imsrtp, sysfs_diag)
 
 get_prop(hal_imsrtp, ims_prop)
 binder_call(hal_imsrtp, radio)
+
+userdebug_or_eng('
+binder_call(hal_imsrtp, vtloopback_app)
+')
