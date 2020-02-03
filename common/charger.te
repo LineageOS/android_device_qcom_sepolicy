@@ -1,0 +1,18 @@
+r_dir_file(charger, sysfs_battery_supply)
+r_dir_file(charger, sysfs_usb_supply)
+r_dir_file(charger, sysfs_thermal);
+r_dir_file(charger, persist_file);
+r_dir_file(charger, sysfs_graphics);
+
+#allow charger read rtc device file
+allow charger rtc_device:chr_file r_file_perms;
+allow charger persist_bms_file:dir rw_dir_perms;
+allow charger persist_bms_file:file create_file_perms;
+
+allow charger {
+    sysfs_battery_supply
+    sysfs_usb_supply
+    sysfs_graphics
+}:file rw_file_perms;
+
+allow charger self:capability2 wake_alarm;
