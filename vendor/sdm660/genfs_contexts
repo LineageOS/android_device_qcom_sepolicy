@@ -35,6 +35,14 @@ genfscon  sysfs /devices/soc/4080000.qcom,mss/subsys4/name                u:obje
 genfscon  sysfs /devices/soc/soc:qcom,kgsl-hyp/subsys1/name               u:object_r:sysfs_ssr:s0
 genfscon  sysfs /devices/soc/15700000.qcom,lpass/subsys2/name             u:object_r:sysfs_ssr:s0
 
+#SSR nodes for sdm660 with kernel 4.14 has different path
+genfscon  sysfs /devices/platform/soc/4080000.qcom,mss/subsys0/name       u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/platform/soc/cce0000.qcom,venus/subsys1/name     u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/platform/soc/15700000.qcom,lpass/subsys2/name    u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/platform/soc/1a300000.qcom,turing/subsys3/name   u:object_r:sysfs_ssr:s0
+genfscon  sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys4/name      u:object_r:sysfs_ssr:s0
+genfscon  sysfs /bus/msm_subsys                                           u:object_r:sysfs_ssr:s0
+
 #for sdm630
 genfscon  sysfs   /devices/soc/4080000.qcom,mss/subsys3/name              u:object_r:sysfs_ssr:s0
 
