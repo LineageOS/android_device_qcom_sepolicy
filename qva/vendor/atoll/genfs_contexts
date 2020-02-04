@@ -38,6 +38,7 @@ genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.q
 genfscon sysfs /devices/platform/soc/88c000.i2c/i2c-2/2-0008/88c000.i2c:qcom,smb1355@8:qcom,smb1355-charger@1000/power_supply/parallel u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/88c000.i2c/i2c-2/2-000c/88c000.i2c:qcom,smb1355@c:qcom,smb1355-charger@1000/power_supply/parallel u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/88c000.i2c/i2c-2/2-0010/88c000.i2c:qcom,smb1390@10:qcom,charge_pump/power_supply/charge_pump u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-0034/a8c000.i2c:qcom,smb1396@34:qcom,div2_cp/power_supply/charge_pump_master u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /class/qcom-battery u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /class/charge_pump u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-000c/a8c000.i2c:qcom,smb1355@c:qcom,smb1355-charger@1000/power_supply/parallel u:object_r:sysfs_battery_supply:s0
