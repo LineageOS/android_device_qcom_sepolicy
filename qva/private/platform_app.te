@@ -41,3 +41,5 @@ userdebug_or_eng(`
 allow platform_app vendor_color_service:service_manager find;
 # WigigSettings need to read persist.vendor.wigig.icon.disable
 get_prop(platform_app, vendor_wigig_core_prop)
+# SVA app and OEM voice activation app need to find soundtrigger_middleware_service
+allow platform_app soundtrigger_middleware_service:service_manager find;
