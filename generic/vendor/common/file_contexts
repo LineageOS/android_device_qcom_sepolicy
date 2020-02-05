@@ -303,8 +303,9 @@
 /data/vendor/audio(/.*)? u:object_r:vendor_audio_data_file:s0
 
 # /
-/tombstones             u:object_r:rootfs:s0
-/vendor/dsp(/.*)?       u:object_r:adsprpcd_file:s0
+/tombstones                          u:object_r:rootfs:s0
+/vendor/dsp(/.*)?                    u:object_r:adsprpcd_file:s0
+/vendor/vm-system(/.*)?              u:object_r:vendor_vm_system_file:s0
 
 # /persist
 /mnt/vendor/persist/data(/.*)?       u:object_r:vendor_persist_data_file:s0

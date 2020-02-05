@@ -29,6 +29,7 @@ allow init {
     cache_file
     mnt_vendor_file
     storage_file
+    vendor_vm_system_file
 }:dir mounton;
 
 # symlink /sdcard to backing block
@@ -62,6 +63,7 @@ allow init {
     vendor_ssd_block_device
     vendor_modem_block_device
     vendor_mdtp_device
+    vendor_vm_data_block_device
 }:{ blk_file lnk_file } relabelto;
 
 #Allow /sys access to write zram disksize
