@@ -32,3 +32,13 @@ genfscon sysfs /devices/platform/soc/6002000.stm/coresight-stm u:object_r:vendor
 genfscon sysfs /devices/platform/soc/soc:hwevent/coresight-hwevent u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/6b0f000.csr/coresight-swao-csr u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/soc:dummy_source/coresight-modem-diag u:object_r:vendor_sysfs_qdss_dev:s0
+
+# Power supply device nodes
+genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/battery u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/usb u:object_r:vendor_sysfs_usb_supply:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/wireless u:object_r:vendor_sysfs_usb_supply:s0
+
+# LED device nodes
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8350c@2:qcom,leds@ef00/leds/red u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8350c@2:qcom,leds@ef00/leds/green u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8350c@2:qcom,leds@ef00/leds/blue u:object_r:vendor_sysfs_graphics:s0
