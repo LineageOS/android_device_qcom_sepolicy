@@ -41,3 +41,6 @@ genfscon sysfs /module/rmnet_perf/parameters u:object_r:sysfs_rmnet:s0
 
 genfscon sysfs /kernel/qvr_external_sensor u:object_r:sysfs_qvr_external_sensor:s0
 genfscon sysfs /devices/system/memory/ u:object_r:sysfs_memory_offline:s0
+
+genfscon sysfs /kernel/slab/zs_handle/store_user u:object_r:sysfs_slab_zshandle_storeuser:s0
+genfscon sysfs /kernel/slab/zspage/store_user u:object_r:sysfs_slab_zspage_storeuser:s0
