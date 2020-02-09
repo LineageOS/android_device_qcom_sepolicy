@@ -92,6 +92,7 @@ genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.q
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,qpnp-smb5/power_supply/usb u:object_r:sysfs_usb_supply:s0
 genfscon sysfs /devices/platform/soc/884000.i2c/i2c-2/2-000c/884000.i2c:qcom,smb1355@c:qcom,smb1355-charger@1000/power_supply/parallel u:object_r:sysfs_usb_supply:s0
 genfscon sysfs /devices/platform/soc/884000.i2c/i2c-2/2-0010/884000.i2c:qcom,smb1390@10:qcom,charge_pump/power_supply/charge_pump_master u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /devices/platform/soc/884000.i2c/i2c-2/2-0025/power_supply/wireless u:object_r:sysfs_usb_supply:s0
 
 # LED device nodes
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm8150l@5:qcom,leds@d000/leds/red u:object_r:sysfs_graphics:s0

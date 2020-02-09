@@ -38,6 +38,7 @@ genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.q
 genfscon sysfs /devices/platform/soc/88c000.i2c/i2c-2/2-0008/88c000.i2c:qcom,smb1355@8:qcom,smb1355-charger@1000/power_supply/parallel u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/88c000.i2c/i2c-2/2-000c/88c000.i2c:qcom,smb1355@c:qcom,smb1355-charger@1000/power_supply/parallel u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/88c000.i2c/i2c-2/2-0010/88c000.i2c:qcom,smb1390@10:qcom,charge_pump/power_supply/charge_pump u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-0034/a8c000.i2c:qcom,smb1396@34:qcom,div2_cp/power_supply/charge_pump_master u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /class/qcom-battery u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /class/charge_pump u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-000c/a8c000.i2c:qcom,smb1355@c:qcom,smb1355-charger@1000/power_supply/parallel u:object_r:sysfs_battery_supply:s0
@@ -52,30 +53,11 @@ genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.q
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,wled@d800/leds u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,wled@d800/backlight u:object_r:sysfs_leds:s0
 
-# subsys  SSR entries
-genfscon sysfs /devices/platform/soc/62400000.qcom,lpass/subsys0/name         u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys1/name            u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys2/name         u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/aae0000.qcom,venus/subsys3/name          u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys4/name            u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys5/name           u:object_r:sysfs_ssr:s0
-
-#diffrent target using same apps combo
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys2/name            u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys4/name            u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys5/name            u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys6/name           u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys4/name           u:object_r:sysfs_ssr:s0
-
-# We see this combo set also so adding this also
-genfscon sysfs  /devices/platform/soc/4080000.qcom,mss/subsys0/name           u:object_r:sysfs_ssr:s0
-genfscon sysfs  /devices/platform/soc/8300000.qcom,turing/subsys1/name        u:object_r:sysfs_ssr:s0
-genfscon sysfs  /devices/platform/soc/62400000.qcom,lpass/subsys2/name        u:object_r:sysfs_ssr:s0
-genfscon sysfs  /devices/platform/soc/soc:qcom,ipa_fws/subsys3/name           u:object_r:sysfs_ssr:s0
-genfscon sysfs  /devices/platform/soc/aae0000.qcom,venus/subsys4/name         u:object_r:sysfs_ssr:s0
-
 #entry for usb controller
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3 u:object_r:sysfs_usb_controller:s0
+
+#net sysfs
+genfscon sysfs /devices/platform/soc/18800000.qcom,icnss/net u:object_r:sysfs_net:s0
 
 #qdss sysfs-node
 genfscon sysfs /devices/platform/soc/6b05000.tmc/coresight-tmc-etf u:object_r:sysfs_qdss_dev:s0
@@ -95,6 +77,7 @@ genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-ddr-latfloor/devfreq u:ob
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu6-cpu-ddr-latfloor/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cdsp-cdsp-l3-lat/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,npu-npu-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,npudsp-npu-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
 #fps sysfs-node
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-1/measured_fps u:object_r:sysfs_graphics:s0

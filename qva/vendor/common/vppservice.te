@@ -58,6 +58,8 @@ allow vendor_vppservice video_device:chr_file rw_file_perms;
 allow vendor_vppservice qdsp_device:chr_file r_file_perms;
 allow vendor_vppservice xdsp_device:chr_file r_file_perms;
 allow vendor_vppservice gpu_device:chr_file rw_file_perms;
+# allow vppservice to access dsp read_prop
+get_prop(vendor_vppservice, vendor_adsprpc_prop)
 
 hal_client_domain(vendor_vppservice, hal_graphics_allocator)
 hal_client_domain(vendor_vppservice, hal_capabilityconfigstore_qti)
