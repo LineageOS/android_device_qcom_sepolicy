@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,4 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type mirrorlink, domain;
+typeattribute systemhelper_app coredomain;
+app_domain(systemhelper_app)
+
+allow hal_systemhelper_client hal_systemhelper_hwservice:hwservice_manager find;
+add_hwservice(systemhelper_app, hal_systemhelper_hwservice)
+neverallow { domain -hal_systemhelper_client -systemhelper_app } hal_systemhelper_hwservice:hwservice_manager find;
+
+allow systemhelper_app { activity_service trust_service surfaceflinger_service vendor_vps_service }:service_manager find;
+
+allow systemhelper_app app_data_file:dir rw_dir_perms;

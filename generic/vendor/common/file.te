@@ -56,7 +56,6 @@ type sysfs_slpi, fs_type, sysfs_type;
 type sysfs_spmi_dev, sysfs_type, fs_type;
 type sysfs_ssr, sysfs_type, fs_type;
 type sysfs_ssr_toggle, sysfs_type, fs_type;
-type sysfs_timestamp_switch, sysfs_type, fs_type;
 type sysfs_touch, sysfs_type, fs_type;
 type sysfs_uio_file, sysfs_type, fs_type;
 type sysfs_usb_c, sysfs_type, fs_type;
@@ -65,6 +64,7 @@ type sysfs_usb_supply, sysfs_type, fs_type;
 type sysfs_usbpd_device, sysfs_type, fs_type;
 type sysfs_vadc_dev, sysfs_type, fs_type;
 type sysfs_lcd, sysfs_type, fs_type;
+type sysfs_adsp_ssr, sysfs_type, fs_type;
 
 type debugfs_clk, debugfs_type, fs_type;
 type debugfs_ion, debugfs_type, fs_type;
@@ -80,6 +80,7 @@ type debugfs_icnss, debugfs_type, fs_type;
 # /proc
 type proc_wifi_dbg, fs_type, proc_type;
 type proc_audiod, fs_type, proc_type;
+type proc_shs, fs_type, proc_type;
 
 type qmuxd_socket, file_type;
 type netmgrd_socket, file_type;
@@ -129,6 +130,7 @@ type persist_feature_enabler_file, file_type, vendor_persist_type;
 
 type netmgr_data_file, file_type, data_file_type;
 type netmgr_recovery_data_file, file_type, data_file_type;
+type shsusr_data_file, file_type, data_file_type;
 type ipa_vendor_data_file, file_type, data_file_type;
 
 type vendor_tombstone_data_file, file_type, data_file_type;
@@ -201,3 +203,6 @@ type sysfs_suspend, fs_type, sysfs_type;
 
 # kgsl gpu model file type for sysfs access
 type sysfs_kgsl_gpu_model, sysfs_type, fs_type;
+
+# kgsl_gpuclk file type for sysfs access
+type sysfs_kgsl_gpuclk, sysfs_type, fs_type;

@@ -37,7 +37,7 @@ allow hal_wifi_supplicant_default wpa_data_file:dir w_dir_perms;
 allow hal_wifi_supplicant_default wpa_data_file:file create_file_perms;
 # Permission for wpa socket which IMS use to communicate
 # # Allow wpa_supplicant to send back wifi information to cnd
-allow hal_wifi_supplicant_default { cnd ims }:unix_dgram_socket sendto;
+allow hal_wifi_supplicant_default { cnd ims mutualex}:unix_dgram_socket sendto;
 # # Allow wpa_supplicant to send back wifi information to location
 allow hal_wifi_supplicant_default location:unix_dgram_socket sendto;
 

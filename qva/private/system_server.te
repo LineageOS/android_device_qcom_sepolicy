@@ -35,8 +35,6 @@ allow system_server seempdw_socket:sock_file write;
 binder_call(system_server, seempd)
 unix_socket_send(system_server, seempdw, seempd)
 
-#Allow system server to get mirrorlink connection status prop
-get_prop(system_server, vendor_mirrorlink_prop)
 unix_socket_connect(system_server, dpmd, dpmd);
 allow system_server { dpmd_socket dpmtcm_socket }:sock_file w_file_perms;
 

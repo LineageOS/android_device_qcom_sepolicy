@@ -39,6 +39,7 @@ type hal_hbtp_hwservice, hwservice_manager_type;
 type hal_perf_hwservice, hwservice_manager_type;
 type hal_tui_comm_hwservice, hwservice_manager_type;
 type hal_qdutils_disp_hwservice, hwservice_manager_type;
+type hal_trustedui_hwservice, hwservice_manager_type;
 type hal_display_color_hwservice, hwservice_manager_type;
 type hal_display_postproc_hwservice, hwservice_manager_type;
 type hal_capabilityconfigstore_qti_hwservice, hwservice_manager_type;

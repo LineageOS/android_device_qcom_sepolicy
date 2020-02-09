@@ -282,6 +282,8 @@ type nfc_vendor_data_file, file_type, data_file_type;
 # kgsl file type for sysfs access
 type sysfs_kgsl, sysfs_type, fs_type;
 type sysfs_kgsl_proc, sysfs_type, fs_type;
+type sysfs_kgsl_gpuclk, sysfs_type, fs_type;
+
 # kgsl snapshot file type for sysfs access
 type sysfs_kgsl_snapshot, sysfs_type, fs_type;
 # kgsl gpu model file type for sysfs access

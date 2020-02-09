@@ -28,11 +28,14 @@
 #Add new domain for pdt apps
 user=system seinfo=platform name=.pdtapps domain=pdt_app type=system_app_data_file
 
+#Add new domain for VT loopback app
+user=_app seinfo=platform name=com.qti.vtloopback domain=vtloopback_app type=app_data_file
+
 #Add new domain for usta app
 user=system seinfo=platform name=com.qualcomm.qti.usta domain=usta_app type=system_app_data_file
 
 #Add new domain for qsta app
-user=system seinfo=platform name=com.qualcomm.qti.sensors.qsensortest domain=qsta_app type=system_app_data_file
+user=_app seinfo=platform name=com.qualcomm.qti.sensors.qsensortest domain=qsta_app type=app_data_file
 
 #Add new domain for ustaservice app
 # Needed for USTA test app
