@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -27,6 +27,7 @@
 genfscon proc /debug/fwdump                           u:object_r:proc_wifi_dbg:s0
 genfscon proc /debugdriver/driverdump                 u:object_r:proc_wifi_dbg:s0
 genfscon proc /ath_pktlog/cld                         u:object_r:proc_wifi_dbg:s0
+genfscon proc /shs                                    u:object_r:proc_shs:s0
 
 genfscon sysfs /android_touch                         u:object_r:sysfs_touch:s0
 genfscon sysfs /devices/virtual/input/ftm4_touch      u:object_r:sysfs_touch:s0
@@ -70,7 +71,7 @@ genfscon sysfs /class/thermal                                           u:object
 genfscon sysfs /class/lcd_bias                                          u:object_r:sysfs_lcd:s0
 genfscon sysfs /module/msm_thermal                                      u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/platform/battery_current_limit                  u:object_r:sysfs_thermal:s0
-genfscon sysfs /module/diagchar/parameters/timestamp_switch             u:object_r:sysfs_timestamp_switch:s0
+genfscon sysfs /module/diagchar/parameters/timestamp_switch             u:object_r:sysfs_diag:s0
 genfscon sysfs /module/msm_performance                                  u:object_r:sysfs_msm_perf:s0
 genfscon sysfs /module/lpm_levels                                       u:object_r:sysfs_msm_power:s0
 genfscon sysfs /module/lpm_stats                                        u:object_r:sysfs_msm_stats:s0
@@ -121,6 +122,7 @@ genfscon sysfs /firmware/devicetree/base/cpus u:object_r:sysfs_devices_system_cp
 genfscon sysfs /bus/spmi/devices u:object_r:sysfs_spmi_dev:s0
 
 genfscon sysfs /power/mem_sleep u:object_r:sysfs_suspend:s0
+genfscon sysfs /kernel/boot_adsp/ssr                                   u:object_r:sysfs_adsp_ssr:s0
 
 genfscon debugfs /kgsl/proc                           u:object_r:debugfs_kgsl:s0
 genfscon debugfs /clk/debug_suspend                   u:object_r:debugfs_clk:s0

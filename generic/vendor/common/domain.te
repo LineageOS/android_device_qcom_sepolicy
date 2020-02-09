@@ -61,3 +61,7 @@ neverallow {
 
 # allow all context to read gpu model
 allow { domain - isolated_app } sysfs_kgsl_gpu_model:file r_file_perms;
+allow { domain - isolated_app } sysfs_kgsl:dir search;
+
+# allow all contexts to read gpuclk
+allow { domain - isolated_app } sysfs_kgsl_gpuclk:file r_file_perms;

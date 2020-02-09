@@ -165,6 +165,23 @@
 /vendor/lib(64)?/hw/gralloc\.sm6150\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/vulkan\.sm6150\.so    u:object_r:same_process_hal_file:s0
 
+# SSR nodes
+/sys/devices/platform/soc/62400000.qcom,lpass/subsys[0-9]+/name         u:object_r:sysfs_ssr:s0
+/sys/devices/platform/soc/4080000.qcom,mss/subsys[0-9]+/name            u:object_r:sysfs_ssr:s0
+/sys/devices/platform/soc/8300000.qcom,turing/subsys[0-9]+/name         u:object_r:sysfs_ssr:s0
+/sys/devices/platform/soc/aae0000.qcom,venus/subsys[0-9]+/name          u:object_r:sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/name            u:object_r:sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]+/name           u:object_r:sysfs_ssr:s0
+/sys/devices/platform/soc/9800000.qcom,npu/subsys[0-9]+/name            u:object_r:sysfs_ssr:s0
+
+/sys/devices/platform/soc/62400000.qcom,lpass/subsys[0-9]+/restart_level         u:object_r:sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/4080000.qcom,mss/subsys[0-9]+/restart_level            u:object_r:sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/8300000.qcom,turing/subsys[0-9]+/restart_level         u:object_r:sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/aae0000.qcom,venus/subsys[0-9]+/restart_level          u:object_r:sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/restart_level            u:object_r:sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]+/restart_level           u:object_r:sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/9800000.qcom,npu/subsys[0-9]+/restart_level            u:object_r:sysfs_ssr_toggle:s0
+
 #FPC
 /sys/devices/platform/soc/soc:fpc1020(/.*?) u:object_r:sysfs_fps_attr:s0
 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi632@3:qcom,leds@d000/modalias u:object_r:sysfs_fps_attr:s0

@@ -66,6 +66,9 @@ type vendor_time_service_prop, property_type;
 # Audio props
 type vendor_audio_prop, property_type;
 
+# Netmgrd props
+type vendor_data_shsusr_prop, property_type;
+
 #ss-restart
 type vendor_ssr_prop, property_type;
 
@@ -93,6 +96,9 @@ type vendor_qdcmss_prop, property_type;
 
 #adsprpc props
 type vendor_adsprpc_prop, property_type;
+
+#debuglog prop
+type vendor_debuglog_prop, property_type;
 
 # Wifi version recorder
 type vendor_wifi_version, property_type;
