@@ -40,6 +40,8 @@ hwbinder_use(vendor_hal_rcsservice)
 # add IUceSerive and IService to Hidl interface
 add_hwservice(vendor_hal_rcsservice, vendor_hal_imsrcsd_hwservice)
 add_hwservice(vendor_hal_rcsservice, vendor_hal_imscallinfo_hwservice)
+#add imsfactory to HIDl interface
+add_hwservice(vendor_hal_rcsservice, vendor_hal_imsfactory_hwservice)
 
 get_prop(vendor_hal_rcsservice, hwservicemanager_prop)
 
