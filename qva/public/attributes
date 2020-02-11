@@ -28,3 +28,7 @@
 attribute sigmahal;
 attribute sigmahal_server;
 attribute sigmahal_client;
+
+attribute hal_spu;
+attribute hal_spu_client;
+attribute hal_spu_server;
