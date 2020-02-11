@@ -40,6 +40,9 @@ binder_call(vendor_per_mgr, rild)
 
 allow vendor_per_mgr self:capability net_bind_service;
 
+# allow system reboot (for subsystem requests)
+allow vendor_per_mgr self:capability sys_boot;
+
 allow vendor_per_mgr firmware_file:file r_file_perms;
 allow vendor_per_mgr firmware_file:dir search;
 
@@ -49,6 +52,9 @@ allow vendor_per_mgr ssr_device:chr_file { open read };
 
 # Needed by libmdmdetect to get subsystem info and to check their states
 allow vendor_per_mgr sysfs_data:file r_file_perms;
+
+# Get config property
+get_prop(vendor_per_mgr, vendor_per_mgr_prop);
 
 # Set the peripheral state property
 set_prop(vendor_per_mgr, vendor_per_mgr_state_prop);

@@ -37,6 +37,7 @@ type ipacm-diag_prop, property_type;
 type vendor_modem_diag_prop, property_type;
 type msm_irqbalance_prop, property_type;
 type vendor_per_mgr_state_prop, property_type;
+type vendor_per_mgr_prop, property_type;
 type vendor_dataqti_prop, property_type;
 type vendor_dataqdp_prop, property_type;
 type vendor_ramdump_prop, property_type;
