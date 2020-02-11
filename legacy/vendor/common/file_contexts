@@ -280,6 +280,7 @@
 /(vendor|system/vendor)/bin/mlid                u:object_r:mlid_exec:s0
 /(vendor|system/vendor)/bin/ssgtzd              u:object_r:ssgtzd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service u:object_r:hal_esepowermanager_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.1-service u:object_r:hal_esepowermanager_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.0-service u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/loc_launcher        u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/lowi-server         u:object_r:location_exec:s0
