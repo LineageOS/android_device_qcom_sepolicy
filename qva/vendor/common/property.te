@@ -80,6 +80,9 @@ type ctl_vendor_wigigsvc_prop, property_type;
 # hvdcp_opti prop
 type vendor_hvdcp_opti_prop, property_type;
 
+# property for coresight
+type vendor_coresight_prop, property_type;
+
 # property for xlat
 type vendor_xlat_prop, property_type;
 

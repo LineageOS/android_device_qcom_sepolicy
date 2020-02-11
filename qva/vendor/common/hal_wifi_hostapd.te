@@ -34,6 +34,8 @@ allow hal_wifi_hostapd_default hostapd_data_file:sock_file create_file_perms;
 
 # Allow hostapd to connect to fstman using control socket
 allow hal_wifi_hostapd_default fstman:unix_dgram_socket sendto;
+# Allow hostapd to connect to mutualex using control socket
+allow hal_wifi_hostapd_default mutualex:unix_dgram_socket sendto;
 # wigig_hostapd has its own directory for sockets,
 # in order to prevent conflicts with wifi hostapd
 # allow wigig_hostapd to create the directory holding its control socket
