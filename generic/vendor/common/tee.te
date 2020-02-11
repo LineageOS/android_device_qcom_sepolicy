@@ -33,6 +33,8 @@ set_prop(tee, vendor_tee_listener_prop)
 allow tee firmware_file:dir search;
 allow tee block_device:dir { getattr search };
 allow tee rpmb_device:blk_file rw_file_perms;
+allow tee rpmb_device:chr_file rw_file_perms;
+allowxperm tee rpmb_device:chr_file ioctl { MMC_IOC_MULTI_CMD };
 allow tee ssd_block_device:blk_file rw_file_perms;
 allow tee sg_device:chr_file { rw_file_perms setattr };
 

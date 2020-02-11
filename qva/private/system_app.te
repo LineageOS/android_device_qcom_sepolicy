@@ -40,14 +40,6 @@ get_prop(system_app, bluetooth_prop);
 # allow system_app access to Workload Classifier Property
 set_prop(system_app, vendor_wlc_prop);
 
-# allow system app to interact with mirrorlinkserver
-binder_call(system_app, mirrorlink);
-# allow system app to connect to mirrorlink_socket
-unix_socket_connect(system_app, mirrorlink, mirrorlink);
-
-# allow system app to set mirrorlink prop
-set_prop(system_app, vendor_mirrorlink_prop);
-
 #WFD
 set_prop(system_app, wfd_service_prop);
 userdebug_or_eng(`

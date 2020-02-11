@@ -47,7 +47,7 @@ allow qtiloopback_native self:{
 } create_socket_perms_no_ioctl;
 
 allow qtiloopback_native sysfs_diag:dir search;
-allow qtiloopback_native sysfs_timestamp_switch:file { open read };
+allow qtiloopback_native sysfs_diag:file { open read };
 allow qtiloopback_native self:netlink_route_socket nlmsg_read;
 allow qtiloopback_native self:udp_socket { create ioctl };
 
