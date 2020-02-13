@@ -178,3 +178,4 @@
 #
 /sys/devices/virtual/block/dm-[0-6]/queue/read_ahead_kb                 u:object_r:sysfs_mmc_host:s0
 
+/sys/devices/platform/soc/1b40000.qfprom/qfprom0/feat_conf10            u:object_r:sysfs_qfprom:s0
