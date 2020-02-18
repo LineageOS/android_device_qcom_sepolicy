@@ -44,6 +44,7 @@ type vendor_modem_block_device, dev_type;
 type vendor_modem_efs_partition_device, dev_type;
 type vendor_mdtp_device, dev_type;
 type vendor_persist_block_device, dev_type;
+type vendor_vm_data_block_device, dev_type;
 type vendor_qsee_ipc_irq_spss_device, dev_type;
 type vendor_qdsp_device, dev_type, mlstrustedobject;
 type vendor_ramdump_device, dev_type;

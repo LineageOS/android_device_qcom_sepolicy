@@ -166,6 +166,9 @@ type vendor_media_data_file, file_type, data_file_type;
 
 type adsprpcd_file, file_type, mlstrustedobject, vendor_file_type;
 
+# vm system files
+type vendor_vm_system_file, file_type, vendor_file_type;
+
 type vendor_hbtp_log_file, file_type, data_file_type;
 type vendor_hbtp_cfg_file, file_type, vendor_file_type;
 
