@@ -62,3 +62,5 @@ hal_client_domain(system_server, vendor_hal_wifilearner);
 hal_client_domain(system_server, vendor_hal_qspmhal);
 
 get_prop(system_server, vendor_qspm_prop)
+
+get_prop(system_server, vendor_xlat_prop)

@@ -72,8 +72,7 @@ type vendor_gralloc_prop, property_type;
 type fm_prop, property_type;
 type chgdiabled_prop, property_type;
 
-
-type vendor_xlat_prop, property_type;
+vendor_restricted_prop(vendor_xlat_prop);
 
 # property for location
 type location_prop, property_type;
