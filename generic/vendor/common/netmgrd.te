@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -71,6 +71,9 @@ get_prop(vendor_netmgrd, hwservicemanager_prop)
 hwbinder_use(vendor_netmgrd)
 binder_call(vendor_netmgrd, netd)
 allow vendor_netmgrd system_net_netd_hwservice:hwservice_manager find;
+
+# Allow netmgrd to use shsusrd properties
+set_prop(vendor_netmgrd, vendor_data_shsusr_prop)
 
 allow vendor_netmgrd self:capability { net_admin net_raw setgid setpcap setuid };
 
