@@ -72,6 +72,7 @@ ro.vendor.display.            u:object_r:vendor_display_prop:s0
 persist.vendor.display.       u:object_r:vendor_display_prop:s0
 vendor.gralloc.            u:object_r:vendor_gralloc_prop:s0
 vendor.peripheral.         u:object_r:vendor_per_mgr_state_prop:s0
+ro.vendor.peripheral.      u:object_r:vendor_per_mgr_prop:s0
 vendor.ims.                u:object_r:ims_prop:s0
 ro.vendor.build.software.version  u:object_r:ims_prop:s0
 persist.vendor.ims.        u:object_r:ims_prop:s0

@@ -91,6 +91,10 @@ set_prop(vendor_init, sensors_prop)
 
 #Access vendor bluetooth properties
 set_prop(vendor_init, vendor_bluetooth_prop)
+
+#Access peripheral manager config
+set_prop(vendor_init, vendor_per_mgr_prop)
+
 userdebug_or_eng(`
   allow vendor_init proc_security:file rw_file_perms;
 ')
