@@ -45,11 +45,23 @@ allow vendor_mdm_helper vendor_esoc_device:chr_file rw_file_perms;
 allow vendor_mdm_helper vendor_shell_exec:file rx_file_perms;
 allow vendor_mdm_helper vendor_mdm_helper_exec :file x_file_perms;
 
+#Rampdump config
+#
+# User variant
+#   Probe for write access to vendor tombstones as the
+#   presense of tombstones on subsystem does not correlate
+#   to Android user/userdebug config
+allow vendor_mdm_helper vendor_tombstone_data_file:dir r_dir_perms;
+dontaudit vendor_mdm_helper vendor_tombstone_data_file:dir write;
+# Userdebug/eng variant
 userdebug_or_eng(`
-#Needed for ram dump storage
 allow vendor_mdm_helper vendor_tombstone_data_file:dir create_dir_perms;
 allow vendor_mdm_helper vendor_tombstone_data_file:file create_file_perms;
 ')
+#Ramdump config END
+
+#Needed to kill its own forked process on efs sync
+allow vendor_mdm_helper self:capability kill;
 
 #Needed by ks in order to access the efs sync partitions.
 allow vendor_mdm_helper block_device:dir r_dir_perms;
