@@ -50,6 +50,7 @@ allow vendor_ims self:{ qipcrtr_socket } create_socket_perms_no_ioctl;
 allow vendor_ims self:{ netlink_generic_socket } create_socket_perms_no_ioctl;
 netmgr_socket(vendor_ims);
 allowxperm vendor_ims self:udp_socket ioctl RMNET_IOCTL_EXTENDED;
+allow vendor_ims self:tipc_socket { create_socket_perms_no_ioctl };
 
 #diag
 userdebug_or_eng(`
