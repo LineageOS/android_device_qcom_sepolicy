@@ -26,3 +26,6 @@ allow appdomain debug_gralloc_prop:file r_file_perms;
 
 # Allow apps to read graphics vulkan property
 allow appdomain graphics_vulkan_prop:file r_file_perms;
+
+# Allow reading camera props
+get_prop(appdomain, camera_prop)
