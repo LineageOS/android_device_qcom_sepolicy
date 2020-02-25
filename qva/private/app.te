@@ -28,3 +28,7 @@
 get_prop(appdomain, persist_dpm_prop)
 
 unix_socket_send(appdomain, seempdw, seempd)
+
+# Allow reading persist camera props
+get_prop(appdomain, persist_camera_prop)
+
