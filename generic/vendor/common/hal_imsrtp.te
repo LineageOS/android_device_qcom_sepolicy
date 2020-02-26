@@ -1,4 +1,4 @@
-# Copyright (c) 2018,2020 The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -49,4 +49,4 @@ allow vendor_hal_imsrtp vendor_sysfs_data:file r_file_perms;
 r_dir_file(vendor_hal_imsrtp, vendor_sysfs_diag)
 
 get_prop(vendor_hal_imsrtp, vendor_ims_prop)
-binder_call(vendor_hal_imsrtp, vendor_qtelephony)
+binder_call(vendor_hal_imsrtp, radio)
