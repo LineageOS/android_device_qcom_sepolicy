@@ -40,6 +40,7 @@ ctl.vendor.ipacm-diag      u:object_r:ipacm-diag_prop:s0
 ctl.vendor.dataqti         u:object_r:vendor_dataqti_prop:s0
 ctl.vendor.sensors         u:object_r:sensors_prop:s0
 persist.vendor.sensors.    u:object_r:sensors_prop:s0
+ro.vendor.sensors.         u:object_r:sensors_prop:s0
 vendor.audio.              u:object_r:vendor_audio_prop:s0
 vendor.voice.              u:object_r:vendor_audio_prop:s0
 persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
@@ -114,8 +115,14 @@ vendor.debug.prerotation.disable  u:object_r:public_vendor_default_prop:s0
 vendor.debug.egl.swapinterval  u:object_r:public_vendor_default_prop:s0
 vendor.debug.egl.profiler  u:object_r:public_vendor_default_prop:s0
 
+# netmgrd ko loading
+persist.vendor.data.shsusr_load u:object_r:vendor_data_shsusr_prop:s0
+
 #vendor-wlan
 vendor.wlan.  u:object_r:vendor_wifi_prop:s0
+
+#debuglog prop
+vendor.zeroth.debuglog.logmask     u:object_r:vendor_debuglog_prop:s0
 
 #qdcm socket service
 vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0

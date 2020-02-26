@@ -36,5 +36,4 @@ allow hal_tetheroffload_default ipa_vendor_data_file:file create_file_perms;
 #diag
 userdebug_or_eng(`
     r_dir_file(hal_tetheroffload_default, sysfs_diag)
-    allow hal_tetheroffload_default sysfs_timestamp_switch:file r_file_perms;
 ')

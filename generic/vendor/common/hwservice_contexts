@@ -57,6 +57,8 @@ vendor.qti.hardware.display.allocator::IQtiAllocator         u:object_r:hal_grap
 vendor.qti.hardware.display.composer::IQtiComposer           u:object_r:hal_graphics_composer_hwservice:s0
 vendor.qti.hardware.tui_comm::ITuiComm                       u:object_r:hal_tui_comm_hwservice:s0
 vendor.qti.hardware.qdutils_disp::IQdutilsDisp               u:object_r:hal_qdutils_disp_hwservice:s0
+vendor.qti.hardware.trustedui::ITrustedUI                 u:object_r:hal_trustedui_hwservice:s0
+vendor.qti.hardware.trustedui::ITrustedInput              u:object_r:hal_trustedui_hwservice:s0
 android.hardware.media.c2::IConfigurable                     u:object_r:hal_codec2_hwservice:s0
 vendor.qti.hardware.display.mapper::IQtiMapper               u:object_r:hal_graphics_mapper_hwservice:s0
 vendor.qti.hardware.camera.postproc::IPostProcService        u:object_r:hal_camera_postproc_hwservice:s0

@@ -33,3 +33,4 @@ add_service(qspmsvc, qspmsvc_service);
 binder_use(qspmsvc);
 binder_call(qspmsvc, system_server);
 binder_service(qspmsvc);
+hal_client_domain(qspmsvc, hal_thermal)

@@ -44,3 +44,8 @@ r_dir_file(feature_enabler_client, persist_data_file)
 # Binder access for featenab_client.service
 vndbinder_use(feature_enabler_client)
 allow feature_enabler_client qfeatenab_client_service:service_manager { add find };
+
+allow feature_enabler_client graphics_device:chr_file rw_file_perms;
+allow feature_enabler_client qdisplay_service:service_manager find;
+hal_client_domain(feature_enabler_client, hal_graphics_composer);
+allow feature_enabler_client smcinvoke_device:chr_file rw_file_perms;

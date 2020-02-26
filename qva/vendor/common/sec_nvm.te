@@ -38,6 +38,8 @@ allow sec_nvm mnt_vendor_file:dir search;
 allow sec_nvm persist_secnvm_file:dir rw_dir_perms;
 allow sec_nvm persist_secnvm_file:file create_file_perms;
 
+allow sec_nvm sysfs_scsi_host:file rw_file_perms;
+
 allow sec_nvm spcom_device:chr_file { getattr rw_file_perms };
 allow sec_nvm sp_ssr_device:chr_file rw_file_perms;
 set_prop(sec_nvm, spcomlib_prop)

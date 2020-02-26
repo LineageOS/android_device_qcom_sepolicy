@@ -36,8 +36,6 @@
 /dev/socket/qvrservice                          u:object_r:qvrd_socket:s0
 /dev/socket/qvrservice_camera                   u:object_r:qvrd_socket:s0
 /dev/socket/qvrservice_hvx_camera               u:object_r:qvrd_hvx_socket:s0
-/dev/socket/mirrorlinkserverapi                 u:object_r:mirrorlink_socket:s0
-/dev/socket/mirrorlinkserverah                  u:object_r:mirrorlink_socket:s0
 
 ####### system file ###############
 /system/bin/seempd                              u:object_r:seempd_exec:s0
@@ -49,7 +47,6 @@
 /system/bin/mmi                                 u:object_r:vendor_mmi_sys_exec:s0
 /system/bin/mmi_diag                            u:object_r:vendor_mmi_sys_exec:s0
 /system/bin/perfservice                         u:object_r:perfservice_exec:s0
-/system/bin/mirrorlinkserver                    u:object_r:mirrorlink_exec:s0
 /system/bin/vpsservice                          u:object_r:vpsservice_exec:s0
 /system/bin/qspmsvc                             u:object_r:qspmsvc_exec:s0
 /system/bin/sigma_miracasthalservice            u:object_r:sigmahal_qti_exec:s0
@@ -57,5 +54,4 @@
 ####### data files ################
 /data/dpm(/.*)?                                 u:object_r:dpmd_data_file:s0
 /data/misc/qvr(/.*)?                            u:object_r:qvrd_data_file:s0
-/data/misc/mirrorlinkserver(/.*)?               u:object_r:mirrorlink_data_file:s0
 /data/nfc(/.*)?                                 u:object_r:nfc_data_file:s0

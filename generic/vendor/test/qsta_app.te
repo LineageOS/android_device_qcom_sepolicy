@@ -33,13 +33,18 @@ type qsta_app, domain;
 app_domain(qsta_app)
 hal_client_domain(qsta_app, hal_perf)
 r_dir_file(qsta_app, persist_sensors_file)
+get_prop(qsta_app, sensors_prop)
 
 allow qsta_app {
   app_api_service
   surfaceflinger_service
   audioserver_service
   mediaserver_service
+  mediametrics_service
 }:service_manager find;
+
+dontaudit qsta_app gpu_service:service_manager find;
+dontaudit qsta_app hal_qspmhal_hwservice:hwservice_manager find;
 
 userdebug_or_eng(`
   allow qsta_app diag_device:chr_file { read write open ioctl };

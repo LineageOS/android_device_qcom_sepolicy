@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,32 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#Define Domain
-type hal_mirrorlink_qti, domain;
-type hal_mirrorlink_qti_exec, exec_type, vendor_file_type, file_type;
-hal_server_domain(hal_mirrorlink_qti,hal_mirrorlink)
-
-#Allow for transition from init domain to hal_mirrorlink
-init_daemon_domain(hal_mirrorlink_qti)
-
-#Allow hal_mirrorlink to use Vendor Binder IPC
-vndbinder_use(hal_mirrorlink)
-
-#Allow hwbinder call from hal client to server
-binder_call(hal_mirrorlink_client, hal_mirrorlink_server)
-binder_call(hal_mirrorlink_server, hal_mirrorlink_client)
-
-#Add hwservice related rules
-add_hwservice(hal_mirrorlink_server, hal_mirrorlink_hwservice)
-
-#Allow access to tee device
-allow hal_mirrorlink_qti tee_device:chr_file rw_file_perms;
-
-#Allow access to ion device
-allow hal_mirrorlink_qti ion_device:chr_file rw_file_perms;
-
-#Allow access to firmware
-allow hal_mirrorlink_qti firmware_file:dir r_dir_perms;
-allow hal_mirrorlink_qti firmware_file:file r_file_perms;
-
-allow hal_mirrorlink_client hal_mirrorlink_hwservice:hwservice_manager find;
+dontaudit mediaprovider hal_perf_hwservice:hwservice_manager find;

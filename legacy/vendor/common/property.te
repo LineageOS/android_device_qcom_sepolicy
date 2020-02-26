@@ -174,6 +174,9 @@ type hvdcp_opti_prop, property_type;
 #adsprpc props
 type adsprpc_prop, property_type;
 
+#debuglog prop
+type vendor_debuglog_prop, property_type;
+
 #qvr property
 type qvr_prop, property_type;
 

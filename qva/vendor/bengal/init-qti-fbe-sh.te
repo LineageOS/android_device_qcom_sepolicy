@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,7 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow read access to udc connection state
-r_dir_file(mirrorlink, sysfs_usb_controller);
+type init-qti-fbe-sh, domain;
+type init-qti-fbe-sh_exec, exec_type, file_type, vendor_file_type;
 
-hal_client_domain(mirrorlink, hal_mirrorlink)
+init_daemon_domain(init-qti-fbe-sh)
+
+allow init-qti-fbe-sh vendor_shell_exec:file rx_file_perms;
+
+# execute toybox/toolbox
+allow init-qti-fbe-sh vendor_toolbox_exec:file rx_file_perms;
+get_prop(init-qti-fbe-sh, vendor_tee_listener_prop)
