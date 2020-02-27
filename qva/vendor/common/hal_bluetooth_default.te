@@ -27,3 +27,5 @@
 
 hal_server_domain(hal_bluetooth_default, vendor_hal_fm)
 hal_server_domain(hal_bluetooth_default, vendor_hal_btconfigstore)
+# hal_bluetooth_default needes  open read on fm_radio_device
+allow hal_bluetooth_default vendor_fm_radio_device:chr_file r_file_perms;

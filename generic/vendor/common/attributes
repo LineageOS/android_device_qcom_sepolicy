@@ -29,10 +29,6 @@ attribute vendor_hal_hbtp;
 attribute vendor_hal_hbtp_client;
 attribute vendor_hal_hbtp_server;
 
-attribute vendor_hal_perf;
-attribute vendor_hal_perf_client;
-attribute vendor_hal_perf_server;
-
 attribute vendor_hal_qdutils_disp;
 attribute vendor_hal_qdutils_disp_client;
 attribute vendor_hal_qdutils_disp_server;

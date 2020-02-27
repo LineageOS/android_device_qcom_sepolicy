@@ -28,10 +28,6 @@
 
 #allow system_app access factory
 hal_client_domain(system_app, vendor_hal_factory_qti);
-hal_client_domain(system_app, vendor_hal_fm);
-
-# fm_radio app needes  open read on fm_radio_device
-allow system_app vendor_fm_radio_device:chr_file r_file_perms;
 
 #allow system_app access sensorscalibration service
 hal_client_domain(system_app, vendor_hal_sensorscalibrate_qti);
@@ -47,9 +43,6 @@ hal_client_domain(system_app, vendor_hal_display_color);
 
 # allow system_app to interact with light hal
 hal_client_domain(system_app, hal_light);
-
-#allow system app to access btconfigstore hal
-hal_client_domain(system_app, vendor_hal_btconfigstore);
 
 # update engine
 binder_call( system_app, update_engine )

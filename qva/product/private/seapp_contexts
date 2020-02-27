@@ -26,3 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #Add new domain for system helper service using for Trusted UI
+# FM app
+user=_app seinfo=platform name=com.caf.fmradio domain=vendor_fm_app type=app_data_file levelFrom=all
