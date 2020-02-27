@@ -24,7 +24,6 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-get_prop(radio, vendor_ims_prop)
 
 allow radio vendor_file:lnk_file r_file_perms;
 allow radio vendor_framework_file:file r_file_perms;
@@ -47,7 +46,6 @@ userdebug_or_eng(`
   allow radio vendor_hal_imsrcsd_hwservice:hwservice_manager find;
   binder_call(radio, vendor_hal_rcsservice);
 ')
-binder_call(radio, vendor_hal_imsrtp)
 
 #perf
 hal_client_domain(radio, vendor_hal_perf)
