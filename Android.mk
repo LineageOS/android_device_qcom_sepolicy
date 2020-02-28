@@ -33,7 +33,6 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
        $(LOCAL_PATH)/generic/vendor/common \
        $(LOCAL_PATH)/qva/vendor/common/sysmonapp \
        $(LOCAL_PATH)/qva/vendor/ssg \
-       $(LOCAL_PATH)/timeservice \
        $(LOCAL_PATH)/qva/vendor/qwesas \
        $(LOCAL_PATH)/qva/vendor/common
 
@@ -57,7 +56,6 @@ ifneq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
                  $(LOCAL_PATH) \
                  $(LOCAL_PATH)/legacy/vendor/common/sysmonapp \
                  $(LOCAL_PATH)/legacy/vendor/ssg \
-                 $(LOCAL_PATH)/timeservice \
                  $(LOCAL_PATH)/legacy/vendor/common
 
     ifeq ($(TARGET_SEPOLICY_DIR),)
