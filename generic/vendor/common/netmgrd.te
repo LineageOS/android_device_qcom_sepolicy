@@ -41,6 +41,9 @@ allowxperm vendor_netmgrd self:socket ioctl msm_sock_ipc_ioctls;
 allowxperm vendor_netmgrd self:udp_socket ioctl priv_sock_ioctls;
 allow vendor_netmgrd self:tipc_socket { create_socket_perms_no_ioctl };
 
+#Allow connections to qmipriod
+unix_socket_connect(vendor_netmgrd, vendor_netmgrd, vendor_qmipriod);
+
 allow vendor_netmgrd sysfs_net:dir r_dir_perms;
 allow vendor_netmgrd sysfs_net:file rw_file_perms;
 allow vendor_netmgrd vendor_sysfs_data:file r_file_perms;
@@ -74,6 +77,7 @@ allow vendor_netmgrd system_net_netd_hwservice:hwservice_manager find;
 
 # Allow netmgrd to use shsusrd properties
 set_prop(vendor_netmgrd, vendor_data_shsusr_prop)
+set_prop(vendor_netmgrd, vendor_data_qmipriod_prop)
 
 allow vendor_netmgrd self:capability { net_admin net_raw setgid setpcap setuid };
 
