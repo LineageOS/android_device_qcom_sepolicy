@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# policy for /vendor/bin/hw/android.hardware.drm@1.1-service.clearkey
+# policy for /vendor/bin/hw/android.hardware.drm@1.x-service.clearkey
 type hal_drm_clearkey, domain;
 type hal_drm_clearkey_exec, exec_type, vendor_file_type, file_type;
 
