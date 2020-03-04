@@ -32,3 +32,6 @@ user=system seinfo=platform name=.loopbackservice domain=qtiloopback_app type=sy
 
 #Add new domain for QDMAUtils
 user=system seinfo=platform name=com.qualcomm.qti.qdmautils domain=qdmautils_app type=system_app_data_file
+
+user=_app seinfo=platform name=com.qualcomm.qti.dualstaapp domain=dualsta_app type=app_data_file levelfrom=all
+

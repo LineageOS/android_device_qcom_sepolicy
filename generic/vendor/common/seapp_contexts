@@ -27,6 +27,9 @@
 # A fallback in case tango_core is missing something critical that untrusted_app provides
 user=_app seinfo=tango name=com.google.tango:app domain=untrusted_app type=app_data_file levelFrom=user
 
+#Needed for time service apk
+user=_app seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file levelFrom=all
+
 # AtFwd app
 user=_app seinfo=platform name=com.qualcomm.telephony domain=qtelephony type=app_data_file levelFrom=all
 

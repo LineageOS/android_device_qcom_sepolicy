@@ -72,3 +72,4 @@ vendor.qti.hardware.cryptfshw::ICryptfsHw                    u:object_r:hal_keym
 vendor.qti.hardware.qseecom::IQSEECom                        u:object_r:hal_qseecom_hwservice:s0
 vendor.qti.spu::ISPUManager                                  u:object_r:hal_spu_hwservice:s0
 vendor.qti.hardware.embmssl::IEmbms                          u:object_r:hal_embmssl_hwservice:s0
+vendor.qti.hardware.slmadapter::ISlmAdapter                  u:object_r:hal_slmadapter_hwservice:s0

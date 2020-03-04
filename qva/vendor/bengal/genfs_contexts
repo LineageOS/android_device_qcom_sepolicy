@@ -42,6 +42,7 @@ genfscon sysfs /class/qcom-battery u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-03/1c40000.qcom,spmi:qcom,pmi632@3:qcom,leds@d000/leds u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-03/1c40000.qcom,spmi:qcom,pmi632@3:qcom,leds@d300/leds u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-03/1c40000.qcom,spmi:qcom,pmi632@3:qcom,vibrator@5700/leds/vibrator u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-01/1c40000.qcom,spmi:qcom,pm2250@1:qcom,vibrator@5600/leds/vibrator u:object_r:sysfs_leds:s0
 
 # Power supply device nodes
 
@@ -62,6 +63,7 @@ genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-ddr-latfloor/devfreq u:ob
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
 
 #net sysfs
+genfscon sysfs /devices/platform/soc/c800000.qcom,icnss u:object_r:sysfs_net:s0
 
 #fps sysfs-node
 

@@ -53,3 +53,4 @@ type hal_bluetooth_dun_hwservice, hwservice_manager_type;
 type hal_qseecom_hwservice, hwservice_manager_type;
 type hal_spu_hwservice, hwservice_manager_type;
 type hal_embmssl_hwservice, hwservice_manager_type;
+type hal_slmadapter_hwservice, hwservice_manager_type;

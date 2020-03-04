@@ -52,4 +52,7 @@ userdebug_or_eng(`
     allow location_app_test self:qipcrtr_socket create_socket_perms_no_ioctl;
 
     allow location_app_test audioserver_service:service_manager find;
+
+    #dontaudit denial location_app_test to access hwservice_manager
+    dontaudit location_app_test hal_qspmhal_hwservice:hwservice_manager find;
 ')

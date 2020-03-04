@@ -101,6 +101,7 @@ hwbinder_use(netmgrd)
 binder_call(netmgrd, netd)
 allow netmgrd system_net_netd_hwservice:hwservice_manager find;
 
+allow netmgrd self:capability { net_admin net_raw setgid setpcap setuid kill };
 allow netmgrd sysfs_net:dir r_dir_perms;
 allow netmgrd sysfs_net:file rw_file_perms;
 
