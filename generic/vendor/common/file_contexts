@@ -62,6 +62,8 @@
 /dev/hbtp_input                                 u:object_r:vendor_hbtp_device:s0
 /dev/hbtp_vm                                    u:object_r:vendor_hbtp_device:s0
 /dev/sg[0-9]+                                   u:object_r:vendor_sg_device:s0
+/dev/ufs-bsg*                                   u:object_r:vendor_bsg_device:s0
+/dev/0:0:0:49476                                u:object_r:vendor_bsg_device:s0
 /dev/sensors                                    u:object_r:sensors_device:s0
 /dev/mnh_sm                                     u:object_r:vendor_easel_device:s0
 /dev/easelcomm-client                           u:object_r:vendor_easel_device:s0

@@ -54,6 +54,7 @@ type vendor_ramdump_block_device, dev_type;
 type vendor_rpmb_device, dev_type;
 type vendor_seemplog_device, dev_type;
 type vendor_sg_device, dev_type;
+type vendor_bsg_device, dev_type;
 type vendor_smd_device, dev_type;
 type vendor_spcom_device, dev_type;
 type vendor_ssd_block_device, dev_type;
