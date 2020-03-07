@@ -48,6 +48,7 @@
 /dev/block/platform/soc/c0c4000.sdhci/by-name/mdm1m9kefs3                       u:object_r:efs_boot_dev:s0
 /dev/block/platform/soc/c0c4000.sdhci/by-name/mdm1m9kefsc                       u:object_r:efs_boot_dev:s0
 /dev/block/platform/soc/c0c4000.sdhci/by-name/logdump                           u:object_r:logdump_partition:s0
+/dev/block/platform/soc/c0c4000.sdhci/by-name/super                             u:object_r:super_block_device:s0
 /dev/block/platform/soc/c0c4000.sdhci/by-name/persist                           u:object_r:persist_block_device:s0
 
 
@@ -73,6 +74,7 @@
 /dev/block/platform/soc/1da4000.ufshc/by-name/mdm1m9kefs3                       u:object_r:efs_boot_dev:s0
 /dev/block/platform/soc/1da4000.ufshc/by-name/mdm1m9kefsc                       u:object_r:efs_boot_dev:s0
 /dev/block/platform/soc/1da4000.ufshc/by-name/logdump                           u:object_r:logdump_partition:s0
+/dev/block/platform/soc/1da4000.ufshc/by-name/super                             u:object_r:super_block_device:s0
 /dev/block/platform/soc/1da4000.ufshc/by-name/persist                           u:object_r:persist_block_device:s0
 
 #Primary storage device nodes
@@ -109,6 +111,8 @@
 /dev/block/platform/soc/c0c4000.sdhci/by-name/dtbo_[ab]         u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/c0c4000.sdhci/by-name/vendor_[ab]       u:object_r:system_block_device:s0
 /dev/block/platform/soc/c0c4000.sdhci/by-name/xbl_[ab]          u:object_r:xbl_block_device:s0
+/dev/block/platform/soc/c0c4000.sdhci/by-name/recovery_[ab]     u:object_r:recovery_block_device:s0
+/dev/block/platform/soc/c0c4000.sdhci/by-name/vbmeta_system_[ab]    u:object_r:custom_ab_block_device:s0
 
 #UFS
 /dev/block/platform/soc/1da4000.ufshc/by-name/abl_[ab]          u:object_r:custom_ab_block_device:s0
@@ -134,6 +138,8 @@
 /dev/block/platform/soc/1da4000.ufshc/by-name/dtbo_[ab]         u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/1da4000.ufshc/by-name/vendor_[ab]       u:object_r:system_block_device:s0
 /dev/block/platform/soc/1da4000.ufshc/by-name/xbl_[ab]          u:object_r:xbl_block_device:s0
+/dev/block/platform/soc/1da4000.ufshc/by-name/recovery_[ab]     u:object_r:recovery_block_device:s0
+/dev/block/platform/soc/1da4000.ufshc/by-name/vbmeta_system_[ab]    u:object_r:custom_ab_block_device:s0
 
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/platform/soc/1da4000.ufshc/sd[ade]                   u:object_r:gpt_block_device:s0
@@ -147,6 +153,7 @@
 /(vendor|system/vendor)/lib(64)?/hw/gralloc\.sdm660\.so   u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/hw/vulkan\.sdm660\.so    u:object_r:same_process_hal_file:s0
 #sysfs
-/sys/devices/soc/caa0000.qcom,jpeg/video4linux/video[0-9]+/name(/.*)?   u:object_r:sysfs_jpeg:s0
+/sys/devices(/platform)?/soc/caa0000.qcom,jpeg/video4linux/video[0-9]+/name(/.*)?   u:object_r:sysfs_jpeg:s0
+/sys/devices(/platform)?/soc/ca00000.qcom,msm-cam/video4linux/video[0-9]+/name(/.*)?  u:object_r:sysfs_jpeg:s0
 
 /sys/devices/soc/780000.qcom,msm-core/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0

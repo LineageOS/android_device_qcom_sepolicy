@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017,2020 The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -32,6 +32,10 @@ allow hal_audio proc_audiod:file r_file_perms;
 allow hal_audio_default vendor_audio_data_file:dir rw_dir_perms;
 allow hal_audio_default vendor_audio_data_file:file create_file_perms;
 
+allow hal_audio_default persist_audio_file:dir rw_dir_perms;
+allow hal_audio_default persist_audio_file:file create_file_perms;
+allow hal_audio_default mnt_vendor_file:dir search;
+
 # Allow hal_audio_default to read sysfs_thermal dir/files for speaker protection
 r_dir_file(hal_audio_default, sysfs_thermal)
 
@@ -53,7 +57,7 @@ allow hal_audio firmware_file:file r_file_perms;
 binder_call(hal_audio,bluetooth)
 
 # audio properties
-get_prop(hal_audio, vendor_audio_prop)
+set_prop(hal_audio, vendor_audio_prop)
 
 #for perf hal call
 hal_client_domain(hal_audio_default, hal_perf)

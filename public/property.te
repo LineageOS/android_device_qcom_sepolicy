@@ -30,3 +30,4 @@ type persist_dpm_prop, property_type, extended_core_property_type;
 # which is going to be working from system
 type vendor_bt_prop, property_type, extended_core_property_type;
 type persist_camera_prop, property_type, extended_core_property_type;
+type vendor_sys_video_prop, property_type, extended_core_property_type;

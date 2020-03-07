@@ -495,6 +495,8 @@
 /data/time(/.*)?                                                    u:object_r:time_data_file:s0
 /data/vendor/nfc(/.*)?                                              u:object_r:nfc_vendor_data_file:s0
 /data/vendor/audio(/.*)?                                            u:object_r:vendor_audio_data_file:s0
+/data/vendor/misc/audio(/.*)?                                       u:object_r:vendor_audio_data_file:s0
+/mnt/vendor/persist/audio(/.*)?                                     u:object_r:persist_audio_file:s0
 /data/vendor/connectivity(/.*)?                                     u:object_r:cnd_data_file:s0
 /data/vendor/misc/qti_fp(/.*)?                                      u:object_r:qfp-daemon_data_file:s0
 /data/vendor/time(/.*)?                                             u:object_r:vendor_time_data_file:s0
