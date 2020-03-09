@@ -27,7 +27,6 @@
 
 type hal_dpmqmi_hwservice, hwservice_manager_type;
 type hal_iop_hwservice, hwservice_manager_type;
-type hal_mirrorlink_hwservice, hwservice_manager_type;
 type hal_pasrmanager_hwservice, hwservice_manager_type;
 type wifidisplayhalservice_hwservice , hwservice_manager_type;
 type hal_alarm_qti_hwservice , hwservice_manager_type;
@@ -35,6 +34,7 @@ type hal_vpp_hwservice , hwservice_manager_type;
 type hal_wigig_hwservice , hwservice_manager_type;
 type hal_seccam_hwservice, hwservice_manager_type;
 type hal_wigig_npt_hwservice , hwservice_manager_type;
+type hal_fstman_hwservice , hwservice_manager_type;
 type hal_qteeconnector_hwservice , hwservice_manager_type;
 type hal_sensorscalibrate_qti_hwservice , hwservice_manager_type;
 type hal_datafactory_hwservice, hwservice_manager_type;
@@ -51,3 +51,5 @@ type hal_srvctracker_hwservice, hwservice_manager_type;
 type hal_qspmhal_hwservice, untrusted_app_visible_hwservice_violators, hwservice_manager_type;
 type hal_bluetooth_dun_hwservice, hwservice_manager_type;
 type hal_qseecom_hwservice, hwservice_manager_type;
+type hal_spu_hwservice, hwservice_manager_type;
+type hal_embmssl_hwservice, hwservice_manager_type;

@@ -50,10 +50,15 @@ hal_client_domain(system_server, hal_wigig)
 hal_client_domain(system_server, hal_wigig_npt)
 # allow WIGIG framework to access the capability config store
 hal_client_domain(system_server, hal_capabilityconfigstore_qti);
+# allow WIFI framework to access the fst-manager
+hal_client_domain(system_server, hal_fstman)
 # allow WIGIG framework access to wil6210 sysfs files like thermal_throttling
 allow system_server sysfs_wigig:file rw_file_perms;
 
 # allow system_server to access IWifiStats HAL service
 hal_client_domain(system_server, hal_wifilearner);
+
+# allow system_server to access Qspmhal
+hal_client_domain(system_server, hal_qspmhal);
 
 get_prop(system_server, vendor_qspm_prop)

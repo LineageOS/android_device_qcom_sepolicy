@@ -32,11 +32,9 @@ vendor.qti.hardware.alarm::IAlarm                            u:object_r:hal_alar
 vendor.qti.hardware.vpp::IHidlVppService                     u:object_r:hal_vpp_hwservice:s0
 vendor.qti.hardware.wigig.supptunnel::ISuppTunnelProvider    u:object_r:hal_wigig_hwservice:s0
 vendor.qti.hardware.wigig.netperftuner::INetPerfTuner        u:object_r:hal_wigig_npt_hwservice:s0
+vendor.qti.hardware.fstman::IFstManager                      u:object_r:hal_fstman_hwservice:s0
 vendor.qti.hardware.qteeconnector::IAppConnector             u:object_r:hal_qteeconnector_hwservice:s0
 vendor.qti.hardware.qteeconnector::IGPAppConnector           u:object_r:hal_qteeconnector_hwservice:s0
-vendor.qti.hardware.mlshal::IMlsDap                          u:object_r:hal_mirrorlink_hwservice:s0
-vendor.qti.hardware.mlshal::IMlsVnc                          u:object_r:hal_mirrorlink_hwservice:s0
-vendor.qti.hardware.mlshal::IMlsIon                          u:object_r:hal_mirrorlink_hwservice:s0
 vendor.qti.power.pasrmanager::IPasrManager                   u:object_r:hal_pasrmanager_hwservice:s0
 com.qualcomm.qti.bluetooth_audio::IBluetoothAudio            u:object_r:hal_audio_hwservice:s0
 vendor.qti.hardware.btconfigstore::IBTConfigStore            u:object_r:hal_btconfigstore_hwservice:s0
@@ -69,6 +67,8 @@ vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionImageTrack    u:objec
 vendor.qti.hardware.wifi.hostapd::IHostapdVendor             u:object_r:hal_wifi_hostapd_hwservice:s0
 vendor.qti.hardware.bluetooth_audio::IBluetoothAudioProvidersFactory  u:object_r:hal_audio_hwservice:s0
 vendor.qti.hardware.wifi.wifilearner::IWifiStats             u:object_r:hal_wifilearner_hwservice:s0
+vendor.qti.qspmhal::IQspmhal                                 u:object_r:hal_qspmhal_hwservice:s0
 vendor.qti.hardware.cryptfshw::ICryptfsHw                    u:object_r:hal_keymaster_hwservice:s0
 vendor.qti.hardware.qseecom::IQSEECom                        u:object_r:hal_qseecom_hwservice:s0
-vendor.qti.qspmhal::IQspmhal                                 u:object_r:hal_qspmhal_hwservice:s0
+vendor.qti.spu::ISPUManager                                  u:object_r:hal_spu_hwservice:s0
+vendor.qti.hardware.embmssl::IEmbms                          u:object_r:hal_embmssl_hwservice:s0
