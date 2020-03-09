@@ -32,7 +32,11 @@ net_domain(seccam_app)
 hal_client_domain(seccam_app, hal_seccam);
 hal_client_domain(seccam_app, hal_qteeconnector);
 
-allow seccam_app system_app_data_file:dir create_dir_perms;
-allow seccam_app system_app_data_file:file create_file_perms;
+allow seccam_app app_data_file:dir create_dir_perms;
+allow seccam_app app_data_file:file create_file_perms;
 allow seccam_app { activity_service app_api_service } :service_manager find;
 allow seccam_app self:qipcrtr_socket create_socket_perms_no_ioctl;
+typeattribute seccam_app hal_graphics_composer_client;
+
+#qspm
+hal_client_domain(seccam_app, hal_qspmhal)

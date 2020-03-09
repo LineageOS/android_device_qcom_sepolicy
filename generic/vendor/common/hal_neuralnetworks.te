@@ -27,6 +27,7 @@
 
 type hal_neuralnetworks_default, domain;
 hal_server_domain(hal_neuralnetworks_default, hal_neuralnetworks)
+hal_client_domain(hal_neuralnetworks_default, hal_graphics_allocator)
 
 type hal_neuralnetworks_default_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_neuralnetworks_default)
@@ -44,3 +45,7 @@ allow hal_neuralnetworks_default gpu_device:chr_file rw_file_perms;
 allow hal_neuralnetworks_default npu_device:chr_file r_file_perms;
 
 r_dir_file(hal_neuralnetworks_default, adsprpcd_file)
+
+get_prop(hal_neuralnetworks_default, vendor_adsprpc_prop)
+
+get_prop(hal_neuralnetworks_default, vendor_debuglog_prop)

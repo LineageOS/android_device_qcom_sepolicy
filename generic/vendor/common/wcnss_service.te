@@ -64,7 +64,6 @@ allow wcnss_service sysfs_data:file r_file_perms;
 userdebug_or_eng(`
   r_dir_file(wcnss_service, proc_wifi_dbg)
   r_dir_file(wcnss_service, sysfs_diag)
-  allow wcnss_service sysfs_timestamp_switch:file r_file_perms;
 ')
 
 userdebug_or_eng(`

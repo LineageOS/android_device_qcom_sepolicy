@@ -34,6 +34,10 @@ type persist_iar_db_file, file_type , vendor_persist_type;
 #mink-lowi-interface-daemon (mlid) socket
 type mlid_socket, file_type, mlstrustedobject;
 
+#Wireless Edge Service (QWES) socket and files
+type qwesd_socket, file_type, mlstrustedobject;
+type vendor_qwes_data_file, file_type, data_file_type;
+
 #ssg qmi gateway daemon socket
 type ssgqmig_socket, file_type, mlstrustedobject;
 
@@ -70,6 +74,7 @@ type dataadpl_socket, file_type;
 type sysfs_lib, fs_type, sysfs_type;
 type sysfs_memory, fs_type, sysfs_type;
 type sysfs_process_reclaim, fs_type, sysfs_type;
+type sysfs_vmpressure, fs_type, sysfs_type;
 
 # secure element file type for data vendor access
 type secure_element_vendor_data_file, file_type, data_file_type;

@@ -30,6 +30,7 @@ app_domain(ustaservice_app)
 allow ustaservice_app usta_app_service:service_manager add;
 allow ustaservice_app usta_app_service:service_manager find;
 allow ustaservice_app activity_service:service_manager find;
+allow ustaservice_app app_api_service:service_manager find;
 
 userdebug_or_eng(`
   allowxperm ustaservice_app self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
@@ -43,3 +44,8 @@ hwbinder_use(ustaservice_app)
 userdebug_or_eng(`
    diag_use(ustaservice_app)
 ')
+
+allow ustaservice_app system_app_data_file:dir create_dir_perms;
+allow ustaservice_app system_app_data_file:file create_file_perms;
+allow ustaservice_app cgroup:file w_file_perms;
+get_prop(ustaservice_app, sensors_prop)

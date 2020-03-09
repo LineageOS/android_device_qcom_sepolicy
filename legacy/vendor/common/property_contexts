@@ -213,6 +213,9 @@ persist.vendor.soh               u:object_r:hvdcp_opti_prop:s0
 #adsprpc
 vendor.fastrpc.                  u:object_r:adsprpc_prop:s0
 
+#debuglog
+vendor.zeroth.debuglog.logmask   u:object_r:vendor_debuglog_prop:s0
+
 #qvr properties
 vendor.qvr                       u:object_r:qvr_prop:s0
 
