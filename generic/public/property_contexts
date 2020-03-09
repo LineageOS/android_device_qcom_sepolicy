@@ -1,0 +1,2 @@
+# vendor-init-settable|public-readable
+wifi.interface.1 u:object_r:exported_default_prop:s0 exact string
