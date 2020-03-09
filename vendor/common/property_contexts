@@ -201,6 +201,8 @@ vendor.mm.en.sec.smoothstreaming   u:object_r:mm_video_prop:s0
 vendor.hevc.mux.print.codec.cfg    u:object_r:mm_video_prop:s0
 ro.vendor.mm-enable-accurate-seek  u:object_r:mm_video_prop:s0
 
+vendor.media.target.version        u:object_r:vendor_video_prop:s0
+
 persist.vendor.camera.debug.logfile u:object_r:camera_prop:s0
 
 #rmt_storage

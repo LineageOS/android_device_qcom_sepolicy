@@ -27,3 +27,4 @@
 
 set_prop(zygote, system_prop)
 get_prop(zygote, vendor_mpctl_prop)
+get_prop(zygote, vendor_video_prop)

@@ -74,6 +74,8 @@ hal_client_domain(mediacodec, hal_vpp)
 hal_client_domain(mediacodec, hal_perf)
 
 get_prop(mediacodec, mm_video_prop)
+get_prop(mediacodec, vendor_video_prop)
+
 allow mediacodec hal_display_config_hwservice:hwservice_manager find;
 allow mediacodec hal_graphics_composer_default:binder call;
 allow mediacodec qdisplay_service:service_manager find;
