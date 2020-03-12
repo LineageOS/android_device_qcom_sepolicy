@@ -48,6 +48,11 @@ allow vendor_hal_perf_default vendor_mpctl_data_file:file create_file_perms;
 allow vendor_hal_perf_default vendor_lm_data_file:dir rw_dir_perms;
 allow vendor_hal_perf_default vendor_lm_data_file:file create_file_perms;
 allow vendor_hal_perf_default vendor_sysfs_lib:file w_file_perms;
+allow vendor_hal_perf_default proc_meminfo:file r_file_perms;
+allow vendor_hal_perf_default self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow vendor_hal_perf_default {appdomain}:process getpgid;
+hal_client_domain(vendor_hal_perf_default, vendor_hal_iop);
+hal_client_domain(vendor_hal_perf_default, vendor_hal_srvctracker);
 r_dir_file(vendor_hal_perf_default, appdomain);
 allow vendor_hal_perf_default {appdomain}:file rw_file_perms;
 
@@ -58,6 +63,7 @@ allow vendor_hal_perf {
      vendor_sysfs_mmc_host
      vendor_sysfs_scsi_host
      vendor_sysfs_kgsl
+     vendor_sysfs_kgsl_proc
      vendor_sysfs_cpu_boost
      vendor_sysfs_msm_perf
      vendor_sysfs_memory
