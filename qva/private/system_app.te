@@ -1,4 +1,4 @@
-# Copyright (c) 2015, 2017, 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2015, 2017, 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -39,20 +39,6 @@ get_prop(system_app, bluetooth_prop);
 
 # allow system_app access to Workload Classifier Property
 set_prop(system_app, vendor_wlc_prop);
-
-#WFD
-set_prop(system_app, vendor_wfd_service_prop);
-userdebug_or_eng(`
-    get_prop(system_app, vendor_wfd_sys_debug_prop);
-#Access to MM-OSAL debug prop for parser debugging on WFD sink
-    get_prop(system_app, vendor_mm_osal_prop);
-#Allow access to logmask file in /data/
-    allow system_app system_data_file:file r_file_perms;
-')
-binder_call(system_app, vendor_wfdservice)
-
-# allow access to read video SKU property for WFD sink
-get_prop(system_app, vendor_sys_video_prop)
 
 # allow system_app access to wigig Property
 get_prop(system_app, vendor_wigig_core_prop);
