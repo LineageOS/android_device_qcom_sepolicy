@@ -53,3 +53,4 @@ type vendor_hal_secureprocessor_hwservice, hwservice_manager_type, protected_hws
 type vendor_hal_qspmhal_hwservice, hwservice_manager_type;
 type vendor_hal_bluetooth_dun_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_embmssl_hwservice, hwservice_manager_type, protected_hwservice;
+type vendor_hal_qseecom_hwservice, hwservice_manager_type, protected_hwservice;
