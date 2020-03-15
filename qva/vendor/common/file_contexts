@@ -33,7 +33,10 @@
 /dev/sp_keymaster                     u:object_r:vendor_sp_keymaster_device:s0
 /dev/sp_ssr                           u:object_r:vendor_sp_ssr_device:s0
 /dev/spdaemon_ssr                     u:object_r:vendor_spdaemon_ssr_device:s0
+/dev/spu_hal_ssr                      u:object_r:vendor_spu_hal_ssr_device:s0
 /dev/iuicc                            u:object_r:vendor_iuicc_device:s0
+/dev/iuicc0                           u:object_r:vendor_iuicc_device:s0
+/dev/iuicc1                           u:object_r:vendor_iuicc_device:s0
 /dev/cryptoapp                        u:object_r:vendor_cryptoapp_device:s0
 /dev/sec_nvm_.*                       u:object_r:vendor_sec_nvm_device:s0
 /dev/qbt.*                            u:object_r:vendor_qbt_device:s0
@@ -73,6 +76,7 @@
 /vendor/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service                   u:object_r:vendor_hal_qteeconnector_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.qseecom@1\.0-service                         u:object_r:vendor_hal_qseecom_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.scve\.objecttracker@1\.0-service             u:object_r:vendor_scve_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.spu@1\.0-service                       u:object_r:vendor_hal_spu_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.scve\.panorama@1\.0-service  u:object_r:vendor_scve_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service                u:object_r:vendor_hal_sensorscalibrate_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.soter@1\.0-service           u:object_r:vendor_hal_soter_qti_exec:s0
