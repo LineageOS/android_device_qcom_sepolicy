@@ -26,9 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 type vendor_hal_cne_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_cacert_hwservice, hwservice_manager_type, protected_hwservice;
-type vendor_vnd_ims_radio_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_dataconnection_hwservice, hwservice_manager_type, protected_hwservice;
-type vendor_vnd_qcrilhook_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_iwlan_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_display_config_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_imsrcsd_hwservice, hwservice_manager_type, protected_hwservice;
