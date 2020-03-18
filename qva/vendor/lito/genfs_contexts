@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -37,6 +37,8 @@ genfscon sysfs /class/qcom-battery u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/98c000.i2c/i2c-2/2-000c/98c000.i2c:qcom,smb1355@c:qcom,smb1355-charger@1000/power_supply/parallel u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/98c000.i2c/i2c-2/2-0010/98c000.i2c:qcom,smb1390@10:qcom,charge_pump/power_supply/charge_pump_master u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/98c000.i2c/i2c-2/2-0018/98c000.i2c:qcom,smb1390_slave@18:qcom,charge_pump_slave/power_supply/cp_slave u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/98c000.i2c/i2c-2/2-0034/98c000.i2c:qcom,smb1396@34:qcom,div2_cp/power_supply/charge_pump_master u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/98c000.i2c/i2c-2/2-0035/98c000.i2c:qcom,smb1396@35:qcom,div2_cp_slave/power_supply/cp_slave u:object_r:sysfs_battery_supply:s0
 #qdss sysfs-node
 genfscon sysfs /devices/platform/soc/6b05000.tmc/coresight-tmc-etf u:object_r:sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/6048000.tmc/coresight-tmc-etr u:object_r:sysfs_qdss_dev:s0

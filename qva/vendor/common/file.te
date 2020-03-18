@@ -128,3 +128,7 @@ type vendor_qspmhal_data_file, file_type, data_file_type;
 type sysfs_memory_offline, sysfs_type, fs_type;
 
 type sysfs_qfprom, fs_type, sysfs_type;
+
+#slub-debug
+type sysfs_slab_zshandle_storeuser, fs_type, sysfs_type;
+type sysfs_slab_zspage_storeuser, fs_type, sysfs_type;

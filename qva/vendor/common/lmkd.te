@@ -33,7 +33,7 @@ allow lmkd hwservicemanager:binder call;
 
 # Used by LMKD to work with EPOLLWAKEUP events.
 allow lmkd self:global_capability2_class_set block_suspend;
-
+allow lmkd proc_vmstat:file r_file_perms;
 userdebug_or_eng(`
   allow lmkd kmsg_device:chr_file rw_file_perms;
 ')

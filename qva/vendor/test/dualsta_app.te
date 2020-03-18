@@ -25,6 +25,26 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Needed for time service apk
-user=_app seinfo=timeserviceapp name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file levelFrom=all
+# qva/private/location_app_test.te - sepolicy rules for qti value added
+# location apps (internal) that will be part of system image. eg: ODLT, Qlogcat
+
+type dualsta_app, domain;
+app_domain(dualsta_app)
+
+userdebug_or_eng(`
+  binder_call(cnd,dualsta_app)
+  binder_call(dualsta_app,cnd)
+  allow dualsta_app hal_datafactory_hwservice:hwservice_manager find;
+  allow dualsta_app activity_service:service_manager find;
+  allow dualsta_app activity_task_service:service_manager find;
+  allow dualsta_app audio_service:service_manager find;
+  allow dualsta_app autofill_service:service_manager find;
+  allow dualsta_app cgroup:file write;
+  allow dualsta_app gpu_service:service_manager find;
+  allow dualsta_app gpuservice:binder call;
+  allow dualsta_app surfaceflinger_service:service_manager find;
+  allow dualsta_app system_app_data_file:dir { add_name getattr remove_name search write };
+  allow dualsta_app system_app_data_file:file { create getattr map open read setattr unlink write };
+  allow dualsta_app textservices_service:service_manager find;
+')
 

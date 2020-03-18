@@ -30,6 +30,7 @@ MinkBinderSvc                                  u:object_r:MinkBinderSvc:s0
 vendor.perfservice                             u:object_r:vendor_perf_service:s0
 sms-sec                                        u:object_r:radio_service:s0
 extphone                                       u:object_r:radio_service:s0
+qti.ims.ext                                    u:object_r:radio_service:s0
 com.qualcomm.location.izat.IzatService         u:object_r:izat_service:s0
 qti.security.seempspa                          u:object_r:seemp_service:s0
 vendor.audio.vrservice                         u:object_r:audioserver_service:s0

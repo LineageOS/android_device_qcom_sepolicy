@@ -91,3 +91,6 @@ type vendor_qvr_prop, property_type;
 
 #qmuxd property
 type ctl_qmuxd_prop, property_type;
+
+#slm property
+type slm_prop, property_type;
