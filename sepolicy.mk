@@ -23,6 +23,7 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
         device/qcom/sepolicy/generic/vendor/common \
         device/qcom/sepolicy/qva/vendor/common/sysmonapp \
         device/qcom/sepolicy/qva/vendor/ssg \
+        device/qcom/sepolicy/timeservice \
         device/qcom/sepolicy/qva/vendor/qwesas \
         device/qcom/sepolicy/qva/vendor/common
 
@@ -44,6 +45,7 @@ ifneq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
     BOARD_SEPOLICY_DIRS += \
         device/qcom/sepolicy/legacy/vendor/common/sysmonapp \
         device/qcom/sepolicy/legacy/vendor/ssg \
+        device/qcom/sepolicy/timeservice \
         device/qcom/sepolicy/legacy/vendor/common
 
     ifeq ($(TARGET_SEPOLICY_DIR),)
