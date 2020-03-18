@@ -119,10 +119,6 @@ attribute hal_bluetooth_dun;
 attribute hal_bluetooth_dun_client;
 attribute hal_bluetooth_dun_server;
 
-attribute hal_spu;
-attribute hal_spu_client;
-attribute hal_spu_server;
-
 attribute hal_embmssl;
 attribute hal_embmssl_client;
 attribute hal_embmssl_server;

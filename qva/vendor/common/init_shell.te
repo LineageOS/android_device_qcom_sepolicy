@@ -49,3 +49,12 @@ userdebug_or_eng(`
 set_prop(qti_init_shell, vendor_audio_debug_prop)
 set_prop(qti_init_shell, vendor_coresight_prop)
 ')
+
+#allow configuring slub debug options
+allow qti_init_shell sysfs_slab_zshandle_storeuser:file w_file_perms;
+allow qti_init_shell sysfs_slab_zspage_storeuser:file w_file_perms;
+
+allow qti_init_shell {
+    sysfs_mmc_host
+}:file w_file_perms;
+

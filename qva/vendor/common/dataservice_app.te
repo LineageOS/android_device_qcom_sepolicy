@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,38 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#Policy for mdm_helper
-#mdm_helper - mdm_helper domain
-type mdm_helper, domain;
-type mdm_helper_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(mdm_helper);
-
-#block_suspend capability is needed by kickstart(ks)
-wakelock_use(mdm_helper)
-
-#Needed to power on the peripheral
-allow mdm_helper ssr_device:chr_file r_file_perms;
-
-#Needed to access the esoc device to control the mdm
-allow mdm_helper esoc_device:dir r_dir_perms;
-allow mdm_helper esoc_device:chr_file rw_file_perms;
-
-#Needed in order to run kickstart
-allow mdm_helper vendor_shell_exec:file rx_file_perms;
-allow mdm_helper mdm_helper_exec :file x_file_perms;
-
-userdebug_or_eng(`
-#Needed for ram dump storage
-allow mdm_helper vendor_tombstone_data_file:dir create_dir_perms;
-allow mdm_helper vendor_tombstone_data_file:file create_file_perms;
-')
-
-#Needed by ks in order to access the efs sync partitions.
-allow mdm_helper block_device:dir r_dir_perms;
-allow mdm_helper efs_boot_dev:blk_file rw_file_perms;
-
-#Needed in order to access the firmware partition
-r_dir_file(mdm_helper, firmware_file)
-
-#Needed to allow boot over PCIe
-allow mdm_helper mhi_device:chr_file rw_file_perms;
+allow dataservice_app hal_slmadapter_hwservice:hwservice_manager find;

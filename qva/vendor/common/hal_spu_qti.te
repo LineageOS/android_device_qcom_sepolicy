@@ -41,6 +41,9 @@ binder_call(hal_spu_server, hal_spu_client)
 # Allow the service to be added to hwservice list
 hal_attribute_hwservice(hal_spu, hal_spu_hwservice)
 
+# Allow access to spss_utils device
+allow hal_spu_qti spss_utils_device:chr_file rw_file_perms;
+
 # Allow access to spcom devices
 allow hal_spu_qti spcom_device:chr_file rw_file_perms;
 allow hal_spu_qti skp_device:chr_file rw_file_perms;
