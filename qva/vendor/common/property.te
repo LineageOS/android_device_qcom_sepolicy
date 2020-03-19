@@ -25,7 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-vendor_internal_prop(vendor_qcom_ims_prop);
 vendor_internal_prop(vendor_dataadpl_prop);
 vendor_internal_prop(vendor_cnd_vendor_prop);
 vendor_internal_prop(vendor_spcomlib_prop);
