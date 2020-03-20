@@ -42,7 +42,7 @@ userdebug_or_eng(`
   #binder_service(fidotest)
 
   #Allow fido test daemons to be registered with service manager
-  allow fidotest fidotest_service:service_manager add;
+  #allow fidotest fidotest_service:service_manager add;
 
   # Allow communication with init over property server
   unix_socket_connect(fidotest, property, init);
