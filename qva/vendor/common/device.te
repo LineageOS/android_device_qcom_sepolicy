@@ -30,6 +30,7 @@ type vendor_skp_device, dev_type;
 type vendor_sp_keymaster_device, dev_type;
 type vendor_sp_ssr_device, dev_type;
 type vendor_spdaemon_ssr_device, dev_type;
+type vendor_spu_hal_ssr_device, dev_type;
 type vendor_iuicc_device, dev_type;
 type vendor_cryptoapp_device, dev_type;
 type vendor_sec_nvm_device, dev_type;

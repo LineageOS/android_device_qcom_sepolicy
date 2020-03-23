@@ -25,14 +25,38 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-attribute vendor_sigmahal;
-attribute vendor_sigmahal_server;
-attribute vendor_sigmahal_client;
+type vendor_hal_spu_qti, domain;
+type vendor_hal_spu_qti_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_spu_qti)
 
-attribute vendor_qccsyshal;
-attribute vendor_qccsyshal_server;
-attribute vendor_qccsyshal_client;
+hal_server_domain(vendor_hal_spu_qti, vendor_hal_spu)
 
-attribute vendor_hal_spu;
-attribute vendor_hal_spu_client;
-attribute vendor_hal_spu_server;
+# Allow access to hal_allocator
+hal_client_domain(vendor_hal_spu_qti, hal_allocator)
+
+# Allow vendor_hal_spu client domain apps to find hwservice
+binder_call(vendor_hal_spu_client, vendor_hal_spu_server)
+binder_call(vendor_hal_spu_server, vendor_hal_spu_client)
+
+# Allow the service to be added to hwservice list
+hal_attribute_hwservice(vendor_hal_spu, vendor_hal_spu_hwservice)
+
+# Allow access to spss_utils device
+#allow vendor_hal_spu_qti vendor_spss_utils_device:chr_file rw_file_perms;
+
+# Allow access to spcom devices
+allow vendor_hal_spu_qti vendor_spcom_device:chr_file rw_file_perms;
+allow vendor_hal_spu_qti vendor_skp_device:chr_file rw_file_perms;
+allow vendor_hal_spu_qti vendor_sp_ssr_device:chr_file rw_file_perms;
+allow vendor_hal_spu_qti vendor_cryptoapp_device:chr_file rw_file_perms;
+allow vendor_hal_spu_qti vendor_iuicc_device:chr_file rw_file_perms;
+allow vendor_hal_spu_qti vendor_spu_hal_ssr_device:chr_file rw_file_perms;
+
+# Alloc acess to ion_device
+allow vendor_hal_spu_qti ion_device:chr_file rw_file_perms;
+
+# Allow set / get spcomlib prop
+set_prop(vendor_hal_spu_qti, vendor_spcomlib_prop)
+
+# Vendor binder
+use_vendor_per_mgr(vendor_hal_spu_qti)
