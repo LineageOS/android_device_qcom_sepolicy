@@ -129,3 +129,6 @@ vendor.fastrpc.                  u:object_r:vendor_adsprpc_prop:s0
 
 # Property for storing soc_id
 ro.vendor.qti.soc       u:object_r:vendor_soc_prop:s0
+
+#kernel console log level
+persist.console.silent.config    u:object_r:vendor_console_log_level_prop:s0

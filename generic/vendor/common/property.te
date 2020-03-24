@@ -103,3 +103,6 @@ vendor_internal_prop(vendor_wifi_version);
 
 # Property for storing soc_id
 vendor_internal_prop(vendor_soc_prop)
+
+#kernel console log level
+vendor_internal_prop(vendor_console_log_level_prop)
