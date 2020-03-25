@@ -36,9 +36,6 @@ allow rild vendor_file:file { execute_no_trans lock ioctl };
 allow rild self:tipc_socket { create_socket_perms_no_ioctl };
 allow rild vendor_per_mgr_service:service_manager find;
 
-add_hwservice(rild, vendor_vnd_ims_radio_hwservice)
-add_hwservice(rild, vendor_vnd_qcrilhook_hwservice)
-
 allow rild self:socket ioctl;
 allowxperm rild self:socket ioctl msm_sock_ipc_ioctls;
 allow rild vendor_time_daemon:unix_stream_socket connectto;

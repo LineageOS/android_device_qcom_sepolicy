@@ -30,8 +30,6 @@ allow radio vendor_framework_file:file r_file_perms;
 allow radio vendor_framework_file:dir search;
 
 hwbinder_use(radio)
-allow radio vendor_vnd_ims_radio_hwservice:hwservice_manager find;
-allow radio vendor_vnd_qcrilhook_hwservice:hwservice_manager find;
 allow radio vendor_hal_imsrtp_hwservice:hwservice_manager find;
 
 add_service(radio, radio_service)
