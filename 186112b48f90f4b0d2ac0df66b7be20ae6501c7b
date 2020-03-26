@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2442579a_f3279005",
+        "filename": "generic/vendor/common/hal_imsrtp.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-03-26T03:24:56Z",
+      "side": 1,
+      "message": "device/qcom/sepolicy/generic/vendor/common/hal_imsrtp.te:51:WARNING \u0027unrecognized character\u0027 at token \u0027\u0027\u0027 on line 64955:\n\n\u0027\ndevice/qcom/sepolicy/generic/vendor/common/hal_imsrtp.te:51:WARNING \u0027unrecognized character\u0027 at token \u0027\u0027\u0027 on line 64973:\n#line 51\n\u0027\ndevice/qcom/sepolicy/generic/vendor/common/hal_imsrtp.te:51:WARNING \u0027unrecognized character\u0027 at token \u0027\u0027\u0027 on line 64955:\n\n\u0027\ndevice/qcom/sepolicy/generic/vendor/common/hal_imsrtp.te:51:WARNING \u0027unrecognized character\u0027 at token \u0027\u0027\u0027 on line 64973:\n#line 51",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 2
+      },
+      "revId": "186112b48f90f4b0d2ac0df66b7be20ae6501c7b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
