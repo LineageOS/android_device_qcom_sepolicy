@@ -489,3 +489,5 @@
 
 #Limits sysfs node
 /sys/module/msm_isense_cdsp/data                        u:object_r:sysfs_thermal:s0
+
+/(vendor|system/vendor)/bin/vendor_modprobe\.sh        u:object_r:vendor_modinstall-sh_exec:s0
