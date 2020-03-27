@@ -99,7 +99,7 @@
 /(vendor|system/vendor)/bin/ssgqmigd                                               u:object_r:vendor_ssgqmigd_exec:s0
 /(vendor|system/vendor)/bin/ssgtzd                                                 u:object_r:vendor_ssgtzd_exec:s0
 /(vendor|system/vendor)/bin/mlid                                                   u:object_r:vendor_mlid_exec:s0
-/(vendor|system/vendor)/bin/qdmastatsd                                             u:object_r:vendor_qcc_trd_exec:s0
+/(vendor|system/vendor)/bin/qcc-trd                                             u:object_r:vendor_qcc_trd_exec:s0
 /(vendor|system/vendor)/bin/seemp_healthd                                          u:object_r:vendor_seemp_health_daemon_exec:s0
 /(vendor|system/vendor)/bin/qfp-daemon                                             u:object_r:vendor_qfp-daemon_exec:s0
 /(vendor|system/vendor)/bin/adpl                                                   u:object_r:vendor_adpl_exec:s0
