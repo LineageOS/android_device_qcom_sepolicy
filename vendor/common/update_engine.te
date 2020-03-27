@@ -32,3 +32,8 @@ allow update_engine fuse:dir r_dir_perms;
 allow update_engine sdcard_type:dir r_dir_perms;
 allow update_engine sdcard_type:file r_file_perms;
 binder_call( update_engine, system_app )
+
+allow update_engine_common {adsprpcd_file firmware_file}:dir search;
+allow update_engine_common {bt_firmware_file firmware_file}:filesystem getattr;
+
+dontaudit update_engine_common self:capability {dac_read_search dac_override};
