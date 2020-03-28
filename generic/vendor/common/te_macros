@@ -170,4 +170,5 @@ define(`use_vendor_fwk_detect', `
 # Placeholder - currently the detection mechanism does not require
 # any additional security permissions
 define(`use_libsoc_helper', `
+get_prop($1, vendor_soc_prop);
 ')
