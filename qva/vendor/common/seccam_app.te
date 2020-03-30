@@ -32,8 +32,8 @@ net_domain(vendor_seccam_app)
 hal_client_domain(vendor_seccam_app, vendor_hal_seccam);
 hal_client_domain(vendor_seccam_app, vendor_hal_qteeconnector);
 
-allow vendor_seccam_app system_app_data_file:dir create_dir_perms;
-allow vendor_seccam_app system_app_data_file:file create_file_perms;
+allow vendor_seccam_app app_data_file:dir create_dir_perms;
+allow vendor_seccam_app app_data_file:file create_file_perms;
 allow vendor_seccam_app { activity_service app_api_service } :service_manager find;
 allow vendor_seccam_app self:qipcrtr_socket create_socket_perms_no_ioctl;
 

@@ -28,6 +28,3 @@
 # sysmonapp applications
 user=_app seinfo=sysmonapp domain=vendor_sysmonapp_app name=com.qualcomm.sysmonappInternal type=app_data_file levelFrom=all
 user=_app seinfo=sysmonapp domain=vendor_sysmonapp_app name=com.qualcomm.qti.sysmonappExternal type=app_data_file levelFrom=all
-
-#Add new domain for secure camera service app
-user=system seinfo=platform name=com.qualcomm.qti.seccamservice:remote domain=vendor_seccam_app type=system_app_data_file
