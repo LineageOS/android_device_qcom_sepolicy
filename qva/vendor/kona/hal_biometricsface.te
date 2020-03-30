@@ -45,7 +45,7 @@ allow vendor_biometricsface qdsp_device:chr_file rw_file_perms;
 allow vendor_biometricsface dsp_device:chr_file rw_file_perms;
 
 #  Access for sdcard
-userdebug_or_eng('
+userdebug_or_eng(`
 allow vendor_biometricsface sdcard_type:dir rw_dir_perms;
 allow vendor_biometricsface sdcard_type:file create_file_perms;
 ')

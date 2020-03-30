@@ -62,6 +62,6 @@ get_prop(hal_imsrtp, qcom_ims_prop)
 
 binder_call(hal_imsrtp, radio)
 
-userdebug_or_eng('
+userdebug_or_eng(`
 binder_call(hal_imsrtp, vtloopback_app)
 ')
