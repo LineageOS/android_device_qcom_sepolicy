@@ -109,3 +109,9 @@ allow netmgrd sysfs_net:file rw_file_perms;
 userdebug_or_eng(`
   r_dir_file(netmgrd, sysfs_diag)
 ')
+
+#Allow set persist.vendor.data.shs_ko_load
+#Allow set persist.vendor.data.shsusr_load
+#Allow set persist.vendor.data.perf_ko_load
+#Allow set persist.vendor.data.qmipriod_load
+set_prop(netmgrd, vendor_radio_prop)
