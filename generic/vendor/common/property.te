@@ -84,7 +84,7 @@ vendor_internal_prop(vendor_cap_configstore_dbg_prop);
 #rmt_storage
 vendor_internal_prop(vendor_ctl_vendor_rmt_storage_prop);
 
-vendor_internal_prop(vendor_gpu_prop);
+vendor_restricted_prop(vendor_gpu_prop);
 
 vendor_restricted_prop(vendor_public_vendor_default_prop);
 
