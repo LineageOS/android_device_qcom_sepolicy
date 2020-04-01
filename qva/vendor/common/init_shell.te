@@ -42,6 +42,7 @@ set_prop(vendor_qti_init_shell, vendor_hvdcp_opti_prop)
 # To write to /data/vendor/perfd
 allow vendor_qti_init_shell vendor_mpctl_data_file:dir w_dir_perms;
 allow vendor_qti_init_shell vendor_mpctl_data_file:file { write getattr unlink };
+allow vendor_qti_init_shell vendor_sysfs_vmpressure:file w_file_perms;
 
 userdebug_or_eng(`
 # Needed for starting console in userdebug mode

@@ -64,6 +64,7 @@ type vendor_dataadpl_socket, file_type;
 type vendor_sysfs_lib, fs_type, sysfs_type;
 type vendor_sysfs_memory, fs_type, sysfs_type;
 type vendor_sysfs_process_reclaim, fs_type, sysfs_type;
+type vendor_sysfs_vmpressure, fs_type, sysfs_type;
 
 # secure element file type for data vendor access
 type vendor_secure_element_vendor_data_file, file_type, data_file_type;
