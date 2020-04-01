@@ -27,5 +27,7 @@
 
 allow lmkd vendor_hal_perf_hwservice:hwservice_manager find;
 allow lmkd vendor_hal_perf_default:binder call;
+allow lmkd vendor_hal_iop_hwservice:hwservice_manager find;
+allow lmkd vendor_hal_iop_default:binder call;
 allow lmkd hwservicemanager:binder call;
 get_prop(lmkd, hwservicemanager_prop);
