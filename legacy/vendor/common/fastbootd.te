@@ -35,6 +35,16 @@ allow fastbootd {
         modem_block_device
         mdtp_device
 }:blk_file { rw_file_perms };
+
+# Allow fastbootd to read /sys/class/power_supply directory
+# and access to power supply, usb nodes.
+allow fastbootd sysfs:dir r_dir_perms;
+r_dir_file(fastbootd, vendor_sysfs_battery_supply)
+r_dir_file(fastbootd, vendor_sysfs_usb_supply)
+allow fastbootd {
+    vendor_sysfs_battery_supply
+    vendor_sysfs_usb_supply
+}:file w_file_perms;
 ')
 
 allow fastbootd tmpfs:lnk_file { getattr read };
