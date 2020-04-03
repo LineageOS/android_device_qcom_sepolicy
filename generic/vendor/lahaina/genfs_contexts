@@ -25,6 +25,99 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#subsys nodes (varying hardware layouts; can optimize for specific hw variant)
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys2/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys2/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/abb0000.qcom,cvpss/subsys1/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/abb0000.qcom,cvpss/subsys1/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/abb0000.qcom,cvpss/subsys3/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/abb0000.qcom,cvpss/subsys3/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys2/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys2/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys3/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys3/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys4/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys4/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys6/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys6/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys3/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys3/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys4/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys4/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys5/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys5/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys3/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys3/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys4/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys4/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys5/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys5/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys6/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys6/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys0/name  u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys0/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys4/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys4/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys5/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys5/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys6/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys6/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys7/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys7/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/98900000.qcom,turing/subsys1/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/98900000.qcom,turing/subsys1/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/98900000.qcom,turing/subsys5/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/98900000.qcom,turing/subsys5/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/98900000.qcom,turing/subsys6/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/98900000.qcom,turing/subsys6/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/98900000.qcom,turing/subsys7/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/98900000.qcom,turing/subsys7/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/98900000.qcom,turing/subsys8/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/98900000.qcom,turing/subsys8/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys4/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys4/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys6/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys6/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys7/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys7/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys8/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys8/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys9/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys9/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys5/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys5/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys7/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys7/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys8/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys8/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys9/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys9/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys10/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys10/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/soc:qcom,trustedvm@d0800000/subsys2/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,trustedvm@d0800000/subsys2/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,trustedvm@d0800000/subsys3/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,trustedvm@d0800000/subsys3/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys2/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys2/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys9/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys9/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys10/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys10/restart_level u:object_r:vendor_sysfs_ssr:s0
+
+
 #qdss sysfs-node
 genfscon sysfs /devices/platform/soc/6b05000.tmc/coresight-tmc-etf u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/6048000.tmc/coresight-tmc-etr u:object_r:vendor_sysfs_qdss_dev:s0
