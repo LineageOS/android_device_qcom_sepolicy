@@ -31,6 +31,8 @@
 # partition names in the block_device directory /dev/block/.../by-name
 allow hal_bootctl block_device:dir r_dir_perms;
 
+#Opening /dev directory from bootctl to query /dev/ufs-bsg* filename
+allow hal_bootctl device:dir r_dir_perms;
 # Edit the attributes stored in the GPT.
 allow hal_bootctl vendor_gpt_block_device:blk_file rw_file_perms;
 allow hal_bootctl root_block_device:blk_file rw_file_perms;
@@ -47,16 +49,21 @@ allow hal_bootctl recovery_block_device:blk_file getattr;
 allow hal_bootctl vendor_mdtp_device:blk_file getattr;
 allow hal_bootctl_server misc_block_device:blk_file rw_file_perms;
 
-# Access /dev/sgN devices (generic SCSI) to write the
+# Access /dev/sgN or /dev/ufs-bsg* devices (generic SCSI) to write the
 # A/B slot selection for the XBL partition. Allow also to issue a
-# UFS_IOCTL_QUERY ioctl.
+# UFS_IOCTL_QUERY or SG_IO ioctl.
 allow hal_bootctl vendor_sg_device:chr_file rw_file_perms;
+allow hal_bootctl vendor_bsg_device:chr_file rw_file_perms;
 
 # The sys_rawio denial message is benign, and shows up due to a capability()
 # call made by the scsi driver to check for CAP_SYS_RAWIO. Not having this
 # does not result in a error
 dontaudit hal_bootctl self:capability sys_rawio;
 
+
+#scsi driver does a capability check (CAP_SYS_RAWIO) when bootctl does
+# an ioctl to /dev/ufs-bsg .Adding this rule to avoid ioctl error.
+allow hal_bootctl self:capability { sys_rawio };
 # Read the sysfs to lookup what /dev/sgN device
 # corresponds to the XBL partitions.
 allow hal_bootctl vendor_sysfs_scsi_target:dir r_dir_perms;
