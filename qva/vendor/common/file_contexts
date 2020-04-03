@@ -42,6 +42,7 @@
 /dev/qbt.*                            u:object_r:vendor_qbt_device:s0
 /dev/esoc.*                           u:object_r:vendor_esoc_device:s0
 /dev/mhi_.*                           u:object_r:vendor_mhi_device:s0
+/dev/mhi_.*_pipe_4                    u:object_r:vendor_mhi_diag_device:s0
 /dev/smem_log                         u:object_r:vendor_smem_log_device:s0
 /dev/radio0                           u:object_r:vendor_fm_radio_device:s0
 /dev/qg                               u:object_r:vendor_qg_device:s0
