@@ -37,3 +37,6 @@ user=_app seinfo=platform name=com.qualcomm.qti.sensors.qsensortest domain=vendo
 #Add new domain for ustaservice app
 # Needed for USTA test app
 user=system seinfo=platform name=com.qualcomm.qti.ustaservice domain=vendor_ustaservice_app type=system_app_data_file
+
+#Add new domain for LibsochelperTest app
+user=_app seinfo=platform name=com.qualcomm.qti.libsochelpertest domain=vendor_libsochelpertest_app type=app_data_file levelFrom=all
