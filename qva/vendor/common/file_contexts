@@ -52,6 +52,7 @@
 #
 /dev/socket/iop                                 u:object_r:vendor_iop_socket:s0
 /dev/socket/mlid                                u:object_r:vendor_mlid_socket:s0
+/dev/socket/qwes_ipc                            u:object_r:vendor_qwesd_socket:s0
 /dev/socket/ssgqmig                             u:object_r:vendor_ssgqmig_socket:s0
 /dev/socket/ssgtzd                              u:object_r:vendor_ssgtzd_socket:s0
 /dev/socket/adpl_cmd_uds_file                   u:object_r:vendor_dataadpl_socket:s0
@@ -181,6 +182,7 @@
 /data/vendor/dataqti(/.*)?                                          u:object_r:vendor_qti_data_file:s0
 /data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qcc_trd_data_file:s0
 /data/vendor/qdma(/.*)?                                             u:object_r:vendor_qcc_trd_data_file:s0
+/data/vendor/qwes(/.*)?                                             u:object_r:vendor_qwes_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:vendor_wigig_hostapd_socket:s0
 /data/vendor/lm(/.*)?                                               u:object_r:vendor_lm_data_file:s0
