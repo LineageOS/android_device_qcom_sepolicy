@@ -283,6 +283,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.0-service u:object_r:hal_esepowermanager_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.esepowermanager@1\.1-service u:object_r:hal_esepowermanager_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.0-service u:object_r:hal_secure_element_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.2-service u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/loc_launcher        u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/lowi-server         u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/xtwifi-inet-agent   u:object_r:location_exec:s0
@@ -329,6 +330,7 @@
 /(vendor|system/vendor)/bin/imsrcsd             u:object_r:hal_rcsservice_exec:s0
 /(vendor|system/vendor)/bin/vppservice          u:object_r:vendor_vppservice_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service u:object_r:hal_qteeconnector_qti_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.qseecom@1\.0-service                  u:object_r:hal_qseecom_default_exec:s0
 /(vendor|system/vendor)/bin/fm_qsoc_patches     u:object_r:fm_qsoc_patches_exec:s0
 /(vendor|system/vendor)/bin/chre                u:object_r:chre_exec:s0
 /(vendor|system/vendor)/bin/tloc_daemon         u:object_r:tlocd_exec:s0
@@ -483,6 +485,7 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/snapshot(/.*)? u:object_r:sysfs_kgsl_snapshot:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_model u:object_r:sysfs_kgsl_gpu_model:s0
 
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:sysfs_mmc_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/bdi/read_ahead_kb u:object_r:sysfs_mmc_host:s0
@@ -717,7 +720,7 @@
 /(vendor|system/vendor)/bin/grep            u:object_r:vendor_toolbox_exec:s0
 
 #Android NN Driver
-/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.2-service-qti u:object_r:hal_neuralnetworks_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.3-service-qti u:object_r:hal_neuralnetworks_default_exec:s0
 
 #wifilearner daemon
 /(vendor|system/vendor)/bin/wifilearner    u:object_r:wifilearnersvc_exec:s0

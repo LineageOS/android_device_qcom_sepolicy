@@ -34,13 +34,12 @@ type vendor_ssg_app, domain;
 app_domain(vendor_ssg_app)
 net_domain(vendor_ssg_app)
 
+hal_client_domain(vendor_ssg_app, vendor_qccsyshal);
+
 # Allow access to sockets
 unix_socket_connect(vendor_ssg_app, vendor_mlid, vendor_mlid)
 unix_socket_connect(vendor_ssg_app, vendor_ssgqmig, vendor_ssgqmigd)
 unix_socket_connect(vendor_ssg_app, vendor_ssgtzd, vendor_ssgtzd)
-
-#access to qdma socket
-qdma_file_socket(vendor_ssg_app)
 
 allow vendor_ssg_app radio_service:service_manager find;
 allow vendor_ssg_app surfaceflinger_service:service_manager find;

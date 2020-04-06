@@ -70,6 +70,8 @@ vendor_restricted_prop(vendor_audio_prop);
 # shsusrd props
 vendor_restricted_prop(vendor_data_shsusr_prop);
 
+vendor_restricted_prop(vendor_data_qmipriod_prop);
+
 #ss-restart
 vendor_internal_prop(vendor_ssr_prop);
 

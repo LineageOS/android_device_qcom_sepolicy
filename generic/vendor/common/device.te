@@ -48,6 +48,7 @@ type vendor_vm_data_block_device, dev_type;
 type vendor_qsee_ipc_irq_spss_device, dev_type;
 type vendor_qdsp_device, dev_type, mlstrustedobject;
 type vendor_ramdump_device, dev_type;
+type vendor_ramdump_microdump_modem_device, dev_type;
 type vendor_rmnet_device, dev_type;
 type vendor_gpt_block_device, dev_type;
 type vendor_ramdump_block_device, dev_type;

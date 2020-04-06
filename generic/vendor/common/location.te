@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -40,8 +40,8 @@ hwbinder_use(vendor_location)
 
 get_prop(vendor_location, hwservicemanager_prop)
 get_prop(vendor_location, vendor_cnd_prop)
-#xtra-daemon access to qdma properties
-get_prop(vendor_location, vendor_qdma_prop)
+#xtra-daemon access to qcc properties
+get_prop(vendor_location, vendor_qcc_prop)
 
 allow vendor_location fwk_sensor_hwservice:hwservice_manager find;
 binder_call(vendor_location, system_server)

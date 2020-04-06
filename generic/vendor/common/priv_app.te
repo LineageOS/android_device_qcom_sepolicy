@@ -31,3 +31,5 @@ hal_client_domain(priv_app, vendor_hal_perf)
 # priv_app domain
 allow priv_app rs_exec:file rx_file_perms;
 
+allow priv_app vendor_sysfs_kgsl_gpu_model:file r_file_perms;
+

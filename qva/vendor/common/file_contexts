@@ -33,7 +33,10 @@
 /dev/sp_keymaster                     u:object_r:vendor_sp_keymaster_device:s0
 /dev/sp_ssr                           u:object_r:vendor_sp_ssr_device:s0
 /dev/spdaemon_ssr                     u:object_r:vendor_spdaemon_ssr_device:s0
+/dev/spu_hal_ssr                      u:object_r:vendor_spu_hal_ssr_device:s0
 /dev/iuicc                            u:object_r:vendor_iuicc_device:s0
+/dev/iuicc0                           u:object_r:vendor_iuicc_device:s0
+/dev/iuicc1                           u:object_r:vendor_iuicc_device:s0
 /dev/cryptoapp                        u:object_r:vendor_cryptoapp_device:s0
 /dev/sec_nvm_.*                       u:object_r:vendor_sec_nvm_device:s0
 /dev/qbt.*                            u:object_r:vendor_qbt_device:s0
@@ -51,7 +54,6 @@
 /dev/socket/mlid                                u:object_r:vendor_mlid_socket:s0
 /dev/socket/ssgqmig                             u:object_r:vendor_ssgqmig_socket:s0
 /dev/socket/ssgtzd                              u:object_r:vendor_ssgtzd_socket:s0
-/dev/socket/qdma(/.*)?                          u:object_r:vendor_qdma_socket:s0
 /dev/socket/adpl_cmd_uds_file                   u:object_r:vendor_dataadpl_socket:s0
 /dev/socket/vendor_wpa_wlan[0-9]                u:object_r:vendor_wifi_vendor_wpa_socket:s0
 /dev/socket/wigig/wpa_wigig[0-9]                u:object_r:vendor_wigig_vendor_wpa_socket:s0
@@ -74,12 +76,14 @@
 /vendor/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service                   u:object_r:vendor_hal_qteeconnector_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.qseecom@1\.0-service                         u:object_r:vendor_hal_qseecom_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.scve\.objecttracker@1\.0-service             u:object_r:vendor_scve_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.spu@1\.0-service                       u:object_r:vendor_hal_spu_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.scve\.panorama@1\.0-service  u:object_r:vendor_scve_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.sensorscalibrate@1\.0-service                u:object_r:vendor_hal_sensorscalibrate_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.soter@1\.0-service           u:object_r:vendor_hal_soter_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator@1\.[0-2]-service                    u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.power\.pasrmanager\@1\.0-service       u:object_r:vendor_hal_pasrmanager_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.0-service            u:object_r:hal_secure_element_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.2-service            u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.0-service            u:object_r:vendor_hal_perf_default_exec:s0
 /(vendor|system/vendor)/bin/mm-audio-ftm                                           u:object_r:vendor_audioftm_exec:s0
 /(vendor|system/vendor)/bin/qrtr-ns                                                u:object_r:vendor_qrtr_exec:s0
@@ -95,7 +99,7 @@
 /(vendor|system/vendor)/bin/ssgqmigd                                               u:object_r:vendor_ssgqmigd_exec:s0
 /(vendor|system/vendor)/bin/ssgtzd                                                 u:object_r:vendor_ssgtzd_exec:s0
 /(vendor|system/vendor)/bin/mlid                                                   u:object_r:vendor_mlid_exec:s0
-/(vendor|system/vendor)/bin/qdmastatsd                                             u:object_r:vendor_qdmastatsd_exec:s0
+/(vendor|system/vendor)/bin/qcc-trd                                             u:object_r:vendor_qcc_trd_exec:s0
 /(vendor|system/vendor)/bin/seemp_healthd                                          u:object_r:vendor_seemp_health_daemon_exec:s0
 /(vendor|system/vendor)/bin/qfp-daemon                                             u:object_r:vendor_qfp-daemon_exec:s0
 /(vendor|system/vendor)/bin/adpl                                                   u:object_r:vendor_adpl_exec:s0
@@ -119,6 +123,7 @@
 /vendor/bin/vendor\.qti\.qspmhal@1\.0-service                                      u:object_r:vendor_hal_qspmhal_default_exec:s0
 /(vendor|system/vendor)/bin/mutualex                                               u:object_r:vendor_mutualex_exec:s0
 
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qccvndhal@1\.0-service       u:object_r:vendor_hal_qccvndhal_qti_exec:s0
 
 #### Context for location features
 ## location daemons and binaries
@@ -171,8 +176,8 @@
 /dev/cam-hyp-intf-[0-9]+                                            u:object_r:video_device:s0
 /data/vendor/perfd(/.*)?                                            u:object_r:vendor_mpctl_data_file:s0
 /data/vendor/dataqti(/.*)?                                          u:object_r:vendor_qti_data_file:s0
-/data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qdma_data_file:s0
-/data/vendor/qdma(/.*)?                                             u:object_r:vendor_qdma_data_file:s0
+/data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qcc_trd_data_file:s0
+/data/vendor/qdma(/.*)?                                             u:object_r:vendor_qcc_trd_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:vendor_wigig_hostapd_socket:s0
 /data/vendor/lm(/.*)?                                               u:object_r:vendor_lm_data_file:s0

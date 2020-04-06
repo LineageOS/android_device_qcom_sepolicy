@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019 The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -128,6 +128,7 @@ type vendor_persist_feature_enabler_file, file_type, vendor_persist_type;
 
 type vendor_netmgr_data_file, file_type, data_file_type;
 type vendor_netmgr_recovery_data_file, file_type, data_file_type;
+type vendor_qmipriod_data_file, file_type, data_file_type;
 type vendor_ipa_vendor_data_file, file_type, data_file_type;
 
 type vendor_tombstone_data_file, file_type, data_file_type;
@@ -200,3 +201,6 @@ type vendor_qdcmsocket_socket, file_type;
 type vendor_sysfs_mhi, sysfs_type, fs_type;
 
 type vendor_sysfs_suspend, fs_type, sysfs_type;
+
+# kgsl gpu model file type for sysfs access
+type vendor_sysfs_kgsl_gpu_model, sysfs_type, fs_type;

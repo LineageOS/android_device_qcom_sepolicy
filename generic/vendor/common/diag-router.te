@@ -32,4 +32,5 @@ userdebug_or_eng(`
   allow vendor_diag-router functionfs:dir r_dir_perms;
   allow vendor_diag-router functionfs:file rw_file_perms;
   allow vendor_diag-router self:qipcrtr_socket create_socket_perms_no_ioctl;
+  allow { domain -coredomain -hal_configstore -vendor_init} vendor_diag-router:unix_stream_socket connectto;
 ')

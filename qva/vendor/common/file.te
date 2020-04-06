@@ -46,9 +46,8 @@ type vendor_sysfs_touch_aoi, fs_type, sysfs_type;
 #sysfs jpeg
 type vendor_sysfs_jpeg, fs_type, sysfs_type;
 
-# QDMA data files
-type vendor_qdma_data_file, file_type, data_file_type;
-type vendor_qdma_socket, file_type, mlstrustedobject;
+# qcc-trd data files
+type vendor_qcc_trd_data_file, file_type, data_file_type;
 
 type vendor_sysfs_npu, fs_type, sysfs_type;
 

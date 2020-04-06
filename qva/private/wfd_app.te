@@ -44,10 +44,15 @@ binder_call(vendor_wfd_app, vendor_wfdservice)
 # allow access to read video SKU property for WFD sink
 get_prop(vendor_wfd_app, vendor_sys_video_prop)
 
-allow vendor_wfd_app vendor_wfdservice_service:service_manager find;
-allow vendor_wfd_app audioserver_service:service_manager find;
-allow vendor_wfd_app mediaserver_service:service_manager find;
-allow vendor_wfd_app mediadrmserver_service:service_manager find;
+allow vendor_wfd_app {
+  vendor_wfdservice_service
+  audioserver_service
+  mediaserver_service
+  mediadrmserver_service
+  app_api_service
+  vendor_perf_service
+  mediametrics_service
+}:service_manager find;
 
 # Access to /data/media for debug dump
 allow vendor_wfd_app media_rw_data_file:dir create_dir_perms;
