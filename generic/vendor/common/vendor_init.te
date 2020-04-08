@@ -94,3 +94,6 @@ set_prop(vendor_init, vendor_bluetooth_prop)
 userdebug_or_eng(`
   allow vendor_init proc_security:file rw_file_perms;
 ')
+
+# Allow vendor_init to read vendor_soc_name_prop
+get_prop(vendor_init, vendor_soc_name_prop);

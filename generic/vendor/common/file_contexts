@@ -490,6 +490,7 @@
 /(vendor|system/vendor)/bin/qca6234-service.sh          u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.kernel\.sh       u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.kernel\.post_boot\.sh       u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.qcv\.sh          u:object_r:vendor_qti_init_shell_exec:s0
 
 #Limits sysfs node
 /sys/module/msm_isense_cdsp/data                        u:object_r:sysfs_thermal:s0
