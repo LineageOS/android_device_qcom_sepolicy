@@ -30,6 +30,7 @@ vendor.qti.hardware.iop::IIop                                u:object_r:vendor_h
 com.qualcomm.qti.wifidisplayhal::IDSManager                  u:object_r:vendor_wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.alarm::IAlarm                            u:object_r:vendor_hal_alarm_qti_hwservice:s0
 vendor.qti.hardware.vpp::IHidlVppService                     u:object_r:vendor_hal_vpp_hwservice:s0
+vendor.qti.hardware.vpp::IVppService                         u:object_r:vendor_hal_vpp_hwservice:s0
 vendor.qti.hardware.wigig.supptunnel::ISuppTunnelProvider    u:object_r:vendor_hal_wigig_hwservice:s0
 vendor.qti.hardware.wigig.netperftuner::INetPerfTuner        u:object_r:vendor_hal_wigig_npt_hwservice:s0
 vendor.qti.hardware.fstman::IFstManager                      u:object_r:vendor_hal_fstman_hwservice:s0
