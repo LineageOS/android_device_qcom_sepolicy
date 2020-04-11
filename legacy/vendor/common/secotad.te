@@ -42,7 +42,7 @@ binder_call(secotad, system_app)
 #binder_service(secotad)
 
 #Allow secotad to be registered with service manager
-allow secotad secotad_service:service_manager add;
+#allow secotad secotad_service:service_manager add;
 
 #Allow access to tee device
 allow secotad tee_device:chr_file rw_file_perms;

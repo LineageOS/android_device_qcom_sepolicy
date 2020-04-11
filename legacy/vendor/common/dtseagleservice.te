@@ -42,7 +42,7 @@ binder_call(dtseagleservice, system_app)
 #binder_service(dtseagleservice)
 
 #Allow dtseagleservice to be registered with service manager
-allow dtseagleservice dtseagleservice_service:service_manager add;
+#allow dtseagleservice dtseagleservice_service:service_manager add;
 
 #Allow access to audio drivers
 allow dtseagleservice audio_device:dir r_dir_perms;
