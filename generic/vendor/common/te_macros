@@ -167,5 +167,5 @@ define(`use_vendor_fwk_detect', `
 # SoC detection at run time by vendor modules
 # Adds rules needed for vendor modules to get soc info at run time
 define(`use_libsoc_helper', `
-get_prop($1, vendor_soc_prop);
+get_prop($1, vendor_soc_id_prop);
 ')
