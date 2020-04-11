@@ -56,3 +56,6 @@ allow hal_bluetooth_default self:{ socket } create_socket_perms_no_ioctl;
 ')
 
 r_dir_file(hal_bluetooth_default, mnt_vendor_file)
+
+# Access lbsoc_helper to bluetooth
+use_libsoc_helper(hal_bluetooth_default)
