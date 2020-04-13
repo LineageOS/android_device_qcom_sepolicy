@@ -35,3 +35,5 @@ user=_app seinfo=platform name=com.qualcomm.wfd.client domain=vendor_wfd_app typ
 user=system seinfo=platform name=com.qualcomm.qti.qdma isPrivApp=true domain=vendor_qcc_app type=system_app_data_file
 #Add new domain for QCC-Utils
 user=system seinfo=platform name=com.qualcomm.qti.qdmautils isPrivApp=true domain=vendor_qcc_utils_app type=system_app_data_file
+# Add new domain for FM app
+user=_app seinfo=platform name=com.caf.fmradio domain=vendor_fm_app type=app_data_file levelFrom=all

@@ -36,3 +36,15 @@ attribute vendor_qccsyshal_client;
 attribute vendor_hal_spu;
 attribute vendor_hal_spu_client;
 attribute vendor_hal_spu_server;
+
+attribute vendor_hal_qspmhal;
+attribute vendor_hal_qspmhal_client;
+attribute vendor_hal_qspmhal_server;
+
+attribute vendor_hal_btconfigstore;
+attribute vendor_hal_btconfigstore_client;
+attribute vendor_hal_btconfigstore_server;
+
+attribute vendor_hal_fm;
+attribute vendor_hal_fm_client;
+attribute vendor_hal_fm_server;
