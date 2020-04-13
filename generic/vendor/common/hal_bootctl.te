@@ -63,7 +63,7 @@ dontaudit hal_bootctl self:capability sys_rawio;
 
 #scsi driver does a capability check (CAP_SYS_RAWIO) when bootctl does
 # an ioctl to /dev/ufs-bsg .Adding this rule to avoid ioctl error.
-allow hal_bootctl self:capability { sys_rawio };
+allow hal_bootctl_server self:capability { sys_rawio };
 # Read the sysfs to lookup what /dev/sgN device
 # corresponds to the XBL partitions.
 allow hal_bootctl vendor_sysfs_scsi_target:dir r_dir_perms;
