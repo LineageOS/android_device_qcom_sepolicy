@@ -35,3 +35,4 @@ neverallow { domain -vendor_hal_systemhelper_client -vendor_systemhelper_app } v
 allow vendor_systemhelper_app { activity_service trust_service surfaceflinger_service vendor_vps_service }:service_manager find;
 
 allow vendor_systemhelper_app app_data_file:dir rw_dir_perms;
+allow vendor_systemhelper_app thermal_service:service_manager find;
