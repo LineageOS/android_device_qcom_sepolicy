@@ -104,7 +104,7 @@ vendor_restricted_prop(vendor_adsprpc_prop);
 vendor_internal_prop(vendor_wifi_version);
 
 # QCV properties for storing soc_id and soc_name
-vendor_internal_prop(vendor_soc_prop);
+vendor_internal_prop(vendor_soc_id_prop);
 vendor_internal_prop(vendor_soc_name_prop);
 
 #kernel console log level

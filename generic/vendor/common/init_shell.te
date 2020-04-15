@@ -176,9 +176,9 @@ allow vendor_qti_init_shell proc_meminfo:file r_file_perms;
 
 allow vendor_qti_init_shell vendor_sysfs_suspend:file w_file_perms;
 
-# Set ro.vendor.qti.soc to soc_id in QCV init script
-set_prop(vendor_qti_init_shell, vendor_soc_prop);
-# Set ro.vendor.qti.soc.name to soc_name in QCV init script
+# Set ro.vendor.qti.soc_id to soc_id in QCV init script
+set_prop(vendor_qti_init_shell, vendor_soc_id_prop);
+# Set ro.vendor.qti.soc_name to soc_name in QCV init script
 set_prop(vendor_qti_init_shell, vendor_soc_name_prop);
 
 # Get persist.console.silent.config for kernel console log level
