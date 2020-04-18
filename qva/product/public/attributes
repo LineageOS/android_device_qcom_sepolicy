@@ -24,15 +24,3 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-attribute vendor_hal_qspmhal;
-attribute vendor_hal_qspmhal_client;
-attribute vendor_hal_qspmhal_server;
-
-attribute vendor_hal_btconfigstore;
-attribute vendor_hal_btconfigstore_client;
-attribute vendor_hal_btconfigstore_server;
-
-attribute vendor_hal_fm;
-attribute vendor_hal_fm_client;
-attribute vendor_hal_fm_server;
