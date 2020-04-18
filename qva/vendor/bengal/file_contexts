@@ -159,3 +159,13 @@
 # same process HAL libs
 /vendor/lib(64)?/hw/vulkan\bengal\.so                           u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/gralloc\.bengal\.so                         u:object_r:same_process_hal_file:s0
+
+###################################
+# sysfs files
+#
+/sys/devices/platform/soc/1b40000.qfprom/qfprom0/feat_conf10            u:object_r:vendor_sysfs_qfprom:s0
+
+###################################
+#camera
+/sys/firmware/devicetree/base/memory/ddr_device_rank_ch0               u:object_r:vendor_sysfs_ddr:s0
+/sys/firmware/devicetree/base/memory/ddr_device_type                   u:object_r:vendor_sysfs_ddr:s0
