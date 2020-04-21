@@ -41,9 +41,6 @@ binder_call(fidodaemon, system_app)
 #Mark fidodaemon as a Binder service domain
 #binder_service(fidodaemon)
 
-#Allow fidodaemon to be registered with service manager
-allow fidodaemon fidodaemon_service:service_manager add;
-
 #Allow communication with init over property server
 unix_socket_connect(fidodaemon, property, init);
 

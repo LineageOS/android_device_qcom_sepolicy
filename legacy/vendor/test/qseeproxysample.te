@@ -39,9 +39,6 @@ userdebug_or_eng(`
   # Mark test daemon as a Binder service domain
   #binder_service(qseeproxysample)
 
-  #Allow test daemon to be registered with service manager
-  allow qseeproxysample qseeproxysample_service:service_manager add;
-
   #Allow test daemon to use system_server via binder to check caller identity
   binder_call(qseeproxysample, system_server)
 

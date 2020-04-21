@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016,2017, 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,28 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type seemp_health_daemon, domain;
-type seemp_health_daemon_exec, exec_type, vendor_file_type, file_type;
+type init-qti-fbe-sh, domain;
+type init-qti-fbe-sh_exec, exec_type, file_type, vendor_file_type;
 
-#Allow for transition from init domain to seemp_health_daemon
-init_daemon_domain(seemp_health_daemon)
+init_daemon_domain(init-qti-fbe-sh)
 
-#Allow seemp_health_daemon to use Binder IPC
-#binder_use(seemp_health_daemon)
+allow init-qti-fbe-sh vendor_shell_exec:file rx_file_perms;
 
-#Allow apps to interact with seemp_health_daemon
-binder_call(seemp_health_daemon, platform_app)
-binder_call(seemp_health_daemon, system_app)
-
-#Mark seemp_health_daemon as a Binder service domain
-#binder_service(seemp_health_daemon)
-
-#Allow access to tee device
-allow seemp_health_daemon tee_device:chr_file rw_file_perms;
-
-#Allow access to firmware
-allow seemp_health_daemon firmware_file:dir r_dir_perms;
-allow seemp_health_daemon firmware_file:file r_file_perms;
-
-allow seemp_health_daemon ion_device:chr_file r_file_perms;
-allow seemp_health_daemon proc:file r_file_perms;
+# execute toybox/toolbox
+allow init-qti-fbe-sh vendor_toolbox_exec:file rx_file_perms;
+get_prop(init-qti-fbe-sh, vendor_tee_listener_prop)
