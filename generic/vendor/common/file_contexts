@@ -437,7 +437,8 @@
 /data/vendor/mediadrm(/.*)?                                         u:object_r:vendor_mediadrm_vendor_data_file:s0
 /data/vendor/nnhal(/.*)?                                            u:object_r:vendor_hal_neuralnetworks_data_file:s0
 
-/sys/devices(/platform)?/soc/[a-f0-9\.:]+,[a-f0-9\-\_]+/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+# Moved to target specfic folder so removing this from common file
+#/sys/devices(/platform)?/soc/[a-f0-9\.:]+,[a-f0-9\-\_]+/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
