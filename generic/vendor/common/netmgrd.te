@@ -59,6 +59,7 @@ use_netutils(vendor_netmgrd)
 allow vendor_netmgrd vendor_sysfs_timestamp_switch:file { read open };
 userdebug_or_eng(`
   r_dir_file(vendor_netmgrd, vendor_sysfs_diag)
+  allow vendor_netmgrd vendor_debugfs_ipc:dir search;
 ')
 
 #Ignore if device loading for private IOCTL failed
