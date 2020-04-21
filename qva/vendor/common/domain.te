@@ -26,3 +26,9 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 dontaudit domain vendor_persist_dpm_prop:file r_file_perms;
+neverallow {
+   coredomain
+   -init
+   -ueventd
+   -vendor_spdaemon
+} vendor_spunvm_file_type: { dir file } *;

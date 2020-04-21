@@ -105,6 +105,8 @@ attribute vendor_hal_srvctracker;
 attribute vendor_hal_srvctracker_client;
 attribute vendor_hal_srvctracker_server;
 
+attribute vendor_spunvm_file_type;
+
 attribute vendor_hal_bluetooth_dun;
 attribute vendor_hal_bluetooth_dun_client;
 attribute vendor_hal_bluetooth_dun_server;

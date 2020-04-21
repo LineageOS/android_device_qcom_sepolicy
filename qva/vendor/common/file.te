@@ -29,6 +29,7 @@
 type vendor_qti_data_file, file_type, data_file_type;
 
 type vendor_persist_secnvm_file, file_type , vendor_persist_type;
+type vendor_persist_iar_db_file, file_type , vendor_persist_type;
 
 #mink-lowi-interface-daemon (mlid) socket
 type vendor_mlid_socket, file_type, mlstrustedobject;
@@ -41,6 +42,10 @@ type vendor_ssgqmig_socket, file_type, mlstrustedobject;
 
 #ssg tz daemon socket
 type vendor_ssgtzd_socket, file_type, mlstrustedobject;
+
+#spunvm file types
+type vendor_spunvm_file, file_type, vendor_spunvm_file_type;
+allow vendor_spunvm_file self:filesystem associate;
 
 type vendor_qfp-daemon_data_file, file_type, data_file_type;
 type vendor_persist_qti_fp_file, file_type, vendor_persist_type;
@@ -88,6 +93,9 @@ type vendor_lm_data_file, file_type, data_file_type;
 type vendor_wifi_vendor_data_file, file_type, data_file_type;
 type vendor_wifi_vendor_wpa_socket, file_type, data_file_type;
 type vendor_hostapd_socket, file_type, data_file_type;
+
+#spss sysfs files
+type vendor_sysfs_spss, fs_type, sysfs_type;
 
 #vpp
 type vendor_vpp_data_file, file_type, data_file_type;
