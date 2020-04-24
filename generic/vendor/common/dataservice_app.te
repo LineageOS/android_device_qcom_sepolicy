@@ -36,3 +36,5 @@ binder_call(vendor_dataservice_app, vendor_cnd)
 
 # imsrcsd to bind with UceShimService.apk
 binder_call(vendor_dataservice_app, vendor_hal_rcsservice)
+
+hal_client_domain(vendor_dataservice_app , vendor_hal_perf)
