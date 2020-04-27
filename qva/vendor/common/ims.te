@@ -41,7 +41,6 @@ allow vendor_ims {
 }:file rx_file_perms;
 
 
-set_prop(vendor_ims, vendor_qcom_ims_prop)
 set_prop(vendor_ims, vendor_ctl_vendor_imsrcsservice_prop)
 
 # Inherit and use open files from radio.
