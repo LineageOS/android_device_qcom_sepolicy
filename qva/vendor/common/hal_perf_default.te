@@ -102,3 +102,9 @@ allow vendor_hal_perf {
 
 # Allow to self kill capability
 allow vendor_hal_perf_default self:capability { kill };
+
+# Allow QSPM access
+hal_client_domain(vendor_hal_perf_default, vendor_hal_qspmhal);
+
+#Allow Display Config access
+hal_client_domain(vendor_hal_perf_default, hal_graphics_composer);

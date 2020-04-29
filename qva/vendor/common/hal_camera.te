@@ -34,4 +34,6 @@ allow hal_camera gpu_device:chr_file rw_file_perms;
 
 allow hal_camera vendor_sysfs_jpeg:file r_file_perms;
 
+allow hal_camera vendor_sysfs_ddr:file r_file_perms;
+
 allow hal_camera vendor_qdisplay_service:service_manager find;

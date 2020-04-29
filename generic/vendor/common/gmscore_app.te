@@ -26,3 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow gmscore_app vendor_sysfs_kgsl_gpu_model:file r_file_perms;
+
+dontaudit gmscore_app vendor_hal_qspmhal_default:binder {call};

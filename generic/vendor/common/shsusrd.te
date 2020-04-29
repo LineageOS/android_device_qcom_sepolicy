@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,27 +24,14 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+type vendor_shsusrd, domain;
+type vendor_shsusrd_exec, exec_type, vendor_file_type, file_type;
 
-# vendor_ssgtzd - SSG TZ Daemon
-type vendor_ssgtzd, domain, mlstrustedsubject;
-type vendor_ssgtzd_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_shsusrd)
 
-init_daemon_domain(vendor_ssgtzd)
+allow vendor_shsusrd vendor_proc_shs:file rw_file_perms;
+allow vendor_shsusrd vendor_proc_shs:dir r_dir_perms;
+allow vendor_shsusrd self:netlink_generic_socket create_socket_perms_no_ioctl;
 
-#Allow access to smcinvoke device
-allow vendor_ssgtzd vendor_smcinvoke_device:chr_file rw_file_perms;
-
-allow vendor_ssgtzd vendor_ssg_app:unix_stream_socket connectto;
-#Allow access to firmware/image
-allow vendor_ssgtzd vendor_firmware_file:dir r_dir_perms;
-allow vendor_ssgtzd vendor_firmware_file:file r_file_perms;
-#Allow ssgtzd to create sockets for HTTP
-allow vendor_ssgtzd self:udp_socket create_socket_perms;
-
-# Allow ssgtzd to write state information to /data/vendor/qwes/qwesd.conf
-allow vendor_ssgtzd vendor_qwes_data_file:dir rw_dir_perms;
-allow vendor_ssgtzd vendor_qwes_data_file:file rw_file_perms;
-
-# Allow access to qipcrtr_socket
-# Remove this when QMI service moves to pfmd
-allow vendor_ssgtzd self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow vendor_shsusrd vendor_shsusr_data_file:dir rw_dir_perms;
+allow vendor_shsusrd vendor_shsusr_data_file:file create_file_perms;
