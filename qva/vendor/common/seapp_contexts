@@ -27,6 +27,3 @@
 
 #Add new domain for perfdump app
 user=system seinfo=platform name=com.qualcomm.qti.perfdump domain=vendor_perfdump_app type=system_app_data_file
-
-#Add new domain for secure camera service app
-user=_app seinfo=platform name=com.qualcomm.qti.seccamservice:remote domain=vendor_seccam_app type=app_data_file levelfrom=all

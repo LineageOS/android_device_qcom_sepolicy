@@ -53,10 +53,6 @@ attribute vendor_hal_qseecom;
 attribute vendor_hal_qseecom_client;
 attribute vendor_hal_qseecom_server;
 
-attribute vendor_hal_qteeconnector;
-attribute vendor_hal_qteeconnector_client;
-attribute vendor_hal_qteeconnector_server;
-
 attribute vendor_hal_secureprocessor;
 attribute vendor_hal_secureprocessor_client;
 attribute vendor_hal_secureprocessor_server;
