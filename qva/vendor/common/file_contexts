@@ -30,9 +30,11 @@
 #
 /dev/hsicctl.*                        u:object_r:vendor_hsic_device:s0
 /dev/sp_kernel                        u:object_r:vendor_skp_device:s0
+/dev/sp_nvm                           u:object_r:vendor_sp_nvm_device:s0
 /dev/sp_keymaster                     u:object_r:vendor_sp_keymaster_device:s0
 /dev/sp_ssr                           u:object_r:vendor_sp_ssr_device:s0
 /dev/spdaemon_ssr                     u:object_r:vendor_spdaemon_ssr_device:s0
+/dev/spss_utils                       u:object_r:vendor_spss_utils_device:s0
 /dev/spu_hal_ssr                      u:object_r:vendor_spu_hal_ssr_device:s0
 /dev/iuicc                            u:object_r:vendor_iuicc_device:s0
 /dev/iuicc0                           u:object_r:vendor_iuicc_device:s0
@@ -170,6 +172,8 @@
 
 /sys/devices(/platform)?/soc/soc:qcom,gpubw/devfreq/soc:qcom,gpubw(/.*)? u:object_r:vendor_sysfs_devfreq:s0
 
+/sys/devices(/platform)?/soc/soc:qcom,spss_utils(/.*)?             u:object_r:vendor_sysfs_spss:s0
+
 ###################################
 # data files
 #
@@ -196,10 +200,14 @@
 # persist files
 #
 /mnt/vendor/persist/secnvm(/.*)?      u:object_r:vendor_persist_secnvm_file:s0
+/mnt/vendor/persist/iar_db(/.*)?      u:object_r:vendor_persist_iar_db_file:s0
 /mnt/vendor/persist/qti_fp(/.*)?      u:object_r:vendor_persist_qti_fp_file:s0
 /mnt/vendor/persist/FTM_AP(/.*)?      u:object_r:vendor_persist_mmi_file:s0
 /mnt/vendor/persist/vpp(/.*)?         u:object_r:vendor_persist_vpp_file:s0
 /mnt/vendor/persist/hvdcp_opti(/.*)?  u:object_r:vendor_persist_hvdcp_file:s0
+
+# spunvm partition
+/mnt/vendor/spunvm(/.*)?              u:object_r:vendor_spunvm_file:s0
 
 # same-process HAL files and their dependencies
 #
