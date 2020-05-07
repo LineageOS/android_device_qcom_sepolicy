@@ -37,7 +37,5 @@ userdebug_or_eng(`
   allow platform_app seemp_data_file: file w_file_perms;
 ')
 allow platform_app color_service:service_manager find;
-#allow platform_app to read camera prop
-get_prop(platform_app, persist_camera_prop)
 # WigigSettings need to read persist.vendor.wigig.icon.disable
 get_prop(platform_app, wigig_core_prop)

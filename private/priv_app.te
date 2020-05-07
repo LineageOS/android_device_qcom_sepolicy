@@ -28,5 +28,3 @@
 allow priv_app dpmtcm_socket:sock_file w_file_perms;
 allow priv_app dpmwrapper_socket:sock_file w_file_perms;
 allow priv_app dpmd:unix_stream_socket connectto;
-#allow priv_app to read camera prop
-get_prop(priv_app, persist_camera_prop)
