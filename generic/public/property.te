@@ -27,7 +27,6 @@
 
 system_public_prop(vendor_persist_dpm_prop)
 system_public_prop(vendor_persist_tcm_prop)
-system_restricted_prop(vendor_persist_camera_prop)
 # this is vendor defined property  and added with prefix vendor
 # which is going to be working from system
 system_restricted_prop(vendor_bt_prop)
