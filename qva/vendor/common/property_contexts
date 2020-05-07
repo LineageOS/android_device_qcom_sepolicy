@@ -25,6 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+vendor.camera.aux.packagelist        u:object_r:exported_default_prop:s0
+persist.vendor.camera.privapp.list   u:object_r:exported_default_prop:s0
+
 persist.vendor.ims.disabled       u:object_r:qcom_ims_prop:s0
 vendor.service.qti.ims.enabled    u:object_r:qcom_ims_prop:s0
 ctl.vendor.cnd                    u:object_r:cnd_vendor_prop:s0

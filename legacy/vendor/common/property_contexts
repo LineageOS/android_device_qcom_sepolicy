@@ -25,6 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+vendor.camera.aux.packagelist        u:object_r:exported_default_prop:s0
+persist.vendor.camera.privapp.list   u:object_r:exported_default_prop:s0
+
 persist.vendor.service.bdroid.      u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bt.soc.scram_freqs   u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bluetooth.a2dp.      u:object_r:vendor_bluetooth_prop:s0
