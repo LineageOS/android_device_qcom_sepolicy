@@ -36,7 +36,6 @@ ro.vendor.btstack.         u:object_r:bluetooth_prop:s0
 vendor.bluetooth.          u:object_r:bluetooth_prop:s0
 ro.vendor.qti.va_aosp.support       u:object_r:vendor_exported_system_prop:s0 exact bool
 ro.vendor.qti.va_odm.support       u:object_r:vendor_exported_odm_prop:s0 exact bool
-vendor.camera.aux.packagelist        u:object_r:persist_camera_prop:s0
 persist.vendor.camera.privapp.list   u:object_r:persist_camera_prop:s0
 vendor.sys.media.target.version        u:object_r:vendor_sys_video_prop:s0
 
