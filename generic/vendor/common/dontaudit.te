@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 dontaudit vendor_qti_init_shell self:capability dac_override;
+dontaudit vendor_modprobe proc_cmdline:file read;
