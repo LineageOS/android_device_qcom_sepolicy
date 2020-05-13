@@ -22,6 +22,30 @@
       "revId": "a180fa8f5b6b8cfcc8f82793dc1c2cac94e54a41",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f0c14d0_3e8115bd",
+        "filename": "generic/vendor/common/system_server.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-05-13T23:05:49Z",
+      "side": 1,
+      "message": "System server still lacks permission to read aux cam prop without this somehow.",
+      "parentUuid": "c7cb305b_7190802f",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 44
+      },
+      "revId": "a180fa8f5b6b8cfcc8f82793dc1c2cac94e54a41",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
