@@ -33,5 +33,3 @@ allow bootanim hwservicemanager:binder call;
 dontaudit bootanim system_data_file:dir read;
 
 dontaudit bootanim vendor_hal_qspmhal_hwservice:hwservice_manager find;
-
-allow bootanim vendor_sysfs_kgsl_gpu_model:file r_file_perms;

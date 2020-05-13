@@ -52,4 +52,10 @@ userdebug_or_eng(`
     allow vendor_location_app_test self:qipcrtr_socket create_socket_perms_no_ioctl;
 
     allow vendor_location_app_test audioserver_service:service_manager find;
+
+    allow vendor_location_app_test vendor_sysfs_kgsl:file r_file_perms;
+
+    binder_call(vendor_location_app_test, gpuservice);
+
+    allow vendor_location_app_test vendor_sysfs_kgsl_gpu_model:file r_file_perms;
 ')

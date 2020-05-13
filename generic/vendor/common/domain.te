@@ -56,3 +56,6 @@ neverallow {
      -ueventd
      -vold
      } vendor_persist_type: { dir file } *;
+
+# Allow all context to read gpu model
+allow { domain - isolated_app } vendor_sysfs_kgsl_gpu_model:file r_file_perms;
