@@ -29,3 +29,4 @@
 user=_app seinfo=platform name=com.qualcomm.qct.dlt levelfrom=all domain=vendor_location_app_test type=app_data_file
 user=_app seinfo=platform name=com.qualcomm.qti.qlogcat levelfrom=all domain=vendor_location_app_test type=app_data_file
 user=system seinfo=platform name=.loopbackservice domain=vendor_qtiloopback_app type=system_app_data_file
+user=system seinfo=platform name=qcom.cta.cta_ui domain=vendor_cta_app type=system_app_data_file

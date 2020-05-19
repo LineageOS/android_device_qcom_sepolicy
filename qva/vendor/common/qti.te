@@ -37,6 +37,7 @@ allow vendor_qti self:{
 } create_socket_perms_no_ioctl;
 
 allow vendor_qti self:udp_socket ioctl;
+allowxperm vendor_qti self:udp_socket ioctl priv_sock_ioctls;
 
 allow vendor_qti vendor_shell_exec:file rx_file_perms;
 

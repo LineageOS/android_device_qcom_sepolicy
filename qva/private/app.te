@@ -27,4 +27,3 @@
 
 get_prop(appdomain, vendor_persist_dpm_prop)
 
-unix_socket_send(appdomain, vendor_seempdw, vendor_seempd)

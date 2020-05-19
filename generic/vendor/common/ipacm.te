@@ -50,7 +50,7 @@ allow hal_tetheroffload self:udp_socket create_socket_perms;
 allowxperm vendor_ipacm self:udp_socket ioctl SIOCGIFNAME;
 
 # Allow receiving NETLINK messages
-allow hal_tetheroffload self:netlink_route_socket { nlmsg_read create_socket_perms_no_ioctl };
+allow hal_tetheroffload self:netlink_route_socket { nlmsg_read nlmsg_readpriv create_socket_perms_no_ioctl };
 
 
 # Allow receiving NETLINK messages

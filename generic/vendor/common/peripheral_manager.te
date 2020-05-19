@@ -52,3 +52,7 @@ allow vendor_per_mgr vendor_sysfs_data:file r_file_perms;
 
 # Set the peripheral state property
 set_prop(vendor_per_mgr, vendor_per_mgr_state_prop);
+
+userdebug_or_eng(`
+  allow vendor_per_mgr vendor_debugfs_ipc:dir search;
+')

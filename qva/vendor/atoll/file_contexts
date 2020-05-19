@@ -50,6 +50,7 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/frp                                u:object_r:frp_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/mdtp                               u:object_r:vendor_mdtp_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/dip                                u:object_r:vendor_dip_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/super                              u:object_r:super_block_device:s0
 
 #rawdump partition
 /dev/block/platform/soc/1d84000.ufshc/by-name/rawdump                            u:object_r:vendor_rawdump_block_device:s0
@@ -83,6 +84,7 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/xbl_config_[ab]   u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/imagefv_[ab]      u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/uefisecapp_[ab]   u:object_r:vendor_uefi_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/vbmeta_system_[ab]     u:object_r:vendor_custom_ab_block_device:s0
 
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/platform/soc/1d84000.ufshc/sd[ade]                   u:object_r:vendor_gpt_block_device:s0
@@ -124,6 +126,7 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/storsec_[ab]      u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/imagefv_[ab]      u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/uefisecapp_[ab]   u:object_r:vendor_uefi_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/vbmeta_system_[ab]     u:object_r:vendor_custom_ab_block_device:s0
 
 #non A/B
 /dev/block/platform/soc/7c4000.sdhci/by-name/system                            u:object_r:system_block_device:s0
@@ -146,6 +149,7 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/dip                                u:object_r:vendor_dip_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/storsec                            u:object_r:boot_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/persist                            u:object_r:vendor_persist_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/super                              u:object_r:super_block_device:s0
 
 #rawdump partition
 /dev/block/platform/soc/7c4000.sdhci/by-name/rawdump                            u:object_r:vendor_rawdump_block_device:s0
