@@ -95,4 +95,6 @@ userdebug_or_eng(`
   binder_call(platform_app, qti-testscripts)
   binder_call(system_app, qti-testscripts)
 
+# allow lmkd to kill tasks with positive oom_score_adj under memory pressure
+  allow lmkd qti-testscripts:process { setsched sigkill };
 ')
