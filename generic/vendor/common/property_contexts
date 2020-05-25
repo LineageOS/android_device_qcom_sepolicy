@@ -134,3 +134,5 @@ ro.vendor.qti.soc_name       u:object_r:vendor_soc_name_prop:s0
 
 #kernel console log level
 persist.console.silent.config    u:object_r:vendor_console_log_level_prop:s0
+
+vendor.dcvs.prop                 u:object_r:vendor_dcvs_prop:s0

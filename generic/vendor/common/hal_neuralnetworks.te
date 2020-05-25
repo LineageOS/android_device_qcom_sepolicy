@@ -27,6 +27,7 @@
 
 type vendor_hal_neuralnetworks_default, domain;
 hal_server_domain(vendor_hal_neuralnetworks_default, hal_neuralnetworks)
+hal_client_domain(vendor_hal_neuralnetworks_default, hal_graphics_allocator)
 
 type vendor_hal_neuralnetworks_default_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_hal_neuralnetworks_default)
