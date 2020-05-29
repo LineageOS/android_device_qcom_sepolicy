@@ -28,3 +28,5 @@
 get_prop(priv_app, vendor_persist_camera_prop)
 allow priv_app vendor_dpmtcm_socket:sock_file w_file_perms;
 allow priv_app vendor_dpmd:unix_stream_socket connectto;
+# QVA app need to find soundtrigger_middleware_service
+allow priv_app soundtrigger_middleware_service:service_manager find;
