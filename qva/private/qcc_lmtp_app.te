@@ -1,4 +1,4 @@
-# Copyright (c) 2020 The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,35 +25,33 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type vendor_qccsyshal_qti, domain, coredomain;
-type vendor_qccsyshal_qti_exec, system_file_type , exec_type, file_type;
-
-hal_server_domain(vendor_qccsyshal_qti, vendor_qccsyshal);
-
-#Add hwservice related rules
-hal_attribute_hwservice(vendor_qccsyshal, vendor_qccsyshal_hwservice);
-
-#Allow for transition from init domain to qccsyshal
-init_daemon_domain(vendor_qccsyshal_qti)
-
-#Allow the interaction with servicemanager
-binder_use(vendor_qccsyshal_qti)
-
-#Allow hwbinder call from hal client to server
-binder_call(vendor_qccsyshal_client, vendor_qccsyshal_server)
-binder_call(vendor_qccsyshal_server, vendor_qccsyshal_client)
-
-allow vendor_qccsyshal_client vendor_qccsyshal_hwservice:hwservice_manager find;
-
-# allow access to qdma dropbox (/data/misc/qdma)
-allow vendor_qccsyshal_qti vendor_qcc_data_file:dir create_dir_perms;
-allow vendor_qccsyshal_qti vendor_qcc_data_file:file create_file_perms;
-
-# allow access to vendor_qcc_app_socket
-unix_socket_connect(vendor_qccsyshal_qti, vendor_qcc_app, vendor_qcc_app)
-allow vendor_qccsyshal_qti vendor_qcc_app_socket:dir r_dir_perms;
-allow vendor_qccsyshal_qti vendor_qcc_app_socket:sock_file rw_file_perms;
-
+type vendor_qcc_lmtp_app, domain, coredomain;
 userdebug_or_eng(`
-  allow vendor_qccsyshal_qti vendor_qcc_lmtp_app:unix_stream_socket connectto;
+  app_domain(vendor_qcc_lmtp_app)
+  net_domain(vendor_qcc_lmtp_app)
+  binder_use(vendor_qcc_lmtp_app)
+
+  allow vendor_qcc_lmtp_app {activity_service}:service_manager find;
+
+  allow vendor_qcc_lmtp_app location_service:service_manager find;
+
+  # for vendor_perf_service
+  allow vendor_qcc_lmtp_app vendor_perf_service:service_manager find;
+
+  # allow access to socket
+  unix_socket_connect(vendor_qcc_lmtp_app, vendor_dpmtcm, vendor_dpmd)
+
+  # allow access to qcc dropbox
+  allow vendor_qcc_lmtp_app vendor_qcc_data_file:dir create_dir_perms;
+  allow vendor_qcc_lmtp_app vendor_qcc_data_file:file create_file_perms;
+
+  # allow vendor_qcc_lmtp_app to access system_app_data_file
+  # necessary for read and write /data/data subdirectory
+  allow vendor_qcc_lmtp_app system_app_data_file:dir create_dir_perms;
+  allow vendor_qcc_lmtp_app system_app_data_file:file create_file_perms;
+
+  # Allow read-write permissions to qdma sockets under vendor_qcc_app_socket.
+  unix_socket_connect(vendor_qcc_lmtp_app, vendor_qcc_app, vendor_qcc_app)
+  allow vendor_qcc_lmtp_app vendor_qcc_app_socket:dir rw_dir_perms;
+  allow vendor_qcc_lmtp_app vendor_qcc_app_socket:sock_file create_file_perms;
 ')
