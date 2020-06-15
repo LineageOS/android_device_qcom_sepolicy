@@ -62,3 +62,6 @@ set_prop(system_server, vendor_fst_prop)
 # Allow system server to access for dpm
 get_prop(system_server, vendor_persist_dpm_prop)
 
+#Allow system_server to add and find qspmsvc service
+allow system_server vendor_qspmsvc_service:service_manager find;
+
