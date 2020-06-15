@@ -27,4 +27,3 @@
 
 type vendor_dun_service,                 service_manager_type;
 type vendor_imsrcs_service,              service_manager_type;
-type vendor_qtitetherservice_service,    service_manager_type;
