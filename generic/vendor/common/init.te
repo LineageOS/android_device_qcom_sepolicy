@@ -72,8 +72,10 @@ allow init sysfs_zram:file r_file_perms;
 
 allow init vendor_sysfs_boot_adsp:file w_file_perms;
 
-# Search and write access for vendor_sysfs_graphics for backlight
-# and vendor_sysfs_usb_device in recovery
+allow init bt_firmware_file:filesystem getattr;
+allow init firmware_file:filesystem getattr;
+
+# Search and write access for vendor_sysfs_graphics for backlight in recovery
 recovery_only(`
 allow init vendor_sysfs_graphics:file w_file_perms;
 allow init vendor_sysfs_graphics:dir search;

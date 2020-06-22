@@ -469,6 +469,7 @@
 /(vendor|system/vendor)/bin/init\.qcom\.early_boot\.sh  u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.efs\.sync\.sh   u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.post_boot\.sh   u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.dcvs\.sh        u:object_r:vendor_init-qti-dcvs-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sdio\.sh        u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sensors\.sh     u:object_r:vendor_init-qcom-sensors-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.syspart_fixup\.sh   u:object_r:vendor_qti_init_shell_exec:s0

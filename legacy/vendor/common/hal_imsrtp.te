@@ -60,4 +60,4 @@ allow hal_imsrtp sysfs_data:file r_file_perms;
 
 get_prop(hal_imsrtp, qcom_ims_prop)
 
-binder_call(hal_imsrtp, radio)
+binder_call(hal_imsrtp, vendor_qtelephony)

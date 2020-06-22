@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -183,3 +183,5 @@ set_prop(vendor_qti_init_shell, vendor_soc_name_prop);
 
 # Get persist.console.silent.config for kernel console log level
 get_prop(vendor_qti_init_shell, vendor_console_log_level_prop)
+
+set_prop(vendor_qti_init_shell,vendor_dcvs_prop)

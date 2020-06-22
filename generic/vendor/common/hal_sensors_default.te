@@ -60,3 +60,6 @@ allowxperm hal_sensors_default self:{ socket qipcrtr_socket } ioctl msm_sock_ipc
 
 allow hal_sensors_default system_server:fd use;
 hal_client_domain(hal_sensors_default, hal_graphics_allocator)
+
+# allow to read adsprpc related properties
+get_prop(hal_sensors_default, vendor_adsprpc_prop)

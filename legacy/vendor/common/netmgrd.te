@@ -46,6 +46,7 @@ allow netmgrd netmgrd:capability {
     setgid
     setuid
     setpcap
+    kill
 };
 
 #Allow logging
