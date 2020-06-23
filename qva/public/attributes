@@ -52,3 +52,7 @@ attribute vendor_hal_fm_server;
 attribute vendor_hal_qteeconnector;
 attribute vendor_hal_qteeconnector_client;
 attribute vendor_hal_qteeconnector_server;
+
+attribute vendor_hal_eid;
+attribute vendor_hal_eid_client;
+attribute vendor_hal_eid_server;
