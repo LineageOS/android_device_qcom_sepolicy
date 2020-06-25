@@ -3,7 +3,8 @@ ifeq ($(call is-vendor-board-platform,QCOM),true)
 SEPOLICY_PATH:= device/qcom/sepolicy
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
     $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
-    $(SEPOLICY_PATH)/generic/public
+    $(SEPOLICY_PATH)/generic/public \
+    $(SEPOLICY_PATH)/generic/public/attribute
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
     $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
@@ -11,7 +12,8 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
     $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
-    $(SEPOLICY_PATH)/qva/public
+    $(SEPOLICY_PATH)/qva/public \
+    $(SEPOLICY_PATH)/qva/public/attribute
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
     $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
