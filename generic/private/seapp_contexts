@@ -60,3 +60,6 @@ user=_app seinfo=platform name=com.caf.fmradio domain=vendor_fm_app type=app_dat
 
 #Add new domain for secure camera service app
 user=_app seinfo=platform name=com.qualcomm.qti.seccamservice:remote domain=vendor_seccam_app type=app_data_file
+
+#Add ExtTelephonyService to vendor_qtelephony
+user=_app seinfo=platform name=com.qti.phone domain=vendor_qtelephony type=app_data_file levelFrom=all
