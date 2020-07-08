@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,9 +24,6 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-/data/misc/elabel(/.*)?         u:object_r:vendor_elabel_data_file:s0
-/data/misc/seemp(/.*)?          u:object_r:vendor_seemp_data_file:s0
 
-/(product|system/product)/etc/init\.qcom\.testscripts\.sh         u:object_r:qti-testscripts_exec:s0
-
-/storage/emulated(/.*)?         u:object_r:media_rw_data_file:s0
+hwbinder_use(radio)
+allow radio mediaextractor_service:service_manager find;
