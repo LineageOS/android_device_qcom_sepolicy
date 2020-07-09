@@ -29,7 +29,6 @@
 allow netd netd:capability { setgid setuid };
 dontaudit netd self:capability sys_module;
 binder_use(netd);
-allow netd qtitetherservice_service:service_manager find;
 
 allow netd netd:packet_socket create_socket_perms_no_ioctl;
 

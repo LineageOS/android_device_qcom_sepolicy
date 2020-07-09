@@ -49,8 +49,6 @@ allow system_server {
     #dpmservice
 }:service_manager add;
 
-allow system_server qtitetherservice_service:service_manager find;
-
 # required for ANT App to connectto wcnss_filter sockets
 allow system_server bluetooth:unix_stream_socket connectto;
 # access to iop
