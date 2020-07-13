@@ -26,5 +26,3 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 vendor_restricted_prop(vendor_sensors_dbg_prop);
 
-#WiFi Display
-vendor_internal_prop(vendor_wfd_vendor_debug_prop);
