@@ -26,5 +26,3 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 type sensors_dbg_prop, property_type;
 
-#WiFi Display
-type wfd_vendor_debug_prop, property_type;

@@ -61,10 +61,6 @@ attribute vendor_hal_seccam;
 attribute vendor_hal_seccam_client;
 attribute vendor_hal_seccam_server;
 
-attribute vendor_wifidisplayhalservice;
-attribute vendor_wifidisplayhalservice_client;
-attribute vendor_wifidisplayhalservice_server;
-
 attribute vendor_hal_vpp;
 attribute vendor_hal_vpp_client;
 attribute vendor_hal_vpp_server;
