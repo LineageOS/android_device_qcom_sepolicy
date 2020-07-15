@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,20 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-android.apps.IQfpService                       u:object_r:iqfp_service:s0
-android.apps.IQfpAndroidService                u:object_r:qfp_proxy_service:s0
-AtCmdFwd                                       u:object_r:atfwd_service:s0
-listen.service                                 u:object_r:mediaserver_service:s0
-gbahttpauth                                    u:object_r:gba_auth_service:s0
-com.qualcomm.qti.auth.fidocryptodaemon         u:object_r:fidodaemon_service:s0
-wbc_service                                    u:object_r:wbc_service:s0
-dun                                            u:object_r:dun_service:s0
-qti.ims.connectionmanagerservice               u:object_r:imsrcs_service:s0
-improveTouch.TouchService                      u:object_r:improve_touch_service:s0
-improveTouch.TouchManagerService               u:object_r:improve_touch_service:s0
-improveTouch.GestureManagerService             u:object_r:improve_touch_service:s0
-improveTouch.HandBiometricManagerService       u:object_r:improve_touch_service:s0
-dts_eagle_service                              u:object_r:dtseagleservice_service:s0
-com.qualcomm.qti.secota.service.SecotaNService u:object_r:secotad_service:s0
-com.qualcomm.qti.seemp.health                  u:object_r:seemp_health_daemon_service:s0
-com.qualcomm.qti.uceservice                    u:object_r:imsrcs_service:s0
+# allow qti_logkit for rawdump partition
+allow qti_logkit block_device:dir r_dir_perms;
+allow qti_logkit rawdump_block_device:blk_file rw_file_perms;
+
+# allow qti_logkit for sysfs emmc dload node
+allow qti_logkit sysfs_emmc_dload:file rw_file_perms;
