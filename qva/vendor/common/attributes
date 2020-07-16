@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -76,6 +76,10 @@ attribute vendor_hal_factory_qti_server;
 attribute vendor_hal_cvp;
 attribute vendor_hal_cvp_client;
 attribute vendor_hal_cvp_server;
+
+attribute wifidisplayhalservice;
+attribute wifidisplayhalservice_client;
+attribute wifidisplayhalservice_server;
 
 attribute vendor_hal_wigig;
 attribute vendor_hal_wigig_client;
