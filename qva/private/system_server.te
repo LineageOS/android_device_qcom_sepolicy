@@ -1,4 +1,4 @@
-# Copyright (c) 2015,2017,2019 The Linux Foundation. All rights reserved.
+# Copyright (c) 2015,2017,2019-2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -44,6 +44,11 @@ allow system_server vendor_dpmd_data_file:file create_file_perms;
 #Allow system_server to add and find perf service
 #add_service(system_server, vendor_perf_service);
 allow system_server vendor_perf_service:service_manager find;
+
+#Allow Cast Settings to access WFD prop
+userdebug_or_eng(`
+get_prop(system_server, wfd_debug_prop)
+')
 
 #Allow system_server to add and find vps service
 allow system_server vendor_vps_service:service_manager find;
