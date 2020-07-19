@@ -51,6 +51,10 @@ allow hal_perf_default sysfs_lib:file w_file_perms;
 r_dir_file(hal_perf_default, appdomain);
 allow hal_perf_default {appdomain}:file rw_file_perms;
 
+allow hal_perf_default hal_display_config_hwservice:hwservice_manager find;
+allow hal_perf_default init:unix_stream_socket connectto;
+allow hal_perf_default property_socket:sock_file write;
+
 allow hal_perf {
     sysfs_devices_system_cpu
     sysfs_mpdecision
