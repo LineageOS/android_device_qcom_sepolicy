@@ -64,6 +64,7 @@ vendor.qti.hardware.data.latency::ILinkLatency               u:object_r:hal_late
 vendor.qti.hardware.data.iwlan::IIWlan                       u:object_r:hal_iwlan_hwservice:s0
 vendor.qti.hardware.cacert::IService                         u:object_r:hal_cacert_hwservice:s0
 vendor.qti.data.factory::IFactory                            u:object_r:hal_datafactory_hwservice:s0
+vendor.qti.ims.factory::IImsFactory                          u:object_r:vendor_hal_imsfactory_hwservice:s0
 vendor.qti.hardware.data.connection::IDataConnection         u:object_r:hal_dataconnection_hwservice:s0
 vendor.qti.hardware.vpp::IHidlVppService                     u:object_r:hal_vpp_hwservice:s0
 vendor.qti.hardware.wigig.supptunnel::ISuppTunnelProvider    u:object_r:hal_wigig_hwservice:s0
