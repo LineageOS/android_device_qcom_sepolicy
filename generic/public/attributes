@@ -96,6 +96,11 @@ attribute vendor_hal_qspmhal;
 attribute vendor_hal_qspmhal_client;
 attribute vendor_hal_qspmhal_server;
 
+#attributes for qesdhal
+attribute vendor_hal_qesdhal;
+attribute vendor_hal_qesdhal_client;
+attribute vendor_hal_qesdhal_server;
+
 attribute vendor_hal_btconfigstore;
 attribute vendor_hal_btconfigstore_client;
 attribute vendor_hal_btconfigstore_server;
