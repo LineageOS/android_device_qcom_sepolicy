@@ -70,4 +70,4 @@ persist.vendor.sys.debug.wfd.             u:object_r:vendor_wfd_sys_debug_prop:s
 persist.vendor.wigig.                      u:object_r:vendor_wigig_core_prop:s0
 persist.vendor.fst.                        u:object_r:vendor_fst_prop:s0
 persist.dpm.feature                        u:object_r:vendor_persist_dpm_prop:s0
-
+ctl.stop$dpmd                              u:object_r:ctl_dpmd_prop:s0

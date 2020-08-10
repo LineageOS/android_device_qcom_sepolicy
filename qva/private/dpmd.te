@@ -72,3 +72,4 @@ vendor_dpmd_socket_perm(platform_app)
 allow vendor_dpmd proc_net:file write;
 #self kill rule to kill vendor_dpmd child process which executes iptable commands
 allow vendor_dpmd self:capability kill;
+set_prop(vendor_dpmd, ctl_dpmd_prop)
