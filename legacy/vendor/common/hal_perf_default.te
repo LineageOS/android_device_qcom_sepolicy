@@ -51,6 +51,8 @@ allow hal_perf_default sysfs_lib:file w_file_perms;
 r_dir_file(hal_perf_default, appdomain);
 allow hal_perf_default {appdomain}:file rw_file_perms;
 
+allow hal_perf_default hal_display_config_hwservice:hwservice_manager find;
+
 allow hal_perf {
     sysfs_devices_system_cpu
     sysfs_mpdecision
@@ -58,6 +60,7 @@ allow hal_perf {
     sysfs_mmc_host
     sysfs_scsi_host
     sysfs_kgsl
+    sysfs_kgsl_proc
     sysfs_cpu_boost
     sysfs_msm_perf
     sysfs_memory
