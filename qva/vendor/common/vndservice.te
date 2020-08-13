@@ -26,5 +26,3 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type vendor_esepmdaemon_service, vndservice_manager_type;
-type vendor_wfdnativemm_service, vndservice_manager_type;
-type vendor_wfdhdcpvndservice_service, vndservice_manager_type;
