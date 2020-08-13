@@ -1,4 +1,4 @@
-# Copyright (c) 2017, 2019 The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, 2019-2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -47,6 +47,17 @@ vendor.debug.mmosal.config         u:object_r:vendor_mm_osal_prop:s0
 #perf
 vendor.perf.workloadclassifier.enable      u:object_r:vendor_wlc_prop:s0
 persist.vendor.build.date.utc              u:object_r:vendor_wlc_prop:s0
+
+#WiFi Display
+vendor.wfdservice              u:object_r:wfd_service_prop:s0
+persist.vendor.debug.mux.      u:object_r:wfd_debug_prop:s0
+persist.vendor.debug.rtp.      u:object_r:wfd_debug_prop:s0
+persist.vendor.debug.wfd.      u:object_r:wfd_debug_prop:s0
+vendor.debug.wfd.              u:object_r:wfd_debug_prop:s0
+
+persist.vendor.debug.wfdcdbg   u:object_r:wfd_debug_prop:s0
+persist.vendor.debug.wfdcdbgv  u:object_r:wfd_debug_prop:s0
+
 
 #mm-video
 persist.vendor.debug.av.logs.lvl          u:object_r:debug_prop:s0
