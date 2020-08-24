@@ -53,3 +53,7 @@ allow vendor_qccsyshal_qti vendor_qcc_data_file:file create_file_perms;
 unix_socket_connect(vendor_qccsyshal_qti, vendor_qcc_app, vendor_qcc_app)
 allow vendor_qccsyshal_qti vendor_qcc_app_socket:dir r_dir_perms;
 allow vendor_qccsyshal_qti vendor_qcc_app_socket:sock_file rw_file_perms;
+
+userdebug_or_eng(`
+  allow vendor_qccsyshal_qti vendor_qcc_lmtp_app:unix_stream_socket connectto;
+')
