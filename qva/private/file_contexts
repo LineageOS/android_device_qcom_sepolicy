@@ -48,6 +48,7 @@
 /(system_ext|system/system_ext)/bin/dun-server  u:object_r:vendor_dun-server_exec:s0
 /(system_ext|system/system_ext)/bin/bt_logger   u:object_r:vendor_bt_logger_exec:s0
 /(system_ext|system/system_ext)/bin/perfservice u:object_r:vendor_perfservice_exec:s0
+/(system_ext|system/system_ext)/bin/qdtservice  u:object_r:vendor_qdtservice_exec:s0
 /(system|system_ext|system/system_ext)/bin/wfdservice                          u:object_r:vendor_wfdservice_exec:s0
 /(system|system_ext|system/system_ext)/bin/sigma_miracasthalservice            u:object_r:vendor_sigmahal_qti_exec:s0
 /(system_ext|system/system_ext)/bin/qccsyshalservice  u:object_r:vendor_qccsyshal_qti_exec:s0

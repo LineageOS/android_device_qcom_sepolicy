@@ -28,7 +28,3 @@
 attribute vendor_hal_systemhelper;
 attribute vendor_hal_systemhelper_client;
 attribute vendor_hal_systemhelper_server;
-
-attribute vendor_hal_perf;
-attribute vendor_hal_perf_client;
-attribute vendor_hal_perf_server;
