@@ -33,6 +33,7 @@
 /dev/socket/dpmd                                u:object_r:vendor_dpmd_socket:s0
 /dev/socket/tcm                                 u:object_r:vendor_dpmtcm_socket:s0
 /dev/socket/qvrservice                          u:object_r:vendor_qvrd_socket:s0
+/dev/socket/qvrservice_controller               u:object_r:vendor_qvrd_controller_socket:s0
 /dev/socket/qvrservice_camera                   u:object_r:vendor_qvrd_socket:s0
 /dev/socket/qvrservice_hvx_camera               u:object_r:vendor_qvrd_hvx_socket:s0
 /dev/socket/qdma_app(/.*)?                      u:object_r:vendor_qcc_app_socket:s0
