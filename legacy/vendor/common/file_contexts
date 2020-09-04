@@ -195,6 +195,7 @@
 /(vendor|system/vendor)/bin/init\.qcom\.early_boot\.sh  u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.class_main\.sh        u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.post_boot\.sh   u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.dcvs\.sh         u:object_r:vendor_init-qti-dcvs-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sensors\.sh     u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.usb\.sh         u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.mdm\.sh                   u:object_r:qti_init_shell_exec:s0
