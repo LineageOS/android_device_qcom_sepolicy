@@ -38,7 +38,8 @@ hwbinder_use(hal_rcsservice)
 add_hwservice(hal_rcsservice, hal_imsrcsd_hwservice)
 get_prop(hal_rcsservice, hwservicemanager_prop)
 add_hwservice(hal_rcsservice, hal_imscallinfo_hwservice)
-
+#add imsfactory to HIDl interface
+add_hwservice(hal_rcsservice, vendor_hal_imsfactory_hwservice)
 # allow read datad property
 get_prop(hal_rcsservice, qcom_ims_prop)
 
