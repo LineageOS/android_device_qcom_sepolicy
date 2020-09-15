@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,6 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+com.qualcomm.qti.wifidisplayhal::IHDCPSession                u:object_r:wifidisplayhalservice_hwservice:s0
+com.qualcomm.qti.wifidisplayhal::IDSManager                  u:object_r:wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.fingerprint::IQtiExtendedFingerprint     u:object_r:hal_fingerprint_hwservice:s0
 vendor.qti.hardware.radio.am::IQcRilAudio                    u:object_r:hal_telephony_hwservice:s0
 vendor.qti.hardware.radio.config::IConfig                    u:object_r:hal_telephony_hwservice:s0
@@ -53,9 +55,7 @@ vendor.qti.hardware.btconfigstore::IBTConfigStore            u:object_r:hal_btco
 com.qualcomm.qti.ant::IAntHci                                u:object_r:hal_bluetooth_hwservice:s0
 vendor.qti.hardware.wipower::IWipower                        u:object_r:hal_bluetooth_hwservice:s0
 vendor.qti.hardware.perf::IPerf                              u:object_r:hal_perf_hwservice:s0
-com.qualcomm.qti.wifidisplayhal::IHDCPSession                u:object_r:wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.iop::IIop                                u:object_r:hal_iop_hwservice:s0
-com.qualcomm.qti.wifidisplayhal::IDSManager                  u:object_r:wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.alarm::IAlarm                            u:object_r:hal_alarm_qti_hwservice:s0
 com.qualcomm.qti.uceservice::IUceService                     u:object_r:hal_imsrcsd_hwservice:s0
 vendor.qti.ims.callinfo::IService                            u:object_r:hal_imscallinfo_hwservice:s0
@@ -64,6 +64,7 @@ vendor.qti.hardware.data.latency::ILinkLatency               u:object_r:hal_late
 vendor.qti.hardware.data.iwlan::IIWlan                       u:object_r:hal_iwlan_hwservice:s0
 vendor.qti.hardware.cacert::IService                         u:object_r:hal_cacert_hwservice:s0
 vendor.qti.data.factory::IFactory                            u:object_r:hal_datafactory_hwservice:s0
+vendor.qti.ims.factory::IImsFactory                          u:object_r:vendor_hal_imsfactory_hwservice:s0
 vendor.qti.hardware.data.connection::IDataConnection         u:object_r:hal_dataconnection_hwservice:s0
 vendor.qti.hardware.vpp::IHidlVppService                     u:object_r:hal_vpp_hwservice:s0
 vendor.qti.hardware.wigig.supptunnel::ISuppTunnelProvider    u:object_r:hal_wigig_hwservice:s0
@@ -94,10 +95,6 @@ vendor.qti.hardware.scve.objecttracker::IObjectTracker          u:object_r:hal_s
 vendor.qti.hardware.wifi.hostapd::IHostapdVendor             u:object_r:hal_wifi_hostapd_hwservice:s0
 vendor.qti.hardware.wifi.wifilearner::IWifiStats             u:object_r:hal_wifilearner_hwservice:s0
 vendor.qti.hardware.fm::IFmHci                               u:object_r:hal_fm_hwservice:s0
-vendor.qti.hardware.wifidisplaysession::IWifiDisplaySession  u:object_r:wifidisplayhalservice_hwservice:s0
-vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionVideoTrack    u:object_r:wifidisplayhalservice_hwservice:s0
-vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionAudioTrack    u:object_r:wifidisplayhalservice_hwservice:s0
-vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionImageTrack    u:object_r:wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.bluetooth_audio::IBluetoothAudioProvidersFactory u:object_r:hal_audio_hwservice:s0
 vendor.qti.hardware.display.mapper::IQtiMapper               u:object_r:hal_graphics_mapper_hwservice:s0
 vendor.qti.hardware.cryptfshw::ICryptfsHw                    u:object_r:hal_keymaster_hwservice:s0
