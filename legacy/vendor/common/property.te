@@ -127,8 +127,9 @@ type ctl_vendor_hbtp_prop, property_type;
 # factory properties
 type ctl_vendor_mmid_prop, property_type;
 
-#qdma property
-type vendor_qdma_prop, property_type;
+#qcc property
+#type vendor_qdma_prop, property_type;
+vendor_public_prop(vendor_qcc_prop);
 
 #imsrcsservice
 type ctl_vendor_imsrcsservice_prop, property_type;

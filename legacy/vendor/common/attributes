@@ -143,3 +143,7 @@ attribute hal_capabilityconfigstore_qti_server;
 attribute vendor_hal_dspmanager;
 attribute vendor_hal_dspmanager_client;
 attribute vendor_hal_dspmanager_server;
+
+attribute vendor_hal_qccvndhal;
+attribute vendor_hal_qccvndhal_client;
+attribute vendor_hal_qccvndhal_server;

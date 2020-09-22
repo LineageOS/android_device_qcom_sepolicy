@@ -35,9 +35,6 @@ user=system seinfo=platform name=com.qualcomm.qti.auth.fidocryptoservice domain=
 # AtFwd app
 user=_app seinfo=platform name=com.qualcomm.telephony domain=vendor_qtelephony type=app_data_file levelFrom=all
 
-#Add new domain for QDMA
-user=system seinfo=platform name=com.qualcomm.qti.qdma domain=qdma_app type=system_app_data_file
-
 # Add time service app
 user=_app seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file levelFrom=all
 

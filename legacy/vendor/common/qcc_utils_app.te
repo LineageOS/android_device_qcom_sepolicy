@@ -25,23 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-app_domain(vendor_qcc_utils_app)
-net_domain(vendor_qcc_utils_app)
-binder_use(vendor_qcc_utils_app)
-
-allow vendor_qcc_utils_app { app_api_service radio_service }:service_manager find;
-
-# allow access to qcc dropbox
-allow vendor_qcc_utils_app vendor_qcc_data_file:dir create_dir_perms;
-allow vendor_qcc_utils_app vendor_qcc_data_file:file create_file_perms;
-
-# allow vendor_qcc_utils_app to access system_app_data_file
-# necessary for read and write /data/data subdirectory
-allow vendor_qcc_utils_app system_app_data_file:dir create_dir_perms;
-allow vendor_qcc_utils_app system_app_data_file:file create_file_perms;
-
-# allow cgroup access
-allow vendor_qcc_utils_app cgroup:file rw_file_perms;
-
-# for aws iot mqtt
-allow vendor_qcc_utils_app self: udp_socket create_socket_perms_no_ioctl;
+# IPerf
+hal_client_domain(vendor_qcc_utils_app, vendor_hal_perf);

@@ -145,8 +145,8 @@ ctl.vendor.hbtp u:object_r:ctl_vendor_hbtp_prop:s0
 # factory properties
 ctl.vendor.mmid   u:object_r:ctl_vendor_mmid_prop:s0
 
-# qdma property
-vendor.qti.qdma.        u:object_r:vendor_qdma_prop:s0
+# qcc property
+vendor.qti.qdma.                             u:object_r:vendor_qcc_prop:s0
 
 #Needed by qsee need to rename this
 vendor.sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
