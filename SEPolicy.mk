@@ -30,7 +30,7 @@ PRODUCT_PRIVATE_SEPOLICY_DIRS := \
     $(SEPOLICY_PATH)/generic/product/private \
     $(SEPOLICY_PATH)/qva/product/private
 
-ifneq (,$(filter sdm660 msm8937 msm8953 msm8998, $(TARGET_BOARD_PLATFORM)))
+ifneq (,$(filter sdm660 msm8937 msm8953 msm8996 msm8998, $(TARGET_BOARD_PLATFORM)))
     BOARD_VENDOR_SEPOLICY_DIRS := \
                  $(BOARD_VENDOR_SEPOLICY_DIRS) \
                  $(SEPOLICY_PATH) \
