@@ -31,6 +31,7 @@ vendor.perfservice                             u:object_r:vendor_perf_service:s0
 vendor.qdtservice                              u:object_r:vendor_qdt_service:s0
 sms-sec                                        u:object_r:radio_service:s0
 extphone                                       u:object_r:radio_service:s0
+qti.ims.ext                                    u:object_r:radio_service:s0
 qti.radio.extphone                             u:object_r:radio_service:s0
 com.qualcomm.location.izat.IzatService         u:object_r:vendor_izat_service:s0
 qti.security.seempspa                          u:object_r:vendor_seemp_service:s0
