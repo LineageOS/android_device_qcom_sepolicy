@@ -29,6 +29,7 @@ type vendor_seemp_service,               service_manager_type;
 type vendor_dpmservice,                  service_manager_type;
 type vendor_MinkBinderSvc,               app_api_service, service_manager_type;
 type vendor_perf_service,         app_api_service, service_manager_type;
+type vendor_qdt_service,                 app_api_service, service_manager_type;
 type vendor_izat_service,                app_api_service, system_api_service, service_manager_type;
 type vendor_color_service,               service_manager_type;
 type vendor_wfdservice_service,          service_manager_type;
