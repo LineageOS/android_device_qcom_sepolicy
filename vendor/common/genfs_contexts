@@ -50,3 +50,5 @@ genfscon sysfs /kernel/qvr_external_sensor u:object_r:sysfs_qvr_external_sensor:
 genfscon sysfs /devices/virtual/xt_hardidletimer/timers u:object_r:sysfs_data:s0
 genfscon sysfs /devices/virtual/xt_idletimer/timers u:object_r:sysfs_data:s0
 
+# rtc
+genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-00/800f000.qcom,spmi:qcom,pm660@0:qcom,pm660_rtc/rtc               u:object_r:sysfs_rtc:s0
