@@ -221,6 +221,7 @@
 /(vendor|system/vendor)/bin/mmid                u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/qdcmss              u:object_r:qdcm-ss_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance      u:object_r:vendor_msm_irqbalanced_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/imsdatadaemon       u:object_r:ims_exec:s0
 /(vendor|system/vendor)/bin/imsqmidaemon        u:object_r:ims_exec:s0
 /(vendor|system/vendor)/bin/ims_rtp_daemon      u:object_r:hal_imsrtp_exec:s0
