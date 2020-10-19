@@ -43,7 +43,7 @@
 ####### system file ###############
 /system/bin/seempd                              u:object_r:vendor_seempd_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
-/(system_ext|system/system_ext)/bin/dpmd        u:object_r:vendor_dpmd_exec:s0
+/(product|system/product|system_ext|system/system_ext)/bin/dpmd  u:object_r:vendor_dpmd_exec:s0
 /(system_ext|system/system_ext)/bin/qvrservice  u:object_r:vendor_qvrd_exec:s0
 /(system_ext|system/system_ext)/bin/sxrservice  u:object_r:vendor_sys_sxrd_exec:s0
 /system/bin/vpsservice                          u:object_r:vendor_vpsservice_exec:s0
