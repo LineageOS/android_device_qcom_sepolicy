@@ -221,3 +221,5 @@ vendor.qvr                       u:object_r:qvr_prop:s0
 
 #bt lazyhal property
 ro.vendor.bt.enablelazyhal       u:object_r:bluetooth_prop:s0 exact bool
+
+vendor.dcvs.prop                 u:object_r:vendor_dcvs_prop:s0

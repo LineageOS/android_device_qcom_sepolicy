@@ -41,9 +41,6 @@ binder_call(secotad, system_app)
 #Mark secotad as a Binder service domain
 #binder_service(secotad)
 
-#Allow secotad to be registered with service manager
-#allow secotad secotad_service:service_manager add;
-
 #Allow access to tee device
 allow secotad tee_device:chr_file rw_file_perms;
 

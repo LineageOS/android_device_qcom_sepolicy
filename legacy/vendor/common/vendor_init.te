@@ -112,6 +112,8 @@ set_prop(vendor_init, vendor_bluetooth_prop)
 # Access vendor sensor properties
 set_prop(vendor_init, sensors_prop)
 
+set_prop(vendor_init, vendor_dcvs_prop)
+
 #Access vendor wigig properties, mainly for on-demand module loading
 set_prop(vendor_init, vendor_wigig_prop)
 userdebug_or_eng(`

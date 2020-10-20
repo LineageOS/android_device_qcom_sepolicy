@@ -56,7 +56,6 @@ allow perfdump_app mediaserver_service:service_manager find;
 binder_call(perfdump_app, system_server)
 
 # dumpstate
-#set_prop(perfdump_app, ctl_dumpstate_prop)
 unix_socket_connect(perfdump_app, dumpstate, dumpstate)
 
 dontaudit perfdump_app service_manager_type:service_manager *;
