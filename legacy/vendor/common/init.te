@@ -87,3 +87,5 @@ allow init {
 #Blocked by neverallow vendor_init { file_type fs_type -init_exec }:file entrypoint;
 #domain_trans(init, vendor_init_exec, vendor_init);
 allow init mnt_vendor_file:lnk_file r_file_perms;
+
+allow init socket_device:sock_file { unlink setattr create };
