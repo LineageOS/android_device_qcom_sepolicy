@@ -89,7 +89,6 @@ set_prop(qti_init_shell, vendor_ipacm_prop)
 set_prop(qti_init_shell, vendor_ipacm-diag_prop)
 set_prop(qti_init_shell, vendor_dataqti_prop)
 set_prop(qti_init_shell, vendor_dataadpl_prop)
-#set_prop(qti_init_shell, ctl_rildaemon_prop)
 set_prop(qti_init_shell, ctl_qcrild_prop)
 set_prop(qti_init_shell, ctl_vendor_rild_prop)
 set_prop(qti_init_shell, ctl_vendor_qmuxd_prop)
@@ -106,10 +105,11 @@ set_prop(qti_init_shell, vendor_audio_prop)
 set_prop(qti_init_shell, vendor_video_prop)
 userdebug_or_eng(`
 # Needed for starting console in userdebug mode
-#set_prop(qti_init_shell, ctl_console_prop)
 set_prop(qti_init_shell, vendor_coresight_prop)
 set_prop(qti_init_shell, vendor_audio_debug_prop)
 ')
+
+set_prop(vendor_qti_init_shell,vendor_dcvs_prop)
 #Needed for starting vm_bms executable post-boot
 set_prop(qti_init_shell, vendor_vm_bms_prop)
 set_prop(qti_init_shell, vendor_usb_prop)

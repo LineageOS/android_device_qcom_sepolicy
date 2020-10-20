@@ -1,4 +1,4 @@
-# Copyright (c) 2017, 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,16 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow update_engine and update_engine_sideload (recovery) read/write on the
-# device-specific partitions it should update.
-allow update_engine_common {
-	custom_ab_block_device
-	xbl_block_device
-	ssd_device
-	modem_block_device
-        root_block_device
-        system_block_device
-        boot_block_device
-        mdtp_device
-}:blk_file rw_file_perms;
-
+allow bootanim sysfs_kgsl:dir search;
