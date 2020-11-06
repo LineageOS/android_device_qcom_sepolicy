@@ -45,3 +45,5 @@ vendor.vpsservice                              u:object_r:vendor_vps_service:s0
 vendor.qspmsvc                                 u:object_r:vendor_qspmsvc_service:s0
 vendor.qti.hardware.display.config.IDisplayConfig/default u:object_r:vendor_hal_displayconfig_service:s0
 vendor.qti.gnss.ILocAidlGnss/default           u:object_r:hal_gnss_service:s0
+vendor.qti.hardware.radio.ims.IImsRadio/imsradio0         u:object_r:vendor_hal_telephony_service:s0
+vendor.qti.hardware.radio.ims.IImsRadio/imsradio1         u:object_r:vendor_hal_telephony_service:s0

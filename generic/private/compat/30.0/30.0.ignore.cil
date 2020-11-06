@@ -6,6 +6,7 @@
 (typeattributeset new_objects
   ( new_objects
     vendor_hal_displayconfig_service
+    vendor_hal_telephony_service
     vendor_mm_parser_prop
     vendor_persist_tcm_prop
     vendor_qcc_lmtp_app))
