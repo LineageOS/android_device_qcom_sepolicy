@@ -131,3 +131,6 @@ allow location self:capability2 wake_alarm;
 
 #allow qdma prop
 get_prop(location, vendor_qdma_prop);
+
+#xtra-demon
+hal_client_domain(location, vendor_qccsyshal);

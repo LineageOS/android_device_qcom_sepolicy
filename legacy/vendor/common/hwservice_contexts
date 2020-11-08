@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2019, 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -71,6 +71,7 @@ vendor.qti.hardware.wigig.supptunnel::ISuppTunnelProvider    u:object_r:hal_wigi
 vendor.qti.hardware.wigig.netperftuner::INetPerfTuner        u:object_r:hal_wigig_npt_hwservice:s0
 vendor.qti.hardware.qteeconnector::IAppConnector             u:object_r:hal_qteeconnector_hwservice:s0
 vendor.qti.hardware.qteeconnector::IGPAppConnector           u:object_r:hal_qteeconnector_hwservice:s0
+vendor.qti.hardware.fstman::IFstManager                      u:object_r:hal_fstman_hwservice:s0
 vendor.qti.esepowermanager::IEsePowerManager                 u:object_r:hal_esepowermanager_hwservice:s0
 vendor.qti.voiceprint::IQtiVoicePrintService                 u:object_r:hal_voiceprint_hwservice:s0
 vendor.qti.power.pasrmanager::IPasrManager                   u:object_r:hal_pasrmanager_hwservice:s0
@@ -85,6 +86,7 @@ vendor.qti.hardware.factory::IFactory                        u:object_r:vendor_h
 vendor.qti.hardware.display.allocator::IQtiAllocator         u:object_r:hal_graphics_allocator_hwservice:s0
 vendor.qti.hardware.display.composer::IQtiComposer           u:object_r:hal_graphics_composer_hwservice:s0
 vendor.qti.hardware.soter::ISoter                            u:object_r:hal_soter_hwservice:s0
+vendor.qti.hardware.servicetracker::IServicetracker          u:object_r:vendor_hal_srvctracker_hwservice:s0
 vendor.qti.hardware.tui_comm::ITuiComm                       u:object_r:hal_tui_comm_hwservice:s0
 vendor.qti.hardware.qdutils_disp::IQdutilsDisp               u:object_r:hal_qdutils_disp_hwservice:s0
 vendor.qti.hardware.sensorscalibrate::ISensorsCalibrate      u:object_r:hal_sensorscalibrate_qti_hwservice:s0
@@ -103,3 +105,4 @@ vendor.qti.hardware.bluetooth_sar::IBluetoothSar             u:object_r:hal_blue
 com.dsi.ant::IAnt                                            u:object_r:hal_bluetooth_hwservice:s0
 vendor.qti.hardware.qseecom::IQSEECom                        u:object_r:hal_qseecom_hwservice:s0
 vendor.qti.hardware.perf::IPerfCallback                      u:object_r:hal_perfcallback_hwservice:s0
+vendor.qti.hardware.dsp::IDspService                         u:object_r:vendor_hal_dspmanager_hwservice:s0
