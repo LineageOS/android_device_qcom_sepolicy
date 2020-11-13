@@ -28,3 +28,8 @@
 ro.vendor.qti.va_aosp.support       u:object_r:vendor_exported_system_prop:s0 exact bool
 ro.vendor.qti.va_odm.support       u:object_r:vendor_exported_odm_prop:s0 exact bool
 ro.vendor.perf.scroll_opt        u:object_r:vendor_exported_system_prop:s0 exact bool
+ro.vendor.perf.scroll_opt.heavy_app        u:object_r:vendor_exported_system_prop:s0 exact int
+ro.netflix.bsp_rev                 u:object_r:vendor_exported_system_prop:s0 exact string
+
+# Beluga
+ro.vendor.beluga.                         u:object_r:vendor_exported_system_prop:s0

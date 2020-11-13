@@ -28,6 +28,7 @@
 dpmservice                                     u:object_r:vendor_dpmservice:s0
 MinkBinderSvc                                  u:object_r:vendor_MinkBinderSvc:s0
 vendor.perfservice                             u:object_r:vendor_perf_service:s0
+vendor.qdtservice                              u:object_r:vendor_qdt_service:s0
 sms-sec                                        u:object_r:radio_service:s0
 extphone                                       u:object_r:radio_service:s0
 qti.radio.extphone                             u:object_r:radio_service:s0
