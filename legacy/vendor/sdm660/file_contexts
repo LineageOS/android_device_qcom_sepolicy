@@ -77,6 +77,7 @@
 /dev/block/platform/soc/1da4000.ufshc/by-name/persist                           u:object_r:persist_block_device:s0
 
 #Primary storage device nodes
+/dev/block/mmcblk0rpmb                                                          u:object_r:rpmb_device:s0
 /dev/mmcblk0rpmb                                                                u:object_r:rpmb_device:s0
 /dev/block/mmcblk0                                                              u:object_r:root_block_device:s0
 
