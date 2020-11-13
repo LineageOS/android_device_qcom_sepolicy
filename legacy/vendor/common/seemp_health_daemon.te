@@ -41,9 +41,6 @@ binder_call(seemp_health_daemon, system_app)
 #Mark seemp_health_daemon as a Binder service domain
 #binder_service(seemp_health_daemon)
 
-#Allow seemp_health_daemon to be registered with service manager
-#allow seemp_health_daemon seemp_health_daemon_service:service_manager add;
-
 #Allow access to tee device
 allow seemp_health_daemon tee_device:chr_file rw_file_perms;
 

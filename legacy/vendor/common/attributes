@@ -82,6 +82,10 @@ attribute hal_wigig_npt;
 attribute hal_wigig_npt_client;
 attribute hal_wigig_npt_server;
 
+attribute hal_fstman;
+attribute hal_fstman_client;
+attribute hal_fstman_server;
+
 attribute hal_qdutils_disp;
 attribute hal_qdutils_disp_client;
 attribute hal_qdutils_disp_server;
@@ -116,6 +120,10 @@ attribute hal_wifilearner;
 attribute hal_wifilearner_client;
 attribute hal_wifilearner_server;
 
+attribute hal_srvctracker;
+attribute hal_srvctracker_client;
+attribute hal_srvctracker_server;
+
 attribute hal_fm;
 attribute hal_fm_client;
 attribute hal_fm_server;
@@ -131,3 +139,7 @@ attribute hal_dataconnection_qti_server;
 attribute hal_capabilityconfigstore_qti;
 attribute hal_capabilityconfigstore_qti_client;
 attribute hal_capabilityconfigstore_qti_server;
+
+attribute vendor_hal_dspmanager;
+attribute vendor_hal_dspmanager_client;
+attribute vendor_hal_dspmanager_server;

@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,38 +25,36 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type perfdump_app, domain;
-app_domain(perfdump_app)
+# Policy for DSP HAL service
+type vendor_dspservice, domain;
+type vendor_dspservice_exec, exec_type, vendor_file_type, file_type;
 
-allow perfdump_app system_app_data_file:dir create_dir_perms;
-allow perfdump_app system_app_data_file:file create_file_perms;
+# Started by init
+init_daemon_domain(vendor_dspservice)
 
-# systrace support
-allow perfdump_app debugfs_tracing:dir r_dir_perms;
-allow perfdump_app debugfs_tracing:file rw_file_perms;
+# Allow permissions required for this HAL server to offer a
+# HAL implementation of the specified type over HwBinder
+hal_server_domain(vendor_dspservice, vendor_hal_dspmanager)
 
-userdebug_or_eng(`
-  allow perfdump_app debugfs_tracing_debug:dir r_dir_perms;
-  allow perfdump_app debugfs_tracing_debug:file rw_file_perms;
-')
+# Allow DSP clients to perform binder IPC to DSP HAL server
+binder_call(vendor_hal_dspmanager_client, vendor_hal_dspmanager_server)
+binder_call(vendor_hal_dspmanager_server, vendor_hal_dspmanager_client)
 
-allow perfdump_app debugfs_trace_marker:file getattr;
+# Add dspservice to hwservice_manager and allow it to be discovered
+hal_attribute_hwservice(vendor_hal_dspmanager, vendor_hal_dspmanager_hwservice)
 
-# perfdump sets debug.atrace.* properties
-set_prop(perfdump_app, debug_prop)
+# For reading dir/files on "/vendor/dsp"
+r_dir_file(vendor_dspservice, adsprpcd_file)
 
-# pokes binder-enabled processes
-binder_use(perfdump_app)
-allow perfdump_app servicemanager:service_manager list;
-allow perfdump_app hwservicemanager:hwservice_manager list;
-allow perfdump_app app_api_service:service_manager find;
-allow perfdump_app surfaceflinger_service:service_manager find;
-allow perfdump_app audioserver_service:service_manager find;
-allow perfdump_app mediaserver_service:service_manager find;
-binder_call(perfdump_app, system_server)
+# For reading "vendor.fastrpc." properties
+get_prop(vendor_dspservice, adsprpc_prop)
 
-# dumpstate
-unix_socket_connect(perfdump_app, dumpstate, dumpstate)
+# Allow access to adsprpc secure and non-secure devices
+allow vendor_dspservice qdsp_device:chr_file r_file_perms;
+allow vendor_dspservice xdsp_device:chr_file r_file_perms;
 
-dontaudit perfdump_app service_manager_type:service_manager *;
-dontaudit perfdump_app hwservice_manager_type:hwservice_manager *;
+# Allow access to adsprpc ION device
+allow vendor_dspservice ion_device:chr_file r_file_perms;
+
+# Access to wakelock sysfs
+wakelock_use(vendor_dspservice)

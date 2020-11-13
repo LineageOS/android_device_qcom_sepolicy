@@ -66,5 +66,7 @@ get_prop(domain, public_vendor_default_prop)
 
 allow domain qti_debugfs:dir search;
 
+# allow all context to read sysfs_kgsl
+allow { domain - isolated_app } sysfs_kgsl:dir search;
 # allow all context to read gpu model
 allow { domain - isolated_app } sysfs_kgsl_gpu_model:file r_file_perms;

@@ -41,9 +41,6 @@ userdebug_or_eng(`
   # Mark fido test daemons as a Binder service domain
   #binder_service(fidotest)
 
-  #Allow fido test daemons to be registered with service manager
-  #allow fidotest fidotest_service:service_manager add;
-
   # Allow access to tee device
   allow fidotest tee_device:chr_file rw_file_perms;
 
