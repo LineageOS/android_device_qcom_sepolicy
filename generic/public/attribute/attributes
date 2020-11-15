@@ -71,3 +71,7 @@ attribute vendor_hal_dspmanager_server;
 attribute vendor_hal_diaghal;
 attribute vendor_hal_diaghal_client;
 attribute vendor_hal_diaghal_server;
+
+attribute vendor_hal_perf;
+attribute vendor_hal_perf_client;
+attribute vendor_hal_perf_server;

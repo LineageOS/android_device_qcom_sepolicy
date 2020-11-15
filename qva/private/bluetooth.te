@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,16 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type vendor_seemp_service,               service_manager_type;
-type vendor_dpmservice,                  service_manager_type;
-type vendor_MinkBinderSvc,               app_api_service, service_manager_type;
-type vendor_perf_service,         app_api_service, service_manager_type;
-type vendor_qdt_service,                 app_api_service, service_manager_type;
-type vendor_izat_service,                app_api_service, system_api_service, service_manager_type;
-type vendor_color_service,               service_manager_type;
-type vendor_wfdservice_service,          service_manager_type;
-type vendor_wigigp2p_service,            app_api_service, system_server_service, service_manager_type;
-type vendor_wigig_service,               app_api_service, system_server_service, service_manager_type;
-type vendor_vps_service,          app_api_service, service_manager_type;
-type vendor_qspmsvc_service,             app_api_service, service_manager_type;
-
+unix_socket_connect(bluetooth, vendor_qvrd_controller, vendor_qvrd)

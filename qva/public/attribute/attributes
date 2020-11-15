@@ -122,3 +122,11 @@ attribute vendor_qtiloopback_client;
 attribute vendor_hal_debugutils;
 attribute vendor_hal_debugutils_client;
 attribute vendor_hal_debugutils_server;
+
+attribute vendor_hal_wifimyftm;
+attribute vendor_hal_wifimyftm_client;
+attribute vendor_hal_wifimyftm_server;
+
+attribute vendor_hal_mem_pasrmanager;
+attribute vendor_hal_mem_pasrmanager_client;
+attribute vendor_hal_mem_pasrmanager_server;
