@@ -69,10 +69,6 @@ allow qti_logkit_app qti_logkit_pub_data_file:file create_file_perms;
 # iwconfig
 allow qti_logkit_app wcnss_service_exec:file rx_file_perms;
 
-# bugreport
-#set_prop(qti_logkit_app, ctl_dumpstate_prop)
-unix_socket_connect(qti_logkit_app, dumpstate, dumpstate)
-
 # ANR
 allow qti_logkit_app anr_data_file:dir r_dir_perms;
 allow qti_logkit_app anr_data_file:file r_file_perms;

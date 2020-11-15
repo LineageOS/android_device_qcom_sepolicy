@@ -179,5 +179,7 @@ type qvr_prop, property_type;
 #capabilityconfigstore hal (CCHAL)
 type vendor_cap_configstore_dbg_prop, property_type;
 
+vendor_internal_prop(vendor_dcvs_prop)
+
 # Wifi version recorder
 type vendor_wifi_version, property_type;

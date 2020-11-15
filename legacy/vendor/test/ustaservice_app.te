@@ -27,7 +27,6 @@
 type ustaservice_app, domain;
 app_domain(ustaservice_app)
 
-#allow ustaservice_app vendor_usta_app_service:service_manager add;
 allow ustaservice_app vendor_usta_app_service:service_manager find;
 allow ustaservice_app activity_service:service_manager find;
 allow ustaservice_app app_api_service:service_manager find;

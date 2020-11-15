@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -33,3 +33,6 @@ r_dir_file(untrusted_app_27, vendor_gles_data_file);
 allow untrusted_app_27 vendor_gles_data_file:dir rw_dir_perms;
 allow untrusted_app_27 vendor_gles_data_file:file rw_file_perms;
 ')
+
+# allow app to be a client of DSP HAL
+hal_client_domain(untrusted_app_27, vendor_hal_dspmanager)

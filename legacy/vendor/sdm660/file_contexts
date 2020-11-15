@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -77,7 +77,7 @@
 /dev/block/platform/soc/1da4000.ufshc/by-name/persist                           u:object_r:persist_block_device:s0
 
 #Primary storage device nodes
-/dev/block/mmcblk0rpmb                                                          u:object_r:rpmb_device:s0
+/dev/mmcblk0rpmb                                                                u:object_r:rpmb_device:s0
 /dev/block/mmcblk0                                                              u:object_r:root_block_device:s0
 
 ##################################
@@ -151,8 +151,13 @@
 #
 /(vendor|system/vendor)/lib(64)?/hw/gralloc\.sdm660\.so   u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/hw/vulkan\.sdm660\.so    u:object_r:same_process_hal_file:s0
+
+#/(vendor|system/vendor)/bin/init\.qcom\.debug-sdm660\.sh    u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.can\.sh              u:object_r:qti_init_shell_exec:s0
 #sysfs
 /sys/devices(/platform)?/soc/caa0000.qcom,jpeg/video4linux/video[0-9]+/name(/.*)?   u:object_r:sysfs_jpeg:s0
 /sys/devices(/platform)?/soc/ca00000.qcom,msm-cam/video4linux/video[0-9]+/name(/.*)?  u:object_r:sysfs_jpeg:s0
+#sysfs graphics
+/sys/devices/virtual/graphics/fb0/supported_bitclk                  u:object_r:sysfs_graphics:s0
 
 /sys/devices/soc/780000.qcom,msm-core/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
