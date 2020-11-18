@@ -279,3 +279,6 @@ allow qti_init_shell sysfs_android_usb:file rw_file_perms;
 
 # allow read permisison for hvdcp_opti properties
 get_prop(qti_init_shell,  hvdcp_opti_prop)
+
+#allow set permission for vendor.fastrpc properties
+set_prop(qti_init_shell, adsprpc_prop)
