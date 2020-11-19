@@ -30,22 +30,8 @@ app_domain(vendor_poweroffalarm_app);
 
 allow vendor_poweroffalarm_app app_api_service:service_manager find;
 
-allow vendor_poweroffalarm_app mnt_vendor_file:dir r_dir_perms;
-allow vendor_poweroffalarm_app vendor_persist_alarm_file:dir rw_dir_perms;
-allow vendor_poweroffalarm_app vendor_persist_alarm_file:file create_file_perms;
-
 hal_client_domain(vendor_poweroffalarm_app, vendor_hal_alarm_qti);
 hal_client_domain(vendor_poweroffalarm_app, vendor_hal_perf);
 
 binder_call(vendor_poweroffalarm_app, vendor_hal_alarm_qti_default);
 
-allow vendor_poweroffalarm_app system_app_data_file:dir create_dir_perms;
-allow vendor_poweroffalarm_app system_app_data_file:{ file lnk_file } create_file_perms;
-
-allow vendor_poweroffalarm_app surfaceflinger_service:service_manager find;
-allow vendor_poweroffalarm_app audioserver_service:service_manager find;
-allow vendor_poweroffalarm_app mediaserver_service:service_manager find;
-
-get_prop(vendor_poweroffalarm_app, vendor_alarm_boot_prop);
-
-#get_prop(vendor_poweroffalarm_app, vendor_iop_prop)
