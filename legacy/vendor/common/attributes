@@ -135,3 +135,7 @@ attribute hal_dataconnection_qti_server;
 attribute hal_capabilityconfigstore_qti;
 attribute hal_capabilityconfigstore_qti_client;
 attribute hal_capabilityconfigstore_qti_server;
+
+attribute vendor_hal_dspmanager;
+attribute vendor_hal_dspmanager_client;
+attribute vendor_hal_dspmanager_server;

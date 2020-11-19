@@ -28,3 +28,6 @@
 # For regionalization
 allow zygote oemfs:dir r_dir_perms;
 allow zygote oemfs:file r_file_perms;
+
+#video prop permisssions
+get_prop(zygote , vendor_video_prop)
