@@ -50,8 +50,8 @@ r_dir_file(mediaserver, sysfs_thermal);
 
 binder_call(mediaserver, wfdservice)
 
-#allow mediaserver to access adsprpc_prop
-get_prop(mediaserver, adsprpc_prop)
+#allow mediaserver to access vendor_adsprpc_prop
+get_prop(mediaserver, vendor_adsprpc_prop)
 
 binder_call(mediaserver, bootanim);
 

@@ -28,7 +28,7 @@
 #mediacodec need intraction with audio device nodes
 allow mediacodec msm_aac_in_device:chr_file rw_file_perms;
 
-get_prop(mediacodec, adsprpc_prop)
+get_prop(mediacodec, vendor_adsprpc_prop)
 
 #Allow mediacodec to access proc_net files
 allow mediacodec proc_net:file r_file_perms;

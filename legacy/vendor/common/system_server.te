@@ -136,9 +136,9 @@ allow system_server { vendor_location_app system_app } :file write;
 get_prop(system_server, vendor_opengles_prop)
 #get_prop(system_server, qemu_hw_mainkeys_prop)
 
-get_prop(system_server, hwui_prop)
-get_prop(system_server, bservice_prop)
-get_prop(system_server, reschedule_service_prop)
+get_prop(system_server, vendor_hwui_prop)
+get_prop(system_server, vendor_bservice_prop)
+get_prop(system_server, vendor_reschedule_service_prop)
 allow system_server appdomain:file w_file_perms;
 get_prop(system_server, vendor_cgroup_follow_prop)
 
