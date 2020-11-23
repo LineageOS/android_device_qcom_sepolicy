@@ -27,3 +27,5 @@
 
 
 allow fsck vendor_persist_block_device:blk_file rw_file_perms;
+allow fsck vendor_qmcs_block_device:blk_file rw_file_perms;
+allowxperm fsck vendor_qmcs_block_device:blk_file ioctl { BLKGETSIZE };

@@ -31,4 +31,5 @@ allow update_engine storage_file:dir r_dir_perms;
 allow update_engine fuse:dir r_dir_perms;
 allow update_engine sdcard_type:dir r_dir_perms;
 allow update_engine sdcard_type:file r_file_perms;
+allow update_engine vendor_vm_system_file:dir search;
 binder_call( update_engine, system_app )

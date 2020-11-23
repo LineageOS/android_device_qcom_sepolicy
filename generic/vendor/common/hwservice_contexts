@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -62,3 +62,5 @@ vendor.qti.hardware.trustedui::ITrustedInput              u:object_r:vendor_hal_
 android.hardware.media.c2::IConfigurable                     u:object_r:hal_codec2_hwservice:s0
 vendor.qti.hardware.display.mapper::IQtiMapper               u:object_r:hal_graphics_mapper_hwservice:s0
 vendor.qti.hardware.camera.postproc::IPostProcService        u:object_r:vendor_hal_camera_postproc_hwservice:s0
+vendor.qti.hardware.embmssl::IEmbms                          u:object_r:vendor_hal_embmssl_hwservice:s0
+vendor.qti.hardware.dsp::IDspService                         u:object_r:vendor_hal_dspmanager_hwservice:s0

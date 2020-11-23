@@ -58,4 +58,10 @@ userdebug_or_eng(`
     binder_call(vendor_location_app_test, gpuservice);
 
     allow vendor_location_app_test vendor_sysfs_kgsl_gpu_model:file r_file_perms;
+
+    hal_client_domain(vendor_location_app_test, vendor_hal_qspmhal);
+
+    hal_client_domain(vendor_location_app_test, vendor_hal_diaghal);
+
+    dontaudit vendor_location_app_test vendor_hal_qspmhal_default:binder {call};
 ')

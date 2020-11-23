@@ -38,3 +38,7 @@ type vendor_qti_display_debugfs, fs_type, debugfs_type;
 type vendor_sensors_data_file, file_type, data_file_type, core_data_file_type;
 
 type vendor_gles_data_file, file_type, data_file_type;
+
+type vendor_ts_loopback_data_file, file_type, data_file_type;
+
+typeattribute vendor_sensors_vendor_data_file mlstrustedobject;

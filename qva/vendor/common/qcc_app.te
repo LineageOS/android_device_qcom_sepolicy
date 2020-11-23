@@ -26,3 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 hal_client_domain(vendor_qcc_app, vendor_hal_qccvndhal);
+
+# IPerf
+hal_client_domain(vendor_qcc_app, vendor_hal_perf);
+

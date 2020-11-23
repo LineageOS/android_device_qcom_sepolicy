@@ -28,3 +28,5 @@
 /data/misc/seemp(/.*)?          u:object_r:vendor_seemp_data_file:s0
 
 /(product|system/product)/etc/init\.qcom\.testscripts\.sh         u:object_r:qti-testscripts_exec:s0
+
+/storage/emulated(/.*)?         u:object_r:media_rw_data_file:s0

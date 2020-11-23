@@ -57,5 +57,16 @@ neverallow {
      -vold
      } vendor_persist_type: { dir file } *;
 
+allow { domain - isolated_app } vendor_sysfs_kgsl:dir search;
 # Allow all context to read gpu model
 allow { domain - isolated_app } vendor_sysfs_kgsl_gpu_model:file r_file_perms;
+allow { domain - isolated_app } vendor_sysfs_kgsl_gpubusy:file r_file_perms;
+allow { domain - isolated_app } vendor_sysfs_kgsl_max_gpuclk:file r_file_perms;
+allow { domain - isolated_app } vendor_sysfs_gpu_max_clock:file r_file_perms;
+
+neverallow {
+    coredomain
+    -init
+    -ueventd
+    -hal_graphics_composer_default
+} vendor_qmcs_file_type: { dir file } *;

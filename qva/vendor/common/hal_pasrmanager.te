@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -36,5 +36,5 @@ add_hwservice(vendor_hal_pasrmanager_server, vendor_hal_pasrmanager_hwservice)
 allow vendor_hal_pasrmanager_client vendor_hal_pasrmanager_hwservice:hwservice_manager find;
 
 allow vendor_hal_pasrmanager_qti sysfs:dir r_dir_perms;
-allow vendor_hal_pasrmanager_qti vendor_sysfs_memory_offline:file rw_file_perms;
-allow vendor_hal_pasrmanager_qti vendor_sysfs_memory_offline:dir r_dir_perms;
+allow vendor_hal_pasrmanager_qti vendor_sysfs_system_memory:file rw_file_perms;
+allow vendor_hal_pasrmanager_qti vendor_sysfs_system_memory:dir r_dir_perms;

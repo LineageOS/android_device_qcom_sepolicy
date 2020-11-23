@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -75,6 +75,7 @@ get_prop(vendor_cnd, hwservicemanager_prop)
 binder_call(vendor_cnd, vendor_dataservice_app)
 binder_call(vendor_cnd, vendor_qtidataservices_app)
 binder_call(vendor_cnd, vendor_ims)
+binder_call(vendor_cnd, vendor_ims_service)
 binder_call(vendor_cnd, vendor_location)
 
 r_dir_file(vendor_cnd, vendor_sysfs_ssr)

@@ -27,3 +27,6 @@
 
 #Add new domain for perfdump app
 user=system seinfo=platform name=com.qualcomm.qti.perfdump domain=vendor_perfdump_app type=system_app_data_file
+
+#Add new domain for powerservice app
+user=_app seinfo=platform name=.pasr domain=vendor_powerservice_app type=app_data_file levelFrom=all

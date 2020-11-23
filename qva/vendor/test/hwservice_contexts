@@ -26,3 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 com.qualcomm.qti.loopbackhal::Iloopback                      u:object_r:vendor_qtiloopback_hwservice:s0
+vendor.qti.hardware.servicetracker::IDebugUtils              u:object_r:hal_debugutils_hwservice:s0
+vendor.qti.hardware.wifi.myftmhal::IWifiMyFtm                u:object_r:vendor_hal_wifimyftm_hwservice:s0

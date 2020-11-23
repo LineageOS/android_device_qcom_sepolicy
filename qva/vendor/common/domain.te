@@ -31,4 +31,5 @@ neverallow {
    -init
    -ueventd
    -vendor_spdaemon
+   -vendor_hal_authsecret_qti
 } vendor_spunvm_file_type: { dir file } *;

@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -40,5 +40,3 @@ hal_client_domain(platform_app, vendor_hal_qspmhal)
 hal_client_domain(platform_app, hal_fingerprint)
 # allow platform_app to interact with pasr hal
 hal_client_domain(platform_app, vendor_hal_pasrmanager)
-#allow platform_app to access embmssl hal
-hal_client_domain(platform_app, vendor_hal_embmssl)

@@ -34,5 +34,11 @@ hwbinder_use(vendor_qtelephony);
 get_prop(vendor_qtelephony, hwservicemanager_prop);
 add_hwservice(vendor_qtelephony, vendor_hal_atfwd_hwservice);
 
+userdebug_or_eng(`
+    hal_client_domain( vendor_qtelephony, vendor_hal_diaghal)
+')
+
+allow vendor_qtelephony { cameraserver_service mediaextractor_service mediaserver_service mediametrics_service radio_service drmserver_service audioserver_service}:service_manager find;
 allow vendor_qtelephony system_api_service:service_manager find;
 allow vendor_qtelephony app_api_service:service_manager find;
+hal_client_domain(vendor_qtelephony, hal_telephony)

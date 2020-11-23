@@ -38,6 +38,8 @@ allow tee graphics_device:dir r_dir_perms;
 allow tee graphics_device:chr_file r_file_perms;
 allow tee vendor_data_file:dir r_dir_perms;
 
+dontaudit tee rootfs:dir { read };
+
 wakelock_use(tee)
 r_dir_file(tee, firmware_file)
 allow tee vendor_qfp-daemon_data_file:dir create_dir_perms;

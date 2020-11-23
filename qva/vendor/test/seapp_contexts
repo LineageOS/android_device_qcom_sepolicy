@@ -30,3 +30,8 @@ user=_app seinfo=platform name=com.qualcomm.qct.dlt levelfrom=all domain=vendor_
 user=_app seinfo=platform name=com.qualcomm.qti.qlogcat levelfrom=all domain=vendor_location_app_test type=app_data_file
 user=system seinfo=platform name=.loopbackservice domain=vendor_qtiloopback_app type=system_app_data_file
 user=system seinfo=platform name=qcom.cta.cta_ui domain=vendor_cta_app type=system_app_data_file
+user=system seinfo=platform name=com.qualcomm.qti.logkit.lite domain=vendor_logkit_app type=system_app_data_file
+user=_app seinfo=platform domain=vendor_pdt_app name=com.quicinc.framework.debugapp levelfrom=all type=app_data_file
+user=_app seinfo=platform name=com.qualcomm.qti.dualstaapp domain=vendor_dualsta_app type=app_data_file levelFrom=all
+user=_app seinfo=platform name=com.qualcomm.qti.cam2test domain=vendor_sys_seccam2_app type=app_data_file levelFrom=all
+user=system seinfo=platform name=com.qualcomm.wrd.ue.kpitool.base domain=vendor_cta_app type=system_app_data_file

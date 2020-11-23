@@ -38,7 +38,11 @@ allow vendor_sec_nvm mnt_vendor_file:dir search;
 allow vendor_sec_nvm vendor_persist_secnvm_file:dir rw_dir_perms;
 allow vendor_sec_nvm vendor_persist_secnvm_file:file create_file_perms;
 
+# UFS
+allow vendor_sec_nvm vendor_sysfs_scsi_host:file rw_file_perms;
+
 allow vendor_sec_nvm vendor_spcom_device:chr_file { getattr rw_file_perms };
 allow vendor_sec_nvm vendor_sp_ssr_device:chr_file rw_file_perms;
 set_prop(vendor_sec_nvm, vendor_spcomlib_prop)
 allow vendor_sec_nvm vendor_sec_nvm_device:chr_file rw_file_perms;
+allow vendor_sec_nvm vendor_spss_utils_device:chr_file rw_file_perms;

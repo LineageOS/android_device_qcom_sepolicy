@@ -61,6 +61,14 @@ allowxperm vendor_cnd self:udp_socket ioctl wlan_sock_ioctls;
 
 add_hwservice(vendor_cnd, vendor_hal_latency_hwservice)
 
+add_hwservice(vendor_cnd, vendor_hal_slmadapter_hwservice)
+
+get_prop(vendor_cnd, vendor_slm_prop)
+
+add_hwservice(vendor_cnd, vendor_hal_mwqemadapter_hwservice)
+
+get_prop(vendor_cnd, vendor_mwqem_prop)
+
 ##############################################################
 #for using public interface vendor.qti.data.factory
 #client should add their domain to vendor_cnd.te

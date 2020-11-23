@@ -94,6 +94,12 @@ genfscon sysfs /devices/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.0.auto/usb1 u:ob
 genfscon sysfs /devices/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.0.auto/usb2 u:object_r:vendor_sysfs_usb_device:s0
 genfscon sysfs /devices/platform/soc/a600000.ssusb/mode                 u:object_r:vendor_sysfs_usb_device:s0
 genfscon sysfs /devices/platform/soc/a800000.ssusb/mode                 u:object_r:vendor_sysfs_usb_device:s0
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/retire_frame_event u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-1/retire_frame_event u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-2/retire_frame_event u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/retire_frame_event u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/sde-crtc-1/retire_frame_event u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/sde-crtc-2/retire_frame_event u:object_r:vendor_sysfs_graphics:s0
 
 genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-02/800f000.qcom,spmi:qcom,pmi8998@2:qcom,usb-pdphy@1700/usbpd0/typec     u:object_r:vendor_sysfs_usb_c:s0
 genfscon sysfs /module/diagchar                                         u:object_r:vendor_sysfs_diag:s0
@@ -119,12 +125,13 @@ genfscon sysfs /kernel/hbtp/display_pwr                                     u:ob
 genfscon sysfs /devices/virtual/net/bond0/bonding/queue_id u:object_r:vendor_sysfs_bond0:s0
 genfscon sysfs /devices/virtual/net/bond0/queues/rx-0/rps_cpus u:object_r:vendor_sysfs_bond0:s0
 
-genfscon sysfs /firmware/devicetree/base/cpus u:object_r:sysfs_devices_system_cpu:s0
+genfscon sysfs /firmware/devicetree/base/cpus u:object_r:vendor_sysfs_devicetree_cpu:s0
 
 genfscon sysfs /bus/spmi/devices u:object_r:vendor_sysfs_spmi_dev:s0
 
 genfscon sysfs /power/mem_sleep u:object_r:vendor_sysfs_suspend:s0
 genfscon sysfs /kernel/boot_adsp/ssr                                   u:object_r:vendor_sysfs_adsp_ssr:s0
+genfscon sysfs /firmware/devicetree/base/soc  u:object_r:vendor_sysfs_devicetree_soc:s0
 
 genfscon debugfs /kgsl/proc                           u:object_r:vendor_debugfs_kgsl:s0
 genfscon debugfs /clk/debug_suspend                   u:object_r:vendor_debugfs_clk:s0

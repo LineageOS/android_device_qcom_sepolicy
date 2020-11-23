@@ -34,6 +34,7 @@ allow vendor_shsusrd vendor_proc_shs:dir r_dir_perms;
 allow vendor_shsusrd self:netlink_generic_socket create_socket_perms_no_ioctl;
 
 allow vendor_shsusrd self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow vendor_shsusrd self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
 allow vendor_shsusrd vendor_shsusr_data_file:dir rw_dir_perms;
 allow vendor_shsusrd vendor_shsusr_data_file:file create_file_perms;

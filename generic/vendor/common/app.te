@@ -36,3 +36,5 @@ get_prop(appdomain, vendor_adsprpc_prop)
 
 # Allow all apps to open and send ioctl to npu device
 allow appdomain vendor_npu_device:chr_file r_file_perms;
+
+dontaudit appdomain vendor_hal_qspmhal_hwservice:hwservice_manager find;

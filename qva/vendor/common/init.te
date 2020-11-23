@@ -26,6 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow init vendor_sysfs_graphics:file setattr;
+allow init vendor_sysfs_qvr_external_sensor:file setattr;
 
 # allow init to mount spunvm partition
 allow init vendor_spunvm_file:dir mounton;
