@@ -26,17 +26,15 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #mm-parser
-type vendor_mm_parser_prop, property_type, extended_core_property_type;
+system_internal_prop(vendor_mm_parser_prop)
 #mm-osal
-type vendor_mm_osal_prop, property_type, extended_core_property_type;
-
-type vendor_mm_video_prop, property_type, extended_core_property_type;
+system_internal_prop(vendor_mm_osal_prop)
+system_internal_prop(vendor_mm_video_prop)
 
 #WiFi Display
-type vendor_wfd_service_prop, property_type, extended_core_property_type;
-type vendor_wfd_sys_debug_prop, property_type, extended_core_property_type;
+system_internal_prop(vendor_wfd_service_prop)
+system_internal_prop(vendor_wfd_sys_debug_prop)
 # WIGIG
-type vendor_wigig_core_prop, property_type, extended_core_property_type;
-type vendor_fst_prop, property_type, extended_core_property_type;
-
+system_internal_prop(vendor_wigig_core_prop)
+system_internal_prop(vendor_fst_prop)
 system_internal_prop(ctl_dpmd_prop)
