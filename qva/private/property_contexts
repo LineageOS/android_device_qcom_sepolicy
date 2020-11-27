@@ -65,6 +65,7 @@ persist.vendor.debug.wfdcdbgv             u:object_r:vendor_wfd_sys_debug_prop:s
 persist.vendor.sys.debug.mux.             u:object_r:vendor_wfd_sys_debug_prop:s0
 persist.vendor.sys.debug.rtp.             u:object_r:vendor_wfd_sys_debug_prop:s0
 persist.vendor.sys.debug.wfd.             u:object_r:vendor_wfd_sys_debug_prop:s0
+vendor.sys.debug.wfd.                     u:object_r:vendor_wfd_sys_debug_prop:s0
 
 # WIGIG
 persist.vendor.wigig.                      u:object_r:vendor_wigig_core_prop:s0
