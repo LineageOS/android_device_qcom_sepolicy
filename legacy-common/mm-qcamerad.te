@@ -1,7 +1,8 @@
 binder_use(mm-qcamerad)
 
-type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket1";
-type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket2";
+# /data/cam_socket*
+type_transition mm-qcamerad system_data_root_file:sock_file camera_socket "cam_socket1";
+type_transition mm-qcamerad system_data_root_file:sock_file camera_socket "cam_socket2";
 allow mm-qcamerad camera_socket:sock_file { create unlink write };
 allow mm-qcamerad camera_data_file:sock_file { create unlink };
 
@@ -9,7 +10,7 @@ allow mm-qcamerad system_server:unix_stream_socket rw_socket_perms;
 allow mm-qcamerad sensorservice_service:service_manager find;
 
 # /data/fdAlbum
-type_transition mm-qcamerad system_data_file:file camera_data_file "fdAlbum";
+type_transition mm-qcamerad system_data_root_file:file camera_data_file "fdAlbum";
 allow mm-qcamerad camera_data_file:file create_file_perms;
 
 r_dir_file(mm-qcamerad, sysfs_graphics)
