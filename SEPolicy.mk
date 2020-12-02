@@ -28,4 +28,5 @@ PRODUCT_PUBLIC_SEPOLICY_DIRS := \
 PRODUCT_PRIVATE_SEPOLICY_DIRS := \
     $(PRODUCT_PRIVATE_SEPOLICY_DIRS) \
     $(SEPOLICY_PATH)/generic/product/private \
-    $(SEPOLICY_PATH)/qva/product/private
+    $(SEPOLICY_PATH)/qva/product/private \
+    $(SEPOLICY_PATH)/common/product/private
