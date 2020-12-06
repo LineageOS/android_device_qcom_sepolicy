@@ -41,7 +41,7 @@ allow hal_perf_client hal_perf_hwservice:hwservice_manager find;
 allow hal_perf_default cgroup:file r_file_perms;
 allow hal_perf_default proc:file rw_file_perms;
 allow hal_perf device_latency:chr_file rw_file_perms;
-get_prop(hal_perf, freq_prop)
+get_prop(hal_perf, vendor_freq_prop)
 get_prop(hal_perf, vendor_mpctl_prop)
 allow hal_perf_default mpctl_data_file:dir rw_dir_perms;
 allow hal_perf_default mpctl_data_file:file create_file_perms;

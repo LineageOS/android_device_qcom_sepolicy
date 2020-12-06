@@ -26,40 +26,40 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # property for uicc_daemon
-type qcom_ims_prop, property_type;
-type ctl_vendor_qmuxd_prop, property_type;
-type ctl_vendor_netmgrd_prop, property_type;
-type ctl_vendor_port-bridge_prop, property_type;
-type ctl_qcrild_prop, property_type;
+type vendor_qcom_ims_prop, property_type;
+type vendor_ctl_vendor_qmuxd_prop, property_type;
+type vendor_ctl_vendor_netmgrd_prop, property_type;
+type vendor_ctl_vendor_port-bridge_prop, property_type;
+type vendor_ctl_qcrild_prop, property_type;
 type vendor_tee_listener_prop, property_type;
-type ctl_vendor_rild_prop, property_type;
+type vendor_ctl_vendor_rild_prop, property_type;
 
 # property for LKCore ctl start
-type ctl_LKCore_prop, property_type;
+type vendor_ctl_LKCore_prop, property_type;
 
-type freq_prop, property_type;
+type vendor_freq_prop, property_type;
 type vendor_vm_bms_prop, property_type; #To start vm_bms
 type vendor_dataqti_prop, property_type;
 type vendor_dataadpl_prop, property_type;
 type vendor_dataqdp_prop, property_type;
 type vendor_ipacm_prop, property_type;
 type vendor_ipacm-diag_prop, property_type;
-type cnd_vendor_prop, property_type;
-type sensors_prop, property_type;
-type slpi_prop, property_type;
+type vendor_cnd_vendor_prop, property_type;
+type vendor_sensors_prop, property_type;
+type vendor_slpi_prop, property_type;
 type vendor_msm_irqbalance_prop, property_type;
 type vendor_msm_irqbl_sdm630_prop, property_type;
 type camera_prop, property_type;
-type spcomlib_prop, property_type;
+type vendor_spcomlib_prop, property_type;
 type vendor_display_prop, property_type;
-type scr_enabled_prop, property_type;
-type bg_daemon_prop, property_type;
-type bg_boot_complete_prop, property_type;
+type vendor_scr_enabled_prop, property_type;
+type vendor_bg_daemon_prop, property_type;
+type vendor_bg_boot_complete_prop, property_type;
 type vendor_opengles_prop, property_type;
 type vendor_mdm_helper_prop, property_type;
 type vendor_mpctl_prop, property_type;
 type vendor_iop_prop, property_type;
-type public_vendor_default_prop, property_type;
+type vendor_public_vendor_default_prop, property_type;
 #Scroll Pre-obtain
 type vendor_scroll_prop, property_type;
 
@@ -69,13 +69,13 @@ type vendor_am_prop, property_type;
 #Needed for  ubwc support
 type vendor_gralloc_prop, property_type;
 
-type fm_prop, property_type;
+type vendor_fm_prop, property_type;
 type chgdiabled_prop, property_type;
 
 vendor_restricted_prop(vendor_xlat_prop);
 
 # property for location
-type location_prop, property_type;
+type vendor_location_prop, property_type;
 
 #properites for init.qcom.sh script
 type vendor_usb_prop, property_type;
@@ -90,26 +90,26 @@ type vendor_wifi_ftmd_prop, property_type;
 
 # WIGIG
 type vendor_wigig_prop, property_type;
-type ctl_vendor_wigigsvc_prop, property_type;
+type vendor_ctl_vendor_wigigsvc_prop, property_type;
 
 #HWUI property
-type hwui_prop, property_type;
+type vendor_hwui_prop, property_type;
 
-type graphics_vulkan_prop, property_type;
+type vendor_graphics_vulkan_prop, property_type;
 
 #cgroup follow
 type vendor_cgroup_follow_prop, property_type;
 
 #Bservice property
-type bservice_prop, property_type;
+type vendor_bservice_prop, property_type;
 
 #Delayed Service Reschedule property
-type reschedule_service_prop, property_type;
+type vendor_reschedule_service_prop, property_type;
 
 #boot mode property
 type vendor_boot_mode_prop, property_type;
 #properties for nfc
-type nfc_nq_prop, property_type;
+type vendor_nfc_nq_prop, property_type;
 
 type vendor_rild_libpath_prop, property_type;
 
@@ -122,16 +122,17 @@ type vendor_system_prop, property_type;
 type vendor_bluetooth_prop, property_type;
 
 # HBTP
-type ctl_vendor_hbtp_prop, property_type;
+type vendor_ctl_vendor_hbtp_prop, property_type;
 
 # factory properties
-type ctl_vendor_mmid_prop, property_type;
+type vendor_ctl_vendor_mmid_prop, property_type;
 
-#qdma property
-type vendor_qdma_prop, property_type;
+#qcc property
+#type vendor_qdma_prop, property_type;
+vendor_public_prop(vendor_qcc_prop);
 
 #imsrcsservice
-type ctl_vendor_imsrcsservice_prop, property_type;
+type vendor_ctl_vendor_imsrcsservice_prop, property_type;
 
 #mmi
 type vendor_mmi_prop, property_type;
@@ -162,19 +163,19 @@ type vendor_softap_prop, property_type;
 type vendor_video_prop, property_type;
 
 #rmt_storage
-type ctl_vendor_rmt_storage_prop, property_type;
+type vendor_ctl_vendor_rmt_storage_prop, property_type;
 
 type vendor_gpu_prop, property_type;
 
 type vendor_data_ko_prop, property_type;
 
 #hvdcp_opti
-type hvdcp_opti_prop, property_type;
+type vendor_hvdcp_opti_prop, property_type;
 #adsprpc props
-type adsprpc_prop, property_type;
+type vendor_adsprpc_prop, property_type;
 
 #qvr property
-type qvr_prop, property_type;
+type vendor_qvr_prop, property_type;
 
 #capabilityconfigstore hal (CCHAL)
 type vendor_cap_configstore_dbg_prop, property_type;

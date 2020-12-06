@@ -298,9 +298,8 @@ type sysfs_diag, fs_type, sysfs_type;
 #laser sysfs files
 type sysfs_laser, fs_type, sysfs_type;
 
-# QDMA data files
-type vendor_qdma_data_file, file_type, data_file_type;
-type qdma_socket, file_type, mlstrustedobject;
+# qcc-trd data files
+type vendor_qcc_trd_data_file, file_type, data_file_type;
 
 # path to debugfs use this whic should be only used
 # in debug builds
@@ -411,3 +410,5 @@ type vendor_capabilityconfigstore_data_file, file_type, data_file_type;
 
 #sensor log files
 type sensors_vendor_data_file, file_type, data_file_type;
+
+type vendor_sysfs_kgsl_gpuclk, sysfs_type, fs_type;

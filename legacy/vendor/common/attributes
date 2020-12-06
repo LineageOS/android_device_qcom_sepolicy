@@ -82,6 +82,10 @@ attribute hal_wigig_npt;
 attribute hal_wigig_npt_client;
 attribute hal_wigig_npt_server;
 
+attribute hal_fstman;
+attribute hal_fstman_client;
+attribute hal_fstman_server;
+
 attribute hal_qdutils_disp;
 attribute hal_qdutils_disp_client;
 attribute hal_qdutils_disp_server;
@@ -139,3 +143,7 @@ attribute hal_capabilityconfigstore_qti_server;
 attribute vendor_hal_dspmanager;
 attribute vendor_hal_dspmanager_client;
 attribute vendor_hal_dspmanager_server;
+
+attribute vendor_hal_qccvndhal;
+attribute vendor_hal_qccvndhal_client;
+attribute vendor_hal_qccvndhal_server;
