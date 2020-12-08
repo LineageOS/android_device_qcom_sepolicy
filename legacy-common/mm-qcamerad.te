@@ -1,6 +1,7 @@
 binder_use(mm-qcamerad)
 
 # /data/cam_socket*
+type_transition mm-qcamerad system_data_root_file:sock_file camera_socket "cam_socket0";
 type_transition mm-qcamerad system_data_root_file:sock_file camera_socket "cam_socket1";
 type_transition mm-qcamerad system_data_root_file:sock_file camera_socket "cam_socket2";
 allow mm-qcamerad camera_socket:sock_file { create unlink write };
