@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2bfd5b79_e99c8d5c",
+        "filename": "legacy/vendor/common/system_app.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-12-12T14:50:43Z",
+      "side": 1,
+      "message": "Maybe place the rule here instead?",
+      "revId": "df66c77b16290aa16a401a9c82fb7de4128804ba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
