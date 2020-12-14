@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -38,3 +38,5 @@ binder_call(vendor_dataservice_app, vendor_cnd)
 binder_call(vendor_dataservice_app, vendor_hal_rcsservice)
 
 hal_client_domain(vendor_dataservice_app , vendor_hal_perf)
+# imsdaemon to bind with UceShimService.apk
+binder_call(vendor_dataservice_app, vendor_ims_service)

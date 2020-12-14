@@ -27,16 +27,27 @@
 #
 
 # Allow access to create socket and ioctl.
+
 allow hal_wifi_supplicant_default self:qipcrtr_socket create_socket_perms_no_ioctl;
 
 # Allow write to proc_net.
 allow hal_wifi_supplicant_default proc_net:file write;
+hal_client_domain(hal_wifi_supplicant_default,hal_wifi);
 
 allow hal_wifi_supplicant vendor_wifi_vendor_data_file:dir create_dir_perms;
 allow hal_wifi_supplicant vendor_wifi_vendor_data_file:file create_file_perms;
 allow hal_wifi_supplicant vendor_wifi_vendor_wpa_socket:dir create_dir_perms;
 allow hal_wifi_supplicant vendor_wifi_vendor_wpa_socket:sock_file create_file_perms;
 allow hal_wifi_supplicant vendor_wigig_vendor_wpa_socket:sock_file rw_file_perms;
+allow hal_wifi_supplicant_default hal_wifi_default:binder call;
+allow hal_wifi_supplicant_default hal_wifi_hwservice:hwservice_manager find;
+allow hal_wifi_supplicant_default vendor_tombstone_data_file:dir { open read search };
+allow hal_wifi_supplicant_default vendor_tombstone_data_file:file { getattr open read };
+allow hal_wifi_supplicant_default vendor_log_wifi_data_file:dir search;
+allow hal_wifi_supplicant_default vendor_log_wifi_data_file:dir { add_name write };
+allow hal_wifi_supplicant_default vendor_log_wifi_data_file:file { create getattr open write };
+allow hal_wifi_supplicant_default vendor_log_wifi_data_file:dir write;
+
 
 allow hal_wifi_supplicant vendor_fstman:unix_dgram_socket sendto;
 allow hal_wifi_supplicant vendor_wigighalsvc:unix_dgram_socket sendto;

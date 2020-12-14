@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #allow embms app to access vendor radio property
 get_prop(radio, vendor_radio_prop)
+get_prop(platform_app, vendor_display_notch_prop)

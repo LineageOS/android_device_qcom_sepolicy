@@ -33,6 +33,7 @@ userdebug_or_eng(`
 
   allow vendor_subsystem_ramdump device:dir r_dir_perms;
   allow vendor_subsystem_ramdump vendor_ramdump_device:chr_file r_file_perms;
+  allow vendor_subsystem_ramdump vendor_ramdump_microdump_modem_device:chr_file r_file_perms;
 
   r_dir_file(vendor_subsystem_ramdump, sysfs_type);
 

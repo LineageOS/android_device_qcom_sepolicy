@@ -29,6 +29,7 @@ type vendor_hsic_device, dev_type;
 type vendor_spss_utils_device, dev_type;
 type vendor_skp_device, dev_type;
 type vendor_sp_keymaster_device, dev_type;
+type vendor_sp_keymaster_ssr_device, dev_type;
 type vendor_sp_ssr_device, dev_type;
 type vendor_sp_nvm_device, dev_type;
 type vendor_spdaemon_ssr_device, dev_type;

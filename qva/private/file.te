@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018,2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -30,6 +30,9 @@ type vendor_dpmd_data_file, file_type, data_file_type, core_data_file_type;
 type vendor_dpmwrapper_socket, file_type, coredomain_socket, mlstrustedobject;
 type vendor_qvrd_data_file, file_type, data_file_type, core_data_file_type;
 type vendor_qvrd_socket, file_type, mlstrustedobject, coredomain_socket;
+type vendor_qvrd_controller_socket, file_type, coredomain_socket;
 type vendor_qvrd_hvx_socket, file_type, coredomain_socket;
+type vendor_sys_sxrd_data_file, file_type, data_file_type, core_data_file_type;
+type vendor_sys_sxrd_socket, file_type, mlstrustedobject, coredomain_socket;
 type vendor_qcc_data_file, file_type, data_file_type, core_data_file_type;
 type vendor_qcc_app_socket, file_type, mlstrustedobject, coredomain_socket;

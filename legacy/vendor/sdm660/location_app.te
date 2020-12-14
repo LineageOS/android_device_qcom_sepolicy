@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,6 +24,5 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-rcs                                                  u:object_r:vendor_radio_service:s0
-com.fingerprints.extension.IFingerprintNavigation    u:object_r:vendor_fingerprint_service:s0
-com.qualcomm.qti.uceservice                          u:object_r:vendor_imsuce_service:s0
+
+allow vendor_location_app sysfs_kgsl_gpu_model:file r_file_perms;

@@ -31,11 +31,16 @@ type vendor_spdaemon, domain;
 type vendor_spdaemon_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(vendor_spdaemon)
+
+# Allow access to spss_utils device
+allow vendor_spdaemon vendor_spss_utils_device:chr_file rw_file_perms;
+
 allow vendor_spdaemon vendor_spcom_device:chr_file { getattr rw_file_perms };
 allow vendor_spdaemon vendor_skp_device:chr_file { getattr rw_file_perms };
 
 # Allow access to spss_utils device
 allow vendor_spdaemon vendor_spss_utils_device:chr_file rw_file_perms;
+allow vendor_spdaemon mnt_vendor_file:dir search;
 
 # Need to check if really needed
 set_prop(vendor_spdaemon, vendor_spcomlib_prop)

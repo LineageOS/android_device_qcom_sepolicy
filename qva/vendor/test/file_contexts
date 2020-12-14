@@ -29,3 +29,9 @@
 /sys/kernel/debug/binder/state                                      u:object_r:vendor_binder_state:s0
 /vendor/bin/Loopback_native 	                                    u:object_r:vendor_qtiloopback_native_exec:s0
 /vendor/bin/qttestservice                                           u:object_r:vendor_qttestservice_exec:s0
+/vendor/bin/init.fda.script.sh                                      u:object_r:vendor-qti-testscripts_exec:s0
+/vendor/bin/init.fda.am.sh                                          u:object_r:vendor-qti-testscripts_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.debugutils@1\.0-service        u:object_r:vendor_hal_debugutils_default_exec:s0
+
+#wifimyftm daemon
+/(vendor|system/vendor)/bin/wifimyftm    u:object_r:vendor_wifimyftmsvc_exec:s0

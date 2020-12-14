@@ -36,6 +36,7 @@ allow vendor_location mnt_vendor_file:dir search;
 # access to /persist/hlos_rfs/shared
 allow vendor_location vendor_persist_rfs_shared_hlos_file:dir r_dir_perms;
 allow vendor_location vendor_persist_rfs_shared_hlos_file:file rw_file_perms;
+set_prop(vendor_location, vendor_location_prop);
 
 ## xtra-daemon
 ##############

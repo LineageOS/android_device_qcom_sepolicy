@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,4 +24,27 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type vendor_imsuce_service,              service_manager_type;
+
+type vendor_hal_embmssl_qti, domain;
+type vendor_hal_embmssl_qti_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_hal_embmssl_qti)
+hal_server_domain(vendor_hal_embmssl_qti, vendor_hal_embmssl)
+
+# Allow hwbinder call from hal client to server
+binder_call(vendor_hal_embmssl_client, vendor_hal_embmssl_server)
+binder_call(vendor_hal_embmssl_server, vendor_hal_embmssl_client)
+
+# Add hwservice related rules
+add_hwservice(vendor_hal_embmssl_server, vendor_hal_embmssl_hwservice)
+
+allow vendor_hal_embmssl_client vendor_hal_embmssl_hwservice:hwservice_manager find;
+
+allow vendor_hal_embmssl_qti self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow vendor_hal_embmssl_qti vendor_time_daemon:unix_stream_socket connectto;
+
+allow vendor_hal_embmssl_qti vendor_netmgrd_socket:dir search;
+unix_socket_connect(vendor_hal_embmssl_qti, vendor_netmgrd, vendor_netmgrd)
+
+allow vendor_hal_embmssl_qti self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow vendor_hal_embmssl_qti self:tipc_socket { create_socket_perms_no_ioctl };

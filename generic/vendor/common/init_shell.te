@@ -69,6 +69,7 @@ allow vendor_qti_init_shell self:capability {
 
 set_prop(vendor_qti_init_shell, vendor_ctl_netmgrd_prop)
 set_prop(vendor_qti_init_shell, vendor_ctl_port-bridge_prop)
+set_prop(vendor_qti_init_shell, vendor_ctl_rild_prop)
 set_prop(vendor_qti_init_shell, vendor_ctl_qcrild_prop)
 set_prop(vendor_qti_init_shell, vendor_ipacm-diag_prop)
 set_prop(vendor_qti_init_shell, vendor_ipacm_prop)
@@ -85,6 +86,8 @@ set_prop(vendor_qti_init_shell, vendor_audio_prop)
 get_prop(vendor_qti_init_shell, exported3_radio_prop)
 set_prop(vendor_qti_init_shell, vendor_gpu_prop)
 set_prop(vendor_qti_init_shell, vendor_sensors_prop)
+set_prop(vendor_qti_init_shell, vendor_adsprpc_prop)
+set_prop(vendor_qti_init_shell, vendor_opengles_prop)
 
 allow vendor_qti_init_shell {
     sysfs_devices_system_cpu
@@ -181,7 +184,7 @@ set_prop(vendor_qti_init_shell, vendor_soc_id_prop);
 # Set ro.vendor.qti.soc_name to soc_name in QCV init script
 set_prop(vendor_qti_init_shell, vendor_soc_name_prop);
 
-# Get persist.console.silent.config for kernel console log level
+# Get persist.vendor.console.silent.config for kernel console log level
 get_prop(vendor_qti_init_shell, vendor_console_log_level_prop)
 
 set_prop(vendor_qti_init_shell,vendor_dcvs_prop)

@@ -46,7 +46,7 @@ allow vendor_qvrd { ion_device vendor_qdsp_device vendor_dsp_device vendor_xdsp_
 #
 
 # Allow access to /sys/devices/virtual/graphics/fb* for lineptr interrupts
-allow vendor_qvrd vendor_sysfs_graphics:file r_file_perms;
+allow vendor_qvrd vendor_sysfs_graphics:file rw_file_perms;
 
 #
 # Camera
@@ -87,4 +87,8 @@ allow vendor_qvrd vendor_qvr_external_sensor_device:chr_file rw_file_perms;
 
 # qvr properties
 get_prop(vendor_qvrd, vendor_qvr_prop)
+get_prop(vendor_qvrd, vendor_sxr_prop)
+get_prop(vendor_qvrd, vendor_qvrd_prop)
+get_prop(vendor_qvrd, vendor_qvr_persist_prop)
+get_prop(vendor_qvrd, vendor_qvrd_persist_prop)
 allow vendor_qvrd video_device:chr_file w_file_perms;

@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -43,9 +43,15 @@ hal_client_domain(vendor_hal_trustedui_qti, vendor_hal_systemhelper);
 allow vendor_hal_trustedui_qti vendor_sysfs_sectouch:file rw_file_perms;
 allow vendor_hal_trustedui_qti vendor_tui_data_file:file rw_file_perms;
 allow vendor_hal_trustedui_qti vendor_tui_data_file:dir r_dir_perms;
+allow vendor_hal_trustedui_qti self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow vendor_hal_trustedui_qti sysfs:dir r_dir_perms;
+allow vendor_hal_trustedui_qti vendor_sysfs_trusted_touch_enable:file rw_file_perms;
+allow vendor_hal_trustedui_qti vendor_sysfs_trusted_touch_event:file rw_file_perms;
 
 allow vendor_hal_trustedui_qti ion_device:chr_file r_file_perms;
 allow vendor_hal_trustedui_qti surfaceflinger:fd use;
+
+allow vendor_hal_trustedui_qti sysfs_devices_system_cpu:file rw_file_perms;
 
 allow vendor_hal_trustedui_qti tee_device:chr_file rw_file_perms;
 binder_call(vendor_hal_trustedui_qti, vendor_systemhelper_app)

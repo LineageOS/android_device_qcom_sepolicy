@@ -28,3 +28,5 @@
 
 #qspm debug prop
 vendor.debug.qspm u:object_r:vendor_qspm_dbg_prop:s0
+vendor.debug.breakpoint.continue  u:object_r:vendor_dbg_brkpoint_prop:s0
+vendor.fda.property.            u:object_r:vendor_fda_prop:s0

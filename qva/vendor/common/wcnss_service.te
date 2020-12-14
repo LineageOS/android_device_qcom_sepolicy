@@ -30,3 +30,5 @@ unix_socket_connect(vendor_wcnss_service, vendor_wigignpt, vendor_wigignpt)
 
 # allow net admin to cnss-daemon
 allow vendor_wcnss_service self:capability net_admin;
+allow vendor_wcnss_service kmsg_device:chr_file { write open };
+allow vendor_wcnss_service proc_net:file read;

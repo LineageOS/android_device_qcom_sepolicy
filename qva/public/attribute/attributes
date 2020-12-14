@@ -61,9 +61,17 @@ attribute vendor_hal_seccam;
 attribute vendor_hal_seccam_client;
 attribute vendor_hal_seccam_server;
 
+attribute vendor_wifidisplayhalservice;
+attribute vendor_wifidisplayhalservice_client;
+attribute vendor_wifidisplayhalservice_server;
+
 attribute vendor_hal_vpp;
 attribute vendor_hal_vpp_client;
 attribute vendor_hal_vpp_server;
+
+attribute vendor_hal_qconfig;
+attribute vendor_hal_qconfig_client;
+attribute vendor_hal_qconfig_server;
 
 attribute vendor_hal_esepowermanager;
 attribute vendor_hal_esepowermanager_client;
@@ -76,10 +84,6 @@ attribute vendor_hal_factory_qti_server;
 attribute vendor_hal_cvp;
 attribute vendor_hal_cvp_client;
 attribute vendor_hal_cvp_server;
-
-attribute wifidisplayhalservice;
-attribute wifidisplayhalservice_client;
-attribute wifidisplayhalservice_server;
 
 attribute vendor_hal_wigig;
 attribute vendor_hal_wigig_client;
@@ -107,10 +111,22 @@ attribute vendor_hal_bluetooth_dun;
 attribute vendor_hal_bluetooth_dun_client;
 attribute vendor_hal_bluetooth_dun_server;
 
-attribute vendor_hal_embmssl;
-attribute vendor_hal_embmssl_client;
-attribute vendor_hal_embmssl_server;
-
 attribute vendor_hal_qccvndhal;
 attribute vendor_hal_qccvndhal_client;
 attribute vendor_hal_qccvndhal_server;
+
+attribute vendor_qtiloopback;
+attribute vendor_qtiloopback_server;
+attribute vendor_qtiloopback_client;
+
+attribute vendor_hal_debugutils;
+attribute vendor_hal_debugutils_client;
+attribute vendor_hal_debugutils_server;
+
+attribute vendor_hal_wifimyftm;
+attribute vendor_hal_wifimyftm_client;
+attribute vendor_hal_wifimyftm_server;
+
+attribute vendor_hal_mem_pasrmanager;
+attribute vendor_hal_mem_pasrmanager_client;
+attribute vendor_hal_mem_pasrmanager_server;

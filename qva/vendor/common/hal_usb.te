@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -39,3 +39,5 @@ allow vendor_hal_usb_qti configfs:file create_file_perms;
 allow vendor_hal_usb_qti vendor_sysfs_usb_c:dir r_dir_perms;
 allow vendor_hal_usb_qti vendor_sysfs_usb_c:lnk_file r_file_perms;
 allow vendor_hal_usb_qti vendor_sysfs_usb_c:file rw_file_perms;
+r_dir_file(vendor_hal_usb_qti, vendor_sysfs_battery_supply);
+r_dir_file(vendor_hal_usb_qti, vendor_sysfs_usb_supply);

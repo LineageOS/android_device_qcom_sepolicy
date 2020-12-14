@@ -28,9 +28,14 @@
 #Add new domain for qti value added Location apps
 user=_app seinfo=platform name=com.qualcomm.location.XT isPrivApp=true domain=vendor_location_app type=app_data_file
 user=_app seinfo=platform name=com.qualcomm.location isPrivApp=true domain=vendor_location_app type=app_data_file
+user=_app seinfo=platform name=com.qualcomm.wfd.service:wfd_service domain=vendor_wfd_app type=app_data_file levelfrom=all
+user=_app seinfo=platform name=com.qualcomm.wfd.client domain=vendor_wfd_app type=app_data_file levelfrom=all
+user=_app seinfo=platform name=com.qualcomm.qti.ssmeditor domain=vendor_qconfig_app type=app_data_file levelfrom=all
 
 #Add new domain for QCC
 user=system seinfo=platform name=com.qualcomm.qti.qdma isPrivApp=true domain=vendor_qcc_app type=system_app_data_file
+#Add new domain for QCCLMTP
+user=system seinfo=platform name=com.qualcomm.qti.qcclmtp isPrivApp=true domain=vendor_qcc_lmtp_app type=system_app_data_file
 #Add new domain for QCC-Utils
 user=system seinfo=platform name=com.qualcomm.qti.qdmautils isPrivApp=true domain=vendor_qcc_utils_app type=system_app_data_file
 # Add new domain for FM app
