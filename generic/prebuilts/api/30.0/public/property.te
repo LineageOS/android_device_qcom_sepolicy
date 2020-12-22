@@ -32,4 +32,6 @@ system_restricted_prop(vendor_persist_camera_prop)
 # which is going to be working from system
 system_restricted_prop(vendor_bt_prop)
 system_public_prop(vendor_sys_video_prop)
+#mm-parser
+system_public_prop(vendor_mm_parser_prop)
 system_restricted_prop(vendor_wlc_prop)
