@@ -45,6 +45,9 @@ userdebug_or_eng(`
     diag_use(system_server)
 ')
 
+#OpenGLES version
+get_prop(system_server, vendor_opengles_prop)
+
 # allow system_server to access vendor display property.
 get_prop(system_server, vendor_display_prop)
 

@@ -74,10 +74,6 @@ attribute hal_voiceprint;
 attribute hal_voiceprint_server;
 attribute hal_voiceprint_client;
 
-attribute vendor_hal_factory_qti;
-attribute vendor_hal_factory_qti_client;
-attribute vendor_hal_factory_qti_server;
-
 attribute hal_wigig_npt;
 attribute hal_wigig_npt_client;
 attribute hal_wigig_npt_server;
@@ -101,8 +97,6 @@ attribute hal_soter_server;
 attribute hal_sensorscalibrate_qti;
 attribute hal_sensorscalibrate_qti_client;
 attribute hal_sensorscalibrate_qti_server;
-# All types in /mnt/vendor/persist
-attribute vendor_persist_type;
 
 attribute hal_scve;
 attribute hal_scve_client;
@@ -139,11 +133,3 @@ attribute hal_dataconnection_qti_server;
 attribute hal_capabilityconfigstore_qti;
 attribute hal_capabilityconfigstore_qti_client;
 attribute hal_capabilityconfigstore_qti_server;
-
-attribute vendor_hal_dspmanager;
-attribute vendor_hal_dspmanager_client;
-attribute vendor_hal_dspmanager_server;
-
-attribute vendor_hal_qccvndhal;
-attribute vendor_hal_qccvndhal_client;
-attribute vendor_hal_qccvndhal_server;

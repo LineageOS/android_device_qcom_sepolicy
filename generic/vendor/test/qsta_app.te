@@ -44,6 +44,7 @@ allow vendor_qsta_app {
 }:service_manager find;
 
 dontaudit vendor_qsta_app gpu_service:service_manager find;
+dontaudit vendor_qsta_app gpuservice:binder call;
 dontaudit vendor_qsta_app vendor_hal_qspmhal_hwservice:hwservice_manager find;
 
 userdebug_or_eng(`

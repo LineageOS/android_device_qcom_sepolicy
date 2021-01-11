@@ -27,6 +27,7 @@
 
 vendor_internal_prop(vendor_ctl_netmgrd_prop);
 vendor_internal_prop(vendor_ctl_port-bridge_prop);
+vendor_internal_prop(vendor_ctl_rild_prop);
 vendor_internal_prop(vendor_ctl_qcrild_prop);
 vendor_restricted_prop(vendor_camera_prop);
 vendor_restricted_prop(vendor_cnd_prop);
@@ -43,12 +44,16 @@ vendor_internal_prop(vendor_dataqdp_prop);
 vendor_internal_prop(vendor_ramdump_prop);
 vendor_internal_prop(vendor_sensors_prop);
 vendor_restricted_prop(vendor_tee_listener_prop);
+vendor_restricted_prop(vendor_km_strongbox_version_prop);
 vendor_restricted_prop(vendor_display_prop);
 vendor_internal_prop(vendor_usb_prop);
 vendor_restricted_prop(vendor_radio_prop);
 
 #Needed for ubwc support
 vendor_restricted_prop(vendor_gralloc_prop);
+
+#Needed for opengles version support
+vendor_restricted_prop(vendor_opengles_prop);
 
 vendor_internal_prop(vendor_system_prop);
 

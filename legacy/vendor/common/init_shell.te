@@ -141,6 +141,7 @@ allow qti_init_shell {
     sysfs_lowmemorykiller
     sysfs_mmc_host
     sysfs_process_reclaim
+    sysfs_dm
 }:file w_file_perms;
 
 allow qti_init_shell sysfs_vmpressure:file write;

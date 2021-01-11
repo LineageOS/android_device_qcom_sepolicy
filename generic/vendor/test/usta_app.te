@@ -29,7 +29,7 @@
 ##
 ## This file defines the permissions that vendor_usta_apps can carry
 
-type vendor_usta_app, domain;
+type vendor_usta_app, domain, mlstrustedsubject;
 
 app_domain(vendor_usta_app)
 hal_client_domain(vendor_usta_app, vendor_hal_perf)
@@ -42,7 +42,6 @@ userdebug_or_eng(`
   allowxperm vendor_usta_app self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
   allow vendor_usta_app self:{ socket qipcrtr_socket } create_socket_perms;
   allow vendor_usta_app vendor_xdsp_device:chr_file r_file_perms;
-  allow vendor_usta_app vendor_sysfs_timestamp_switch:file r_file_perms;
 ')
 
 allow vendor_usta_app {
@@ -53,12 +52,14 @@ allow vendor_usta_app {
 allow vendor_usta_app system_app_data_file:dir create_dir_perms;
 allow vendor_usta_app system_app_data_file:file create_file_perms;
 
-allow vendor_usta_app vendor_sensors_data_file:dir create_dir_perms;
-allow vendor_usta_app vendor_sensors_data_file:file create_file_perms;
-
-allow vendor_usta_app vendor_persist_sensors_file:dir create_dir_perms;
-allow vendor_usta_app vendor_persist_sensors_file:file create_file_perms;
-allow vendor_usta_app mnt_vendor_file:dir create_dir_perms;
+allow vendor_usta_app vendor_sensors_vendor_data_file:dir create_dir_perms;
+allow vendor_usta_app vendor_sensors_vendor_data_file:file create_file_perms;
 
 dontaudit vendor_usta_app system_data_file:file open;
 allow vendor_usta_app cgroup:file w_file_perms;
+
+dontaudit vendor_usta_app vendor_hal_qspmhal_hwservice:hwservice_manager find;
+dontaudit vendor_usta_app gpuservice:binder call;
+userdebug_or_eng(`
+  dontaudit vendor_usta_app vendor_diag-router:unix_stream_socket connectto;
+')

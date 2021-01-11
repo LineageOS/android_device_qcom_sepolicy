@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -28,6 +28,8 @@
 type vendor_imshelper_app, domain;
 app_domain(vendor_imshelper_app);
 unix_socket_connect(vendor_imshelper_app, vendor_ims, vendor_ims)
+#allow imshelper_app to connect to server socket hosted in imsdaemon
+unix_socket_connect(vendor_imshelper_app, vendor_ims, vendor_ims_service)
 allow vendor_imshelper_app app_api_service:service_manager find;
 
 #allow qsee_svc_app vendor_imshelper_app_data_file:dir create_dir_perms;

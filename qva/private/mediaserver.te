@@ -28,3 +28,4 @@
 unix_socket_send(mediaserver, vendor_seempdw, vendor_seempd)
 
 get_prop(mediaserver, vendor_mm_video_prop)
+get_prop(mediaserver, vendor_sys_video_prop)

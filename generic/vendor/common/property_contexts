@@ -34,6 +34,7 @@ vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
 ctl.vendor.msm_irqbalance  u:object_r:vendor_msm_irqbalance_prop:s0
 ctl.vendor.netmgrd         u:object_r:vendor_ctl_netmgrd_prop:s0
 ctl.vendor.port-bridge     u:object_r:vendor_ctl_port-bridge_prop:s0
+ctl.vendor.ril-daemon      u:object_r:vendor_ctl_rild_prop:s0
 ctl.vendor.qcrild          u:object_r:vendor_ctl_qcrild_prop:s0
 ctl.vendor.ipacm           u:object_r:vendor_ipacm_prop:s0
 ctl.vendor.ipacm-diag      u:object_r:vendor_ipacm-diag_prop:s0
@@ -45,6 +46,7 @@ vendor.audio.              u:object_r:vendor_audio_prop:s0
 vendor.voice.              u:object_r:vendor_audio_prop:s0
 persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
 ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
+persist.vendor.audio.spkr.cal.duration  u:object_r:vendor_audio_prop:s0
 ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
 ro.boot.alarmboot          u:object_r:vendor_alarm_boot_prop:s0
 vendor.debug.camera.       u:object_r:vendor_camera_prop:s0
@@ -77,6 +79,7 @@ ro.vendor.build.software.version  u:object_r:vendor_ims_prop:s0
 persist.vendor.ims.        u:object_r:vendor_ims_prop:s0
 persist.vendor.qti.telephony.vt_cam_interface u:object_r:vendor_ims_prop:s0
 ctl.vendor.imsrcsservice   u:object_r:vendor_ctl_vendor_imsrcsservice_prop:s0
+vendor.opengles.version    u:object_r:vendor_opengles_prop:s0
 
 # HBTP
 ctl.vendor.hbtp u:object_r:vendor_ctl_vendor_hbtp_prop:s0
@@ -125,6 +128,12 @@ vendor.wlan.  u:object_r:vendor_wifi_prop:s0
 #qdcm socket service
 vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0
 
+#keymaster strongbox service
+vendor.keymaster.strongbox.version u:object_r:vendor_km_strongbox_version_prop:s0
+ctl.keymaster-sb-4-0               u:object_r:vendor_km_strongbox_version_prop:s0
+ctl.vendor.keymaster-sb-4-0        u:object_r:vendor_km_strongbox_version_prop:s0
+ctl.vendor.authsecret.qti-1-0      u:object_r:vendor_km_strongbox_version_prop:s0
+
 #vendor-adsprpc
 vendor.fastrpc.                  u:object_r:vendor_adsprpc_prop:s0
 
@@ -133,6 +142,6 @@ ro.vendor.qti.soc_id         u:object_r:vendor_soc_id_prop:s0
 ro.vendor.qti.soc_name       u:object_r:vendor_soc_name_prop:s0
 
 #kernel console log level
-persist.console.silent.config    u:object_r:vendor_console_log_level_prop:s0
+persist.vendor.console.silent.config    u:object_r:vendor_console_log_level_prop:s0
 
 vendor.dcvs.prop                 u:object_r:vendor_dcvs_prop:s0

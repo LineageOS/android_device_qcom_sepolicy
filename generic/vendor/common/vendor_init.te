@@ -40,6 +40,9 @@ allow vendor_init kernel:system module_request;
 allow vendor_init self:capability sys_module;
 allow vendor_init kmsg_device:chr_file write;
 
+#allow vendor GPU property
+set_prop(vendor_init, vendor_opengles_prop)
+
 #Allow triggering IPA FWs loading
 allow vendor_init vendor_ipa_dev:chr_file write;
 
@@ -58,6 +61,8 @@ allow vendor_init sysfs_android_usb:file rw_file_perms;
 allow vendor_init vendor_sysfs_slpi:file write;
 
 allow vendor_init vendor_file:system module_load;
+
+allow vendor_init vendor_sysfs_scsi_host:file { setattr };
 
 allow vendor_init {
     vendor_camera_data_file
@@ -99,3 +104,5 @@ set_prop(vendor_init,vendor_dcvs_prop)
 
 # Allow vendor_init to read vendor_soc_name_prop
 get_prop(vendor_init, vendor_soc_name_prop);
+
+allow vendor_init tee_device:chr_file getattr;

@@ -43,6 +43,7 @@ vendor.perf.cores_online               u:object_r:vendor_mpctl_prop:s0
 persist.vendor.qti.                    u:object_r:vendor_mpctl_prop:s0
 ro.vendor.at_library                   u:object_r:vendor_mpctl_prop:s0
 vendor.debug.trace.perf                u:object_r:vendor_mpctl_prop:s0
+vendor.target.init.complete            u:object_r:vendor_mpctl_prop:s0
 vendor.iop.enable_uxe                  u:object_r:vendor_iop_prop:s0
 vendor.perf.iop_v3.enable              u:object_r:vendor_iop_prop:s0
 vendor.perf.iop_v3.enable.debug        u:object_r:vendor_iop_prop:s0
@@ -89,6 +90,7 @@ ctl.vendor.sensingdaemon                     u:object_r:vendor_ctl_vendor_wigigs
 # netmgrd ko loading
 persist.vendor.data.shs_ko_load u:object_r:vendor_data_ko_prop:s0
 persist.vendor.data.perf_ko_load u:object_r:vendor_data_ko_prop:s0
+persist.vendor.data.offload_ko_load u:object_r:vendor_data_ko_prop:s0
 
 # hvdcp_opti properties
 persist.vendor.bms.                          u:object_r:vendor_hvdcp_opti_prop:s0
@@ -112,10 +114,24 @@ persist.vendor.net.doxlat                    u:object_r:vendor_xlat_prop:s0
 ro.vendor.qspm.enable            u:object_r:vendor_qspm_prop:s0 exact bool
 
 #qvr properties
-vendor.qvr                       u:object_r:vendor_qvr_prop:s0
+vendor.qvr.                                   u:object_r:vendor_qvr_prop:s0
+vendor.sxr.                                   u:object_r:vendor_sxr_prop:s0
+vendor.qvrd.                                  u:object_r:vendor_qvrd_prop:s0
+persist.vendor.qvr.                           u:object_r:vendor_qvr_persist_prop:s0
+persist.vendor.qvrd.                          u:object_r:vendor_qvrd_persist_prop:s0
 
 #qmuxd property
 ctl.start$vendor.qmuxd                       u:object_r:vendor_ctl_qmuxd_prop:s0
 
 #bluetooth property
 ro.vendor.bt.enablelazyhal                   u:object_r:vendor_bluetooth_prop:s0 exact bool
+
+#SLM
+persist.vendor.slm.                          u:object_r:vendor_slm_prop:s0
+
+#pasr property
+vendor.pasr.                                 u:object_r:vendor_pasr_prop:s0
+ro.vendor.pasr.                              u:object_r:vendor_pasr_prop:s0
+
+#MWQEM
+persist.vendor.mwqem.                        u:object_r:vendor_mwqem_prop:s0

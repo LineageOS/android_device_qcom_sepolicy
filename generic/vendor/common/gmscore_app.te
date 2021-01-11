@@ -28,3 +28,5 @@
 dontaudit gmscore_app vendor_hal_qspmhal_default:binder {call};
 
 unix_socket_connect(gmscore_app, vendor_dpmtcm, vendor_dpmd);
+
+dontaudit gmscore_app vendor_hal_qspmhal_hwservice:hwservice_manager find;

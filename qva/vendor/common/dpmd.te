@@ -43,4 +43,6 @@ hwbinder_use(vendor_dpmd)
 #diag
 userdebug_or_eng(`
     diag_use(vendor_dpmd)
+hal_client_domain(vendor_dpmd, vendor_hal_diaghal)
+hal_client_domain(vendor_dpmd, hal_allocator)
 ')
