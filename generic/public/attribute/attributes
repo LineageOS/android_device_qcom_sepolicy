@@ -49,6 +49,10 @@ attribute vendor_hal_display_postproc;
 attribute vendor_hal_display_postproc_client;
 attribute vendor_hal_display_postproc_server;
 
+attribute vendor_hal_display_demura;
+attribute vendor_hal_display_demura_client;
+attribute vendor_hal_display_demura_server;
+
 # All types in /mnt/vendor/persist
 attribute vendor_persist_type;
 
