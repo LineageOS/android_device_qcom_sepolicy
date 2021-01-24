@@ -30,9 +30,6 @@
 vendor_restricted_prop(vendor_exported_system_prop);
 vendor_restricted_prop(vendor_exported_odm_prop);
 
-#mm-parser
-#mm-parser
-system_internal_prop(vendor_mm_parser_prop)
 #mm-osal
 system_internal_prop(vendor_mm_osal_prop)
 system_internal_prop(vendor_mm_video_prop)
