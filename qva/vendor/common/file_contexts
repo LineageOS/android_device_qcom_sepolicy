@@ -108,10 +108,8 @@
 /(vendor|system/vendor)/bin/qcom-system-daemon                                     u:object_r:vendor_qcomsysd_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.media\.sh                                   u:object_r:vendor_qti_media_exec:s0
 /(vendor|system/vendor)/bin/vppservice                                             u:object_r:vendor_vppservice_exec:s0
+/(vendor|system/vendor)/bin/wifidisplayhalservice                                  u:object_r:wifidisplayhalservice_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/qconfigservice                                      u:object_r:vendor_qconfigservice_exec:s0
-/(vendor|system/vendor)/bin/wifidisplayhalservice                                  u:object_r:vendor_wifidisplayhalservice_qti_exec:s0
-/(vendor|system/vendor)/bin/wfdhdcphalservice                                      u:object_r:vendor_wfdhdcphalservice_qti_exec:s0
-/(vendor|system/vendor)/bin/wfdvndservice                                          u:object_r:vendor_wfdvndservice_exec:s0
 /(vendor|system/vendor)/bin/nqnfcinfo                                              u:object_r:vendor_nqnfcinfo_exec:s0
 /(vendor|system/vendor)/bin/ssgqmigd                                               u:object_r:vendor_ssgqmigd_exec:s0
 /(vendor|system/vendor)/bin/ssgtzd                                                 u:object_r:vendor_ssgtzd_exec:s0

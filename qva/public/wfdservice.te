@@ -25,7 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type vendor_wfdservice, domain;
-
 type wfdservice, domain;
 type wfdservice_exec, system_file_type, exec_type, file_type;

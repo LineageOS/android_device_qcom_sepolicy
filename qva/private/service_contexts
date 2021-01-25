@@ -36,10 +36,10 @@ com.qualcomm.location.izat.IzatService         u:object_r:vendor_izat_service:s0
 qti.security.seempspa                          u:object_r:vendor_seemp_service:s0
 vendor.audio.vrservice                         u:object_r:audioserver_service:s0
 com.qti.snapdragon.sdk.display.IColorService   u:object_r:vendor_color_service:s0
-wfdservice                                     u:object_r:vendor_wfdservice_service:s0
 wigigp2p                                       u:object_r:vendor_wigigp2p_service:s0
 wigig                                          u:object_r:vendor_wigig_service:s0
 display.smomoservice                           u:object_r:surfaceflinger_service:s0
 vendor.vpsservice                              u:object_r:vendor_vps_service:s0
+wfdservice                                     u:object_r:wfdservice_service:s0
 vendor.qspmsvc                                 u:object_r:vendor_qspmsvc_service:s0
 

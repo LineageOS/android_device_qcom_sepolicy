@@ -25,9 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-com.qualcomm.qti.wifidisplayhal::IHDCPSession                u:object_r:vendor_wifidisplayhalservice_hwservice:s0
+com.qualcomm.qti.wifidisplayhal::IHDCPSession                u:object_r:wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.iop::IIop                                u:object_r:vendor_hal_iop_hwservice:s0
-com.qualcomm.qti.wifidisplayhal::IDSManager                  u:object_r:vendor_wifidisplayhalservice_hwservice:s0
+com.qualcomm.qti.wifidisplayhal::IDSManager                  u:object_r:wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.alarm::IAlarm                            u:object_r:vendor_hal_alarm_qti_hwservice:s0
 vendor.qti.hardware.vpp::IHidlVppService                     u:object_r:vendor_hal_vpp_hwservice:s0
 vendor.qti.hardware.vpp::IVppService                         u:object_r:vendor_hal_vpp_hwservice:s0
@@ -63,10 +63,6 @@ vendor.qti.hardware.wifi.supplicant::ISupplicantVendor       u:object_r:hal_wifi
 vendor.qti.hardware.factory::IFactory                        u:object_r:vendor_hal_factory_qti_hwservice:s0
 vendor.qti.hardware.cvp::ICvp                                u:object_r:vendor_hal_cvp_hwservice:s0
 vendor.qti.hardware.bluetooth_sar::IBluetoothSar             u:object_r:hal_bluetooth_hwservice:s0
-vendor.qti.hardware.wifidisplaysession::IWifiDisplaySession  u:object_r:vendor_wifidisplayhalservice_hwservice:s0
-vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionVideoTrack    u:object_r:vendor_wifidisplayhalservice_hwservice:s0
-vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionAudioTrack    u:object_r:vendor_wifidisplayhalservice_hwservice:s0
-vendor.qti.hardware.wifidisplaysession::IWifiDisplaySessionImageTrack    u:object_r:vendor_wifidisplayhalservice_hwservice:s0
 vendor.qti.hardware.wifi.hostapd::IHostapdVendor             u:object_r:hal_wifi_hostapd_hwservice:s0
 vendor.qti.hardware.bluetooth_audio::IBluetoothAudioProvidersFactory  u:object_r:hal_audio_hwservice:s0
 vendor.qti.hardware.wifi.wifilearner::IWifiStats             u:object_r:vendor_hal_wifilearner_hwservice:s0

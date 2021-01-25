@@ -29,3 +29,5 @@ hal_client_domain(mediaserver, hal_audio)
 
 #to read audio props
 get_prop(mediaserver, vendor_audio_prop)
+
+binder_call(mediaserver, wfdservice)

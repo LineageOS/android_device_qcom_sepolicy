@@ -38,10 +38,10 @@ init_daemon_domain(vendor_sigmahal_qti);
 binder_use(vendor_sigmahal_qti)
 
 #Allow the interaction with wfdservice
-binder_call(vendor_sigmahal_qti,vendor_wfdservice);
+binder_call(vendor_sigmahal_qti,wfdservice);
 
-#Allow access to vendor_wfdservice_service,audioserver_service,surfaceflinger_service to interact with vendor_sigmahal_qti
-allow vendor_sigmahal_qti {vendor_wfdservice_service audioserver_service surfaceflinger_service}:service_manager find;
+#Allow access to wfdservice_service,audioserver_service,surfaceflinger_service to interact with sigmahal_qti
+allow vendor_sigmahal_qti {wfdservice_service audioserver_service surfaceflinger_service}:service_manager find;
 
 #Allow vendor_sigmahal_qti to interact with audio_server
 binder_call(vendor_sigmahal_qti,audioserver);

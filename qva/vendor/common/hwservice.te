@@ -26,10 +26,10 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type vendor_hal_dpmqmi_hwservice, hwservice_manager_type, protected_hwservice;
+type wifidisplayhalservice_hwservice, hwservice_manager_type;
 type vendor_hal_iop_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_pasrmanager_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_pasrmanager_memory_hwservice, hwservice_manager_type, protected_hwservice;
-type vendor_wifidisplayhalservice_hwservice , hwservice_manager_type, protected_hwservice;
 type vendor_hal_alarm_qti_hwservice , hwservice_manager_type, protected_hwservice;
 type vendor_hal_vpp_hwservice , hwservice_manager_type, protected_hwservice;
 type vendor_hal_qconfig_hwservice , hwservice_manager_type, protected_hwservice;

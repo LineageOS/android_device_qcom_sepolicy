@@ -32,9 +32,9 @@ type vendor_perf_service,         app_api_service, service_manager_type;
 type vendor_qdt_service,                 app_api_service, service_manager_type;
 type vendor_izat_service,                app_api_service, system_api_service, service_manager_type;
 type vendor_color_service,               service_manager_type;
-type vendor_wfdservice_service,          service_manager_type;
 type vendor_wigigp2p_service,            app_api_service, system_server_service, service_manager_type;
 type vendor_wigig_service,               app_api_service, system_server_service, service_manager_type;
 type vendor_vps_service,          app_api_service, service_manager_type;
+type wfdservice_service,          service_manager_type;
 type vendor_qspmsvc_service,             app_api_service, service_manager_type;
 
