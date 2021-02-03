@@ -30,6 +30,7 @@
 (type vendor_wfdservice)
 (type vendor_sigmahal_qti)
 (type vendor_dataservice_app)
+(type vendor_sxrd)
 (typeattribute vendor_smcinvoke_device_30_0)
 (typeattribute vendor_qtelephony_30_0)
 (typeattribute vendor_dpmd_30_0)
@@ -62,3 +63,4 @@
 (typeattribute vendor_wfdservice_30_0)
 (typeattribute vendor_sigmahal_qti_30_0)
 (typeattribute vendor_dataservice_app_30_0)
+(typeattribute vendor_sys_sxrd_30_0)

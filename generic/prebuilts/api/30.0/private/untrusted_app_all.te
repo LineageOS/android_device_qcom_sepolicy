@@ -28,3 +28,5 @@
 unix_socket_connect(untrusted_app_all, vendor_dpmtcm, vendor_dpmd)
 unix_socket_connect(untrusted_app_all, vendor_qvrd, vendor_qvrd)
 allow untrusted_app_all vendor_qvrd:fd use;
+unix_socket_connect(untrusted_app_all, vendor_sys_sxrd, vendor_sys_sxrd)
+allow untrusted_app_all vendor_sys_sxrd:fd use;
