@@ -46,6 +46,7 @@ userdebug_or_eng(`
 
   # allow vendor_qcc_lmtp_app to access system_app_data_file
   # necessary for read and write /data/data subdirectory
+  allow vendor_qcc_app system_data_file:dir search;
   allow vendor_qcc_lmtp_app system_app_data_file:dir create_dir_perms;
   allow vendor_qcc_lmtp_app system_app_data_file:file create_file_perms;
 
