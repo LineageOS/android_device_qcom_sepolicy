@@ -39,7 +39,7 @@ userdebug_or_eng(`
 
   # allow access to socket
   unix_socket_connect(vendor_qcc_lmtp_app, vendor_dpmtcm, vendor_dpmd)
-
+  unix_socket_connect(vendor_qcc_lmtp_app, vendor_dpmtcm, vendor_tcmd)
   # allow access to qcc dropbox
   allow vendor_qcc_lmtp_app vendor_qcc_data_file:dir create_dir_perms;
   allow vendor_qcc_lmtp_app vendor_qcc_data_file:file create_file_perms;

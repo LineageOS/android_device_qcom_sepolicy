@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,20 +25,18 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# QCV: define property type vendor_exported_system_prop
-# and vendor_exported_odm_prop
-vendor_restricted_prop(vendor_exported_system_prop);
-vendor_restricted_prop(vendor_exported_odm_prop);
+#tcmd as domain
+type vendor_tcmd,domain;
 
-#mm-osal
-system_internal_prop(vendor_mm_osal_prop)
-system_internal_prop(vendor_mm_video_prop)
+typeattribute vendor_tcmd coredomain;
 
-#WiFi Display
-system_internal_prop(vendor_wfd_service_prop)
-system_internal_prop(vendor_wfd_sys_debug_prop)
-# WIGIG
-system_internal_prop(vendor_wigig_core_prop)
-system_internal_prop(vendor_fst_prop)
-system_internal_prop(ctl_dpmd_prop)
-system_internal_prop(ctl_tcmd_prop)
+type vendor_tcmd_exec, exec_type, system_file_type, file_type;
+
+init_daemon_domain(vendor_tcmd)
+
+set_prop(vendor_tcmd, vendor_persist_tcm_prop)
+#allow vendor_tcmd to create socket
+allow vendor_tcmd self:socket create_socket_perms_no_ioctl;
+set_prop(vendor_tcmd, ctl_tcmd_prop)
+
+hal_client_domain(vendor_tcmd,vendor_hal_dpmapiservice_qti);

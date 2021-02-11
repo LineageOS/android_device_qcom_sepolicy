@@ -52,7 +52,7 @@ allow vendor_qcc_app vendor_qcc_data_file:file create_file_perms;
 
 # allow access to socket
 unix_socket_connect(vendor_qcc_app, vendor_dpmtcm, vendor_dpmd)
-
+unix_socket_connect(vendor_qcc_app, vendor_dpmtcm, vendor_tcmd)
 # allow access to mediadrmserver for qdmastats/wvstats
 allow vendor_qcc_app mediadrmserver_service:service_manager find;
 

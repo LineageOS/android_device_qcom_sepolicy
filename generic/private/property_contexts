@@ -31,6 +31,7 @@ ro.vendor.perf.scroll_opt        u:object_r:vendor_exported_system_prop:s0 exact
 ro.vendor.perf.scroll_opt.heavy_app        u:object_r:vendor_exported_system_prop:s0 exact int
 
 persist.vendor.dpm.                        u:object_r:vendor_persist_dpm_prop:s0
+persist.vendor.tcmd.                       u:object_r:vendor_persist_tcm_prop:s0
 persist.vendor.btstack                     u:object_r:bluetooth_prop:s0
 persist.vendor.bluetooth.emailaccountcount u:object_r:bluetooth_prop:s0
 persist.vendor.bt.a2dp                     u:object_r:bluetooth_prop:s0
@@ -77,6 +78,7 @@ persist.vendor.wigig.                      u:object_r:vendor_wigig_core_prop:s0
 persist.vendor.fst.                        u:object_r:vendor_fst_prop:s0
 persist.dpm.feature                        u:object_r:vendor_persist_dpm_prop:s0
 ctl.stop$dpmd                              u:object_r:ctl_dpmd_prop:s0
+ctl.stop$tcmd                              u:object_r:ctl_tcmd_prop:s0
 
 # Beluga
 ro.vendor.beluga.p                         u:object_r:vendor_exported_system_prop:s0
