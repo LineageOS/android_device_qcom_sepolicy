@@ -83,3 +83,7 @@ attribute vendor_hal_perf_server;
 attribute vendor_hal_limits;
 attribute vendor_hal_limits_client;
 attribute vendor_hal_limits_server;
+
+attribute vendor_hal_poweroptservice;
+attribute vendor_hal_poweroptservice_client;
+attribute vendor_hal_poweroptservice_server;
