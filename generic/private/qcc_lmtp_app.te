@@ -30,9 +30,12 @@ userdebug_or_eng(`
   net_domain(vendor_qcc_lmtp_app)
   binder_use(vendor_qcc_lmtp_app)
 
+  hal_client_domain(vendor_qcc_lmtp_app, vendor_hal_perf);
+
   allow vendor_qcc_lmtp_app {activity_service}:service_manager find;
 
   allow vendor_qcc_lmtp_app location_service:service_manager find;
+  allow vendor_qcc_lmtp_app app_api_service:service_manager find;
 
   # for vendor_perf_service
   allow vendor_qcc_lmtp_app vendor_perf_service:service_manager find;
@@ -46,9 +49,9 @@ userdebug_or_eng(`
 
   # allow vendor_qcc_lmtp_app to access system_app_data_file
   # necessary for read and write /data/data subdirectory
-  allow vendor_qcc_app system_data_file:dir search;
   allow vendor_qcc_lmtp_app system_app_data_file:dir create_dir_perms;
   allow vendor_qcc_lmtp_app system_app_data_file:file create_file_perms;
+  allow vendor_qcc_lmtp_app system_data_file:dir search;
 
   # Allow read-write permissions to qdma sockets under vendor_qcc_app_socket.
   unix_socket_connect(vendor_qcc_lmtp_app, vendor_qcc_app, vendor_qcc_app)
