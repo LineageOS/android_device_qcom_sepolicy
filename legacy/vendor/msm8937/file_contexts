@@ -28,6 +28,7 @@
 ###################################
 # Primary storage device nodes
 #
+/dev/mmcblk0rpmb                                                    u:object_r:rpmb_device:s0
 /dev/block/mmcblk0                                                  u:object_r:root_block_device:s0
 /dev/block/mmcblk0rpmb                                              u:object_r:rpmb_device:s0
 
@@ -82,6 +83,7 @@
 /dev/block/platform/soc/7824900.sdhci/by-name/keymaster_[ab]        u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/modem_[ab]            u:object_r:modem_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/dsp_[ab]              u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7824900.sdhci/by-name/dtbo_[ab]             u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/pmic_[ab]             u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/rpm_[ab]              u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/system_[ab]           u:object_r:system_block_device:s0
@@ -90,4 +92,5 @@
 /dev/block/platform/soc/7824900.sdhci/by-name/vendor_[ab]           u:object_r:system_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/sbl1_[ab]             u:object_r:xbl_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/recovery_[ab]         u:object_r:recovery_block_device:s0
+/dev/block/platform/soc/7824900.sdhci/by-name/vbmeta_[ab]           u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/vbmeta_system_[ab]    u:object_r:custom_ab_block_device:s0
