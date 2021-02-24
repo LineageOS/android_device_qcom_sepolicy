@@ -91,6 +91,3 @@
 (typeattributeset vendor_seempdw_socket_30_0 (vendor_seempdw_socket))
 (expandtypeattribute (vendor_seempdw_socket_30_0) true)
 (typeattribute vendor_seempdw_socket_30_0)
-(typeattributeset vendor_sys_sxrd_30_0 (vendor_sys_sxrd))
-(expandtypeattribute (vendor_sys_sxrd_30_0) true)
-(typeattribute vendor_sys_sxrd_30_0)
