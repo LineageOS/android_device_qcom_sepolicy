@@ -35,8 +35,6 @@ user=_app seinfo=platform name=com.qualcomm.telephony domain=vendor_qtelephony t
 #Add new domain for ims app
 user=_app seinfo=platform name=org.codeaurora.ims isPrivApp=true domain=vendor_qtelephony type=app_data_file levelFrom=all
 
-#Add DeviceInfoHidlClient to vendor_qtelephony
-user=_app seinfo=platform name=com.qualcomm.qti.devicestatisticsservice domain=vendor_qtelephony type=app_data_file levelFrom=all
 
 # QtiTelephonyService app
 user=_app seinfo=platform name=com.qualcomm.qti.telephonyservice domain=vendor_qtelephony type=app_data_file levelFrom=all
