@@ -1,4 +1,4 @@
-# Copyright (c) 2017, 2019-2020 The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,55 +24,122 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 typeattribute wfdservice coredomain;
 
-typeattribute vendor_wfdservice coredomain;
-type vendor_wfdservice_exec, system_file_type , exec_type, file_type;
-
-#Allow for transition from init domain to vendor_wfdservice
-init_daemon_domain(vendor_wfdservice)
+#Allow for transition from init domain to wfdservice
+init_daemon_domain(wfdservice)
 
 #Inherit base socket permissions from netd domain
-net_domain(vendor_wfdservice)
+net_domain(wfdservice)
 
-#Allow vendor_wfdservice to use Binder IPC
-binder_use(vendor_wfdservice)
+#Allow wfdservice to use Binder IPC
+binder_use(wfdservice)
 
 #Allow for interaction with Display HAL
-binder_call(vendor_wfdservice, surfaceflinger)
+binder_call(wfdservice, surfaceflinger)
+binder_call(surfaceflinger, wfdservice)
 
-#Allow apps to interact with vendor_wfdservice
-binder_call(vendor_wfdservice, vendor_wfd_app)
+#Allow apps to interact with wfdservice
+binder_call(wfdservice, platform_app)
+binder_call(platform_app, wfdservice)
+binder_call(wfdservice, system_app)
+binder_call(system_app, wfdservice)
 
 #Allow access to Audio Flinger APIs
-binder_call(vendor_wfdservice, audioserver)
+binder_call(wfdservice, audioserver)
 
 #Allow access to Permission Controller in System Server
-binder_call(vendor_wfdservice, system_server)
+binder_call(wfdservice, system_server)
 
-#Allow vendor_wfdservice to be registered with service manager
-add_service(vendor_wfdservice, vendor_wfdservice_service)
+# Mark wfdservice as a Binder service domain
+binder_service(wfdservice)
+
+#Allow wfdservice to be registered with service manager
+allow wfdservice wfdservice_service:service_manager add;
+
+#Allow access to PCM sound card
+allow wfdservice audio_device:chr_file rw_file_perms;
+allow wfdservice audio_device:dir r_dir_perms;
+
+#Allow access to /dev/graphics/fb* for screen capture
+allow wfdservice graphics_device:chr_file rw_file_perms;
+
+#Allow access to encoder for YUV statistics
+allow wfdservice gpu_device:chr_file rw_file_perms;
+
+#Allow communication with init over property server
+unix_socket_connect(wfdservice, property, init);
+
+#Allow access to /dev/video/* devices for encoding/decoding
+allow wfdservice video_device:chr_file rw_file_perms;
+allow wfdservice video_device:dir r_dir_perms;
+
+#Allow access to uhid driver for HID event injection
+allow wfdservice uhid_device:chr_file rw_file_perms;
+
+#Allow PROT_EXEC for 3rd party library loaded by wfdservice
+allow wfdservice self:process execmem;
 
 userdebug_or_eng(`
-  #Allow access to read mmosal_logmask file in /data partition
-  allow vendor_wfdservice system_data_file:file r_file_perms;
-
-  #Allow access to wfd debug properties
-  get_prop(vendor_wfdservice, vendor_wfd_sys_debug_prop)
+#Allow access to read mmosal_logmask file in /data partition
+  allow wfdservice system_data_file:file r_file_perms;
+#Allow access to dump encoder/decoder dumps in /data/misc/media
+  allow wfdservice media_data_file:dir w_dir_perms;
+  allow wfdservice media_data_file:file create_file_perms;
 ')
 
-# Allow access to mediaserver, surfaceflinger and permissionmanager for interaction of vendor_wfdservice
-allow vendor_wfdservice {audioserver_service permission_service surfaceflinger_service}: service_manager find;
+#Allow access to /data/media for dumping
+allow wfdservice media_rw_data_file:dir create_dir_perms;
+allow wfdservice media_rw_data_file:file create_file_perms;
 
-hal_client_domain(vendor_wfdservice, hal_graphics_allocator);
+allow wfdservice self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
-hal_client_domain(vendor_wfdservice, hal_graphics_composer);
+# Allow access to input_device for touch input detection
+allow wfdservice input_device:dir r_dir_perms;
+allow wfdservice input_device:chr_file r_file_perms;
+
+# Allow access to mediaserver, surfaceflinger and permissionmanager
+# for interaction of wfdservice
+allow wfdservice {audioserver_service permission_service surfaceflinger_service wfdservice_service mediametrics_service}: service_manager find;
+
+#Allow setting of net_admin capability so that libnl API's can be used
+allow wfdservice self:capability net_admin;
+
+#allow binder call to hal_omx_server from wfdservice
+binder_call(wfdservice, hal_omx_server);
+
+#Allow wfdservice to query interface name of network (p2p etc.)
+allow wfdservice self:netlink_socket create_socket_perms_no_ioctl;
+allow wfdservice self:netlink_generic_socket create_socket_perms_no_ioctl;
 
 #Allow ion device access
-allow vendor_wfdservice ion_device:chr_file r_file_perms;
+allow wfdservice ion_device:chr_file r_file_perms;
 
-#Allow source to access video UBWC property(for display config)
-get_prop(vendor_wfdservice, vendor_sys_video_prop)
+#Allow udp socket ioctl
+allow wfdservice self:udp_socket ioctl;
 
-#Allow the interaction with vendor_sigmahal_qti
-binder_call(vendor_wfdservice, vendor_sigmahal_qti);
+# ioctlcmd=8bff
+allowxperm wfdservice self:udp_socket ioctl priv_sock_ioctls;
+
+#Allow access to proc/net/arp
+allow wfdservice proc_net:file r_file_perms;
+
+#Allow for property access
+userdebug_or_eng(`
+get_prop(wfdservice, wfd_debug_prop)
+')
+
+#Allow the interaction with sigmahal_qti
+binder_call(wfdservice,vendor_sigmahal_qti)
+
+# Fix sink avc denials
+allow wfdservice mediametrics:binder call;
+allow wfdservice vendor_mm_osal_prop:file read;
+allow wfdservice vendor_mm_osal_prop:file open;
+allow wfdservice vendor_mm_osal_prop:file getattr;
+
+# Fix source avc denials
+allow wfdservice vendor_default_prop:file read;
+allow wfdservice vendor_default_prop:file open;
+allow wfdservice vendor_default_prop:file getattr;

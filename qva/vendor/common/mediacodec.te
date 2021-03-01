@@ -25,11 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#WFD
-#Allow mediacodec to access service manager wfdnativemm_service
-allow mediacodec vendor_wfdnativemm_service:service_manager find;
 allow mediacodec audio_device:chr_file rw_file_perms;
-binder_call(mediacodec, vendor_wifidisplayhalservice_qti);
 
 get_prop(mediacodec, vendor_video_prop)
 
@@ -38,3 +34,7 @@ hal_client_domain(mediacodec, vendor_hal_vpp)
 hal_client_domain(mediacodec, vendor_hal_qconfig)
 allow mediacodec vendor_xdsp_device:chr_file r_file_perms;
 allow mediacodec vendor_qdsp_device:chr_file r_file_perms;
+
+#Allow mediacodec to access service manager wfdnativemm_service
+allow mediacodec wfdnativemm_service:service_manager find;
+hal_client_domain(mediacodec, wifidisplayhalservice)

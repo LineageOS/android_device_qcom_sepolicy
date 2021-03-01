@@ -43,5 +43,11 @@ set_prop(system_app, vendor_wlc_prop);
 # allow system_app access to wigig Property
 get_prop(system_app, vendor_wigig_core_prop);
 
+#Wi-Fi Display
+set_prop(system_app, wfd_service_prop);
+userdebug_or_eng(`
+get_prop(system_app, wfd_debug_prop)
+')
+
 #allow system_app to access faceauth
 hal_client_domain(system_app, hal_face)

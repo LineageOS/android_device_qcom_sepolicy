@@ -32,9 +32,10 @@ type vendor_mm_osal_prop, property_type, extended_core_property_type;
 
 type vendor_mm_video_prop, property_type, extended_core_property_type;
 
-#WiFi Display
-type vendor_wfd_service_prop, property_type, extended_core_property_type;
-type vendor_wfd_sys_debug_prop, property_type, extended_core_property_type;
+#WFD
+type wfd_service_prop, property_type, extended_core_property_type;
+type wfd_debug_prop, property_type, extended_core_property_type;
+
 # WIGIG
 type vendor_wigig_core_prop, property_type, extended_core_property_type;
 type vendor_fst_prop, property_type, extended_core_property_type;

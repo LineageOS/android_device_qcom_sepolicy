@@ -42,6 +42,7 @@
 
 ####### system file ###############
 /system/bin/seempd                              u:object_r:vendor_seempd_exec:s0
+/system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /(system_ext|system/system_ext)/bin/dpmd        u:object_r:vendor_dpmd_exec:s0
 /(system_ext|system/system_ext)/bin/qvrservice  u:object_r:vendor_qvrd_exec:s0
 /(system_ext|system/system_ext)/bin/sxrservice  u:object_r:vendor_sys_sxrd_exec:s0
@@ -52,7 +53,6 @@
 /(system_ext|system/system_ext)/bin/bt_logger   u:object_r:vendor_bt_logger_exec:s0
 /(system_ext|system/system_ext)/bin/perfservice u:object_r:vendor_perfservice_exec:s0
 /(system_ext|system/system_ext)/bin/qdtservice  u:object_r:vendor_qdtservice_exec:s0
-/(system|system_ext|system/system_ext)/bin/wfdservice                          u:object_r:vendor_wfdservice_exec:s0
 /(system|system_ext|system/system_ext)/bin/sigma_miracasthalservice            u:object_r:vendor_sigmahal_qti_exec:s0
 /(system_ext|system/system_ext)/bin/qccsyshalservice  u:object_r:vendor_qccsyshal_qti_exec:s0
 /(system_ext|system/system_ext)/bin/mmi         u:object_r:vendor_mmi_sys_exec:s0
