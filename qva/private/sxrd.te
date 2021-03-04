@@ -1,4 +1,4 @@
-# Copyright (c) 2020 The Linux Foundation. All rights reserved.
+# Copyright (c) 2020-2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -46,8 +46,8 @@ hal_client_domain(vendor_sys_sxrd, hal_graphics_allocator);
 
 #access to usb device
 allow vendor_sys_sxrd usb_device:chr_file rw_file_perms;
-allow vendor_sys_sxrd usb_device:dir search;
-allow vendor_sys_sxrd device:dir search;
+allow vendor_sys_sxrd usb_device:dir { open read search watch };
+allow vendor_sys_sxrd device:dir { read watch };
 
 #Allow access to PCM sound card
 allow vendor_sys_sxrd audio_device:chr_file rw_file_perms;
@@ -59,3 +59,9 @@ allow vendor_sys_sxrd audioserver_service : service_manager find;
 
 # Add rule to access /proc/asound/pcm file
 r_dir_file(vendor_sys_sxrd, proc_asound);
+
+#Allow access to ion device
+allow vendor_sys_sxrd ion_device:chr_file { open read };
+
+#allow binder use for checking permissions
+binder_use(vendor_sys_sxrd)
