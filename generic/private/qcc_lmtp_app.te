@@ -57,4 +57,6 @@ userdebug_or_eng(`
   unix_socket_connect(vendor_qcc_lmtp_app, vendor_qcc_app, vendor_qcc_app)
   allow vendor_qcc_lmtp_app vendor_qcc_app_socket:dir rw_dir_perms;
   allow vendor_qcc_lmtp_app vendor_qcc_app_socket:sock_file create_file_perms;
+
+  allow vendor_qcc_lmtp_app app_api_service:service_manager find;
 ')
