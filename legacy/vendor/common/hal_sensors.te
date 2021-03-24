@@ -28,6 +28,7 @@
 
 userdebug_or_eng(`
     diag_use(hal_sensors)
+    get_prop(hal_sensors_default, vendor_sensors_dbg_prop)
     allow hal_sensors debugfs_tracing:file { open write };
 ')
 set_prop(hal_sensors, vendor_slpi_prop);

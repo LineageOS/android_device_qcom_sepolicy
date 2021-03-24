@@ -142,6 +142,7 @@ allow qti_init_shell {
     sysfs_mmc_host
     sysfs_process_reclaim
     sysfs_dm
+    sysfs_net
 }:file w_file_perms;
 
 allow qti_init_shell sysfs_vmpressure:file write;
@@ -283,3 +284,9 @@ get_prop(qti_init_shell,  vendor_hvdcp_opti_prop)
 
 #allow set permission for vendor.fastrpc properties
 set_prop(qti_init_shell, vendor_adsprpc_prop)
+
+dontaudit qti_init_shell self:capability dac_override;
+
+#allow configuring slub debug options
+allow qti_init_shell sysfs_slab_zshandle_storeuser:file w_file_perms;
+allow qti_init_shell sysfs_slab_zspage_storeuser:file w_file_perms;

@@ -94,3 +94,7 @@
 /dev/block/platform/soc/7824900.sdhci/by-name/recovery_[ab]         u:object_r:recovery_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/vbmeta_[ab]           u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900.sdhci/by-name/vbmeta_system_[ab]    u:object_r:custom_ab_block_device:s0
+
+#sysfs
+/sys/devices(/platform)?/soc/1b00000.qcom,msm-cam/video4linux/video[0-33]/name(/.*)?  u:object_r:sysfs_jpeg:s0
+/sys/devices(/platform)?/soc/1d00000.qcom,vidc/video4linux/video[0-33]/name(/.*)?  u:object_r:sysfs_graphics:s0

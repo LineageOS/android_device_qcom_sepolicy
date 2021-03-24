@@ -114,6 +114,8 @@ set_prop(vendor_init, vendor_sensors_prop)
 
 set_prop(vendor_init, vendor_dcvs_prop)
 
+set_prop(vendor_init, vendor_freq_prop)
+
 #Access vendor wigig properties, mainly for on-demand module loading
 set_prop(vendor_init, vendor_wigig_prop)
 userdebug_or_eng(`
