@@ -73,6 +73,10 @@ genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.q
 genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-000c/78b6000.i2c:qcom,smb1355@c:qcom,smb1355-charger@1000/power_supply/parallel u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-000c/78b6000.i2c:qcom,smb1355@8:qcom,smb1355-charger@1000/power_supply/parallel u:object_r:sysfs_battery_supply:s0
 
+#cpu-ddr devfreq nodes for K4.19.
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
+
+
 #Common PMIC files
 genfscon sysfs /class/qcom-battery u:object_r:sysfs_battery_supply:s0
 
