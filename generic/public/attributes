@@ -229,3 +229,11 @@ attribute vendor_hal_limits_server;
 attribute vendor_hal_poweroptservice;
 attribute vendor_hal_poweroptservice_client;
 attribute vendor_hal_poweroptservice_server;
+
+attribute vendor_hal_dpmapiservice_qti;
+attribute vendor_hal_dpmapiservice_qti_client;
+attribute vendor_hal_dpmapiservice_qti_server;
+
+attribute vendor_hal_dpmqmiservice_qti;
+attribute vendor_hal_dpmqmiservice_qti_client;
+attribute vendor_hal_dpmqmiservice_qti_server;

@@ -47,6 +47,7 @@ allow vendor_location_app system_app_data_file:file create_file_perms;
 allow vendor_location_app radio_service:service_manager find;
 
 unix_socket_connect(vendor_location_app, vendor_dpmtcm, vendor_dpmd);
+unix_socket_connect(vendor_location_app, vendor_dpmtcm, vendor_tcmd);
 
 allow vendor_location_app cgroup:file rw_file_perms;
 
