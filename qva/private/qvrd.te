@@ -102,3 +102,6 @@ allow vendor_qvrd usb_device:chr_file rw_file_perms;
 
 # allow qvrservice to access /sys/bus/hid/drivers and /sys/bus/hid/devices
 allow vendor_qvrd sysfs:dir r_dir_perms;
+
+#allow qvrd to read/write hidraw
+allow vendor_qvrd vendor_hid_device:chr_file rw_file_perms;
