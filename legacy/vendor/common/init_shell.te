@@ -109,6 +109,7 @@ userdebug_or_eng(`
 #set_prop(qti_init_shell, ctl_console_prop)
 set_prop(qti_init_shell, vendor_coresight_prop)
 set_prop(qti_init_shell, vendor_audio_debug_prop)
+set_prop(qti_init_shell, vendor_vm_bms_debug_prop)
 ')
 
 set_prop(vendor_qti_init_shell,vendor_dcvs_prop)

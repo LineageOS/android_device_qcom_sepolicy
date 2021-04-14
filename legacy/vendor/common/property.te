@@ -39,6 +39,7 @@ type vendor_ctl_LKCore_prop, property_type;
 
 type vendor_freq_prop, property_type;
 type vendor_vm_bms_prop, property_type; #To start vm_bms
+type vendor_vm_bms_debug_prop, property_type;
 type vendor_dataqti_prop, property_type;
 type vendor_dataadpl_prop, property_type;
 type vendor_dataqdp_prop, property_type;

@@ -50,6 +50,7 @@ persist.vendor.cne.logging.qxdm   u:object_r:vendor_cnd_vendor_prop:s0
 persist.vendor.cnd.        u:object_r:vendor_cnd_vendor_prop:s0
 persist.vendor.cnd.wqe     u:object_r:vendor_cnd_vendor_prop:s0
 ctl.vendor.vm_bms                 u:object_r:vendor_vm_bms_prop:s0
+vendor.vbms.debug.enable          u:object_r:vendor_vm_bms_debug_prop:s0
 ro.vendor.qualcomm.bluetooth.        u:object_r:vendor_bluetooth_prop:s0
 ctl.vendor.ipacm           u:object_r:vendor_ipacm_prop:s0
 ctl.vendor.ipacm-diag      u:object_r:vendor_ipacm-diag_prop:s0
