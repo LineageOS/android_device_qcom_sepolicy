@@ -22,8 +22,6 @@
 (expandtypeattribute (vendor_qcc_app_30_0) true)
 (typeattributeset vendor_wfd_app_30_0 (vendor_wfd_app))
 (expandtypeattribute (vendor_wfd_app_30_0) true)
-(typeattributeset qti-testscripts_30_0 (qti-testscripts))
-(expandtypeattribute (qti-testscripts_30_0) true)
 (typeattributeset vendor_bt_prop_30_0 (vendor_bt_prop))
 (expandtypeattribute (vendor_bt_prop_30_0) true)
 (typeattributeset vendor_mmi_sys_30_0 (vendor_mmi_sys))
