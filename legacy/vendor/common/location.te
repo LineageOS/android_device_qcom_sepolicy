@@ -103,7 +103,7 @@ unix_socket_send(location, wifihal,  hal_wifi_default);
 netmgr_socket(location);
 
 #Allow access to properties
-set_prop(location, location_prop);
+set_prop(location, vendor_location_prop);
 
 #diag
 userdebug_or_eng(`
@@ -119,15 +119,18 @@ allow location self:udp_socket ioctl;
 # Replace this with macro
 allowxperm location self:udp_socket ioctl priv_sock_ioctls;
 
-#access to qdma socket
-qdma_file_socket(location);
+hal_client_domain(location, vendor_qccsyshal);
 
 allow location hal_datafactory_hwservice:hwservice_manager find;
 binder_call(location, cnd)
-get_prop(location, cnd_vendor_prop)
+get_prop(location, vendor_cnd_vendor_prop)
 
 #Allow access to wake alarm
 allow location self:capability2 wake_alarm;
 
-#allow qdma prop
-get_prop(location, vendor_qdma_prop);
+#xtra-demon
+hal_client_domain(location, vendor_qccsyshal);
+allow location hal_cacert_hwservice:hwservice_manager find;
+allow location vendor_qccsyshal_hwservice:hwservice_manager find;
+## Allow location clientdomain to perform binder IPC to qtidataservices_app serverdomain.
+binder_call(location, qtidataservices_app)

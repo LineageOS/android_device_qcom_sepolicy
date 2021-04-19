@@ -25,6 +25,11 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#user=_app seinfo=platform name=com.qualcomm.qct.dlt levelfrom=all domain=location_app type=app_data_file
+#user=_app seinfo=platform name=com.qualcomm.qti.qlogcat levelfrom=all domain=location_app type=app_data_file
+#user=_app seinfo=platform name=com.qualcomm.qti.pdrtesttool levelfrom=all domain=location_app type=app_data_file
+#user=_app seinfo=platform name=com.qualcomm.qti.magcaltool levelfrom=all domain=location_app type=app_data_file
+
 #Add new domain for QSEE sample services
 user=system seinfo=platform name=com.qualcomm.qti.auth.securesampleauthservice domain=qsee_svc_app type=system_app_data_file
 user=system seinfo=platform name=com.qualcomm.qti.auth.secureextauthservice domain=qsee_svc_app type=system_app_data_file
@@ -47,3 +52,6 @@ user=system seinfo=platform name=com.qualcomm.qti.usta domain=usta_app type=syst
 #Add new domain for ustaservice app
 # Needed for USTA test app
 user=system seinfo=platform name=com.qualcomm.qti.ustaservice domain=ustaservice_app type=system_app_data_file
+
+#Add new domain for qsta app
+user=_app seinfo=platform name=com.qualcomm.qti.sensors.qsensortest domain=qsta_app type=app_data_file levelFrom=all

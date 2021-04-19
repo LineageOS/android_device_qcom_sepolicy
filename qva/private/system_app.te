@@ -49,3 +49,5 @@ userdebug_or_eng(`
 get_prop(system_app, wfd_debug_prop)
 ')
 
+#allow system_app to access faceauth
+hal_client_domain(system_app, hal_face)

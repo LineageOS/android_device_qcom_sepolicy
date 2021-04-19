@@ -84,6 +84,8 @@ type ssr_device, dev_type;
 #Ramdump device
 type ramdump_device, dev_type;
 
+type vendor_ramdump_microdump_modem_device, dev_type;
+
 #Kickstart bridge devices
 type ksbridgehsic_device, dev_type;
 

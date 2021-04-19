@@ -26,21 +26,30 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ###################################
 
-#secure touch sysfs node
-genfscon sysfs /devices/soc/c179000.i2c/i2c-5/5-0020 u:object_r:sysfs_sectouch:s0
-
 #rtc sysfs node
 genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-00/800f000.qcom,spmi:qcom,pm8998@0:qcom,pm8998_rtc/rtc u:object_r:sysfs_rtc:s0
 
+#secure touch sysfs node
+genfscon sysfs /devices/soc/c179000.i2c/i2c-5/5-0020 u:object_r:sysfs_sectouch:s0
+
 # msm8998 specific sysfs
-genfscon sysfs /devices/soc/soc:qcom,wil6210/subsys7/name                                        u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/soc/1d0101c.qcom,spss/subsys2/name                                       u:object_r:sysfs_ssr:s0
-genfscon sysfs /devices/soc/cce0000.qcom,venus/subsys1/name                                      u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/soc/soc:qcom,ipa_fws@1e08000/subsys0/name                                u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/soc/cce0000.qcom,venus/subsys1/name                                      u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/soc/1d0101c.qcom,spss/subsys2/name                                       u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/soc/soc:qcom,kgsl-hyp/subsys3/name                                       u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/soc/17300000.qcom,lpass/subsys4/name                                     u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/soc/5c00000.qcom,ssc/subsys5/name                                        u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/soc/4080000.qcom,mss/subsys6/name                                        u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/soc/soc:qcom,wil6210/subsys7/name                                        u:object_r:sysfs_ssr:s0
+
+genfscon sysfs /devices/soc/soc:qcom,ipa_fws@1e08000/subsys0/restart_level                       u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/soc/cce0000.qcom,venus/subsys1/restart_level                             u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/soc/1d0101c.qcom,spss/subsys2/restart_level                              u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/soc/soc:qcom,kgsl-hyp/subsys3/restart_level                              u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/soc/17300000.qcom,lpass/subsys4/restart_level                            u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/soc/5c00000.qcom,ssc/subsys5/restart_level                               u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/soc/4080000.qcom,mss/subsys6/restart_level                               u:object_r:sysfs_ssr_toggle:s0
+genfscon sysfs /devices/soc/soc:qcom,wil6210/subsys7/restart_level                               u:object_r:sysfs_ssr_toggle:s0
 
 #vibrator sysfs node
 genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pmi8998@3:qcom,haptics@c000/leds/vibrator u:object_r:sysfs_leds:s0
@@ -59,3 +68,6 @@ genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:
 genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pmi8998@3:qcom,leds@d000/leds/blue u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pmi8998@3:qcom,leds@d300/leds u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pmi8998@3:qcom,leds@d800/leds/wled u:object_r:sysfs_leds:s0
+
+#net sysfs
+genfscon sysfs /devices/soc/18800000.qcom,icnss/net u:object_r:sysfs_net:s0

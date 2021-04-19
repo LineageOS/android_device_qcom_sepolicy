@@ -1,4 +1,4 @@
-# Copyright (c) 2017, 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -36,5 +36,12 @@ allow update_engine_common {
         system_block_device
         boot_block_device
         mdtp_device
+        recovery_block_device
 }:blk_file rw_file_perms;
 
+allow update_engine_common tmpfs:lnk_file r_file_perms;
+allow update_engine_common metadata_file:dir search;
+allow update_engine_common {adsprpcd_file firmware_file}:dir search;
+allow update_engine_common {bt_firmware_file firmware_file}:filesystem getattr;
+
+dontaudit update_engine_common self:capability {dac_read_search dac_override};

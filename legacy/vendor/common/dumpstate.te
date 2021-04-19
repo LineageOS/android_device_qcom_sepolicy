@@ -39,3 +39,7 @@ allow dumpstate firmware_file:filesystem getattr;
 # so instead of labeling this suppressing this access.
 dontaudit dumpstate sysfs:file * ;
 allow dumpstate debugfs_mmc:dir search;
+
+binder_call(dumpstate, hal_light_default)
+
+binder_call(dumpstate, hal_power_default)

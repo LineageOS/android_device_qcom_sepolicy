@@ -74,6 +74,7 @@
 /dev/block/mmcblk1p1                            u:object_r:sd_device:s0
 /dev/subsys_.*                                  u:object_r:ssr_device:s0
 /dev/ramdump_.*                                 u:object_r:ramdump_device:s0
+/dev/ramdump_microdump_modem                    u:object_r:vendor_ramdump_microdump_modem_device:s0
 /dev/esoc.*                                     u:object_r:esoc_device:s0
 /dev/ks_hsic_bridge                             u:object_r:ksbridgehsic_device:s0
 /dev/efs_hsic_bridge                            u:object_r:efsbridgehsic_device:s0
@@ -161,7 +162,6 @@
 /dev/socket/location(/.*)?                      u:object_r:location_socket:s0
 /dev/socket/wifihal(/.*)?                       u:object_r:wifihal_socket:s0
 /dev/socket/wigig/wigignpt                      u:object_r:wigignpt_socket:s0
-/dev/socket/qdma(/.*)?                          u:object_r:qdma_socket:s0
 
 ###################################
 # vendor bins files
@@ -221,6 +221,7 @@
 /(vendor|system/vendor)/bin/mmid                u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/qdcmss              u:object_r:qdcm-ss_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance      u:object_r:vendor_msm_irqbalanced_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/imsdatadaemon       u:object_r:ims_exec:s0
 /(vendor|system/vendor)/bin/imsqmidaemon        u:object_r:ims_exec:s0
 /(vendor|system/vendor)/bin/ims_rtp_daemon      u:object_r:hal_imsrtp_exec:s0
@@ -324,7 +325,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service-qti u:object_r:hal_gatekeeper_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@1\.2-service     u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@2\.0-service     u:object_r:hal_nfc_default_exec:s0
-/(vendor|system/vendor)/bin/qdmastatsd          u:object_r:qdmastatsd_exec:s0
+/(vendor|system/vendor)/bin/qcc-trd          u:object_r:vendor_qcc_trd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service      u:object_r:hal_alarm_qti_default_exec:s0
 /(vendor|system/vendor)/bin/imsrcsd             u:object_r:hal_rcsservice_exec:s0
 /(vendor|system/vendor)/bin/vppservice          u:object_r:vendor_vppservice_exec:s0
@@ -352,6 +353,7 @@
 /(vendor|system/vendor)/bin/hdcp_srm               u:object_r:hdcp_srm_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.power\.pasrmanager\@1\.0-service u:object_r:hal_pasrmanager_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.capabilityconfigstore@1\.0-service u:object_r:hal_capabilityconfigstore_qti_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qccvndhal@1\.0-service       u:object_r:vendor_hal_qccvndhal_qti_exec:s0
 
 ###################################
 # sysfs files
@@ -492,6 +494,7 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/snapshot(/.*)? u:object_r:sysfs_kgsl_snapshot:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_model u:object_r:sysfs_kgsl_gpu_model:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk u:object_r:vendor_sysfs_kgsl_gpuclk:s0
 
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:sysfs_mmc_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/bdi/read_ahead_kb u:object_r:sysfs_mmc_host:s0
@@ -499,7 +502,6 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/mmcblk0rpmb/bdi/read_ahead_kb u:object_r:sysfs_mmc_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/mmcblk0rpmb/queue/read_ahead_kb u:object_r:sysfs_mmc_host:s0
 /sys/devices/virtual/bdi/[0-9]+:[0-9]+/read_ahead_kb u:object_r:sysfs_mmc_host:s0
-/sys/devices/virtual/block/dm-[0-9]+/queue/read_ahead_kb u:object_r:sysfs_mmc_host:s0
 
 /sys/module/cpu_boost(/.*)?                                         u:object_r:sysfs_cpu_boost:s0
 /sys/module/msm_performance(/.*)?                                   u:object_r:sysfs_msm_perf:s0
@@ -558,8 +560,8 @@
 /data/vendor/wifi/sockets(/.*)?                                     u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:wifi_vendor_wpa_socket:s0
-/data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qdma_data_file:s0
-/data/vendor/qdma(/.*)?                                             u:object_r:vendor_qdma_data_file:s0
+/data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qcc_trd_data_file:s0
+/data/vendor/qdma(/.*)?                                             u:object_r:vendor_qcc_trd_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
 /data/vendor/camera(/.*)?                                           u:object_r:vendor_camera_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
@@ -731,6 +733,10 @@
 
 #Android NN Driver
 /(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.3-service-qti u:object_r:hal_neuralnetworks_default_exec:s0
+
+
+#Light AIDL HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.qti   u:object_r:hal_light_default_exec:s0
 
 #wifilearner daemon
 /(vendor|system/vendor)/bin/wifilearner    u:object_r:wifilearnersvc_exec:s0
