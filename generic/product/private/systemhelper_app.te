@@ -37,3 +37,4 @@ allow vendor_systemhelper_app { activity_service trust_service surfaceflinger_se
 allow vendor_systemhelper_app app_data_file:dir rw_dir_perms;
 allow vendor_systemhelper_app thermal_service:service_manager find;
 allow vendor_systemhelper_app vendor_perf_service:service_manager find;
+hal_client_domain(vendor_systemhelper_app , vendor_hal_trustedui)

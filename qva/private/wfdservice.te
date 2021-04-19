@@ -52,9 +52,12 @@ binder_call(vendor_wfdservice, system_server)
 #Allow vendor_wfdservice to be registered with service manager
 add_service(vendor_wfdservice, vendor_wfdservice_service)
 
-#Allow access to read mmosal_logmask file in /data partition
 userdebug_or_eng(`
+  #Allow access to read mmosal_logmask file in /data partition
   allow vendor_wfdservice system_data_file:file r_file_perms;
+
+  #Allow access to wfd debug properties
+  get_prop(vendor_wfdservice, vendor_wfd_sys_debug_prop)
 ')
 
 # Allow access to mediaserver, surfaceflinger and permissionmanager for interaction of vendor_wfdservice
@@ -71,4 +74,4 @@ allow vendor_wfdservice ion_device:chr_file r_file_perms;
 get_prop(vendor_wfdservice, vendor_sys_video_prop)
 
 #Allow the interaction with vendor_sigmahal_qti
-binder_call(vendor_wfdservice,vendor_sigmahal_qti);
+binder_call(vendor_wfdservice, vendor_sigmahal_qti);
