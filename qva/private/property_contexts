@@ -1,4 +1,4 @@
-# Copyright (c) 2017, 2019 The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, 2019, 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -55,6 +55,7 @@ persist.vendor.sys.media.rtp-ports        u:object_r:vendor_mm_video_prop:s0
 vendor.encoder.video.profile              u:object_r:vendor_mm_video_prop:s0
 vendor.sys.media.target.version           u:object_r:vendor_sys_video_prop:s0
 vendor.sys.video.disable.ubwc             u:object_r:vendor_sys_video_prop:s0
+vendor.sys.media.target.qssi              u:object_r:vendor_sys_video_prop:s0
 
 #Wifi Display
 vendor.wfdservice                         u:object_r:vendor_wfd_service_prop:s0
@@ -64,6 +65,7 @@ persist.vendor.debug.wfdcdbgv             u:object_r:vendor_wfd_sys_debug_prop:s
 persist.vendor.sys.debug.mux.             u:object_r:vendor_wfd_sys_debug_prop:s0
 persist.vendor.sys.debug.rtp.             u:object_r:vendor_wfd_sys_debug_prop:s0
 persist.vendor.sys.debug.wfd.             u:object_r:vendor_wfd_sys_debug_prop:s0
+vendor.sys.debug.wfd.                     u:object_r:vendor_wfd_sys_debug_prop:s0
 
 # WIGIG
 persist.vendor.wigig.                      u:object_r:vendor_wigig_core_prop:s0
@@ -76,3 +78,5 @@ ro.vendor.beluga.p                         u:object_r:vendor_exported_system_pro
 ro.vendor.beluga.c                         u:object_r:vendor_exported_system_prop:s0
 ro.vendor.beluga.s                         u:object_r:vendor_exported_system_prop:s0
 ro.vendor.beluga.t                         u:object_r:vendor_exported_system_prop:s0
+
+vendor.runtime.cvp2.dynamiclogen           u:object_r:vendor_runtime_prop:s0

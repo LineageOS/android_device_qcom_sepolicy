@@ -1,4 +1,4 @@
-# Copyright (c) 2015, 2017, 2021, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,10 +24,7 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+###################################
 
-
-#Define smd7 device
-type vendor_smd7_device, dev_type;
-
-#Define hid device
-type vendor_hid_device, dev_type;
+#vibrator sysfs node
+genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pmi8998@3:qcom,haptics@c000/leds/vibrator u:object_r:sysfs_leds:s0

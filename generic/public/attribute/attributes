@@ -49,6 +49,10 @@ attribute vendor_hal_display_postproc;
 attribute vendor_hal_display_postproc_client;
 attribute vendor_hal_display_postproc_server;
 
+attribute vendor_hal_display_demura;
+attribute vendor_hal_display_demura_client;
+attribute vendor_hal_display_demura_server;
+
 # All types in /mnt/vendor/persist
 attribute vendor_persist_type;
 
@@ -75,3 +79,11 @@ attribute vendor_hal_diaghal_server;
 attribute vendor_hal_perf;
 attribute vendor_hal_perf_client;
 attribute vendor_hal_perf_server;
+
+attribute vendor_hal_limits;
+attribute vendor_hal_limits_client;
+attribute vendor_hal_limits_server;
+
+attribute vendor_hal_poweroptservice;
+attribute vendor_hal_poweroptservice_client;
+attribute vendor_hal_poweroptservice_server;
