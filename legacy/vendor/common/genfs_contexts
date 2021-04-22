@@ -33,6 +33,8 @@ genfscon proc /asound/cards u:object_r:proc_audiod:s0
 genfscon proc /sys/vm/dirty_ratio  u:object_r:proc_dirty_ratio:s0
 genfscon sysfs /module/msm_performance/workload_modes u:object_r:sysfs_msm_perf:s0
 genfscon sysfs /class/devfreq                               u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/soc0                                u:object_r:sysfs_soc:s0
+genfscon sysfs /class/kgsl                                  u:object_r:sysfs_kgsl:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpubw/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,memlat-cpu0/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,memlat-cpu2/devfreq u:object_r:sysfs_devfreq:s0

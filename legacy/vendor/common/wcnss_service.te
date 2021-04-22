@@ -94,3 +94,6 @@ hal_client_domain(wcnss_service, hal_perf)
 
 # allow to read /sys/class/net file
 r_dir_file(wcnss_service, sysfs_net);
+
+allow wcnss_service property_socket:sock_file write;
+allow wcnss_service sysfs_soc:dir r_dir_perms;

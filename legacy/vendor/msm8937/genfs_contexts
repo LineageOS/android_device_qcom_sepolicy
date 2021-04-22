@@ -131,6 +131,13 @@ genfscon sysfs /devices/platform/soc/78b6000.i2c/i2c-2/2-0014/power_supply/usb u
 #net sysfs
 genfscon sysfs /devices/platform/soc/a000000.qcom,wcnss-wlan/net u:object_r:sysfs_net:s0
 
+#video sysfs
+genfscon sysfs /devices/platform/soc/1d00000.qcom,vidc/video4linux/video32/name u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/1d00000.qcom,vidc/video4linux/video33/name u:object_r:sysfs_graphics:s0
+
+genfscon sysfs /kernel/slab/zs_handle/store_user u:object_r:sysfs_slab_zshandle_storeuser:s0
+genfscon sysfs /kernel/slab/zspage/store_user u:object_r:sysfs_slab_zspage_storeuser:s0
+
 #PMIC devices wakeup nodes
 genfscon sysfs /devices/virtual/misc/msm_amrwbplus/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/msm_wma/wakeup u:object_r:sysfs_wakeup:s0

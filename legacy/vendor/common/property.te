@@ -169,6 +169,10 @@ type vendor_gpu_prop, property_type;
 
 type vendor_data_ko_prop, property_type;
 
+#shsusrd props
+type vendor_data_shsusr_prop, property_type;
+type vendor_data_qmipriod_prop, property_type;
+
 #hvdcp_opti
 type vendor_hvdcp_opti_prop, property_type;
 #adsprpc props
