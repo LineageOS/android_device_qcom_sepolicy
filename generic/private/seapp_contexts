@@ -66,3 +66,5 @@ user=_app seinfo=platform name=com.qti.phone domain=vendor_qtelephony type=app_d
 
 #Add new domain for Voice Activation app
 user=_app seinfo=platform name=com.qualcomm.qti.sva domain=vendor_voiceui_app type=app_data_file levelFrom=all
+# qc mStat app
+user=_app seinfo=platform name=com.qti.qualcomm.mstatssystemservice domain=vendor_mstatservice_app type=app_data_file levelFrom=all

@@ -246,3 +246,8 @@ attribute vendor_hal_dpmqmiservice_qti_server;
 attribute vendor_hal_imsfactory;
 attribute vendor_hal_imsfactory_client;
 attribute vendor_hal_imsfactory_server;
+
+attribute vendor_hal_mstatservice_qti;
+attribute vendor_hal_mstatservice_qti_client;
+attribute vendor_hal_mstatservice_qti_server;
+
