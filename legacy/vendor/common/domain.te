@@ -26,6 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 r_dir_file({domain - isolated_app}, sysfs_socinfo);
+r_dir_file({domain - isolated_app}, sysfs_soc);
 r_dir_file({domain - isolated_app}, sysfs_esoc);
 r_dir_file({domain - isolated_app}, sysfs_ssr);
 
