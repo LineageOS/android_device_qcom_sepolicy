@@ -65,3 +65,6 @@ allow vendor_sys_sxrd ion_device:chr_file { open read };
 
 #allow binder use for checking permissions
 binder_use(vendor_sys_sxrd)
+
+#allow finding sxrhalservice
+hal_client_domain(vendor_sys_sxrd ,vendor_sxrhalservice)
