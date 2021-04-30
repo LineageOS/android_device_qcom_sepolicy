@@ -44,6 +44,9 @@ allowxperm tee rpmb_device:blk_file ioctl { MMC_IOC_CMD };
 #For Wakelocks
 wakelock_use(tee)
 
+#allow tee acess for SFS
+allow tee tmpfs:dir read;
+
 # Need to figure out how many scsi generic devices are preset
 # before being able to identify which one is rpmb device
 allow tee device:dir r_dir_perms;
