@@ -26,6 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 typeattribute vendor_dataservice_app coredomain;
+typeattribute vendor_dataservice_app mlstrustedsubject;
 app_domain(vendor_dataservice_app)
 net_domain(vendor_dataservice_app)
 
@@ -51,3 +52,4 @@ allow vendor_dataservice_app vendor_dpmd_data_file:dir rw_dir_perms;
 allow vendor_dataservice_app vendor_dpmd_data_file:file create_file_perms;
 unix_socket_connect(vendor_dataservice_app,vendor_dpmd,vendor_dpmd);
 set_prop(vendor_dataservice_app, vendor_persist_dpm_prop)
+
