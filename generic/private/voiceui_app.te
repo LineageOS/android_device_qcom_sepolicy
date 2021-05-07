@@ -26,9 +26,9 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type vendor_voiceui_app, domain, coredomain;
+typeattribute vendor_voiceui_app hal_audio_client;
 app_domain(vendor_voiceui_app)
 binder_use(vendor_voiceui_app)
-hal_client_domain(vendor_voiceui_app, hal_audio);
 hal_client_domain(vendor_voiceui_app, vendor_hal_perf);
 
 # allow access to app_api_service
