@@ -31,6 +31,7 @@ app_domain(vendor_qcc_netstat_app)
 net_domain(vendor_qcc_netstat_app)
 binder_use(vendor_qcc_netstat_app)
 
+hal_client_domain(vendor_qcc_netstat_app, vendor_hal_perf);
 allow vendor_qcc_netstat_app {app_api_service}:service_manager find;
 
 # Allow read-write permissions to qdma sockets under vendor_qcc_app_socket.

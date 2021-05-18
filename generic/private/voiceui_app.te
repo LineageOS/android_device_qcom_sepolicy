@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,7 +25,20 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-unix_socket_connect(untrusted_app_all, vendor_dpmtcm, vendor_dpmd)
-unix_socket_connect(untrusted_app_all, vendor_qvrd, vendor_qvrd)
-allow untrusted_app_all vendor_qvrd:fd use;
-unix_socket_connect(untrusted_app_all, vendor_dpmtcm, vendor_tcmd)
+type vendor_voiceui_app, domain, coredomain;
+typeattribute vendor_voiceui_app hal_audio_client;
+app_domain(vendor_voiceui_app)
+binder_use(vendor_voiceui_app)
+hal_client_domain(vendor_voiceui_app, vendor_hal_perf);
+
+# allow access to app_api_service
+allow vendor_voiceui_app { app_api_service }:service_manager find;
+
+# allow access media extractor service to vendor_voiceui_app
+allow vendor_voiceui_app { mediaextractor_service }:service_manager find;
+
+# allow access soundtrigger service and mediaserver service to vendor_voiceui_app
+allow vendor_voiceui_app { mediametrics_service mediaserver_service soundtrigger_middleware_service }:service_manager find;
+
+# allow access audiosever service to vendor_voiceui_app
+allow vendor_voiceui_app audioserver_service:service_manager find;

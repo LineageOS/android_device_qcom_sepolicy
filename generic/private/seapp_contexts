@@ -63,3 +63,6 @@ user=_app seinfo=platform name=com.qualcomm.qti.seccamservice:remote domain=vend
 
 #Add ExtTelephonyService to vendor_qtelephony
 user=_app seinfo=platform name=com.qti.phone domain=vendor_qtelephony type=app_data_file levelFrom=all
+
+#Add new domain for Voice Activation app
+user=_app seinfo=platform name=com.qualcomm.qti.sva domain=vendor_voiceui_app type=app_data_file levelFrom=all

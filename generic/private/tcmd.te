@@ -27,7 +27,7 @@
 
 #tcmd as domain
 type vendor_tcmd,domain;
-
+typeattribute vendor_tcmd mlstrustedsubject;
 typeattribute vendor_tcmd coredomain;
 
 type vendor_tcmd_exec, exec_type, system_file_type, file_type;
