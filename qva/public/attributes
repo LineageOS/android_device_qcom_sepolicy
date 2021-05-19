@@ -56,3 +56,8 @@ attribute vendor_hal_qteeconnector_server;
 attribute vendor_hal_eid;
 attribute vendor_hal_eid_client;
 attribute vendor_hal_eid_server;
+
+#attributes fro qesdhal
+attribute vendor_hal_qesdhal;
+attribute vendor_hal_qesdhal_client;
+attribute vendor_hal_qesdhal_server;
