@@ -25,3 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /(product|system/product)/bin/init\.qti\.display\.sh             u:object_r:vendor_sys_qti_display_exec:s0
+/(product|system|system_ext)/bin/qvirtmgr                        u:object_r:vendor_qvirtmgr_exec:s0
+/(product|system|system_ext)/bin/qcrosvm                         u:object_r:vendor_qcrosvm_exec:s0
