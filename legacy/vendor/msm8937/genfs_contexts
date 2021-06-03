@@ -113,6 +113,7 @@ genfscon  sysfs /devices/soc/4080000.qcom,mss/subsys4/name    u:object_r:sysfs_s
 #cpu-ddr devfreq nodes for K4.19.
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-ddr-bw/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-ddr-latfloor/devfreq u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-cpu-ddr-latfloor/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-ddr-latfloor/devfreq u:object_r:sysfs_devfreq:s0
 
 #SDM429
