@@ -57,8 +57,8 @@
 /(system_ext|system/system_ext)/bin/bt_logger   u:object_r:vendor_bt_logger_exec:s0
 /(system_ext|system/system_ext)/bin/perfservice u:object_r:vendor_perfservice_exec:s0
 /(system_ext|system/system_ext)/bin/qdtservice  u:object_r:vendor_qdtservice_exec:s0
-/(system|system_ext|system/system_ext)/bin/wfdservice                          u:object_r:vendor_wfdservice_exec:s0
-/(system|system_ext|system/system_ext)/bin/sigma_miracasthalservice            u:object_r:vendor_sigmahal_qti_exec:s0
+/(system|system_ext|system/system_ext)/bin/(wfdservice|wfdservice64)           u:object_r:vendor_wfdservice_exec:s0
+/(system|system_ext|system/system_ext)/bin/(sigma_miracasthalservice|sigma_miracasthalservice64) u:object_r:vendor_sigmahal_qti_exec:s0
 /(system_ext|system/system_ext)/bin/qccsyshalservice  u:object_r:vendor_qccsyshal_qti_exec:s0
 /(system_ext|system/system_ext)/bin/qccsyshal@1\.1-service u:object_r:vendor_qccsyshal_qti_exec:s0
 /(system_ext|system/system_ext)/bin/mmi         u:object_r:vendor_mmi_sys_exec:s0
