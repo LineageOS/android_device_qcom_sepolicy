@@ -104,7 +104,7 @@ set_prop(vendor_init, vendor_sys_video_prop)
 set_prop(vendor_init, vendor_hvdcp_opti_prop)
 
 # Allow timezone to be overrided by vendor
-set_prop(vendor_init, exported_system_prop)
+#set_prop(vendor_init, exported_system_prop)
 
 #Acess vendor bluetooth properties
 set_prop(vendor_init, vendor_bluetooth_prop)
