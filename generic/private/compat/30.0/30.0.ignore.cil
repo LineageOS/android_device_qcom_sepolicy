@@ -9,4 +9,5 @@
     vendor_hal_telephony_service
     vendor_mm_parser_prop
     vendor_persist_tcm_prop
+    vendor_qvirtmgr
     vendor_qcc_lmtp_app))
