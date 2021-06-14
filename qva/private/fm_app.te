@@ -31,6 +31,7 @@ app_domain(vendor_fm_app)
 hal_client_domain(vendor_fm_app, vendor_hal_fm);
 hal_client_domain(vendor_fm_app, vendor_hal_btconfigstore);
 hal_client_domain(vendor_fm_app, vendor_hal_qspmhal);
+hal_client_domain(vendor_fm_app, vendor_hal_perf);
 
 binder_call(vendor_fm_app, gpuservice)
 allow vendor_fm_app radio_service:service_manager find;
