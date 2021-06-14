@@ -130,3 +130,11 @@ attribute vendor_hal_wifimyftm_server;
 attribute vendor_hal_mem_pasrmanager;
 attribute vendor_hal_mem_pasrmanager_client;
 attribute vendor_hal_mem_pasrmanager_server;
+
+attribute hal_wificfr;
+attribute hal_wificfr_client;
+attribute hal_wificfr_server;
+
+attribute vendor_sxrhalservice;
+attribute vendor_sxrhalservice_client;
+attribute vendor_sxrhalservice_server;
