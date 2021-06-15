@@ -251,3 +251,15 @@ attribute vendor_hal_mstatservice_qti;
 attribute vendor_hal_mstatservice_qti_client;
 attribute vendor_hal_mstatservice_qti_server;
 
+attribute vendor_hal_datafactory_qti;
+attribute vendor_hal_datafactory_qti_client;
+attribute vendor_hal_datafactory_qti_server;
+
+attribute vendor_hal_cacertservice_qti;
+attribute vendor_hal_cacertservice_qti_client;
+attribute vendor_hal_cacertservice_qti_server;
+
+attribute vendor_hal_iwlanservice_qti;
+attribute vendor_hal_iwlanservice_qti_client;
+attribute vendor_hal_iwlanservice_qti_server;
+
