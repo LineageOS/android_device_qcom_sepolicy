@@ -72,3 +72,6 @@ user=_app seinfo=platform name=com.qti.qualcomm.mstatssystemservice domain=vendo
 
 #Add new domain for QESDK_APP
 user=system seinfo=platform name=vendor.qti.qesdk.sysservice isPrivApp=true domain=vendor_qesdk_app type=system_app_data_file
+
+#Add new domain for workloadclassifier
+user=_app seinfo=platform name=com.qualcomm.qti.workloadclassifier domain=vendor_wlc_app type=app_data_file levelFrom=all
