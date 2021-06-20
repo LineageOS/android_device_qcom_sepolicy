@@ -28,3 +28,4 @@ type vendor_elabel_data_file, file_type, data_file_type, core_data_file_type;
 
 type vendor_dpmtcm_socket, file_type, coredomain_socket, mlstrustedobject;
 type vendor_seempdw_socket, file_type, mlstrustedobject, coredomain_socket;
+type vendor_qesdk_service, service_manager_type;
