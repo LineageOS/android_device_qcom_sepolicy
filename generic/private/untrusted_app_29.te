@@ -27,3 +27,4 @@
 
 qesdk_app_access(untrusted_app_29);
 typeattribute untrusted_app_29 vendor_hal_qvrservice_qti_socket_fd_use_client;
+typeattribute untrusted_app_29 vendor_hal_sxrservice_qti_socket_fd_use_client;

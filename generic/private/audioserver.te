@@ -26,6 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 binder_call(audioserver,vendor_wfdservice);
-
+binder_call(audioserver,vendor_sys_sxrauxd);
 #allow access to ALSA MMAP FDs for AAudio API
 allow audioserver audio_service:service_manager find;

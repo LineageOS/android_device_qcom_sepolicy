@@ -24,15 +24,27 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+type vendor_sys_sxrauxd, domain;
+typeattribute vendor_sys_sxrauxd coredomain;
+typeattribute vendor_sys_sxrauxd vendor_hal_sxrservice_qti_socket_fd_use_client;
+type vendor_sys_sxrauxd_exec, system_file_type, exec_type, file_type;
 
-type vendor_xrcb_app,domain;
-typeattribute vendor_xrcb_app coredomain;
-typeattribute vendor_xrcb_app vendor_hal_qvrservice_qti_socket_client;
-typeattribute vendor_xrcb_app vendor_hal_sxrservice_qti_socket_client;
-app_domain(vendor_xrcb_app);
+init_daemon_domain(vendor_sys_sxrauxd)
 
-hal_client_domain(vendor_xrcb_app, vendor_hal_qvrservice_qti);
-hal_client_domain(vendor_xrcb_app, vendor_hal_sxrservice_qti);
-hal_client_domain(vendor_xrcb_app, vendor_hal_perf);
-allow vendor_xrcb_app app_api_service:service_manager find;
-get_prop(vendor_xrcb_app, vendor_xrcb_prop);
+allow vendor_sys_sxrauxd vendor_sys_sxrauxservice_qti_socket_client:unix_stream_socket { getopt read setopt shutdown write };
+# Allow access to our socket
+allow vendor_sys_sxrauxd vendor_sys_sxrauxd_socket:sock_file rw_file_perms;
+
+# Allow access to sxrservice
+hal_client_domain(vendor_sys_sxrauxd, vendor_hal_sxrservice_qti);
+
+#Allow access to Audio Flinger APIs
+binder_call(vendor_sys_sxrauxd, audioserver);
+allow vendor_sys_sxrauxd audioserver_service : service_manager find;
+
+# Allow interracting with vendor_sxrauxd directory
+allow vendor_sys_sxrauxd vendor_sys_sxrauxd_data_file:dir create_dir_perms;
+allow vendor_sys_sxrauxd vendor_sys_sxrauxd_data_file:file create_file_perms;
+
+#allow binder use for checking permissions
+binder_use(vendor_sys_sxrauxd)

@@ -60,8 +60,10 @@
 /(system_ext|system/system_ext)/bin/mmi_diag    u:object_r:vendor_mmi_sys_exec:s0
 /(system_ext|system/system_ext)/bin/qspmsvc           u:object_r:vendor_qspmsvc_exec:s0
 /(system_ext|system/system_ext)/bin/perfetto_dump\.sh           u:object_r:vendor_perfetto_dump_exec:s0
+/(system_ext|system/system_ext)/bin/qxrsplitauxservice  u:object_r:vendor_sys_sxrauxd_exec:s0
 
 ####### data files ################
 /data/dpm(/.*)?                                 u:object_r:vendor_dpmd_data_file:s0
 /data/nfc(/.*)?                                 u:object_r:nfc_data_file:s0
 /data/misc/qdma(/.*)?                           u:object_r:vendor_qcc_data_file:s0
+/data/misc/sxraux(/.*)?                         u:object_r:vendor_sys_sxrauxd_data_file:s0
