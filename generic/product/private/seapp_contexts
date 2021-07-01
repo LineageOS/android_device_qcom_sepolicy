@@ -36,3 +36,9 @@ user=_app seinfo=platform name=com.qualcomm.qti.uim domain=vendor_qtelephony typ
 
 #Add uimgbaservice to vendor_qtelephony
 user=_app seinfo=platform name=com.qualcomm.qti.uimGbaApp domain=vendor_qtelephony type=app_data_file levelFrom=all
+
+#Add uim_remote_client service to vendor_qtelephony
+user=_app seinfo=platform name=com.qualcomm.uimremoteclient domain=vendor_qtelephony type=app_data_file levelFrom=all
+
+#Add uim_remote_server service to vendor_qtelephony
+user=_app seinfo=platform name=com.qualcomm.uimremoteserver domain=vendor_qtelephony type=app_data_file levelFrom=all
