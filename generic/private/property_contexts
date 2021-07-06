@@ -32,6 +32,7 @@ ro.vendor.perf.scroll_opt.heavy_app        u:object_r:vendor_exported_system_pro
 ro.netflix.bsp_rev                         u:object_r:vendor_exported_system_prop:s0 exact string
 
 persist.vendor.dpm.                        u:object_r:vendor_persist_dpm_prop:s0
+persist.vendor.rcs.                        u:object_r:vendor_persist_rcs_prop:s0
 persist.vendor.tcmd.                       u:object_r:vendor_persist_tcm_prop:s0
 persist.vendor.btstack                     u:object_r:bluetooth_prop:s0
 persist.vendor.bluetooth.emailaccountcount u:object_r:bluetooth_prop:s0

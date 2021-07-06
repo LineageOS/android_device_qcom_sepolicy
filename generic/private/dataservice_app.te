@@ -52,4 +52,4 @@ allow vendor_dataservice_app vendor_dpmd_data_file:dir rw_dir_perms;
 allow vendor_dataservice_app vendor_dpmd_data_file:file create_file_perms;
 unix_socket_connect(vendor_dataservice_app,vendor_dpmd,vendor_dpmd);
 set_prop(vendor_dataservice_app, vendor_persist_dpm_prop)
-
+set_prop(vendor_dataservice_app, vendor_persist_rcs_prop)
