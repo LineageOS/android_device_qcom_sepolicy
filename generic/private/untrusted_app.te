@@ -34,3 +34,4 @@ userdebug_or_eng(`
 ')
 unix_socket_connect(untrusted_app, vendor_qvrd, vendor_qvrd);
 allow untrusted_app vendor_qvrd:fd use;
+qesdk_app_access(untrusted_app);
