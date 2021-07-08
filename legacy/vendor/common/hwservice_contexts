@@ -75,6 +75,7 @@ vendor.qti.hardware.fstman::IFstManager                      u:object_r:hal_fstm
 vendor.qti.esepowermanager::IEsePowerManager                 u:object_r:hal_esepowermanager_hwservice:s0
 vendor.qti.voiceprint::IQtiVoicePrintService                 u:object_r:hal_voiceprint_hwservice:s0
 vendor.qti.power.pasrmanager::IPasrManager                   u:object_r:hal_pasrmanager_hwservice:s0
+vendor.qti.memory.pasrmanager::IPasrManager                  u:object_r:hal_pasrmanager_memory_hwservice:s0
 # Below rules are added to support the devices that are using the HALs before they are moved to
 # vendor.qti.hardware. They are used as it is to maintain the integrity of the software.
 vendor.qti.qcril.am::IQcRilAudio                             u:object_r:hal_telephony_hwservice:s0
