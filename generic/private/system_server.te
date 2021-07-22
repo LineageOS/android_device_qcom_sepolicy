@@ -1,4 +1,4 @@
-# Copyright (c) 2015,2017,2019 The Linux Foundation. All rights reserved.
+# Copyright (c) 2015,2017,2019,2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -47,8 +47,6 @@ allow system_server vendor_perf_service:service_manager find;
 
 #Allow system_server to add and find vps service
 allow system_server vendor_vps_service:service_manager find;
-
-binder_call(system_server,vendor_qvrd);
 
 #Allow for access to WFD specific debug properties
 binder_call(system_server, vendor_wfdservice);
