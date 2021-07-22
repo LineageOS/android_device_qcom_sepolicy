@@ -30,12 +30,9 @@ typeattribute vendor_qesdk_app coredomain;
 app_domain(vendor_qesdk_app)
 #allow vendor_qesdk_app to access vendor_hal_qesdhal
 qesdk_app_access(vendor_qesdk_app);
-allow vendor_qesdk_app activity_service:service_manager find;
-allow vendor_qesdk_app content_capture_service:service_manager find;
 allow vendor_qesdk_app system_data_file:dir search;
 allow vendor_qesdk_app system_app_data_file:dir { getattr search };
-allow vendor_qesdk_app tethering_service:service_manager find;
 allow vendor_qesdk_app user_profile_root_file:dir search;
-allow vendor_qesdk_app vendor_perf_service:service_manager find;
+allow vendor_qesdk_app app_api_service:service_manager find;
 hal_client_domain(vendor_qesdk_app, vendor_hal_perf)
 add_service(vendor_qesdk_app, vendor_qesdk_service);
