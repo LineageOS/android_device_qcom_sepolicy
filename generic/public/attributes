@@ -263,3 +263,8 @@ attribute vendor_hal_iwlanservice_qti;
 attribute vendor_hal_iwlanservice_qti_client;
 attribute vendor_hal_iwlanservice_qti_server;
 
+attribute vendor_hal_qvrservice_qti;
+attribute vendor_hal_qvrservice_qti_client;
+attribute vendor_hal_qvrservice_qti_server;
+attribute vendor_hal_qvrservice_qti_socket_client;
+attribute vendor_hal_qvrservice_qti_socket_fd_use_client;

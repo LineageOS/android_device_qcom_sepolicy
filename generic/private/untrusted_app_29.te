@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 qesdk_app_access(untrusted_app_29);
+typeattribute untrusted_app_29 vendor_hal_qvrservice_qti_socket_fd_use_client;
