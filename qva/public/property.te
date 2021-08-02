@@ -25,13 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type vendor_persist_dpm_prop, property_type, extended_core_property_type;
-type vendor_persist_camera_prop, property_type, extended_core_property_type;
+system_restricted_prop(vendor_persist_dpm_prop)
+system_restricted_prop(vendor_persist_camera_prop)
 
 # this is vendor defined property  and added with prefix vendor
 # which is going to be working from system
-type vendor_bt_prop, property_type, extended_core_property_type;
+system_restricted_prop(vendor_bt_prop)
 
-type vendor_sys_video_prop, property_type, extended_core_property_type;
+system_public_prop(vendor_sys_video_prop)
 
-type vendor_wlc_prop, property_type, extended_core_property_type;
+system_restricted_prop(vendor_wlc_prop)

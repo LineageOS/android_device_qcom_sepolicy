@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #properites for init.qcom.sh script
-type vendor_cdsprpcd_prop, property_type;
+vendor_restricted_prop(vendor_cdsprpcd_prop);
