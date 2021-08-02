@@ -75,3 +75,6 @@ user=system seinfo=platform name=vendor.qti.qesdk.sysservice isPrivApp=true doma
 
 #Add new domain for workloadclassifier
 user=_app seinfo=platform name=com.qualcomm.qti.workloadclassifier domain=vendor_wlc_app type=app_data_file levelFrom=all
+
+#Add new domain for xrcb app
+user=_app seinfo=platform name=com.qualcomm.qti.xrcb domain=vendor_xrcb_app type=app_data_file levelFrom=all

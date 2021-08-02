@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2021, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,23 +25,25 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# QCV: define property type vendor_exported_system_prop
-# and vendor_exported_odm_prop
-vendor_restricted_prop(vendor_exported_system_prop);
-vendor_restricted_prop(vendor_exported_odm_prop);
+type vendor_perfetto_dump, domain, coredomain;
+type vendor_perfetto_dump_exec, system_file_type, exec_type, file_type;
 
-#mm-osal
-system_internal_prop(vendor_mm_osal_prop)
-system_internal_prop(vendor_mm_video_prop)
+init_daemon_domain(vendor_perfetto_dump)
+userdebug_or_eng(`
+  set_prop(vendor_perfetto_dump, system_prop)
+  allow vendor_perfetto_dump perfetto_traces_data_file:dir rw_dir_perms;
+  allow vendor_perfetto_dump perfetto_traces_data_file:file { rw_file_perms unlink };
+  allow vendor_perfetto_dump shell_exec:file { rx_file_perms entrypoint };
+  allow vendor_perfetto_dump toolbox_exec:file rx_file_perms;
+  allow vendor_perfetto_dump perfetto_exec:file rx_file_perms;
+  allow vendor_perfetto_dump perfetto:fd use;
+  allow vendor_perfetto_dump shell:fd use;
+  allow vendor_perfetto_dump shell:fifo_file { read write };
 
-#WiFi Display
-system_internal_prop(vendor_wfd_service_prop)
-system_internal_prop(vendor_wfd_sys_debug_prop)
-# WIGIG
-system_internal_prop(vendor_wigig_core_prop)
-system_internal_prop(vendor_fst_prop)
-system_internal_prop(ctl_dpmd_prop)
-system_internal_prop(ctl_tcmd_prop)
-
-#XRCB property
-system_internal_prop(vendor_xrcb_prop)
+  # Allow the service to create new files within /data/misc/perfetto-traces.
+  allow vendor_perfetto_dump perfetto_traces_data_file:file create_file_perms;
+  allow vendor_perfetto_dump perfetto_traces_data_file:dir rw_dir_perms;
+  allow traced vendor_perfetto_dump:fd use;
+  allow vendor_perfetto_dump traced_consumer_socket:sock_file { write read };
+  allow vendor_perfetto_dump traced:unix_stream_socket connectto;
+')
