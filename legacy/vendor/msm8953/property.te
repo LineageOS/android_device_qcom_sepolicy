@@ -26,4 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #properites for init.qcom.sh script
-type vendor_media_msm8953_version_prop, property_type;
+vendor_restricted_prop(vendor_media_msm8953_version_prop);

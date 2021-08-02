@@ -27,6 +27,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #qspm hal debug
-type vendor_qspm_dbg_prop, property_type;
-type vendor_dbg_brkpoint_prop, property_type;
-type vendor_fda_prop, property_type;
+vendor_restricted_prop(vendor_qspm_dbg_prop);
+vendor_restricted_prop(vendor_dbg_brkpoint_prop);
+vendor_restricted_prop(vendor_fda_prop);
