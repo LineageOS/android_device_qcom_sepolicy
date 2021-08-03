@@ -29,6 +29,7 @@
 typeattribute vendor_qtelephony coredomain;
 
 app_domain(vendor_qtelephony)
+net_domain(vendor_qtelephony)
 
 hwbinder_use(vendor_qtelephony);
 get_prop(vendor_qtelephony, hwservicemanager_prop);
@@ -41,4 +42,9 @@ userdebug_or_eng(`
 allow vendor_qtelephony { cameraserver_service mediaextractor_service mediaserver_service mediametrics_service radio_service drmserver_service audioserver_service}:service_manager find;
 allow vendor_qtelephony system_api_service:service_manager find;
 allow vendor_qtelephony app_api_service:service_manager find;
+
+allow vendor_qtelephony vendor_dpmtcm_socket:sock_file write;
+
+allow vendor_qtelephony vendor_dpmd:unix_stream_socket connectto;
+
 hal_client_domain(vendor_qtelephony, hal_telephony)
