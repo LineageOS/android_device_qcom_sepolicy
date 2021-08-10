@@ -217,3 +217,7 @@ attribute vendor_hal_mem_pasrmanager_server;
 attribute vendor_hal_limits;
 attribute vendor_hal_limits_client;
 attribute vendor_hal_limits_server;
+
+attribute hal_wificfr;
+attribute hal_wificfr_client;
+attribute hal_wificfr_server;

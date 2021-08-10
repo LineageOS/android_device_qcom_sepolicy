@@ -268,3 +268,7 @@ attribute vendor_hal_qvrservice_qti_client;
 attribute vendor_hal_qvrservice_qti_server;
 attribute vendor_hal_qvrservice_qti_socket_client;
 attribute vendor_hal_qvrservice_qti_socket_fd_use_client;
+
+attribute hal_wificfr;
+attribute hal_wificfr_client;
+attribute hal_wificfr_server;
