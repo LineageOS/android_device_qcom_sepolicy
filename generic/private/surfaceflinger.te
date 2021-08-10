@@ -26,3 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 binder_call(surfaceflinger, vendor_wfdservice);
+
+#Allow access to limits_hwservice
+hal_client_domain(surfaceflinger, vendor_hal_limits)
