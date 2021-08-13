@@ -36,4 +36,4 @@ allow init-qti-ims-sh vendor_toolbox_exec:file rx_file_perms;
 set_prop(init-qti-ims-sh, vendor_qcom_ims_prop)
 
 # for ro.build.product
-get_prop(init-qti-ims-sh, exported2_default_prop)
+get_prop(init-qti-ims-sh, vendor_qcom_ims_prop)
