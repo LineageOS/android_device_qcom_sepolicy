@@ -27,6 +27,7 @@
 
 type vendor_qesdk_app, domain;
 typeattribute vendor_qesdk_app coredomain;
+typeattribute vendor_qesdk_app mlstrustedsubject;
 app_domain(vendor_qesdk_app)
 #allow vendor_qesdk_app to access vendor_hal_qesdhal
 qesdk_app_access(vendor_qesdk_app);
