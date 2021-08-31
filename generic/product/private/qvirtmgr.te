@@ -28,7 +28,6 @@
 #######################
 # Policy for qvirtmgr
 typeattribute vendor_qvirtmgr coredomain;
-typeattribute vendor_qvirtmgr system_executes_vendor_violators;
 type vendor_qvirtmgr_exec, system_file_type, exec_type, file_type;
 
 #######################
