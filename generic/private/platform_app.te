@@ -53,3 +53,6 @@ hal_client_domain(platform_app, hal_wificfr)
 # adding typeattribute instead of macro because hal_wifi_supplicant has already
 # been defined
 typeattribute platform_app hal_wifi_supplicant_client;
+
+#SystemUI needs to access the property ril.cdma.inecmmode
+get_prop(platform_app, radio_cdma_ecm_prop)
