@@ -28,4 +28,4 @@
 # generic/vendor_location_app.te - sepolicy rules for qti value added location apps
 # that will be part of system image. Eg: XT app.
 
-type vendor_location_app, domain;
+type vendor_location_app, domain, coredomain;

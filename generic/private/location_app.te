@@ -49,6 +49,8 @@ allow vendor_location_app radio_service:service_manager find;
 unix_socket_connect(vendor_location_app, vendor_dpmtcm, vendor_dpmd);
 unix_socket_connect(vendor_location_app, vendor_dpmtcm, vendor_tcmd);
 
+get_prop(vendor_location_app, radio_cdma_ecm_prop)
+
 allow vendor_location_app cgroup:file rw_file_perms;
 
 unix_socket_send(vendor_location_app, vendor_seempdw, vendor_seempd);
