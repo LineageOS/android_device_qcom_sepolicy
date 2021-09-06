@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type vendor_qcc_authmgr_app, domain, coredomain;
+typeattribute vendor_qcc_authmgr_app coredomain;
 
 app_domain(vendor_qcc_authmgr_app)
 binder_use(vendor_qcc_authmgr_app)

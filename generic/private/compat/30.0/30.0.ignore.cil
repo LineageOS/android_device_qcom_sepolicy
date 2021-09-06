@@ -12,4 +12,6 @@
     vendor_persist_rcs_prop
     vendor_qvirtmgr
     vendor_qesdk_service
+    vendor_qcc_authmgr_app
+    vendor_qcc_netstat_app
     vendor_qcc_lmtp_app))
