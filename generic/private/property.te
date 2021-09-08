@@ -45,3 +45,6 @@ system_internal_prop(ctl_tcmd_prop)
 
 #XRCB property
 system_internal_prop(vendor_xrcb_prop)
+
+#bootreceiver property
+system_public_prop(vendor_bootreceiver_prop)

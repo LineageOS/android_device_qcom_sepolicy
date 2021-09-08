@@ -29,3 +29,4 @@
 set_prop(vendor_init, vendor_exported_system_prop)
 # QCV:vendor_init settable for vendor_exported_odm_prop
 set_prop(vendor_init, vendor_exported_odm_prop)
+set_prop(vendor_init, vendor_bootreceiver_prop)
