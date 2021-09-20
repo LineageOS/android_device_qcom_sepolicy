@@ -46,3 +46,13 @@ allow platform_app soundtrigger_middleware_service:service_manager find;
 
 # allow platform_app access to Workload Classifier Property
 set_prop(platform_app, vendor_wlc_prop);
+
+#allow platform_app to interact with wificfr hal
+hal_client_domain(platform_app, hal_wificfr)
+#allow platform_app to interact with wpa_supplicant
+# adding typeattribute instead of macro because hal_wifi_supplicant has already
+# been defined
+typeattribute platform_app hal_wifi_supplicant_client;
+
+#SystemUI needs to access the property ril.cdma.inecmmode
+get_prop(platform_app, radio_cdma_ecm_prop)

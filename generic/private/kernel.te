@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,8 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-binder_call(surfaceflinger, vendor_wfdservice);
-allow surfaceflinger vendor_hal_displayconfig_service:service_manager find;
-
-#Allow access to limits_hwservice
-hal_client_domain(surfaceflinger, vendor_hal_limits)
+# Access tracefs instances
+allow kernel debugfs_tracing_instances:dir search;
