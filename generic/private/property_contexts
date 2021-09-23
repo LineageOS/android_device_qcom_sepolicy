@@ -93,3 +93,6 @@ vendor.xrcb.                               u:object_r:vendor_xrcb_prop:s0
 
 # bootreceiver config props
 ro.vendor.bootreceiver.enable              u:object_r:vendor_bootreceiver_prop:s0 exact bool
+
+#MStatsSystem
+vendor.mstatservice                         u:object_r:vendor_mstatservice_prop:s0
