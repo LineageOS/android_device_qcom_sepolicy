@@ -60,8 +60,3 @@ allow wfdservice mediametrics:binder call;
 allow wfdservice vendor_audio_prop:file read;
 allow wfdservice vendor_audio_prop:file open;
 allow wfdservice vendor_audio_prop:file getattr;
-
-# Fix source avc denials
-allow wfdservice vendor_default_prop:file read;
-allow wfdservice vendor_default_prop:file open;
-allow wfdservice vendor_default_prop:file getattr;
