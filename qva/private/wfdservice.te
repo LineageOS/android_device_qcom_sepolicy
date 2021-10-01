@@ -140,6 +140,6 @@ allow wfdservice vendor_mm_osal_prop:file open;
 allow wfdservice vendor_mm_osal_prop:file getattr;
 
 # Fix source avc denials
-#allow wfdservice vendor_default_prop:file read;
-#allow wfdservice vendor_default_prop:file open;
-#allow wfdservice vendor_default_prop:file getattr;
+allow wfdservice vendor_default_prop:file read;
+allow wfdservice vendor_default_prop:file open;
+allow wfdservice vendor_default_prop:file getattr;
