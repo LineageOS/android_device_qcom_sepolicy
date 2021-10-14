@@ -31,3 +31,5 @@ allow radio mediaextractor_service:service_manager find;
 userdebug_or_eng(`
   unix_socket_send(radio,vendor_seempdw, vendor_seempd)
 ')
+
+unix_socket_connect(radio, vendor_dpmtcm, vendor_dpmd)
