@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2019, 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2019, 2020-2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -108,3 +108,4 @@ vendor.qti.hardware.qseecom::IQSEECom                        u:object_r:hal_qsee
 vendor.qti.hardware.perf::IPerfCallback                      u:object_r:hal_perfcallback_hwservice:s0
 vendor.qti.hardware.dsp::IDspService                         u:object_r:vendor_hal_dspmanager_hwservice:s0
 vendor.qti.hardware.qccvndhal::IQccvndhal                     u:object_r:vendor_hal_qccvndhal_hwservice:s0
+vendor.qti.hardware.embmssl::IEmbms                          u:object_r:vendor_hal_embmssl_hwservice:s0

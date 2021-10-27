@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -41,9 +41,13 @@ add_hwservice(vendor_hal_embmssl_server, vendor_hal_embmssl_hwservice)
 allow vendor_hal_embmssl_client vendor_hal_embmssl_hwservice:hwservice_manager find;
 
 allow vendor_hal_embmssl_qti self:qipcrtr_socket create_socket_perms_no_ioctl;
-allow vendor_hal_embmssl_qti vendor_time_daemon:unix_stream_socket connectto;
+allow vendor_hal_embmssl_qti time_daemon:unix_stream_socket connectto;
 
-allow vendor_hal_embmssl_qti vendor_netmgrd_socket:dir search;
-unix_socket_connect(vendor_hal_embmssl_qti, vendor_netmgrd, vendor_netmgrd)
+allow vendor_hal_embmssl_qti netmgrd_socket:dir search;
+unix_socket_connect(vendor_hal_embmssl_qti, netmgrd, netmgrd)
 
 allow vendor_hal_embmssl_qti self:netlink_generic_socket create_socket_perms_no_ioctl;
+
+userdebug_or_eng(`
+  allow vendor_hal_embmssl_qti diag_device:chr_file { open read write };
+')
