@@ -65,3 +65,6 @@ hal_client_domain(hal_audio_default, hal_health)
 #allow acess to wcd_cpe
 allow hal_audio sysfs_audio:file rw_file_perms;
 allow hal_audio sysfs_audio:dir r_dir_perms ;
+
+#spkr_prot to thermal-engine
+unix_socket_connect(hal_audio, thermal, thermal-engine)
