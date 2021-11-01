@@ -48,3 +48,6 @@ system_internal_prop(vendor_xrcb_prop)
 
 #bootreceiver property
 system_public_prop(vendor_bootreceiver_prop)
+
+#MStatservice
+system_vendor_config_prop(vendor_mstatservice_prop)
