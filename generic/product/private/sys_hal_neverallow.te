@@ -36,14 +36,16 @@ neverallow {
 
 neverallow {
   system_halserverdomain
+  - vendor_systemhelper_app
 } domain:{ tcp_socket udp_socket rawip_socket } *;
 
 neverallow {
   system_halserverdomain
+  - vendor_systemhelper_app
 } { file_type fs_type }:file execute_no_trans;
 
 neverallow { domain -init } system_halserverdomain:process transition;
 
-neverallow *  { system_halserverdomain }:process dyntransition;
+neverallow *  { system_halserverdomain - vendor_systemhelper_app }:process dyntransition;
 
-neverallow { system_halserverdomain - netdomain  } hwservicemanager:binder { call transfer };
+neverallow { system_halserverdomain - netdomain - vendor_systemhelper_app } hwservicemanager:binder { call transfer };
