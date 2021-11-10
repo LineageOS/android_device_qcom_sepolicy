@@ -55,6 +55,7 @@ vendor.debug.mmosal.config         u:object_r:vendor_mm_osal_prop:s0
 #perf
 vendor.perf.workloadclassifier.enable      u:object_r:vendor_wlc_prop:s0
 persist.vendor.build.date.utc              u:object_r:vendor_wlc_prop:s0
+vendor.mpctl.init.complete                 u:object_r:vendor_wlc_public_prop:s0
 
 #mm-video
 persist.vendor.debug.av.logs.lvl          u:object_r:debug_prop:s0
