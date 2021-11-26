@@ -48,4 +48,6 @@ unix_socket_connect(vendor_hal_embmssl_qti, netmgrd, netmgrd)
 
 allow vendor_hal_embmssl_qti self:netlink_generic_socket create_socket_perms_no_ioctl;
 
-allow vendor_hal_embmssl_qti diag_device:chr_file { open read write };
+userdebug_or_eng(`
+  allow vendor_hal_embmssl_qti diag_device:chr_file { open read write };
+')
