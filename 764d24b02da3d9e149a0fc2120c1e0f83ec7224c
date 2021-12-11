@@ -16,6 +16,23 @@
       "message": "This is broken.",
       "revId": "764d24b02da3d9e149a0fc2120c1e0f83ec7224c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17377c73_81b429d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21290
+      },
+      "writtenOn": "2021-12-11T14:36:16Z",
+      "side": 1,
+      "message": "This is not broken, but it depends on https://review.lineageos.org/c/LineageOS/android_device_lineage_sepolicy/+/319293",
+      "revId": "764d24b02da3d9e149a0fc2120c1e0f83ec7224c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
