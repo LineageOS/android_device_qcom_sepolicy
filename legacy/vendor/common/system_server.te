@@ -186,3 +186,5 @@ get_prop(system_server, vendor_xlat_prop)
 
 # allow system_server to access IWifiStats HAL service
 hal_client_domain(system_server, hal_wifilearner)
+
+dontaudit system_server vendor_default_prop:file read;
