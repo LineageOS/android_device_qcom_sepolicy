@@ -35,3 +35,6 @@ userdebug_or_eng(`
 qesdk_app_access(untrusted_app);
 typeattribute untrusted_app vendor_hal_qvrservice_qti_socket_fd_use_client;
 typeattribute untrusted_app vendor_hal_sxrservice_qti_socket_fd_use_client;
+
+# allow app to be a client of DSP HAL
+hal_client_domain(untrusted_app, vendor_hal_dspmanager)

@@ -29,3 +29,6 @@ unix_socket_connect(untrusted_app_27,vendor_dpmtcm, vendor_dpmd);
 allow untrusted_app_27 vendor_dpmtcm_socket:sock_file w_file_perms;
 allow untrusted_app_27 vendor_dpmd:unix_stream_socket connectto;
 qesdk_app_access(untrusted_app_27);
+
+# allow app to be a client of DSP HAL
+hal_client_domain(untrusted_app_27, vendor_hal_dspmanager)
