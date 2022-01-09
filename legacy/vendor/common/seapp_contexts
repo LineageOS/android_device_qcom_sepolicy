@@ -48,7 +48,7 @@ user=system seinfo=platform name=.imshelperservice domain=imshelper_app type=rad
 user=system seinfo=platform name=com.qualcomm.qti.perfdump domain=perfdump_app type=system_app_data_file
 
 #Add new domain for power off alarm app
-user=_app seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=app_data_file levelFrom=all
+user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=system_app_data_file
 
 #add new domain for qtidataservices
 user=_app seinfo=platform name=.qtidataservices domain=qtidataservices_app type=app_data_file levelFrom=all
