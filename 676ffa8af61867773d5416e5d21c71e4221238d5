@@ -33,6 +33,24 @@
       "message": "Tested on leeco x2:\n\n1.poweroffalarm feature works\n2.there is still a selinux denial during system boot up\n\nW i.poweroffalarm: type\u003d1400 audit(0.0:12): avc: denied { search } for name\u003d\"vendor\" dev\u003d\"tmpfs\" ino\u003d16183 scontext\u003du:r:poweroffalarm_app:s0 tcontext\u003du:object_r:mnt_vendor_file:s0 tclass\u003ddir permissive\u003d0\n",
       "revId": "676ffa8af61867773d5416e5d21c71e4221238d5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bff7b747_6b50bc39",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30196
+      },
+      "writtenOn": "2022-01-10T09:39:48Z",
+      "side": 1,
+      "message": "Shouldn\u0027t be an issue since it\u0027s working.",
+      "parentUuid": "9880fcfc_ff1bd885",
+      "revId": "676ffa8af61867773d5416e5d21c71e4221238d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
