@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d4926ae_fd3060b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2022-01-11T05:52:49Z",
+      "side": 1,
+      "message": "confirmed this works on x2 and no need to fix any extra sepolicy denials.\n\nMy patchset keeps the original binder call line as there\u0027s no need to change it and the original is cleaner anyways",
+      "revId": "7e1793820d2faded17a55b639e8d2a3826dae286",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
