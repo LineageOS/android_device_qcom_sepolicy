@@ -57,6 +57,30 @@
       },
       "revId": "7e1793820d2faded17a55b639e8d2a3826dae286",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63bac4af_82b5da26",
+        "filename": "legacy/vendor/common/poweroffalarm_app.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-01-11T19:59:19Z",
+      "side": 1,
+      "message": "*rw_dir_file",
+      "parentUuid": "5430ef44_3dc3bfdb",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 65
+      },
+      "revId": "7e1793820d2faded17a55b639e8d2a3826dae286",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
