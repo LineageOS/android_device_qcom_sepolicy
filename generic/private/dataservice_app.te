@@ -26,6 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 typeattribute vendor_dataservice_app coredomain;
+typeattribute vendor_dataservice_app mlstrustedsubject;
 app_domain(vendor_dataservice_app)
 net_domain(vendor_dataservice_app)
 

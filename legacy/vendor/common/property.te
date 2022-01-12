@@ -89,6 +89,8 @@ vendor_restricted_prop(vendor_alarm_boot_prop);
 
 vendor_restricted_prop(vendor_wifi_ftmd_prop);
 
+vendor_internal_prop(vendor_wifi_version);
+
 # WIGIG
 vendor_internal_prop(vendor_wigig_prop);
 vendor_internal_prop(vendor_ctl_vendor_wigigsvc_prop);
