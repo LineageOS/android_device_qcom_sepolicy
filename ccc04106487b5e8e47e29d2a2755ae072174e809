@@ -34,6 +34,24 @@
       "parentUuid": "4c054897_73bac9da",
       "revId": "ccc04106487b5e8e47e29d2a2755ae072174e809",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf9e0074_cc97b0d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-01-14T22:55:14Z",
+      "side": 1,
+      "message": "Sorry. Meant this: https://github.com/LineageOS/android_device_qcom_sepolicy/commit/1dd4917670448363886f85e58cd2a7456f234af8",
+      "parentUuid": "a491378c_d2a17eb7",
+      "revId": "ccc04106487b5e8e47e29d2a2755ae072174e809",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
