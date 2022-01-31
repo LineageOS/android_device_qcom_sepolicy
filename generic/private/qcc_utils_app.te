@@ -25,6 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+typeattribute vendor_qcc_utils_app mlstrustedsubject;
+
 app_domain(vendor_qcc_utils_app)
 net_domain(vendor_qcc_utils_app)
 binder_use(vendor_qcc_utils_app)
