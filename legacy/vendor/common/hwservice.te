@@ -66,6 +66,7 @@ type hal_btconfigstore_hwservice, hwservice_manager_type;
 type hal_capabilityconfigstore_qti_hwservice, hwservice_manager_type;
 type hal_qseecom_hwservice, hwservice_manager_type, protected_hwservice;
 type hal_perfcallback_hwservice, hwservice_manager_type, protected_hwservice;
+type vendor_hal_mwqemadapter_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_dspmanager_hwservice, hwservice_manager_type;
 type vendor_hal_qccvndhal_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_embmssl_hwservice, hwservice_manager_type, protected_hwservice;

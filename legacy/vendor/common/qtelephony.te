@@ -41,3 +41,4 @@ binder_call(vendor_qtelephony, hal_perf_default)
 userdebug_or_eng(`
   diag_use(vendor_qtelephony)
 ')
+allow vendor_qtelephony hal_datafactory_hwservice:hwservice_manager find;

@@ -28,3 +28,4 @@
 allow zygote  system_prop:property_service set;
 get_prop(zygote, vendor_mpctl_prop)
 get_prop(zygote, vendor_video_prop)
+allow zygote self:capability kill;
