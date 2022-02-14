@@ -63,3 +63,4 @@ use_vendor_per_mgr(spdaemon)
 set_prop(spdaemon, vendor_spcomlib_prop)
 
 allow spdaemon sysfs_data:file r_file_perms;
+allow spdaemon sysfs_spdaemon:file r_file_perms;
