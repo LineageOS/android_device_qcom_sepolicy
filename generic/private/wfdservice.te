@@ -72,3 +72,8 @@ get_prop(vendor_wfdservice, vendor_sys_video_prop)
 
 #Allow the interaction with vendor_sigmahal_qti
 binder_call(vendor_wfdservice,vendor_sigmahal_qti);
+
+#Allow vendor_wfdservice to access debug properties
+userdebug_or_eng(`
+  get_prop(vendor_wfdservice, vendor_wfd_sys_debug_prop)
+')
