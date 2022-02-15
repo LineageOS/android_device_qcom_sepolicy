@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ccf79d2_85884a46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17649
+      },
+      "writtenOn": "2022-02-15T00:52:14Z",
+      "side": 1,
+      "message": "Similar to caf\u0027s change for vendor_dataservice_app\n\nsee https://github.com/LineageOS/android_device_qcom_sepolicy/commit/3970a6c9e530eb8758ac71e2f8388b3611e807fd",
+      "revId": "b6a2b510d2181d64de9a3766c73cb08280a59e2e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
