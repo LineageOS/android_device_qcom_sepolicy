@@ -26,6 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type qtidataservices_app, domain;
+typeattribute qtidataservices_app mlstrustedsubject;
 app_domain(qtidataservices_app);
 
 add_hwservice(qtidataservices_app, hal_cacert_hwservice)
