@@ -42,6 +42,7 @@ unix_socket_connect(vendor_fm_app,bluetooth, bluetooth)
 # access  wcnss_filter from fm app
 #allow vendor_fm_app wcnss_filter:unix_stream_socket connectto;
 allow vendor_fm_app fm_radio_device:chr_file r_file_perms;
+set_prop(vendor_fm_app, exported3_system_prop)
 
 set_prop(vendor_fm_app, ctl_start_prop)
 set_prop(vendor_fm_app, ctl_stop_prop)
