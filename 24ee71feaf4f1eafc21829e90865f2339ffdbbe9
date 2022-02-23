@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9e6fb44_d0f790ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 22856
+      },
+      "writtenOn": "2022-02-23T22:39:16Z",
+      "side": 1,
+      "message": "Fixes app hanging for a bit on first launch.",
+      "revId": "24ee71feaf4f1eafc21829e90865f2339ffdbbe9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
