@@ -35,5 +35,6 @@ hal_client_domain(vendor_fm_app, vendor_hal_qspmhal);
 binder_call(vendor_fm_app, gpuservice)
 allow vendor_fm_app radio_service:service_manager find;
 allow vendor_fm_app audioserver_service:service_manager find;
+allow vendor_fm_app mediametrics_service:service_manager find;
 allow vendor_fm_app mediaserver_service:service_manager find;
 allow vendor_fm_app app_api_service:service_manager find;
