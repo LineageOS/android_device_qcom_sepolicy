@@ -37,6 +37,7 @@ type vendor_sysfs_fingerprint, sysfs_type, fs_type;
 type vendor_sysfs_graphics, sysfs_type, fs_type;
 type vendor_sysfs_kgsl, sysfs_type, fs_type;
 type vendor_sysfs_kgsl_proc, sysfs_type, fs_type;
+type sysfs_kgsl_shell, sysfs_type, fs_type;
 type vendor_hbtp_kernel_sysfs, sysfs_type, fs_type;
 type vendor_sysfs_irqbalance, sysfs_type, fs_type;
 type vendor_sysfs_laser, sysfs_type, fs_type;
