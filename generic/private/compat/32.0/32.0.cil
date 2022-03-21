@@ -128,3 +128,4 @@
 (typeattributeset vendor_wfdservice_32_0 (vendor_wfdservice))
 (typeattributeset vendor_wlc_prop_32_0 (vendor_wlc_prop))
 (typeattributeset vendor_wlc_public_prop_32_0 (vendor_wlc_public_prop))
+(typeattributeset vendor_afp_prop_32_0 (vendor_afp_prop))
