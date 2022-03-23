@@ -27,3 +27,4 @@
 
 hwbinder_use(radio)
 allow radio mediaextractor_service:service_manager find;
+add_hwservice(radio, vendor_hal_atfwd_hwservice);
