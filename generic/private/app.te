@@ -29,7 +29,3 @@ get_prop(appdomain, vendor_persist_dpm_prop)
 get_prop(appdomain, vendor_persist_rcs_prop)
 
 get_prop(appdomain, vendor_afp_prop)
-
-# vendor_persist_camera_prop is not used by 3rd party apps, so don't
-# audit it to suppress the denials
-dontaudit appdomain vendor_persist_camera_prop:file r_file_perms;
