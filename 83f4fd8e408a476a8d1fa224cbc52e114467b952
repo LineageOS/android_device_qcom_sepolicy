@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69afadfd_2ccd80b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21290
+      },
+      "writtenOn": "2022-04-02T10:03:38Z",
+      "side": 1,
+      "message": "This dontaudit is misleading because we actually need to allow this in order for the allowlist to work.",
+      "revId": "83f4fd8e408a476a8d1fa224cbc52e114467b952",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
