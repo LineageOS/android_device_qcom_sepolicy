@@ -36,4 +36,5 @@ init_daemon_domain(vendor_qvirtmgr);
 
 add_service(vendor_qvirtmgr, vendor_qvirtmgr_service);
 
+set_prop(vendor_qvirtmgr, vendor_qvirtmgr_prop)
 allow vendor_qvirtmgr vendor_qcrosvm_exec:file rx_file_perms;
