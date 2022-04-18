@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39295121_f897ae1c",
+        "filename": "legacy/vendor/common/fm_app.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 22856
+      },
+      "writtenOn": "2022-04-18T18:59:28Z",
+      "side": 1,
+      "message": "This was deleted",
+      "revId": "d35035eba890e1f735e8448e9d48689269c9093a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
