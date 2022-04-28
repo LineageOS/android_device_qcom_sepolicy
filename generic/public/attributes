@@ -296,3 +296,6 @@ attribute vendor_hal_qms_qti_server;
 attribute vendor_hal_minkipc;
 attribute vendor_hal_minkipc_client;
 attribute vendor_hal_minkipc_server;
+
+#custom hal server domain attribute
+attribute system_halserverdomain;
