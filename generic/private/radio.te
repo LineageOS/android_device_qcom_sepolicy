@@ -28,6 +28,8 @@
 hwbinder_use(radio)
 allow radio mediaextractor_service:service_manager find;
 
+add_hwservice(radio, vendor_hal_atfwd_hwservice);
+
 userdebug_or_eng(`
   unix_socket_send(radio,vendor_seempdw, vendor_seempd)
 ')

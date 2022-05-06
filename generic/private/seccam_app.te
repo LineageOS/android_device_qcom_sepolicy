@@ -36,3 +36,5 @@ allow vendor_seccam_app app_data_file:file create_file_perms;
 allow vendor_seccam_app { activity_service app_api_service } :service_manager find;
 allow vendor_seccam_app self:qipcrtr_socket create_socket_perms_no_ioctl;
 typeattribute vendor_seccam_app hal_graphics_composer_client;
+dontaudit vendor_seccam_app system_data_file:dir search;
+dontaudit vendor_seccam_app user_profile_root_file:dir search;

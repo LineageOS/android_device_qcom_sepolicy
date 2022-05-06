@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 product_restricted_prop(vendor_display_notch_prop)
+product_restricted_prop(vendor_qvirtmgr_prop)
