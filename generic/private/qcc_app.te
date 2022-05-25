@@ -30,11 +30,10 @@
 # Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-typeattribute vendor_qcc_app mlstrustedsubject;
-
 app_domain(vendor_qcc_app)
 net_domain(vendor_qcc_app)
 binder_use(vendor_qcc_app)
+hal_client_domain(vendor_qcc_app, vendor_qccsyshal);
 
 allow vendor_qcc_app radio_service:service_manager find;
 # for vendor_perf_service
@@ -50,13 +49,10 @@ unix_socket_connect(vendor_qcc_app, vendor_dpmtcm, vendor_tcmd)
 # allow access to mediadrmserver for qdmastats/wvstats
 allow vendor_qcc_app mediadrmserver_service:service_manager find;
 
-# allow vendor_qcc_app to access system_app_data_file
-# necessary for read and write /data/user_de/0/com.---.qti.qdma subdirectory.
-allow vendor_qcc_app system_data_file:dir search;
-allow vendor_qcc_app system_app_data_file:dir create_dir_perms;
-allow vendor_qcc_app system_app_data_file:file create_file_perms;
-
-allow vendor_qcc_app user_profile_root_file:dir search;
+# allow vendor_qcc_app to access app_data_file
+# necessary for read and write /data/user_de/0/data subdirectory.
+allow vendor_qcc_app app_data_file:dir create_dir_perms;
+allow vendor_qcc_app app_data_file:file create_file_perms;
 
 # allow cgroup access
 allow vendor_qcc_app cgroup:file rw_file_perms;
