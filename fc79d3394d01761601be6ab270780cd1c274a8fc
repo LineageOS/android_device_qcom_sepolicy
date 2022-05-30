@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c93921c3_70d46ca2",
+        "filename": ".gitupstream-clo",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2022-05-30T20:30:43Z",
+      "side": 1,
+      "message": "This could also be:\n\nURL $qssi_rev\nURL qssi\nURL # Just that",
+      "revId": "fc79d3394d01761601be6ab270780cd1c274a8fc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
