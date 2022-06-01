@@ -16,6 +16,24 @@
       "message": "This could also be:\n\nURL $qssi_rev\nURL qssi\nURL # Just that",
       "revId": "fc79d3394d01761601be6ab270780cd1c274a8fc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8008dbb8_6749f247",
+        "filename": ".gitupstream-clo",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2022-06-01T16:16:01Z",
+      "side": 1,
+      "message": "I would just go with #3 here since groups can change and it\u0027s easier to update if we just read the groups by repo command.",
+      "parentUuid": "c93921c3_70d46ca2",
+      "revId": "fc79d3394d01761601be6ab270780cd1c274a8fc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
