@@ -6,4 +6,4 @@
 (typeattributeset new_objects
   ( new_objects
     vendor_wlc_public_prop
-    vendor_afp_prop))
+  ))
