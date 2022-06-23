@@ -4,4 +4,6 @@
 (type new_objects)
 (typeattribute new_objects)
 (typeattributeset new_objects
-  ( new_objects))
+  ( new_objects
+    vendor_hal_minkipc_service
+    vendor_afp_prop))
