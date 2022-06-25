@@ -1,4 +1,4 @@
-# Copyright (c) 2015, 2017, 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,27 +24,4 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-# access to seemp folder
-allow system_app vendor_seemp_data_file:dir r_dir_perms;
-allow system_app vendor_seemp_data_file:{ file fifo_file } rw_file_perms;
-binder_call(system_app, vendor_seempd)
-
-allow system_app vendor_dpmtcm_socket:sock_file w_file_perms;
-allow system_app vendor_dpmd:unix_stream_socket connectto;
-allow system_app vendor_color_service:service_manager add;
-get_prop(system_app, bluetooth_prop);
-# allow system_app to interact with smcinvoke daemon
-#binder_call(system_app, smcinvoke_daemon)
-
-# allow system_app access to Workload Classifier Property
-set_prop(system_app, vendor_wlc_prop);
-
-# allow system_app access to wigig Property
-get_prop(system_app, vendor_wigig_core_prop);
-
-#allow system_app to access faceauth
-hal_client_domain(system_app, hal_face)
-#allow system_app to access vendor_hal_dspmanager
-hal_client_domain(system_app, vendor_hal_dspmanager);
-unix_socket_connect(system_app, vendor_dpmtcm, vendor_tcmd);
+type vendor_dataservice_app, domain;

@@ -45,6 +45,3 @@ get_prop(system_app, vendor_wigig_core_prop);
 
 #allow system_app to access faceauth
 hal_client_domain(system_app, hal_face)
-#allow system_app to access vendor_hal_dspmanager
-hal_client_domain(system_app, vendor_hal_dspmanager);
-unix_socket_connect(system_app, vendor_dpmtcm, vendor_tcmd);

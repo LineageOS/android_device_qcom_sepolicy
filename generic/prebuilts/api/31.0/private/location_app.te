@@ -1,4 +1,4 @@
-# Copyright (c) 2015, 2017, 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,26 +25,29 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# access to seemp folder
-allow system_app vendor_seemp_data_file:dir r_dir_perms;
-allow system_app vendor_seemp_data_file:{ file fifo_file } rw_file_perms;
-binder_call(system_app, vendor_seempd)
+# generic/vendor_location_app.te - sepolicy rules for qti value added location apps
+# that will be part of system image. Eg: XT app.
 
-allow system_app vendor_dpmtcm_socket:sock_file w_file_perms;
-allow system_app vendor_dpmd:unix_stream_socket connectto;
-allow system_app vendor_color_service:service_manager add;
-get_prop(system_app, bluetooth_prop);
-# allow system_app to interact with smcinvoke daemon
-#binder_call(system_app, smcinvoke_daemon)
+app_domain(vendor_location_app)
+binder_use(vendor_location_app)
+hal_client_domain(vendor_location_app, hal_gnss)
 
-# allow system_app access to Workload Classifier Property
-set_prop(system_app, vendor_wlc_prop);
+net_domain(vendor_location_app)
 
-# allow system_app access to wigig Property
-get_prop(system_app, vendor_wigig_core_prop);
+#Permissions for JDWP
+userdebug_or_eng(`
+  allow vendor_location_app { adbd su }:unix_stream_socket connectto;
+')
 
-#allow system_app to access faceauth
-hal_client_domain(system_app, hal_face)
-#allow system_app to access vendor_hal_dspmanager
-hal_client_domain(system_app, vendor_hal_dspmanager);
-unix_socket_connect(system_app, vendor_dpmtcm, vendor_tcmd);
+allow vendor_location_app app_api_service:service_manager find;
+
+allow vendor_location_app system_app_data_file:dir create_dir_perms;
+allow vendor_location_app system_app_data_file:file create_file_perms;
+
+allow vendor_location_app radio_service:service_manager find;
+
+unix_socket_connect(vendor_location_app, vendor_dpmtcm, vendor_dpmd);
+
+allow vendor_location_app cgroup:file rw_file_perms;
+
+unix_socket_send(vendor_location_app, vendor_seempdw, vendor_seempd);

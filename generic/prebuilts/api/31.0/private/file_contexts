@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,6 +24,7 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# KEYSTONE(I4a15c386145339100de054925e52506540e6ddd0,b/201434325)
 /data/misc/elabel(/.*)?         u:object_r:vendor_elabel_data_file:s0
 /data/misc/seemp(/.*)?          u:object_r:vendor_seemp_data_file:s0
 
@@ -38,13 +39,16 @@
 /dev/socket/seempdw                             u:object_r:vendor_seempdw_socket:s0
 /dev/socket/dpmd                                u:object_r:vendor_dpmd_socket:s0
 /dev/socket/tcm                                 u:object_r:vendor_dpmtcm_socket:s0
-/dev/socket/tcmd                                u:object_r:vendor_dpmtcm_socket:s0
+/dev/socket/qvrservice                          u:object_r:vendor_qvrd_socket:s0
+/dev/socket/qvrservice_controller               u:object_r:vendor_qvrd_controller_socket:s0
+/dev/socket/qvrservice_camera                   u:object_r:vendor_qvrd_socket:s0
+/dev/socket/qvrservice_hvx_camera               u:object_r:vendor_qvrd_hvx_socket:s0
 /dev/socket/qdma_app(/.*)?                      u:object_r:vendor_qcc_app_socket:s0
 
 ####### system file ###############
 /system/bin/seempd                              u:object_r:vendor_seempd_exec:s0
 /(system_ext|system/system_ext)/bin/dpmd        u:object_r:vendor_dpmd_exec:s0
-/(system_ext|system/system_ext)/bin/tcmd        u:object_r:vendor_tcmd_exec:s0
+/(system_ext|system/system_ext)/bin/qvrservice  u:object_r:vendor_qvrd_exec:s0
 /system/bin/vpsservice                          u:object_r:vendor_vpsservice_exec:s0
 
 ####### system_ext file ###############
@@ -52,18 +56,15 @@
 /(system_ext|system/system_ext)/bin/bt_logger   u:object_r:vendor_bt_logger_exec:s0
 /(system_ext|system/system_ext)/bin/perfservice u:object_r:vendor_perfservice_exec:s0
 /(system_ext|system/system_ext)/bin/qdtservice  u:object_r:vendor_qdtservice_exec:s0
-/(system|system_ext|system/system_ext)/bin/(wfdservice|wfdservice64)           u:object_r:vendor_wfdservice_exec:s0
-/(system|system_ext|system/system_ext)/bin/(sigma_miracasthalservice|sigma_miracasthalservice64) u:object_r:vendor_sigmahal_qti_exec:s0
+/(system|system_ext|system/system_ext)/bin/wfdservice                          u:object_r:vendor_wfdservice_exec:s0
+/(system|system_ext|system/system_ext)/bin/sigma_miracasthalservice            u:object_r:vendor_sigmahal_qti_exec:s0
 /(system_ext|system/system_ext)/bin/qccsyshalservice  u:object_r:vendor_qccsyshal_qti_exec:s0
-/(system_ext|system/system_ext)/bin/qccsyshal@[1-9]\.[1-9]-service u:object_r:vendor_qccsyshal_qti_exec:s0
 /(system_ext|system/system_ext)/bin/mmi         u:object_r:vendor_mmi_sys_exec:s0
 /(system_ext|system/system_ext)/bin/mmi_diag    u:object_r:vendor_mmi_sys_exec:s0
 /(system_ext|system/system_ext)/bin/qspmsvc           u:object_r:vendor_qspmsvc_exec:s0
-/(system_ext|system/system_ext)/bin/perfetto_dump\.sh           u:object_r:vendor_perfetto_dump_exec:s0
-/(system_ext|system/system_ext)/bin/qxrsplitauxservice  u:object_r:vendor_sys_sxrauxd_exec:s0
 
 ####### data files ################
 /data/dpm(/.*)?                                 u:object_r:vendor_dpmd_data_file:s0
+/data/misc/qvr(/.*)?                            u:object_r:vendor_qvrd_data_file:s0
 /data/nfc(/.*)?                                 u:object_r:nfc_data_file:s0
 /data/misc/qdma(/.*)?                           u:object_r:vendor_qcc_data_file:s0
-/data/misc/sxraux(/.*)?                         u:object_r:vendor_sys_sxrauxd_data_file:s0
