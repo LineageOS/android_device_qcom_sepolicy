@@ -54,3 +54,5 @@ get_prop(vendor_location_app, radio_cdma_ecm_prop)
 allow vendor_location_app cgroup:file rw_file_perms;
 
 unix_socket_send(vendor_location_app, vendor_seempdw, vendor_seempd);
+
+dontaudit vendor_location_app system_file:dir write;
