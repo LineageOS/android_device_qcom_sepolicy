@@ -31,7 +31,7 @@ user=_app seinfo=platform name=com.qualcomm.location isPrivApp=true domain=vendo
 user=_app seinfo=platform name=com.qualcomm.qti.ssmeditor domain=vendor_qconfig_app type=app_data_file levelfrom=all
 
 #Add new domain for QCC
-user=system seinfo=platform name=com.qualcomm.qti.qdma isPrivApp=true domain=vendor_qcc_app type=system_app_data_file
+user=system seinfo=platform name=com.qti.qcc isPrivApp=true domain=vendor_qcc_app type=system_app_data_file
 #Add new domain for QCCLMTP
 user=system seinfo=platform name=com.qualcomm.qti.qcclmtp isPrivApp=true domain=vendor_qcc_lmtp_app type=system_app_data_file
 #Add new domain for QCC-Utils
