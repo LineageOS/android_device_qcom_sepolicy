@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 add_service(system_server, vendor_izat_service)
 
@@ -71,3 +76,6 @@ allow system_server binderfs_logs:file r_file_perms;
 
 # Allow system server to access for rcs service
 get_prop(system_server, vendor_persist_rcs_prop)
+
+# Allow system server to access for qspa prop
+get_prop(system_server, vendor_qspa_prop)

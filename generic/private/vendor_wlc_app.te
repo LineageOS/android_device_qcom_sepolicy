@@ -36,3 +36,5 @@ hal_client_domain(vendor_wlc_app, vendor_hal_perf)
 
 set_prop(vendor_wlc_app, vendor_wlc_prop);
 get_prop(vendor_wlc_app, build_bootimage_prop);
+
+dontaudit vendor_wlc_app { incremental_prop proc_filesystems }:file read;
