@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 ro.vendor.qti.va_aosp.support       u:object_r:vendor_exported_system_prop:s0 exact bool
 ro.vendor.qti.va_odm.support       u:object_r:vendor_exported_odm_prop:s0 exact bool
@@ -95,3 +100,6 @@ ro.vendor.bootreceiver.enable              u:object_r:vendor_bootreceiver_prop:s
 
 #MStatsSystem
 vendor.mstatservice                         u:object_r:vendor_mstatservice_prop:s0
+
+# qspa
+ro.vendor.config.qspa.       u:object_r:vendor_qspa_prop:s0
