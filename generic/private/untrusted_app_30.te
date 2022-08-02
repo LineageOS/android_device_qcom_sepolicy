@@ -32,3 +32,6 @@
 
 qesdk_app_access(untrusted_app_30);
 hal_client_domain(untrusted_app_30, vendor_hal_qspmhal)
+
+# allow app to be a client of DSP HAL
+hal_client_domain(untrusted_app_30, vendor_hal_dspmanager)
