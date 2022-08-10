@@ -37,6 +37,7 @@ system_internal_prop(vendor_mm_video_prop)
 #WiFi Display
 system_internal_prop(vendor_wfd_service_prop)
 system_internal_prop(vendor_wfd_sys_debug_prop)
+system_internal_prop(vendor_wfd_sys_prop)
 # WIGIG
 system_internal_prop(vendor_wigig_core_prop)
 system_internal_prop(vendor_fst_prop)
