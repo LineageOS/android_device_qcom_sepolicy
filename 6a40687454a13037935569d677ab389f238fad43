@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a13e9bc_de521543",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28232
+      },
+      "writtenOn": "2022-08-25T13:33:24Z",
+      "side": 1,
+      "message": "Maybe we can squash this with previous commit. It was a mistake during 19 bringup.",
+      "revId": "6a40687454a13037935569d677ab389f238fad43",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
