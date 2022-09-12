@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02ca3e6f_cb7d886e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-09-12T21:59:44Z",
+      "side": 1,
+      "message": "This should not be included twice. It\u0027s already done at sepolicy_vndr standard and legacy-um branches.",
+      "revId": "8f6ad8b0b241cc85c5d9e9c37badd7b96a552443",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
