@@ -293,6 +293,10 @@ attribute vendor_hal_qms_qti;
 attribute vendor_hal_qms_qti_client;
 attribute vendor_hal_qms_qti_server;
 
+attribute vendor_hal_dcservice_qti;
+attribute vendor_hal_dcservice_qti_client;
+attribute vendor_hal_dcservice_qti_server;
+
 attribute vendor_hal_minkipc;
 attribute vendor_hal_minkipc_client;
 attribute vendor_hal_minkipc_server;
