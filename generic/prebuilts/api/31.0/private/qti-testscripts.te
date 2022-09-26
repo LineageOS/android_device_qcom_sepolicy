@@ -28,8 +28,8 @@
 #as the exec is defined in file_context  it is hitting build
 # error in user build  so moving out of the macro
 type qti-testscripts_exec, system_file_type, exec_type, file_type;
+type qti-testscripts, domain, mlstrustedsubject;
 userdebug_or_eng(`
-  type qti-testscripts, domain, mlstrustedsubject;
   typeattribute  qti-testscripts coredomain;
   permissive qti-testscripts;
   init_daemon_domain(qti-testscripts)
