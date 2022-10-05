@@ -55,6 +55,7 @@
 /(system_ext|system/system_ext)/bin/qdtservice  u:object_r:vendor_qdtservice_exec:s0
 /(system|system_ext|system/system_ext)/bin/sigma_miracasthalservice            u:object_r:vendor_sigmahal_qti_exec:s0
 /(system_ext|system/system_ext)/bin/qccsyshalservice  u:object_r:vendor_qccsyshal_qti_exec:s0
+/(system_ext|system/system_ext)/bin/qccsyshal@[1-9]\.[1-9]-service u:object_r:vendor_qccsyshal_qti_exec:s0
 /(system_ext|system/system_ext)/bin/mmi         u:object_r:vendor_mmi_sys_exec:s0
 /(system_ext|system/system_ext)/bin/mmi_diag    u:object_r:vendor_mmi_sys_exec:s0
 /(system_ext|system/system_ext)/bin/qspmsvc           u:object_r:vendor_qspmsvc_exec:s0
