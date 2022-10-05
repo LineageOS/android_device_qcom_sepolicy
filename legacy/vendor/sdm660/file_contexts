@@ -161,4 +161,8 @@
 #sysfs graphics
 /sys/devices/virtual/graphics/fb0/supported_bitclk                  u:object_r:sysfs_graphics:s0
 
+/sys/devices/platform/soc/c0c4000.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/queue/discard_max_bytes  u:object_r:sysfs_mmc_host:s0
+
+/sys/devices/platform/soc/151c0000.slim/tavil-slim-pgd/wakeup/wakeup[0-9]+(/.*)?     u:object_r:sysfs_wakeup:s0
+
 /sys/devices/soc/780000.qcom,msm-core/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0

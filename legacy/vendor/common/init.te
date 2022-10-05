@@ -94,3 +94,4 @@ allow init mnt_vendor_file:lnk_file r_file_perms;
 allow init firmware_file:filesystem getattr;
 allow init proc:file w_file_perms;
 allow init bt_firmware_file:filesystem getattr;
+allow init sysfs_mmc_host:file w_file_perms;
