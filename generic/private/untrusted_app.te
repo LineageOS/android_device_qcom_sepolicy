@@ -38,3 +38,6 @@ typeattribute untrusted_app vendor_hal_sxrservice_qti_socket_fd_use_client;
 
 # allow app to be a client of DSP HAL
 hal_client_domain(untrusted_app, vendor_hal_dspmanager)
+
+# allow app to be a client of QSPM HAL
+hal_client_domain(untrusted_app, vendor_hal_qspmhal)
