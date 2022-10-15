@@ -16,6 +16,23 @@
       "message": "Maybe this works: https://git.codelinaro.org/clo/la/device/qcom/sepolicy/-/commit/b69efc22159aba49a9f5323f06c9cb8a3181ec43 ?",
       "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7402a068_f0ab9e1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2022-10-15T09:10:24Z",
+      "side": 1,
+      "message": "no, we need the other policies, especially for persist_alarm_file, so this is the minimal modification to make it work properly with updated blobs. for the same reason, reverting the \"add poweroffalarm\" commit in spolicy-legacy-um wont work",
+      "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
