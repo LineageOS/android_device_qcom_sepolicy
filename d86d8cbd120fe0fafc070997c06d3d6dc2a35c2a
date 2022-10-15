@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a4debc7_33d8f637",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21651
+      },
+      "writtenOn": "2022-10-15T06:08:47Z",
+      "side": 1,
+      "message": "Maybe this works: https://git.codelinaro.org/clo/la/device/qcom/sepolicy/-/commit/b69efc22159aba49a9f5323f06c9cb8a3181ec43 ?",
+      "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
