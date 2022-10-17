@@ -194,6 +194,24 @@
       "message": "yeah, that\u0027s what i stated above: the process is still in the right context, so are the files on disk. still, it\u0027ll crash without modification, and i didn\u0027t want to go the mlstrustedsubject route, although your solution works, yes.",
       "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "167ddcd6_b659de00",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15609
+      },
+      "writtenOn": "2022-10-17T16:16:46Z",
+      "side": 1,
+      "message": "Yep, but the commit message is a bit confusing, as \u0027sharedUserId\u0027 is not actually ignored and this change in the SEPolicy is needed because the apk was changed to solve a different issue (also not realted to the \u0027sharedUserId\u0027).",
+      "parentUuid": "95719c76_e3f0f7a8",
+      "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
