@@ -143,6 +143,23 @@
       "message": "@bruno: i did care ;) also it doesn\u0027t do what\u0027s expected if you set the alarm, reboot, and then power it off, as the database can\u0027t be written.\n\n@timi: https://developer.android.com/guide/topics/manifest/manifest-element#uid\ndeprecated as of api 29, ignored for new installs as of 32.\n\n@both: logcat is pretty verbose about it, actually, first firing some warnings, then selinux denials which cause the apk to crash (at least all of the ones i tried: op8998, xiaomi8998, pro1) when setting an alarm because the db can\u0027t be written to /data/user_de/0/com.qti.qualcomm.poweroffalarm. though the process context is correct and the context of the on-disk files too.\n\nthat\u0027s why all apks i found \u003e api30 removed this flag altogether, thus running in in a generated app user.\n\nalso, sadly, just replacing the apk didn\u0027t work for us on op8998, because while the apk itself would then work, the poweroffalarm hal crapped out due to unexpected callbacks. hence the reason for nicking it altogether from sdm845, which works flawlessly",
       "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4637145_4682b820",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2022-10-17T14:18:30Z",
+      "side": 1,
+      "message": "also, tbh, not even sure if this problem didn\u0027t occur on 19 already, can\u0027t go back to check. but this seems to be the same issue, except the user didn\u0027t capture the selinux denial: https://gitlab.com/LineageOS/issues/android/-/issues/4770",
+      "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
