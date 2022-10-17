@@ -85,6 +85,24 @@
       "message": "and you are saying poweroffalarm works for you including writing to its local data dir in user_de/0/com.qti.qualcomm.poweroffalarm? i would like to see logs of that",
       "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31141c2f_504e6460",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-10-17T09:51:50Z",
+      "side": 1,
+      "message": "I didn\u0027t even care to look at logs since poweroffalarm just does what\u0027s expected.",
+      "parentUuid": "06fab485_8ba19b11",
+      "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
