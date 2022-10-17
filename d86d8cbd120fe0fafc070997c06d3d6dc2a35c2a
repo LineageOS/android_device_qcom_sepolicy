@@ -160,6 +160,23 @@
       "message": "also, tbh, not even sure if this problem didn\u0027t occur on 19 already, can\u0027t go back to check. but this seems to be the same issue, except the user didn\u0027t capture the selinux denial: https://gitlab.com/LineageOS/issues/android/-/issues/4770",
       "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68b0a017_a84a9f61",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15609
+      },
+      "writtenOn": "2022-10-17T14:32:16Z",
+      "side": 1,
+      "message": "https://github.com/roberto-sartori-gl/device_qcom_sepolicy/commit/2ffa8503342850a5c586420acb6f0e72dbc0664d\n\nPowerOffAlarm works fine with this on A13 on msm8998. I understand this may be an hack, just saying that it is a selinux issue (present also on a12).\nThe app runs as system UID on A13: the sharedUserId is still considered on A13 (for example, the Settings app is still using it). \n\nOn the device, the app is running as system:\n\n$ adb shell ps -A | grep -i power\n...\nsystem        3147   878 14370896 57352 0                   0 S com.qualcomm.qti.poweroffalarm",
+      "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
