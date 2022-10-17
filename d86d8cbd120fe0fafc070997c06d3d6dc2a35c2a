@@ -177,6 +177,23 @@
       "message": "https://github.com/roberto-sartori-gl/device_qcom_sepolicy/commit/2ffa8503342850a5c586420acb6f0e72dbc0664d\n\nPowerOffAlarm works fine with this on A13 on msm8998. I understand this may be an hack, just saying that it is a selinux issue (present also on a12).\nThe app runs as system UID on A13: the sharedUserId is still considered on A13 (for example, the Settings app is still using it). \n\nOn the device, the app is running as system:\n\n$ adb shell ps -A | grep -i power\n...\nsystem        3147   878 14370896 57352 0                   0 S com.qualcomm.qti.poweroffalarm",
       "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95719c76_e3f0f7a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2022-10-17T14:34:56Z",
+      "side": 1,
+      "message": "yeah, that\u0027s what i stated above: the process is still in the right context, so are the files on disk. still, it\u0027ll crash without modification, and i didn\u0027t want to go the mlstrustedsubject route, although your solution works, yes.",
+      "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
