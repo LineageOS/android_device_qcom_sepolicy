@@ -68,6 +68,23 @@
       "message": "as mentioned in the commit msg: an apk without sharedUserId\u003dsystem in the manifest.",
       "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06fab485_8ba19b11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2022-10-17T09:33:58Z",
+      "side": 1,
+      "message": "and you are saying poweroffalarm works for you including writing to its local data dir in user_de/0/com.qti.qualcomm.poweroffalarm? i would like to see logs of that",
+      "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
