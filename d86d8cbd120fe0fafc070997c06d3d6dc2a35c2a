@@ -230,6 +230,24 @@
       "parentUuid": "31141c2f_504e6460",
       "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05675e95_48b2f2bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2022-10-18T10:40:55Z",
+      "side": 1,
+      "message": "actually no, the apk changed exactly because of this ;) when modifying the old one to remove the sharedUserId the data directory access works, but then talking to the hal kinda breaks. not worth the effort debugging this any further for such a low-key \"feature\" imo",
+      "parentUuid": "167ddcd6_b659de00",
+      "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
