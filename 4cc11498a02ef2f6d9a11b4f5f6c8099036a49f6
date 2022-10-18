@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5baf0f47_2e916f3d",
+        "filename": "legacy/vendor/common/poweroffalarm_app.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2022-10-18T16:26:29Z",
+      "side": 0,
+      "message": "we might need those, as commented in the other patchset",
+      "revId": "4cc11498a02ef2f6d9a11b4f5f6c8099036a49f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
