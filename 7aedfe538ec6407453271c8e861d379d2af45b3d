@@ -50,6 +50,23 @@
       "message": "orrrrrrrrrrrr... maybe not",
       "revId": "7aedfe538ec6407453271c8e861d379d2af45b3d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a15a941_8defe302",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2022-10-18T16:33:13Z",
+      "side": 1,
+      "message": "--insert random expletive here--\nhttps://github.com/LineageOS/android_device_qcom_sepolicy_vndr/commit/369fb1692925092db48bd4b9a7e805828d09b1e2",
+      "revId": "7aedfe538ec6407453271c8e861d379d2af45b3d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
