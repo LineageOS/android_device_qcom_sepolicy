@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "955f68d5_05aea165",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-10-18T22:02:33Z",
+      "side": 1,
+      "message": "Might be better to rebase on top of https://review.lineageos.org/c/LineageOS/android_device_qcom_sepolicy/+/342024 and explain why levelFrom\u003d needs to go away.",
+      "revId": "dbd07827fe42e69a8aa906766a838d6a46bb491e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
