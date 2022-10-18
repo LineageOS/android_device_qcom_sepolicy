@@ -16,6 +16,23 @@
       "message": "This works: https://review.lineageos.org/c/LineageOS/android_device_qcom_sepolicy/+/342023. Apparently, the rules to allow writing to persist file is no longer needed in newer apps.",
       "revId": "7aedfe538ec6407453271c8e861d379d2af45b3d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf05d009_63111dc9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2022-10-18T15:47:59Z",
+      "side": 1,
+      "message": "yup, confirm for newer apps. going with that as discussed",
+      "revId": "7aedfe538ec6407453271c8e861d379d2af45b3d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
