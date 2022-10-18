@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8ed1840_3bc2d418",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-10-18T16:43:19Z",
+      "side": 1,
+      "message": "This is the proper thing: https://review.lineageos.org/c/LineageOS/android_device_qcom_sepolicy/+/342024. Dunno what CLO is doing.",
+      "revId": "5231ced6bb725ca29da37538082ed25bfde97a77",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
