@@ -212,6 +212,24 @@
       "parentUuid": "95719c76_e3f0f7a8",
       "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34d0553d_fa4dfbef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-10-18T09:53:02Z",
+      "side": 1,
+      "message": "I take this back, it seems that I was still running an A12 build. With A13 it stopped working indeed. I will try with this change.",
+      "parentUuid": "31141c2f_504e6460",
+      "revId": "d86d8cbd120fe0fafc070997c06d3d6dc2a35c2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
