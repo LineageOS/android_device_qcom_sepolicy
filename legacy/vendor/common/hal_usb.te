@@ -25,7 +25,17 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow hal_usb_default sysfs_usbpd_device:dir r_dir_perms;
-allow hal_usb_default sysfs_usbpd_device:lnk_file r_file_perms;
-allow hal_usb_default sysfs_usbpd_device:file rw_file_perms;
-r_dir_file(hal_usb_default, sysfs_usb_supply);
+type hal_usb_qti, domain;
+hal_server_domain(hal_usb_qti, hal_usb_gadget)
+hal_server_domain(hal_usb_qti, hal_usb)
+
+type hal_usb_qti_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_usb_qti)
+
+set_prop(hal_usb_qti, vendor_usb_prop)
+
+allow hal_usb_qti sysfs_usbpd_device:dir r_dir_perms;
+allow hal_usb_qti sysfs_usbpd_device:lnk_file r_file_perms;
+allow hal_usb_qti sysfs_usbpd_device:file rw_file_perms;
+r_dir_file(hal_usb_qti, sysfs_battery_supply)
+r_dir_file(hal_usb_qti, sysfs_usb_supply)
