@@ -85,9 +85,11 @@ vendor.iop.enable_prefetch_ofr   u:object_r:vendor_iop_prop:s0
 vendor.perf.gestureflingboost.enable  u:object_r:vendor_scroll_prop:s0
 vendor.qti.izat.           u:object_r:vendor_location_prop:s0
 vendor.usb.                u:object_r:vendor_usb_prop:s0
+vendor.sys.usb.            u:object_r:vendor_usb_prop:s0
 vendor.wlan.driver.version       u:object_r:vendor_wifi_version:s0
 vendor.wlan.firmware.version     u:object_r:vendor_wifi_version:s0
 persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
+ro.vendor.usb.             u:object_r:vendor_usb_prop:s0
 ro.vendor.dbg.coresight.cfg_file     u:object_r:vendor_coresight_prop:s0
 vendor.audio.              u:object_r:vendor_audio_prop:s0
 vendor.voice.              u:object_r:vendor_audio_prop:s0
