@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #Add new domain for DataServices
 # Needed for CNEService , uceShimService and other connectivity services
@@ -47,7 +51,7 @@ user=_app seinfo=platform name=com.qualcomm.wfd.service:wfd_service domain=vendo
 user=_app seinfo=platform name=com.qualcomm.wfd.client domain=vendor_wfd_app type=app_data_file levelfrom=all
 
 #Add new domain for QCC
-user=system seinfo=platform name=com.qti.qcc isPrivApp=true domain=vendor_qcc_app type=system_app_data_file
+user=_app seinfo=platform name=com.qti.qcc domain=vendor_qcc_app type=app_data_file levelFrom=all
 #Add new domain for QCCLMTP
 user=system seinfo=platform name=com.qualcomm.qti.qcclmtp isPrivApp=true domain=vendor_qcc_lmtp_app type=system_app_data_file
 #Add new domain for QCCNetstat

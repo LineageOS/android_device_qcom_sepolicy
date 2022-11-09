@@ -46,7 +46,6 @@ vendor.vpsservice                              u:object_r:vendor_vps_service:s0
 vendor.qspmsvc                                 u:object_r:vendor_qspmsvc_service:s0
 nfc_settings                                   u:object_r:nfc_service:s0
 nfc.st_ext                                     u:object_r:nfc_service:s0
-vendor.qti.gnss.ILocAidlGnss/default           u:object_r:hal_gnss_service:s0
 vendor.qvirtmgr                                u:object_r:vendor_qvirtmgr_service:s0
 vendor.qti.qesdsys.IQesdSys/default            u:object_r:vendor_qesdk_service:s0
 vendor.qti.hardware.radio.atcmdfwd.IAtCmdFwd/AtCmdFwdAidl u:object_r:radio_service:s0
