@@ -24,12 +24,16 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_seemp_data_file, core_data_file_type, data_file_type, file_type;
 type vendor_dpmd_socket, file_type, coredomain_socket;
 type vendor_dpmd_data_file, file_type, data_file_type, core_data_file_type;
 type vendor_dpmwrapper_socket, file_type, coredomain_socket, mlstrustedobject;
-type vendor_qcc_data_file, file_type, data_file_type, core_data_file_type;
+type vendor_qcc_data_file, file_type, data_file_type, core_data_file_type, mlstrustedobject;
 type vendor_qcc_app_socket, file_type, mlstrustedobject, coredomain_socket;
 type vendor_sys_sxrauxd_data_file, file_type, data_file_type, core_data_file_type;
 type vendor_sys_sxrauxd_socket, file_type, coredomain_socket;
