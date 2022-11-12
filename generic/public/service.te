@@ -25,5 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 type vendor_usta_app_service,        app_api_service, system_api_service, service_manager_type;
-type vendor_hal_displayconfig_service,      vendor_service, protected_service, service_manager_type;
-type vendor_hal_telephony_service, vendor_service, protected_service, service_manager_type;
+type vendor_hal_displayconfig_service,      hal_service_type, protected_service, service_manager_type;
+type vendor_hal_telephony_service, hal_service_type, protected_service, service_manager_type;
