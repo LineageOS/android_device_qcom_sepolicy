@@ -16,6 +16,24 @@
       "message": "I could not reproduce this breakage.\nMaybe you need to adjust your device specific sepolicy?",
       "revId": "75c8266f71c3306282c51d4efcf6048dd28e4f7e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2489c562_97416995",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 23878
+      },
+      "writtenOn": "2022-11-24T13:30:02Z",
+      "side": 1,
+      "message": "Hmm I\u0027m testing on https://github.com/LineageOS/android_device_motorola_sdm632-common/tree/lineage-20 with ocean device which doesn\u0027t have sepolicy device side.\n\nwhat device did you test on?\n\nI\u0027m not really a expert on sepolicy but the log complains of items not device side.",
+      "parentUuid": "9890f6d9_c5b03957",
+      "revId": "75c8266f71c3306282c51d4efcf6048dd28e4f7e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
