@@ -25,6 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 type vendor_cne_service,                 service_manager_type;
+type vendor_imsdc_service,               service_manager_type;
 type vendor_seemp_service,               service_manager_type;
 type vendor_dpmservice,                  service_manager_type;
 type vendor_MinkBinderSvc,               app_api_service, service_manager_type;
