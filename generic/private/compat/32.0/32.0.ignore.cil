@@ -6,4 +6,5 @@
 (typeattributeset new_objects
   ( new_objects
     vendor_hal_minkipc_service
-    vendor_afp_prop))
+    vendor_afp_prop
+    qsguard))
