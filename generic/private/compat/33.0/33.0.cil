@@ -113,7 +113,6 @@
 (typeattributeset vendor_qcc_utils_app_33_0 (vendor_qcc_utils_app))
 (typeattributeset vendor_qccsyshal_hwservice_33_0 (vendor_qccsyshal_hwservice))
 (typeattributeset vendor_qesdk_service_33_0 (vendor_qesdk_service))
-(typeattributeset vendor_qesdk_service_new_33_0 (vendor_qesdk_service_new))
 (typeattributeset vendor_qspmsvc_33_0 (vendor_qspmsvc))
 (typeattributeset vendor_qtelephony_33_0 (vendor_qtelephony))
 (typeattributeset vendor_qvirtmgr_33_0 (vendor_qvirtmgr))
