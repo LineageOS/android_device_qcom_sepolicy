@@ -417,3 +417,8 @@ attribute vendor_hal_qnextgenhal_server;
 attribute vendor_hal_display_capture_service_qti;
 attribute vendor_hal_display_capture_service_qti_client;
 attribute vendor_hal_display_capture_service_qti_server;
+
+#attributes for aks gamepad hal
+attribute hal_gamepad;
+attribute hal_gamepad_client;
+attribute hal_gamepad_server;
