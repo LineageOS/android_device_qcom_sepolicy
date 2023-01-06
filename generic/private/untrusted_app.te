@@ -41,3 +41,6 @@ hal_client_domain(untrusted_app, vendor_hal_dspmanager)
 
 # allow app to be a client of QSPM HAL
 hal_client_domain(untrusted_app, vendor_hal_qspmhal)
+
+# allow app to be a client of AKS Gamepad HAL
+hal_client_domain(untrusted_app, hal_gamepad)

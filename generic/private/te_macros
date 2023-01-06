@@ -41,3 +41,11 @@ define(`qesdk_app_access', `
 hal_client_domain($1, vendor_hal_qesdhal)
 ')
 #####################################
+
+#####################################
+# aksgamepad_app_access(clientdomain)
+# allow hal_gamepad to use
+define(`aksgamepad_app_access', `
+hal_client_domain($1, hal_gamepad)
+')
+#####################################
