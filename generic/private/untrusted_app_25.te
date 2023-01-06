@@ -35,3 +35,6 @@ hal_client_domain(untrusted_app_25, vendor_hal_unsignedhexlp)
 
 # Allow access to FDs owned by Hexlp service
 allow untrusted_app_25 vendor_hal_hexlp_server:fd use;
+
+# allow app to be a client of AKS Gamepad HAL
+hal_client_domain(untrusted_app_25, hal_gamepad)
