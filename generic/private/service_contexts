@@ -25,6 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 cneservice                                           u:object_r:vendor_cne_service:s0
+vendor.imsdcservice                                  u:object_r:vendor_imsdc_service:s0
 com.qualcomm.qti.ustaservice.USTAServiceImpl         u:object_r:vendor_usta_app_service:s0
 dpmservice                                     u:object_r:vendor_dpmservice:s0
 MinkBinderSvc                                  u:object_r:vendor_MinkBinderSvc:s0
