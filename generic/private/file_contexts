@@ -24,6 +24,12 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+#Changes from Qualcomm Innovation Center are provided under the following license:
+
+#Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
 /data/misc/elabel(/.*)?         u:object_r:vendor_elabel_data_file:s0
 /data/misc/seemp(/.*)?          u:object_r:vendor_seemp_data_file:s0
 
@@ -61,6 +67,7 @@
 /(system_ext|system/system_ext)/bin/qspmsvc           u:object_r:vendor_qspmsvc_exec:s0
 /(system_ext|system/system_ext)/bin/perfetto_dump\.sh           u:object_r:vendor_perfetto_dump_exec:s0
 /(system_ext|system/system_ext)/bin/qxrsplitauxservice  u:object_r:vendor_sys_sxrauxd_exec:s0
+/(system_ext|system/system_ext)/bin/qsguard  u:object_r:qsguard_exec:s0
 
 ####### data files ################
 /data/dpm(/.*)?                                 u:object_r:vendor_dpmd_data_file:s0
