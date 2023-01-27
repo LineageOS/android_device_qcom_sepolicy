@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 cneservice                                           u:object_r:vendor_cne_service:s0
 com.qualcomm.qti.ustaservice.USTAServiceImpl         u:object_r:vendor_usta_app_service:s0
 dpmservice                                     u:object_r:vendor_dpmservice:s0
@@ -50,3 +55,4 @@ vendor.qti.gnss.ILocAidlGnss/default           u:object_r:hal_gnss_service:s0
 vendor.qvirtmgr                                u:object_r:vendor_qvirtmgr_service:s0
 vendor.qti.qesdsys.IQesdSys/default            u:object_r:vendor_qesdk_service:s0
 vendor.qti.hardware.radio.atcmdfwd.IAtCmdFwd/AtCmdFwdAidl u:object_r:radio_service:s0
+vendor.qti.qvirt.IVirtualizationService/default   u:object_r:vendor_hal_qvirt_service:s0
