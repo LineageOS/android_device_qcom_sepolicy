@@ -312,3 +312,7 @@ attribute vendor_hal_atfwd_client;
 attribute vendor_hal_qvirtservice;
 attribute vendor_hal_qvirtservice_server;
 attribute vendor_hal_qvirtservice_client;
+
+attribute vendor_hal_imsrtphal;
+attribute vendor_hal_imsrtphal_client;
+attribute vendor_hal_imsrtphal_server;
