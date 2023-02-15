@@ -30,6 +30,10 @@ allow radio mediaextractor_service:service_manager find;
 
 add_hwservice(radio, vendor_hal_atfwd_hwservice);
 
+# IAtFwd Stable AIDL
+binder_use(radio)
+hal_client_domain(radio, vendor_hal_atfwd)
+
 userdebug_or_eng(`
   unix_socket_send(radio,vendor_seempdw, vendor_seempd)
 ')
