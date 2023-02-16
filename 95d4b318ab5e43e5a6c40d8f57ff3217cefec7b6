@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "407598d2_083fe296",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2023-02-16T21:04:08Z",
+      "side": 1,
+      "message": "isn\u0027t this oneplus specific?",
+      "revId": "95d4b318ab5e43e5a6c40d8f57ff3217cefec7b6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
