@@ -77,3 +77,6 @@ binder_call(vendor_wfdservice,vendor_sigmahal_qti);
 userdebug_or_eng(`
   get_prop(vendor_wfdservice, vendor_wfd_sys_debug_prop)
 ')
+userdebug_or_eng(`
+  get_prop(vendor_wfdservice, vendor_wfd_sys_prop)
+')
