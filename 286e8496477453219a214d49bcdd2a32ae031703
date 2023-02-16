@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a594e68_abf3f197",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2023-02-16T08:48:21Z",
+      "side": 1,
+      "message": "takes care of\n\ninit    : type\u003d1400 audit(0.0:27): avc: denied { write } for name\u003d\"discard_max_bytes\" dev\u003d\"sysfs\" ino\u003d41733 scontext\u003du:r:init:s0 tcontext\u003du:object_r:sysfs:s0 tclass\u003dfile permissive\u003d0\n\ninit : Command \u0027write /dev/sys/block/by-name/rootdisk/queue/discard_max_bytes 134217728\u0027 action\u003dboot (/system/etc/init/hw/init.rc:1108) took 0ms and failed: Unable to write to file \u0027/dev/sys/block/by-name/rootdisk/queue/discard_max_bytes\u0027: open() failed: Permission denied",
+      "revId": "286e8496477453219a214d49bcdd2a32ae031703",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
