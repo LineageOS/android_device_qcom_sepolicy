@@ -33,6 +33,23 @@
       "message": "i\u0027ve checked other 8998 devices, the nodes exist there, too.\npro1, nash specifically (in addition to dumpling)",
       "revId": "95d4b318ab5e43e5a6c40d8f57ff3217cefec7b6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37d0c26e_8027fdcf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2023-02-16T22:10:27Z",
+      "side": 1,
+      "message": "and these are labelled in the qcom sepolicy for sdm845, so i decided to follow along",
+      "revId": "95d4b318ab5e43e5a6c40d8f57ff3217cefec7b6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
