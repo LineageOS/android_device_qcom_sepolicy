@@ -70,7 +70,7 @@ vendor_restricted_prop(vendor_am_prop);
 #Needed for  ubwc support
 vendor_restricted_prop(vendor_gralloc_prop);
 
-vendor_restricted_prop(vendor_fm_prop);
+vendor_public_prop(vendor_fm_prop);
 vendor_restricted_prop(chgdiabled_prop);
 
 vendor_restricted_prop(vendor_xlat_prop);
