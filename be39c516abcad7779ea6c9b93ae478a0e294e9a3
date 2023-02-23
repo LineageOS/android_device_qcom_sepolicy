@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be8cc21a_e89aed94",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2023-02-23T12:42:33Z",
+      "side": 1,
+      "message": "Yeah it\u0027s cringe, but at least it\u0027s required for me to get FM2 working...",
+      "revId": "be39c516abcad7779ea6c9b93ae478a0e294e9a3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
