@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc76843d_79138a71",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2023-03-10T11:48:08Z",
+      "side": 1,
+      "message": "This is already merged in the vendor sepolicy repo: https://review.lineageos.org/c/LineageOS/android_device_qcom_sepolicy_vndr/+/341985",
+      "revId": "00aabe6875790e4609f83a780ed0dd64df5ecaf6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
