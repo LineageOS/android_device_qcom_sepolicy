@@ -57,3 +57,5 @@ vendor.qvirtmgr                                u:object_r:vendor_qvirtmgr_servic
 vendor.qti.qesdsys.IQesdSys/default            u:object_r:vendor_qesdk_service:s0
 vendor.qti.hardware.radio.atcmdfwd.IAtCmdFwd/AtCmdFwdAidl u:object_r:radio_service:s0
 vendor.qti.qvirt.IVirtualizationService/default   u:object_r:vendor_hal_qvirt_service:s0
+virtual_keyboard                          u:object_r:virtual_keyboard_service:s0
+cross_device_service                      u:object_r:cross_device_service:s0

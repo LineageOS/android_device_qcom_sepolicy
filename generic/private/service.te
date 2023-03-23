@@ -39,4 +39,6 @@ type vendor_wigig_service,               app_api_service, system_server_service,
 type vendor_vps_service,          app_api_service, service_manager_type;
 type vendor_qspmsvc_service,             app_api_service, service_manager_type;
 type vendor_qvirtmgr_service,            service_manager_type;
+type virtual_keyboard_service,      service_manager_type;
+type cross_device_service,          app_api_service, system_server_service, service_manager_type;
 
