@@ -31,3 +31,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 qesdk_app_access(untrusted_app_32);
+
+# allow app to be a client of DSP HAL
+hal_client_domain(untrusted_app_32, vendor_hal_dspmanager)
