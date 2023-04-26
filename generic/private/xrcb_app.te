@@ -35,4 +35,4 @@ hal_client_domain(vendor_xrcb_app, vendor_hal_qvrservice_qti);
 hal_client_domain(vendor_xrcb_app, vendor_hal_sxrservice_qti);
 hal_client_domain(vendor_xrcb_app, vendor_hal_perf);
 allow vendor_xrcb_app app_api_service:service_manager find;
-get_prop(vendor_xrcb_app, vendor_xrcb_prop);
+set_prop(vendor_xrcb_app, vendor_xrcb_prop);
