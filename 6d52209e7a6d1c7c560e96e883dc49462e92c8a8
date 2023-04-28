@@ -16,6 +16,24 @@
       "message": "Use vendor.hw.fm.init",
       "revId": "6d52209e7a6d1c7c560e96e883dc49462e92c8a8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e8eaede_c206c5ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2023-04-28T15:50:41Z",
+      "side": 1,
+      "message": "it gives a neverallow if i try to use vendor.hw.fm.init label :/ https://gist.github.com/ItsVixano/aa1e48280f505648e00aa26146008851\n\nI would accept other solutions for it, currently FMRadio is on an unusable state (the app crashes after leaving it on backgroud; after i record a session and i press \"LISTEN\", the app would crash; and more)",
+      "parentUuid": "7e264fb6_a8b47b75",
+      "revId": "6d52209e7a6d1c7c560e96e883dc49462e92c8a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
