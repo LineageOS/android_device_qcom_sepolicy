@@ -3,4 +3,4 @@
 
 allow init vendor_vm_qti_system_file:dir mounton;
 allow init vendor_vm_qti_system_file:file r_file_perms;
-allow init vendor_vm_qti_system_file:dir { getattr search };
+allow init vendor_vm_qti_system_file:dir { getattr search read };
