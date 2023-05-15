@@ -68,7 +68,7 @@
 /(system_ext|system/system_ext)/bin/perfetto_dump\.sh           u:object_r:vendor_perfetto_dump_exec:s0
 /(system_ext|system/system_ext)/bin/qxrsplitauxservice  u:object_r:vendor_sys_sxrauxd_exec:s0
 /(system_ext|system/system_ext)/bin/qsguard  u:object_r:qsguard_exec:s0
-/system_ext/bin/virtual_keyboard     u:object_r:virtual_keyboard_exec:s0
+/system_ext/bin/virtual_keyboard     u:object_r:vendor_virtual_keyboard_exec:s0
 
 ####### data files ################
 /data/dpm(/.*)?                                 u:object_r:vendor_dpmd_data_file:s0

@@ -79,3 +79,6 @@ user=_app seinfo=platform name=com.qualcomm.qti.workloadclassifier domain=vendor
 
 #Add new domain for xrcb app
 user=_app seinfo=platform name=com.qualcomm.qti.xrcb domain=vendor_xrcb_app type=app_data_file levelFrom=all
+
+# Add new domain for device integration service app
+user=_app isPrivApp=true name=com.microsoft.deviceintegrationservice domain=device_integration type=privapp_data_file levelFrom=user
