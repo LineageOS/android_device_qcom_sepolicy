@@ -41,7 +41,12 @@ allow bluetooth media_rw_data_file:file create_file_perms;
 #allow proc_sysrq access for crash dump
 userdebug_or_eng(`
  allow bluetooth proc_sysrq:file w_file_perms;
- allow bluetooth qti_debugfs:file r_file_perms;
+')
+
+no_debugfs_restriction(`
+  userdebug_or_eng(`
+    allow bluetooth qti_debugfs:file r_file_perms;
+  ')
 ')
 
 allow bluetooth {

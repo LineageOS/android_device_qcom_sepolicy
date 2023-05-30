@@ -74,7 +74,11 @@ allowxperm domain domain:icmp_socket ioctl { unpriv_sock_ioctls unpriv_tty_ioctl
 get_prop(domain, vendor_security_patch_level_prop)
 get_prop(domain, vendor_public_vendor_default_prop)
 
-allow domain qti_debugfs:dir search;
+no_debugfs_restriction(`
+  userdebug_or_eng(`
+    allow domain qti_debugfs:dir search;
+  ')
+')
 
 # allow all context to read sysfs_kgsl
 allow { domain - isolated_app } sysfs_kgsl:dir search;

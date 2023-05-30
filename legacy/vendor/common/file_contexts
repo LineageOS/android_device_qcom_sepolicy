@@ -527,7 +527,6 @@
 /sys/module/vmpressure(/.*)?                                        u:object_r:sysfs_vmpressure:s0
 /sys/board_properties/virtualkeys.synaptics_dsx                     u:object_r:sysfs_virtualkeys:s0
 /sys/board_properties/virtualkeys.ft5x06_ts                         u:object_r:sysfs_virtualkeys:s0
-/sys/kernel/debug/ipc_logging(/.*)?                                 u:object_r:qti_debugfs:s0
 
 ###################################
 # data files-- only vendor paths should be added

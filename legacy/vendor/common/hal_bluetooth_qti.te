@@ -69,9 +69,14 @@ allow hal_bluetooth_qti ramdump_vendor_data_file:file create_file_perms;
 allow hal_bluetooth_qti ramdump_vendor_data_file:dir rw_dir_perms;
 
 allow hal_bluetooth proc_sysrq:file w_file_perms;
-allow hal_bluetooth_qti qti_debugfs:file r_file_perms;
-allow hal_bluetooth_qti qti_debugfs:dir rw_dir_perms;
 allow hal_bluetooth_qti self:{ socket qipcrtr_socket } create_socket_perms_no_ioctl;
+')
+
+no_debugfs_restriction(`
+  userdebug_or_eng(`
+    allow hal_bluetooth_qti qti_debugfs:file r_file_perms;
+    allow hal_bluetooth_qti qti_debugfs:dir rw_dir_perms;
+  ')
 ')
 
 hal_server_domain(hal_bluetooth_qti, hal_fm)

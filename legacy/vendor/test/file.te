@@ -31,9 +31,5 @@ type vendor_gles_data_file, file_type, data_file_type;
 # To allow GPU application to read "/data/misc/gpu" path
 type system_gles_data_file, core_data_file_type, file_type, data_file_type;
 
-# /sys/kernel/debug/binder/state file
-# read by system_server only in userdebug builds
-type binder_state, file_type, debugfs_type;
-
 # sensors data file type for script access by test apps
 type sensors_data_file, file_type, data_file_type, core_data_file_type;

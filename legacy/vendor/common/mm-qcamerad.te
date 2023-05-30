@@ -31,8 +31,6 @@ init_daemon_domain(mm-qcamerad)
 
 #added to support EZTune for camera
 userdebug_or_eng(`
-  allow mm-qcamerad qti_debugfs:dir r_dir_perms;
-  allow mm-qcamerad qti_debugfs:file read;
   #allow mm-qcamerad self:tcp_socket create_stream_socket_perms;
   allow mm-qcamerad node:tcp_socket node_bind;
 
@@ -42,6 +40,13 @@ userdebug_or_eng(`
 
   # mm-qcamerad needs to set persist.camera. property
   set_prop(mm-qcamerad, camera_prop)
+')
+
+no_debugfs_restriction(`
+  userdebug_or_eng(`
+    allow mm-qcamerad qti_debugfs:dir r_dir_perms;
+    allow mm-qcamerad qti_debugfs:file read;
+  ')
 ')
 
 #Communicate with user land process through domain socket

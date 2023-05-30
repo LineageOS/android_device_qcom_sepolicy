@@ -41,8 +41,11 @@ net_domain(RIDL)
 allow RIDL RIDL_data_file:dir create_dir_perms;
 allow RIDL RIDL_data_file:file create_file_perms;
 allow RIDL RIDL_data_file:lnk_file { create read unlink };
-userdebug_or_eng(`
-allow RIDL qti_debugfs:file read;
+
+no_debugfs_restriction(`
+  userdebug_or_eng(`
+    allow RIDL qti_debugfs:file read;
+  ')
 ')
 
 # ver_info.txt
