@@ -93,15 +93,12 @@
 /(vendor|system/vendor)/bin/sns.*               u:object_r:sensors_test_exec:s0
 #for testscripts support
 /(vendor|system/vendor)/bin/init\.qcom\.vendor\.testscripts\.sh u:object_r:vendor-qti-testscripts_exec:s0
-/sys/kernel/debug/dsi_dual_samsung_cmd(/.*)?                    u:object_r:qti_debugfs:s0
 
 #Context for GPU applications
 /data/vendor/gpu(/.*)?                                          u:object_r:vendor_gles_data_file:s0
 
 #Used only in debug build to enable gpu config settings
 /data/misc/gpu(/.*)?                                            u:object_r:system_gles_data_file:s0
-
-/sys/kernel/debug/binder/state                                  u:object_r:binder_state:s0
 
 # Sensors scripts for test app
 /data/sensors/scripts(/.*)?                                     u:object_r:sensors_data_file:s0

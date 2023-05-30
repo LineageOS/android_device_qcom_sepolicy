@@ -25,8 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-no_debugfs_restriction(`
-  userdebug_or_eng(`
-    allow init binder_state:file r_file_perms;
-  ')
-')
+# /sys/kernel/debug/binder/state file
+# read by system_server only in userdebug builds
+type binder_state, file_type, debugfs_type;

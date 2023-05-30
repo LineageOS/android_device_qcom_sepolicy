@@ -27,7 +27,9 @@
 
 #Access to power costs for testing
 
-userdebug_or_eng(`
-allow energyawareness qti_debugfs:dir r_dir_perms;
-allow energyawareness qti_debugfs:file rw_file_perms;
+no_debugfs_restriction(`
+  userdebug_or_eng(`
+    allow energyawareness qti_debugfs:dir r_dir_perms;
+    allow energyawareness qti_debugfs:file rw_file_perms;
+  ')
 ')

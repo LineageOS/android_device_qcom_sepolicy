@@ -25,9 +25,11 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-userdebug_or_eng(`
-allow audioserver qti_debugfs:dir r_dir_perms;
-allow audioserver qti_debugfs:file rw_file_perms;
+no_debugfs_restriction(`
+  userdebug_or_eng(`
+    allow audioserver qti_debugfs:dir r_dir_perms;
+    allow audioserver qti_debugfs:file rw_file_perms;
+  ')
 ')
 
 # Allow audioserver to read soundcard state under /proc/asound
