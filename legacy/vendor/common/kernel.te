@@ -29,8 +29,13 @@ allow kernel block_device:blk_file rw_file_perms;
 
 userdebug_or_eng(`
   allow kernel self:{ socket qipcrtr_socket } create_socket_perms_no_ioctl;
-  r_dir_file(kernel, qti_debugfs);
-  allow kernel debugfs_mmc:dir search;
+')
+
+no_debugfs_restriction(`
+  userdebug_or_eng(`
+    r_dir_file(kernel, qti_debugfs);
+    allow kernel debugfs_mmc:dir search;
+  ')
 ')
 
 # Access firmware_file

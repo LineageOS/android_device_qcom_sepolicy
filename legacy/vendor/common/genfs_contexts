@@ -54,7 +54,6 @@ genfscon sysfs /devices/soc/soc:qcom,memlat-cpu2/devfreq u:object_r:sysfs_devfre
 genfscon sysfs /devices/soc/soc:qcom,memlat-cpu4/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/soc/soc:qcom,memlat-cpu6/devfreq u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/soc/soc:qcom,mincpubw/devfreq u:object_r:sysfs_devfreq:s0
-genfscon debugfs /kgsl/proc u:object_r:qti_debugfs:s0
 genfscon sysfs /kernel/wcd_cpe0 u:object_r:sysfs_audio:s0
 genfscon sysfs /devices/virtual/thermal u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/virtual/kgsl/kgsl/proc u:object_r:sysfs_kgsl_proc:s0
