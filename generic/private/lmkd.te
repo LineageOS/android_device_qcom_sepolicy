@@ -1,0 +1,5 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+hal_client_domain(lmkd, vendor_hal_perf)
+binder_call(lmkd, servicemanager)
