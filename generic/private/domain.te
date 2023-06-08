@@ -27,3 +27,5 @@
 
 get_prop(domain, vendor_exported_system_prop)
 get_prop(domain, vendor_exported_odm_prop)
+
+dontaudit domain vendor_afp_prop:file r_file_perms;

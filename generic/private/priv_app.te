@@ -31,6 +31,5 @@ allow priv_app vendor_dpmtcm_socket:sock_file w_file_perms;
 allow priv_app vendor_dpmd:unix_stream_socket connectto;
 # QVA app need to find soundtrigger_middleware_service
 allow priv_app soundtrigger_middleware_service:service_manager find;
-allow priv_app virtual_keyboard_service:service_manager find;
 
 unix_socket_connect(priv_app, vendor_dpmtcm, vendor_tcmd);

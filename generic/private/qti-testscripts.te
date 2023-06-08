@@ -97,4 +97,7 @@ userdebug_or_eng(`
 
 # allow lmkd to kill tasks with positive oom_score_adj under memory pressure
   allow lmkd qti-testscripts:process { setsched sigkill };
+
+  hal_client_domain(qti-testscripts, vendor_hal_diaghal);
+  hwbinder_use(qti-testscripts)
 ')

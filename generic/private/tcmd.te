@@ -38,5 +38,5 @@ set_prop(vendor_tcmd, vendor_persist_tcm_prop)
 #allow vendor_tcmd to create socket
 allow vendor_tcmd self:socket create_socket_perms_no_ioctl;
 set_prop(vendor_tcmd, ctl_tcmd_prop)
-
+binder_use(vendor_tcmd)
 hal_client_domain(vendor_tcmd,vendor_hal_dpmapiservice_qti);
