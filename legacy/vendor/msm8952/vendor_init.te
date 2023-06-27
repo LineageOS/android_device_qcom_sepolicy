@@ -1,0 +1,5 @@
+# Access vendor.media.msm8956hw
+set_prop(vendor_init, vendor_media_msm8956hw_prop)
+
+# Access vendor.video.disable.ubwc
+set_prop(vendor_init, vendor_video_prop)
