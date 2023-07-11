@@ -278,6 +278,10 @@ attribute hal_wificfr;
 attribute hal_wificfr_client;
 attribute hal_wificfr_server;
 
+attribute vendor_hal_umd;
+attribute vendor_hal_umd_client;
+attribute vendor_hal_umd_server;
+
 attribute vendor_hal_sxrservice_qti;
 attribute vendor_hal_sxrservice_qti_client;
 attribute vendor_hal_sxrservice_qti_server;
@@ -303,3 +307,8 @@ attribute vendor_hal_minkipc_server;
 
 #custom hal server domain attribute
 attribute system_halserverdomain;
+
+#attributes for aks gamepad hal
+attribute hal_gamepad;
+attribute hal_gamepad_client;
+attribute hal_gamepad_server;

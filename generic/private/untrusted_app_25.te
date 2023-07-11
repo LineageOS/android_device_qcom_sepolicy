@@ -29,3 +29,6 @@ qesdk_app_access(untrusted_app_25);
 
 # allow app to be a client of DSP HAL
 hal_client_domain(untrusted_app_25, vendor_hal_dspmanager)
+
+# allow app to be a client of AKS Gamepad HAL
+hal_client_domain(untrusted_app_25, hal_gamepad)

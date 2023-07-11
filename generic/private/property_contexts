@@ -93,6 +93,7 @@ ro.vendor.beluga.t                         u:object_r:vendor_exported_system_pro
 
 #XRCB prop
 vendor.xrcb.                               u:object_r:vendor_xrcb_prop:s0
+vendor.sxrauxd                             u:object_r:vendor_xrcb_prop:s0
 
 # bootreceiver config props
 ro.vendor.bootreceiver.enable              u:object_r:vendor_bootreceiver_prop:s0 exact bool
