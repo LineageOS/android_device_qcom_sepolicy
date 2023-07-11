@@ -32,7 +32,6 @@ app_domain(vendor_qtelephony)
 
 hwbinder_use(vendor_qtelephony);
 get_prop(vendor_qtelephony, hwservicemanager_prop);
-add_hwservice(vendor_qtelephony, vendor_hal_atfwd_hwservice);
 
 userdebug_or_eng(`
     hal_client_domain( vendor_qtelephony, vendor_hal_diaghal)
