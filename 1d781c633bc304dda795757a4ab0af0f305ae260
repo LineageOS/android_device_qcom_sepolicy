@@ -34,6 +34,23 @@
       "parentUuid": "951e0dda_de6f6d35",
       "revId": "1d781c633bc304dda795757a4ab0af0f305ae260",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b724957_723e5eb8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 22728
+      },
+      "writtenOn": "2023-07-15T00:59:26Z",
+      "side": 1,
+      "message": "Yes. will upload a change to moto msm8998-common. \nFixed device side",
+      "revId": "1d781c633bc304dda795757a4ab0af0f305ae260",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
