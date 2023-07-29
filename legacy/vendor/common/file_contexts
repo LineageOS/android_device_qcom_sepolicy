@@ -381,6 +381,7 @@
 /sys/devices/soc/qpnp-vadc-[0-9]+(/.*)?                             u:object_r:sysfs_vadc_dev:s0
 /sys/bus/spmi/devices(/.*)?                                         u:object_r:sysfs_spmi_dev:s0
 /sys/kernel/irq_helper/irq_blacklist_on                             u:object_r:vendor_sysfs_irqbalance:s0
+/sys/devices/virtual/graphics/fb([0-3])+/idle_state                 u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/idle_time                  u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/dynamic_fps                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/product_description        u:object_r:sysfs_graphics:s0
