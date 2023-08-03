@@ -320,3 +320,8 @@ attribute vendor_hal_qvirtservice_client;
 attribute vendor_hal_imsrtphal;
 attribute vendor_hal_imsrtphal_client;
 attribute vendor_hal_imsrtphal_server;
+
+#attributes for QSPA aidl
+attribute vendor_hal_qspa_qti;
+attribute vendor_hal_qspa_qti_client;
+attribute vendor_hal_qspa_qti_server;
