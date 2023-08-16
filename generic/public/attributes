@@ -170,6 +170,10 @@ attribute vendor_hal_vpp;
 attribute vendor_hal_vpp_client;
 attribute vendor_hal_vpp_server;
 
+attribute vendor_hal_hexlp;
+attribute vendor_hal_hexlp_client;
+attribute vendor_hal_hexlp_server;
+
 attribute vendor_hal_qconfig;
 attribute vendor_hal_qconfig_client;
 attribute vendor_hal_qconfig_server;
