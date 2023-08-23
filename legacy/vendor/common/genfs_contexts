@@ -93,3 +93,7 @@ genfscon sysfs /devices/0306_02.01.00/time_us u:object_r:sysfs_mhi:s0
 genfscon sysfs /devices/1101_00.01.00/time_us u:object_r:sysfs_mhi:s0
 genfscon sysfs /devices/1101_01.01.00/time_us u:object_r:sysfs_mhi:s0
 genfscon sysfs /devices/1101_02.01.00/time_us u:object_r:sysfs_mhi:s0
+
+# UFS
+genfscon sysfs /devices/soc/1da4000.ufshc/host0/target0:0:0/0:0:0:0/block/sdb/queue/discard_max_bytes u:object_r:vendor_sysfs_mmc_host:s0
+genfscon sysfs /devices/soc/1da4000.ufshc/host0/target0:0:0/0:0:0:1/block/sdb/queue/discard_max_bytes u:object_r:vendor_sysfs_mmc_host:s0
