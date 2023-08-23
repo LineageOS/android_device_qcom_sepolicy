@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c42017de_c77c72ee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2023-08-23T09:25:23Z",
+      "side": 1,
+      "message": "i\u0027d prefer to have this in msm8998, where we already have that for sda:\nhttps://review.lineageos.org/c/LineageOS/android_device_qcom_sepolicy/+/349208\n\nalternatively, we could move both to common. not sure if that path is valid for non-8998 targets, tho",
+      "revId": "8e64de2bc79d444efd1a287fa19f30fce57ff0fd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
