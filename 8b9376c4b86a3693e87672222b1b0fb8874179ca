@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6ed4463_1b0f1827",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2023-08-23T09:28:40Z",
+      "side": 1,
+      "message": "that\u0027s not a qcom thing, its a lineage thing. it should go into the lineage sepolicy, no?\nhttps://review.lineageos.org/c/LineageOS/android_device_lineage_sepolicy/+/357409",
+      "revId": "8b9376c4b86a3693e87672222b1b0fb8874179ca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
