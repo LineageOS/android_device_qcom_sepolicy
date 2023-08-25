@@ -312,3 +312,8 @@ attribute system_halserverdomain;
 attribute hal_gamepad;
 attribute hal_gamepad_client;
 attribute hal_gamepad_server;
+
+#attributes for QSPA aidl
+attribute vendor_hal_qspa_qti;
+attribute vendor_hal_qspa_qti_client;
+attribute vendor_hal_qspa_qti_server;
