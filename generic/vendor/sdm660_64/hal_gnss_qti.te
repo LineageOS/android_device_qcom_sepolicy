@@ -6,4 +6,5 @@
 #Allow Gnss HAL to access ril socket
 allow vendor_hal_gnss_qti vendor_rild_socket:dir search;
 unix_socket_connect(vendor_hal_gnss_qti, vendor_rild, rild)
-
+# allows Gnss HAL to access ssgtzd socket
+unix_socket_connect(vendor_hal_gnss_qti, vendor_ssgtzd, vendor_ssgtzd)
