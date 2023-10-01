@@ -66,3 +66,6 @@ userdebug_or_eng(`
 use_vendor_per_mgr(hal_gnss)
 
 allow hal_gnss_qti sysfs_soc:dir r_dir_perms;
+
+# xtra-daemon control
+get_prop(hal_gnss_qti, xtra_control_prop)
