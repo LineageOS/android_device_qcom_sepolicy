@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8e39691_04f779b0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-10-26T00:48:27Z",
+      "side": 1,
+      "message": "This is wrong when applied here, vendor_service exists in prebuilts/api/{31.0,32.0}.",
+      "revId": "06a3665bd6007d3d83639c6fb4fc8eb3e5490caf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
