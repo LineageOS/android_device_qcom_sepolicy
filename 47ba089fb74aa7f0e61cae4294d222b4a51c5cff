@@ -33,6 +33,24 @@
       "message": "Do you have a working device and what SoC?",
       "revId": "47ba089fb74aa7f0e61cae4294d222b4a51c5cff",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b830ee4c_6c676a79",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2023-10-28T15:38:43Z",
+      "side": 1,
+      "message": "Yeah, daisy (msm8953), i just booted it",
+      "parentUuid": "8b093760_54d50cdd",
+      "revId": "47ba089fb74aa7f0e61cae4294d222b4a51c5cff",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
