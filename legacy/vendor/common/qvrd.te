@@ -71,7 +71,7 @@ allow vendor_qvrd fwk_sensor_hwservice:hwservice_manager find;
 hal_client_domain(vendor_qvrd, hal_sensors)
 
 # QVRD
-userdebug_or_eng(`
+no_debugfs_restriction(`
 allow vendor_qvrd debugfs:dir r_dir_perms;
 allow vendor_qvrd qti_debugfs:dir r_dir_perms;
 allow vendor_qvrd qti_debugfs:file rw_file_perms;

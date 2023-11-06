@@ -39,6 +39,8 @@ userdebug_or_eng(`
   allow mediaserver camera_data_file:dir rw_dir_perms;
   allow mediaserver camera_data_file:file create_file_perms;
   # Access to audio
+')
+no_debugfs_restriction(`
   allow mediaserver qti_debugfs:file rw_file_perms;
 ')
 

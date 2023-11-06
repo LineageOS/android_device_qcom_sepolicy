@@ -40,6 +40,8 @@ vndbinder_use(hal_audio)
 
 userdebug_or_eng(`
   diag_use(hal_audio)
+')
+no_debugfs_restriction(`
   #Allow access to debug fs
   allow hal_audio_default debugfs:dir r_dir_perms;
   allow hal_audio_default qti_debugfs:dir r_dir_perms;
