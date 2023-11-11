@@ -87,6 +87,23 @@
       "parentUuid": "8adcea92_7b4a5726",
       "revId": "0b1b978f443552f86c229390b578130fdb70f12b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f487585_75b90c87",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2023-11-11T12:43:00Z",
+      "side": 1,
+      "message": "You should pick https://review.lineageos.org/c/LineageOS/android_device_qcom_sepolicy/+/360071 instead",
+      "revId": "0b1b978f443552f86c229390b578130fdb70f12b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
