@@ -33,6 +33,24 @@
       "message": "Why lineage-19.1-legacy-um?",
       "revId": "0b1b978f443552f86c229390b578130fdb70f12b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67eeafc4_6e108d1c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2023-11-11T12:18:31Z",
+      "side": 1,
+      "message": "I personally still do 19.1 builds\n20 has support for debugfs restriction by default, no need to pick this for 20\n\nIf there\u0027s trouble to verify this patch and it\u0027s not needed for you guys, I could just abandon this and keep it in private, no problem",
+      "parentUuid": "4477bbc4_11a865a8",
+      "revId": "0b1b978f443552f86c229390b578130fdb70f12b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
