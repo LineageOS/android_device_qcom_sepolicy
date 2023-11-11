@@ -69,6 +69,24 @@
       "parentUuid": "67eeafc4_6e108d1c",
       "revId": "0b1b978f443552f86c229390b578130fdb70f12b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b155064d_11a2bf9c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2023-11-11T12:38:43Z",
+      "side": 1,
+      "message": "yeah, it works fine on msm8937, device boots and haven\u0027t seen anything being abnormal (yet)\n\nlogically this shouldn\u0027t break devices which doesn\u0027t enforce debugfs restriction\n\nthanks",
+      "parentUuid": "8adcea92_7b4a5726",
+      "revId": "0b1b978f443552f86c229390b578130fdb70f12b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
