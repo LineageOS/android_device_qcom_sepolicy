@@ -16,6 +16,24 @@
       "message": "Is this really needed for 19.1?",
       "revId": "1d654e438715f750e443146aa04536d7b18af628",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b698059_eab4dc69",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32245
+      },
+      "writtenOn": "2023-11-13T16:36:42Z",
+      "side": 1,
+      "message": "depends on the device tree that being used with",
+      "parentUuid": "b7062aaf_349a1d33",
+      "revId": "1d654e438715f750e443146aa04536d7b18af628",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
