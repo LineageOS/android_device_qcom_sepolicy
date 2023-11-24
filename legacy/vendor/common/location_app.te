@@ -55,3 +55,4 @@ allowxperm vendor_location_app self:socket ioctl msm_sock_ipc_ioctls;
 allow vendor_location_app self:qipcrtr_socket create_socket_perms_no_ioctl;
 allow vendor_location_app sysfs_data:file r_file_perms;
 unix_socket_connect(vendor_location_app, vendor_dpmtcm, vendor_dpmd)
+dontaudit vendor_location_app default_prop:file {read};
