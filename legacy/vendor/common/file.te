@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # Default type for anything under /firmware.
 type firmware_file,  file_type, contextmount_type, vendor_file_type;
@@ -415,3 +419,6 @@ type vendor_sysfs_kgsl_gpuclk, sysfs_type, fs_type;
 #slub-debug
 type sysfs_slab_zshandle_storeuser, fs_type, sysfs_type;
 type sysfs_slab_zspage_storeuser, fs_type, sysfs_type;
+
+#ril socket
+type vendor_rild_socket, file_type;

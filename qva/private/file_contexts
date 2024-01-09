@@ -38,7 +38,7 @@
 /dev/socket/qvrservice_camera                   u:object_r:vendor_qvrd_socket:s0
 /dev/socket/qvrservice_hvx_camera               u:object_r:vendor_qvrd_hvx_socket:s0
 /dev/socket/sxrservice                          u:object_r:vendor_sys_sxrd_socket:s0
-/dev/socket/qdma_app(/.*)?                      u:object_r:vendor_qcc_app_socket:s0
+/dev/socket/(qcc_app|qdma_app)(/.*)?            u:object_r:vendor_qcc_app_socket:s0
 
 ####### system file ###############
 /system/bin/seempd                              u:object_r:vendor_seempd_exec:s0
@@ -65,4 +65,4 @@
 /data/misc/qvr(/.*)?                            u:object_r:vendor_qvrd_data_file:s0
 /data/misc/sxr(/.*)?                            u:object_r:vendor_sys_sxrd_data_file:s0
 /data/nfc(/.*)?                                 u:object_r:nfc_data_file:s0
-/data/misc/qdma(/.*)?                           u:object_r:vendor_qcc_data_file:s0
+/data/misc/(qcc|qdma)(/.*)?                           u:object_r:vendor_qcc_data_file:s0
