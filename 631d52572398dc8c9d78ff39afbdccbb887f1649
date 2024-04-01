@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f8ef2ae_59e09abc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28232
+      },
+      "writtenOn": "2024-04-01T05:01:58Z",
+      "side": 1,
+      "message": "@ankit, you sure this is working?\n\nBecause, msm8953 would use the files from legacy path and not the one from generic. Upon checking `legacy/vendor/common/seapp_contexts`, this change is already there.\n\nSlightly confused.",
+      "revId": "631d52572398dc8c9d78ff39afbdccbb887f1649",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
