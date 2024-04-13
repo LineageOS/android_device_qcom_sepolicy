@@ -34,7 +34,13 @@ userdebug_or_eng(`
     diag_use(radio)
 ')
 
+binder_call(radio, cnd)
+
+get_prop(radio, vendor_qcom_ims_prop)
 get_prop(radio, vendor_radio_prop)
+
+allow radio hal_datafactory_hwservice:hwservice_manager find;
+allow radio hal_iwlan_hwservice:hwservice_manager find;
 
 allow radio hal_imsrtp_hwservice:hwservice_manager find;
 # permissions for IMS-ConnectionmanagerTestApp
