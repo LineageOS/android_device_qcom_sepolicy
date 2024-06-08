@@ -35,6 +35,8 @@
 
 /(product|system/product)/etc/init\.qcom\.testscripts\.sh         u:object_r:qti-testscripts_exec:s0
 
+/(system_ext|system/system_ext)/bin/init\.qti\.qspa\.sh             u:object_r:vendor_qspa_exec:s0
+
 /storage/emulated(/.*)?         u:object_r:media_rw_data_file:s0
 
 ####### device files ##############
@@ -69,6 +71,7 @@
 /(system_ext|system/system_ext)/bin/qxrsplitauxservice  u:object_r:vendor_sys_sxrauxd_exec:s0
 /(system_ext|system/system_ext)/bin/qsguard  u:object_r:qsguard_exec:s0
 /system_ext/bin/virtual_keyboard     u:object_r:vendor_virtual_keyboard_exec:s0
+/system_ext/bin/usbudev                             u:object_r:vendor_usbudev_qti_exec:s0
 
 ####### data files ################
 /data/dpm(/.*)?                                 u:object_r:vendor_dpmd_data_file:s0
