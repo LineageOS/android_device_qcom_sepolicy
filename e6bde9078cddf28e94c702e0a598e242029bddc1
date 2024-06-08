@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1593f36_bfc259a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-06-08T14:48:05Z",
+      "side": 1,
+      "message": "Requires https://review.lineageos.org/393784 for sm8550.",
+      "revId": "e6bde9078cddf28e94c702e0a598e242029bddc1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
