@@ -34,6 +34,24 @@
       "parentUuid": "d1593f36_bfc259a2",
       "revId": "e6bde9078cddf28e94c702e0a598e242029bddc1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48607b11_81b5a764",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-06-08T17:49:09Z",
+      "side": 1,
+      "message": "Not sure, to be honest. But in that tag they remove the vendor_usbudev_qti duplicate type.",
+      "parentUuid": "2fb000a1_756c0cc9",
+      "revId": "e6bde9078cddf28e94c702e0a598e242029bddc1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
