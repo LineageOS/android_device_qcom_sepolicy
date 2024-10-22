@@ -47,6 +47,7 @@ wfdservice                                     u:object_r:vendor_wfdservice_serv
 wfdservice64                                   u:object_r:vendor_wfdservice_service:s0
 wigigp2p                                       u:object_r:vendor_wigigp2p_service:s0
 wigig                                          u:object_r:vendor_wigig_service:s0
+qrs                                            u:object_r:vendor_qrs_service:s0
 display.smomoservice                           u:object_r:surfaceflinger_service:s0
 vendor.vpsservice                              u:object_r:vendor_vps_service:s0
 vendor.gppservice                              u:object_r:vendor_gpp_service:s0
