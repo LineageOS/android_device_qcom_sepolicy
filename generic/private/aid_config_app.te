@@ -1,0 +1,12 @@
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_aid_config_app, domain;
+
+typeattribute vendor_aid_config_app coredomain;
+
+app_domain(vendor_aid_config_app)
+set_prop(vendor_aid_config_app, vendor_persist_camera_prop)
+
+allow vendor_aid_config_app { activity_service audio_service autofill_service content_capture_service hint_service surfaceflinger_service vendor_perf_service}:service_manager find;
