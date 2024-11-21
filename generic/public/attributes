@@ -407,3 +407,8 @@ attribute vendor_framework_utils_app_server;
 attribute hal_gamepad;
 attribute hal_gamepad_client;
 attribute hal_gamepad_server;
+
+# For BluetoothFmd
+attribute vendor_hal_bluetooth_fmd;
+attribute vendor_hal_bluetooth_fmd_client;
+attribute vendor_hal_bluetooth_fmd_server;
