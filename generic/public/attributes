@@ -340,3 +340,8 @@ attribute vendor_hal_qvrcamservice_qti_client;
 attribute vendor_hal_qvrcamservice_qti_server;
 attribute vendor_hal_qvrcamservice_qti_socket_client;
 attribute vendor_hal_qvrcamservice_qti_socket_fd_use_client;
+
+# For BluetoothFmd
+attribute vendor_hal_bluetooth_fmd;
+attribute vendor_hal_bluetooth_fmd_client;
+attribute vendor_hal_bluetooth_fmd_server;
