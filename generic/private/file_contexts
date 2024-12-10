@@ -36,6 +36,7 @@
 /(product|system/product)/etc/init\.qcom\.testscripts\.sh         u:object_r:qti-testscripts_exec:s0
 
 /(system_ext|system/system_ext)/bin/init\.qti\.qspa\.sh             u:object_r:vendor_qspa_exec:s0
+/(system_ext|system/system_ext)/bin/init\.qti\.qspa_apps\.sh             u:object_r:vendor_qspa_exec:s0
 
 /storage/emulated(/.*)?         u:object_r:media_rw_data_file:s0
 
