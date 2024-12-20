@@ -413,6 +413,23 @@ attribute vendor_hal_bluetooth_fmd;
 attribute vendor_hal_bluetooth_fmd_client;
 attribute vendor_hal_bluetooth_fmd_server;
 
+# for Aware QSEC services
+attribute vendor_hal_cloudagent;
+attribute vendor_hal_cloudagent_client;
+attribute vendor_hal_cloudagent_server;
+
+attribute vendor_hal_datamanager;
+attribute vendor_hal_datamanager_client;
+attribute vendor_hal_datamanager_server;
+
+attribute vendor_hal_featuremanager;
+attribute vendor_hal_featuremanager_client;
+attribute vendor_hal_featuremanager_server;
+
+attribute vendor_hal_provisioningmanager;
+attribute vendor_hal_provisioningmanager_client;
+attribute vendor_hal_provisioningmanager_server;
+
 # For QRS
 attribute vendor_hal_qrsloader;
 attribute vendor_hal_qrsloader_client;
