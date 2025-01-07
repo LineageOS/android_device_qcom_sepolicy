@@ -46,3 +46,6 @@ allow surfaceflinger vendor_sigmahal_qti:fd use;
 
 #Allow access to vendor_perf_service
 allow surfaceflinger vendor_perf_service:service_manager find;
+
+# Allow access to GPP Property
+get_prop(surfaceflinger, vendor_sys_gpp_prop)
