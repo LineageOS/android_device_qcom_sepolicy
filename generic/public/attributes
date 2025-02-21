@@ -384,6 +384,11 @@ attribute vendor_hal_snapx_service_qti;
 attribute vendor_hal_snapx_service_qti_client;
 attribute vendor_hal_snapx_service_qti_server;
 
+# for BHS
+attribute vendor_hal_bhs;
+attribute vendor_hal_bhs_client;
+attribute vendor_hal_bhs_server;
+
 attribute vendor_hal_imsvthal;
 attribute vendor_hal_imsvthal_client;
 attribute vendor_hal_imsvthal_server;
