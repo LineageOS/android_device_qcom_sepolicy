@@ -362,3 +362,8 @@ attribute vendor_hal_featuremanager_server;
 attribute vendor_hal_provisioningmanager;
 attribute vendor_hal_provisioningmanager_client;
 attribute vendor_hal_provisioningmanager_server;
+
+# For QRS
+attribute vendor_hal_qrsloader;
+attribute vendor_hal_qrsloader_client;
+attribute vendor_hal_qrsloader_server;
