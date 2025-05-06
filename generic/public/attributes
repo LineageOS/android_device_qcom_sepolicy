@@ -376,7 +376,11 @@ attribute vendor_hal_snapx_service_qti;
 attribute vendor_hal_snapx_service_qti_client;
 attribute vendor_hal_snapx_service_qti_server;
 
-
 attribute vendor_hal_imsvthal;
 attribute vendor_hal_imsvthal_client;
 attribute vendor_hal_imsvthal_server;
+
+#attributes for AVF QCVM Manager aidl
+attribute vendor_hal_avf_qcvm_qti;
+attribute vendor_hal_avf_qcvm_qti_client;
+attribute vendor_hal_avf_qcvm_qti_server;
