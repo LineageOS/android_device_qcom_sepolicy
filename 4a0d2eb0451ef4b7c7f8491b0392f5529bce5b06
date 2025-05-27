@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "887606fb_8b2f40e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29415
+      },
+      "writtenOn": "2025-05-27T16:57:08Z",
+      "side": 1,
+      "message": "Fixes volcano specific build error due to https://github.com/LineageOS/android_device_qcom_sepolicy_vndr/commit/2aa077bf55",
+      "revId": "4a0d2eb0451ef4b7c7f8491b0392f5529bce5b06",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
