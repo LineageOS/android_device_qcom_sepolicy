@@ -341,6 +341,11 @@ attribute vendor_hal_qvrcamservice_qti_server;
 attribute vendor_hal_qvrcamservice_qti_socket_client;
 attribute vendor_hal_qvrcamservice_qti_socket_fd_use_client;
 
+# for BHS
+attribute vendor_hal_bhs;
+attribute vendor_hal_bhs_client;
+attribute vendor_hal_bhs_server;
+
 # For BluetoothFmd
 attribute vendor_hal_bluetooth_fmd;
 attribute vendor_hal_bluetooth_fmd_client;
