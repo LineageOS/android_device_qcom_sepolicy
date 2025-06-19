@@ -29,6 +29,7 @@
 # Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
+type vendor_audioserver_service,         service_manager_type;
 type vendor_cne_service,                 service_manager_type;
 type vendor_imsdc_service,               service_manager_type;
 type vendor_seemp_service,               service_manager_type;
