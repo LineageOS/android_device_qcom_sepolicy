@@ -25,6 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+allow audioserver vendor_audioserver_service:service_manager { add find };
+binder_call(audioserver, vendor_qtiaudiohalvendorextn)
+
 binder_call(audioserver,vendor_wfdservice);
 binder_call(audioserver,vendor_sys_sxrauxd);
 #allow access to ALSA MMAP FDs for AAudio API
