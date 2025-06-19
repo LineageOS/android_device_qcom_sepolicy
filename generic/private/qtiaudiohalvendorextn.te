@@ -1,0 +1,8 @@
+type vendor_qtiaudiohalvendorextn, domain, coredomain;
+type vendor_qtiaudiohalvendorextn_exec, system_file_type, exec_type, file_type;
+
+init_daemon_domain(vendor_qtiaudiohalvendorextn)
+
+binder_use(vendor_qtiaudiohalvendorextn)
+
+allow vendor_qtiaudiohalvendorextn vendor_audioserver_service:service_manager { add find };
