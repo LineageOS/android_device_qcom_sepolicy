@@ -30,7 +30,7 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #BHS
-get_prop(shell, vendor_qti_bhs_prop);
+get_prop(vendor_init, vendor_qti_bhs_prop);
 
 # QCV:vendor_init settable for vendor_exported_system_prop
 set_prop(vendor_init, vendor_exported_system_prop)
