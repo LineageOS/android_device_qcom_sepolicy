@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85f3ba82_c724b3f3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-07-21T10:02:40Z",
+      "side": 1,
+      "message": "Used in sm8650 sepolicy_vndr",
+      "revId": "12edb7190dad14ad3b27ecd05da8754bc7fd7ad5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
