@@ -3,3 +3,6 @@
 
 get_prop(dumpstate,vendor_sys_bugreport_cpuinfo_disable)
 binder_call(dumpstate, virtualizationservice)
+
+# Allow dumpstate to make binder calls to vold
+binder_call(dumpstate, vold)

@@ -31,3 +31,10 @@ typeattribute untrusted_app_29 vendor_hal_sxrservice_qti_socket_fd_use_client;
 
 # allow app to be a client of DSP HAL
 hal_client_domain(untrusted_app_29, vendor_hal_dspmanager)
+
+# allow 3rd party app to access unsigned Hexlp service
+hal_client_domain(untrusted_app_29, vendor_hal_unsignedhexlp)
+
+# Allow access to FDs owned by Hexlp service
+allow untrusted_app_29 vendor_hal_hexlp_server:fd use;
+

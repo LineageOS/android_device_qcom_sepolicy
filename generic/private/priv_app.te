@@ -42,3 +42,6 @@ unix_socket_connect(priv_app, vendor_dpmtcm, vendor_tcmd);
 hal_client_domain(priv_app, vendor_hal_c2pa);
 
 hal_client_domain(priv_app , vendor_hal_imsvthal);
+
+# allow priv_app to be a client of unsigned Hexlp service
+hal_client_domain(priv_app, vendor_hal_unsignedhexlp)
