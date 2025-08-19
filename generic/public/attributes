@@ -380,3 +380,8 @@ attribute vendor_hal_powerstateservice_server;
 attribute vendor_hal_powerstateutility;
 attribute vendor_hal_powerstateutility_client;
 attribute vendor_hal_powerstateutility_server;
+
+# Qvirt vendor hal
+attribute vendor_hal_qvirtvendor;
+attribute vendor_hal_qvirtvendor_client;
+attribute vendor_hal_qvirtvendor_server;
