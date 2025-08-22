@@ -1,0 +1,33 @@
+#
+type vendor_qcc_native, domain, coredomain;
+type vendor_qcc_native_exec, system_file_type, exec_type, file_type;
+#if needed on vendor side, then use below one
+#type vendor_qcc_native_exec, file_type, vendor_file_type, exec_type;
+
+#Allow for transition from init domain
+init_daemon_domain(vendor_qcc_native)
+
+#Allow vendor_qcc_native to use Binder IPC
+binder_use(vendor_qcc_native)
+
+#allow net connectivity
+net_domain(vendor_qcc_native)
+
+#allow access qccsyshal
+allow vendor_qcc_native vendor_qccsyshal_service:service_manager find;
+
+hal_client_domain(vendor_qcc_native, vendor_qccsyshal);
+hal_client_domain(vendor_qcc_native, vendor_hal_qccvndhal);
+hal_client_domain(vendor_qcc_native, hal_wifi_supplicant);
+
+# allow access to qdma dropbox (/data/misc/qcc)
+allow vendor_qcc_native vendor_qcc_data_file:dir create_dir_perms;
+allow vendor_qcc_native vendor_qcc_data_file:file create_file_perms;
+
+# Allow read-write permissions to qdma sockets under vendor_qcc_app_socket.
+allow vendor_qcc_native vendor_qcc_app_socket:dir rw_dir_perms;
+allow vendor_qcc_native vendor_qcc_app_socket:sock_file create_file_perms;
+
+# Allow vendor_qcc_native to read its prebuilt assets
+allow vendor_qcc_native vendor_qcc_native_assets_file:dir { search getattr open read lock ioctl };
+allow vendor_qcc_native vendor_qcc_native_assets_file:file { getattr open read lock ioctl map };
