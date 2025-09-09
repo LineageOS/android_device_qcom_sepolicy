@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05aa360d_8605ac54",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29415
+      },
+      "writtenOn": "2025-09-09T23:01:59Z",
+      "side": 1,
+      "message": "device/qcom/sepolicy_vndr/sm8650/qva/vendor/volcano/hal_bhs_default.te:6:ERROR \u0027attribute vendor_hal_bhs_server is not declared\u0027 at token \u0027;\u0027 on line 74054:\ntypeattribute vendor_hal_bhs_default vendor_hal_bhs_server;\n#line 6\ncheckpolicy:  error(s) encountered while parsing configuration\n18:37:52 ninja failed with: exit status 1",
+      "revId": "74db8a6c4de723cb13626c0c0a1897beda82c356",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
