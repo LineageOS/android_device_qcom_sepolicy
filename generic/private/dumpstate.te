@@ -3,3 +3,7 @@
 
 get_prop(dumpstate,vendor_sys_bugreport_cpuinfo_disable)
 binder_call(dumpstate, virtualizationservice)
+
+# Allow dumpstate to make binder calls to vold
+#KEYSTONE(Icd4abb0cf066121dc8e33a595f49cc20a0c58267,b/433537167)
+# binder_call(dumpstate, vold)

@@ -42,3 +42,6 @@ allow vendor_voiceui_app { mediametrics_service mediaserver_service soundtrigger
 
 # allow access audiosever service to vendor_voiceui_app
 allow vendor_voiceui_app audioserver_service:service_manager find;
+
+# allow vendor_voiceui_app to be a client of DSP HAL
+hal_client_domain(vendor_voiceui_app, vendor_hal_dspmanager);
