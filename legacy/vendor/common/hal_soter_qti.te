@@ -26,16 +26,16 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type hal_soter_qti, domain;
-hal_server_domain(hal_soter_qti, hal_soter)
+hal_server_domain(hal_soter_qti, vendor_hal_soter)
 
 type hal_soter_qti_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(hal_soter_qti)
 
-binder_call(hal_soter_client, hal_soter_server)
-binder_call(hal_soter_server, hal_soter_client)
+binder_call(vendor_hal_soter_client, vendor_hal_soter_server)
+binder_call(vendor_hal_soter_server, vendor_hal_soter_client)
 
-add_hwservice(hal_soter_server, hal_soter_hwservice)
-allow hal_soter_client hal_soter_hwservice:hwservice_manager find;
+add_hwservice(vendor_hal_soter_server, hal_soter_hwservice)
+allow vendor_hal_soter_client hal_soter_hwservice:hwservice_manager find;
 
 #Allow access to tee device
 allow hal_soter_qti tee_device:chr_file rw_file_perms;

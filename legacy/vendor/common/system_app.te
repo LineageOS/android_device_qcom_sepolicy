@@ -175,7 +175,7 @@ hal_client_domain(system_app, hal_tui_comm);
 hal_client_domain(system_app, hal_sensorscalibrate_qti);
 
 #soter
-hal_client_domain(system_app, hal_soter);
+hal_client_domain(system_app, vendor_hal_soter);
 
 get_prop(system_app, vendor_radio_prop)
 
