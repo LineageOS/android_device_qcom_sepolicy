@@ -33,9 +33,9 @@ attribute vendor_hal_iop;
 attribute vendor_hal_iop_client;
 attribute vendor_hal_iop_server;
 
-attribute vendor_hal_soter;
-attribute vendor_hal_soter_client;
-attribute vendor_hal_soter_server;
+attribute hal_soter;
+attribute hal_soter_client;
+attribute hal_soter_server;
 
 attribute vendor_hal_sensorscalibrate_qti;
 attribute vendor_hal_sensorscalibrate_qti_client;
