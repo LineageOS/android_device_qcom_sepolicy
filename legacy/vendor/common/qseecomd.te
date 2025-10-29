@@ -105,7 +105,7 @@ allow tee qsee_ipc_irq_spss_device:chr_file rw_file_perms;
 set_prop(tee, vendor_tee_listener_prop)
 
 # SOTER
-hal_client_domain(tee, hal_soter);
+hal_client_domain(tee, vendor_hal_soter);
 
 #secureUI
 hal_client_domain(tee, hal_tui_comm);
