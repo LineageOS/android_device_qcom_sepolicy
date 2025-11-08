@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f1ad110_d28bf2f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-11-08T23:30:35Z",
+      "side": 1,
+      "message": "Needed for legacy-um, sm8450 and sm8650.",
+      "revId": "3aa1a3a844403fc5d8dce23e7810d8f8eaa8d87c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
