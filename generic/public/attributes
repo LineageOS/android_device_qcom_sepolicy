@@ -371,6 +371,11 @@ attribute vendor_syshealthmon;
 attribute vendor_syshealthmon_client;
 attribute vendor_syshealthmon_server;
 
+# for BHS
+attribute vendor_hal_bhs;
+attribute vendor_hal_bhs_client;
+attribute vendor_hal_bhs_server;
+
 attribute vendor_hal_c2pa;
 attribute vendor_hal_c2pa_client;
 attribute vendor_hal_c2pa_server;

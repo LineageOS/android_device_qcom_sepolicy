@@ -3,6 +3,7 @@
 type vendor_xpanprovider_app, domain;
 
 typeattribute vendor_xpanprovider_app coredomain;
+typeattribute vendor_xpanprovider_app hal_audio_client;
 
 app_domain(vendor_xpanprovider_app)
 
