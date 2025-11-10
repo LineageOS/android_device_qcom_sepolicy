@@ -64,3 +64,4 @@ vendor.qti.hardware.systemhelperaidl.ISystemEvent/default     u:object_r:vendor_
 vendor.qti.hardware.systemhelperaidl.ISystemResource/default  u:object_r:vendor_hal_systemhelper_aidl_service:s0
 vendor.qti.hardware.sigma_miracast_aidl.ISigma_miracast/default u:object_r:vendor_hal_sigma_miracast_service:s0
 vendor.qti.ImsVtService.IImsVtRequest/ImsVtService                    u:object_r:vendor_hal_imsvt_service:s0
+vendor.qti.appLauncherService.IAppLauncherService/default                      u:object_r:vendor_app_launcher_service:s0
