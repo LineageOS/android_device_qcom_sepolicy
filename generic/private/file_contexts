@@ -73,6 +73,8 @@
 /(system_ext|system/system_ext)/bin/qsguard  u:object_r:qsguard_exec:s0
 /system_ext/bin/usbudev  u:object_r:vendor_usbudev_qti_exec:s0
 /(system_ext|system/system_ext)/bin/imsvtdaemon u:object_r:vendor_imsvtdaemon_exec:s0
+/(system_ext|system/system_ext)/bin/qcc-native u:object_r:vendor_qcc_native_exec:s0
+/(system_ext|system/system_ext)/etc/qcc(/.*)?   u:object_r:vendor_qcc_native_assets_file:s0
 
 ####### data files ################
 /data/dpm(/.*)?                                 u:object_r:vendor_dpmd_data_file:s0

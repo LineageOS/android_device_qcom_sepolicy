@@ -37,3 +37,5 @@ type vendor_qcc_data_file, file_type, data_file_type, core_data_file_type, mlstr
 type vendor_qcc_app_socket, file_type, mlstrustedobject, coredomain_socket;
 type vendor_sys_sxrauxd_data_file, file_type, data_file_type, core_data_file_type;
 type vendor_sys_sxrauxd_socket, file_type, coredomain_socket;
+# /system_ext/etc/qcc for tree files for qcc-native
+type vendor_qcc_native_assets_file, file_type, system_file_type;
