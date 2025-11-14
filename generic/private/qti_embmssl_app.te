@@ -1,0 +1,15 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_qti_embmssl_app, domain;
+app_domain(vendor_qti_embmssl_app);
+
+net_domain(vendor_qti_embmssl_app)
+unix_socket_connect(vendor_qti_embmssl_app, vendor_dpmtcm, vendor_dpmd)
+unix_socket_connect(vendor_qti_embmssl_app, vendor_dpmtcm, vendor_tcmd)
+allow vendor_qti_embmssl_app { app_api_service radio_service }:service_manager find;
+dontaudit vendor_qti_embmssl_app system_file:dir write;
+
+#allow embmssl app to access embmssl hal
+hal_client_domain(vendor_qti_embmssl_app, vendor_hal_embmssl);
+hal_client_domain(vendor_qti_embmssl_app, vendor_hal_perf);
