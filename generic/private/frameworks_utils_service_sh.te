@@ -1,0 +1,14 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_frameworksutils_launcher, domain, coredomain;
+type vendor_frameworksutils_launcher_exec, exec_type, system_file_type, file_type;
+init_daemon_domain(vendor_frameworksutils_launcher)
+
+allow vendor_frameworksutils_launcher activity_service:service_manager find;
+
+allow vendor_frameworksutils_launcher system_file:file execute_no_trans;
+binder_call(vendor_frameworksutils_launcher, system_server)
+binder_call(vendor_frameworksutils_launcher, servicemanager)
+
+
