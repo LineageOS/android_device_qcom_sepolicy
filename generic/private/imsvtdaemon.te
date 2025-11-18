@@ -19,6 +19,7 @@ crash_dump_fallback(vendor_imsvtdaemon);
 
 allow vendor_imsvtdaemon mediaserver_service:service_manager find;
 allow vendor_imsvtdaemon mediametrics_service:service_manager find;
+allow vendor_imsvtdaemon media_quality_service:service_manager find;
 binder_call(vendor_imsvtdaemon, mediametrics);
 binder_call(vendor_imsvtdaemon, cameraserver);
 binder_call(vendor_imsvtdaemon, mediaserver);
