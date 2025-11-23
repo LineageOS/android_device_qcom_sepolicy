@@ -67,7 +67,7 @@ allow hal_wigig wigig_hostapd_socket:dir rw_dir_perms;
 allow hal_wigig wigig_hostapd_socket:sock_file create_file_perms;
 
 # insmod /vendor/lib/modules/wil6210.ko
-allow hal_wigig self:capability sys_module;
+allow wigighalsvc self:capability sys_module;
 allow hal_wigig kernel:key search;
 allow hal_wigig vendor_file:system module_load;
 allow hal_wigig proc_modules:file r_file_perms;
