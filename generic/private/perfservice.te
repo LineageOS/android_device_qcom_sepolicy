@@ -33,3 +33,4 @@ add_service(vendor_perfservice, vendor_perf_service);
 binder_use(vendor_perfservice);
 binder_call(vendor_perfservice, system_server);
 binder_service(vendor_perfservice);
+hal_client_domain(vendor_perfservice, vendor_hal_perf);
