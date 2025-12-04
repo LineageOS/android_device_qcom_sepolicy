@@ -42,3 +42,4 @@ allow vendor_imsvtdaemon dmabuf_system_heap_device:chr_file r_file_perms;
 
 dontaudit vendor_imsvtdaemon default_android_service:service_manager find;
 dontaudit vendor_imsvtdaemon package_native_service:service_manager find;
+dontaudit vendor_imsvtdaemon vendor_sys_gpp_prop:file r_file_perms;
