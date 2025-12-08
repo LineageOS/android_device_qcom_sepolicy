@@ -37,6 +37,7 @@ user=_app seinfo=platform name=com.qualcomm.telephony domain=vendor_qtelephony t
 
 # Add time service app
 user=_app seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file levelFrom=all
+user=system seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file levelFrom=all
 
 #Add new domain for logkit services
 user=system seinfo=platform name=com.qualcomm.qti.logkit domain=qti_logkit_app type=system_app_data_file
