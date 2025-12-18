@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #Add new domain for DataServices
@@ -88,3 +88,6 @@ user=_app seinfo=platform name=vendor.qti.bluetooth.xpan domain=vendor_xpanprovi
 
 #Add new domain for system helper service using for Trusted UI
 user=system seinfo=platform name=com.qualcomm.qti.services.systemhelper:systemhelper_service domain=vendor_systemhelper_app type=system_app_data_file
+
+# Add new domain for qti alarm app
+user=_app seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=vendor_qti_poweroffalarm_app isPrivApp=false type=app_data_file levelFrom=all
