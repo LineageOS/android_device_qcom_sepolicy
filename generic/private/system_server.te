@@ -71,6 +71,9 @@ set_prop(system_server, vendor_fst_prop)
 # Allow system server to access for dpm
 get_prop(system_server, vendor_persist_dpm_prop)
 
+# Allow system_server to read camera2 extensions properties
+get_prop(system_server, camera2_extensions_prop)
+
 # Allow system server to access GPP Property
 set_prop(system_server, vendor_sys_gpp_prop)
 
