@@ -38,3 +38,6 @@ hal_client_domain(surfaceflinger , vendor_hal_imsvthal);
 
 # Allow access to FDs owned by Hexlp service
 allow surfaceflinger vendor_hal_hexlp_server:fd use;
+
+#Allow surfaceflinger to read vendor.mpctl.init.complete
+get_prop(surfaceflinger, vendor_wlc_public_prop)
