@@ -74,7 +74,6 @@
 /system_ext/bin/usbudev  u:object_r:vendor_usbudev_qti_exec:s0
 /(system_ext|system/system_ext)/bin/imsvtdaemon u:object_r:vendor_imsvtdaemon_exec:s0
 /(system_ext|system/system_ext)/bin/frameworks_utils_service\.sh           u:object_r:vendor_frameworksutils_launcher_exec:s0
-/(system_ext|system/system_ext)/bin/nfc_cfg_service  u:object_r:vendor_nfc_cfg_service_exec:s0
 
 ####### data files ################
 /data/dpm(/.*)?                                 u:object_r:vendor_dpmd_data_file:s0
