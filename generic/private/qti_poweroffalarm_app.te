@@ -1,0 +1,11 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_qti_poweroffalarm_app,domain;
+typeattribute vendor_qti_poweroffalarm_app coredomain;
+app_domain(vendor_qti_poweroffalarm_app)
+
+hal_client_domain(vendor_qti_poweroffalarm_app, vendor_hal_alarm_qti);
+hal_client_domain(vendor_qti_poweroffalarm_app, vendor_hal_perf);
+
+allow vendor_qti_poweroffalarm_app app_api_service:service_manager find;
