@@ -113,6 +113,9 @@ ro.vendor.bootreceiver.enable              u:object_r:vendor_bootreceiver_prop:s
 #Power Module
 ro.vendor.power.tuning.support             u:object_r:vendor_exported_system_prop:s0 exact bool
 
+#location
+vendor.sys.location.                       u:object_r:vendor_sys_location_prop:s0
+
 #bugreport disable critical cpu info property
 vendor.sys.bugreport.cpuinfo.disable         u:object_r:vendor_sys_bugreport_cpuinfo_disable:s0
 

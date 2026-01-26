@@ -64,3 +64,6 @@ system_public_prop(vendor_bootreceiver_prop)
 system_internal_prop(vendor_sys_bugreport_cpuinfo_disable)
 
 system_internal_prop(vendor_sys_ims_prop);
+
+#location sys service property
+system_internal_prop(vendor_sys_location_prop)
