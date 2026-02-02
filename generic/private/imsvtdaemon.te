@@ -25,6 +25,7 @@ binder_call(vendor_imsvtdaemon, cameraserver);
 binder_call(vendor_imsvtdaemon, mediaserver);
 binder_call(vendor_imsvtdaemon, surfaceflinger);
 binder_call(vendor_imsvtdaemon, priv_app);
+binder_call(vendor_imsvtdaemon, priv_app_36);
 binder_call(vendor_imsvtdaemon, system_server);
 
 get_prop(vendor_imsvtdaemon, vendor_sys_ims_prop);
