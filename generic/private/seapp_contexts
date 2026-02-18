@@ -91,3 +91,6 @@ user=system seinfo=platform name=com.qualcomm.qti.services.systemhelper:systemhe
 
 # Add new domain for qti alarm app
 user=_app seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=vendor_qti_poweroffalarm_app isPrivApp=false type=app_data_file levelFrom=all
+
+# Add new domain for com.qti.ltebc
+user=_app seinfo=platform name=com.qti.ltebc domain=vendor_qti_embmssl_app isPrivApp=true type=app_data_file levelFrom=all

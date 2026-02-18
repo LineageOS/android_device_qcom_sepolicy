@@ -39,5 +39,6 @@ allow vendor_dpmd $1:tcp_socket rw_socket_perms;
 # allow vendor_hal_qesdhal to use
 define(`qesdk_app_access', `
 hal_client_domain($1, vendor_hal_qesdhal)
+hal_client_domain($1, vendor_hal_qnextgenhal)
 ')
 #####################################

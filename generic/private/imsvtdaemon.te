@@ -25,7 +25,9 @@ binder_call(vendor_imsvtdaemon, cameraserver);
 binder_call(vendor_imsvtdaemon, mediaserver);
 binder_call(vendor_imsvtdaemon, surfaceflinger);
 binder_call(vendor_imsvtdaemon, priv_app);
+binder_call(vendor_imsvtdaemon, priv_app_36);
 binder_call(vendor_imsvtdaemon, system_server);
+binder_call(vendor_imsvtdaemon, radio);
 
 get_prop(vendor_imsvtdaemon, vendor_sys_ims_prop);
 hal_client_domain(vendor_imsvtdaemon , vendor_hal_imsrtphal);
@@ -40,7 +42,8 @@ hal_attribute_service(vendor_hal_imsvthal, vendor_hal_imsvt_service);
 hal_server_domain(vendor_imsvtdaemon, vendor_hal_imsvthal);
 
 allow vendor_imsvtdaemon dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_imsvtdaemon package_native_service:service_manager find;
 
 dontaudit vendor_imsvtdaemon default_android_service:service_manager find;
-dontaudit vendor_imsvtdaemon package_native_service:service_manager find;
 dontaudit vendor_imsvtdaemon vendor_sys_gpp_prop:file r_file_perms;
+dontaudit vendor_imsvtdaemon vendor_default_prop:file r_file_perms;

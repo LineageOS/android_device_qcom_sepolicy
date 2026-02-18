@@ -119,3 +119,4 @@ vendor.sys.bugreport.cpuinfo.disable         u:object_r:vendor_sys_bugreport_cpu
 vendor.sys.ims.                                  u:object_r:vendor_sys_ims_prop:s0
 persist.vendor.sys.ims.                          u:object_r:vendor_sys_ims_prop:s0
 persist.vendor.sys.qti.telephony.vt_cam_interface u:object_r:vendor_sys_ims_prop:s0
+persist.nfc_vendor_extn.lib_file_name u:object_r:nfc_prop:s0

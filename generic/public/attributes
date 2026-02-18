@@ -407,3 +407,8 @@ attribute vendor_hal_avf_qcvm_qti_server;
 attribute vendor_framework_utils_app;
 attribute vendor_framework_utils_app_client;
 attribute vendor_framework_utils_app_server;
+
+#attributes for qnextgenhal
+attribute vendor_hal_qnextgenhal;
+attribute vendor_hal_qnextgenhal_client;
+attribute vendor_hal_qnextgenhal_server;

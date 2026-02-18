@@ -1,0 +1,5 @@
+# Copyright (c) 2026 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Allow priv_app_36 to be a client of IMS VT Daemon HAL
+hal_client_domain(priv_app_36 , vendor_hal_imsvthal);

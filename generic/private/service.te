@@ -48,3 +48,4 @@ type vendor_qvirtmgr_service,            service_manager_type;
 type vendor_hal_sigma_miracast_service,     hal_service_type, protected_service, service_manager_type;
 type vendor_qccsyshal_service,           protected_service, hal_service_type, service_manager_type;
 type vendor_hal_imsvt_service,           hal_service_type, protected_service, service_manager_type;
+type vendor_app_launcher_service,        system_api_service, system_server_service, service_manager_type;
