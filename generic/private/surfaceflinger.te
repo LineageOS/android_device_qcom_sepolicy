@@ -41,3 +41,5 @@ allow surfaceflinger vendor_hal_hexlp_server:fd use;
 
 #Allow surfaceflinger to read vendor.mpctl.init.complete
 get_prop(surfaceflinger, vendor_wlc_public_prop)
+
+allow surfaceflinger vendor_sigmahal_qti:fd use;
