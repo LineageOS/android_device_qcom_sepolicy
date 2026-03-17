@@ -3,3 +3,6 @@
 
 # Allow priv_app_36 to be a client of IMS VT Daemon HAL
 hal_client_domain(priv_app_36 , vendor_hal_imsvthal);
+
+# allow priv_app_36 to be a client of unsigned Hexlp service
+hal_client_domain(priv_app_36, vendor_hal_unsignedhexlp)
