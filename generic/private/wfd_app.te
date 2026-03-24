@@ -57,3 +57,5 @@ allow vendor_wfd_app {
 # Access to /data/media for debug dump
 allow vendor_wfd_app media_rw_data_file:dir create_dir_perms;
 allow vendor_wfd_app media_rw_data_file:file create_file_perms;
+
+not_recovery(`hal_client_domain(vendor_wfd_app, hal_graphics_composer)')
