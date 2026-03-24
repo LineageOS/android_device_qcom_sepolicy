@@ -70,6 +70,7 @@ user=_app seinfo=platform name=com.qualcomm.qti.sva domain=vendor_voiceui_app ty
 user=_app seinfo=platform name=com.qualcomm.qti.voiceai.speech domain=vendor_voiceui_app type=app_data_file levelFrom=all
 user=_app seinfo=platform name=com.qualcomm.qti.voiceai.wakeup domain=vendor_voiceui_app type=app_data_file levelFrom=all
 user=_app seinfo=platform name=com.qualcomm.qti.voiceai.usecase domain=vendor_voiceui_app type=app_data_file levelFrom=all
+user=_app seinfo=platform name=com.qualcomm.qti.voiceai.lifelogger domain=vendor_voiceui_app type=app_data_file levelFrom=all
 
 # qc mStat app
 user=_app seinfo=platform name=com.qti.qualcomm.mstatssystemservice domain=vendor_mstatservice_app type=app_data_file levelFrom=all
