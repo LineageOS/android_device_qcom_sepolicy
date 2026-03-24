@@ -31,6 +31,7 @@
 
 get_prop(appdomain, vendor_persist_dpm_prop)
 get_prop(appdomain, vendor_persist_rcs_prop)
+get_prop(appdomain, vendor_persist_proximity_prop)
 get_prop(appdomain, vendor_persist_ntn_prop)
 
 get_prop(appdomain, vendor_afp_prop)
