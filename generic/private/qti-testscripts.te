@@ -86,6 +86,13 @@ userdebug_or_eng(`
   allow domain qti-testscripts:process sigchld;
   binder_use(qti-testscripts)
   allow platform_app qti-testscripts:unix_stream_socket { read write connectto};
+  # platform_app_36 is the type assigned to platform apps which are running with
+  # a targetSDK version <= 36.
+  starting_at_board_api(202604, `
+  allow platform_app_36 qti-testscripts:unix_stream_socket { read write connectto};
+  binder_call(platform_app_36, qti-testscripts)
+  ')
+
   allow system_app qti-testscripts:unix_stream_socket { read write connectto};
   allow system_server qti-testscripts:binder { transfer call };
   allow untrusted_app_25 qti-testscripts:binder  { transfer call };
