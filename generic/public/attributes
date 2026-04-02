@@ -412,3 +412,8 @@ attribute vendor_framework_utils_app_server;
 attribute vendor_hal_qnextgenhal;
 attribute vendor_hal_qnextgenhal_client;
 attribute vendor_hal_qnextgenhal_server;
+
+#attributes for display_capture_service
+attribute vendor_hal_display_capture_service_qti;
+attribute vendor_hal_display_capture_service_qti_client;
+attribute vendor_hal_display_capture_service_qti_server;
