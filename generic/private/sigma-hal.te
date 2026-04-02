@@ -53,3 +53,10 @@ binder_call(vendor_sigmahal_qti,audioserver);
 
 #Allow vendor_sigmahal_qti to interact with surface flinger
 binder_call(vendor_sigmahal_qti,surfaceflinger);
+
+get_prop(vendor_sigmahal_qti, vendor_sys_video_prop)
+get_prop(vendor_sigmahal_qti, media_variant_prop)
+
+hal_client_domain(vendor_sigmahal_qti, hal_graphics_allocator)
+
+get_prop(vendor_sigmahal_qti, vendor_sys_gpp_prop)
