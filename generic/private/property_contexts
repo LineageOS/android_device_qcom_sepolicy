@@ -39,7 +39,6 @@ ro.netflix.bsp_rev                         u:object_r:vendor_exported_system_pro
 vendor.qti.bhs.enable                    u:object_r:vendor_qti_bhs_prop:s0
 
 persist.vendor.dpm.                        u:object_r:vendor_persist_dpm_prop:s0
-persist.vendor.qti.proximity.license_validated  u:object_r:vendor_persist_proximity_prop:s0
 persist.vendor.rcs.                        u:object_r:vendor_persist_rcs_prop:s0
 persist.vendor.tcmd.                       u:object_r:vendor_persist_tcm_prop:s0
 persist.vendor.ntn.                        u:object_r:vendor_persist_ntn_prop:s0
