@@ -1,0 +1,6 @@
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+##allow access to memfd_file
+allow hal_audio_server vendor_voiceui_app:memfd_file { getattr read write map };
