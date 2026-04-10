@@ -41,3 +41,6 @@ allow surfaceflinger vendor_hal_hexlp_server:fd use;
 
 # Allow access to GPP Property
 get_prop(surfaceflinger, vendor_sys_gpp_prop)
+
+#Allow access to vendor_perf_service
+allow surfaceflinger vendor_perf_service:service_manager find;
