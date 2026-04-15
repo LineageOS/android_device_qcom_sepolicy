@@ -48,3 +48,6 @@ hal_client_domain(priv_app, vendor_hal_unsignedhexlp)
 
 #allow priv_apps with target SDK level < 37 to access qesdk
 qesdk_app_access(priv_app_36)
+
+# allow priv_app to be a client of display capture service
+hal_client_domain(priv_app, vendor_hal_display_capture_service_qti)
