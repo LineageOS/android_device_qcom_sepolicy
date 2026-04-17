@@ -123,3 +123,5 @@ vendor.sys.bugreport.cpuinfo.disable         u:object_r:vendor_sys_bugreport_cpu
 vendor.sys.ims.                                  u:object_r:vendor_sys_ims_prop:s0
 persist.vendor.sys.ims.                          u:object_r:vendor_sys_ims_prop:s0
 persist.vendor.sys.qti.telephony.vt_cam_interface u:object_r:vendor_sys_ims_prop:s0
+
+persist.vendor.telephony.feature_list        u:object_r:radio_control_prop:s0 exact string
