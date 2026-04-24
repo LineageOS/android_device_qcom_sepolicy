@@ -29,11 +29,13 @@ type vendor_xrcb_app,domain;
 typeattribute vendor_xrcb_app coredomain;
 typeattribute vendor_xrcb_app vendor_hal_qvrservice_qti_socket_client;
 typeattribute vendor_xrcb_app vendor_hal_sxrservice_qti_socket_client;
+typeattribute vendor_xrcb_app vendor_hal_qvrcamservice_qti_socket_client;
 typeattribute vendor_xrcb_app vendor_hal_xrcommservice_qti_socket_client;
 app_domain(vendor_xrcb_app);
 
 hal_client_domain(vendor_xrcb_app, vendor_hal_qvrservice_qti);
 hal_client_domain(vendor_xrcb_app, vendor_hal_sxrservice_qti);
+hal_client_domain(vendor_xrcb_app, vendor_hal_qvrcamservice_qti);
 hal_client_domain(vendor_xrcb_app, vendor_hal_perf);
 hal_client_domain(vendor_xrcb_app, vendor_hal_xrcommservice_qti);
 allow vendor_xrcb_app app_api_service:service_manager find;

@@ -358,6 +358,12 @@ attribute vendor_hal_cacert_qti;
 attribute vendor_hal_cacert_qti_client;
 attribute vendor_hal_cacert_qti_server;
 
+attribute vendor_hal_qvrcamservice_qti;
+attribute vendor_hal_qvrcamservice_qti_client;
+attribute vendor_hal_qvrcamservice_qti_server;
+attribute vendor_hal_qvrcamservice_qti_socket_client;
+attribute vendor_hal_qvrcamservice_qti_socket_fd_use_client;
+
 attribute vendor_hal_systemhelper;
 attribute vendor_hal_systemhelper_client;
 attribute vendor_hal_systemhelper_server;
@@ -444,3 +450,8 @@ attribute vendor_hal_powerstateservice_server;
 attribute vendor_hal_powerstateutility;
 attribute vendor_hal_powerstateutility_client;
 attribute vendor_hal_powerstateutility_server;
+
+# Qvirt vendor hal
+attribute vendor_hal_qvirtvendor;
+attribute vendor_hal_qvirtvendor_client;
+attribute vendor_hal_qvirtvendor_server;

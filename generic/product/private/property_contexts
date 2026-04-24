@@ -24,5 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 vendor.display.disable_rounded_corner       u:object_r:vendor_display_notch_prop:s0
 vendor.qvirtmgr.                            u:object_r:vendor_qvirtmgr_prop:s0
+debug.disable_screen_decorations            u:object_r:vendor_display_notch_prop:s0
