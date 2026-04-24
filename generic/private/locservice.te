@@ -1,0 +1,11 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_locservice, domain, coredomain;
+type vendor_locservice_exec, exec_type, system_file_type, file_type;
+
+hal_client_domain(vendor_locservice, hal_gnss)
+
+init_daemon_domain(vendor_locservice);
+set_prop(vendor_locservice, vendor_sys_location_prop);
+

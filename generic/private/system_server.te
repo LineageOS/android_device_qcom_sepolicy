@@ -25,8 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
-# Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+#
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 add_service(system_server, vendor_izat_service)
@@ -86,3 +87,4 @@ allow system_server binderfs_logs:file r_file_perms;
 # Allow system server to access for rcs service
 get_prop(system_server, vendor_persist_rcs_prop)
 get_prop(system_server, vendor_persist_ntn_prop)
+get_prop(system_server, vendor_sys_location_prop)

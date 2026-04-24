@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+#
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # generic/vendor_location_app.te - sepolicy rules for qti value added location apps
 # that will be part of system image. Eg: XT app.
@@ -50,6 +55,7 @@ unix_socket_connect(vendor_location_app, vendor_dpmtcm, vendor_dpmd);
 unix_socket_connect(vendor_location_app, vendor_dpmtcm, vendor_tcmd);
 
 get_prop(vendor_location_app, radio_cdma_ecm_prop)
+get_prop(vendor_location_app, vendor_sys_location_prop)
 
 allow vendor_location_app cgroup:file rw_file_perms;
 

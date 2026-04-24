@@ -58,6 +58,7 @@
 /(system_ext|system/system_ext)/bin/dun-server  u:object_r:vendor_dun-server_exec:s0
 /(system_ext|system/system_ext)/bin/bt_logger   u:object_r:vendor_bt_logger_exec:s0
 /(system_ext|system/system_ext)/bin/perfservice u:object_r:vendor_perfservice_exec:s0
+/(system_ext|system/system_ext)/bin/loc_sys_service u:object_r:vendor_locservice_exec:s0
 /(system_ext|system/system_ext)/bin/qdtservice  u:object_r:vendor_qdtservice_exec:s0
 /(system|system_ext|system/system_ext)/bin/(wfdservice|wfdservice64)           u:object_r:vendor_wfdservice_exec:s0
 /(system|system_ext|system/system_ext)/bin/(sigma_miracasthalservice|sigma_miracasthalservice64) u:object_r:vendor_sigmahal_qti_exec:s0
@@ -74,6 +75,8 @@
 /(system_ext|system/system_ext)/bin/qtiaudiohalvendorextn  u:object_r:vendor_qtiaudiohalvendorextn_exec:s0
 /system_ext/bin/usbudev  u:object_r:vendor_usbudev_qti_exec:s0
 /(system_ext|system/system_ext)/bin/imsvtdaemon u:object_r:vendor_imsvtdaemon_exec:s0
+/(system_ext|system/system_ext)/bin/qcc-native u:object_r:vendor_qcc_native_exec:s0
+/(system_ext|system/system_ext)/etc/qcc(/.*)?   u:object_r:vendor_qcc_native_assets_file:s0
 
 ####### data files ################
 /data/dpm(/.*)?                                 u:object_r:vendor_dpmd_data_file:s0
