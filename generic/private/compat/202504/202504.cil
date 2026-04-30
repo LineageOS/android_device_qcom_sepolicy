@@ -1,6 +1,3 @@
-#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-#SPDX-License-Identifier: BSD-3-Clause-Clear
-
 (typeattributeset vendor_persist_camera_prop_202504 (vendor_persist_camera_prop))
 (expandtypeattribute (vendor_persist_camera_prop_202504) true)
 (typeattribute vendor_persist_camera_prop_202504)
