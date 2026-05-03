@@ -95,3 +95,5 @@ user=_app seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=vendor_qti_
 
 # Add new domain for com.qti.ltebc
 user=_app seinfo=platform name=com.qti.ltebc domain=vendor_qti_embmssl_app isPrivApp=true type=app_data_file levelFrom=all
+
+user=_app seinfo=platform name=org.codeaurora.configurationappforaidirector isPrivApp=true domain=vendor_aid_config_app type=app_data_file levelFrom=all

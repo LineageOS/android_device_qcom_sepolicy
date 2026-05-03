@@ -53,6 +53,7 @@ vendor.bt.pts.                             u:object_r:bluetooth_prop:s0
 vendor.bluetooth.                          u:object_r:bluetooth_prop:s0
 vendor.camera.aux.packagelist              u:object_r:camera2_extensions_prop:s0
 persist.vendor.camera.privapp.list         u:object_r:vendor_persist_camera_prop:s0
+persist.vendor.ai-director.                u:object_r:vendor_persist_camera_prop:s0
 
 #mm-parser
 vendor.mm.enable.qcom_parser       u:object_r:vendor_mm_parser_prop:s0
