@@ -45,3 +45,6 @@ allow vendor_voiceui_app audioserver_service:service_manager find;
 
 # allow vendor_voiceui_app to be a client of DSP HAL
 hal_client_domain(vendor_voiceui_app, vendor_hal_dspmanager);
+
+# allow access to memfd_file shared by hal_audio_server
+allow vendor_voiceui_app hal_audio_server:memfd_file { getattr read write map };
