@@ -43,3 +43,6 @@ allow surfaceflinger vendor_hal_hexlp_server:fd use;
 get_prop(surfaceflinger, vendor_wlc_public_prop)
 
 allow surfaceflinger vendor_sigmahal_qti:fd use;
+
+#Allow access to vendor_perf_service
+allow surfaceflinger vendor_perf_service:service_manager find;

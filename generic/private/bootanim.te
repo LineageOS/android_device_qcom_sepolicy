@@ -1,0 +1,8 @@
+# Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#Allow read access to vendor_sys_gpp_prop
+get_prop(bootanim, vendor_sys_gpp_prop)
+
+#Allow access to vendor_perf_service
+allow bootanim vendor_perf_service:service_manager find;
