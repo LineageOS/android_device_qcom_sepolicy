@@ -38,3 +38,6 @@ get_prop(mediaserver, vendor_sys_video_prop)
 #============= perf HAL ==============
 hal_client_domain(mediaserver, vendor_hal_perf)
 hal_client_domain(mediaserver , vendor_hal_imsvthal);
+
+# Allow mediaserver to use SurfaceFlinger unix stream socket for DisplayEventReceiver.
+allow mediaserver surfaceflinger:unix_stream_socket { read write };
