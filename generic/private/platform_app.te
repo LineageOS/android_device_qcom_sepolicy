@@ -49,6 +49,12 @@ set_prop(platform_app, vendor_wlc_prop);
 
 #allow platform_app to interact with wificfr hal
 hal_client_domain(platform_app, hal_wificfr)
+
+# Allow gnss service access for test application
+userdebug_or_eng(`
+  hal_client_domain(platform_app, hal_gnss)
+')
+
 #allow platform_app to interact with wpa_supplicant
 # adding typeattribute instead of macro because hal_wifi_supplicant has already
 # been defined
