@@ -27,3 +27,6 @@
 
 #Add new domain for system helper service using for Trusted UI
 user=_app seinfo=platform name=com.qualcomm.qti.services.systemhelper:systemhelper_service domain=vendor_systemhelper_app type=app_data_file levelFrom=user
+
+#Add new domain for power off alarm app
+user=_app seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=app_data_file
