@@ -1,0 +1,10 @@
+(typeattributeset vendor_display_notch_prop_34_0 (vendor_display_notch_prop))
+(expandtypeattribute (vendor_display_notch_prop_34_0) true)
+(typeattribute vendor_display_notch_prop_34_0)
+(typeattributeset vendor_qvirtmgr_prop_34_0 (vendor_qvirtmgr_prop))
+(expandtypeattribute (vendor_qvirtmgr_prop_34_0) true)
+(typeattribute vendor_qvirtmgr_prop_34_0)
+(typeattributeset vendor_sys_qti_display_34_0 (vendor_sys_qti_display))
+(expandtypeattribute (vendor_sys_qti_display_34_0) true)
+(typeattribute vendor_sys_qti_display_34_0)
+

@@ -1,0 +1,12 @@
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+type vendor_xpanprovider_app, domain;
+
+typeattribute vendor_xpanprovider_app coredomain;
+
+app_domain(vendor_xpanprovider_app)
+
+hal_client_domain(vendor_xpanprovider_app, vendor_hal_xpanprovider);
+
+allow vendor_xpanprovider_app  app_api_service :service_manager find;
+hal_client_domain(vendor_xpanprovider_app, vendor_hal_perf)
