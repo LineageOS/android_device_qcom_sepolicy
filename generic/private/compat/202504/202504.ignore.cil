@@ -6,4 +6,5 @@
 (typeattributeset new_objects
   ( new_objects
     vendor_persist_ntn_prop
+    vendor_poweroffalarm_app
   ))
