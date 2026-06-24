@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "913e9474_c846a83f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34519
+      },
+      "writtenOn": "2026-06-24T10:13:10Z",
+      "side": 1,
+      "message": "Not required after https://review.lineageos.org/c/LineageOS/android_device_qcom_sepolicy/+/491886",
+      "revId": "e03f6b7362b2c7daae455038a232336d7f0be969",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
