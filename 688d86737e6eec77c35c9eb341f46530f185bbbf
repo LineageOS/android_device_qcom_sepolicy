@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70642655_2c4076df",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34519
+      },
+      "writtenOn": "2026-06-24T07:12:13Z",
+      "side": 1,
+      "message": "ERROR: All platform apps must be labeled with a coredomain type.\nPlease fix the following violations by doing one of these.\n1) Add \u0027coredomain\u0027 attribute to labels.\n2) Move apps and corresponding seapp_contexts entries to vendor or odm partition.\nViolations:\n  APK name: PowerOffAlarm.apk\n  package name: com.qualcomm.qti.poweroffalarm\n  assigned label: vendor_poweroffalarm_app\n\nFails build for Spacewar",
+      "revId": "688d86737e6eec77c35c9eb341f46530f185bbbf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
