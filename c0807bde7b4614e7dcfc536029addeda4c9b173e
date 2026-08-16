@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d553404_26feeebe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-08-16T12:01:38Z",
+      "side": 1,
+      "message": "I guess you might want to pick https://github.com/LineageOS/android_device_qcom_sepolicy/commit/3e8a4733210ce173cf16567453cf0f74dfac0d67 on top as well, if you see this denial.",
+      "revId": "c0807bde7b4614e7dcfc536029addeda4c9b173e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
