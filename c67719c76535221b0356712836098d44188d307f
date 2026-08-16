@@ -16,6 +16,23 @@
       "message": "Pick the corresponding changes from QSSI 17 tag.",
       "revId": "c67719c76535221b0356712836098d44188d307f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ccd2233_dd3a6a7d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-08-16T11:34:22Z",
+      "side": 1,
+      "message": "https://github.com/LineageOS/android_device_qcom_sepolicy/commit/3e8a4733210ce173cf16567453cf0f74dfac0d67\n\nhttps://github.com/LineageOS/android_device_qcom_sepolicy/commit/ff33021ea588ab7479a895a84e00e76e3984e56a\n\nhttps://github.com/LineageOS/android_device_qcom_sepolicy/commit/ed32bdfe3009d7ea0a377fe3621cb1f3a975225b",
+      "revId": "c67719c76535221b0356712836098d44188d307f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": [
