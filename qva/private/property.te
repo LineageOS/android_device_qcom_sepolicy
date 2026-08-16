@@ -41,3 +41,6 @@ system_internal_prop(vendor_wigig_core_prop)
 system_internal_prop(vendor_fst_prop)
 
 system_internal_prop(ctl_dpmd_prop)
+
+# Aux camera allow/excludelist prop
+system_vendor_config_prop(vendor_persist_camera_prop)
