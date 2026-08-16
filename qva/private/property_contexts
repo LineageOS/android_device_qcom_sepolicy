@@ -77,3 +77,7 @@ ro.vendor.beluga.p                         u:object_r:vendor_exported_system_pro
 ro.vendor.beluga.c                         u:object_r:vendor_exported_system_prop:s0
 ro.vendor.beluga.s                         u:object_r:vendor_exported_system_prop:s0
 ro.vendor.beluga.t                         u:object_r:vendor_exported_system_prop:s0
+
+# Aux camera
+vendor.camera.aux.packageexcludelist	u:object_r:vendor_persist_camera_prop:s0
+vendor.camera.aux.packagelist		u:object_r:vendor_persist_camera_prop:s0

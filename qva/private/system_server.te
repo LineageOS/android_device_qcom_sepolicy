@@ -65,3 +65,5 @@ get_prop(system_server, vendor_persist_dpm_prop)
 #Allow system_server to add and find qspmsvc service
 allow system_server vendor_qspmsvc_service:service_manager find;
 
+# Let system server find auxiliary camera properties
+get_prop(system_server, vendor_persist_camera_prop)
