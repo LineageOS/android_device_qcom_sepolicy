@@ -44,3 +44,6 @@ user=_app seinfo=platform name=com.qualcomm.qti.devicestatisticsservice domain=v
 
 # Add new domain for qti alarm app
 user=_app seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=vendor_qti_poweroffalarm_app isPrivApp=false type=app_data_file levelFrom=all
+
+# QtiTelephonyService app
+user=_app seinfo=platform name=com.qualcomm.qti.telephonyservice domain=vendor_qtelephony type=app_data_file levelFrom=all
