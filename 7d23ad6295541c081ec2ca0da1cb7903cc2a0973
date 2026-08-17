@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ab0ff8b_f1d8fcb5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-08-17T15:49:57Z",
+      "side": 1,
+      "message": "```nolenjohnson@ODS-PROD:~/lineage-24/device/qcom$ grep -r vendor_soc_id_prop\nsepolicy-legacy-um/legacy/vendor/common/hal_health.te:get_prop(hal_health_default, vendor_soc_id_prop)\nsepolicy_vndr/sm8550/generic/vendor/common/property.te:vendor_internal_prop(vendor_soc_id_prop);\nsepolicy_vndr/sm8550/generic/vendor/common/init_shell.te:set_prop(vendor_qti_init_shell, vendor_soc_id_prop);\nsepolicy_vndr/sm8550/generic/vendor/common/hal_health.te:get_prop(hal_health_default, vendor_soc_id_prop)\nsepolicy_vndr/sm8550/generic/vendor/common/te_macros:get_prop($1, vendor_soc_id_prop);\nsepolicy_vndr/sm8550/generic/vendor/common/property_contexts:ro.vendor.qti.soc_id         u:object_r:vendor_soc_id_prop:s0\nsepolicy_vndr/sm8750/generic/vendor/common/property.te:vendor_internal_prop(vendor_soc_id_prop);\nsepolicy_vndr/sm8750/generic/vendor/common/init_shell.te:set_prop(vendor_qti_init_shell, vendor_soc_id_prop);\nsepolicy_vndr/sm8750/generic/vendor/common/hal_health.te:get_prop(hal_health_default, vendor_soc_id_prop)\nsepolicy_vndr/sm8750/generic/vendor/common/te_macros:get_prop($1, vendor_soc_id_prop);\nsepolicy_vndr/sm8750/generic/vendor/common/property_contexts:ro.vendor.qti.soc_id         u:object_r:vendor_soc_id_prop:s0\nsepolicy_vndr/sm8650/generic/vendor/common/property.te:vendor_internal_prop(vendor_soc_id_prop);\nsepolicy_vndr/sm8650/generic/vendor/common/init_shell.te:set_prop(vendor_qti_init_shell, vendor_soc_id_prop);\nsepolicy_vndr/sm8650/generic/vendor/common/hal_health.te:get_prop(hal_health_default, vendor_soc_id_prop)\nsepolicy_vndr/sm8650/generic/vendor/common/hal_camera.te:  get_prop(hal_camera_default, vendor_soc_id_prop)\nsepolicy_vndr/sm8650/generic/vendor/common/te_macros:get_prop($1, vendor_soc_id_prop);\nsepolicy_vndr/sm8650/generic/vendor/common/property_contexts:ro.vendor.qti.soc_id         u:object_r:vendor_soc_id_prop:s0\nsepolicy_vndr/legacy-um/generic/vendor/common/property.te:vendor_internal_prop(vendor_soc_id_prop);\nsepolicy_vndr/legacy-um/generic/vendor/common/init_shell.te:set_prop(vendor_qti_init_shell, vendor_soc_id_prop);\nsepolicy_vndr/legacy-um/generic/vendor/common/hal_health.te:get_prop(hal_health_default, vendor_soc_id_prop)\nsepolicy_vndr/legacy-um/generic/vendor/common/te_macros:get_prop($1, vendor_soc_id_prop);\nsepolicy_vndr/legacy-um/generic/vendor/common/property_contexts:ro.vendor.qti.soc_id         u:object_r:vendor_soc_id_prop:s0\nsepolicy_vndr/sm8450/generic/vendor/common/property.te:vendor_internal_prop(vendor_soc_id_prop);\nsepolicy_vndr/sm8450/generic/vendor/common/init_shell.te:set_prop(vendor_qti_init_shell, vendor_soc_id_prop);\nsepolicy_vndr/sm8450/generic/vendor/common/hal_health.te:get_prop(hal_health_default, vendor_soc_id_prop)\nsepolicy_vndr/sm8450/generic/vendor/common/te_macros:get_prop($1, vendor_soc_id_prop);\nsepolicy_vndr/sm8450/generic/vendor/common/property_contexts:ro.vendor.qti.soc_id         u:object_r:vendor_soc_id_prop:s0```",
+      "revId": "7d23ad6295541c081ec2ca0da1cb7903cc2a0973",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
