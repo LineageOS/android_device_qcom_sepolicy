@@ -16,6 +16,23 @@
       "message": "Will this be mirrored on to 24.0 and 23.2 branches as i had seen some devices with similar denials",
       "revId": "d5f931e2321f4e501437d2b44f417407b683ca3e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf05a5f8_27b8eeb3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34519
+      },
+      "writtenOn": "2026-09-02T04:50:11Z",
+      "side": 1,
+      "message": "Seen it being required in for some sm8150 and sm8250 devices, so vndr might require a mirror of the same",
+      "revId": "d5f931e2321f4e501437d2b44f417407b683ca3e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
