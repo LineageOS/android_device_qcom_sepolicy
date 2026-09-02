@@ -34,4 +34,4 @@ allow nfc self:socket create_socket_perms_no_ioctl;
 hal_client_domain(nfc, hal_perf)
 
 allow nfc nfc_vendor_data_file:file create_file_perms;
-allow nfc nfc_vendor_data_file:dir rm_dir_perms;
+allow nfc nfc_vendor_data_file:dir rw_dir_perms;
