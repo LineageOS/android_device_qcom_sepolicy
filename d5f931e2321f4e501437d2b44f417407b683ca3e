@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fcaa957_f04bf184",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34519
+      },
+      "writtenOn": "2026-09-02T04:22:57Z",
+      "side": 1,
+      "message": "Will this be mirrored on to 24.0 and 23.2 branches as i had seen some devices with similar denials",
+      "revId": "d5f931e2321f4e501437d2b44f417407b683ca3e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
