@@ -6,3 +6,7 @@ init_daemon_domain(vendor_qtiaudiohalvendorextn)
 binder_use(vendor_qtiaudiohalvendorextn)
 
 allow vendor_qtiaudiohalvendorextn vendor_audioserver_service:service_manager { add find };
+
+# Allow dumpstate to collect service diagnostics.
+allow vendor_qtiaudiohalvendorextn dumpstate:fd use;
+allow vendor_qtiaudiohalvendorextn dumpstate:fifo_file write;
